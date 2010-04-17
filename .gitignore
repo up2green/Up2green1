@@ -4,3 +4,6 @@ log/*
 thumbs.db
 Desktop.ini
 config/databases.yml
+/nbproject/
+/cache/
+/log/

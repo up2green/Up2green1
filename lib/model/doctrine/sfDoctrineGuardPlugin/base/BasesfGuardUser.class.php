@@ -18,6 +18,10 @@
  * @property Doctrine_Collection $sfGuardUserPermission
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
+ * @property Doctrine_Collection $UserPartenaire
+ * @property Doctrine_Collection $UserProfile
+ * @property Doctrine_Collection $UserCoupons
+ * @property Doctrine_Collection $UserTrees
  * 
  * @method integer             getId()                    Returns the current record's "id" value
  * @method string              getUsername()              Returns the current record's "username" value
@@ -32,6 +36,10 @@
  * @method Doctrine_Collection getSfGuardUserPermission() Returns the current record's "sfGuardUserPermission" collection
  * @method Doctrine_Collection getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey  getRememberKeys()          Returns the current record's "RememberKeys" value
+ * @method Doctrine_Collection getUserPartenaire()        Returns the current record's "UserPartenaire" collection
+ * @method Doctrine_Collection getUserProfile()           Returns the current record's "UserProfile" collection
+ * @method Doctrine_Collection getUserCoupons()           Returns the current record's "UserCoupons" collection
+ * @method Doctrine_Collection getUserTrees()             Returns the current record's "UserTrees" collection
  * @method sfGuardUser         setId()                    Sets the current record's "id" value
  * @method sfGuardUser         setUsername()              Sets the current record's "username" value
  * @method sfGuardUser         setAlgorithm()             Sets the current record's "algorithm" value
@@ -45,6 +53,10 @@
  * @method sfGuardUser         setSfGuardUserPermission() Sets the current record's "sfGuardUserPermission" collection
  * @method sfGuardUser         setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser         setRememberKeys()          Sets the current record's "RememberKeys" value
+ * @method sfGuardUser         setUserPartenaire()        Sets the current record's "UserPartenaire" collection
+ * @method sfGuardUser         setUserProfile()           Sets the current record's "UserProfile" collection
+ * @method sfGuardUser         setUserCoupons()           Sets the current record's "UserCoupons" collection
+ * @method sfGuardUser         setUserTrees()             Sets the current record's "UserTrees" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -125,6 +137,22 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasOne('sfGuardRememberKey as RememberKeys', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('partenaire_user as UserPartenaire', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('profil as UserProfile', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('user_coupon as UserCoupons', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('user_tree as UserTrees', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

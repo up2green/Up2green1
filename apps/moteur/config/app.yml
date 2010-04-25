@@ -3,3 +3,5 @@
 
 # default values
 #all:
+all:
+  max_item_search: 5

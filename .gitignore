@@ -6,3 +6,5 @@ Desktop.ini
 config/databases.yml
 /nbproject/
 /web/sfDoctrinePlugin
+/cache/
+/log/

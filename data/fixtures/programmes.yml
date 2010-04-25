@@ -1,0 +1,37 @@
+programme:
+  ethiopie:
+    organisme: eco_kyoto
+    is_active: 1
+    Translation:
+      en:
+        title: 1 tree in Ethiopy
+        accroche: In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+      fr:
+        title: 1 arbre en Ethiopie
+        accroche: Dans les régions de Guraghe, Konso et du lac Tana, pour lutter contre la dÃ©sertification et assurer des revenus aux populations locales (fruits, miel, meubles, bois de construction, etc.)
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+  inde:
+    organisme: eco_kyoto
+    is_active: 1
+    Translation:
+      en:
+        title: Inde
+        accroche: In areas of Tamil Nadu, Andhra Pradesh and Uttarkhand to restore deforested areas (drought and erosion) by planting fast growing tree species to restore aquifers and ensure `s various uses of trees: fruits, heating and construction.
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+      fr:
+        title: Inde
+        accroche: Dans les régions du Tamil Nadu, Andhra Pradesh et Uttarkhand, pour restaurer les zones dÃ©forestÃ©es (sÃ¨cheresse et érosion) en plantant des essences à croissance rapide permettant de restaurer les aquifères et d`assurer divers usages des arbres : fruits, chauffage et construction.
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+  bresil:
+    organisme: trees_for_the_future
+    is_active: 1
+    Translation:
+      en:
+        title: Brasil
+        accroche: In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+      fr:
+        title: Brésil
+        accroche: Dans la région de Sao Paulo , pour améliorer la production agricole, lutter contre la pauvreté rurale et apprendre les techniques agro-sylvicoles aux populations locales.
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,

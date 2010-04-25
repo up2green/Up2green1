@@ -1,0 +1,27 @@
+organisme:
+  eco_kyoto:
+    name: Eco-Kyoto
+    url: http://www.fondationecokyoto.org/
+    logo: organisme41.gif
+    Translation:
+      en:
+        title: Eco-Kyoto Fondation
+        accroche: a short description ... 
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+      fr:
+        title: Fondation Eco-Kyoto
+        accroche: un description courte ...
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+  trees_for_the_future:
+    name: Trees For The Future
+    url: http://www.treesftf.org/
+    logo: organisme38.gif
+    Translation:
+      en:
+        title: Trees For The Future Fondation
+        accroche: a short description ... 
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,
+      fr:
+        title: Fondation Trees For The Future
+        accroche: un description courte ...
+        description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,

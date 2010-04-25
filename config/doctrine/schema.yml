@@ -1,0 +1,351 @@
+# user / group affiliate
+
+partenaire:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(45)
+      default: null
+    accroche:
+      type: string(255)
+      default: null
+    description:
+      type: clob(65535)
+      default: null
+    url:
+      type: string(150)
+      default: null
+
+partenaire_user:
+  columns:
+    partenaire_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    user_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    sfGuardUser:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      foreignAlias: UserPartenaire
+    partenaire:
+      class: partenaire
+      local: partenaire_id
+      foreign: id
+      foreignAlias: PartenaireUsers
+      
+profil:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    user_id:
+      type: integer(4)
+      notnull: true
+      unique: true
+    credit:
+      type: integer(4)
+      notnull: true
+      default: 0
+    is_newsletter:
+      type: integer(1)
+      notnull: true
+      default: 0
+    culture:
+      type: string(7)
+      default: 'fr_FR'
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      foreignAlias: UserProfile
+
+coupon:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    code:
+      type: string(128)
+      unique: true
+      notnull: true
+    credit:
+      type: integer(4)
+      notnull: true
+      default: 1
+    is_active:
+      type: boolean
+      default: 1
+    is_used:
+      type: boolean
+      default: 0
+    used_at:
+      type: timestamp
+      default: null
+    used_by:
+      type: integer(4)
+      default: null
+
+user_coupon:
+  columns:
+    user_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    coupon_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      foreignAlias: UserCoupons
+    coupon:
+      class: coupon
+      local: coupon_id
+      foreign: id
+      foreignAlias: CouponUser
+
+organisme:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, accroche, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    url:
+      type: string(128)
+    title:
+      type: string(128)
+      notnull: true
+    accroche:
+      type: string(255)
+    description:
+      type: clob(65535)
+    logo:
+      type: string(128)
+      default: null
+
+programme:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, accroche, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    organisme_id:
+      type: integer(4)
+    title:
+      type: string(128)
+    accroche:
+      type: string(255)
+    description:
+      type: clob(65535)
+    latitude:
+      type: string(45)
+      default: null
+    longitude:
+      type: string(45)
+      default: null
+    geoloc:
+      type: string(100)
+      default: null
+    is_active:
+      type: boolean
+      default: 1
+  relations:
+    organisme:
+      class: organisme
+      local: organisme_id
+      foreign: id
+      foreignAlias: ProgrammeOrganisme
+
+tree:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    cost:
+      type: string(45)    
+
+tree_programme:
+  columns:
+    programme_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    tree_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    tree:
+      class: tree
+      local: tree_id
+      foreign: id
+      foreignAlias: TreeProgramme
+    programme:
+      class: programme
+      local: programme_id
+      foreign: id
+      foreignAlias: ProgrammeTrees
+
+user_tree:
+  columns:
+    user_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    tree_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    sfGuardUser:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      foreignAlias: UserTrees
+    tree:
+      class: tree
+      local: tree_id
+      foreign: id
+      foreignAlias: UserTree
+
+article:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, accroche, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+      notnull: true
+    accroche:
+      type: string(255)
+    description:
+      type: clob(65535)
+    logo:
+      type: string(255)
+    is_active:
+      type: boolean
+      default: 0
+  relations:
+    article_categorie:
+      local: article_id
+      foreign: id
+      refClass: article_categorie
+      foreignAlias: Articles
+      
+categorie:
+  actAs: 
+    I18n:
+      fields: [name]
+      actAs:
+        Sluggable: { fields: [name], uniqueBy: [lang, name] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    parent_id:
+      type: integer(4)
+  relations:
+    article_categorie:
+      local: categorie_id
+      foreign: id
+      refClass: article_categorie
+      foreignAlias: Categories
+
+article_categorie:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    categorie_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    article_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    categorie:
+      local: categorie_id
+      onDelete: CASCADE
+    article:
+      local: article_id
+      onDelete: CASCADE
+
+newsletter:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, content]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(128)
+    content:
+      type: clob(65535)
+    reply_to:
+      type: string(128)
+      notnull: true
+      default: noreply@up2green.com
+    email_from:
+      type: string(128)
+      notnull: true
+      default: newsletter@up2green.com
+    is_forced:
+      type: integer(1)
+      notnull: true
+      default: 0
+    sent_at:
+      type: timestamp

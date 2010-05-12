@@ -28,7 +28,7 @@ class SearchEngine {
     public function getNbResults() {
         return sizeof($this->search_results);
     }
-    public function getResults($min = 0, $max = -1) {
+    public function getResults($min = 0) {
         switch ($this->search_moteur) {
             case self::IMG:
                 $this->executeImg($min);

@@ -5,8 +5,9 @@
 
 
 $(document).ready(function(){
-   $("#more_results").click(function(){
-      $.ajax({
+    $("#more_results").click(function(){
+        alert('click !');
+        $.ajax({
             url: 'ajax/moreresults',
             type: 'post',
             dataType: "xml",
@@ -19,10 +20,15 @@ $(document).ready(function(){
                 alert('Une erreur est survenue lors du chargement : "' + textStatus + '"');
             },
             success: function(xml) {
-                $(xml).find('result').each(function(){
-                    alert($(this).find('title').get(0).nodeValue);
+                alert('success !');
+                $(xml).find('root').each(function(){
+                    $(this).find('result').each(function(){
+                        alert('found');
+                        alert($(this).find('title').get(0).nodeValue);
+                    })
+                
                 });
             }
         });
-   });
+    });
 });

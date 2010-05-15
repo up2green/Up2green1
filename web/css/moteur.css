@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document*/
+
+.general{margin:auto;padding:0px;background-color:#FFFFFF;width:1024px;}
+
+/*MENU HAUT*/
+.menu_haut{background-color:#333333;width:1024px;height:40px}
+
+.left_menu_haut{background-color:#CC55FF;width:10px;height:40px;float:left;}
+
+.right_menu_haut{background-color:#CC55FF;width:10px;height:40px;float:right;}
+
+/*MENU HAUT gauche*/
+
+.menu_accueil{float:left;background-color:black;height:40px;text-align:left;font-size:13px;color:#FFFFFF;}
+
+.menu{font-size:12px;margin:0px;list-style-type:none;}
+
+.menu li{float:left}
+
+.menu a{text-decoration:none;color:white;height:35px;padding-left:20px;margin:0px;display:block;text-align:center;line-height:30px;}
+
+
+.menu a:hover{color:white;text-decoration:underline;text-align:center;}
+
+.menu a:active{color:grey;text-decoration:underline;font-size:12px;}
+
+.flag{float:left;background-color:grey;width:40px;height:40px;text-align:left;}
+
+
+.what{float:left;width:80px;height:40px;text-align:center;padding:7px;}
+
+.spacer{float:left;width:30px;height:40px;text-align:center;}
+
+.my_account{float:left;width:100px;height:40px;text-align:center;padding:7px;}
+
+.fav_nav{float:left;width:200px;height:40px;text-align:center;padding:7px;}
+
+/*MENU HAUT droit*/
+
+.menu_connexion{float:right;background-color:black;height:40px;text-align:right;font-size:12px;color:#FFFFFF;}
+
+.user_name{float:right;height:40px;text-align:center;padding:7px;}
+
+.password{float:right;height:40px;text-align:center;padding:7px;}
+
+.spacer{float:right;width:10px;height:40px;text-align:center;padding:7px;}
+
+.btn_connexion{float:right;height:40px;text-align:center;padding:7px;}
+
+.fav_account{float:right;height:40px;text-align:center;padding:7px;}
+
+.check-box{width:10px;height:10px;background-color:#FFFFFF; padding:3px;}
+
+
+/*CORPS du SITE*/
+
+.corps{width:1024px;height:330px}
+.centre{background-color:#FFFFFF;width:600px;float:left}
+
+/*FIXE*/
+
+.header{background-color:#93b911;width:1024px;height:195px;text-align:center;}
+.logo{margin:auto;background-color:#93b955;width:350px;height:115px;}
+.search{background-color:#CCCCCC;width:600px;}
+.champs{float:left;width:450px;text-align:left;background-color:#FFFFFF;}
+.btn_search{float:right;text-align:center;padding-right:20px;}
+.more_search{clear:both;padding-top:5px;}
+.filtres{float:left;text-align:left;}
+.avancees{float:right;text-align:right;font-size:14px;}
+
+/*CORPS ACCUEIL*/
+
+.menu_centre{background-color:#FFFF99;width:600px;height:260px;clear:both;padding-top:20px;}
+
+.acteur{background-color:#7abd2d;width:352px;height:260px;float:left;}
+.head_acteur{background-color:#7aFF88;width:352px;height:50px;text-align:center;}
+.corps_acteur{background-color:#7aFF44;width:352px;height:190px;}
+.contenus_acteur{margin:auto;background-color:#7aFF00;width:320px;font-size:14px;}
+.btn_add_acteur{margin:auto;background-color:#7aFF88;width:290px;height:70px;}
+.pied_acteur{background-color:#7a8822;width:352px;height:20px;}
+
+.statistiques{background-color:#8737d7;width:237px;height:260px;float:right;}
+.head_stats{background-color:#873788;width:237px;height:50px;text-align:center;}
+.corps_stats{background-color:#870044;width:237px;height:190px;}
+.maps{margin:auto;background-color:#870088;width:200px;height:85px;}
+.results_stats{text-align:center;font-size:12px;}
+.btn_entreprise{margin:auto;background-color:#7a0088;width:190px;height:52px;}
+.link_add_part{margin:auto;width:190px;text-align:center;font-size:13px;}
+.pied_stats{background-color:#870088;width:237px;height:20px;}
+
+/*MENU GAUCHE affiner recherches*/
+
+.menu_left{background-color:#FFFFFF;width:212px;float:left;}
+.liens_achat{font-size:12px;margin:0px;padding:5px;list-style-type:none;}
+
+.menu_left li{float:left}
+.menu_left a{text-decoration:none;color:black;width:150px;line-height:28px;height:40px;border:none;margin:0px;display:block;text-align:center;}
+.menu_left a:hover{color:green;background-image:url();text-decoration:none;text-align:center;}
+.menu_left a:active{color:green;text-decoration:none;font-size:18px}
+
+.pied{background-color:#226633;width:1024px;min-height:67px;clear:left}

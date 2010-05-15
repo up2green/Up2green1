@@ -1,9 +1,10 @@
-cache/*
-log/*
+/cache/*
+/log/*
 .DS_Store
 thumbs.db
 Desktop.ini
 config/databases.yml
 /nbproject/
+/web/sfDoctrinePlugin
 /cache/
 /log/

@@ -3,3 +3,9 @@
 
 # default values
 #all:
+all:
+  base_search: 10
+  more_search: 10
+  yahoo_id: %20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--
+  url:
+    web: http://boss.yahooapis.com/ysearch/web/v1/

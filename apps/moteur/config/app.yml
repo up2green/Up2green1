@@ -7,5 +7,8 @@ all:
   base_search: 10
   more_search: 10
   yahoo_id: %20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--
+  google_maps_api:
+    keys:
+      88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/

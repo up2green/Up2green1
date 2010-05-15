@@ -10,9 +10,9 @@
  * @author TiteiKo
  */
 class SearchEngine {
-    const GOOGLE = 1;
-    const YAHOO = 2;
-    const BING = 3;
+    const IMG = 1;
+    const WEB = 2;
+    const NEWS = 3;
 
     private $search_moteur ;
     private $search_text;
@@ -22,59 +22,97 @@ class SearchEngine {
         $this->search_text = $text;
         $this->search_moteur = $moteur;
         $this->search_results = array();
-
-        switch ($moteur) {
-            case self::GOOGLE:
-                $this->executeGoogle();
-                break;
-            case self::YAHOO:
-                $this->executeYahoo();
-                break;
-            case self::BING:
-                $this->executeBing();
-                break;
-        }
+        
     }
 
     public function getNbResults() {
         return sizeof($this->search_results);
     }
-    public function getResults($min = 0, $max = -1) {
-        if ($max == -1) $max = sfConfig::get('app_max_item_search');
-        $arrResults = array();
-        for ($i = $min; $i < $max && $i < sizeof($this->search_results); $i++){
-            $arrResults[] = $this->search_results[$i];
+    public function getResults($min = 0) {
+        switch ($this->search_moteur) {
+            case self::IMG:
+                $this->executeImg($min);
+                break;
+            case self::WEB:
+                $this->executeWeb($min);
+                break;
+            case self::NEWS:
+                $this->executeNews($min);
+                break;
         }
-        return $arrResults;
+        
+        return $this->search_results;
     }
 
 
-    private function executeGoogle() {
-        $this->search_results[] = array('title' => "Recherche google 1", 'content' =>"Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche google 2', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche google 3', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche google 4', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche google 5', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche google 6', "content" => "Blablablabla blablabla");
+    private function executeImg($min=0) {
+        $url = "http://boss.yahooapis.com/ysearch/images/v1/" .urlencode($this->search_text);
+        $url .= "?appid=" . sfConfig::get('app_yahoo_id');
+        $url .= "&format=xml";
+        $url .= "&start=".$min;
+        $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
+        $url .= "&lang=fr";
+        $url .= "&region=fr";
+//        die($url);
+        $dom = new DomDocument();
+        $dom->load($url);
+        $dom->save("test.xml");
+        foreach ($dom->getElementsByTagName("result") as $result){
+            $this->search_results[] = array(
+                'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+                'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
+                'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
+                'displayUrl' => $result->getElementsByTagName('refererurl')->item(0)->nodeValue,
+                'thumbnail' => $result->getElementsByTagName('thumbnail_url')->item(0)->nodeValue
+                );
+        }
     }
 
-    private function executeYahoo() {
-        $this->search_results[] = array('title' => "Recherche yahoo 1", 'content' =>"Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche yahoo 2', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche yahoo 3', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche yahoo 4', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche yahoo 5', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche yahoo 6', "content" => "Blablablabla blablabla");
+    private function executeWeb($min = 0) {
+        $url = "http://boss.yahooapis.com/ysearch/web/v1/" .urlencode($this->search_text);
+        $url .= "?appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--";
+        $url .= "&format=xml";
+        $url .= "&start=".$min;
+        $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
+        $url .= "&lang=fr";
+        $url .= "&region=fr";
+//        die($url);
+        $dom = new DomDocument();
+        $dom->load($url);
+        $dom->save("test.xml");
+        foreach ($dom->getElementsByTagName("result") as $result){
+            $this->search_results[] = array(
+                'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+                'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
+                'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
+                'displayUrl' => $result->getElementsByTagName('dispurl')->item(0)->nodeValue,
+                );
+        }
     }
 
-    private function executeBing() {
-        $this->search_results[] = array('title' => "Recherche bing 1", 'content' =>"Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche bing 2', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche bing 3', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche bing 4', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche bing 5', "content" => "Blablablabla blablabla");
-        $this->search_results[] = array('title' => 'Recherche bing 6', "content" => "Blablablabla blablabla");
-
+     private function executeNews($min = 0) {
+        $url = "http://boss.yahooapis.com/ysearch/news/v1/" .urlencode($this->search_text);
+        $url .= "?appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--";
+        $url .= "&format=xml";
+        $url .= "&start=".$min;
+        $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
+        $url .= "&lang=fr";
+        $url .= "&region=fr";
+//        die($url);
+        $dom = new DomDocument();
+        $dom->load($url);
+        $dom->save("test.xml");
+        foreach ($dom->getElementsByTagName("result") as $result){
+            $this->search_results[] = array(
+                'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+                'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
+                'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
+                'source' => $result->getElementsByTagName('source')->item(0)->nodeValue,
+                'source_url' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
+                );
+        }
     }
 }
+//<source>Fox News</source>
+//      <sourceurl>http://www.foxnews.com/</sourceurl>
 ?>

@@ -19,10 +19,10 @@ class ajaxActions extends sfActions
   {
       $params = $request->getParameterHolder();
       $min = $params->get('nb_items_affiche');
-      $max = $min + sfConfig::get('app_max_item_search');
+//      $max = $min + sfConfig::get('app_max_item_search');
       $text = $params->get('text_search');
       $moteur = $params->get('moteur_search');
       $engine = new SearchEngine($text, $moteur);
-      $this->results = $engine->getResults($min, $max);
+      $this->results = $engine->getResults($min);
   }
 }

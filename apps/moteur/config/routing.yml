@@ -10,16 +10,17 @@ sf_guard_password:
   url:   /request_password
   param: { module: sfGuardAuth, action: password }
 
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
 ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
   
-# default rules
 homepage:
   url:   /
   param: { module: recherche, action: index }
+
+plantation:
+  url: /plantation/*
+  param: { module: gmap, action: index}
 
 # generic rules
 # please, remove them by adding more specific rules

@@ -71,9 +71,8 @@ abstract class Basearticle extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('article_categorie', array(
-             'refClass' => 'article_categorie',
-             'local' => 'article_id',
-             'foreign' => 'id'));
+             'local' => 'id',
+             'foreign' => 'article_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $i18n0 = new Doctrine_Template_I18n(array(

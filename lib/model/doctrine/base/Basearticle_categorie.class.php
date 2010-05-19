@@ -9,21 +9,15 @@
  * @property integer $article_id
  * @property categorie $categorie
  * @property article $article
- * @property Doctrine_Collection $Articles
- * @property Doctrine_Collection $Categories
  * 
- * @method integer             getCategorieId()  Returns the current record's "categorie_id" value
- * @method integer             getArticleId()    Returns the current record's "article_id" value
- * @method categorie           getCategorie()    Returns the current record's "categorie" value
- * @method article             getArticle()      Returns the current record's "article" value
- * @method Doctrine_Collection getArticles()     Returns the current record's "Articles" collection
- * @method Doctrine_Collection getCategories()   Returns the current record's "Categories" collection
- * @method article_categorie   setCategorieId()  Sets the current record's "categorie_id" value
- * @method article_categorie   setArticleId()    Sets the current record's "article_id" value
- * @method article_categorie   setCategorie()    Sets the current record's "categorie" value
- * @method article_categorie   setArticle()      Sets the current record's "article" value
- * @method article_categorie   setArticles()     Sets the current record's "Articles" collection
- * @method article_categorie   setCategories()   Sets the current record's "Categories" collection
+ * @method integer           getCategorieId()  Returns the current record's "categorie_id" value
+ * @method integer           getArticleId()    Returns the current record's "article_id" value
+ * @method categorie         getCategorie()    Returns the current record's "categorie" value
+ * @method article           getArticle()      Returns the current record's "article" value
+ * @method article_categorie setCategorieId()  Sets the current record's "categorie_id" value
+ * @method article_categorie setArticleId()    Sets the current record's "article_id" value
+ * @method article_categorie setCategorie()    Sets the current record's "categorie" value
+ * @method article_categorie setArticle()      Sets the current record's "article" value
  * 
  * @package    up2green
  * @subpackage model
@@ -64,15 +58,5 @@ abstract class Basearticle_categorie extends sfDoctrineRecord
              'local' => 'article_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
-
-        $this->hasMany('article as Articles', array(
-             'refClass' => 'article_categorie',
-             'local' => 'id',
-             'foreign' => 'article_id'));
-
-        $this->hasMany('categorie as Categories', array(
-             'refClass' => 'article_categorie',
-             'local' => 'id',
-             'foreign' => 'categorie_id'));
     }
 }

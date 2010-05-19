@@ -267,13 +267,7 @@ article:
     is_active:
       type: boolean
       default: 0
-  relations:
-    article_categorie:
-      local: article_id
-      foreign: id
-      refClass: article_categorie
-      foreignAlias: Articles
-      
+
 categorie:
   actAs: 
     I18n:
@@ -290,12 +284,6 @@ categorie:
       notnull: true
     parent_id:
       type: integer(4)
-  relations:
-    article_categorie:
-      local: categorie_id
-      foreign: id
-      refClass: article_categorie
-      foreignAlias: Categories
 
 article_categorie:
   options:

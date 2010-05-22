@@ -14,6 +14,7 @@
  * @property string $longitude
  * @property string $geoloc
  * @property boolean $is_active
+ * @property integer $max_tree
  * @property organisme $organisme
  * @property Doctrine_Collection $ProgrammeTrees
  * 
@@ -26,6 +27,7 @@
  * @method string              getLongitude()      Returns the current record's "longitude" value
  * @method string              getGeoloc()         Returns the current record's "geoloc" value
  * @method boolean             getIsActive()       Returns the current record's "is_active" value
+ * @method integer             getMaxTree()        Returns the current record's "max_tree" value
  * @method organisme           getOrganisme()      Returns the current record's "organisme" value
  * @method Doctrine_Collection getProgrammeTrees() Returns the current record's "ProgrammeTrees" collection
  * @method programme           setId()             Sets the current record's "id" value
@@ -37,6 +39,7 @@
  * @method programme           setLongitude()      Sets the current record's "longitude" value
  * @method programme           setGeoloc()         Sets the current record's "geoloc" value
  * @method programme           setIsActive()       Sets the current record's "is_active" value
+ * @method programme           setMaxTree()        Sets the current record's "max_tree" value
  * @method programme           setOrganisme()      Sets the current record's "organisme" value
  * @method programme           setProgrammeTrees() Sets the current record's "ProgrammeTrees" collection
  * 
@@ -87,6 +90,11 @@ abstract class Baseprogramme extends sfDoctrineRecord
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 1,
+             ));
+        $this->hasColumn('max_tree', 'integer', 4, array(
+             'type' => 'integer',
+             'notnull' => true,
+             'length' => 4,
              ));
     }
 

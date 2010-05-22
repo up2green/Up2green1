@@ -181,6 +181,9 @@ programme:
     is_active:
       type: boolean
       default: 1
+    max_tree:
+      type: integer(4)
+      notnull: true
   relations:
     organisme:
       class: organisme
@@ -195,8 +198,6 @@ tree:
       type: integer(4)
       primary: true
       autoincrement: true
-    cost:
-      type: string(45)    
 
 tree_programme:
   columns:
@@ -255,6 +256,9 @@ article:
       type: integer(4)
       primary: true
       autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
     title:
       type: string(255)
       notnull: true
@@ -267,45 +271,6 @@ article:
     is_active:
       type: boolean
       default: 0
-
-categorie:
-  actAs: 
-    I18n:
-      fields: [name]
-      actAs:
-        Sluggable: { fields: [name], uniqueBy: [lang, name] }
-  columns:
-    id:
-      type: integer(4)
-      primary: true
-      autoincrement: true
-    name:
-      type: string(128)
-      notnull: true
-    parent_id:
-      type: integer(4)
-
-article_categorie:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    categorie_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    article_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-  relations:
-    categorie:
-      local: categorie_id
-      onDelete: CASCADE
-    article:
-      local: article_id
-      onDelete: CASCADE
 
 newsletter:
   actAs: 
@@ -337,3 +302,264 @@ newsletter:
       default: 0
     sent_at:
       type: timestamp
+
+lien:
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+      notnull: true
+    src:
+      type: string(255)
+    is_active:
+      type: boolean
+      default: 0 
+
+categorie:
+  actAs: 
+    I18n:
+      fields: [name]
+      actAs:
+        Sluggable: { fields: [name], uniqueBy: [lang, name] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    parent_id:
+      type: integer(4)
+    is_active:
+      type: boolean
+      default: 1
+
+lien_categorie:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    categorie_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    lien_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    categorie:
+      local: categorie_id
+      onDelete: CASCADE
+    lien:
+      local: lien_id
+      onDelete: CASCADE
+
+article_categorie:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    categorie_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    article_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    categorie:
+      local: categorie_id
+      onDelete: CASCADE
+    article:
+      local: article_id
+      onDelete: CASCADE
+      
+newsletter_categorie:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    categorie_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    newsletter_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    categorie:
+      local: categorie_id
+      onDelete: CASCADE
+    newsletter:
+      local: newsletter_id
+      onDelete: CASCADE
+
+layout:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    unique_name:
+      type: string(128)
+      notnull: true
+      unique: true
+
+zone:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    unique_name:
+      type: string(128)
+      notnull: true
+      unique: true
+
+module:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    content_id:
+      type: string(128)
+      notnull: true
+    content_type:
+      type: enum
+      values: [categorie, lien, article, newsletter, programme, organisme, gmap, recherche, user, sgGuardAuth]
+    is_active:
+      type: boolean
+      default: 0
+    action:
+      type: string(128)
+    user_access:
+      type: string(128)
+      
+content: 
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true 
+    layout_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    zone_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    module_id:
+      type: integer(4)
+      primary: true
+      notnull: true      
+  relations:
+    layout:
+      class: layout
+      local: layout_id
+      foreign: id
+      foreignAlias: LayoutContents
+    zone:
+      class: zone
+      local: zone_id
+      foreign: id
+      foreignAlias: ZoneContents
+    module:
+      local: module_id
+      onDelete: CASCADE
+      
+engine:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    url:
+      type: string(128)
+      notnull: true      
+    html:
+      type: string(128)
+      notnull: true
+    description:
+      type: string(128)
+    remun_type:
+      type: enum
+      values: [number, pourcent, price]
+    remun_min:
+      type: integer(4)
+      notnull: true
+      default: 0      
+    remun_max:
+      type: integer(4)
+      notnull: true
+    rank:
+      type: integer(4)
+      notnull: true
+      
+tag:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    label:
+      type: string(255)
+      notnull: true
+      unique: true
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 0
+    is_active:
+      type: boolean
+      default: 1 
+            
+engine_tag:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    engine_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    tag_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    engine:
+      local: engine_id
+      onDelete: CASCADE
+    tag:
+      local: tag_id
+      onDelete: CASCADE

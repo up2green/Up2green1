@@ -50,9 +50,8 @@ abstract class Basecategorie extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('article_categorie', array(
-             'refClass' => 'article_categorie',
-             'local' => 'categorie_id',
-             'foreign' => 'id'));
+             'local' => 'id',
+             'foreign' => 'categorie_id'));
 
         $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 

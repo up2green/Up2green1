@@ -53,6 +53,10 @@ profil:
       type: integer(4)
       notnull: true
       unique: true
+    mail:
+      type: string(50)
+      notnull: true
+      unique: true
     credit:
       type: integer(4)
       notnull: true

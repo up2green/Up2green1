@@ -13,13 +13,13 @@ abstract class BasecategorieFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'parent_id'              => new sfWidgetFormFilterInput(),
-      'article_categorie_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'article_categorie')),
+      'parent_id' => new sfWidgetFormFilterInput(),
+      'is_active' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
-      'parent_id'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'article_categorie_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'article_categorie', 'required' => false)),
+      'parent_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'is_active' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('categorie_filters[%s]');
@@ -31,22 +31,6 @@ abstract class BasecategorieFormFilter extends BaseFormFilterDoctrine
     parent::setup();
   }
 
-  public function addArticleCategorieListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query->leftJoin('r.article_categorie article_categorie')
-          ->andWhereIn('article_categorie.id', $values);
-  }
-
   public function getModelName()
   {
     return 'categorie';
@@ -55,9 +39,9 @@ abstract class BasecategorieFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'                     => 'Number',
-      'parent_id'              => 'Number',
-      'article_categorie_list' => 'ManyKey',
+      'id'        => 'Number',
+      'parent_id' => 'Number',
+      'is_active' => 'Boolean',
     );
   }
 }

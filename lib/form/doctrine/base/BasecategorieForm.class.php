@@ -17,11 +17,13 @@ abstract class BasecategorieForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'        => new sfWidgetFormInputHidden(),
       'parent_id' => new sfWidgetFormInputText(),
+      'is_active' => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
       'id'        => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
       'parent_id' => new sfValidatorInteger(array('required' => false)),
+      'is_active' => new sfValidatorBoolean(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('categorie[%s]');

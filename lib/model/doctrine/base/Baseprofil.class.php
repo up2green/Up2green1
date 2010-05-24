@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property integer $user_id
+ * @property string $mail
  * @property integer $credit
  * @property integer $is_newsletter
  * @property string $culture
@@ -14,12 +15,14 @@
  * 
  * @method integer     getId()            Returns the current record's "id" value
  * @method integer     getUserId()        Returns the current record's "user_id" value
+ * @method string      getMail()          Returns the current record's "mail" value
  * @method integer     getCredit()        Returns the current record's "credit" value
  * @method integer     getIsNewsletter()  Returns the current record's "is_newsletter" value
  * @method string      getCulture()       Returns the current record's "culture" value
  * @method sfGuardUser getSfGuardUser()   Returns the current record's "sfGuardUser" value
  * @method profil      setId()            Sets the current record's "id" value
  * @method profil      setUserId()        Sets the current record's "user_id" value
+ * @method profil      setMail()          Sets the current record's "mail" value
  * @method profil      setCredit()        Sets the current record's "credit" value
  * @method profil      setIsNewsletter()  Sets the current record's "is_newsletter" value
  * @method profil      setCulture()       Sets the current record's "culture" value
@@ -46,6 +49,12 @@ abstract class Baseprofil extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 4,
+             ));
+        $this->hasColumn('mail', 'string', 50, array(
+             'type' => 'string',
+             'notnull' => true,
+             'unique' => true,
+             'length' => 50,
              ));
         $this->hasColumn('credit', 'integer', 4, array(
              'type' => 'integer',

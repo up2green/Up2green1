@@ -14,6 +14,7 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
+      'mail'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'credit'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_newsletter' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'culture'       => new sfWidgetFormFilterInput(),
@@ -21,6 +22,7 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'user_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
+      'mail'          => new sfValidatorPass(array('required' => false)),
       'credit'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_newsletter' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'culture'       => new sfValidatorPass(array('required' => false)),
@@ -45,6 +47,7 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'            => 'Number',
       'user_id'       => 'ForeignKey',
+      'mail'          => 'Text',
       'credit'        => 'Number',
       'is_newsletter' => 'Number',
       'culture'       => 'Text',

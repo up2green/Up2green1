@@ -21,6 +21,7 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
       'longitude'    => new sfWidgetFormInputText(),
       'geoloc'       => new sfWidgetFormInputText(),
       'is_active'    => new sfWidgetFormInputCheckbox(),
+      'max_tree'     => new sfWidgetFormInputText(),
       'created_at'   => new sfWidgetFormDateTime(),
       'updated_at'   => new sfWidgetFormDateTime(),
     ));
@@ -32,6 +33,7 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
       'longitude'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'geoloc'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'is_active'    => new sfValidatorBoolean(array('required' => false)),
+      'max_tree'     => new sfValidatorInteger(),
       'created_at'   => new sfValidatorDateTime(),
       'updated_at'   => new sfValidatorDateTime(),
     ));

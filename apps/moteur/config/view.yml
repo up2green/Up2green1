@@ -12,7 +12,7 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css, moteur2.css]
+  stylesheets:    [main.css, moteur.css]
 
   javascripts:    [jquery-1.4.2.js, moteur.js]
 

@@ -16,7 +16,7 @@
  * @property boolean $is_active
  * @property integer $max_tree
  * @property organisme $organisme
- * @property Doctrine_Collection $ProgrammeTrees
+ * @property Doctrine_Collection $programmeTrees
  * 
  * @method integer             getId()             Returns the current record's "id" value
  * @method integer             getOrganismeId()    Returns the current record's "organisme_id" value
@@ -29,7 +29,7 @@
  * @method boolean             getIsActive()       Returns the current record's "is_active" value
  * @method integer             getMaxTree()        Returns the current record's "max_tree" value
  * @method organisme           getOrganisme()      Returns the current record's "organisme" value
- * @method Doctrine_Collection getProgrammeTrees() Returns the current record's "ProgrammeTrees" collection
+ * @method Doctrine_Collection getProgrammeTrees() Returns the current record's "programmeTrees" collection
  * @method programme           setId()             Sets the current record's "id" value
  * @method programme           setOrganismeId()    Sets the current record's "organisme_id" value
  * @method programme           setTitle()          Sets the current record's "title" value
@@ -41,7 +41,7 @@
  * @method programme           setIsActive()       Sets the current record's "is_active" value
  * @method programme           setMaxTree()        Sets the current record's "max_tree" value
  * @method programme           setOrganisme()      Sets the current record's "organisme" value
- * @method programme           setProgrammeTrees() Sets the current record's "ProgrammeTrees" collection
+ * @method programme           setProgrammeTrees() Sets the current record's "programmeTrees" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -105,7 +105,7 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'local' => 'organisme_id',
              'foreign' => 'id'));
 
-        $this->hasMany('tree_programme as ProgrammeTrees', array(
+        $this->hasMany('treeProgramme as programmeTrees', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 

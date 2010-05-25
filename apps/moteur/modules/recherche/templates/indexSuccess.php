@@ -23,37 +23,75 @@
             </div>
             <div class="more_search">
                 <div class="filtres">
-                    <input type="radio" name="recherche_moteur" value="<?php echo SearchEngine::WEB ?>" <?php echo ($moteur == SearchEngine::WEB ? "SELECTED" : "") ?> />Web
-                    <input type="radio" name="recherche_moteur" value="<?php echo SearchEngine::IMG ?>" <?php echo ($moteur == SearchEngine::IMG ? "SELECTED" : "") ?> />Images
-                    <input type="radio" name="recherche_moteur" value="<?php echo SearchEngine::NEWS ?>" <?php echo ($moteur == SearchEngine::NEWS ? "SELECTED" : "") ?> />Actualités
+                    <a href="#">
+                        <div class="onglet_recherches">
+                            <div class="onglet_left"></div>
+                            <div class="onglet_middle">Web</div>
+                            <div class="onglet_right"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="onglet_recherches">
+                            <div class="onglet_left"></div>
+                            <div class="onglet_middle">News</div>
+                            <div class="onglet_right"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="onglet_recherches">
+                            <div class="onglet_left"></div>
+                            <div class="onglet_middle">Images</div>
+                            <div class="onglet_right"></div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="onglet_recherches">
+                            <div class="onglet_left"></div>
+                            <div class="onglet_middle">Vidéos</div>
+                            <div class="onglet_right"></div>
+                        </div>
+                        <div class="onglet_decoration"></div>
+                    </a>
                 </div>
                 <div class="avancees"><a href="#">Recherches Avancées</a></div>
+
             </div>
         </form>
         <div class="menu_centre">
             <div class="acteur">
-                <div class="head_acteur">devenez acteur de la reforestation</div>
+                <div class="head_acteur"><div class="titre_acteur">Devenez acteur de la reforestation</div></div>
                 <div class="corps_acteur">
                     <div class="contenus_acteur">
-														créez un compte et plantez vous même vos arbres sur la planète dans les programmes de reforestations partenaires !<br/>
-														C’est simple et gratuit, vous pourrez gérer vos coupons arbres, participer en profitants de nos offres ou bien offrir vos coupons.
+                        <p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
+                        <p>
+                            Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que
+                            nous soutenons
+                        </p>
 
                     </div>
-                    <a href="#"><div class="btn_add_acteur"></div></a>
+                    <a href="#"><div class="btn_add_acteur"><p>Créer un compte maintenant ! </p></div></a>
+                    <a href="#"><div class="btn_fav_browser"><p>Définir Up2green comme moteur<br/>de recherche par defaut</p></div></a>
                 </div>
                 <div class="pied_acteur"></div>
             </div>
             <div class="statistiques">
-                <div class="head_stats">Statistiques</div>
+                <div class="head_stats"><div class="titre_stats">Statistiques</div></div>
                 <div class="corps_stats">
                     <div class="maps"></div>
-                    <div class="results_stats">Arbres plantés : 1353
-                        <br/>451 011 534 g. de CO</div>
-                    <a href="#"><div class="btn_entreprise"></div></a>
-                    <div class="link_add_part">Contactez-nous
-                        pour devenir partenaire</div>
+                    <div class="results_stats">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</div>
+                    <a href="#"><div class="help_stats"></div></a>
                 </div>
                 <div class="pied_stats"></div>
+
+                <div class="head_partenaires"><div class="titre_partenaires">Partenaires</div></div>
+                <div class="corps_partenaires">
+                    <div class="contenus_partenaires">
+			Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</div>
+                    <div class="lien_partenaires righter"><a href="#">plus d'informations ici</a></div>
+
+                </div>
+                <div class="pied_partenaires">
+                </div>
             </div>
         </div>
     </div>

@@ -12,4 +12,5 @@
  */
 class coupon extends Basecoupon
 {
+
 }

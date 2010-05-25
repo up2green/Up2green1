@@ -12,4 +12,5 @@
  */
 class partenaire extends Basepartenaire
 {
+
 }

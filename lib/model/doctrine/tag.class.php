@@ -12,4 +12,5 @@
  */
 class tag extends Basetag
 {
+
 }

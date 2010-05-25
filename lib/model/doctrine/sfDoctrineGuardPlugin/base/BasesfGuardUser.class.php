@@ -18,10 +18,10 @@
  * @property Doctrine_Collection $sfGuardUserPermission
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
- * @property Doctrine_Collection $UserPartenaire
- * @property Doctrine_Collection $UserProfile
- * @property Doctrine_Collection $UserCoupons
- * @property Doctrine_Collection $UserTrees
+ * @property Doctrine_Collection $userPartenaire
+ * @property profil $userProfile
+ * @property Doctrine_Collection $userCoupons
+ * @property Doctrine_Collection $userTrees
  * 
  * @method integer             getId()                    Returns the current record's "id" value
  * @method string              getUsername()              Returns the current record's "username" value
@@ -36,10 +36,10 @@
  * @method Doctrine_Collection getSfGuardUserPermission() Returns the current record's "sfGuardUserPermission" collection
  * @method Doctrine_Collection getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey  getRememberKeys()          Returns the current record's "RememberKeys" value
- * @method Doctrine_Collection getUserPartenaire()        Returns the current record's "UserPartenaire" collection
- * @method Doctrine_Collection getUserProfile()           Returns the current record's "UserProfile" collection
- * @method Doctrine_Collection getUserCoupons()           Returns the current record's "UserCoupons" collection
- * @method Doctrine_Collection getUserTrees()             Returns the current record's "UserTrees" collection
+ * @method Doctrine_Collection getUserPartenaire()        Returns the current record's "userPartenaire" collection
+ * @method profil              getUserProfile()           Returns the current record's "userProfile" value
+ * @method Doctrine_Collection getUserCoupons()           Returns the current record's "userCoupons" collection
+ * @method Doctrine_Collection getUserTrees()             Returns the current record's "userTrees" collection
  * @method sfGuardUser         setId()                    Sets the current record's "id" value
  * @method sfGuardUser         setUsername()              Sets the current record's "username" value
  * @method sfGuardUser         setAlgorithm()             Sets the current record's "algorithm" value
@@ -53,10 +53,10 @@
  * @method sfGuardUser         setSfGuardUserPermission() Sets the current record's "sfGuardUserPermission" collection
  * @method sfGuardUser         setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser         setRememberKeys()          Sets the current record's "RememberKeys" value
- * @method sfGuardUser         setUserPartenaire()        Sets the current record's "UserPartenaire" collection
- * @method sfGuardUser         setUserProfile()           Sets the current record's "UserProfile" collection
- * @method sfGuardUser         setUserCoupons()           Sets the current record's "UserCoupons" collection
- * @method sfGuardUser         setUserTrees()             Sets the current record's "UserTrees" collection
+ * @method sfGuardUser         setUserPartenaire()        Sets the current record's "userPartenaire" collection
+ * @method sfGuardUser         setUserProfile()           Sets the current record's "userProfile" value
+ * @method sfGuardUser         setUserCoupons()           Sets the current record's "userCoupons" collection
+ * @method sfGuardUser         setUserTrees()             Sets the current record's "userTrees" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -140,19 +140,19 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('partenaire_user as UserPartenaire', array(
+        $this->hasMany('partenaireUser as userPartenaire', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('profil as UserProfile', array(
+        $this->hasOne('profil as userProfile', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('user_coupon as UserCoupons', array(
+        $this->hasMany('userCoupon as userCoupons', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('user_tree as UserTrees', array(
+        $this->hasMany('userTree as userTrees', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

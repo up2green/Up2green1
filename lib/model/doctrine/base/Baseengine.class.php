@@ -13,7 +13,7 @@
  * @property integer $remun_min
  * @property integer $remun_max
  * @property integer $rank
- * @property Doctrine_Collection $engine_tag
+ * @property Doctrine_Collection $engineTag
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getUrl()         Returns the current record's "url" value
@@ -23,7 +23,7 @@
  * @method integer             getRemunMin()    Returns the current record's "remun_min" value
  * @method integer             getRemunMax()    Returns the current record's "remun_max" value
  * @method integer             getRank()        Returns the current record's "rank" value
- * @method Doctrine_Collection getEngineTag()   Returns the current record's "engine_tag" collection
+ * @method Doctrine_Collection getEngineTag()   Returns the current record's "engineTag" collection
  * @method engine              setId()          Sets the current record's "id" value
  * @method engine              setUrl()         Sets the current record's "url" value
  * @method engine              setHtml()        Sets the current record's "html" value
@@ -32,7 +32,7 @@
  * @method engine              setRemunMin()    Sets the current record's "remun_min" value
  * @method engine              setRemunMax()    Sets the current record's "remun_max" value
  * @method engine              setRank()        Sets the current record's "rank" value
- * @method engine              setEngineTag()   Sets the current record's "engine_tag" collection
+ * @method engine              setEngineTag()   Sets the current record's "engineTag" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -94,7 +94,7 @@ abstract class Baseengine extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('engine_tag', array(
+        $this->hasMany('engineTag', array(
              'local' => 'id',
              'foreign' => 'engine_id'));
     }

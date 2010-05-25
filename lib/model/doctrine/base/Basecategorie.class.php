@@ -9,24 +9,24 @@
  * @property string $name
  * @property integer $parent_id
  * @property boolean $is_active
- * @property Doctrine_Collection $lien_categorie
- * @property Doctrine_Collection $article_categorie
- * @property Doctrine_Collection $newsletter_categorie
+ * @property Doctrine_Collection $lienCategorie
+ * @property Doctrine_Collection $articleCategorie
+ * @property Doctrine_Collection $newsletterCategorie
  * 
- * @method integer             getId()                   Returns the current record's "id" value
- * @method string              getName()                 Returns the current record's "name" value
- * @method integer             getParentId()             Returns the current record's "parent_id" value
- * @method boolean             getIsActive()             Returns the current record's "is_active" value
- * @method Doctrine_Collection getLienCategorie()        Returns the current record's "lien_categorie" collection
- * @method Doctrine_Collection getArticleCategorie()     Returns the current record's "article_categorie" collection
- * @method Doctrine_Collection getNewsletterCategorie()  Returns the current record's "newsletter_categorie" collection
- * @method categorie           setId()                   Sets the current record's "id" value
- * @method categorie           setName()                 Sets the current record's "name" value
- * @method categorie           setParentId()             Sets the current record's "parent_id" value
- * @method categorie           setIsActive()             Sets the current record's "is_active" value
- * @method categorie           setLienCategorie()        Sets the current record's "lien_categorie" collection
- * @method categorie           setArticleCategorie()     Sets the current record's "article_categorie" collection
- * @method categorie           setNewsletterCategorie()  Sets the current record's "newsletter_categorie" collection
+ * @method integer             getId()                  Returns the current record's "id" value
+ * @method string              getName()                Returns the current record's "name" value
+ * @method integer             getParentId()            Returns the current record's "parent_id" value
+ * @method boolean             getIsActive()            Returns the current record's "is_active" value
+ * @method Doctrine_Collection getLienCategorie()       Returns the current record's "lienCategorie" collection
+ * @method Doctrine_Collection getArticleCategorie()    Returns the current record's "articleCategorie" collection
+ * @method Doctrine_Collection getNewsletterCategorie() Returns the current record's "newsletterCategorie" collection
+ * @method categorie           setId()                  Sets the current record's "id" value
+ * @method categorie           setName()                Sets the current record's "name" value
+ * @method categorie           setParentId()            Sets the current record's "parent_id" value
+ * @method categorie           setIsActive()            Sets the current record's "is_active" value
+ * @method categorie           setLienCategorie()       Sets the current record's "lienCategorie" collection
+ * @method categorie           setArticleCategorie()    Sets the current record's "articleCategorie" collection
+ * @method categorie           setNewsletterCategorie() Sets the current record's "newsletterCategorie" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -62,15 +62,15 @@ abstract class Basecategorie extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('lien_categorie', array(
+        $this->hasMany('lienCategorie', array(
              'local' => 'id',
              'foreign' => 'categorie_id'));
 
-        $this->hasMany('article_categorie', array(
+        $this->hasMany('articleCategorie', array(
              'local' => 'id',
              'foreign' => 'categorie_id'));
 
-        $this->hasMany('newsletter_categorie', array(
+        $this->hasMany('newsletterCategorie', array(
              'local' => 'id',
              'foreign' => 'categorie_id'));
 

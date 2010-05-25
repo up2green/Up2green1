@@ -12,7 +12,7 @@
  * @property string $accroche
  * @property clob $description
  * @property string $logo
- * @property Doctrine_Collection $ProgrammeOrganisme
+ * @property Doctrine_Collection $programmeOrganisme
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method string              getName()               Returns the current record's "name" value
@@ -21,7 +21,7 @@
  * @method string              getAccroche()           Returns the current record's "accroche" value
  * @method clob                getDescription()        Returns the current record's "description" value
  * @method string              getLogo()               Returns the current record's "logo" value
- * @method Doctrine_Collection getProgrammeOrganisme() Returns the current record's "ProgrammeOrganisme" collection
+ * @method Doctrine_Collection getProgrammeOrganisme() Returns the current record's "programmeOrganisme" collection
  * @method organisme           setId()                 Sets the current record's "id" value
  * @method organisme           setName()               Sets the current record's "name" value
  * @method organisme           setUrl()                Sets the current record's "url" value
@@ -29,7 +29,7 @@
  * @method organisme           setAccroche()           Sets the current record's "accroche" value
  * @method organisme           setDescription()        Sets the current record's "description" value
  * @method organisme           setLogo()               Sets the current record's "logo" value
- * @method organisme           setProgrammeOrganisme() Sets the current record's "ProgrammeOrganisme" collection
+ * @method organisme           setProgrammeOrganisme() Sets the current record's "programmeOrganisme" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -78,7 +78,7 @@ abstract class Baseorganisme extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('programme as ProgrammeOrganisme', array(
+        $this->hasMany('programme as programmeOrganisme', array(
              'local' => 'id',
              'foreign' => 'organisme_id'));
 

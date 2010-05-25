@@ -12,7 +12,7 @@
  * @property boolean $is_used
  * @property timestamp $used_at
  * @property integer $used_by
- * @property Doctrine_Collection $CouponUser
+ * @property Doctrine_Collection $couponUser
  * 
  * @method integer             getId()         Returns the current record's "id" value
  * @method string              getCode()       Returns the current record's "code" value
@@ -21,7 +21,7 @@
  * @method boolean             getIsUsed()     Returns the current record's "is_used" value
  * @method timestamp           getUsedAt()     Returns the current record's "used_at" value
  * @method integer             getUsedBy()     Returns the current record's "used_by" value
- * @method Doctrine_Collection getCouponUser() Returns the current record's "CouponUser" collection
+ * @method Doctrine_Collection getCouponUser() Returns the current record's "couponUser" collection
  * @method coupon              setId()         Sets the current record's "id" value
  * @method coupon              setCode()       Sets the current record's "code" value
  * @method coupon              setCredit()     Sets the current record's "credit" value
@@ -29,7 +29,7 @@
  * @method coupon              setIsUsed()     Sets the current record's "is_used" value
  * @method coupon              setUsedAt()     Sets the current record's "used_at" value
  * @method coupon              setUsedBy()     Sets the current record's "used_by" value
- * @method coupon              setCouponUser() Sets the current record's "CouponUser" collection
+ * @method coupon              setCouponUser() Sets the current record's "couponUser" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -79,7 +79,7 @@ abstract class Basecoupon extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('user_coupon as CouponUser', array(
+        $this->hasMany('userCoupon as couponUser', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 

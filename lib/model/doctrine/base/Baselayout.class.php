@@ -8,16 +8,16 @@
  * @property integer $id
  * @property string $name
  * @property string $unique_name
- * @property Doctrine_Collection $LayoutContents
+ * @property Doctrine_Collection $layoutContents
  * 
  * @method integer             getId()             Returns the current record's "id" value
  * @method string              getName()           Returns the current record's "name" value
  * @method string              getUniqueName()     Returns the current record's "unique_name" value
- * @method Doctrine_Collection getLayoutContents() Returns the current record's "LayoutContents" collection
+ * @method Doctrine_Collection getLayoutContents() Returns the current record's "layoutContents" collection
  * @method layout              setId()             Sets the current record's "id" value
  * @method layout              setName()           Sets the current record's "name" value
  * @method layout              setUniqueName()     Sets the current record's "unique_name" value
- * @method layout              setLayoutContents() Sets the current record's "LayoutContents" collection
+ * @method layout              setLayoutContents() Sets the current record's "layoutContents" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -51,7 +51,7 @@ abstract class Baselayout extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('content as LayoutContents', array(
+        $this->hasMany('content as layoutContents', array(
              'local' => 'id',
              'foreign' => 'layout_id'));
 

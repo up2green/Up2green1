@@ -9,18 +9,18 @@
  * @property string $label
  * @property integer $rank
  * @property boolean $is_active
- * @property Doctrine_Collection $engine_tag
+ * @property Doctrine_Collection $engineTag
  * 
- * @method integer             getId()         Returns the current record's "id" value
- * @method string              getLabel()      Returns the current record's "label" value
- * @method integer             getRank()       Returns the current record's "rank" value
- * @method boolean             getIsActive()   Returns the current record's "is_active" value
- * @method Doctrine_Collection getEngineTag()  Returns the current record's "engine_tag" collection
- * @method tag                 setId()         Sets the current record's "id" value
- * @method tag                 setLabel()      Sets the current record's "label" value
- * @method tag                 setRank()       Sets the current record's "rank" value
- * @method tag                 setIsActive()   Sets the current record's "is_active" value
- * @method tag                 setEngineTag()  Sets the current record's "engine_tag" collection
+ * @method integer             getId()        Returns the current record's "id" value
+ * @method string              getLabel()     Returns the current record's "label" value
+ * @method integer             getRank()      Returns the current record's "rank" value
+ * @method boolean             getIsActive()  Returns the current record's "is_active" value
+ * @method Doctrine_Collection getEngineTag() Returns the current record's "engineTag" collection
+ * @method tag                 setId()        Sets the current record's "id" value
+ * @method tag                 setLabel()     Sets the current record's "label" value
+ * @method tag                 setRank()      Sets the current record's "rank" value
+ * @method tag                 setIsActive()  Sets the current record's "is_active" value
+ * @method tag                 setEngineTag() Sets the current record's "engineTag" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -59,7 +59,7 @@ abstract class Basetag extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('engine_tag', array(
+        $this->hasMany('engineTag', array(
              'local' => 'id',
              'foreign' => 'tag_id'));
 

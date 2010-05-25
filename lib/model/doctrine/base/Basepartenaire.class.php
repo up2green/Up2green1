@@ -10,20 +10,20 @@
  * @property string $accroche
  * @property clob $description
  * @property string $url
- * @property Doctrine_Collection $PartenaireUsers
+ * @property Doctrine_Collection $partenaireUsers
  * 
  * @method integer             getId()              Returns the current record's "id" value
  * @method string              getTitle()           Returns the current record's "title" value
  * @method string              getAccroche()        Returns the current record's "accroche" value
  * @method clob                getDescription()     Returns the current record's "description" value
  * @method string              getUrl()             Returns the current record's "url" value
- * @method Doctrine_Collection getPartenaireUsers() Returns the current record's "PartenaireUsers" collection
+ * @method Doctrine_Collection getPartenaireUsers() Returns the current record's "partenaireUsers" collection
  * @method partenaire          setId()              Sets the current record's "id" value
  * @method partenaire          setTitle()           Sets the current record's "title" value
  * @method partenaire          setAccroche()        Sets the current record's "accroche" value
  * @method partenaire          setDescription()     Sets the current record's "description" value
  * @method partenaire          setUrl()             Sets the current record's "url" value
- * @method partenaire          setPartenaireUsers() Sets the current record's "PartenaireUsers" collection
+ * @method partenaire          setPartenaireUsers() Sets the current record's "partenaireUsers" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -62,7 +62,7 @@ abstract class Basepartenaire extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('partenaire_user as PartenaireUsers', array(
+        $this->hasMany('partenaireUser as partenaireUsers', array(
              'local' => 'id',
              'foreign' => 'partenaire_id'));
 

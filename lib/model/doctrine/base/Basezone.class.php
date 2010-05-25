@@ -8,16 +8,16 @@
  * @property integer $id
  * @property string $name
  * @property string $unique_name
- * @property Doctrine_Collection $ZoneContents
+ * @property Doctrine_Collection $zoneContents
  * 
  * @method integer             getId()           Returns the current record's "id" value
  * @method string              getName()         Returns the current record's "name" value
  * @method string              getUniqueName()   Returns the current record's "unique_name" value
- * @method Doctrine_Collection getZoneContents() Returns the current record's "ZoneContents" collection
+ * @method Doctrine_Collection getZoneContents() Returns the current record's "zoneContents" collection
  * @method zone                setId()           Sets the current record's "id" value
  * @method zone                setName()         Sets the current record's "name" value
  * @method zone                setUniqueName()   Sets the current record's "unique_name" value
- * @method zone                setZoneContents() Sets the current record's "ZoneContents" collection
+ * @method zone                setZoneContents() Sets the current record's "zoneContents" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -51,7 +51,7 @@ abstract class Basezone extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('content as ZoneContents', array(
+        $this->hasMany('content as zoneContents', array(
              'local' => 'id',
              'foreign' => 'zone_id'));
 

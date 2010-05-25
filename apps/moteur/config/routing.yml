@@ -1,3 +1,7 @@
+user_forgot_password:
+  url:   /forgotpwd
+  param: { module: user, action: forgotPassword }
+
 sf_guard_signin:
   url:   /login
   param: { module: sfGuardAuth, action: signin }
@@ -24,9 +28,9 @@ plantation:
 
 # generic rules
 # please, remove them by adding more specific rules
-#default_index:
-#  url:   /:module
-#  param: { action: index }
-#
-#default:
-#  url:   /:module/:action/*
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

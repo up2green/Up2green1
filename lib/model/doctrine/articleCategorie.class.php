@@ -12,4 +12,5 @@
  */
 class articleCategorie extends BasearticleCategorie
 {
+
 }

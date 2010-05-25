@@ -12,4 +12,5 @@
  */
 class lienCategorie extends BaselienCategorie
 {
+
 }

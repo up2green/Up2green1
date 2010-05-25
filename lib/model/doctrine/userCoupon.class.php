@@ -12,4 +12,5 @@
  */
 class userCoupon extends BaseuserCoupon
 {
+
 }

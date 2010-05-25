@@ -12,4 +12,5 @@
  */
 class module extends Basemodule
 {
+
 }

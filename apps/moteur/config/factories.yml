@@ -7,6 +7,9 @@ prod:
     param:
       level:   err
       loggers: ~
+  mailer:
+    param:
+      delivery_strategy: none
 
 test:
   storage:
@@ -27,6 +30,8 @@ dev:
   mailer:
     param:
       delivery_strategy: none
+  
+
 
 all:
   routing:
@@ -39,4 +44,5 @@ all:
     class: sfViewCacheManager
     param:
       cache_key_use_vary_headers: true
-      cache_key_use_host_name:    true
+      cache_key_use_host_name:
+

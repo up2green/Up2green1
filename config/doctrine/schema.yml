@@ -20,7 +20,7 @@ partenaire:
       type: string(150)
       default: null
 
-partenaire_user:
+partenaireUser:
   columns:
     partenaire_id:
       type: integer(4)
@@ -35,12 +35,12 @@ partenaire_user:
       class: sfGuardUser
       local: user_id
       foreign: id
-      foreignAlias: UserPartenaire
+      foreignAlias: userPartenaire
     partenaire:
       class: partenaire
       local: partenaire_id
       foreign: id
-      foreignAlias: PartenaireUsers
+      foreignAlias: partenaireUsers
       
 profil:
   columns:
@@ -73,7 +73,8 @@ profil:
       local: user_id
       foreign: id
       onDelete: CASCADE
-      foreignAlias: UserProfile
+      foreignType:  one
+      foreignAlias: userProfile
 
 coupon:
   actAs: [Timestampable]
@@ -103,7 +104,7 @@ coupon:
       type: integer(4)
       default: null
 
-user_coupon:
+userCoupon:
   columns:
     user_id:
       type: integer(4)
@@ -118,12 +119,12 @@ user_coupon:
       local: user_id
       foreign: id
       onDelete: CASCADE
-      foreignAlias: UserCoupons
+      foreignAlias: userCoupons
     coupon:
       class: coupon
       local: coupon_id
       foreign: id
-      foreignAlias: CouponUser
+      foreignAlias: couponUser
 
 organisme:
   actAs: 
@@ -193,7 +194,7 @@ programme:
       class: organisme
       local: organisme_id
       foreign: id
-      foreignAlias: ProgrammeOrganisme
+      foreignAlias: programmeOrganisme
 
 tree:
   actAs: [Timestampable]
@@ -203,7 +204,7 @@ tree:
       primary: true
       autoincrement: true
 
-tree_programme:
+treeProgramme:
   columns:
     programme_id:
       type: integer(4)
@@ -218,14 +219,14 @@ tree_programme:
       class: tree
       local: tree_id
       foreign: id
-      foreignAlias: TreeProgramme
+      foreignAlias: treeProgramme
     programme:
       class: programme
       local: programme_id
       foreign: id
-      foreignAlias: ProgrammeTrees
+      foreignAlias: programmeTrees
 
-user_tree:
+userTree:
   columns:
     user_id:
       type: integer(4)
@@ -241,12 +242,12 @@ user_tree:
       local: user_id
       foreign: id
       onDelete: CASCADE
-      foreignAlias: UserTrees
+      foreignAlias: userTrees
     tree:
       class: tree
       local: tree_id
       foreign: id
-      foreignAlias: UserTree
+      foreignAlias: userTree
 
 article:
   actAs: 
@@ -348,7 +349,7 @@ categorie:
       type: boolean
       default: 1
 
-lien_categorie:
+lienCategorie:
   options:
     symfony:
       form:   false
@@ -370,7 +371,7 @@ lien_categorie:
       local: lien_id
       onDelete: CASCADE
 
-article_categorie:
+articleCategorie:
   options:
     symfony:
       form:   false
@@ -392,7 +393,7 @@ article_categorie:
       local: article_id
       onDelete: CASCADE
       
-newsletter_categorie:
+newsletterCategorie:
   options:
     symfony:
       form:   false
@@ -489,12 +490,12 @@ content:
       class: layout
       local: layout_id
       foreign: id
-      foreignAlias: LayoutContents
+      foreignAlias: layoutContents
     zone:
       class: zone
       local: zone_id
       foreign: id
-      foreignAlias: ZoneContents
+      foreignAlias: zoneContents
     module:
       local: module_id
       onDelete: CASCADE
@@ -546,7 +547,7 @@ tag:
       type: boolean
       default: 1 
             
-engine_tag:
+engineTag:
   options:
     symfony:
       form:   false

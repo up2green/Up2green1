@@ -15,24 +15,30 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'reply_to'   => new sfWidgetFormInputText(),
-      'email_from' => new sfWidgetFormInputText(),
-      'is_forced'  => new sfWidgetFormInputText(),
-      'sent_at'    => new sfWidgetFormDateTime(),
-      'created_at' => new sfWidgetFormDateTime(),
-      'updated_at' => new sfWidgetFormDateTime(),
+      'id'          => new sfWidgetFormInputHidden(),
+      'unique_name' => new sfWidgetFormInputText(),
+      'reply_to'    => new sfWidgetFormInputText(),
+      'email_from'  => new sfWidgetFormInputText(),
+      'is_forced'   => new sfWidgetFormInputText(),
+      'sent_at'     => new sfWidgetFormDateTime(),
+      'created_at'  => new sfWidgetFormDateTime(),
+      'updated_at'  => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
-      'reply_to'   => new sfValidatorString(array('max_length' => 128, 'required' => false)),
-      'email_from' => new sfValidatorString(array('max_length' => 128, 'required' => false)),
-      'is_forced'  => new sfValidatorInteger(array('required' => false)),
-      'sent_at'    => new sfValidatorDateTime(array('required' => false)),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'id'          => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'reply_to'    => new sfValidatorString(array('max_length' => 128, 'required' => false)),
+      'email_from'  => new sfValidatorString(array('max_length' => 128, 'required' => false)),
+      'is_forced'   => new sfValidatorInteger(array('required' => false)),
+      'sent_at'     => new sfValidatorDateTime(array('required' => false)),
+      'created_at'  => new sfValidatorDateTime(),
+      'updated_at'  => new sfValidatorDateTime(),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'newsletter', 'column' => array('unique_name')))
+    );
 
     $this->widgetSchema->setNameFormat('newsletter[%s]');
 

@@ -1,0 +1,38 @@
+newsletter:
+  inscription:
+    unique_name: inscription
+    Translation:
+      en:
+        title: Inscription
+        content: Please modify
+      fr:
+        title: Inscription
+        content: A modifier
+  bienvenu:
+    unique_name: welcome
+    Translation:
+      en:
+        title: welcome
+        content: Please modify
+      fr:
+        title: Bienvenu
+        content: A modifier
+  oubli_pwd:
+    unique_name: forgot_pwd
+    Translation:
+      en:
+        title: new password
+        content: modify
+      fr:
+        title: nouveau mot de passe
+        content: a modifier
+  change_pwd:
+    unique_name: new_pwd
+    Translation:
+      en:
+        title: change
+        content: modify
+      fr:
+        title: changement
+        content: modifier
+  

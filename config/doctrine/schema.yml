@@ -261,9 +261,9 @@ article:
       type: integer(4)
       primary: true
       autoincrement: true
-    name:
-      type: string(255)
-      notnull: true
+    unique_name:
+      type: string(30)
+      unique: true
     title:
       type: string(255)
       notnull: true
@@ -289,6 +289,9 @@ newsletter:
       type: integer(4)
       primary: true
       autoincrement: true
+    unique_name:
+      type: string(30)
+      unique: true
     title:
       type: string(128)
     content:
@@ -340,14 +343,23 @@ categorie:
       type: integer(4)
       primary: true
       autoincrement: true
+    unique_name:
+      type: string(30)
+      unique: true
     name:
       type: string(128)
-      notnull: true
     parent_id:
       type: integer(4)
     is_active:
       type: boolean
       default: 1
+  relations:
+    parent:
+      class: categorie
+      local: parent_id
+      foreign: id
+      foreignAlias: children
+      onDelete: CASCADE
 
 lienCategorie:
   options:

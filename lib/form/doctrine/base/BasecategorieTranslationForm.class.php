@@ -23,7 +23,7 @@ abstract class BasecategorieTranslationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'   => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
-      'name' => new sfValidatorString(array('max_length' => 128)),
+      'name' => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'lang' => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'lang', 'required' => false)),
       'slug' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));

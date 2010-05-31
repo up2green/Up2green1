@@ -15,16 +15,22 @@ abstract class BasecategorieForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'        => new sfWidgetFormInputHidden(),
-      'parent_id' => new sfWidgetFormInputText(),
-      'is_active' => new sfWidgetFormInputCheckbox(),
+      'id'          => new sfWidgetFormInputHidden(),
+      'unique_name' => new sfWidgetFormInputText(),
+      'parent_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('parent'), 'add_empty' => true)),
+      'is_active'   => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
-      'id'        => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
-      'parent_id' => new sfValidatorInteger(array('required' => false)),
-      'is_active' => new sfValidatorBoolean(array('required' => false)),
+      'id'          => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
+      'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'parent_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('parent'), 'required' => false)),
+      'is_active'   => new sfValidatorBoolean(array('required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'categorie', 'column' => array('unique_name')))
+    );
 
     $this->widgetSchema->setNameFormat('categorie[%s]');
 

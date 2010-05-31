@@ -4,6 +4,7 @@
         <?php if (isset($pwd)): ?>
         Le nouveau mot de passe a été envoyé par mail à l'adresse renseignée sur le profil.
         <?php else: ?>
+        <?php if (isset($error)) echo $error ?>
         <form method="post" action="" name="pwd">
             <input type="text" name="username" value="Nom d'utilisateur" onfocus="this.value='';"/><br />
             <input type="submit" name="forgotPassword" value="Envoyer" />

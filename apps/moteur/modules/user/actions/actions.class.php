@@ -34,9 +34,16 @@ class userActions extends sfActions {
         }
     }
 
+    public function executeProfil(sfWebRequest $request){
+        if ($this->getUser()->isAuthenticated()){
+
+        }
+    }
+
     public function executeForgotPassword(sfWebRequest $request) {
         if ($request->isMethod('post')) {
             if ($user = Doctrine_Core::getTable('sfGuardUser')->findOneBy("username", $request->getPostParameter("username"))) {
+//                die('ok');
                 $pwd = substr(md5(rand().rand()), 0, 8);
                 $user->setPassword($pwd);
                 $user->save();
@@ -50,13 +57,17 @@ class userActions extends sfActions {
                         "Nous vous conseillons de changer votre mot de passe à votre prochaine connexion.<br /><br />".
                         "A bientôt pour de nouvelles recherches sur http://up2green.com/ !"
                 );
-                $message->getHeaders()->remove('Content-Type');
-                $message->getHeaders()->addParameterizedHeader('Content-Type', 'text/html');
-                $message->getHeaders()->addParameterizedHeader('charset', 'utf-8');
+//                $message->getHeaders()->remove('Content-Type');
+//                $message->getHeaders()->addParameterizedHeader('Content-Type', 'text/html');
+//                $message->getHeaders()->addParameterizedHeader('charset', 'utf-8');
 //                $type->setValue('text/html');
 //                $this->getMail()->c
                 
                 $this->getMailer()->send($message);
+                $this->pwd = $pwd;
+            }
+            else{
+                $this->error = "Nom d'utilisateur inconnu ou vide";
             }
         }
     }

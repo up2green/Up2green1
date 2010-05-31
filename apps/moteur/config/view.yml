@@ -11,8 +11,8 @@ default:
     #keywords:     symfony, project
     #language:     en
     #robots:       index, follow
-
-  stylesheets:    [main.css, moteur.css]
+    
+  stylesheets:    [reset.css, main.css, button.css]
 
   javascripts:    [jquery-1.4.2.js, moteur.js]
 

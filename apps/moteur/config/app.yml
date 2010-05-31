@@ -10,5 +10,6 @@ all:
   google_maps_api:
     keys:
       88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q
+      dev.smartit.fr: ABQIAAAA2WG-bF-JJB9XacJsjS1oChS9Vzbq_KGPRHYXo4EHeU4bpWZ42hQuCN9qMziWKJaXp6loVe_kWNej7w
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/

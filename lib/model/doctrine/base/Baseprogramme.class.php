@@ -10,9 +10,8 @@
  * @property string $title
  * @property string $accroche
  * @property clob $description
- * @property string $latitude
- * @property string $longitude
- * @property string $geoloc
+ * @property decimal $latitude
+ * @property decimal $longitude
  * @property boolean $is_active
  * @property integer $max_tree
  * @property organisme $organisme
@@ -23,9 +22,8 @@
  * @method string              getTitle()          Returns the current record's "title" value
  * @method string              getAccroche()       Returns the current record's "accroche" value
  * @method clob                getDescription()    Returns the current record's "description" value
- * @method string              getLatitude()       Returns the current record's "latitude" value
- * @method string              getLongitude()      Returns the current record's "longitude" value
- * @method string              getGeoloc()         Returns the current record's "geoloc" value
+ * @method decimal             getLatitude()       Returns the current record's "latitude" value
+ * @method decimal             getLongitude()      Returns the current record's "longitude" value
  * @method boolean             getIsActive()       Returns the current record's "is_active" value
  * @method integer             getMaxTree()        Returns the current record's "max_tree" value
  * @method organisme           getOrganisme()      Returns the current record's "organisme" value
@@ -37,7 +35,6 @@
  * @method programme           setDescription()    Sets the current record's "description" value
  * @method programme           setLatitude()       Sets the current record's "latitude" value
  * @method programme           setLongitude()      Sets the current record's "longitude" value
- * @method programme           setGeoloc()         Sets the current record's "geoloc" value
  * @method programme           setIsActive()       Sets the current record's "is_active" value
  * @method programme           setMaxTree()        Sets the current record's "max_tree" value
  * @method programme           setOrganisme()      Sets the current record's "organisme" value
@@ -45,7 +42,7 @@
  * 
  * @package    up2green
  * @subpackage model
- * @author     Your name here
+ * @author     Clément Gautier
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class Baseprogramme extends sfDoctrineRecord
@@ -75,17 +72,13 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'type' => 'clob',
              'length' => 65535,
              ));
-        $this->hasColumn('latitude', 'string', 45, array(
-             'type' => 'string',
-             'length' => 45,
+        $this->hasColumn('latitude', 'decimal', null, array(
+             'type' => 'decimal',
+             'scale' => 6,
              ));
-        $this->hasColumn('longitude', 'string', 45, array(
-             'type' => 'string',
-             'length' => 45,
-             ));
-        $this->hasColumn('geoloc', 'string', 100, array(
-             'type' => 'string',
-             'length' => 100,
+        $this->hasColumn('longitude', 'decimal', null, array(
+             'type' => 'decimal',
+             'scale' => 6,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',

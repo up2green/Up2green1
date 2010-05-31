@@ -175,13 +175,12 @@ programme:
     description:
       type: clob(65535)
     latitude:
-      type: string(45)
+      type: decimal
+      scale: 6
       default: null
     longitude:
-      type: string(45)
-      default: null
-    geoloc:
-      type: string(100)
+      type: decimal
+      scale: 6
       default: null
     is_active:
       type: boolean

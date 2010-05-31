@@ -5,7 +5,7 @@
  *
  * @package    up2green
  * @subpackage filter
- * @author     Your name here
+ * @author     Clément Gautier
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
@@ -16,7 +16,6 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
       'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('organisme'), 'add_empty' => true)),
       'latitude'     => new sfWidgetFormFilterInput(),
       'longitude'    => new sfWidgetFormFilterInput(),
-      'geoloc'       => new sfWidgetFormFilterInput(),
       'is_active'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'max_tree'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'created_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -25,9 +24,8 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('organisme'), 'column' => 'id')),
-      'latitude'     => new sfValidatorPass(array('required' => false)),
-      'longitude'    => new sfValidatorPass(array('required' => false)),
-      'geoloc'       => new sfValidatorPass(array('required' => false)),
+      'latitude'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'longitude'    => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'is_active'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'max_tree'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -53,9 +51,8 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'           => 'Number',
       'organisme_id' => 'ForeignKey',
-      'latitude'     => 'Text',
-      'longitude'    => 'Text',
-      'geoloc'       => 'Text',
+      'latitude'     => 'Number',
+      'longitude'    => 'Number',
       'is_active'    => 'Boolean',
       'max_tree'     => 'Number',
       'created_at'   => 'Date',

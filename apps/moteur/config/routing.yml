@@ -24,7 +24,7 @@ homepage:
 
 plantation:
   url: /plantation/*
-  param: { module: gmap, action: index}
+  param: { module: plantation, action: index}
 
 # generic rules
 # please, remove them by adding more specific rules

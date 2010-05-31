@@ -7,7 +7,7 @@
  *
  * @package    up2green
  * @subpackage form
- * @author     Your name here
+ * @author     Clément Gautier
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
  */
 abstract class BaseprogrammeForm extends BaseFormDoctrine
@@ -19,7 +19,6 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
       'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('organisme'), 'add_empty' => true)),
       'latitude'     => new sfWidgetFormInputText(),
       'longitude'    => new sfWidgetFormInputText(),
-      'geoloc'       => new sfWidgetFormInputText(),
       'is_active'    => new sfWidgetFormInputCheckbox(),
       'max_tree'     => new sfWidgetFormInputText(),
       'created_at'   => new sfWidgetFormDateTime(),
@@ -29,9 +28,8 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'           => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
       'organisme_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('organisme'), 'required' => false)),
-      'latitude'     => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'longitude'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'geoloc'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
+      'latitude'     => new sfValidatorNumber(array('required' => false)),
+      'longitude'    => new sfValidatorNumber(array('required' => false)),
       'is_active'    => new sfValidatorBoolean(array('required' => false)),
       'max_tree'     => new sfValidatorInteger(),
       'created_at'   => new sfValidatorDateTime(),

@@ -1,6 +1,8 @@
 programme:
   ethiopie:
     organisme: eco_kyoto
+    latitude: 8.722218
+    longitude: 39.440918
     is_active: 1
     Translation:
       en:
@@ -14,6 +16,8 @@ programme:
   inde:
     organisme: eco_kyoto
     is_active: 1
+    latitude: 22.786311
+    longitude: 79.628906
     Translation:
       en:
         title: Inde
@@ -26,6 +30,8 @@ programme:
   bresil:
     organisme: trees_for_the_future
     is_active: 1
+    latitude: -14.221789
+    longitude: -51.943359
     Translation:
       en:
         title: Brasil

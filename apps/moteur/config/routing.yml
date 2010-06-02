@@ -21,6 +21,10 @@ ajax_more_results:
 homepage:
   url:   /
   param: { module: recherche, action: index }
+  
+homepage:
+  url:   /moteur/*
+  param: { module: recherche, action: index }
 
 plantation:
   url: /plantation/*

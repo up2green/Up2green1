@@ -13,13 +13,15 @@ abstract class BasecategorieFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'parent_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('categorie'), 'add_empty' => true)),
-      'is_active' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'unique_name' => new sfWidgetFormFilterInput(),
+      'parent_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('parent'), 'add_empty' => true)),
+      'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
-      'parent_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('categorie'), 'column' => 'id')),
-      'is_active' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'unique_name' => new sfValidatorPass(array('required' => false)),
+      'parent_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('parent'), 'column' => 'id')),
+      'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('categorie_filters[%s]');
@@ -39,9 +41,10 @@ abstract class BasecategorieFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'        => 'Number',
-      'parent_id' => 'ForeignKey',
-      'is_active' => 'Boolean',
+      'id'          => 'Number',
+      'unique_name' => 'Text',
+      'parent_id'   => 'ForeignKey',
+      'is_active'   => 'Boolean',
     );
   }
 }

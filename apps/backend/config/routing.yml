@@ -1,3 +1,21 @@
+organisme:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                organisme
+    module:               organisme
+    prefix_path:          /organisme
+    column:               id
+    with_wildcard_routes: true
+
+programme:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                programme
+    module:               programme
+    prefix_path:          /programme
+    column:               id
+    with_wildcard_routes: true
+
 newsletter:
   class: sfDoctrineRouteCollection
   options:

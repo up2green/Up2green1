@@ -17,15 +17,15 @@ class rechercheActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
         $params = $request->getParameterHolder();
         if ($strRecherche = $params->get('recherche_text')) {
-            $this->moteur = $params->get('recherche_moteur');
-            $this->textRecherche = $strRecherche;
-            $engine = new SearchEngine($this->textRecherche, $this->moteur);
+            $this->moteur = $params->get('hidden_moteur_search');
+            $this->textSearch = $strRecherche;
+            $engine = new SearchEngine($this->textSearch, $this->moteur);
             $this->results = $engine->getResults();
         }
         else {
-            $this->textRecherche = "";
+            $this->textSearch = "";
             $this->results = array();
-            $this->moteur = "";
+            $this->moteur = SearchEngine::WEB;
         }
     }
 }

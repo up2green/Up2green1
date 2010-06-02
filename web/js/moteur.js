@@ -32,3 +32,25 @@ $(document).ready(function(){
         });
     });
 });
+
+
+function changeMoteur(valeur){
+    $("#hidden_moteur_search").attr("value", valeur);
+    $(".onglet_recherches").each(function(){
+        $(this).removeClass("onglet_selected");
+        if ($(this).attr('id') == "recherches"+valeur) $(this).addClass("onglet_selected");
+    });
+    $(".onglet_left").each(function(){
+        $(this).removeClass("onglet_selected");
+        if ($(this).attr('id') == "left"+valeur) $(this).addClass("onglet_selected");
+    });
+    $(".onglet_middle").each(function(){
+        $(this).removeClass("onglet_selected");
+        if ($(this).attr('id') == "middle"+valeur) $(this).addClass("onglet_selected");
+    });
+    $(".onglet_right").each(function(){
+        $(this).removeClass("onglet_selected");
+        if ($(this).attr('id') == "right"+valeur) $(this).addClass("onglet_selected");
+    });
+    if ($("#recherche_text").attr('value') != "") document.recherche.submit();
+}

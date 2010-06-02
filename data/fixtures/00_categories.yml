@@ -1,0 +1,6 @@
+categorie:
+  root:
+    unique_name: root
+  footer:
+    unique_name: footer
+    parent: root

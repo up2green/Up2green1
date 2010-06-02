@@ -10,7 +10,8 @@
  * @property string $name
  * @property integer $parent_id
  * @property boolean $is_active
- * @property categorie $categorie
+ * @property categorie $parent
+ * @property Doctrine_Collection $children
  * @property Doctrine_Collection $lienCategorie
  * @property Doctrine_Collection $articleCategorie
  * @property Doctrine_Collection $newsletterCategorie
@@ -20,7 +21,8 @@
  * @method string              getName()                Returns the current record's "name" value
  * @method integer             getParentId()            Returns the current record's "parent_id" value
  * @method boolean             getIsActive()            Returns the current record's "is_active" value
- * @method categorie           getCategorie()           Returns the current record's "categorie" value
+ * @method categorie           getParent()              Returns the current record's "parent" value
+ * @method Doctrine_Collection getChildren()            Returns the current record's "children" collection
  * @method Doctrine_Collection getLienCategorie()       Returns the current record's "lienCategorie" collection
  * @method Doctrine_Collection getArticleCategorie()    Returns the current record's "articleCategorie" collection
  * @method Doctrine_Collection getNewsletterCategorie() Returns the current record's "newsletterCategorie" collection
@@ -29,7 +31,8 @@
  * @method categorie           setName()                Sets the current record's "name" value
  * @method categorie           setParentId()            Sets the current record's "parent_id" value
  * @method categorie           setIsActive()            Sets the current record's "is_active" value
- * @method categorie           setCategorie()           Sets the current record's "categorie" value
+ * @method categorie           setParent()              Sets the current record's "parent" value
+ * @method categorie           setChildren()            Sets the current record's "children" collection
  * @method categorie           setLienCategorie()       Sets the current record's "lienCategorie" collection
  * @method categorie           setArticleCategorie()    Sets the current record's "articleCategorie" collection
  * @method categorie           setNewsletterCategorie() Sets the current record's "newsletterCategorie" collection
@@ -72,10 +75,14 @@ abstract class Basecategorie extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('categorie', array(
+        $this->hasOne('categorie as parent', array(
              'local' => 'parent_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasMany('categorie as children', array(
+             'local' => 'id',
+             'foreign' => 'parent_id'));
 
         $this->hasMany('lienCategorie', array(
              'local' => 'id',

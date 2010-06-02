@@ -43,7 +43,6 @@ class userActions extends sfActions {
     public function executeForgotPassword(sfWebRequest $request) {
         if ($request->isMethod('post')) {
             if ($user = Doctrine_Core::getTable('sfGuardUser')->findOneBy("username", $request->getPostParameter("username"))) {
-//                die('ok');
                 $pwd = substr(md5(rand().rand()), 0, 8);
                 $user->setPassword($pwd);
                 $user->save();

@@ -1,5 +1,3 @@
-# user / group affiliate
-
 partenaire:
   actAs: [Timestampable]
   columns:
@@ -330,9 +328,8 @@ lien:
     is_active:
       type: boolean
       default: 0 
-
 categorie:
-  actAs: 
+  actAs:
     I18n:
       fields: [name]
       actAs:

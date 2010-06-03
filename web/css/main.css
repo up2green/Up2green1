@@ -15,10 +15,11 @@ input:focus {
 border: solid;
 border-color:#99cc00;
 }
+
 .centerize{}
 .lefter{}
-.righter{
-}
+.righter{}
+.clear{clear:both;}
 /*MENU HAUT*/
 .menu_haut{
 width:1040px;

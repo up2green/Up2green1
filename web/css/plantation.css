@@ -1,5 +1,41 @@
-.menu_left li {
-	display:block;
+/*CORPS du SITE*/
+#body{
+	width:1024px;
 	position:relative;
-	width:100%;
+	margin-bottom:10px;
 }
+	#center{
+		background-color:#FFFFFF;
+		float:right;
+		width:750px;
+	}
+
+	#left {
+		width:250px;
+		min-height:100%;
+	}
+
+#form_programme_plantation {}
+	#form_programme_plantation ul {
+		padding:3px;
+		overflow:hidden;
+		position:relative;
+		height:150px;
+	}
+		#form_programme_plantation li {
+			cursor:pointer;
+			display:block;
+			position:relative;
+			padding:2px 5px;
+			border-top:1px #ccc solid;
+			line-height:150%;
+			text-decoration:none;
+			color:#666;
+		}
+		#form_programme_plantation li:hover {
+			color:#F33;
+			background-color:#eee;
+		}
+	#form_programme_plantation span.button {
+		width:70%;
+	}

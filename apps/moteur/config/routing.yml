@@ -22,7 +22,7 @@ homepage:
   url:   /
   param: { module: recherche, action: index }
   
-homepage:
+moteur:
   url:   /moteur/*
   param: { module: recherche, action: index }
 

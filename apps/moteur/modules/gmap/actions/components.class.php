@@ -21,10 +21,23 @@ class gmapComponents extends sfComponents
     $this->gMap = new GMap();
     $this->programmes = Doctrine::getTable('programme')->createQuery('a')->execute();
     foreach($this->programmes as $programme)
+    {
     	if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
-			$this->gMap->addMarker(new GMapMarker(
+    	{
+    		$icon = new GMapMarkerImage(
+			  'images/gmap/tree.png',
+			  array(
+				'width' => 32,
+				'height' => 32,
+			  )
+			);
+			
+			$gMapMarker = new GMapMarker(
 				$programme->getLatitude(),
-				$programme->getLongitude()
+				$programme->getLongitude(),
+				array(
+					'icon'	=> $icon
+				)
 /*
 				array(
 					'title ' => $programme->getTitle(),
@@ -36,7 +49,13 @@ class gmapComponents extends sfComponents
 					'flat ' => null
 				)
 */
-			));
+			);
+		
+			$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div>'.$programme->getTitle().'</div>'));
+			$this->gMap->addMarker($gMapMarker);
+
+		}
+	}
     $this->gMap->centerAndZoomOnMarkers();
   }
   

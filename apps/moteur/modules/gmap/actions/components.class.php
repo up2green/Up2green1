@@ -22,24 +22,27 @@ class gmapComponents extends sfComponents
     $this->programmes = Doctrine::getTable('programme')->createQuery('a')->execute();
     foreach($this->programmes as $programme)
     {
-    	if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
-    	{
-    		$icon = new GMapMarkerImage(
-			  'images/gmap/tree.png',
-			  array(
-				'width' => 32,
-				'height' => 32,
-			  )
-			);
-			
-			$gMapMarker = new GMapMarker(
+    	if(!is_null($programme->getGeoadress()) || (!is_null($programme->getLatitude()) && !is_null($programme->getLongitude())))
+    	{    		
+    		if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
+    		{
+    			// latitude / longitude method
+    			$geocoded_addr = new GMapGeocodedAddress(null);
+    			$geocoded_addr->setLat($programme->getLatitude());
+			  	$geocoded_addr->setLng($programme->getLongitude());
+			  	$geocoded_addr->reverseGeocode($this->gMap->getGMapClient());
+    		}
+    		else
+    		{
+    			// adress user friendly method
+    			$geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
+    		}
+    		
+    		$gMapMarker = new GMapMarker(
 				$programme->getLatitude(),
 				$programme->getLongitude(),
 				array(
-					'icon'	=> $icon
-				)
 /*
-				array(
 					'title ' => $programme->getTitle(),
 					'icon ' => null,
 					'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
@@ -47,11 +50,12 @@ class gmapComponents extends sfComponents
 					'clickable ' => null,
 					'shadow ' => null,
 					'flat ' => null
-				)
 */
+					'icon'	=> $this->getProgrammeIcon($programme)
+				)
 			);
 		
-			$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div>'.$programme->getTitle().'</div>'));
+			$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div>'.$geocoded_addr->getRawAddress().'</div>'));
 			$this->gMap->addMarker($gMapMarker);
 
 		}
@@ -61,12 +65,13 @@ class gmapComponents extends sfComponents
   
   private function getProgrammeIcon(programme $programme)
   {
-  	$image = new GMapMarkerImage(
+  	return new GMapMarkerImage(
   		'/images/gmap/tree.png',
-  		array('width' => '32px','height' => '32px')
+  		array(
+			'width' => 32,
+			'height' => 32,
+		)
   	);
-  	
-  	return $image;
   }
   
 }

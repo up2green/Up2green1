@@ -17,8 +17,8 @@ border-color:#99cc00;
 }
 
 .centerize{}
-.lefter{}
-.righter{}
+.left{text-align:left;}
+.right{text-align:right;}
 .clear{clear:both;}
 /*MENU HAUT*/
 .menu_haut{

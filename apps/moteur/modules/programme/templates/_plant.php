@@ -10,7 +10,13 @@
 			
 			<ul>
 				<?php foreach($programmes as $programme) : ?>
-				<li><?php echo $programme->getTitle(); ?></li>
+				<li>
+					<span class="item"><?php echo $programme->getTitle(); ?></span>
+					<span class="action">
+						<button class="button really-small green">+</button>
+						<button class="button really-small green">-</button>
+					</span>
+				</li>
 				<?php endforeach; ?>
 			</ul>
 			

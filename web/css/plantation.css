@@ -28,13 +28,21 @@
 			position:relative;
 			padding:2px 5px;
 			border-top:1px #ccc solid;
-			line-height:150%;
+			line-height:200%;
 			text-decoration:none;
 			color:#666;
 		}
 		#form_programme_plantation li:hover {
 			color:#F33;
 			background-color:#eee;
+		}
+		#form_programme_plantation li span.item {
+			display: inline-block;
+			width:120px;
+		}
+		#form_programme_plantation li span.action {
+			float:right;
+			margin:0 0 2px;
 		}
 	#form_programme_plantation span.button {
 		width:70%;

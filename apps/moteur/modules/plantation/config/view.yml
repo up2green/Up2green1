@@ -3,4 +3,4 @@
 
 default:
   stylesheets:    [plantation.css]
-  javascripts:    [jquery-1.4.2.js, jquery-ui-1.8.1.custom.min.js, jquery.scrollTo.js, plantation.js]
+  javascripts:    [jquery-1.4.2.js, jquery-ui-1.8.1.custom.min.js, main.js, jquery.scrollTo.js, plantation.js]

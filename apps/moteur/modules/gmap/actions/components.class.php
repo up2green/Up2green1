@@ -44,9 +44,7 @@ class gmapComponents extends sfComponents
 				array(
 /*
 					'title ' => $programme->getTitle(),
-					'icon ' => null,
 					'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
-					'cursor ' => null, // string  Mouse cursor to show on hover  
 					'clickable ' => null,
 					'shadow ' => null,
 					'flat ' => null

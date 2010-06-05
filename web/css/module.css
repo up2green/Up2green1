@@ -7,9 +7,10 @@ div.module{
 		background: url(/images/head_stats_229x55.png) no-repeat scroll 0 0 transparent;
 		width:229px;
 		height:55px;
-		text-align:center;
-		font-size:14px;
 		color:#7aa520;
+		font-size:15px;
+		font-weight:bold;
+		text-align:left;
 	}
 	div.module .body_wrapper{
 		background: url(/images/middle_stats_229x1.png);

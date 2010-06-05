@@ -16,7 +16,7 @@ border: solid;
 border-color:#99cc00;
 }
 
-.centerize{}
+.center{text-align:center;}
 .left{text-align:left;}
 .right{text-align:right;}
 .clear{clear:both;}

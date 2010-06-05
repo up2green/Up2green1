@@ -14,7 +14,7 @@ default:
     
   stylesheets:    [reset.css, main.css, button.css, module.css]
 
-  javascripts:    [jquery-1.4.2.js, moteur.js]
+  javascripts:    [jquery-1.4.2.js, main.js, moteur.js]
 
   has_layout:     true
   layout:         layout

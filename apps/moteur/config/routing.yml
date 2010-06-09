@@ -18,9 +18,11 @@ ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
   
+
 homepage:
-  url:   /
+  url:   /moteur/*
   param: { module: recherche, action: index }
+
 
 plantation:
   url: /plantation/*

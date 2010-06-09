@@ -14,6 +14,8 @@
           <li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
           <li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
           <li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
+          <li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
+          <li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
       </ul>
     <?php echo $sf_content ?>
   </body>

@@ -44,8 +44,7 @@ programme:
   4:
     organisme: 2
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Honduras
     Translation:
       en:
         title: Honduras
@@ -56,8 +55,7 @@ programme:
   5:
     organisme: 2
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Haiti
     Translation:
       en:
         title: Haiti (Arcanie Cost)
@@ -68,8 +66,7 @@ programme:
   6:
     organisme: 2
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Burundi
     Translation:
       en:
         title: Burundi
@@ -80,8 +77,7 @@ programme:
   7:
     organisme: 1
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Indonésie
     Translation:
       en:
         title: Indonesia
@@ -92,8 +88,7 @@ programme:
   8:
     organisme: 1
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Mali
     Translation:
       en:
         title: Mali
@@ -104,8 +99,7 @@ programme:
   9:
     organisme: 3
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Burkina Faso
     Translation:
       en:
         title: Burkina Faso
@@ -116,8 +110,7 @@ programme:
   10:
     organisme: 4
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Guinée
     Translation:
       en:
         title: Guinea
@@ -128,8 +121,7 @@ programme:
   11:
     organisme: 5
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Madagascar
     Translation:
       en:
         title: Madagascar (Antalaha)
@@ -141,8 +133,7 @@ programme:
   12:
     organisme: 6
     is_active: 1
-    latitude: -14.221789
-    longitude: -51.943359
+    geoadress: Senegal
     Translation:
       en:
         title: Senegal

@@ -10,6 +10,7 @@
  * @property string $title
  * @property string $accroche
  * @property clob $description
+ * @property string $geoadress
  * @property decimal $latitude
  * @property decimal $longitude
  * @property boolean $is_active
@@ -22,6 +23,7 @@
  * @method string              getTitle()          Returns the current record's "title" value
  * @method string              getAccroche()       Returns the current record's "accroche" value
  * @method clob                getDescription()    Returns the current record's "description" value
+ * @method string              getGeoadress()      Returns the current record's "geoadress" value
  * @method decimal             getLatitude()       Returns the current record's "latitude" value
  * @method decimal             getLongitude()      Returns the current record's "longitude" value
  * @method boolean             getIsActive()       Returns the current record's "is_active" value
@@ -33,6 +35,7 @@
  * @method programme           setTitle()          Sets the current record's "title" value
  * @method programme           setAccroche()       Sets the current record's "accroche" value
  * @method programme           setDescription()    Sets the current record's "description" value
+ * @method programme           setGeoadress()      Sets the current record's "geoadress" value
  * @method programme           setLatitude()       Sets the current record's "latitude" value
  * @method programme           setLongitude()      Sets the current record's "longitude" value
  * @method programme           setIsActive()       Sets the current record's "is_active" value
@@ -71,6 +74,10 @@ abstract class Baseprogramme extends sfDoctrineRecord
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',
              'length' => 65535,
+             ));
+        $this->hasColumn('geoadress', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
              ));
         $this->hasColumn('latitude', 'decimal', null, array(
              'type' => 'decimal',

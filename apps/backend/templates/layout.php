@@ -16,6 +16,7 @@
           <li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
           <li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
           <li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
+          <li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>
       </ul>
     <?php echo $sf_content ?>
   </body>

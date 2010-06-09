@@ -1,0 +1,30 @@
+/* module */
+
+div.module{
+	height:auto;
+}
+	div.module .head{
+		background: url(/images/head_stats_229x55.png) no-repeat scroll 0 0 transparent;
+		width:229px;
+		height:55px;
+		color:#7aa520;
+		font-size:15px;
+		font-weight:bold;
+		text-align:left;
+	}
+	div.module .body_wrapper{
+		background: url(/images/middle_stats_229x1.png);
+		width:229px;
+		min-height:120px;
+	}
+	div.module .body_inner{
+		padding:10px;
+	}
+	div.module .foot{
+		background: url(/images/footer_stats_229x20.png) no-repeat scroll 0 0 transparent;
+		width:229px;
+		height:20px;
+	}
+
+/* module colors */
+

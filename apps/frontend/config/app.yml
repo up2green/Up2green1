@@ -1,0 +1,14 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+all:
+  base_search: 10
+  more_search: 10
+  max_programme_plantation_list: 10
+  yahoo_id: %20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--
+  google_maps_api:
+    keys:
+      88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q
+      up2green.smartit.fr: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxRl8TZQpx4J8W_1diLyzFI9z11ZtxQvOxMAOgUQ5et4McN7J3FQK5D3tA
+  url:
+    web: http://boss.yahooapis.com/ysearch/web/v1/

@@ -21,33 +21,55 @@ class gmapComponents extends sfComponents
     $this->gMap = new GMap();
     $this->programmes = Doctrine::getTable('programme')->createQuery('a')->execute();
     foreach($this->programmes as $programme)
-    	if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
-			$this->gMap->addMarker(new GMapMarker(
+    {
+    	if(!is_null($programme->getGeoadress()) || (!is_null($programme->getLatitude()) && !is_null($programme->getLongitude())))
+    	{    		
+    		if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
+    		{
+    			// latitude / longitude method
+    			$geocoded_addr = new GMapGeocodedAddress(null);
+    			$geocoded_addr->setLat($programme->getLatitude());
+			  	$geocoded_addr->setLng($programme->getLongitude());
+			  	$geocoded_addr->reverseGeocode($this->gMap->getGMapClient());
+    		}
+    		else
+    		{
+    			// adress user friendly method
+    			$geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
+    		}
+    		
+    		$gMapMarker = new GMapMarker(
 				$programme->getLatitude(),
-				$programme->getLongitude()
-/*
+				$programme->getLongitude(),
 				array(
+/*
 					'title ' => $programme->getTitle(),
-					'icon ' => null,
 					'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
-					'cursor ' => null, // string  Mouse cursor to show on hover  
 					'clickable ' => null,
 					'shadow ' => null,
 					'flat ' => null
-				)
 */
-			));
+					'icon'	=> $this->getProgrammeIcon($programme)
+				)
+			);
+		
+			$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div>'.$geocoded_addr->getRawAddress().'</div>'));
+			$this->gMap->addMarker($gMapMarker);
+
+		}
+	}
     $this->gMap->centerAndZoomOnMarkers();
   }
   
   private function getProgrammeIcon(programme $programme)
   {
-  	$image = new GMapMarkerImage(
+  	return new GMapMarkerImage(
   		'/images/gmap/tree.png',
-  		array('width' => '32px','height' => '32px')
+  		array(
+			'width' => 32,
+			'height' => 32,
+		)
   	);
-  	
-  	return $image;
   }
   
 }

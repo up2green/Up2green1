@@ -17,6 +17,7 @@
                 <div class="slogan">Etre acteur de la reforestation au fil de ses recherches</div>
             </div>
             <?php echo $sf_content ?>
+            <div class="clear"></div>
             <div class="pied">
                 <div class="footer_ensavoirplus">
                     <div class="footer_esp_left"></div>

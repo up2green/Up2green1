@@ -172,6 +172,9 @@ programme:
       type: string(255)
     description:
       type: clob(65535)
+    geoadress:
+      type: string(255)
+      default: null
     latitude:
       type: decimal
       scale: 6

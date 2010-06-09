@@ -1,3 +1,12 @@
+coupon:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                coupon
+    module:               coupon
+    prefix_path:          /coupon
+    column:               id
+    with_wildcard_routes: true
+
 organisme:
   class: sfDoctrineRouteCollection
   options:
@@ -58,7 +67,7 @@ homepage:
   param: { module: organisme, action: index }
   
 # default rules
-homepage:
+backend:
   url:   /backend
   param: { module: organisme, action: index }
 

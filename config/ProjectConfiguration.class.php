@@ -13,5 +13,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     	'sfEasyGMapPlugin',
     	'sfFormExtraPlugin'
     ));
+    $this->enablePlugins('sfProtoculousPlugin');
   }
 }

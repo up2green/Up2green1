@@ -10,3 +10,4 @@ config/databases.yml
 /log/
 *~
 data/sql/schema.sql
+web/.htaccess

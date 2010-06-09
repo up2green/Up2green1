@@ -24,7 +24,7 @@ programme:
     prefix_path:          /programme
     column:               id
     with_wildcard_routes: true
-
+    
 newsletter:
   class: sfDoctrineRouteCollection
   options:
@@ -60,19 +60,14 @@ lien:
     prefix_path:          /lien
     column:               id
     with_wildcard_routes: true
-    
-# default rules
+
+# default
 homepage:
-  url:   /
-  param: { module: organisme, action: index }
-  
-# default rules
-backend:
   url:   /backend
   param: { module: organisme, action: index }
 
+
 # generic rules
-# please, remove them by adding more specific rules
 default_index:
   url:   /:module
   param: { action: index }

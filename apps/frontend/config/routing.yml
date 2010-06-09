@@ -17,15 +17,17 @@ sf_guard_password:
 ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
-  
 
 homepage:
-  url:   /moteur/*
+  url:   /
   param: { module: recherche, action: index }
 
+moteur:
+  url:   /moteur/
+  param: { module: recherche, action: index }
 
 plantation:
-  url: /plantation/*
+  url: /plantation/
   param: { module: plantation, action: index}
 
 # generic rules

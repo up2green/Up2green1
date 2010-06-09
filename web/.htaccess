@@ -7,7 +7,7 @@ AuthType Basic
 	Require User fragueur titeiko flurf antoine jg.noze
 </Limit>
 
-Options +FollowSymLinks +ExecCGI
+#Options +FollowSymLinks +ExecCGI
 
 <IfModule mod_rewrite.c>
   #RewriteEngine On

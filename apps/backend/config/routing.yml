@@ -62,7 +62,7 @@ lien:
     with_wildcard_routes: true
 
 # default
-homepage:
+backend:
   url:   /backend
   param: { module: organisme, action: index }
 

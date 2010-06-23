@@ -1,0 +1,10 @@
+<!-- borders -->
+<span class="border bt"></span>
+<span class="border bb"></span>
+<span class="border bl"></span>
+<span class="border br"></span>
+<!-- corners -->
+<span class="corner ctl"></span>
+<span class="corner ctr"></span>
+<span class="corner cbl"></span>
+<span class="corner cbr"></span>

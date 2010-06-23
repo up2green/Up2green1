@@ -23,11 +23,11 @@ homepage:
   param: { module: recherche, action: index }
 
 moteur:
-  url:   /moteur/
+  url:   /moteur
   param: { module: recherche, action: index }
 
 plantation:
-  url: /plantation/
+  url: /plantation
   param: { module: plantation, action: index}
 
 # generic rules

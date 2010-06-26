@@ -10,5 +10,6 @@ all:
     keys:
       88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q
       up2green.smartit.fr: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxRl8TZQpx4J8W_1diLyzFI9z11ZtxQvOxMAOgUQ5et4McN7J3FQK5D3tA
+      localgreen: ABQIAAAAWtYzvvGFuijLxeXh5xWsYxRC5lGG-ShMSfRtETBbx1YVY3ApUhQ7C-oFWaz3VJFIGA8n8BDOACudaw
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/

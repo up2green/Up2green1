@@ -154,72 +154,16 @@ padding-top:20px;
 width:352px;
 float:left;
 }
-.head_acteur{
-background: url(/images/head_acteur_352x50.png);
-background-repeat:no-repeat;
-width:352px;
-height:50px;
-}
-.titre_acteur{
-text-align:left;
-font-size:15px;
-font-weight:bold;
-line-height:57px;
-padding-left:80px;
-padding-right:15px;
-color:#99cc00;
-}
-.corps_acteur{
-background: url(/images/middle_acteur_352x1.png);
-width:352px;
-}
-.contenus_acteur{
-margin:auto;
-width:300px;
-font-size:14px;
-padding-top:20px;
-padding-bottom:20px;
-}
-.btn_add_acteur{
-margin:auto;
-background: url(/images/btn_add-acount_282x90.png);
-width:282px;
-height:90px;
-}
-.btn_add_acteur p{
-text-shadow:0px 0px 4px #202020;
-color:white;
-padding-top:45px;
-padding-left:15px;
-font-size:14px;
-}
-.btn_fav_browser{
-margin:auto;
-background-image: url(/images/moteur/btn_fav-browser_282x47.png);
-background-repeat: no-repeat;
-background-position: bottom;
-width:282px;
-height:47px;
-padding-top:15px;
-}
-.btn_fav_browser p{
-text-shadow:0px 0px 4px #202020;
-color:white;
-text-align:center;
-font-size:14px;
-}
-.pied_acteur{
-margin:auto;
-background-image: url(/images/footer_acteur_352x20.png);
-width:352px;
-height:20px;
-}
+div.acteur div.module p{left:70px;width:100%;}
+div.acteur div.module a{margin-top:20px;width:255px;}
+div.acteur div.module p.title{left:70px;width:100%;}
 /*encarts droit*/
 .statistiques{
 width:229px;
 height:187px;
 float:right;
 }
+div.statistiques div.module p.title{text-align:right;left:-70px;width:100%;}
 .head_stats{
 background: url(/images/head_stats_229x55.png);
 background-repeat: no-repeat;
@@ -396,12 +340,11 @@ padding-left:10px;
 display: block;
 float:left;
 width:170px;
-padding-left:10px;
 text-decoration:none;
 color:black;
 border:none;
-margin:0px;
-display:block;
+margin-top:10px;
+margin-left:30px;
 text-align:left;
 font-size:14px;
 }
@@ -410,7 +353,6 @@ font-size:14px;
 color:#2b9018;
 }
 .footer_listes{
-
 width:1010px;
 min-height:240px;
 background: url(/images/footer_cartoucherepeat_1027x1.png);

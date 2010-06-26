@@ -62,7 +62,7 @@
             <div class="acteur">
                 <div class="module">
 			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-			<p class="title little indent">Devenez acteur de la reforestation</p>
+			<p class="title">Devenez acteur de la reforestation</p>
 			<div class="content">
 				<p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
 				<p>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</p>
@@ -79,7 +79,7 @@
             <div class="statistiques">
                 <div class="module">
 		    <img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
-		    <p class="title little indent">Statistiques</p>
+		    <p class="title">Statistiques</p>
 		    <div class="content">
 			<p><img class="img_map" src="/images/stats_maps_200x70.png"</p>
 			<p class="center">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</p>

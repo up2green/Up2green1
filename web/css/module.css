@@ -65,12 +65,12 @@ div.module{height:auto;position:relative;}
 		font-weight:bold;
 		position:absolute;
 		text-align:left;
-		top:-5px;
+		top:10px;
 		width:90%;
 		z-index:20;
 	}
-	div.module p.title.indent{left:70px;width:65%;}
-	div.module p.title.little{font-size:12px;}
+	div.module p.title.indent{left:70px;top:10px;width:65%;}
+	div.module p.title.little{font-size:12px;top:10px}
 	div.module img.title{z-index:10;position:absolute;}
 	div.module img.title.corner.left{left:-16px;top:-10px;}
 	div.module img.title.middle.left{left:14px;top:-9px;}
@@ -80,3 +80,5 @@ div.module{height:auto;position:relative;}
 #left div.module {
 	margin-bottom:20px;
 }
+
+

@@ -2,4 +2,4 @@
 # http://www.symfony-project.org/reference/1_4/en/13-View
 
 default:
-  stylesheets:    [moteur.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, moteur.css]

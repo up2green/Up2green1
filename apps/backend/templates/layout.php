@@ -9,6 +9,12 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+      <ul>
+          <li><a href="<?php echo url_for('@categorie')?>">Categories</a></li>
+          <li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
+          <li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
+          <li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
+      </ul>
     <?php echo $sf_content ?>
   </body>
 </html>

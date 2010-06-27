@@ -1,6 +1,10 @@
 categorie:
   root:
-    unique_name: root
+    Translation:
+      fr:
+        name: root
   footer:
-    unique_name: footer
     parent: root
+    Translation:
+      fr:
+        name: Catégorie mère des liens du footer

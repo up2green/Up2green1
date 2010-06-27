@@ -354,11 +354,8 @@ categorie:
       type: boolean
       default: 1
   relations:
-    parent:
-      class: categorie
+    categorie:
       local: parent_id
-      foreign: id
-      foreignAlias: children
       onDelete: CASCADE
 
 lienCategorie:

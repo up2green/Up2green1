@@ -62,8 +62,8 @@ lien:
     with_wildcard_routes: true
 
 # default
-backend:
-  url:   /backend
+homepage:
+  url:   /
   param: { module: organisme, action: index }
 
 # generic rules

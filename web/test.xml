@@ -1,84 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ysearchresponse xmlns="http://www.inktomi.com/" responsecode="200">
-  <nextpage><![CDATA[/ysearch/web/v1/test?format=xml&count=10&appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--&lang=fr&region=fr&start=10]]></nextpage>
-  <resultset_web count="10" start="0" totalhits="183499592" deephits="1210000000">
+  <nextpage><![CDATA[/ysearch/images/v1/pourquoi?format=xml&count=10&appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--&lang=fr&region=fr&start=10]]></nextpage>
+  <resultset_images count="10" start="0" totalhits="1138751" deephits="1138751">
     <result>
-      <abstract><![CDATA[YouTube Agenda Photos Documents Reader Sites Groupes. et encore plus " <b>...</b> Programmes de publicité Solutions d'entreprise À propos de Google Google.com in English <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=10m4p06rd/**http%3A//google.fr/</clickurl>
-      <date>2010/05/27</date>
-      <dispurl><![CDATA[<b>google.fr</b>]]></dispurl>
-      <size>9706</size>
-      <title>Google</title>
-      <url>http://google.fr/</url></result>
+      <abstract>La confusion se termine je crois qu encore une une fois il y a certaines choses que j aurais du abandonner depuis longtemps sur le chemin pour m en sortir J aurais sans doute pu élaborer</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=12eivuqub/**http%3A//bobines.blogs.liberation.fr/bobines/images/2007/07/25/pourquoi.jpg</clickurl>
+      <date>2009/04/24</date>
+      <filename>pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>780</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=12ckmv30m/**http%3A//bobines.blogs.liberation.fr/bobines/2007/07/26-juillet-2007.html</refererclickurl>
+      <refererurl>http://bobines.blogs.liberation.fr/bobines/2007/07/26-juillet-2007.html</refererurl>
+      <size>337100</size>
+      <thumbnail_height>155</thumbnail_height>
+      <thumbnail_url>http://thm-a01.yimg.com/nimage/dacbb32f9c2a70c0</thumbnail_url>
+      <thumbnail_width>77</thumbnail_width>
+      <title>Pourquoi</title>
+      <url>http://bobines.blogs.liberation.fr/bobines/images/2007/07/25/pourquoi.jpg</url>
+      <width>390</width></result>
     <result>
-      <abstract><![CDATA[<b>Tests</b> &amp; Quiz - <b>Test</b>, quizz, <b>test</b> psycho gratuit, <b>test</b> amour, <b>test</b> personnalité]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11ut1joau/**http%3A//www.aufeminin.com/m/psycho/test-quizz-gratuit.html</clickurl>
-      <date>2010/05/28</date>
-      <dispurl><![CDATA[www.<b>aufeminin.com</b>/m/psycho/<wbr><b>test</b>-quizz-gratuit.html]]></dispurl>
-      <size>90809</size>
-      <title>AuFéminin</title>
-      <url>http://www.aufeminin.com/m/psycho/test-quizz-gratuit.html</url></result>
+      <abstract><![CDATA[&gt;&gt; Is Google Making Us Dumber regroupe les meilleures suggestions en &gt;&gt;]]></abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=128utl85r/**http%3A//www.urbanbloggers.fr/wp-content/uploads/2009/03/pourquoi.jpg</clickurl>
+      <date>2009/03/24</date>
+      <filename>pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>400</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11dagjhhq/**http%3A//www.urbanbloggers.fr/archives/625</refererclickurl>
+      <refererurl>http://www.urbanbloggers.fr/archives/625</refererurl>
+      <size>39400</size>
+      <thumbnail_height>135</thumbnail_height>
+      <thumbnail_url>http://thm-a02.yimg.com/nimage/58cec6fa9a566eb8</thumbnail_url>
+      <thumbnail_width>135</thumbnail_width>
+      <title>pourquoi</title>
+      <url>http://www.urbanbloggers.fr/wp-content/uploads/2009/03/pourquoi.jpg</url>
+      <width>400</width></result>
     <result>
-      <abstract><![CDATA[Le <b>test</b> de métier vous aidera à faire le point sur votre projet et votre personnalité professionnelle et à comparer votre profil face à près... Plus...]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=110i221pn/**http%3A//www.test-emploi.com/</clickurl>
-      <date>2010/05/27</date>
-      <dispurl><![CDATA[www.<b>test-emploi.com</b>]]></dispurl>
-      <size>26310</size>
-      <title><![CDATA[<b>TEST</b> GRATUIT - <b>Test</b> Psychotechnique - <b>Test</b> de Personnalité <b>...</b>]]></title>
-      <url>http://www.test-emploi.com/</url></result>
+      <abstract>Carta V I P Sultane Pigment s fanatic Pourquoi les Hiboux bo</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11s3iv3jd/**http%3A//www.hobbydicarta.it/carrello/images/pourquoi.jpg</clickurl>
+      <date>2009/07/16</date>
+      <filename>pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>787</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=12k59ssvq/**http%3A//www.hobbydicarta.it/carrello/product_info.php/cPath/151/products_id/3600</refererclickurl>
+      <refererurl>http://www.hobbydicarta.it/carrello/product_info.php/cPath/151/products_id/3600</refererurl>
+      <size>63500</size>
+      <thumbnail_height>155</thumbnail_height>
+      <thumbnail_url>http://thm-a01.yimg.com/nimage/3ba73878b82c4e88</thumbnail_url>
+      <thumbnail_width>124</thumbnail_width>
+      <title>Carta V I P Sultane Pigment s fanatic Pourquoi les Hiboux</title>
+      <url>http://www.hobbydicarta.it/carrello/images/pourquoi.jpg</url>
+      <width>633</width></result>
     <result>
-      <abstract><![CDATA[Ici, on ne <b>test</b> pas votre QI mais votre QA (quotient d'autodérision) ! Comparez vos scores avec vos amis : délires garantis ! Fun, fou et rigolo <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11n24t43e/**http%3A//www.crazytest.net/fr/index.php%3Fnewtest=go</clickurl>
-      <date>2010/05/23</date>
-      <dispurl><![CDATA[www.<b>crazytest.net</b>/fr/<wbr>index.php?new<b>test</b>=go]]></dispurl>
-      <size>13187</size>
-      <title>Crazytest : testez votre personnalité (autodérision)</title>
-      <url>http://www.crazytest.net/fr/index.php?newtest=go</url></result>
+      <abstract>Initiation à la Terrariophilie Agrandir l image</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11qb3vk80/**http%3A//www.reptilesencaptivite.ca/images/pourquoi.jpg</clickurl>
+      <date>2009/06/18</date>
+      <filename>pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>504</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11mtb1ifl/**http%3A//www.reptilesencaptivite.ca/avantachat.html</refererclickurl>
+      <refererurl>http://www.reptilesencaptivite.ca/avantachat.html</refererurl>
+      <size>99200</size>
+      <thumbnail_height>114</thumbnail_height>
+      <thumbnail_url>http://thm-a02.yimg.com/nimage/a16942ddf5faef08</thumbnail_url>
+      <thumbnail_width>145</thumbnail_width>
+      <title>pourquoi jpg</title>
+      <url>http://www.reptilesencaptivite.ca/images/pourquoi.jpg</url>
+      <width>640</width></result>
     <result>
-      <abstract><![CDATA[Dans cet article nous ne traitons que du <b>test</b> de logiciel ; le <b>test</b> du matériel informatique n'est pas abordé. Un <b>test</b> ressemble à une expérience scientifique. <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11ladupre/**http%3A//fr.wikipedia.org/wiki/Test_(informatique)</clickurl>
-      <date>2010/05/30</date>
-      <dispurl><![CDATA[<b>fr.wikipedia.org</b>/wiki/<wbr><b>Test</b>_(informatique)]]></dispurl>
-      <size>59933</size>
-      <title><![CDATA[<b>Test</b> (informatique) - Wikipédia]]></title>
-      <url>http://fr.wikipedia.org/wiki/Test_(informatique)</url></result>
+      <abstract>certaines graphies propres aux inscriptions antérieures à cette date quelques lettres ressemblant davantage à l alphabet latin pourquoi le lambda l aspiration le sigma</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11tne9rav/**http%3A//lespierresquiparlent.free.fr/images2/pourquoi.jpg</clickurl>
+      <date>2007/01/08</date>
+      <filename>pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>268</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11nqrt43k/**http%3A//lespierresquiparlent.free.fr/auLouvre1.html</refererclickurl>
+      <refererurl>http://lespierresquiparlent.free.fr/auLouvre1.html</refererurl>
+      <size>15300</size>
+      <thumbnail_height>61</thumbnail_height>
+      <thumbnail_url>http://thm-a01.yimg.com/nimage/0c2da9f817a31b36</thumbnail_url>
+      <thumbnail_width>150</thumbnail_width>
+      <title>pourquoi jpg</title>
+      <url>http://lespierresquiparlent.free.fr/images2/pourquoi.jpg</url>
+      <width>651</width></result>
     <result>
-      <abstract><![CDATA[Au contraire, êtes-vous franchement difficile à vivre ? Bref, perle rare ou cadeau empoisonné ? Pour le savoir faites ce <b>test</b> de personnalité gratuit. <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11ss7gpla/**http%3A//www.doctissimo.fr/asp/quizz/visu_form_cadeau.asp</clickurl>
-      <date>2010/05/29</date>
-      <dispurl><![CDATA[www.<b>doctissimo.fr</b>/asp/quizz/<wbr>visu_form_cadeau.asp]]></dispurl>
-      <size>62873</size>
-      <title><![CDATA[Etes-vous un cadeau ? - <b>test</b> - gratuit - personnalité <b>...</b>]]></title>
-      <url>http://www.doctissimo.fr/asp/quizz/visu_form_cadeau.asp</url></result>
+      <abstract>Où sont les mouches en hiver Pourquoi ne peut on pas dépasser la vitesse de la lumière Pourquoi y a t il souvent des bornes en pierre devant l entrée des vieux bâtiments www jesuiscultive com Popularity 2</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11ds8rc08/**http%3A//www.e-news.name/images/bornes.jpg</clickurl>
+      <date>2008/08/31</date>
+      <filename>bornes jpg</filename>
+      <format>jpeg</format>
+      <height>375</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11bvdcrtp/**http%3A//www.e-news.name/je-suis-cultive</refererclickurl>
+      <refererurl>http://www.e-news.name/je-suis-cultive</refererurl>
+      <size>194600</size>
+      <thumbnail_height>108</thumbnail_height>
+      <thumbnail_url>http://thm-a02.yimg.com/nimage/9394c61547396106</thumbnail_url>
+      <thumbnail_width>145</thumbnail_width>
+      <title>bornes jpg</title>
+      <url>http://www.e-news.name/images/bornes.jpg</url>
+      <width>500</width></result>
     <result>
-      <abstract><![CDATA[Préférez-vous vivre au rythme de la passion ? Etes-vous un casse-cou anti-routine ? Pour le savoir faites ce <b>test</b> de personnalité gratuit. <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11ub8d0gv/**http%3A//www.doctissimo.fr/asp/quizz/visu_form_amoureux.asp</clickurl>
-      <date>2010/05/26</date>
-      <dispurl><![CDATA[www.<b>doctissimo.fr</b>/asp/quizz/<wbr>visu_form_amoureux.asp]]></dispurl>
-      <size>64422</size>
-      <title><![CDATA[Romantique - <b>test</b> - gratuit - personnalité - Psychologie <b>...</b>]]></title>
-      <url>http://www.doctissimo.fr/asp/quizz/visu_form_amoureux.asp</url></result>
+      <abstract>Une image vaut mille mots donc voici pourquoi le Moyen Orient est dans la merde</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11q45t0p3/**http%3A//pages.globetrotter.net/mcordeau/2003/moyen.jpg</clickurl>
+      <date>2005/09/05</date>
+      <filename>moyen jpg</filename>
+      <format>jpeg</format>
+      <height>535</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11qa73500/**http%3A//pages.globetrotter.net/mcordeau/2003/moyen.htm</refererclickurl>
+      <refererurl>http://pages.globetrotter.net/mcordeau/2003/moyen.htm</refererurl>
+      <size>267500</size>
+      <thumbnail_height>103</thumbnail_height>
+      <thumbnail_url>http://thm-a01.yimg.com/nimage/76c2308cd8b609f8</thumbnail_url>
+      <thumbnail_width>155</thumbnail_width>
+      <title>moyen jpg</title>
+      <url>http://pages.globetrotter.net/mcordeau/2003/moyen.jpg</url>
+      <width>800</width></result>
+    <result><abstract/>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=12bao6208/**http%3A//www.antilles-mizik.com/boutique/images/EMILE-VOLEL_Pourquoi.jpg</clickurl>
+      <date>2009/05/01</date>
+      <filename>EMILE VOLEL Pourquoi jpg</filename>
+      <format>jpeg</format>
+      <height>600</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11shu1cj1/**http%3A//leblogduzouk.over-blog.org/archive-5-2-2009.html</refererclickurl>
+      <refererurl>http://leblogduzouk.over-blog.org/archive-5-2-2009.html</refererurl>
+      <size>42500</size>
+      <thumbnail_height>145</thumbnail_height>
+      <thumbnail_url>http://thm-a02.yimg.com/nimage/0fbd1b2ee49b3054</thumbnail_url>
+      <thumbnail_width>145</thumbnail_width>
+      <title>EMILE VOLEL Pourquoi jpg</title>
+      <url>http://www.antilles-mizik.com/boutique/images/EMILE-VOLEL_Pourquoi.jpg</url>
+      <width>600</width></result>
+    <result><abstract/>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=12e5oots2/**http%3A//www.crystalxp.net/galerie/img/img-fonds-decran-pourquoi---7081.jpg</clickurl>
+      <date>2008/10/23</date>
+      <filename>img fonds decran pourquoi 7081 jpg</filename>
+      <format>jpeg</format>
+      <height>768</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11lqtaecf/**http%3A//www.crystalxp.net/galerie/fr.id.7081.html</refererclickurl>
+      <refererurl>http://www.crystalxp.net/galerie/fr.id.7081.html</refererurl>
+      <size>139800</size>
+      <thumbnail_height>120</thumbnail_height>
+      <thumbnail_url>http://thm-a01.yimg.com/nimage/43aaea6c3a6da9f0</thumbnail_url>
+      <thumbnail_width>160</thumbnail_width>
+      <title>Fonds d écran Pourquoi</title>
+      <url>http://www.crystalxp.net/galerie/img/img-fonds-decran-pourquoi---7081.jpg</url>
+      <width>1024</width></result>
     <result>
-      <abstract><![CDATA[Le <b>test</b> de Turing est une proposition de <b>test</b> d'intelligence artificielle ayant la <b>...</b> Le <b>test</b> a été inspiré d'un jeu d'imitation dans lequel un homme et <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11gs4tui6/**http%3A//fr.wikipedia.org/wiki/Test_de_Turing</clickurl>
-      <date>2010/05/14</date>
-      <dispurl><![CDATA[<b>fr.wikipedia.org</b>/wiki/<wbr><b>Test</b>_de_Turing]]></dispurl>
-      <size>63270</size>
-      <title><![CDATA[<b>Test</b> de Turing - Wikipédia]]></title>
-      <url>http://fr.wikipedia.org/wiki/Test_de_Turing</url></result>
-    <result>
-      <abstract><![CDATA[<b>...</b> <b>test</b> QI gratuits, <b>test</b> qi gratuit, <b>tests</b> qi gratuits - Envie de mesurer vos capacités intellectuelles ? C'est possible avec nos <b>tests</b> de QI gratuits ! <b>...</b>]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=11p3mldq5/**http%3A//www.aufeminin.com/top-test-de-qi-gratuit.html</clickurl>
-      <date>2010/05/29</date>
-      <dispurl><![CDATA[www.<b>aufeminin.com</b>/<wbr>top-<b>test</b>-de-qi-gratuit.html]]></dispurl>
-      <size>76650</size>
-      <title><![CDATA[QI, <b>Test</b> de qi gratuit : <b>test</b> QI gratuits, <b>test</b> qi gratuit <b>...</b>]]></title>
-      <url>http://www.aufeminin.com/top-test-de-qi-gratuit.html</url></result>
-    <result>
-      <abstract><![CDATA[Analyse le rôle de la couleur, des formes et des images pour la communication et la connaissance des personnes. <b>Test</b> psychologique en ligne.]]></abstract>
-      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTVibmlzMG85BF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDd2tETlJtS0ljcnA0T1JER3ZzLmttdTdCWFE5MDRrd0d3QTRBQV92TA--/SIG=110naedld/**http%3A//www.testcouleur.com/</clickurl>
-      <date>2010/05/19</date>
-      <dispurl><![CDATA[www.<b>testcouleur.com</b>]]></dispurl>
-      <size>13519</size>
-      <title><![CDATA[<b>Test</b> couleur : <b>test</b> de personnalité GRATUIT, <b>test</b> d'amour <b>...</b>]]></title>
-      <url>http://www.testcouleur.com/</url></result></resultset_web></ysearchresponse>
+      <abstract>dégorgeait de cet excès de charge Et ce soir là ignorant la cote d alerte Grégoire Elias avait simplement pris son habituel bain vespéral extrait une vie française de J P Dubois page extracts from my diary 2003</abstract>
+      <clickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11lpluvjr/**http%3A//elfyka.canalblog.com/images/POURQUOI_.jpg</clickurl>
+      <date>2006/05/25</date>
+      <filename>POURQUOI jpg</filename>
+      <format>jpeg</format>
+      <height>650</height>
+      <mimetype>image/jpeg</mimetype>
+      <refererclickurl>http://lrd.yahooapis.com/_ylc=X3oDMTViZTQ5bm1lBF9TAzIwMjMxNTI3MDIEYXBwaWQDJTIwS2pfVHZVX1YzNEViQ0tLZlo0eVBrY3p3NkVMX0FGbkVDVHE5RVZVeWhNeVRHZ3BTZjk3UmhZRTZLSFdzUFEtLQRjbGllbnQDYm9zcwRzZXJ2aWNlA0JPU1MEc2xrA3RpdGxlBHNyY3B2aWQDVGxwVWFXS0ljcnEubTdUcXJ4OFFpbHlKV0tDendrd3B6aXNBQzdBTA--/SIG=11ma7ushn/**http%3A//elfyka.canalblog.com/archives/p120-10.html</refererclickurl>
+      <refererurl>http://elfyka.canalblog.com/archives/p120-10.html</refererurl>
+      <size>62400</size>
+      <thumbnail_height>150</thumbnail_height>
+      <thumbnail_url>http://thm-a02.yimg.com/nimage/f5908283ce258924</thumbnail_url>
+      <thumbnail_width>99</thumbnail_width>
+      <title>POURQUOI jpg</title>
+      <url>http://elfyka.canalblog.com/images/POURQUOI_.jpg</url>
+      <width>430</width></result></resultset_images></ysearchresponse>

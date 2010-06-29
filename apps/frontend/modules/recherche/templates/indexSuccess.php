@@ -81,7 +81,7 @@
 		    <img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
 		    <p class="title">Statistiques</p>
 		    <div class="content">
-			<p><img class="img_map" src="/images/stats_maps_200x70.png"</p>
+			<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png"</p>
 			<p class="center">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</p>
 		    </div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

@@ -19,11 +19,7 @@ ajax_more_results:
   param: { module: ajax, action: moreresults, sf_format: xml }
 
 homepage:
-  url:   /
-  param: { module: recherche, action: index }
-
-moteur:
-  url:   /moteur
+  url: /
   param: { module: recherche, action: index }
 
 plantation:

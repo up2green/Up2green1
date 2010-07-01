@@ -92,9 +92,6 @@ coupon:
     is_active:
       type: boolean
       default: 1
-    is_used:
-      type: boolean
-      default: 0
     used_at:
       type: timestamp
       default: null

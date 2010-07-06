@@ -328,6 +328,14 @@ lien:
     is_active:
       type: boolean
       default: 0 
+  relations:
+    categorie:
+      class: categorie
+      refClass: lienCategorie
+      local: lien_id
+      foreign: categorie_id
+      foreignAlias: Liens
+
 categorie:
   actAs:
     I18n:

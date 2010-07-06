@@ -18,10 +18,12 @@ $(document).ready(function(){
 	/* panel footer "en savoir plus" */
 	$("#footer").hover(
 		function(e){
+			e.stopPropagation();
 			$('html,body').animate({scrollTop: ($(this).offset().top + $(this).height()) }, "slow");
 			$(".content_wrapper", this).stop(true, true).slideToggle("slow");
 		},
 		function(e){
+			e.stopPropagation();
 			$(".content_wrapper", this).stop(true, true).slideToggle("slow");
 		}
 	);

@@ -11,6 +11,7 @@
  * @property integer $parent_id
  * @property boolean $is_active
  * @property categorie $parent
+ * @property Doctrine_Collection $Liens
  * @property Doctrine_Collection $children
  * @property Doctrine_Collection $lienCategorie
  * @property Doctrine_Collection $articleCategorie
@@ -22,6 +23,7 @@
  * @method integer             getParentId()            Returns the current record's "parent_id" value
  * @method boolean             getIsActive()            Returns the current record's "is_active" value
  * @method categorie           getParent()              Returns the current record's "parent" value
+ * @method Doctrine_Collection getLiens()               Returns the current record's "Liens" collection
  * @method Doctrine_Collection getChildren()            Returns the current record's "children" collection
  * @method Doctrine_Collection getLienCategorie()       Returns the current record's "lienCategorie" collection
  * @method Doctrine_Collection getArticleCategorie()    Returns the current record's "articleCategorie" collection
@@ -32,6 +34,7 @@
  * @method categorie           setParentId()            Sets the current record's "parent_id" value
  * @method categorie           setIsActive()            Sets the current record's "is_active" value
  * @method categorie           setParent()              Sets the current record's "parent" value
+ * @method categorie           setLiens()               Sets the current record's "Liens" collection
  * @method categorie           setChildren()            Sets the current record's "children" collection
  * @method categorie           setLienCategorie()       Sets the current record's "lienCategorie" collection
  * @method categorie           setArticleCategorie()    Sets the current record's "articleCategorie" collection
@@ -79,6 +82,11 @@ abstract class Basecategorie extends sfDoctrineRecord
              'local' => 'parent_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasMany('lien as Liens', array(
+             'refClass' => 'lienCategorie',
+             'local' => 'categorie_id',
+             'foreign' => 'lien_id'));
 
         $this->hasMany('categorie as children', array(
              'local' => 'id',

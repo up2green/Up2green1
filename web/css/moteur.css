@@ -144,7 +144,6 @@ font-size:14px;
 }
 /*CORPS ACCUEIL*/
 .menu_centre{
-min-height:370px;
 width:600px;
 clear:both;
 padding-top:20px;
@@ -158,11 +157,7 @@ div.acteur div.module p{left:70px;width:100%;}
 div.acteur div.module a{margin-top:20px;width:255px;}
 div.acteur div.module p.title{left:70px;width:100%;}
 /*encarts droit*/
-.statistiques{
-width:229px;
-height:187px;
-float:right;
-}
+.statistiques{float:right;}
 div.statistiques div.module p.title{text-align:right;left:-70px;width:100%;}
 
 /*partenaires pas mis a jour avec les nouveaux modules*/
@@ -172,6 +167,7 @@ background: url(/images/head_partenaires_229x50.png);
 background-repeat:no-repeat;
 width:229px;
 height:50px;
+margin:0 auto;
 }
 .titre_partenaires{
 text-align:right;
@@ -185,9 +181,10 @@ color:#6600cc;
 .corps_partenaires{
 background: url(/images/middle_partenaires_229x1.png);
 width:229px;
+margin:0 auto;
 }
 .contenus_partenaires{
-margin:auto;
+
 width:203px;
 padding-top:10px;
 padding-left:10px;
@@ -217,7 +214,7 @@ font-size:13px;
 
 }
 .pied_partenaires{
-margin:auto;
+margin:0 auto;
 background: url(/images/footer_partenaires_229x20.png);
 width:229px;
 height:20px;

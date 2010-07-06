@@ -9,17 +9,20 @@
  * @property string $title
  * @property string $src
  * @property boolean $is_active
+ * @property Doctrine_Collection $categorie
  * @property Doctrine_Collection $lienCategorie
  * 
  * @method integer             getId()            Returns the current record's "id" value
  * @method string              getTitle()         Returns the current record's "title" value
  * @method string              getSrc()           Returns the current record's "src" value
  * @method boolean             getIsActive()      Returns the current record's "is_active" value
+ * @method Doctrine_Collection getCategorie()     Returns the current record's "categorie" collection
  * @method Doctrine_Collection getLienCategorie() Returns the current record's "lienCategorie" collection
  * @method lien                setId()            Sets the current record's "id" value
  * @method lien                setTitle()         Sets the current record's "title" value
  * @method lien                setSrc()           Sets the current record's "src" value
  * @method lien                setIsActive()      Sets the current record's "is_active" value
+ * @method lien                setCategorie()     Sets the current record's "categorie" collection
  * @method lien                setLienCategorie() Sets the current record's "lienCategorie" collection
  * 
  * @package    up2green
@@ -56,6 +59,11 @@ abstract class Baselien extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('categorie', array(
+             'refClass' => 'lienCategorie',
+             'local' => 'lien_id',
+             'foreign' => 'categorie_id'));
+
         $this->hasMany('lienCategorie', array(
              'local' => 'id',
              'foreign' => 'lien_id'));

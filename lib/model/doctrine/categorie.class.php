@@ -12,5 +12,4 @@
  */
 class categorie extends Basecategorie
 {
-
 }

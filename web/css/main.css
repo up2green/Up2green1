@@ -138,41 +138,45 @@ height:23px;
 
 /* footer */
 
-#footer{
+#footer_wrapper{
+	width:100%;
+}
+
+#footer_inner{
 	font-size:14px;
 	margin:0 auto;
 	position:relative;
 	width:1024px;
 }
 
-	#footer a{color:black;}
-	#footer a:hover{color:#8DB90C;}
-	#footer ul{
+	#footer_inner a{color:black;}
+	#footer_inner a:hover{color:#8DB90C;}
+	#footer_inner ul{
 		display: block;
 		float:left;
 		font-size:12px;
 	}
 	
-	#footer .onglet div{height:25px;}
+	#footer_inner .onglet div{height:25px;}
 
-	#footer .onglet .left{
+	#footer_inner .onglet .left{
 		background-image:url(/images/footer_more_left_15x25.png);
 		float:left;
 		width:15px;
 	}
-	#footer .onglet .middle{
+	#footer_inner .onglet .middle{
 		line-height:20px;
 		color:white;
 		background-image:url(/images/footer_more_middle_1x25.png);
 		float:left;
 	}
-	#footer .onglet .right{
+	#footer_inner .onglet .right{
 		background-image:url(/images/footer_more_right_25x25.png);
 		float:left;
 		width:25px;
 	}
 
-	#footer .head{
+	#footer_inner .head{
 		clear: left;
 		width:1027px;
 		height:30px;
@@ -180,7 +184,7 @@ height:23px;
 		background-repeat:no-repeat;
 		padding-left:10px;
 	}
-		#footer .head li{
+		#footer_inner .head li{
 			display: block;
 			float:left;
 			width:170px;
@@ -193,11 +197,11 @@ height:23px;
 			font-size:14px;
 		}
 
-		#footer .head li a:hover{
+		#footer_inner .head li a:hover{
 		color:#2b9018;
 		}
 
-	#footer .content_wrapper{
+	#footer_inner .content_wrapper{
 		width:1027px;
 		overflow:hidden;  
 /*
@@ -209,12 +213,12 @@ height:23px;
 		display: none;
 	}
 
-	#footer .content_inner{
+	#footer_inner .content_inner{
 		padding-left:15px;
 		background-color:#fff;
 	}
 
-	#footer .content_inner ul{
+	#footer_inner .content_inner ul{
 		width:175px;
 		padding-top:20px;
 		padding-left:25px;
@@ -227,14 +231,14 @@ height:23px;
 		text-decoration:none;
 	}
 
-	#footer .content_inner li{
+	#footer_inner .content_inner li{
 		list-style-image: url(/images/icons/puce.png);
 		list-style-type: square;
 		font-size:12px;
 		padding-bottom:10px;
 	}
 	
-	#footer .bottom{
+	#footer_inner .bottom{
 	width:1027px;
 	height:20px;
 	background: url(/images/footer_bottom_1027x20.png);

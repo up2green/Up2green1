@@ -12,4 +12,8 @@
  */
 class categorie extends Basecategorie
 {
+	public function __toString()
+  {
+    return $this->getName();
+  }
 }

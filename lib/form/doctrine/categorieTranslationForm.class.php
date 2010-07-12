@@ -12,9 +12,6 @@ class categorieTranslationForm extends BasecategorieTranslationForm
 {
   public function configure()
   {
-       unset(
-                $this['slug'],
-                $this['name']
-        );
+       unset($this['slug']);
   }
 }

@@ -73,18 +73,18 @@ abstract class Baselien extends sfDoctrineRecord
              'fields' => 
              array(
               0 => 'title',
-             ),
+             )
              ));
         $sluggable1 = new Doctrine_Template_Sluggable(array(
              'fields' => 
              array(
-              0 => 'title',
+              0 => 'title'
              ),
              'uniqueBy' => 
              array(
               0 => 'lang',
-              1 => 'title',
-             ),
+              1 => 'title'
+             )
              ));
         $i18n0->addChild($sluggable1);
         $this->actAs($timestampable0);

@@ -6,13 +6,13 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        up2green : Administration
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css, jquery-ui-1.8.1.custom.css]
+  stylesheets:    [main.css, jquery-ui-1.8.1.custom.css, backend.css]
 
   javascripts:    [jquery-1.4.2.min.js, jquery-1.4.2.js]
 

@@ -12,5 +12,6 @@ class articleTranslationForm extends BasearticleTranslationForm
 {
   public function configure()
   {
+          unset($this['slug']);
   }
 }

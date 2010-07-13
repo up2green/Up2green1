@@ -1,0 +1,9 @@
+indexSuccess:
+  stylesheets:    [blog.css]
+  javascripts:    [blog.js]
+  layout:         blog
+
+viewElementSuccess:
+  stylesheets:    [blog.css]
+  javascripts:    [blog.js]
+  layout:         blog

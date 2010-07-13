@@ -18,6 +18,24 @@ ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
 
+
+####################
+##### BLOG
+####################
+
+blog_article:
+  url:   /blog/article/:slug
+  param: { module: blog, action: viewElement, type: article }
+
+blog_programme:
+  url:   /blog/programme/:slug
+  param: { module: blog, action: viewElement, type: programme }
+
+blog:
+  url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
+  param: { module: blog, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
+
+
 homepage:
   url:   /
   param: { module: recherche, action: index }

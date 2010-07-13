@@ -1,12 +1,3 @@
-AuthUserFile /var/www/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Acces Restreint"
-AuthType Basic
-
-<Limit GET POST>
-	Require User fragueur titeiko flurf antoine jg.noze
-</Limit>
-
 #Options +FollowSymLinks +ExecCGI
 
 <IfModule mod_rewrite.c>

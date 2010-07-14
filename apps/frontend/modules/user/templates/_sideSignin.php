@@ -1,6 +1,6 @@
 <form id="signinForm" action="<?php echo url_for('@sf_guard_signin') ?>" method="post" class="clearfix">
     <?php echo $signinForm->renderHiddenFields(); ?>
-    <ul class="menu_connexion_deco">
+    <ul class="menu">
         <li><p>Se souvenir <br/>de moi</p></li>
         <li><input tabindex="5" type="checkbox" name="signin[remember]" id="signin_remember" />
         <label for="signin_remember"></label></li>

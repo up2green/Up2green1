@@ -1,0 +1,8 @@
+AuthUserFile /var/www/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Acces Restreint"
+AuthType Basic
+
+<Limit GET POST>
+	Require User fragueur flurf titeiko odolbeau antoine jg.noze
+</Limit>

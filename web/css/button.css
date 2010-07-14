@@ -246,3 +246,18 @@
 	background: -moz-linear-gradient(top,  #f171ab,  #feb1d3);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f171ab', endColorstr='#feb1d3');
 }
+
+/*btn de navigation dans les bloc > up and down */
+
+span.btn_up a.button {
+	padding: .2em 2em .2em;
+	-webkit-border-radius: 0 0 0 .5em; 
+	-moz-border-radius: 0 0 0 .5em;
+	border-radius:0 0 0 .5em;
+}
+span.btn_down a.button {
+	padding: .2em 2em .2em;
+	-webkit-border-radius: 0 0 .5em 0; 
+	-moz-border-radius: 0 0 .5em 0;
+	border-radius: 0 0 .5em 0;
+}

@@ -49,10 +49,8 @@ margin-top:10px;
 			width:120px;
 		}
 		#form_programme_plantation li span.action {
-			margin:-15px 0 0;
-			position:absolute;
-			right:0;
-			top:50%;
+			float:right;
+			margin:0 0 2px;
 		}
 	#form_programme_plantation span.button {
 		width:70%;

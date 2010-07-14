@@ -12,12 +12,23 @@ class articleForm extends BasearticleForm
 {
   public function configure()
   {
-      unset(
-                $this['created_at'],
-                $this['updated_at']
-        );
-        $this->embedI18n(array('en', 'fr'));
-        $this->widgetSchema->setLabel('en', 'English');
-        $this->widgetSchema->setLabel('fr', 'French');
+    unset(
+      $this['created_at'],
+      $this['updated_at']
+    );
+
+    $this->widgetSchema['logo'] = new sfWidgetFormInputFile(array(
+      'label' => 'Logo',
+    ));
+
+    $this->validatorSchema['logo'] = new sfValidatorFile(array(
+      'required'   => false,
+      'path'       => sfConfig::get('sf_upload_dir').'/article',
+      'mime_types' => 'web_images',
+    ));
+
+    $this->embedI18n(array('en', 'fr'));
+    $this->widgetSchema->setLabel('en', 'English');
+    $this->widgetSchema->setLabel('fr', 'French');
   }
 }

@@ -45,15 +45,15 @@ float:left;
 .menu_accueil{
 float:left;
 height:40px;
-width:500px;
 font-size:12px;
 color:#FFFFFF;
 }
 .menu{
 display: block;
-font-size:12px;
+font-size:10px;
 margin:0px;
 list-style-type:none;
+width:400px;
 }
 .menu li{
 padding-top:10px;
@@ -140,19 +140,23 @@ height:23px;
 
 #footer_wrapper{
 	width:100%;
+	position:relative;
+	height:80px;
 }
 
 #footer_inner{
 	font-size:14px;
-	margin:0 auto;
-	position:relative;
+	margin-left:-512px;
+	position:absolute;
+	bottom:0;
+	left:50%;
 	width:1024px;
 }
 
 	#footer_inner a{color:black;}
 	#footer_inner a:hover{color:#8DB90C;}
 	#footer_inner ul{
-		display: block;
+		position: relative;
 		float:left;
 		font-size:12px;
 	}
@@ -184,6 +188,10 @@ height:23px;
 		background-repeat:no-repeat;
 		padding-left:10px;
 	}
+		#footer_inner .head ul{
+			position:absolute;
+		}
+		
 		#footer_inner .head li{
 			display: block;
 			float:left;
@@ -203,10 +211,7 @@ height:23px;
 
 	#footer_inner .content_wrapper{
 		width:1027px;
-		overflow:hidden;  
-/*
-		min-height:240px;
-*/
+		overflow:hidden;
 		background-color:#fff;
 		background: url(/images/footer_cartoucherepeat_1027x1.png);
 		background-repeat:reapeat-y;

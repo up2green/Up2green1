@@ -9,7 +9,6 @@
 
             </div>
             <ul class="menu">
-                <li><a href="#">Comment ça marche ?</a></li>
                 <li><a href="#">Définir comme page d'accueil</a></li>
                 <li><a href="<?php echo url_for("user/inscription") ?>">Créer mon compte</a></li>
             </ul>

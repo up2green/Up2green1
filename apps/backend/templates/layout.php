@@ -20,7 +20,7 @@
  
       <div id="menu">
         <ul>
-			<li><a href="<?php echo url_for('@categorie')?>">Categories</a></li>
+			<li><a href="<?php echo url_for('@category')?>">Categories</a></li>
 			<li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
 			<li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
 			<li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>

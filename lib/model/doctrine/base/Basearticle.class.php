@@ -12,24 +12,24 @@
  * @property clob $description
  * @property string $logo
  * @property boolean $is_active
- * @property Doctrine_Collection $articleCategorie
+ * @property Doctrine_Collection $articleCategory
  * 
- * @method integer             getId()               Returns the current record's "id" value
- * @method string              getUniqueName()       Returns the current record's "unique_name" value
- * @method string              getTitle()            Returns the current record's "title" value
- * @method string              getAccroche()         Returns the current record's "accroche" value
- * @method clob                getDescription()      Returns the current record's "description" value
- * @method string              getLogo()             Returns the current record's "logo" value
- * @method boolean             getIsActive()         Returns the current record's "is_active" value
- * @method Doctrine_Collection getArticleCategorie() Returns the current record's "articleCategorie" collection
- * @method article             setId()               Sets the current record's "id" value
- * @method article             setUniqueName()       Sets the current record's "unique_name" value
- * @method article             setTitle()            Sets the current record's "title" value
- * @method article             setAccroche()         Sets the current record's "accroche" value
- * @method article             setDescription()      Sets the current record's "description" value
- * @method article             setLogo()             Sets the current record's "logo" value
- * @method article             setIsActive()         Sets the current record's "is_active" value
- * @method article             setArticleCategorie() Sets the current record's "articleCategorie" collection
+ * @method integer             getId()              Returns the current record's "id" value
+ * @method string              getUniqueName()      Returns the current record's "unique_name" value
+ * @method string              getTitle()           Returns the current record's "title" value
+ * @method string              getAccroche()        Returns the current record's "accroche" value
+ * @method clob                getDescription()     Returns the current record's "description" value
+ * @method string              getLogo()            Returns the current record's "logo" value
+ * @method boolean             getIsActive()        Returns the current record's "is_active" value
+ * @method Doctrine_Collection getArticleCategory() Returns the current record's "articleCategory" collection
+ * @method article             setId()              Sets the current record's "id" value
+ * @method article             setUniqueName()      Sets the current record's "unique_name" value
+ * @method article             setTitle()           Sets the current record's "title" value
+ * @method article             setAccroche()        Sets the current record's "accroche" value
+ * @method article             setDescription()     Sets the current record's "description" value
+ * @method article             setLogo()            Sets the current record's "logo" value
+ * @method article             setIsActive()        Sets the current record's "is_active" value
+ * @method article             setArticleCategory() Sets the current record's "articleCategory" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -78,7 +78,7 @@ abstract class Basearticle extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('articleCategorie', array(
+        $this->hasMany('articleCategory', array(
              'local' => 'id',
              'foreign' => 'article_id'));
 

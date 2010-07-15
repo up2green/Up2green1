@@ -14,6 +14,7 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('organisme'), 'add_empty' => true)),
+      'geoadress'    => new sfWidgetFormFilterInput(),
       'latitude'     => new sfWidgetFormFilterInput(),
       'longitude'    => new sfWidgetFormFilterInput(),
       'is_active'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
@@ -24,6 +25,7 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('organisme'), 'column' => 'id')),
+      'geoadress'    => new sfValidatorPass(array('required' => false)),
       'latitude'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'longitude'    => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'is_active'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
@@ -51,6 +53,7 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'           => 'Number',
       'organisme_id' => 'ForeignKey',
+      'geoadress'    => 'Text',
       'latitude'     => 'Number',
       'longitude'    => 'Number',
       'is_active'    => 'Boolean',

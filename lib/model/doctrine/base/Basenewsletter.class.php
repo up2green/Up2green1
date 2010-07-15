@@ -13,26 +13,26 @@
  * @property string $email_from
  * @property integer $is_forced
  * @property timestamp $sent_at
- * @property Doctrine_Collection $newsletterCategorie
+ * @property Doctrine_Collection $newsletterCategory
  * 
- * @method integer             getId()                  Returns the current record's "id" value
- * @method string              getUniqueName()          Returns the current record's "unique_name" value
- * @method string              getTitle()               Returns the current record's "title" value
- * @method clob                getContent()             Returns the current record's "content" value
- * @method string              getReplyTo()             Returns the current record's "reply_to" value
- * @method string              getEmailFrom()           Returns the current record's "email_from" value
- * @method integer             getIsForced()            Returns the current record's "is_forced" value
- * @method timestamp           getSentAt()              Returns the current record's "sent_at" value
- * @method Doctrine_Collection getNewsletterCategorie() Returns the current record's "newsletterCategorie" collection
- * @method newsletter          setId()                  Sets the current record's "id" value
- * @method newsletter          setUniqueName()          Sets the current record's "unique_name" value
- * @method newsletter          setTitle()               Sets the current record's "title" value
- * @method newsletter          setContent()             Sets the current record's "content" value
- * @method newsletter          setReplyTo()             Sets the current record's "reply_to" value
- * @method newsletter          setEmailFrom()           Sets the current record's "email_from" value
- * @method newsletter          setIsForced()            Sets the current record's "is_forced" value
- * @method newsletter          setSentAt()              Sets the current record's "sent_at" value
- * @method newsletter          setNewsletterCategorie() Sets the current record's "newsletterCategorie" collection
+ * @method integer             getId()                 Returns the current record's "id" value
+ * @method string              getUniqueName()         Returns the current record's "unique_name" value
+ * @method string              getTitle()              Returns the current record's "title" value
+ * @method clob                getContent()            Returns the current record's "content" value
+ * @method string              getReplyTo()            Returns the current record's "reply_to" value
+ * @method string              getEmailFrom()          Returns the current record's "email_from" value
+ * @method integer             getIsForced()           Returns the current record's "is_forced" value
+ * @method timestamp           getSentAt()             Returns the current record's "sent_at" value
+ * @method Doctrine_Collection getNewsletterCategory() Returns the current record's "newsletterCategory" collection
+ * @method newsletter          setId()                 Sets the current record's "id" value
+ * @method newsletter          setUniqueName()         Sets the current record's "unique_name" value
+ * @method newsletter          setTitle()              Sets the current record's "title" value
+ * @method newsletter          setContent()            Sets the current record's "content" value
+ * @method newsletter          setReplyTo()            Sets the current record's "reply_to" value
+ * @method newsletter          setEmailFrom()          Sets the current record's "email_from" value
+ * @method newsletter          setIsForced()           Sets the current record's "is_forced" value
+ * @method newsletter          setSentAt()             Sets the current record's "sent_at" value
+ * @method newsletter          setNewsletterCategory() Sets the current record's "newsletterCategory" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -89,7 +89,7 @@ abstract class Basenewsletter extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('newsletterCategorie', array(
+        $this->hasMany('newsletterCategory', array(
              'local' => 'id',
              'foreign' => 'newsletter_id'));
 

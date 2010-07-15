@@ -14,5 +14,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     	'sfFormExtraPlugin',
     	'sfProtoculousPlugin'
     ));
+    $this->enablePlugins('sfJqueryTreeDoctrineManagerPlugin');
   }
 }

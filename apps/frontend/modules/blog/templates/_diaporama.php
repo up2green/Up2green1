@@ -12,16 +12,6 @@
   }
   ?>
 
-  <div class="diapo">
-    <?php echo image_tag("blog/diaporama/img_diapo.png"); ?>
-  </div>
-  <div class="diapo">
-    <?php echo image_tag("blog/diaporama/img_diapo.png"); ?>
-  </div>
-  <div class="diapo">
-    <?php echo image_tag("blog/diaporama/img_diapo.png"); ?>
-  </div>
-
   <div class="nav">
     <a href="#" class="nextDiapo"><?php echo image_tag("blog/diaporama/btn_next_diapo.png"); ?></a>
   </div>

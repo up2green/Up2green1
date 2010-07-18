@@ -14,7 +14,7 @@ abstract class BasemoduleFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'content_id'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'content_type' => new sfWidgetFormChoice(array('choices' => array('' => '', 'categorie' => 'categorie', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
+      'content_type' => new sfWidgetFormChoice(array('choices' => array('' => '', 'category' => 'category', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
       'is_active'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'action'       => new sfWidgetFormFilterInput(),
       'user_access'  => new sfWidgetFormFilterInput(),
@@ -24,7 +24,7 @@ abstract class BasemoduleFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'content_id'   => new sfValidatorPass(array('required' => false)),
-      'content_type' => new sfValidatorChoice(array('required' => false, 'choices' => array('categorie' => 'categorie', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
+      'content_type' => new sfValidatorChoice(array('required' => false, 'choices' => array('category' => 'category', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
       'is_active'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'action'       => new sfValidatorPass(array('required' => false)),
       'user_access'  => new sfValidatorPass(array('required' => false)),

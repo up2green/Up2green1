@@ -53,7 +53,6 @@ abstract class BasecouponFormFilter extends BaseFormFilterDoctrine
       'code'       => 'Text',
       'credit'     => 'Number',
       'is_active'  => 'Boolean',
-      'is_used'    => 'Boolean',
       'used_at'    => 'Date',
       'used_by'    => 'Number',
       'created_at' => 'Date',

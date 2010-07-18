@@ -329,19 +329,23 @@ lien:
       type: boolean
       default: 0 
   relations:
-    categorie:
-      class: categorie
-      refClass: lienCategorie
+    category:
+      class: category
+      refClass: lienCategory
       local: lien_id
-      foreign: categorie_id
+      foreign: category_id
       foreignAlias: Liens
-
-categorie:
+category:
   actAs:
     I18n:
       fields: [name]
       actAs:
-        Sluggable: { fields: [name], uniqueBy: [lang, name] }
+        Sluggable:
+          fields: [name]
+          uniqueBy: [lang, name] 
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: root_id
   columns:
     id:
       type: integer(4)
@@ -352,25 +356,19 @@ categorie:
       unique: true
     name:
       type: string(128)
-    parent_id:
-      type: integer(4)
+      notnull: true
     is_active:
       type: boolean
       default: 1
-  relations:
-    parent:
-      class: categorie
-      foreignAlias: children
-      local: parent_id
-      onDelete: CASCADE
+     
 
-lienCategorie:
+lienCategory:
   options:
     symfony:
       form:   false
       filter: false
   columns:
-    categorie_id:
+    category_id:
       type: integer(4)
       primary: true
       notnull: true
@@ -379,20 +377,20 @@ lienCategorie:
       primary: true
       notnull: true
   relations:
-    categorie:
-      local: categorie_id
+    category:
+      local: category_id
       onDelete: CASCADE
     lien:
       local: lien_id
       onDelete: CASCADE
 
-articleCategorie:
+articleCategory:
   options:
     symfony:
       form:   false
       filter: false
   columns:
-    categorie_id:
+    category_id:
       type: integer(4)
       primary: true
       notnull: true
@@ -401,20 +399,20 @@ articleCategorie:
       primary: true
       notnull: true
   relations:
-    categorie:
-      local: categorie_id
+    category:
+      local: category_id
       onDelete: CASCADE
     article:
       local: article_id
       onDelete: CASCADE
       
-newsletterCategorie:
+newsletterCategory:
   options:
     symfony:
       form:   false
       filter: false
   columns:
-    categorie_id:
+    category_id:
       type: integer(4)
       primary: true
       notnull: true
@@ -423,8 +421,8 @@ newsletterCategorie:
       primary: true
       notnull: true
   relations:
-    categorie:
-      local: categorie_id
+    category:
+      local: category_id
       onDelete: CASCADE
     newsletter:
       local: newsletter_id
@@ -472,7 +470,7 @@ module:
       notnull: true
     content_type:
       type: enum
-      values: [categorie, lien, article, newsletter, programme, organisme, gmap, recherche, user, sgGuardAuth]
+      values: [category, lien, article, newsletter, programme, organisme, gmap, recherche, user, sgGuardAuth]
     is_active:
       type: boolean
       default: 0

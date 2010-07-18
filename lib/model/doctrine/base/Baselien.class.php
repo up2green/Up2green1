@@ -9,21 +9,21 @@
  * @property string $title
  * @property string $src
  * @property boolean $is_active
- * @property Doctrine_Collection $categorie
- * @property Doctrine_Collection $lienCategorie
+ * @property Doctrine_Collection $category
+ * @property Doctrine_Collection $lienCategory
  * 
- * @method integer             getId()            Returns the current record's "id" value
- * @method string              getTitle()         Returns the current record's "title" value
- * @method string              getSrc()           Returns the current record's "src" value
- * @method boolean             getIsActive()      Returns the current record's "is_active" value
- * @method Doctrine_Collection getCategorie()     Returns the current record's "categorie" collection
- * @method Doctrine_Collection getLienCategorie() Returns the current record's "lienCategorie" collection
- * @method lien                setId()            Sets the current record's "id" value
- * @method lien                setTitle()         Sets the current record's "title" value
- * @method lien                setSrc()           Sets the current record's "src" value
- * @method lien                setIsActive()      Sets the current record's "is_active" value
- * @method lien                setCategorie()     Sets the current record's "categorie" collection
- * @method lien                setLienCategorie() Sets the current record's "lienCategorie" collection
+ * @method integer             getId()           Returns the current record's "id" value
+ * @method string              getTitle()        Returns the current record's "title" value
+ * @method string              getSrc()          Returns the current record's "src" value
+ * @method boolean             getIsActive()     Returns the current record's "is_active" value
+ * @method Doctrine_Collection getCategory()     Returns the current record's "category" collection
+ * @method Doctrine_Collection getLienCategory() Returns the current record's "lienCategory" collection
+ * @method lien                setId()           Sets the current record's "id" value
+ * @method lien                setTitle()        Sets the current record's "title" value
+ * @method lien                setSrc()          Sets the current record's "src" value
+ * @method lien                setIsActive()     Sets the current record's "is_active" value
+ * @method lien                setCategory()     Sets the current record's "category" collection
+ * @method lien                setLienCategory() Sets the current record's "lienCategory" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -59,12 +59,12 @@ abstract class Baselien extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('categorie', array(
-             'refClass' => 'lienCategorie',
+        $this->hasMany('category', array(
+             'refClass' => 'lienCategory',
              'local' => 'lien_id',
-             'foreign' => 'categorie_id'));
+             'foreign' => 'category_id'));
 
-        $this->hasMany('lienCategorie', array(
+        $this->hasMany('lienCategory', array(
              'local' => 'id',
              'foreign' => 'lien_id'));
 
@@ -73,18 +73,18 @@ abstract class Baselien extends sfDoctrineRecord
              'fields' => 
              array(
               0 => 'title',
-             )
+             ),
              ));
         $sluggable1 = new Doctrine_Template_Sluggable(array(
              'fields' => 
              array(
-              0 => 'title'
+              0 => 'title',
              ),
              'uniqueBy' => 
              array(
               0 => 'lang',
-              1 => 'title'
-             )
+              1 => 'title',
+             ),
              ));
         $i18n0->addChild($sluggable1);
         $this->actAs($timestampable0);

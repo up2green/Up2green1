@@ -34,37 +34,27 @@ class blogComponents extends sfComponents {
   }
 
   public function executePartenairesBloc(sfWebRequest $request) {
+  	
     // Chargement du flux RSS
-    $xml = simplexml_load_file(sfConfig::get('app_blog_partenaires_url'));
+    $dom = new DOMDocument();
+    $dom->load(sfConfig::get('app_blog_partenaires_url'));
+    
+    $items = $dom->getElementsByTagName('item');
     // Récupération des programmes
     $currentOffset = $request->getParameter('partenairesOffset', 0);
-    $this->offsets = $this->retrievePartenairesOffsets($currentOffset, count($xml->channel->item));
+    $this->offsets = $this->retrievePartenairesOffsets($currentOffset, $items->length);
 
     // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
     if($request->isXmlHttpRequest())
       $this->noBloc = true;
 
-//    echo '<pre>';
-//    print_r($xml->channel->item[0]);
-//    echo '</pre>';
-
-//    echo '<pre>';
-//    foreach($xml->channel->item as $i) {
-//      echo $i->title.'<br />';
-////      print_r($i);
-//    }
-//    echo '</pre>';
-
     $this->partenaires = array();
-//    echo 'CURRENT OFFSET: '.$currentOffset.' / MAX OFFSET: '.($currentOffset+sfConfig::get('app_blog_bloc_partenaires_max')).'<br />';
+    
     for($i=$currentOffset; $i < $currentOffset+sfConfig::get('app_blog_bloc_partenaires_max'); $i++) {
-      if(isset($xml->channel->item[intval($i)])) {
-        $this->partenaires[] = $xml->channel->item[intval($i)];
-//        echo $xml->channel->item[$i+1]->title;
-      }
+		if($i >= 0 && $i < $items->length) {
+			$this->partenaires[] = $dom->getElementsByTagName('item')->item($i);
+		}
     }
-
-//    $this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'));
   }
 
   public function executeDiaporama(sfWebRequest $request) {

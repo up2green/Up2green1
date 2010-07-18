@@ -275,51 +275,65 @@ body {
 }
 
 #bg_corps span.corner {
+	background-image: url("../images/blog/bg_corps/corner_bg_corps.png");
+	background-repeat: no-repeat;
+	background-color: transparent;
 	display:block;
 	font-size:0;
 	position:absolute;
 	width:15px;
+	height:15px;
 }
 
 #bg_corps span.ctl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left top transparent;
-	height:15px;
+	background-position:  scroll left top ;
 	left:-15px;
-	top:-14px;
+	top:-15px;
 }
 
 #bg_corps span.ctr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right top transparent;
-	height:15px;
+	background-position:right top;
 	right:-15px;
-	top:-14px;
+	top:-15px;
 }
 
 #bg_corps span.cbl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left bottom transparent;
-	bottom:-26px;
-	height:25px;
+	background-position:left bottom;
+	bottom:-15px;
 	left:-15px;
 }
 
 #bg_corps span.cbr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right bottom transparent;
-	bottom:-26px;
-	height:25px;
+	background-position:right bottom;
+	bottom:-15px;
 	right:-15px;
 }
 
-#bg_corps span.border.bb {
-	background:url("../images/blog/bg_corps/bottom_bg_corps.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:25px;
+#bg_corps span.border {
+	background-color: transparent;
+	position:absolute;
+}
+
+#bg_corps span.border.bb,
+#bg_corps span.border.bt {
+	background-repeat: repeat-x;
+	height:15px;
 	left:0;
 }
 
+#bg_corps span.border.bl,
+#bg_corps span.border.br {
+	background-repeat: repeat-y;
+	width:15px;
+}
+
+#bg_corps span.border.bb {
+	background-image:url("../images/blog/bg_corps/bottom_bg_corps.png");
+	bottom:-15px;
+}
+
 #bg_corps span.border.bt {
-	background:url("../images/blog/bg_corps/top_bg_corps.png") repeat-x scroll 0 0 transparent;
-	height:15px;
-	left:0;
+	background-image:url("../images/blog/bg_corps/top_bg_corps.png");
 	top:-15px;
 }
 
@@ -331,11 +345,6 @@ body {
 #bg_corps span.border.br {
 	background:url("../images/blog/bg_corps/right_bg_corps.png") repeat scroll 0 0 transparent;
 	right:-15px;
-	top:1px;
-}
-
-#bg_corps span.border {
-	position:absolute;
 }
 
 #bg_corps span.border.bb, span.border.bt {
@@ -344,7 +353,6 @@ body {
 
 #bg_corps span.border.bl, span.border.br {
 	height:100%;
-	top:1px;
 	width:15px;
 }
 
@@ -363,48 +371,49 @@ div #bg_corps div.module div.content {
 	font-size:0;
 	position:absolute;
 	width:15px;
+	height:15px;
 }
 
-.module.social span.ctl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left top transparent;
-	height:15px;
+.module.social span.ctl,
+.module.social span.ctr {
 	left:-15px;
-	top:-14px;
+	top:-15px;
+}
+
+.module.social span.cbl,
+.module.social span.cbr {
+	bottom:-25px;
+	right:-15px;
+}
+
+.module.social span.ctl{
+	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left top transparent;
 }
 
 .module.social span.ctr {
 	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right top transparent;
-	display:none;
-	height:15px;
-	right:-15px;
-	top:-15px;
 }
 
 .module.social span.cbl {
 	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left bottom transparent;
-	bottom:-26px;
-	height:25px;
-	left:-15px;
 }
 
 .module.social span.cbr {
 	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right bottom transparent;
-	bottom:-25px;
-	display:none;
-	height:25px;
-	right:-15px;
+}
+
+.module.social span.border.bt,
+.module.social span.border.bb {
+	height:15px;
+	top:-15px;
 }
 
 .module.social span.border.bb {
 	background:url("../images/blog/bg_corps/bottom_bg_corps.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:25px;
 }
 
 .module.social span.border.bt {
 	background:url("../images/blog/bg_corps/top_bg_corps.png") repeat-x scroll 0 0 transparent;
-	height:15px;
-	top:-15px;
 }
 
 .module.social span.border.bl {
@@ -422,13 +431,8 @@ div #bg_corps div.module div.content {
 	position:absolute;
 }
 
-.module.social span.border.bb, span.border.bt {
-	width:100%;
-}
-
 .module.social span.border.bl, span.border.br {
 	height:100%;
-	top:1px;
 	width:15px;
 }
 

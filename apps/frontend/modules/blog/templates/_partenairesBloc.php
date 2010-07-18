@@ -7,15 +7,7 @@
     <div class="content">
       <p class="title_blog">Nos partenaires entreprises</p>
     </div>
-    <span class="border bt"></span>
-    <span class="border bb"></span>
-    <span class="border bl"></span>
-    <span class="border br"></span>
-    <!-- corners -->
-    <span class="corner ctl"></span>
-    <span class="corner ctr"></span>
-    <span class="corner cbl"></span>
-    <span class="corner cbr"></span>
+    <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
   <div class="content blocContent">
     <div class="blocObjects">
@@ -28,10 +20,9 @@
             echo '<p class="first_article">';
           else
             echo '<p class="article">';
-          echo '<p class="ctn_texte">'.$p->title.'</p>';
+          echo '<p class="ctn_texte">'.$p->getElementsByTagName('title')->item(0)->nodeValue.'</p>';
           $target = (sfConfig::get('app_blog_partenaires_open_in_new_window', false))? 'target="_blank "' : "";
-          echo '<a class="left" '.$target.' href="'.$p->link.'">'.__('read_more').'</a>';
-//          echo link_to(__('read_more'), $p->link, array('class' => 'left'));
+          echo '<a class="left" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.__('read_more').'</a>';
         }
 
         // Sauvegardes des URLs pour charger les articles suivants / précédents (utilisés pour modifier l'URL des boutons en AJAX)
@@ -56,17 +47,7 @@
       </span>
     </p>
   </div>
-
-  <!-- borders -->
-  <span class="border bt"></span>
-  <span class="border bb"></span>
-  <span class="border bl"></span>
-  <span class="border br"></span>
-  <!-- corners -->
-  <span class="corner ctl"></span>
-  <span class="corner ctr"></span>
-  <span class="corner cbl"></span>
-  <span class="corner cbr"></span>
+	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>
 <?php
   endif;

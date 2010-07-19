@@ -12,5 +12,6 @@ class lienTranslationForm extends BaselienTranslationForm
 {
   public function configure()
   {
+  	unset($this['slug']);
   }
 }

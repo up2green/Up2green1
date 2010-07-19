@@ -17,7 +17,7 @@ abstract class BasemoduleForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
       'content_id'   => new sfWidgetFormInputText(),
-      'content_type' => new sfWidgetFormChoice(array('choices' => array('categorie' => 'categorie', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
+      'content_type' => new sfWidgetFormChoice(array('choices' => array('category' => 'category', 'lien' => 'lien', 'article' => 'article', 'newsletter' => 'newsletter', 'programme' => 'programme', 'organisme' => 'organisme', 'gmap' => 'gmap', 'recherche' => 'recherche', 'user' => 'user', 'sgGuardAuth' => 'sgGuardAuth'))),
       'is_active'    => new sfWidgetFormInputCheckbox(),
       'action'       => new sfWidgetFormInputText(),
       'user_access'  => new sfWidgetFormInputText(),
@@ -28,7 +28,7 @@ abstract class BasemoduleForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'           => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
       'content_id'   => new sfValidatorString(array('max_length' => 128)),
-      'content_type' => new sfValidatorChoice(array('choices' => array(0 => 'categorie', 1 => 'lien', 2 => 'article', 3 => 'newsletter', 4 => 'programme', 5 => 'organisme', 6 => 'gmap', 7 => 'recherche', 8 => 'user', 9 => 'sgGuardAuth'), 'required' => false)),
+      'content_type' => new sfValidatorChoice(array('choices' => array(0 => 'category', 1 => 'lien', 2 => 'article', 3 => 'newsletter', 4 => 'programme', 5 => 'organisme', 6 => 'gmap', 7 => 'recherche', 8 => 'user', 9 => 'sgGuardAuth'), 'required' => false)),
       'is_active'    => new sfValidatorBoolean(array('required' => false)),
       'action'       => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'user_access'  => new sfValidatorString(array('max_length' => 128, 'required' => false)),

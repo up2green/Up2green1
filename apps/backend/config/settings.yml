@@ -31,12 +31,15 @@ all:
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
 
-    enabled_modules: [default, sfGuardAuth]
+    enabled_modules: [default, sfGuardAuth, sfJqueryTreeDoctrineManager]
 
     # Enable the database manager
     use_database:           true
 
-    i18n: on
+    i18n: true
+    default_culture: fr_FR
+
+    
   .actions:
     login_module: sfGuardAuth
     login_action: signin

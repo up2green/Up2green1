@@ -3,7 +3,66 @@
 
 class programmeTable extends Doctrine_Table
 {
-    
+
+  /**
+   * Construction de la requête permettant de récupérer les derniers programmes
+   *
+   * @param <String> $culture Langue du programme
+   * @param <Integer> $number Nombre de programmes à retourner
+   * @param <Integer> $offset Offset du programme de départ
+   * @return <Query> Requête
+   */
+  protected function buildQueryForRetrieveLastProgrammes($culture, $number = 2, $offset = 0) {
+    $q = $this->createQuery('p')
+              ->leftJoin('p.Translation t')
+              ->where('t.lang = ?', $culture)
+              ->orderBy('p.created_at DESC')
+              ->limit($number)
+              ->offset($offset);
+    return $q;
+  }
+
+  /**
+   * Retourne les derniers programmes sous forme d'une collection
+   *
+   * @param <String> $culture Langue du programme
+   * @param <Integer> $number Nombre de programmes à retourner
+   * @param <Integer> $offset Offset du programme de départ
+   * @return <List<Programme>> Liste des $number derniers programmes
+   */
+  public function retrieveLastProgrammes($culture, $number = 2, $offset = 0) {
+    return $this->buildQueryForRetrieveLastProgrammes($culture, $number, $offset)->execute();
+  }
+
+  /**
+   * Retourne les derniers programmes sous forme d'un array
+   *
+   * @param <String> $culture Langue du programme
+   * @param <Integer> $number Nombre de programmes à retourner
+   * @param <Integer> $offset Offset du programme de départ
+   * @return <array> Tableau des $number derniers programmes
+   */
+  public function retrieveLastProgrammesInArray($culture, $number = 2, $offset = 0) {
+    return $this->buildQueryForRetrieveLastProgrammes($culture, $number, $offset)->fetchArray();
+  }
+
+  /**
+   * Retourne le programme correspondant au slug passé en paramètre
+   *
+   * @param <String> $slug Slug du programme
+   * @return <Programme> Programme correspondant
+   */
+  public function retrieveBySlug($slug) {
+    $q = $this->createQuery('p')
+              ->leftJoin('p.Translation t')
+              ->andWhere('t.slug = ?', $slug);
+
+    return $q->fetchOne();
+  }
+
+
+
+
     public function count(Doctrine_Query $q = null)
 	{
 		return $this->addQuery($q)->count();

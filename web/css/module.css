@@ -1,30 +1,84 @@
-/* module */
-
-div.module{
-	height:auto;
+span.corner  {
+	background-repeat: no-repeat;
+	background-color: transparent;
+	display:block;
+	font-size:0;
+	position:absolute;
+	width:13px;
 }
-	div.module .head{
-		background: url(/images/head_stats_229x55.png) no-repeat scroll 0 0 transparent;
-		width:229px;
-		height:55px;
-		color:#7aa520;
+
+span.ctl{
+	background:url(/images/module/green/corners.png) no-repeat scroll left top transparent;
+	height:46px;
+	top:0;
+	left:0;
+}
+
+span.ctr{
+	background:url(/images/module/green/corners.png) no-repeat scroll right top transparent;
+	height:46px;
+	top:0;
+	right:0;
+}
+
+span.cbl{
+	background:url(/images/module/green/corners.png) no-repeat scroll left bottom transparent;
+	height:23px;
+	bottom:0;
+	left:0;
+}
+
+span.cbr{
+	background:url(/images/module/green/corners.png) no-repeat scroll right bottom transparent;
+	height:23px;
+	bottom:0;
+	right:0;
+}
+span.border.bb{
+	background:url(/images/module/green/bottom-middle.png) repeat-x scroll 0 0 transparent;
+	height:25px;
+	bottom:-2px;
+}
+span.border.bt{
+	background:url(/images/module/green/top-middle.png) repeat-x scroll 0 0 transparent;
+	height:44px;
+	top:2px;
+}
+span.border.bl{
+	background:url(/images/module/green/middle-left.png) repeat-y scroll 0 0 transparent;
+	left:0;
+}
+span.border.br{
+	background:url(/images/module/green/middle-right.png) repeat-y scroll 0 0 transparent;
+	right:0;
+}
+
+span.border {position:absolute;}
+span.border.bb, span.border.bt{width:100%;}
+span.border.bl, span.border.br{top:0;width:13px;height:100%;}
+
+/* module/green */
+
+div.module{height:auto;position:relative;}
+	div.module p.title{
+		left:50px;
+		color:#7AA520;
 		font-size:15px;
 		font-weight:bold;
+		position:absolute;
 		text-align:left;
+		top:10px;
+		width:90%;
+		z-index:20;
 	}
-	div.module .body_wrapper{
-		background: url(/images/middle_stats_229x1.png);
-		width:229px;
-		min-height:120px;
-	}
-	div.module .body_inner{
-		padding:10px;
-	}
-	div.module .foot{
-		background: url(/images/footer_stats_229x20.png) no-repeat scroll 0 0 transparent;
-		width:229px;
-		height:20px;
-	}
+	div.module p.title.indent{left:70px;top:10px;width:65%;}
+	div.module p.title.little{font-size:12px;top:10px}
+	div.module img.title{z-index:10;position:absolute;}
+	div.module img.title.corner.left{left:-16px;top:-10px;}
+	div.module img.title.middle.left{left:14px;top:-9px;}
+	div.module img.title.middle.right{right:14px;top:-9px; float:right}
+	div.module div.content{padding:46px 20px 27px;}
 
-/* module colors */
-
+#left div.module {
+	margin-bottom:20px;
+}

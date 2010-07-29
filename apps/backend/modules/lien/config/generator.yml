@@ -21,10 +21,10 @@ generator:
         max_per_page: 10
         layout:  stacked
         display: [is_active, categories, title, src]
-        params:  %%is_active%% %_categories% - %%title%% (<em>%%src%%</em>)
+        params:  %%is_active%% [ %%StringCategories%% ] %%title%% (<em>%%src%%</em>)
       filter:  ~
       form:    ~
       edit:
-        title: Modification du lien "%%title%%" (catégorie(s) : "%%categorie%%")
+        title: Modification du lien "%%title%%" (catégorie(s) : "%%StringCategories%%")
       new:
         title: Nouveau lien

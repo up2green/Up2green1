@@ -8,7 +8,7 @@
  * @package    up2green
  * @subpackage form
  * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BasepartenaireUserForm extends BaseFormDoctrine
 {
@@ -20,8 +20,8 @@ abstract class BasepartenaireUserForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'partenaire_id' => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'partenaire_id', 'required' => false)),
-      'user_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'user_id', 'required' => false)),
+      'partenaire_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('partenaire_id')), 'empty_value' => $this->getObject()->get('partenaire_id'), 'required' => false)),
+      'user_id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('partenaire_user[%s]');

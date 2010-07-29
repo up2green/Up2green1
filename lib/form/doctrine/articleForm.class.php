@@ -27,8 +27,13 @@ class articleForm extends BasearticleForm
       'mime_types' => 'web_images',
     ));
 
-    $this->embedI18n(array('en', 'fr'));
-    $this->widgetSchema->setLabel('en', 'English');
-    $this->widgetSchema->setLabel('fr', 'French');
+    $this->languages = sfConfig::get('app_cultures_enabled');
+
+        $langs = array_keys($this->languages);
+
+        $this->embedI18n($langs);
+        foreach($this->languages as $lang => $label) {
+            $this->widgetSchema[$lang]->setLabel($label);
+        }
   }
 }

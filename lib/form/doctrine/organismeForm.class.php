@@ -12,5 +12,13 @@ class organismeForm extends BaseorganismeForm
 {
   public function configure()
   {
+      $this->languages = sfConfig::get('app_cultures_enabled');
+
+        $langs = array_keys($this->languages);
+
+        $this->embedI18n($langs);
+        foreach($this->languages as $lang => $label) {
+            $this->widgetSchema[$lang]->setLabel($label);
+        }
   }
 }

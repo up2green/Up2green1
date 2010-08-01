@@ -1,5 +1,5 @@
 body {
-	background:url("../images/blog/backgrounds/bg_forest01.png") no-repeat fixed center center transparent;
+	background:url("../images/blog/backgrounds/bg_forest02.jpg") repeat-y fixed center center transparent;
 }
 
 .invisible {
@@ -54,7 +54,7 @@ body {
 }
 
 #main-menu {
-	margin-top:15px;
+	margin:15px 0;
 	text-align:center;
 	width:1000px;
 }
@@ -197,9 +197,6 @@ body {
 .diaporama {
 	float:right;
 	height:179px;
-	margin-right:10px;
-	margin-top: 7px;
-    margin-left: 15px;
 	width:660px;
 }
 
@@ -209,6 +206,15 @@ body {
 
 .diaporama .diapo {
   width: 590px;
+  padding:5px 0 10px;
+}
+
+.diaporama .diapo h3{
+  padding:10px 5px 5px;
+}
+
+.diaporama .diapo img{
+  max-height: 160px;
 }
 
 .dpm_image {
@@ -233,14 +239,13 @@ body {
 }
 
 .principale {
-	margin-bottom:70px;
 	min-height:250px;
 	width:auto;
 }
 
 .blog_footer {
 	background-color:#FFFFFF;
-	margin:0 auto 20px;
+	margin:20px auto;
 	width:960px;
 }
 
@@ -274,168 +279,97 @@ body {
 	padding-right:5px;
 }
 
-#bg_corps span.corner {
-	display:block;
-	font-size:0;
-	position:absolute;
+/* Surcharge module */
+
+div.module span.corner {
+	background-image: url("../images/blog/bg_corps/corner_bg_corps.png");
 	width:15px;
+	height:15px;
 }
 
-#bg_corps span.ctl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left top transparent;
-	height:15px;
+div.module span.ctl {
+	background-position: left top ;
 	left:-15px;
-	top:-14px;
-}
-
-#bg_corps span.ctr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right top transparent;
-	height:15px;
-	right:-15px;
-	top:-14px;
-}
-
-#bg_corps span.cbl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left bottom transparent;
-	bottom:-26px;
-	height:25px;
-	left:-15px;
-}
-
-#bg_corps span.cbr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right bottom transparent;
-	bottom:-26px;
-	height:25px;
-	right:-15px;
-}
-
-#bg_corps span.border.bb {
-	background:url("../images/blog/bg_corps/bottom_bg_corps.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:25px;
-	left:0;
-}
-
-#bg_corps span.border.bt {
-	background:url("../images/blog/bg_corps/top_bg_corps.png") repeat-x scroll 0 0 transparent;
-	height:15px;
-	left:0;
 	top:-15px;
 }
 
-#bg_corps span.border.bl {
+div.module span.ctr {
+	background-position:right top;
+	right:-15px;
+	top:-15px;
+}
+
+div.module span.cbl {
+	background-position:left bottom;
+	bottom:-15px;
+	left:-15px;
+}
+
+div.module span.cbr {
+	background-position:right bottom;
+	bottom:-15px;
+	right:-15px;
+}
+
+div.module span.border {
+	background-color: transparent;
+	position:absolute;
+}
+
+div.module span.border.bb,
+div.module span.border.bt {
+	background-repeat: repeat-x;
+	height:15px;
+	left:0;
+}
+
+div.module span.border.bl,
+div.module span.border.br {
+	background-repeat: repeat-y;
+	width:15px;
+}
+
+div.module span.border.bb {
+	background-image:url("../images/blog/bg_corps/bottom_bg_corps.png");
+	bottom:-15px;
+}
+
+div.module span.border.bt {
+	background-image:url("../images/blog/bg_corps/top_bg_corps.png");
+	top:-15px;
+}
+
+div.module span.border.bl {
 	background:url("../images/blog/bg_corps/left_bg_corps.png") repeat-y scroll 0 0 transparent;
 	left:-15px;
 }
 
-#bg_corps span.border.br {
+div.module span.border.br {
 	background:url("../images/blog/bg_corps/right_bg_corps.png") repeat scroll 0 0 transparent;
 	right:-15px;
-	top:1px;
 }
 
-#bg_corps span.border {
-	position:absolute;
-}
-
-#bg_corps span.border.bb, span.border.bt {
+div.module span.border.bb, span.border.bt {
 	width:100%;
 }
 
-#bg_corps span.border.bl, span.border.br {
+div.module span.border.bl, span.border.br {
 	height:100%;
-	top:1px;
 	width:15px;
 }
 
-#bg_corps div.module {
-	background:url("../images/blog/bg_corps/fond_corps.png") repeat scroll 0 0 transparent;
-	height:auto;
-	position:relative;
+div.module {
+	background-image:url("../images/blog/bg_corps/fond_corps.png");
 }
 
-div #bg_corps div.module div.content {
+div.module div.content {
 	padding:0 10px 10px;
 }
 
-.module.social span.corner {
-	display:block;
-	font-size:0;
-	position:absolute;
-	width:15px;
-}
-
-.module.social span.ctl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left top transparent;
-	height:15px;
-	left:-15px;
-	top:-14px;
-}
-
-.module.social span.ctr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right top transparent;
+div.module.social span.ctr,
+div.module.social span.cbr,
+div.module.social span.br {
 	display:none;
-	height:15px;
-	right:-15px;
-	top:-15px;
-}
-
-.module.social span.cbl {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll left bottom transparent;
-	bottom:-26px;
-	height:25px;
-	left:-15px;
-}
-
-.module.social span.cbr {
-	background:url("../images/blog/bg_corps/corner_bg_corps.png") no-repeat scroll right bottom transparent;
-	bottom:-25px;
-	display:none;
-	height:25px;
-	right:-15px;
-}
-
-.module.social span.border.bb {
-	background:url("../images/blog/bg_corps/bottom_bg_corps.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:25px;
-}
-
-.module.social span.border.bt {
-	background:url("../images/blog/bg_corps/top_bg_corps.png") repeat-x scroll 0 0 transparent;
-	height:15px;
-	top:-15px;
-}
-
-.module.social span.border.bl {
-	background:url("../images/blog/bg_corps/left_bg_corps.png") repeat-y scroll 0 0 transparent;
-	left:-15px;
-}
-
-.module.social span.border.br {
-	background:url("../images/blog/bg_corps/right_bg_corps.png") repeat scroll 0 0 transparent;
-	display:none;
-	right:-15px;
-}
-
-.module.social span.border {
-	position:absolute;
-}
-
-.module.social span.border.bb, span.border.bt {
-	width:100%;
-}
-
-.module.social span.border.bl, span.border.br {
-	height:100%;
-	top:1px;
-	width:15px;
-}
-
-.module.social {
-	background:url("../images/blog/bg_corps/fond_corps.png") repeat scroll 0 0 transparent;
-	height:auto;
-	margin-top:0;
 }
 
 div.module.social div.content {
@@ -444,23 +378,18 @@ div.module.social div.content {
 
 .principale .module {
 	float:left;
-	margin-left:25px;
-	margin-right:19px;
-	margin-top:40px;
+	margin:30px 20px;
 	width:290px;
 }
 
 .principale .module2col {
 	float:left;
-	margin-left:25px;
-	margin-right:19px;
-	margin-top:40px;
 	width:580px;
 }
 
 .principale .colRight {
 	float:left;
-	width:290px;
+	width:300px;
 }
 
 #bg_corps .module .content .principale .module span.ctl {
@@ -592,7 +521,7 @@ div.module.social div.content {
 
 #bg_corps .module .content .principale .module .cartouche span.cbr {
 	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll right bottom transparent;
-	bottom:-25px;
+	bottom:-24px;
 	height:24px;
 	right:-4px;
 	width:125px;

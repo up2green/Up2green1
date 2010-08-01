@@ -6,3 +6,8 @@
 all:
   sfJqueryTree:
     withContextMenu : false
+  cultures:
+    enabled:
+      fr: Français
+      en: English
+

@@ -273,6 +273,13 @@ article:
     is_active:
       type: boolean
       default: 0
+  relations:
+    category:
+      class: category
+      refClass: articleCategory
+      local: article_id
+      foreign: category_id
+      foreignAlias: Articles
 
 newsletter:
   actAs: 
@@ -290,7 +297,8 @@ newsletter:
       type: string(30)
       unique: true
     title:
-      type: string(128)
+      type: string(255)
+      notnull: true
     content:
       type: clob(65535)
     reply_to:
@@ -302,8 +310,7 @@ newsletter:
       notnull: true
       default: newsletter@up2green.com
     is_forced:
-      type: integer(1)
-      notnull: true
+      type: boolean
       default: 0
     sent_at:
       type: timestamp
@@ -361,7 +368,28 @@ category:
       type: boolean
       default: 1
      
-
+articleCategory:
+  options:
+    symfony:
+      form: false
+      filter: false
+  columns:
+    category_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    article_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    category:
+      local: category_id
+      onDelete: CASCADE
+    article:
+      local: article_id
+      onDelete: CASCADE
+      
 lienCategory:
   options:
     symfony:

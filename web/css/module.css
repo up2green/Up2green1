@@ -1,4 +1,6 @@
 span.corner  {
+	background-repeat: no-repeat;
+	background-color: transparent;
 	display:block;
 	font-size:0;
 	position:absolute;

@@ -10,12 +10,23 @@ generator:
     route_prefix:          categorie
     with_doctrine_route:   true
     actions_base_class:    sfActions
-
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:
+        is_active: {label: Actif}
+        name: {label: Titre}
+        unique_name: {label: Identifiant unique }
+        root_id: {label: Catégorie parente }
+      list:
+        title: Liste des catégories
+        max_per_page: 15
+        display: [is_active, unique_name, name, parent]
+        layout:  stacked
+        params:  %%is_active%% <small>%%parent%%</small> - %%name%% (<em>%%unique_name%%</em>)
+
       filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      edit: ~
+      list:
+        actions:
+          _tree: ~
+          

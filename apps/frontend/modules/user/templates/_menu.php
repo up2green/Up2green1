@@ -9,7 +9,6 @@
 
             </div>
             <ul class="menu">
-                <li><a href="#">Comment ça marche ?</a></li>
                 <li><a href="#">Définir comme page d'accueil</a></li>
                 <li><a href="<?php echo url_for("user/inscription") ?>">Créer mon compte</a></li>
             </ul>
@@ -21,12 +20,11 @@
         <div class="menu_accueil">
             <div class="flag"></div>
             <ul class="menu">
-                <li><a href="#">Comment ça marche ?</a></li>
                 <li><a href="#">Définir comme page d'accueil</a></li>
             </ul>
         </div>
         <div class="menu_connexion">
-            <ul class="menu_connexion_co">
+            <ul class="menu">
                 <li><a href="#">Planter mes arbres</a></li>
                 <li><a href="#">Parrainer des amis</a></li>
                 <li><a href="#">Mes crédits (38 arbres)</a></li>

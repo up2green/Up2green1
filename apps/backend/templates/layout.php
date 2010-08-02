@@ -5,19 +5,39 @@
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
-    <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
+    <?php include_stylesheets() ?>
   </head>
   <body>
-      <ul>
-          <li><a href="<?php echo url_for('@categorie')?>">Categories</a></li>
-          <li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
-          <li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
-          <li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
-          <li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
-          <li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
-          <li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>
-      </ul>
-    <?php echo $sf_content ?>
+    <div id="container">
+      <div id="header">
+        <h1>
+          <a href="<?php echo url_for('homepage') ?>">
+            Administration
+          </a>
+        </h1>
+      </div>
+ 
+      <div id="menu">
+        <ul>
+			<li><a href="<?php echo url_for('@category')?>">Categories</a></li>
+			<li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
+			<li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
+			<li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
+			<li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
+			<li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
+			<li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>
+		</ul>
+      </div>
+ 
+      <div id="content">
+        <?php echo $sf_content ?>
+      </div>
+ 
+      <div id="footer">
+        powered by smartIT
+      </div>
+    </div>
   </body>
+
 </html>

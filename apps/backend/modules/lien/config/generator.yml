@@ -10,12 +10,21 @@ generator:
     route_prefix:          lien
     with_doctrine_route:   true
     actions_base_class:    sfActions
-
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:  
+        is_active: {label: Actif ?}
+        src: {label: url, help: Partie renseignant l'attribut "href" du lien }
+        title: {label: Titre}
+      list:
+        title: Liste des liens
+        max_per_page: 10
+        layout:  stacked
+        display: [is_active, categories, title, src]
+        params:  %%is_active%% %_categories% - %%title%% (<em>%%src%%</em>)
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Modification du lien "%%title%%" (catégorie(s) : "%%categorie%%")
+      new:
+        title: Nouveau lien

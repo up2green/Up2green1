@@ -12,5 +12,9 @@ class couponForm extends BasecouponForm
 {
   public function configure()
   {
+  	unset(
+      $this['created_at'], $this['updated_at'],
+      $this['used_at'], $this['used_by'], $this['is_active']
+    );
   }
 }

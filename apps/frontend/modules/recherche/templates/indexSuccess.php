@@ -60,40 +60,47 @@
         <div class="menu_centre">
             <?php if ($textSearch == ""): ?>
             <div class="acteur">
-                <div class="head_acteur"><div class="titre_acteur">Devenez acteur de la reforestation</div></div>
-                <div class="corps_acteur">
-                    <div class="contenus_acteur">
-                        <p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
-                        <p>
-                            Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que
-                            nous soutenons
-                        </p>
-
-                    </div>
-                    <a href="#"><div class="btn_add_acteur"><p>Créer un compte maintenant ! </p></div></a>
-                    <a href="#"><div class="btn_fav_browser"><p>Définir Up2green comme moteur<br/>de recherche par defaut</p></div></a>
-                </div>
-                <div class="pied_acteur"></div>
+                <div class="module">
+			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
+			<p class="title">Devenez acteur de la reforestation</p>
+			<div class="content">
+				<p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
+				<p>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</p>
+				<p class="center">
+					<a href="#" class="button green">Créer un compte</a>
+				</p>
+				<p class="center">
+				    <a href="#" class="button green">Définir Up2green comme moteur<br/>de recherche par defaut</a>
+				</p>
+			</div>
+			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+		</div>
             </div>
             <div class="statistiques">
-                <div class="head_stats"><div class="titre_stats">Statistiques</div></div>
-                <div class="corps_stats">
-                    <div class="maps"></div>
-                    <div class="results_stats">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</div>
-                    <a href="#"><div class="help_stats"></div></a>
-                </div>
-                <div class="pied_stats"></div>
+                <div class="module">
+		    <img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
+		    <p class="title">Statistiques</p>
+		    <div class="content">
+			<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png"</p>
+			<p class="center">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</p>
+		    </div>
+			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+		</div>
 
                 <div class="head_partenaires"><div class="titre_partenaires">Partenaires</div></div>
                 <div class="corps_partenaires">
                     <div class="contenus_partenaires">
-			Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</div>
-                    <div class="lien_partenaires righter"><a href="#">plus d'informations ici</a></div>
+			Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...
+		    </div>
+                    <div class="lien_partenaires righter">
+			<a href="#">plus d'informations ici</a>
+		    </div>
 
                 </div>
                 <div class="pied_partenaires">
                 </div>
-            </div>
+	    </div>
+        </div>
             <?php else: ?>
             <?php
             if ($moteur == SearchEngine::WEB) {

@@ -1,3 +1,21 @@
+category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+categorie_translation:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                categorieTranslation
+    module:               categorie_translation
+    prefix_path:          /categorie_translation
+    column:               Array
+    with_wildcard_routes: true
+
 coupon:
   class: sfDoctrineRouteCollection
   options:
@@ -63,7 +81,7 @@ lien:
 
 # default
 homepage:
-  url:   /backend
+  url:   /
   param: { module: organisme, action: index }
 
 # generic rules

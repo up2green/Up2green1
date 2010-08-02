@@ -15,6 +15,14 @@
 		min-height:100%;
 	}
 
+div.content a {
+margin-top:10px;
+}
+
+div.content input {
+margin-top:10px;
+}
+
 #form_programme_plantation {}
 	#form_programme_plantation ul {
 		padding:3px;

@@ -1,11 +1,11 @@
+<!-- module -->
 <div class="module">
-	<div class="head"></div>
-	<div class="body_wrapper">
-		<div class="body_inner">
-			<?php use_helper('Javascript','GMap') ?>
-			<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>
-			<?php include_map_javascript($gMap); ?>
-		</div>
-	</div>
-	<div class="foot"></div>
+	<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
+	<p class="title">Nos Programmes de reforestation</p>
+	<div class="content">
+		<?php use_helper('Javascript','GMap') ?>
+		<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>
+		<?php include_map_javascript($gMap); ?>		
+	</div>	
+	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

@@ -53,7 +53,7 @@ abstract class Basemodule extends sfDoctrineRecord
              'type' => 'enum',
              'values' => 
              array(
-              0 => 'categorie',
+              0 => 'category',
               1 => 'lien',
               2 => 'article',
               3 => 'newsletter',

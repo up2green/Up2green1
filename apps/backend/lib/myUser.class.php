@@ -6,6 +6,6 @@ class myUser extends sfGuardSecurityUser
   {
     parent::initialize($dispatcher, $storage, $options);
 
-    $this->setCulture('fr_FR');
+    $this->setCulture('fr');
   }
 }

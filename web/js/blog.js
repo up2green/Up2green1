@@ -13,34 +13,44 @@ $(document).ready(function(){
 
   $('.diaporama a.nextDiapo').click(function() {
     if($('div.diapo.selected').next('div.diapo').length > 0) {
-//      $('div.diapo.selected').fadeOut().removeClass('selected').next('div.diapo').fadeIn().addClass('selected');
       $('div.diapo.selected').fadeOut(500, function() {
         $(this).removeClass('selected').next('div.diapo').fadeIn().addClass('selected');}
       );
     }
   });
 
-
-
-
   // Chargement des éléments précédents / suivants en AJAX
   $('a.loadFromUri').click(function() {
-    // On applique la classe toUpdate au div blocObjects contenant le lien de manière à pouvoir le mettre à jour une fois la requête terminée
-    $(this).parents('div.blocContent').children('div.blocObjects').addClass('toUpdate');
+    var self = $(this);
+    var content = self.parents('div.blocContent');
+    var objects = content.children('div.blocObjects')
     // Récupération des éléments voulus en AJAX
     $.ajax({
       url: $(this).attr('href'),
       success: function(data) {
-        $('div.blocObjects.toUpdate').fadeOut().empty().append(data).fadeIn();
-        // Mise à jour des boutons de navigations précédents / suivants
-        $('a.prevResults', $('div.blocObjects.toUpdate').parent('div.blocContent')).attr('href', $('div.blocObjects.toUpdate > span.prevResultsUrl').text());
-        $('a.nextResults', $('div.blocObjects.toUpdate').parent('div.blocContent')).attr('href', $('div.blocObjects.toUpdate > span.nextResultsUrl').text());
-      },
-      complete: function(XMLHttpRequest, textStatus) {
-        // Suppression de la classe 'toUpdate'
-        $('div.blocObjects.toUpdate').removeClass('toUpdate');
+        objects.fadeOut(500, function(){
+        	$(this).empty().append(data).fadeIn(500, function(){
+        		// Mise à jour des boutons de navigations précédents / suivants
+				$('a.prevResults', content).attr('href', $('span.prevResultsUrl', objects).text());
+				$('a.nextResults', content).attr('href', $('span.nextResultsUrl', objects).text());
+        	});
+        });
       }
     });
     return false;
   });
+  
+	// Gestion du menu social
+	$('#menu_social').hover(function(){
+		$('.sousMenu', '#menu_social').stop(true, true).slideDown('fast');
+	}, function(){
+		$('.sousMenu', '#menu_social').stop(true, true).slideUp('fast');
+	});
+  
+  	// Gestion du menu principal
+ 	$('li', '#main-menu').hover(function(){
+  		$(this).find('.module').stop(false, true).fadeIn(500);
+	}, function(){
+  		$(this).find('.module').stop(false, true).fadeOut(500);
+	});
 });

@@ -11,7 +11,7 @@
  * @property clob $content
  * @property string $reply_to
  * @property string $email_from
- * @property integer $is_forced
+ * @property boolean $is_forced
  * @property timestamp $sent_at
  * @property Doctrine_Collection $newsletterCategory
  * 
@@ -21,7 +21,7 @@
  * @method clob                getContent()            Returns the current record's "content" value
  * @method string              getReplyTo()            Returns the current record's "reply_to" value
  * @method string              getEmailFrom()          Returns the current record's "email_from" value
- * @method integer             getIsForced()           Returns the current record's "is_forced" value
+ * @method boolean             getIsForced()           Returns the current record's "is_forced" value
  * @method timestamp           getSentAt()             Returns the current record's "sent_at" value
  * @method Doctrine_Collection getNewsletterCategory() Returns the current record's "newsletterCategory" collection
  * @method newsletter          setId()                 Sets the current record's "id" value
@@ -55,9 +55,10 @@ abstract class Basenewsletter extends sfDoctrineRecord
              'unique' => true,
              'length' => 30,
              ));
-        $this->hasColumn('title', 'string', 128, array(
+        $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
-             'length' => 128,
+             'notnull' => true,
+             'length' => 255,
              ));
         $this->hasColumn('content', 'clob', 65535, array(
              'type' => 'clob',
@@ -75,11 +76,9 @@ abstract class Basenewsletter extends sfDoctrineRecord
              'default' => 'newsletter@up2green.com',
              'length' => 128,
              ));
-        $this->hasColumn('is_forced', 'integer', 1, array(
-             'type' => 'integer',
-             'notnull' => true,
+        $this->hasColumn('is_forced', 'boolean', null, array(
+             'type' => 'boolean',
              'default' => 0,
-             'length' => 1,
              ));
         $this->hasColumn('sent_at', 'timestamp', null, array(
              'type' => 'timestamp',

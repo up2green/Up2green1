@@ -8,7 +8,7 @@
  * @package    up2green
  * @subpackage form
  * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BasetreeProgrammeForm extends BaseFormDoctrine
 {
@@ -20,8 +20,8 @@ abstract class BasetreeProgrammeForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'programme_id' => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'programme_id', 'required' => false)),
-      'tree_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'tree_id', 'required' => false)),
+      'programme_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('programme_id')), 'empty_value' => $this->getObject()->get('programme_id'), 'required' => false)),
+      'tree_id'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('tree_id')), 'empty_value' => $this->getObject()->get('tree_id'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('tree_programme[%s]');

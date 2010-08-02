@@ -8,7 +8,7 @@
  * @package    up2green
  * @subpackage form
  * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BaseuserTreeForm extends BaseFormDoctrine
 {
@@ -20,8 +20,8 @@ abstract class BaseuserTreeForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'user_id' => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'user_id', 'required' => false)),
-      'tree_id' => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'tree_id', 'required' => false)),
+      'user_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('user_id')), 'empty_value' => $this->getObject()->get('user_id'), 'required' => false)),
+      'tree_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('tree_id')), 'empty_value' => $this->getObject()->get('tree_id'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('user_tree[%s]');

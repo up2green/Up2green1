@@ -12,6 +12,7 @@
  * @property clob $description
  * @property string $logo
  * @property boolean $is_active
+ * @property Doctrine_Collection $category
  * @property Doctrine_Collection $articleCategory
  * 
  * @method integer             getId()              Returns the current record's "id" value
@@ -21,6 +22,7 @@
  * @method clob                getDescription()     Returns the current record's "description" value
  * @method string              getLogo()            Returns the current record's "logo" value
  * @method boolean             getIsActive()        Returns the current record's "is_active" value
+ * @method Doctrine_Collection getCategory()        Returns the current record's "category" collection
  * @method Doctrine_Collection getArticleCategory() Returns the current record's "articleCategory" collection
  * @method article             setId()              Sets the current record's "id" value
  * @method article             setUniqueName()      Sets the current record's "unique_name" value
@@ -29,6 +31,7 @@
  * @method article             setDescription()     Sets the current record's "description" value
  * @method article             setLogo()            Sets the current record's "logo" value
  * @method article             setIsActive()        Sets the current record's "is_active" value
+ * @method article             setCategory()        Sets the current record's "category" collection
  * @method article             setArticleCategory() Sets the current record's "articleCategory" collection
  * 
  * @package    up2green
@@ -78,6 +81,11 @@ abstract class Basearticle extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('category', array(
+             'refClass' => 'articleCategory',
+             'local' => 'article_id',
+             'foreign' => 'category_id'));
+
         $this->hasMany('articleCategory', array(
              'local' => 'id',
              'foreign' => 'article_id'));

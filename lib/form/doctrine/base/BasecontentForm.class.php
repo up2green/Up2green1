@@ -8,7 +8,7 @@
  * @package    up2green
  * @subpackage form
  * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 24171 2009-11-19 16:37:50Z Kris.Wallsmith $
+ * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BasecontentForm extends BaseFormDoctrine
 {
@@ -24,10 +24,10 @@ abstract class BasecontentForm extends BaseFormDoctrine
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'id', 'required' => false)),
-      'layout_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'layout_id', 'required' => false)),
-      'zone_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'zone_id', 'required' => false)),
-      'module_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getModelName(), 'column' => 'module_id', 'required' => false)),
+      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'layout_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('layout_id')), 'empty_value' => $this->getObject()->get('layout_id'), 'required' => false)),
+      'zone_id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('zone_id')), 'empty_value' => $this->getObject()->get('zone_id'), 'required' => false)),
+      'module_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('module_id')), 'empty_value' => $this->getObject()->get('module_id'), 'required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

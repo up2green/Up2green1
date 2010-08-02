@@ -55,10 +55,10 @@ abstract class Basenewsletter extends sfDoctrineRecord
              'unique' => true,
              'length' => 30,
              ));
-        $this->hasColumn('title', 'string', 128, array(
+        $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 128,
+             'length' => 255,
              ));
         $this->hasColumn('content', 'clob', 65535, array(
              'type' => 'clob',

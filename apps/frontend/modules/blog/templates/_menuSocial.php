@@ -14,19 +14,10 @@
           <li><a href="#"><?php echo image_tag("icons/icon_google_26x26.png"); ?></a></li>
           <li><a href="#"><?php echo image_tag("icons/icon_win_26x26.png"); ?></a></li>
         </ul>
-        <a id="s-more"<?php echo image_tag("icons/icon_socio_plus.png"); ?></a>
+        <a class="more"<?php echo image_tag("icons/icon_socio_plus.png"); ?></a>
       </li>
     </ul>
   </div>
 
-  <!-- borders -->
-  <span class="border bt"></span>
-  <span class="border bb"></span>
-  <span class="border bl"></span>
-  <span class="border br"></span>
-  <!-- corners -->
-  <span class="corner ctl"></span>
-  <span class="corner ctr"></span>
-  <span class="corner cbl"></span>
-  <span class="corner cbr"></span>
+  <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

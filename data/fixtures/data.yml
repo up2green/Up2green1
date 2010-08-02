@@ -49,7 +49,7 @@ newsletter:
     unique_name: inscription
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
-    is_forced: '0'
+    is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:35'
     updated_at: '2010-06-26 18:27:36'
@@ -57,7 +57,7 @@ newsletter:
     unique_name: welcome
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
-    is_forced: '0'
+    is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
@@ -65,7 +65,7 @@ newsletter:
     unique_name: forgot_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
-    is_forced: '0'
+    is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
@@ -73,7 +73,7 @@ newsletter:
     unique_name: new_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
-    is_forced: '0'
+    is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
@@ -186,25 +186,60 @@ programme:
     max_tree: '0'
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
-profil:
-  profil_1:
-    sfGuardUser: sfGuardUser_1
-    mail: test@test.com
-    credit: '0'
-    is_newsletter: '0'
-    culture: fr_FR
+article:
+  article_1:
+    unique_name: welcome
+    logo: null
+    is_active: true
+    created_at: '2010-08-02 21:25:50'
+    updated_at: '2010-08-02 21:25:50'
 sfGuardUser:
-  sfGuardUser_1:
+  sfGuardUser_2:
     username: admin
     algorithm: sha1
-    salt: d0fa4e9c92595ebaae4c002f976d6cbe
-    password: f82df94d04425e67d59aea8b60012e80aa02afe5
+    salt: 83c8ffadcfef199adaba16b80c95179a
+    password: 267aa644d992d17b38ad3e8da04e7a39198b7707
     is_active: true
     is_super_admin: true
-    last_login: '2010-07-01 00:32:10'
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-07-01 00:32:10'
-
+    last_login: '2010-08-02 23:41:19'
+    created_at: '2010-08-02 21:20:22'
+    updated_at: '2010-08-02 23:41:19'
+category:
+  category_11:
+    unique_name: common
+    is_active: true
+    root_id: '11'
+    lft: '1'
+    rgt: '6'
+    level: '0'
+  category_12:
+    unique_name: blog
+    is_active: true
+    root_id: '12'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_13:
+    unique_name: moteur
+    is_active: true
+    root_id: '13'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_14:
+    unique_name: plantation
+    is_active: true
+    root_id: '14'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_15:
+    unique_name: panel-footer
+    is_active: true
+    root_id: '11'
+    lft: '2'
+    rgt: '5'
+    level: '1'
 organismeTranslation:
   organismeTranslation_1_en:
     organisme: organisme_1
@@ -508,3 +543,18 @@ programmeTranslation:
     description: null
     lang: fr
     slug: senegal
+articleTranslation:
+  articleTranslation_1_en:
+    article: article_1
+    title: Welcome
+    accroche: 'Welcome to up2green'
+    description: ''
+    lang: en
+    slug: welcome
+  articleTranslation_1_fr:
+    article: article_1
+    title: Bienvenue
+    accroche: 'Bienvenue sur up2green'
+    description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
+    lang: fr
+    slug: bienvenue

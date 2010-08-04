@@ -24,4 +24,10 @@ $(document).ready(function(){
 			$(".content_wrapper", this).stop(true, true).slideToggle("slow");
 		}
 	);
+	/* désactivation des lien mort */
+	$('a[href="#"]').each(function(){
+		$(this).css({
+			color: "#ccc"
+		}).click(function(){return false;});
+	});
 });

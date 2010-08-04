@@ -1,3 +1,5 @@
+.general .header {display:none;}
+
 /*CORPS du SITE*/
 #body{
 	width:1024px;
@@ -36,7 +38,7 @@ margin-top:10px;
 			position:relative;
 			padding:2px 5px;
 			border-top:1px #ccc solid;
-			line-height:200%;
+			line-height:25px;
 			text-decoration:none;
 			color:#666;
 		}
@@ -47,6 +49,7 @@ margin-top:10px;
 		#form_programme_plantation li span.item {
 			display: inline-block;
 			width:120px;
+			font-size:0.75em;
 		}
 		#form_programme_plantation li span.action {
 			float:right;

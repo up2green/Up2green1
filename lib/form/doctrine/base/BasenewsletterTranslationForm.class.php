@@ -24,7 +24,7 @@ abstract class BasenewsletterTranslationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'title'   => new sfValidatorString(array('max_length' => 128)),
+      'title'   => new sfValidatorString(array('max_length' => 255)),
       'content' => new sfValidatorString(array('required' => false)),
       'lang'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
       'slug'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),

@@ -15,5 +15,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     	'sfProtoculousPlugin'
     ));
     $this->enablePlugins('sfJqueryTreeDoctrineManagerPlugin');
+    $this->enablePlugins('sfDoctrineNestedSetPlugin');
   }
 }

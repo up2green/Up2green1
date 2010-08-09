@@ -14,7 +14,8 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        display: [id, =name, url, logo]
       filter:  ~
       form:    ~
       edit:    ~

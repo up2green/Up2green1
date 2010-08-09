@@ -13,7 +13,7 @@
 class category extends Basecategory
 {
     function __toString(){
-        return $this->unique_name;
+        return $this->getUniqueName();
     }
 
 }

@@ -17,6 +17,11 @@ class lienForm extends BaselienForm {
         $this->validatorSchema['url'] = new sfValidatorUrl();
         $this->languages = sfConfig::get('app_cultures_enabled');
 
+        $this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
+                        'model'=>'Category',
+                        'add_empty' => "",
+                        "multiple"=>true
+        ));
         $langs = array_keys($this->languages);
 
         $this->embedI18n($langs);

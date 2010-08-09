@@ -3,3 +3,8 @@ autoload:
     name:       ckeditor
     path:       %sf_web_dir%/js/ckeditor/
     recursive:  true
+
+  ckfinder:
+    name:       ckfinder
+    path:       %sf_web_dir%/js/ckfinder/
+    recursive:  true

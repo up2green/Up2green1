@@ -12,4 +12,7 @@ all:
       en: English
   ckeditor:
     basePath:         "/js/ckeditor/"
+  ckfinder:
+    active:           true
+    basePath:         '/js/ckfinder/'
 

@@ -13,7 +13,7 @@ class newsletterTranslationForm extends BasenewsletterTranslationForm
   public function configure()
   {
       unset($this['slug']);
-      $this->widgetSchema['content'] = new sfWidgetFormTextareaTinyMCE();
+      $this->widgetSchema['content'] = new sfWidgetFormCKEditor();
   }
   
   

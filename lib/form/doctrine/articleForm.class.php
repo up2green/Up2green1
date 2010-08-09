@@ -29,6 +29,11 @@ class articleForm extends BasearticleForm {
                         'mime_types' => 'web_images',
         ));
 
+        $this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
+                        'model'=>'Category',
+                        'add_empty' => "",
+                        "multiple"=>true
+        ));
 
         $this->languages = sfConfig::get('app_cultures_enabled');
 

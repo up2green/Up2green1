@@ -7,6 +7,11 @@ all:
     keys:
       88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q
       up2green.smartit.fr: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxRl8TZQpx4J8W_1diLyzFI9z11ZtxQvOxMAOgUQ5et4McN7J3FQK5D3tA
+      beta.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxRkOBGtrsSrBVgrouslRw5t02jcoRQ8kNtmA__lATglfkWBMkTDc4SXOA
+      up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxQQ2IcQ8r1Qv5dRlDhwKbdRYDF7HxRuiupUXC_BPbbnWyhecE09zVmWVw
+      association.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSMxWziwZE0q5SnpdAzKN5C-SSmrxS8dKQfEWEuPSWPs2UKNN22RNPvPg
+      reforestation.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxQlX5wtyYlsmBkElzWwNgT2s-GV5RTN5lj5AWZsN-OSo8hSur9dgaJ8LQ
+      www.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSbkBb7lgVQWtlidns83ZgJO2fpbxT3-uEu-iZpJj4ZKSDBtjy1G1BJcw
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/
   blog:

@@ -16,8 +16,7 @@ class lien extends Baselien
         $arrCategs = $this->category;
         $s = "";
         foreach ($arrCategs as $categ){
-            if ($s == "")
-            $s .= $categ->getUniqueName();
+            if ($s == "") $s .= $categ->getUniqueName();
             else $s .= ", " . $categ->getUniqueName();
         }
         return $s;

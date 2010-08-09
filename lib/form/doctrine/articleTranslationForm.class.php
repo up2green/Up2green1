@@ -13,5 +13,6 @@ class articleTranslationForm extends BasearticleTranslationForm
   public function configure()
   {
           unset($this['slug']);
+          $this->widgetSchema['description'] = new sfWidgetFormCKEditor();
   }
 }

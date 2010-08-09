@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.6.2" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfCKEditorPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>A CKEditor Plugin</summary>
+ <description>Provide CKEditor widget with CKFinder support</description>
+ <lead>
+  <name>Christophe Dafflon</name>
+  <user>cdafflon</user>
+  <email>cdafflon@gramatec.ch</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-04-08</date>
+ <time>13:45:58</time>
+ <version>
+  <release>0.1.2</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="796b68e9d2cb204efaade5d2ab7d9e71" name="lib/widget/sfWidgetFormCKEditor.class.php" role="data"/>
+   <file md5sum="c95fb03794906862e01c50099a6d4f9e" name="README" role="data"/>
+   <file md5sum="5cdf837daf6fce41fc23656dee3a8a02" name="LICENSE" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.2</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2010-04-08</date>
+   <notes>* Plugin available for 1.4.x too</notes>
+  </release>
+ </changelog>
+</package>

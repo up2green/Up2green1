@@ -16,6 +16,7 @@ generator:
       fields:  ~
       list:
         title: Liste des coupons
+        display: [id, =code, credit, is_active, used_at, used_by]
       filter:  ~
       form:    ~
       edit:

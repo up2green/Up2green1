@@ -10,4 +10,6 @@ all:
     enabled:
       fr: Français
       en: English
+  ckeditor:
+    basePath:         "/js/ckeditor/"
 

@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [main.css, jquery-ui-1.8.1.custom.css, backend.css, jquery.treeTable.css]
 
-  javascripts:    [jquery-1.4.2.js, jquery-ui-1.8.1.custom.min.js, jquery.treeTable.js, tinymce/tiny_mce.js, tinymce/tiny_mce_popup.js, tinymce/tiny_mce_src.js]
+  javascripts:    [jquery-1.4.2.js, jquery-ui-1.8.1.custom.min.js]
 
   has_layout:     true
   layout:         layout

@@ -30,6 +30,8 @@ class organismeForm extends BaseorganismeForm {
                         'path'       => sfConfig::get('sf_upload_dir').'/organisme',
                         'mime_types' => 'web_images',
         ));
+
+        
         $this->languages = sfConfig::get('app_cultures_enabled');
 
         $langs = array_keys($this->languages);

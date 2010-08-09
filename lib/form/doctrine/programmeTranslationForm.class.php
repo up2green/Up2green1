@@ -12,5 +12,6 @@ class programmeTranslationForm extends BaseprogrammeTranslationForm
 {
   public function configure()
   {
+      $this->widgetSchema['description'] = new sfWidgetFormCKEditor();
   }
 }

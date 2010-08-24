@@ -48,7 +48,7 @@ class userActions extends sfActions {
                 $user->setPassword($pwd);
                 $user->save();
                 $message = $this->getMailer()->compose(
-                        array('noreply@up2green.com' => 'Up2Green Bot'),
+                        array('noreply@up2green.com' => 'Up2Green Mailer'),
                         $user->userProfile->getMail(),
                         '[Up2Green] Nouveau mot de passe',
                         "Bonjour " . $user->getUsername() . ", <br />".

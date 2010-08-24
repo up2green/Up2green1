@@ -23,13 +23,12 @@
         endif;
 
         for($i = 0; $i < count($programmes); $i++) {
-          $p = $programmes[$i];
-          if($i==0)
-            echo '<p class="first_article">';
-          else
-            echo '<p class="article">';
-          echo '<p class="ctn_texte">'.$p->getTitle().'<br />'.$p->getAccroche().'</p>';
-          echo link_to(__('read_more'), '@blog_programme?slug='.$p->getSlug(), array('class' => 'left'));
+        	$p = $programmes[$i];
+          echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
+          	link_to($p->getTitle(), '@blog_programme?slug='.$p->getSlug(), array('class' => 'title')) .
+          	'<p class="body">'.$p->getAccroche().'</p>' .
+          	link_to(__('read_more'), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')) .
+          	'</div>';
         }
 
         // Sauvegardes des URLs pour charger les articles suivants / précédents (utilisés pour modifier l'URL des boutons en AJAX)

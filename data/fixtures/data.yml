@@ -194,46 +194,46 @@ article:
     created_at: '2010-08-02 21:25:50'
     updated_at: '2010-08-02 21:25:50'
 sfGuardUser:
-  sfGuardUser_2:
+  sfGuardUser_1:
     username: admin
     algorithm: sha1
-    salt: 83c8ffadcfef199adaba16b80c95179a
-    password: 267aa644d992d17b38ad3e8da04e7a39198b7707
+    salt: fe82ec9669d103078a0a62565c3955ef
+    password: 1a8fa0dd3fe7dc2f8021082a8013cafb532a5600
     is_active: true
     is_super_admin: true
-    last_login: '2010-08-02 23:41:19'
-    created_at: '2010-08-02 21:20:22'
-    updated_at: '2010-08-02 23:41:19'
+    last_login: null
+    created_at: '2010-08-10 22:59:16'
+    updated_at: '2010-08-10 22:59:16'
 category:
-  category_11:
+  category_1:
     unique_name: common
     is_active: true
     root_id: '11'
     lft: '1'
     rgt: '6'
     level: '0'
-  category_12:
+  category_2:
     unique_name: blog
     is_active: true
     root_id: '12'
     lft: '1'
     rgt: '2'
     level: '0'
-  category_13:
+  category_3:
     unique_name: moteur
     is_active: true
     root_id: '13'
     lft: '1'
     rgt: '2'
     level: '0'
-  category_14:
+  category_4:
     unique_name: plantation
     is_active: true
     root_id: '14'
     lft: '1'
     rgt: '2'
     level: '0'
-  category_15:
+  category_5:
     unique_name: panel-footer
     is_active: true
     root_id: '11'

@@ -57,6 +57,10 @@ span.border {position:absolute;}
 span.border.bb, span.border.bt{width:100%;}
 span.border.bl, span.border.br{top:0;width:13px;height:100%;}
 
+span.border.bb{background-position:bottom left;}
+span.border.bt{background-position:top left;}
+span.border.br{background-position:top right;}
+span.border.bl{background-position:top left;}
 /* module/green */
 
 div.module{height:auto;position:relative;}

@@ -1,5 +1,25 @@
+a.read_more {
+	display:block;
+	text-align:right;
+	font-style:italic;
+	font-size:.9em;
+	font-weight:bold;
+	color:#aaa;
+}
+
+span.border.bb, span.border.bt {
+	width:auto;
+	left:0;
+	right:0;
+}
+span.border.br, span.border.bl {
+	top:0;
+	bottom:0;
+	height:auto;
+}
+
 body {
-	background:url("../images/blog/backgrounds/bg_forest02.jpg") repeat-y fixed center center transparent;
+	background:url("../images/blog/backgrounds/main1.jpg") no-repeat fixed center center transparent;
 }
 
 .invisible {
@@ -12,6 +32,10 @@ body {
 	margin:auto;
 }
 
+#deja_planter img {
+	float:left;
+}
+
 #deja_planter {
 	float:left;
 	height:30px;
@@ -22,7 +46,7 @@ body {
 #tool_box {
 	float:right;
 	height:30px;
-	padding:7px;
+	margin:7px 7px 0;
 }
 
 .fltr {
@@ -32,7 +56,6 @@ body {
 .fond_banner {
 	background:url("../images/blog/backgrounds/bg_header.png") repeat-x scroll 0 0 transparent;
 	height:190px;
-	margin-top:-12px;
 }
 
 .fond_banner_bottom {
@@ -76,7 +99,8 @@ body {
 	}
 
 	#main-menu li a:link, #main-menu li a:visited {
-		color:#FFFFFF;
+		color:#eee;
+		font-weight:bold;
 		display:block;
 		padding:5px 8px;
 		text-decoration:none;
@@ -84,11 +108,7 @@ body {
 	}
 
 	#main-menu li a:hover {
-		background-color:#F2462E;
-	}
-
-	#main-menu li a:active {
-		background-color:#22C60A;
+		color:#ccc;
 	}
 
 	#main-menu ul div.module {
@@ -116,19 +136,6 @@ body {
 		margin:0;
 		padding:0;
 		width:auto;
-	}
-
-	#main-menu ul ul li a:link, #main-menu ul ul li a:visited {
-		border:0 none;
-		color:#FFFFFF;
-		display:block;
-		margin:0;
-		text-decoration:none;
-	}
-
-	#main-menu ul ul li a:hover {
-		background-color:#F2462E;
-		background-image:none;
 	}
 
 #menu_social {
@@ -181,7 +188,8 @@ body {
 
 .diaporama {
 	float:right;
-	height:179px;
+	height:190px;
+	padding-top:10px;
 	width:660px;
 }
 
@@ -192,10 +200,13 @@ body {
 .diaporama .diapo {
   width: 590px;
   padding:5px 0 10px;
+  font-weight:bold;
 }
 
 .diaporama .diapo h3{
-  padding:10px 5px 5px;
+	font-size:1.5em;
+	font-style:italic;
+	padding:10px 5px 5px;
 }
 
 .diaporama .diapo img{
@@ -230,7 +241,7 @@ body {
 
 .blog_footer {
 	background-color:#FFFFFF;
-	margin:20px auto;
+	margin:30px auto 20px;
 	width:960px;
 }
 
@@ -247,9 +258,11 @@ body {
 	display:block;
 	float:left;
 	height:100px;
-	max-width:205px;
+	max-width:200px;
 	padding:0 15px;
 }
+
+.footer_associatif li.first {border:none;}
 
 .footer_associatif li p {
 	font-size:12px;
@@ -265,6 +278,11 @@ body {
 }
 
 /* Surcharge module */
+.principale .module .content,
+.blog_footer .module .content {
+	background-color:#FFFFFF
+}
+
 
 div.module span.corner {
 	background-image: url("../images/blog/bg_corps/corner_bg_corps.png");
@@ -325,21 +343,16 @@ div.module span.border.bt {
 }
 
 div.module span.border.bl {
-	background:url("../images/blog/bg_corps/left_bg_corps.png") repeat-y scroll 0 0 transparent;
+	background-image:url("../images/blog/bg_corps/left_bg_corps.png");
 	left:-15px;
 }
 
 div.module span.border.br {
-	background:url("../images/blog/bg_corps/right_bg_corps.png") repeat scroll 0 0 transparent;
+	background-image:url("../images/blog/bg_corps/right_bg_corps.png");
 	right:-15px;
 }
 
-div.module span.border.bb, span.border.bt {
-	width:100%;
-}
-
 div.module span.border.bl, span.border.br {
-	height:100%;
 	width:15px;
 }
 
@@ -377,7 +390,8 @@ div.module.social div.content {
 	width:300px;
 }
 
-#bg_corps .module .content .principale .module span.ctl {
+.principale .module span.ctl,
+.blog_footer .module span.ctl {
 	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left top transparent;
 	height:62px;
 	left:-5px;
@@ -385,7 +399,8 @@ div.module.social div.content {
 	width:27px;
 }
 
-#bg_corps .module .content .principale .module span.ctr {
+.principale .module span.ctr,
+.blog_footer .module span.ctr {
 	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right top transparent;
 	height:62px;
 	right:-5px;
@@ -393,71 +408,71 @@ div.module.social div.content {
 	width:114px;
 }
 
-#bg_corps .module .content .principale .module span.cbl {
+.principale .module span.cbl,
+.blog_footer .module span.cbl {
 	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left bottom transparent;
-	bottom:-25px;
+	bottom:-32px;
 	height:32px;
 	left:-5px;
 	width:114px;
 }
 
-#bg_corps .module .content .principale .module span.cbr {
+.principale .module span.cbr,
+.blog_footer .module span.cbr {
 	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right bottom transparent;
-	bottom:-25px;
+	bottom:-32px;
 	height:32px;
 	right:-5px;
 	width:27px;
 }
 
-#bg_corps .module .content .principale .module span.border.bb {
-	background:url("../images/blog/bg_module/bottom_bg_module.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
+.principale .module span.border.bb,
+.blog_footer .module span.border.bb {
+	background-image:url("../images/blog/bg_module/bottom_bg_module.png");
+	bottom:-32px;
 	height:32px;
-	left:0;
-	right:0;
+	margin-left:109px;
+	margin-right:22px;
 }
 
-#bg_corps .module .content .principale .module span.border.bt {
-	background:url("../images/blog/bg_module/top_bg_module.png") repeat-x scroll 0 0 transparent;
+.principale .module span.border.bt,
+.blog_footer .module span.border.bt {
+	background-image:url("../images/blog/bg_module/top_bg_module.png");
 	height:15px;
-	margin-left:0;
-	margin-right:0;
 	top:-15px;
+	margin-right:109px;
+	margin-left:22px;
 }
 
-#bg_corps .module .content .principale .module span.border.bl {
-	background:url("../images/blog/bg_module/left_bg_module.png") repeat-y scroll 0 0 transparent;
+.principale .module span.border.bl,
+.blog_footer .module span.border.bl {
+	background-image:url("../images/blog/bg_module/left_bg_module.png");
 	left:-5px;
-	margin:15px 0 0;
 }
 
-#bg_corps .module .content .principale .module span.border.br {
-	background:url("../images/blog/bg_module/right_bg_module.png") repeat-y scroll 0 0 transparent;
-	margin:15px 0 0;
+.principale .module span.border.br,
+.blog_footer .module span.border.br {
+	background-image:url("../images/blog/bg_module/right_bg_module.png");
 	right:-5px;
 }
 
-#bg_corps .module .content .principale .module span.border {
-	position:absolute;
-}
-
-#bg_corps .module .content .principale .module span.border.bb, span.border.bt {
-	width:100%;
-}
-
-#bg_corps .module .content .principale .module span.border.bl, span.border.br {
-	height:100%;
-	top:0;
+.principale .module span.border.br,
+.blog_footer .module span.border.br,
+.principale .module span.border.bl,
+.blog_footer .module span.border.bl{
 	width:15px;
+	margin-top:47px;
 }
 
-#bg_corps .module .content .principale .module div.module {
+.principale .module div.module,
+.blog_footer .module div.module {
 	background:none repeat scroll 0 0 transparent;
 	height:100%;
 	position:relative;
 }
 
-#bg_corps .module .content .principale .module div.content {
+.principale .module div.content,
+.blog_footer .module div.content {
 	background-color:#FFFFFF;
 	padding:10px 15px;
 }
@@ -472,14 +487,14 @@ div.module.social div.content {
 	z-index:290;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.corner {
+#bg_corps .module .content .module .cartouche span.corner {
 	display:block;
 	font-size:0;
 	position:absolute;
 	width:13px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.ctl {
+#bg_corps .module .content .module .cartouche span.ctl {
 	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll left top transparent;
 	height:18px;
 	left:-2px;
@@ -488,15 +503,15 @@ div.module.social div.content {
 	width:80px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.ctr {
+#bg_corps .module .content .module .cartouche span.ctr {
 	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll right top transparent;
 	height:18px;
 	right:-4px;
-	top:-17px;
+	top:-18px;
 	width:125px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.cbl {
+#bg_corps .module .content .module .cartouche span.cbl {
 	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll left bottom transparent;
 	bottom:-24px;
 	height:24px;
@@ -504,7 +519,7 @@ div.module.social div.content {
 	width:80px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.cbr {
+#bg_corps .module .content .module .cartouche span.cbr {
 	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll right bottom transparent;
 	bottom:-24px;
 	height:24px;
@@ -512,44 +527,36 @@ div.module.social div.content {
 	width:125px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.border.bb {
-	background:url("../images/blog/cartouche_titre/bottom_cartouche_titre.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:25px;
+#bg_corps .module .content .module .cartouche span.border.bb {
+	background-image:url("../images/blog/cartouche_titre/bottom_cartouche_titre.png");
+	bottom:-24px;
+	height:24px;
+	margin-left:78px;
+	margin-right:121px;
 	right:0;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.border.bt {
-	background:url("../images/blog/cartouche_titre/top_cartouche_titre.png") repeat-x scroll 0 0 transparent;
+#bg_corps .module .content .module .cartouche span.border.bt {
+	background-image:url("../images/blog/cartouche_titre/top_cartouche_titre.png");
 	height:18px;
+	margin-left:78px;
+	margin-right:119px;
 	right:2px;
 	top:-18px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.border.bl {
-	background:url("../images/blog/cartouche_titre/left_cartouche_titre.png") repeat-y scroll 0 0 transparent;
+#bg_corps .module .content .module .cartouche span.border.bl {
+	background-image:url("../images/blog/cartouche_titre/left_cartouche_titre.png");
 	left:-2px;
 	margin-top:0;
 	width:80px;
 }
 
-#bg_corps .module .content .principale .module .cartouche span.border.br {
-	background:url("../images/blog/cartouche_titre/right_cartouche_titre.png") repeat-y scroll 0 0 transparent;
+#bg_corps .module .content .module .cartouche span.border.br {
+	background-image:url("../images/blog/cartouche_titre/right_cartouche_titre.png");
 	margin-top:0;
 	right:-4px;
 	width:125px;
-}
-
-#bg_corps .module .content .principale .module .cartouche span.border {
-	position:absolute;
-}
-
-#bg_corps .module .content .principale .module .cartouche span.border.bb, span.border.bt {
-	width:100%;
-}
-
-#bg_corps .module .content .principale .module .cartouche span.border.bl, span.border.br {
-	height:100%;
 }
 
 div.cartouche p.title {
@@ -575,7 +582,7 @@ div.cartouche p.title.little {
 	top:10px;
 }
 
-#bg_corps .module .content .principale .module .cartouche div.content {
+#bg_corps .module .content .module .cartouche div.content {
 	background-color:#42A016;
 	padding:5px;
 }
@@ -591,10 +598,6 @@ div.cartouche p.title.little {
 	z-index:156;
 }
 
-.ctn_texte {
-	font-size:12px;
-}
-
 .first_article {
 	padding-top:60px;
 }
@@ -604,83 +607,6 @@ div.cartouche p.title.little {
 	position:relative;
 	text-align:center;
 	z-index:360;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.ctl {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left top transparent;
-	height:62px;
-	left:-5px;
-	top:-15px;
-	width:27px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.ctr {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right top transparent;
-	height:62px;
-	right:-5px;
-	top:-15px;
-	width:114px;
-	z-index:142;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.cbl {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left bottom transparent;
-	bottom:-25px;
-	height:32px;
-	left:-5px;
-	width:114px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.cbr {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right bottom transparent;
-	bottom:-25px;
-	height:32px;
-	right:-5px;
-	width:27px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.bb {
-	background:url("../images/blog/bg_module/bottom_bg_module.png") repeat-x scroll 0 0 transparent;
-	bottom:-25px;
-	height:32px;
-	left:0;
-	right:0;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.bt {
-	background:url("../images/blog/bg_module/top_bg_module.png") repeat-x scroll 0 0 transparent;
-	height:15px;
-	margin-left:0;
-	margin-right:0;
-	top:-15px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.bl {
-	background:url("../images/blog/bg_module/left_bg_module.png") repeat-y scroll 0 0 transparent;
-	left:-5px;
-	margin-top:15px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.br {
-	background:url("../images/blog/bg_module/right_bg_module.png") repeat-y scroll 0 0 transparent;
-	margin-bottom:0;
-	margin-top:15px;
-	right:-5px;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module {
-	background:none repeat scroll 0 0 transparent;
-	position:relative;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.bb, span.border.bt {
-	width:100%;
-}
-
-div#bg_corps div.module div.content div.blog_footer div.module span.border.bl, span.border.br {
-	height:100%;
-	top:0;
-	width:15px;
 }
 
 #footer_page {
@@ -717,4 +643,22 @@ div#bg_corps div.module div.content div.blog_footer div.module span.border.bl, s
 img.element_logo {
   max-width: 200px;
   max-height: 200px;
+}
+
+/* Maintenance */
+#deja_planter, #tool_box {display:none;}
+
+/* articles */
+.article.first {
+	padding-top:45px;
+}
+
+.article a.title {
+	color:#2C8A40;
+	font-weight:bold;
+}
+
+.article p.body {
+	margin: 5px 0 5px 5px;
+	font-size:0.9em;
 }

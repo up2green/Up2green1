@@ -25,12 +25,11 @@
         // Affichage des articles
         for($i = 0; $i < count($articles); $i++) {
           $a = $articles[$i];
-          if($i==0)
-            echo '<p class="first_article">';
-          else
-            echo '<p class="article">';
-          echo '<p class="ctn_texte">'.$a->getTitle().'<br />'.$a->getAccroche().'</p>';
-          echo link_to(__('read_more'), '@blog_article?slug='.$a->getSlug(), array('class' => 'left'));
+          echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
+          	link_to($a->getTitle(), '@blog_article?slug='.$a->getSlug(), array('class' => 'title')) .
+          	'<p class="body">'.$a->getAccroche().'</p>' .
+          	link_to(__('read_more'), '@blog_article?slug='.$a->getSlug(), array('class' => 'read_more')) .
+          	'</div>';
         }
 
         // Sauvegardes des URLs pour charger les articles suivants / précédents (utilisés pour modifier l'URL des boutons en AJAX)

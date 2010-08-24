@@ -13,5 +13,5 @@ all:
     bloc_articles_max: 3
     bloc_programmes_max: 1
     bloc_partenaires_max: 3
-    partenaires_url: http://www.odolbeau.fr/feed
+    partenaires_url: http://www.phpindex.com/rss.php
     partenaires_open_in_new_window: true

@@ -12,7 +12,7 @@ default:
     #language:     en
     #robots:       index, follow
     
-  stylesheets:    [reset.css, main.css, button.css, module.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, form.css]
 
   javascripts:    [jquery-1.4.2.js, main.js, moteur.js]
 

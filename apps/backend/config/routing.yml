@@ -10,9 +10,9 @@ category:
 categorie_translation:
   class: sfDoctrineRouteCollection
   options:
-    model:                categorieTranslation
-    module:               categorie_translation
-    prefix_path:          /categorie_translation
+    model:                categoryTranslation
+    module:               category_translation
+    prefix_path:          /category_translation
     column:               Array
     with_wildcard_routes: true
 
@@ -55,9 +55,9 @@ newsletter:
 categorie:
   class: sfDoctrineRouteCollection
   options:
-    model:                Categorie
-    module:               categorie
-    prefix_path:          /categorie
+    model:                Category
+    module:               category
+    prefix_path:          /category
     column:               id
     with_wildcard_routes: true
 

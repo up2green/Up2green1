@@ -14,7 +14,7 @@
 
             <div class="header">
                 <div class="logo"></div>
-                <div class="slogan">Etre acteur de la reforestation au fil de ses recherches</div>
+                <div class="slogan hidden">Etre acteur de la reforestation au fil de ses recherches</div>
             </div>
             
             <?php echo $sf_content ?>

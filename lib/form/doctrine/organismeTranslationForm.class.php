@@ -11,6 +11,10 @@
 class organismeTranslationForm extends BaseorganismeTranslationForm {
     public function configure() {
 //        $this->widgetSchema['description'] = new sfWidgetFormTextareaCKEditor(array('custom_config' => '/js/ckeditor_config.js', 'toolbar' => 'Basic', 'config' => array('width' => '800px', 'height' => '100px')));
+        $this->widgetSchema['accroche'] = new sfWidgetFormCKEditor(array('jsoptions'=>array(
+					'height' 	=> '75px',
+					'toolbar'	=> 'Basic'
+				)));
         $this->widgetSchema['description'] = new sfWidgetFormCKEditor();
     }
 }

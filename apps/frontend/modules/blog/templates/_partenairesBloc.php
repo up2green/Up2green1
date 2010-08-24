@@ -15,14 +15,14 @@
         endif;
         // Affichage des articles
         for($i = 0; $i < count($partenaires); $i++) {
-          $p = $partenaires[$i];
-          if($i==0)
-            echo '<p class="first_article">';
-          else
-            echo '<p class="article">';
-          echo '<p class="ctn_texte">'.$p->getElementsByTagName('title')->item(0)->nodeValue.'</p>';
-          $target = (sfConfig::get('app_blog_partenaires_open_in_new_window', false))? 'target="_blank "' : "";
-          echo '<a class="left" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.__('read_more').'</a>';
+        	$p = $partenaires[$i];
+        	$target = (sfConfig::get('app_blog_partenaires_open_in_new_window', false))? 'target="_blank "' : "";
+        	
+          echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
+          	'<a class="title" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.$p->getElementsByTagName('title')->item(0)->nodeValue.'</a>' .
+          	'<p class="body"></p>' .
+          	'<a class="read_more" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.__('read_more').'</a>' .
+          	'</div>';
         }
 
         // Sauvegardes des URLs pour charger les articles suivants / précédents (utilisés pour modifier l'URL des boutons en AJAX)

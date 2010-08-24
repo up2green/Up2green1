@@ -12,5 +12,33 @@
  */
 class sfGuardUser extends PluginsfGuardUser
 {
+  public function setPassword($password)
+  {
+    // store the backtrace
+    $bt = debug_backtrace();
 
+    // analyze backtrace to see if importing from fixtures
+    $is_importing = false;    
+    foreach ($bt as $cf)
+      if ($cf['function'] == 'loadData')
+        $is_importing = true;
+        
+    // if importing from fixtures
+    // then just save the encrypted password
+    if ($is_importing)
+    {
+      if ($password !== null && !is_string($password)) {
+        $password = (string) $password; 
+      }
+
+      if ($this->password !== $password) {
+        $this->password = $password;
+/*
+        $this->modifiedColumns[] = sfGuardUserPeer::PASSWORD;
+*/
+      }
+
+    } else
+      parent::setPassword($password);
+  }
 }

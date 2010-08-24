@@ -16,6 +16,7 @@ width:1024px;
 .left{text-align:left;}
 .right{text-align:right;}
 .clear{clear:both;}
+.hidden{display:none;}
 
 /*MENU HAUT*/
 .menu_haut{

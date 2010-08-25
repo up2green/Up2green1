@@ -5,7 +5,7 @@
 <div class="module">
   <div class="cartouche">
     <div class="content">
-      <p class="title_blog">Nos partenaires entreprises</p>
+      <p class="title_blog">L'Actualité web</p>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>

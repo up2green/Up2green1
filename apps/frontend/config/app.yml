@@ -13,5 +13,5 @@ all:
     bloc_articles_max: 3
     bloc_programmes_max: 1
     bloc_partenaires_max: 3
-    partenaires_url: http://www.phpindex.com/rss.php
+    partenaires_url: http://news.google.fr/news?hl=fr&client=firefox-a&hs=yN1&rls=org.mozilla:fr:official&q=reforestation&um=1&ie=UTF-8&output=rss
     partenaires_open_in_new_window: true

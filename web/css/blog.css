@@ -209,8 +209,16 @@ body {
 	padding:10px 5px 5px;
 }
 
-.diaporama .diapo img{
-  max-height: 160px;
+.diaporama .diapo .img-wrapper {
+	float:right;
+	height:160px;
+	width:300px;
+	display:table;
+}
+
+.diaporama .diapo .img-wrapper img{
+	max-height: 160px;
+  max-width: 290px;
 }
 
 .dpm_image {

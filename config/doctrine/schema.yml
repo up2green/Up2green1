@@ -186,6 +186,9 @@ programme:
     max_tree:
       type: integer(4)
       notnull: true
+    logo:
+      type: string(128)
+      default: null
   relations:
     organisme:
       class: organisme

@@ -15,6 +15,7 @@
  * @property decimal $longitude
  * @property boolean $is_active
  * @property integer $max_tree
+ * @property string $logo
  * @property organisme $organisme
  * @property Doctrine_Collection $programmeTrees
  * 
@@ -28,6 +29,7 @@
  * @method decimal             getLongitude()      Returns the current record's "longitude" value
  * @method boolean             getIsActive()       Returns the current record's "is_active" value
  * @method integer             getMaxTree()        Returns the current record's "max_tree" value
+ * @method string              getLogo()           Returns the current record's "logo" value
  * @method organisme           getOrganisme()      Returns the current record's "organisme" value
  * @method Doctrine_Collection getProgrammeTrees() Returns the current record's "programmeTrees" collection
  * @method programme           setId()             Sets the current record's "id" value
@@ -40,6 +42,7 @@
  * @method programme           setLongitude()      Sets the current record's "longitude" value
  * @method programme           setIsActive()       Sets the current record's "is_active" value
  * @method programme           setMaxTree()        Sets the current record's "max_tree" value
+ * @method programme           setLogo()           Sets the current record's "logo" value
  * @method programme           setOrganisme()      Sets the current record's "organisme" value
  * @method programme           setProgrammeTrees() Sets the current record's "programmeTrees" collection
  * 
@@ -95,6 +98,10 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              'length' => 4,
+             ));
+        $this->hasColumn('logo', 'string', 128, array(
+             'type' => 'string',
+             'length' => 128,
              ));
     }
 

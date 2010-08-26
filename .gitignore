@@ -12,3 +12,5 @@ config/databases.yml
 data/sql/schema.sql
 web/.htaccess
 web/*_dev.php
+web/backend.php
+www.zip

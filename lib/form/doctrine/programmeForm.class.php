@@ -14,6 +14,21 @@ class programmeForm extends BaseprogrammeForm {
                 $this['created_at'],
                 $this['updated_at']
         );
+        
+        $this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(array(
+                        'label' => 'Logo',
+                        'file_src'  => '/uploads/programme/'.$this->getObject()->getLogo(),
+                        'is_image'  => true,
+                        'edit_mode' => !$this->isNew(),
+                        'template'  => '<div>%file%<br />%input%<br />%delete% %delete_label%</div>',
+        ));
+
+        $this->validatorSchema['logo'] = new sfValidatorFile(array(
+                        'required'   => false,
+                        'path'       => sfConfig::get('sf_upload_dir').'/programme',
+                        'mime_types' => 'web_images',
+        ));
+        
         $this->languages = sfConfig::get('app_cultures_enabled');
 
         $langs = array_keys($this->languages);

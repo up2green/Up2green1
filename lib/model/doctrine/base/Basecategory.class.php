@@ -7,7 +7,6 @@
  * 
  * @property integer $id
  * @property string $unique_name
- * @property string $name
  * @property boolean $is_active
  * @property Doctrine_Collection $Articles
  * @property Doctrine_Collection $Liens
@@ -17,7 +16,6 @@
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method string              getUniqueName()         Returns the current record's "unique_name" value
- * @method string              getName()               Returns the current record's "name" value
  * @method boolean             getIsActive()           Returns the current record's "is_active" value
  * @method Doctrine_Collection getArticles()           Returns the current record's "Articles" collection
  * @method Doctrine_Collection getLiens()              Returns the current record's "Liens" collection
@@ -26,7 +24,6 @@
  * @method Doctrine_Collection getNewsletterCategory() Returns the current record's "newsletterCategory" collection
  * @method category            setId()                 Sets the current record's "id" value
  * @method category            setUniqueName()         Sets the current record's "unique_name" value
- * @method category            setName()               Sets the current record's "name" value
  * @method category            setIsActive()           Sets the current record's "is_active" value
  * @method category            setArticles()           Sets the current record's "Articles" collection
  * @method category            setLiens()              Sets the current record's "Liens" collection
@@ -54,11 +51,6 @@ abstract class Basecategory extends sfDoctrineRecord
              'type' => 'string',
              'unique' => true,
              'length' => 30,
-             ));
-        $this->hasColumn('name', 'string', 128, array(
-             'type' => 'string',
-             'notnull' => true,
-             'length' => 128,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',

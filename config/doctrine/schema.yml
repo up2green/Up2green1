@@ -364,9 +364,6 @@ category:
     unique_name:
       type: string(30)
       unique: true
-    name:
-      type: string(128)
-      notnull: true
     is_active:
       type: boolean
       default: 1

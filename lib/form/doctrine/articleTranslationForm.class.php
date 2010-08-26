@@ -12,7 +12,7 @@ class articleTranslationForm extends BasearticleTranslationForm
 {
   public function configure()
   {
-		$this->widgetSchema['accroche'] = new sfWidgetFormCKEditor(array('jsoptions'=>array(
+    $this->widgetSchema['accroche'] = new sfWidgetFormCKEditor(array('jsoptions'=>array(
 			'height' 	=> '75px',
 			'toolbar'	=> 'Basic'
 		)));

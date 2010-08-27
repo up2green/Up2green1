@@ -1,0 +1,10 @@
+sfGuardUser:
+  sfGuardUser_1:
+    username: admin
+    algorithm: sha1
+    password: up2g@dm1n
+    is_active: true
+    is_super_admin: true
+    last_login: null
+    created_at: '2010-08-10 22:59:16'
+    updated_at: '2010-08-10 22:59:16'

@@ -1,51 +1,41 @@
-coupon:
-  coupon_1:
-    code: test
-    credit: '1'
+category:
+  category_11:
+    unique_name: common
     is_active: true
-    used_at: null
-    used_by: null
-    created_at: '2010-06-26 18:29:36'
-    updated_at: '2010-06-26 18:29:36'
-organisme:
-  organisme_1:
-    name: 'Planete Urgence'
-    url: 'http://www.planete-urgence.org/'
-    logo: organisme39.jpeg
-    created_at: '2010-06-26 18:27:37'
-    updated_at: '2010-06-26 18:27:37'
-  organisme_2:
-    name: 'Trees For The Future'
-    url: 'http://www.treesftf.org/'
-    logo: organisme38.gif
-    created_at: '2010-06-26 18:27:37'
-    updated_at: '2010-06-26 18:27:37'
-  organisme_3:
-    name: BAOBAB29
-    url: null
-    logo: organisme40.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_4:
-    name: Eco-Kyoto
-    url: 'http://www.fondationecokyoto.org/'
-    logo: organisme41.gif
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_5:
-    name: CALA
-    url: 'http://www.calamada.org/'
-    logo: organisme42.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_6:
-    name: Oceanium
-    url: 'http://www.oceanium.org/'
-    logo: organisme43.JPG
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
+    root_id: '11'
+    lft: '1'
+    rgt: '6'
+    level: '0'
+  category_12:
+    unique_name: blog
+    is_active: true
+    root_id: '12'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_13:
+    unique_name: moteur
+    is_active: true
+    root_id: '13'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_14:
+    unique_name: plantation
+    is_active: true
+    root_id: '14'
+    lft: '1'
+    rgt: '2'
+    level: '0'
+  category_15:
+    unique_name: panel-footer
+    is_active: true
+    root_id: '11'
+    lft: '2'
+    rgt: '5'
+    level: '1'
 newsletter:
-  newsletter_1:
+  newsletter_9:
     unique_name: inscription
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
@@ -53,7 +43,7 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:35'
     updated_at: '2010-06-26 18:27:36'
-  newsletter_2:
+  newsletter_10:
     unique_name: welcome
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
@@ -61,7 +51,7 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
-  newsletter_3:
+  newsletter_11:
     unique_name: forgot_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
@@ -69,7 +59,7 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
-  newsletter_4:
+  newsletter_12:
     unique_name: new_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
@@ -77,473 +67,538 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
-programme:
-  programme_1:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '8.722218'
-    longitude: '39.440918'
+articleCategory:
+  articleCategory_12_4:
+    category: category_12
+    article: article_4
+sfGuardRememberKey:
+  sfGuardRememberKey_1_93.20.168.124:
+    id: '1'
+    sfGuardUser: sfGuardUser_1
+    remember_key: a016f1c179a6773c5524be85d8a3052e
+    ip_address: 93.20.168.124
+    created_at: '2010-08-27 06:29:54'
+    updated_at: '2010-08-27 06:29:54'
+sfGuardUser:
+  sfGuardUser_1:
+    username: admin
+    algorithm: sha1
+    salt: 555754a8ea338d568537ad244d1f72cf
+    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_2:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '22.786311'
-    longitude: '79.628906'
+    is_super_admin: true
+    last_login: '2010-08-27 16:21:58'
+    created_at: '2010-08-26 19:56:20'
+    updated_at: '2010-08-27 16:21:58'
+coupon:
+  coupon_3:
+    code: test
+    credit: '1'
     is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_3:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '-14.221789'
-    longitude: '-51.943359'
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_4:
-    organisme: organisme_2
-    geoadress: Honduras
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_5:
-    organisme: organisme_2
-    geoadress: Haiti
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_6:
-    organisme: organisme_2
-    geoadress: Burundi
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_7:
-    organisme: organisme_1
-    geoadress: Indonésie
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_8:
-    organisme: organisme_1
-    geoadress: Mali
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_9:
-    organisme: organisme_3
-    geoadress: 'Burkina Faso'
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_10:
-    organisme: organisme_4
-    geoadress: Guinée
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_11:
-    organisme: organisme_5
-    geoadress: Madagascar
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_12:
-    organisme: organisme_6
-    geoadress: Senegal
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
+    used_at: null
+    used_by: null
+    created_at: '2010-06-26 18:29:36'
+    updated_at: '2010-06-26 18:29:36'
 article:
-  article_1:
+  article_3:
     unique_name: welcome
     logo: null
     is_active: true
     created_at: '2010-08-02 21:25:50'
     updated_at: '2010-08-02 21:25:50'
-category:
-  category_1:
-    unique_name: common
+  article_4:
+    unique_name: test
+    logo: null
     is_active: true
-    root_id: '11'
-    lft: '1'
-    rgt: '6'
-    level: '0'
-  category_2:
-    unique_name: blog
+    created_at: '2010-08-27 16:25:07'
+    updated_at: '2010-08-27 16:25:07'
+organisme:
+  organisme_13:
+    name: 'Planete Urgence'
+    url: 'http://www.planete-urgence.org/'
+    logo: organisme39.jpeg
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_14:
+    name: 'Trees For The Future'
+    url: 'http://www.treesftf.org/'
+    logo: organisme38.gif
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_15:
+    name: BAOBAB29
+    url: null
+    logo: organisme40.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_16:
+    name: Eco-Kyoto
+    url: 'http://www.fondationecokyoto.org/'
+    logo: organisme41.gif
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_17:
+    name: CALA
+    url: 'http://www.calamada.org/'
+    logo: organisme42.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_18:
+    name: Oceanium
+    url: 'http://www.oceanium.org/'
+    logo: organisme43.JPG
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+programme:
+  programme_25:
+    organisme: organisme_14
+    geoadress: null
+    latitude: '8.722218'
+    longitude: '39.440918'
     is_active: true
-    root_id: '12'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_3:
-    unique_name: moteur
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_26:
+    organisme: organisme_14
+    geoadress: null
+    latitude: '22.786311'
+    longitude: '79.628906'
     is_active: true
-    root_id: '13'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_4:
-    unique_name: plantation
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_27:
+    organisme: organisme_14
+    geoadress: null
+    latitude: '-14.221789'
+    longitude: '-51.943359'
     is_active: true
-    root_id: '14'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_5:
-    unique_name: panel-footer
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_28:
+    organisme: organisme_14
+    geoadress: Honduras
+    latitude: null
+    longitude: null
     is_active: true
-    root_id: '11'
-    lft: '2'
-    rgt: '5'
-    level: '1'
-organismeTranslation:
-  organismeTranslation_1_en:
-    organisme: organisme_1
-    title: 'Eco-Kyoto Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: eco-kyoto-fondation
-  organismeTranslation_1_fr:
-    organisme: organisme_1
-    title: 'Fondation Eco-Kyoto'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-eco-kyoto
-  organismeTranslation_2_en:
-    organisme: organisme_2
-    title: 'Trees For The Future Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: trees-for-the-future-fondation
-  organismeTranslation_2_fr:
-    organisme: organisme_2
-    title: 'Fondation Trees For The Future'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-trees-for-the-future
-  organismeTranslation_3_en:
-    organisme: organisme_3
-    title: BAOBAB29
-    accroche: null
-    description: null
-    lang: en
-    slug: baobab29
-  organismeTranslation_3_fr:
-    organisme: organisme_3
-    title: BAOBAB29
-    accroche: null
-    description: null
-    lang: fr
-    slug: baobab29
-  organismeTranslation_4_en:
-    organisme: organisme_4
-    title: 'Eco-Kyoto Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: eco-kyoto-fondation-1
-  organismeTranslation_4_fr:
-    organisme: organisme_4
-    title: 'Fondation Eco-Kyoto'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-eco-kyoto-1
-  organismeTranslation_5_en:
-    organisme: organisme_5
-    title: 'CALA Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: cala-fondation
-  organismeTranslation_5_fr:
-    organisme: organisme_5
-    title: 'Fondation CALA'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-cala
-  organismeTranslation_6_en:
-    organisme: organisme_6
-    title: 'Oceanium Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: oceanium-fondation
-  organismeTranslation_6_fr:
-    organisme: organisme_6
-    title: 'Fondation Oceanium'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-oceanium
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_29:
+    organisme: organisme_14
+    geoadress: Haiti
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_30:
+    organisme: organisme_14
+    geoadress: Burundi
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_31:
+    organisme: organisme_13
+    geoadress: Indonésie
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_32:
+    organisme: organisme_13
+    geoadress: Mali
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_33:
+    organisme: organisme_15
+    geoadress: 'Burkina Faso'
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-27 06:59:26'
+  programme_34:
+    organisme: organisme_16
+    geoadress: Guinée
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_35:
+    organisme: organisme_17
+    geoadress: Madagascar
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_36:
+    organisme: organisme_18
+    geoadress: Senegal
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
 newsletterTranslation:
-  newsletterTranslation_1_en:
-    newsletter: newsletter_1
+  newsletterTranslation_9_en:
+    newsletter: newsletter_9
     title: Inscription
     content: 'Please modify'
     lang: en
     slug: inscription
-  newsletterTranslation_1_fr:
-    newsletter: newsletter_1
+  newsletterTranslation_9_fr:
+    newsletter: newsletter_9
     title: Inscription
     content: 'A modifier'
     lang: fr
     slug: inscription
-  newsletterTranslation_2_en:
-    newsletter: newsletter_2
+  newsletterTranslation_10_en:
+    newsletter: newsletter_10
     title: welcome
     content: 'Please modify'
     lang: en
     slug: welcome
-  newsletterTranslation_2_fr:
-    newsletter: newsletter_2
+  newsletterTranslation_10_fr:
+    newsletter: newsletter_10
     title: Bienvenu
     content: 'A modifier'
     lang: fr
     slug: bienvenu
-  newsletterTranslation_3_en:
-    newsletter: newsletter_3
+  newsletterTranslation_11_en:
+    newsletter: newsletter_11
     title: 'new password'
     content: modify
     lang: en
     slug: new-password
-  newsletterTranslation_3_fr:
-    newsletter: newsletter_3
+  newsletterTranslation_11_fr:
+    newsletter: newsletter_11
     title: 'nouveau mot de passe'
     content: 'a modifier'
     lang: fr
     slug: nouveau-mot-de-passe
-  newsletterTranslation_4_en:
-    newsletter: newsletter_4
+  newsletterTranslation_12_en:
+    newsletter: newsletter_12
     title: change
     content: modify
     lang: en
     slug: change
-  newsletterTranslation_4_fr:
-    newsletter: newsletter_4
+  newsletterTranslation_12_fr:
+    newsletter: newsletter_12
     title: changement
     content: modifier
     lang: fr
     slug: changement
-programmeTranslation:
-  programmeTranslation_1_en:
-    programme: programme_1
-    title: '1 tree in Ethiopy'
-    accroche: 'In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: en
-    slug: 1-tree-in-ethiopy
-  programmeTranslation_1_fr:
-    programme: programme_1
-    title: '1 arbre en Ethiopie'
-    accroche: 'Dans les régions de Guraghe, Konso et du lac Tana, pour lutter contre la désertification et assurer des revenus aux populations locales (fruits, miel, meubles, bois de construction, etc.)'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: fr
-    slug: 1-arbre-en-ethiopie
-  programmeTranslation_2_en:
-    programme: programme_2
-    title: Inde
-    accroche: 'In areas of Tamil Nadu, Andhra Pradesh and Uttarkhand to restore deforested areas (drought and erosion) by planting fast growing tree species to restore aquifers and ensure ''s various uses of trees: fruits, heating and construction.'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: en
-    slug: inde
-  programmeTranslation_2_fr:
-    programme: programme_2
-    title: Inde
-    accroche: 'Dans les régions du Tamil Nadu, Andhra Pradesh et Uttarkhand, pour restaurer les zones déforestées (sà¨cheresse et érosion) en plantant des essences à croissance rapide permettant de restaurer les aquifères et d''assurer divers usages des arbres : fruits, '
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: fr
-    slug: inde
-  programmeTranslation_3_en:
-    programme: programme_3
-    title: Brasil
-    accroche: 'In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: en
-    slug: brasil
-  programmeTranslation_3_fr:
-    programme: programme_3
-    title: 'Brésil (Etat de Sao Paulo)'
-    accroche: 'Dans la région de Sao Paulo , pour améliorer la production agricole, lutter contre la pauvreté rurale et apprendre les techniques agro-sylvicoles aux populations locales.'
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
-    lang: fr
-    slug: bresil-etat-de-sao-paulo
-  programmeTranslation_4_en:
-    programme: programme_4
-    title: Honduras
-    accroche: 'In the mountains, to protect the aquifer and prevent the water shortage. Planting multiple species for different uses: fruit, firewood and construction.'
-    description: null
-    lang: en
-    slug: honduras
-  programmeTranslation_4_fr:
-    programme: programme_4
-    title: Honduras
-    accroche: 'Dans les montagnes, pour protéger les aquifà¨res et éviter la pénurie d''eau. Plantation de multiples essences pour différents usages : production de fruits, de bois de chauffage et de construction.'
-    description: null
-    lang: fr
-    slug: honduras
-  programmeTranslation_5_en:
-    programme: programme_5
-    title: 'Haiti (Arcanie Cost)'
-    accroche: 'In coastal area of Arcadins in order to restore the hillside and develop an economical activity (charcoal, biofuels, agriculture hillside).'
-    description: null
-    lang: en
-    slug: haiti-arcanie-cost
-  programmeTranslation_5_fr:
-    programme: programme_5
-    title: 'Haiti (Cote d''Arcanie)'
-    accroche: 'Dans la région cà´tià¨re d''Arcadine, pour restaurer les flans de colline et développer une activité économique (charbon de bois, biocarburants, agriculture à  flan de coteau).'
-    description: null
-    lang: fr
-    slug: haiti-cote-d-arcanie
-  programmeTranslation_6_en:
-    programme: programme_6
-    title: Burundi
-    accroche: 'To fight against malnutrition by planting &quot;Morinfa oleifera&quot; specie tree which contains twice more calcium than milk and 4 times more vitamin A.'
-    description: null
-    lang: en
-    slug: burundi
-  programmeTranslation_6_fr:
-    programme: programme_6
-    title: 'Burundi (région de Ruyigi )'
-    accroche: 'Pour lutter contre la malnutrition en plantant l''arbre &quot;Morinfa oleifera&quot; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.'
-    description: null
-    lang: fr
-    slug: burundi-region-de-ruyigi
-  programmeTranslation_7_en:
-    programme: programme_7
-    title: Indonesia
-    accroche: 'In areas of Deli Serdang - Sumatra, to restore the mangroves, bank protection and biodiversity, and storing carbone.'
-    description: null
-    lang: en
-    slug: indonesia
-  programmeTranslation_7_fr:
-    programme: programme_7
-    title: Indonésie
-    accroche: 'Dans les régions de Deli Serdang - Sumatra, pour restaurer les mangroves, protéger les berges et leur biodiversité, et stocker le carbone.'
-    description: null
-    lang: fr
-    slug: indonesie
-  programmeTranslation_8_en:
-    programme: programme_8
-    title: Mali
-    accroche: 'In the Sahel region of Mopti, the aim is to fight against desertification and o help sedentary populations developing an economic activity planting fruit trees species - 1000 trees per family and per hectare.'
-    description: null
-    lang: en
-    slug: mali
-  programmeTranslation_8_fr:
-    programme: programme_8
-    title: Mali
-    accroche: 'Dans la région de Mopti Sahel, pour lutter contre la désertification et sédentariser les populations en développant une activité économique à  partir des essences d arbres fruitiers qui sont plantés - 1000 arbres par famille et par hectare.'
-    description: null
-    lang: fr
-    slug: mali
-  programmeTranslation_9_en:
-    programme: programme_9
-    title: 'Burkina Faso'
-    accroche: 'Reforestation program with a project of digging wells and starting the planting of 75 000 trees on 60 hectares in the province of Sanguié. This action is set up in collaboration with the local population, the Center for Protection of Nature, the heads of '
-    description: null
-    lang: en
-    slug: burkina-faso
-  programmeTranslation_9_fr:
-    programme: programme_9
-    title: 'Burkina Faso'
-    accroche: 'Programme de reforestation avec un projet de creusement de puits et le démarrage de plantation de 75 000 arbres sur 60 hectares dans la province du Sanguié. Cette action se fait en collaboration avec la population locale, le Centre de Protection de la Nat'
-    description: null
-    lang: fr
-    slug: burkina-faso
-  programmeTranslation_10_en:
-    programme: programme_10
-    title: Guinea
-    accroche: 'In Upper and Lower Guinea, to fight against the afforestation of primary forest and educate local communities at''agro-forestry.'
-    description: null
-    lang: en
-    slug: guinea
-  programmeTranslation_10_fr:
-    programme: programme_10
-    title: Guinée
-    accroche: 'En Haute et Basse Guinée, pour lutter contre la déforestation de la foret primaire et éduquer les communautés locales à  l''agro-foresterie.'
-    description: null
-    lang: fr
-    slug: guinee
-  programmeTranslation_11_en:
-    programme: programme_11
-    title: 'Madagascar (Antalaha)'
-    accroche: 'In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).'
-    description: null
-    lang: en
-    slug: madagascar-antalaha
-  programmeTranslation_11_fr:
-    programme: programme_11
-    title: 'Madagascar (Antalaha)'
-    accroche: 'Dans la région d''Antalaha au Nord-Est de l''à®le, pour la réinsertion sociale des anciens malades de la là¨pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d''essences de bois précieux (bois de rose, palissandre, hintsi,'
-    description: null
-    lang: fr
-    slug: madagascar-antalaha
-  programmeTranslation_12_en:
-    programme: programme_12
-    title: Senegal
-    accroche: 'The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance. The enthusiasm of the people is the result of a long education which already affects 32 500 peo'
-    description: null
-    lang: en
-    slug: senegal
-  programmeTranslation_12_fr:
-    programme: programme_12
-    title: Sénégal
-    accroche: 'Le programme de reboisement réalisé par l''association Oceanium rassemble 11 000 villageois qui se sont massivement mobilisés pour restaurer la mangrove en Casamance. Cet engouement des populations est le résultat d''une longue sensibilisation qui touche dé'
-    description: null
-    lang: fr
-    slug: senegal
 articleTranslation:
-  articleTranslation_1_en:
-    article: article_1
+  articleTranslation_3_en:
+    article: article_3
     title: Welcome
     accroche: 'Welcome to up2green'
     description: ''
     lang: en
     slug: welcome
-  articleTranslation_1_fr:
-    article: article_1
+  articleTranslation_3_fr:
+    article: article_3
     title: Bienvenue
     accroche: 'Bienvenue sur up2green'
     description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
     lang: fr
     slug: bienvenue
+  articleTranslation_4_en:
+    article: article_4
+    title: testantoine
+    accroche: "<p>\r\n	njohnjfeahnfueroafhnazerogoauiefhneriogha</p>\r\n"
+    description: "<p>\r\n	blalallalalllallalalalalalllllalaafaergeagreagreabetb(zyz(nryzryb</p>\r\n<p>\r\n	<img alt=\"\" src=\"uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15%281%29.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	njnjonerjncojnzjoncffzf</p>\r\n"
+    lang: en
+    slug: testantoineenglish
+  articleTranslation_4_fr:
+    article: article_4
+    title: testantoine
+    accroche: "<p>\r\n	blablabla</p>\r\n"
+    description: "<p>\r\n	blalallalalllallalalalalalllllalaa</p>\r\n<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15(1).jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	njnjonerjncojnzjoncffzf</p>\r\n"
+    lang: fr
+    slug: testantoine
+organismeTranslation:
+  organismeTranslation_13_en:
+    organisme: organisme_13
+    title: 'Eco-Kyoto Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: eco-kyoto-fondation
+  organismeTranslation_13_fr:
+    organisme: organisme_13
+    title: 'Fondation Eco-Kyoto'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-eco-kyoto
+  organismeTranslation_14_en:
+    organisme: organisme_14
+    title: 'Trees For The Future Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: trees-for-the-future-fondation
+  organismeTranslation_14_fr:
+    organisme: organisme_14
+    title: 'Fondation Trees For The Future'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-trees-for-the-future
+  organismeTranslation_15_en:
+    organisme: organisme_15
+    title: BAOBAB29
+    accroche: null
+    description: null
+    lang: en
+    slug: baobab29
+  organismeTranslation_15_fr:
+    organisme: organisme_15
+    title: BAOBAB29
+    accroche: null
+    description: null
+    lang: fr
+    slug: baobab29
+  organismeTranslation_16_en:
+    organisme: organisme_16
+    title: 'Eco-Kyoto Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: eco-kyoto-fondation-1
+  organismeTranslation_16_fr:
+    organisme: organisme_16
+    title: 'Fondation Eco-Kyoto'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-eco-kyoto-1
+  organismeTranslation_17_en:
+    organisme: organisme_17
+    title: 'CALA Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: cala-fondation
+  organismeTranslation_17_fr:
+    organisme: organisme_17
+    title: 'Fondation CALA'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-cala
+  organismeTranslation_18_en:
+    organisme: organisme_18
+    title: 'Oceanium Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: oceanium-fondation
+  organismeTranslation_18_fr:
+    organisme: organisme_18
+    title: 'Fondation Oceanium'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-oceanium
+programmeTranslation:
+  programmeTranslation_25_en:
+    programme: programme_25
+    title: '1 tree in Ethiopy'
+    accroche: 'In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: en
+    slug: 1-tree-in-ethiopy
+  programmeTranslation_25_fr:
+    programme: programme_25
+    title: '1 arbre en Ethiopie'
+    accroche: 'Dans les régions de Guraghe, Konso et du lac Tana, pour lutter contre la désertification et assurer des revenus aux populations locales (fruits, miel, meubles, bois de construction, etc.)'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: fr
+    slug: 1-arbre-en-ethiopie
+  programmeTranslation_26_en:
+    programme: programme_26
+    title: Inde
+    accroche: 'In areas of Tamil Nadu, Andhra Pradesh and Uttarkhand to restore deforested areas (drought and erosion) by planting fast growing tree species to restore aquifers and ensure ''s various uses of trees: fruits, heating and construction.'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: en
+    slug: inde
+  programmeTranslation_26_fr:
+    programme: programme_26
+    title: Inde
+    accroche: 'Dans les régions du Tamil Nadu, Andhra Pradesh et Uttarkhand, pour restaurer les zones déforestées (sà¨cheresse et érosion) en plantant des essences à croissance rapide permettant de restaurer les aquifères et d''assurer divers usages des arbres : fruits, '
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: fr
+    slug: inde
+  programmeTranslation_27_en:
+    programme: programme_27
+    title: Brasil
+    accroche: 'In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: en
+    slug: brasil
+  programmeTranslation_27_fr:
+    programme: programme_27
+    title: 'Brésil (Etat de Sao Paulo)'
+    accroche: 'Dans la région de Sao Paulo , pour améliorer la production agricole, lutter contre la pauvreté rurale et apprendre les techniques agro-sylvicoles aux populations locales.'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,'
+    lang: fr
+    slug: bresil-etat-de-sao-paulo
+  programmeTranslation_28_en:
+    programme: programme_28
+    title: Honduras
+    accroche: 'In the mountains, to protect the aquifer and prevent the water shortage. Planting multiple species for different uses: fruit, firewood and construction.'
+    description: null
+    lang: en
+    slug: honduras
+  programmeTranslation_28_fr:
+    programme: programme_28
+    title: Honduras
+    accroche: 'Dans les montagnes, pour protéger les aquifà¨res et éviter la pénurie d''eau. Plantation de multiples essences pour différents usages : production de fruits, de bois de chauffage et de construction.'
+    description: null
+    lang: fr
+    slug: honduras
+  programmeTranslation_29_en:
+    programme: programme_29
+    title: 'Haiti (Arcanie Cost)'
+    accroche: 'In coastal area of Arcadins in order to restore the hillside and develop an economical activity (charcoal, biofuels, agriculture hillside).'
+    description: null
+    lang: en
+    slug: haiti-arcanie-cost
+  programmeTranslation_29_fr:
+    programme: programme_29
+    title: 'Haiti (Cote d''Arcanie)'
+    accroche: 'Dans la région cà´tià¨re d''Arcadine, pour restaurer les flans de colline et développer une activité économique (charbon de bois, biocarburants, agriculture à  flan de coteau).'
+    description: null
+    lang: fr
+    slug: haiti-cote-d-arcanie
+  programmeTranslation_30_en:
+    programme: programme_30
+    title: Burundi
+    accroche: 'To fight against malnutrition by planting &quot;Morinfa oleifera&quot; specie tree which contains twice more calcium than milk and 4 times more vitamin A.'
+    description: null
+    lang: en
+    slug: burundi
+  programmeTranslation_30_fr:
+    programme: programme_30
+    title: 'Burundi (région de Ruyigi )'
+    accroche: 'Pour lutter contre la malnutrition en plantant l''arbre &quot;Morinfa oleifera&quot; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.'
+    description: null
+    lang: fr
+    slug: burundi-region-de-ruyigi
+  programmeTranslation_31_en:
+    programme: programme_31
+    title: Indonesia
+    accroche: 'In areas of Deli Serdang - Sumatra, to restore the mangroves, bank protection and biodiversity, and storing carbone.'
+    description: null
+    lang: en
+    slug: indonesia
+  programmeTranslation_31_fr:
+    programme: programme_31
+    title: Indonésie
+    accroche: 'Dans les régions de Deli Serdang - Sumatra, pour restaurer les mangroves, protéger les berges et leur biodiversité, et stocker le carbone.'
+    description: null
+    lang: fr
+    slug: indonesie
+  programmeTranslation_32_en:
+    programme: programme_32
+    title: Mali
+    accroche: 'In the Sahel region of Mopti, the aim is to fight against desertification and o help sedentary populations developing an economic activity planting fruit trees species - 1000 trees per family and per hectare.'
+    description: null
+    lang: en
+    slug: mali
+  programmeTranslation_32_fr:
+    programme: programme_32
+    title: Mali
+    accroche: 'Dans la région de Mopti Sahel, pour lutter contre la désertification et sédentariser les populations en développant une activité économique à  partir des essences d arbres fruitiers qui sont plantés - 1000 arbres par famille et par hectare.'
+    description: null
+    lang: fr
+    slug: mali
+  programmeTranslation_33_en:
+    programme: programme_33
+    title: 'Burkina Faso'
+    accroche: "<p>\r\n	Reforestation program with a project of digging wells and starting the planting of 75 000 trees on 60 hectares in the province of Sangui&eacute;.</p>\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: burkina-faso
+  programmeTranslation_33_fr:
+    programme: programme_33
+    title: 'Burkina Faso'
+    accroche: "<p>\r\n	Programme de reforestation avec un projet de creusement de puits et le d&eacute;marrage de plantation de 75 000 arbres sur 60 hectares dans la province du Sangui&eacute;.&nbsp;</p>\r\n"
+    description: "<p>\r\n	<strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15.jpg\" style=\"width: 200px; height: 150px;\" /></strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_13.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_7.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: lutter contre l&rsquo;avanc&eacute;e du d&eacute;sert, lutter contre la pauvret&eacute;</p>\r\n<p>\r\n	<strong>Localisation&nbsp;</strong>: Province du Sanguie, Tenado, village de Tio, Burkina Faso</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: Les villageois des alentours de la bourgade de Tenado (50 000 habitants)</p>\r\n<p>\r\n	<strong>Partenaires du programme</strong>&nbsp;: Baobab 29 (association bretone), Centre de Protection de la Nature, Fondation Yves Rocher, Up2green Reforestation</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Plantons pour la plan&egrave;te, 21 324 arbres plant&eacute;s</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: contribuer aux activit&eacute;s de reboisement. Reboiser 10ha, et former les villageois pour le d&eacute;veloppement de leurs propres p&eacute;pini&egrave;res.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	L&rsquo;association BAOBAB29 poursuit, g&egrave;re et coordonne un programme de reforestation au Burkina Faso, province du Sangui&eacute;, engag&eacute; en 2006 par sa pr&eacute;sidente dans le cadre du PNUE .</p>\r\n<p>\r\n	Il s&rsquo;agit de plus de 60 ha de terrains lat&eacute;ritiques devant &ecirc;tre rebois&eacute;s sur plusieurs ann&eacute;es cons&eacute;cutives.</p>\r\n<p>\r\n	A la cr&eacute;ation, chaque parcelle de 2 ha&nbsp; revient &agrave; 3 000 euros : maison de gardien et de rangement du mat&eacute;riel, creusement de deux puits, am&eacute;nagement du terrain avec micro-barrage si n&eacute;cessaire, cordons pierreux v&eacute;g&eacute;talis&eacute;s au V&eacute;tiver, petit mat&eacute;riel agricole, panneaux explicatifs &agrave; l&rsquo;entr&eacute;e de la parcelle, engrais naturel &agrave; base de bouse de z&eacute;bu, fosse fumi&egrave;re, et surtout plantation de 2 250 arbres avec protection individuelle des fruitiers.</p>\r\n<p>\r\n	Puis, autogestion des parcelles :</p>\r\n<p>\r\n	Avec visites r&eacute;guli&egrave;res des partenaires, groupements f&eacute;minins et groupements villageois.</p>\r\n<p>\r\n	- Le gardien est log&eacute; sur place</p>\r\n<p>\r\n	- Le groupement f&eacute;minin du CPN cultive les jardins p&eacute;dagogiques li&eacute;s aux parcelles en suivant les conseils des fiches Fidafrique et de l&rsquo;INERA et reste propri&eacute;taire de la r&eacute;colte obtenue.</p>\r\n"
+    lang: fr
+    slug: burkina-faso
+  programmeTranslation_34_en:
+    programme: programme_34
+    title: Guinea
+    accroche: 'In Upper and Lower Guinea, to fight against the afforestation of primary forest and educate local communities at''agro-forestry.'
+    description: null
+    lang: en
+    slug: guinea
+  programmeTranslation_34_fr:
+    programme: programme_34
+    title: Guinée
+    accroche: 'En Haute et Basse Guinée, pour lutter contre la déforestation de la foret primaire et éduquer les communautés locales à  l''agro-foresterie.'
+    description: null
+    lang: fr
+    slug: guinee
+  programmeTranslation_35_en:
+    programme: programme_35
+    title: 'Madagascar (Antalaha)'
+    accroche: 'In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).'
+    description: null
+    lang: en
+    slug: madagascar-antalaha
+  programmeTranslation_35_fr:
+    programme: programme_35
+    title: 'Madagascar (Antalaha)'
+    accroche: 'Dans la région d''Antalaha au Nord-Est de l''à®le, pour la réinsertion sociale des anciens malades de la là¨pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d''essences de bois précieux (bois de rose, palissandre, hintsi,'
+    description: null
+    lang: fr
+    slug: madagascar-antalaha
+  programmeTranslation_36_en:
+    programme: programme_36
+    title: Senegal
+    accroche: 'The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance. The enthusiasm of the people is the result of a long education which already affects 32 500 peo'
+    description: null
+    lang: en
+    slug: senegal
+  programmeTranslation_36_fr:
+    programme: programme_36
+    title: Sénégal
+    accroche: 'Le programme de reboisement réalisé par l''association Oceanium rassemble 11 000 villageois qui se sont massivement mobilisés pour restaurer la mangrove en Casamance. Cet engouement des populations est le résultat d''une longue sensibilisation qui touche dé'
+    description: null
+    lang: fr
+    slug: senegal

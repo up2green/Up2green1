@@ -26,7 +26,7 @@
         	$p = $programmes[$i];
           echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
           	link_to($p->getTitle(), '@blog_programme?slug='.$p->getSlug(), array('class' => 'title')) .
-          	'<p class="body">'.$p->getAccroche().'</p>' .
+          	'<p class="body">'.html_entity_decode($p->getAccroche()).'</p>' .
           	link_to(__('read_more'), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')) .
           	'</div>';
         }
@@ -39,16 +39,6 @@
         if (!isset($noBloc) || !$noBloc):
       ?>
     </div>
-    <!--
-    <p class="first_article">
-      <p class="ctn_texte">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-      <a href="#" class="left">lire la suite</a>
-    </p>
-    <p class="article">
-      <p class="ctn_texte">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-      <a href="#" class="left">lire la suite</a>
-    </p>
-    -->
     <p class="up_n_down">
       <span class="btn_up">
         <a href="<?php echo url_for('@blog?programmesOffset='.$offsets['prev'].'&changement=programmes'); ?>" class="button white loadFromUri prevResults">

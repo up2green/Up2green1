@@ -130,12 +130,6 @@ article:
     is_active: true
     created_at: '2010-08-02 21:25:50'
     updated_at: '2010-08-02 21:25:50'
-  article_3:
-    unique_name: welcome
-    logo: null
-    is_active: true
-    created_at: '2010-08-02 21:25:50'
-    updated_at: '2010-08-02 21:25:50'
   article_4:
     unique_name: test
     logo: null
@@ -182,20 +176,6 @@ articleTranslation:
     slug: welcome
   articleTranslation_1_fr:
     article: article_1
-    title: Bienvenue
-    accroche: 'Bienvenue sur up2green'
-    description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
-    lang: fr
-    slug: bienvenue
-  articleTranslation_3_en:
-    article: article_3
-    title: Welcome
-    accroche: 'Welcome to up2green'
-    description: ''
-    lang: en
-    slug: welcome
-  articleTranslation_3_fr:
-    article: article_3
     title: Bienvenue
     accroche: 'Bienvenue sur up2green'
     description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
@@ -610,7 +590,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 18:06:06'
   programme_29:
-    organisme: organisme_14
     geoadress: Haiti
     latitude: null
     longitude: null
@@ -620,7 +599,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 18:06:20'
   programme_30:
-    organisme: organisme_14
     geoadress: Burundi
     latitude: null
     longitude: null
@@ -630,7 +608,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 18:06:38'
   programme_31:
-    organisme: organisme_13
     geoadress: Indonésie
     latitude: null
     longitude: null
@@ -640,7 +617,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 18:06:54'
   programme_32:
-    organisme: organisme_13
     geoadress: Mali
     latitude: null
     longitude: null
@@ -649,7 +625,7 @@ programme:
     logo: null
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
-  programme_9:
+  programme_33:
     organisme: organisme_3
     geoadress: 'Burkina Faso'
     latitude: null
@@ -660,7 +636,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 17:42:24'
   programme_34:
-    organisme: organisme_16
     geoadress: Guinée
     latitude: null
     longitude: null
@@ -669,7 +644,7 @@ programme:
     logo: null
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
-  programme_11:
+  programme_35:
     organisme: organisme_5
     geoadress: Madagascar
     latitude: null
@@ -680,7 +655,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 17:41:04'
   programme_36:
-    organisme: organisme_18
     geoadress: Senegal
     latitude: null
     longitude: null
@@ -690,7 +664,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 17:43:00'
   programme_37:
-    organisme: organisme_19
     geoadress: Benin
     latitude: null
     longitude: null

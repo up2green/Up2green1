@@ -13,6 +13,7 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
       'unique_name' => new sfWidgetFormFilterInput(),
       'reply_to'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'email_from'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -23,6 +24,7 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
+      'category_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('category'), 'column' => 'id')),
       'unique_name' => new sfValidatorPass(array('required' => false)),
       'reply_to'    => new sfValidatorPass(array('required' => false)),
       'email_from'  => new sfValidatorPass(array('required' => false)),
@@ -50,6 +52,7 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'          => 'Number',
+      'category_id' => 'ForeignKey',
       'unique_name' => 'Text',
       'reply_to'    => 'Text',
       'email_from'  => 'Text',

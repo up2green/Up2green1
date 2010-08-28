@@ -62,7 +62,20 @@ class blogComponents extends sfComponents {
     $this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), 3, 0);
   }
 
+  public function executeMenu(sfWebRequest $request) {
+    // Récupération du menu-top dynamique
+    $this->category = Doctrine::getTable('Category')->getByName('main-menu');
+  }
 
+  public function executeFooter(sfWebRequest $request) {
+    // Récupération du menu-top dynamique
+    $this->category = Doctrine::getTable('Category')->getByName('footer');
+  }
+
+  public function executeFooterLegal(sfWebRequest $request) {
+    // Récupération du menu-top dynamique
+    $this->category = Doctrine::getTable('Category')->getByName('footer-legal ');
+  }
 
   protected function retrieveArticlesOffsets($offset) {
     return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_articles_max'), Doctrine::getTable('Article')->count());

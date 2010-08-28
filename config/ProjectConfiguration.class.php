@@ -13,9 +13,9 @@ class ProjectConfiguration extends sfProjectConfiguration
     	'sfEasyGMapPlugin',
     	'sfFormExtraPlugin',
     	'sfProtoculousPlugin',
-        'sfCKEditorPlugin',
-        'sfDoctrineNestedSetPlugin',
-        'sfJqueryTreeDoctrineManagerPlugin'
+			'sfCKEditorPlugin',
+			'sfDoctrineNestedSetPlugin',
+			'sfJqueryTreeDoctrineManagerPlugin'
     ));
   }
 }

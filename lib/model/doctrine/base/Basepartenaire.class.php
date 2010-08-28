@@ -45,9 +45,9 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'type' => 'string',
              'length' => 45,
              ));
-        $this->hasColumn('accroche', 'string', 255, array(
+        $this->hasColumn('accroche', 'string', 1000, array(
              'type' => 'string',
-             'length' => 255,
+             'length' => 1000,
              ));
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',

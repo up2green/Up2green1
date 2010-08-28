@@ -1,19 +1,35 @@
+user_forgot_password:
+  url:   /forgotpwd
+  param: { module: user, action: forgotPassword }
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+category_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:               category
+    module:              category
+    prefix_path:         category
+    column:              id
+    with_wildcard_routes: true
+
 category:
   class: sfDoctrineRouteCollection
   options:
-    model:                Category
-    module:               category
-    prefix_path:          /category
-    column:               id
-    with_wildcard_routes: true
-
-categorie_translation:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                categoryTranslation
-    module:               category_translation
-    prefix_path:          /category_translation
-    column:               Array
+    model:               category
+    module:              category
+    prefix_path:         category
+    column:              id
     with_wildcard_routes: true
 
 coupon:

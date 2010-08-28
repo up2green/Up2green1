@@ -202,6 +202,12 @@ body {
   width: 590px;
   padding:5px 0 10px;
   font-weight:bold;
+  color:#ddd;
+}
+
+.diaporama .diapo table td{
+	vertical-align:middle;
+	height: 160px;
 }
 
 .diaporama .diapo h3{
@@ -210,14 +216,7 @@ body {
 	padding:10px 5px 5px;
 }
 
-.diaporama .diapo .img-wrapper {
-	float:right;
-	height:160px;
-	width:300px;
-	display:table;
-}
-
-.diaporama .diapo .img-wrapper img{
+.diaporama .diapo img{
 	max-height: 160px;
   max-width: 290px;
 }

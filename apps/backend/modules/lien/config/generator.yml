@@ -15,7 +15,8 @@ generator:
       actions: ~
       fields: ~
       list:
-        display: [id, =src, is_active]
+        display: [Category, rank, =src, is_active]
+        sort: [category_id, asc]
       filter:  ~
       form:    ~
       edit:    ~

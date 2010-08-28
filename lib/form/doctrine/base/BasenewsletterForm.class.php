@@ -16,6 +16,7 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
+      'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
       'unique_name' => new sfWidgetFormInputText(),
       'reply_to'    => new sfWidgetFormInputText(),
       'email_from'  => new sfWidgetFormInputText(),
@@ -27,6 +28,7 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'required' => false)),
       'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'reply_to'    => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'email_from'  => new sfValidatorString(array('max_length' => 128, 'required' => false)),

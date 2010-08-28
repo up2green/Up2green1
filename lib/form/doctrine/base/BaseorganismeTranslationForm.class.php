@@ -17,7 +17,7 @@ abstract class BaseorganismeTranslationForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'title'       => new sfWidgetFormInputText(),
-      'accroche'    => new sfWidgetFormInputText(),
+      'accroche'    => new sfWidgetFormTextarea(),
       'description' => new sfWidgetFormTextarea(),
       'lang'        => new sfWidgetFormInputHidden(),
       'slug'        => new sfWidgetFormInputText(),
@@ -26,7 +26,7 @@ abstract class BaseorganismeTranslationForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'title'       => new sfValidatorString(array('max_length' => 128)),
-      'accroche'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'accroche'    => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
       'lang'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
       'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),

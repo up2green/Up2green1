@@ -1,23 +1,36 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Category
+    model_class:           category
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          category
-    with_doctrine_route:   true
-    actions_base_class:    sfActions
+    route_prefix:          category_category
+    with_doctrine_route:     1
 
     config:
       actions: ~
       fields:  ~
-      list: 
+      list:    
+        display: [id, name]
+        title:   Gestion des catégories
+        max_per_page: 999999
+        batch_actions:
+          order:
+            label: Mettre à jour
+          _delete: ~
+        object_actions:
+          new:
+            label: Ajouter fils
+          _edit:    ~
+          _delete:  ~
         actions:
-          _tree: ~
-      filter:  ~
-      form:    ~
-      edit:    ~
+          _new:
+            label: Ajouter racine
+      filter: ~
+      form: ~ 
+      edit:
+        title: Editer la catégorie "%%unique_name%%"
       new:     ~

@@ -49,6 +49,16 @@ class blogActions extends sfActions {
   }
 
  /**
+  * Executes viewList action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeViewList(sfWebRequest $request) {
+  	$this->type = $request->getParameter('type');
+    $this->elements = Doctrine::getTable(ucfirst($this->type))->getActiveByLang($this->getUser()->getCulture());
+  }
+
+ /**
   * Executes viewProgramme action
   *
   * @param sfRequest $request A request object

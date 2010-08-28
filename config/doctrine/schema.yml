@@ -9,7 +9,7 @@ partenaire:
       type: string(45)
       default: null
     accroche:
-      type: string(255)
+      type: string(1000)
       default: null
     description:
       type: clob(65535)
@@ -19,21 +19,25 @@ partenaire:
       default: null
 
 partenaireUser:
+  options:
+    symfony:
+      form: false
+      filter: false
   columns:
     partenaire_id:
       type: integer(4)
       primary: true
       notnull: true
     user_id:
-      type: integer(4)
+      type: bigint(20) 
       primary: true
       notnull: true
   relations:
-    sfGuardUser:
+    User:
       class: sfGuardUser
       local: user_id
-      foreign: id
-      foreignAlias: userPartenaire
+      foreignType: one
+      foreignAlias: Partenaire
     partenaire:
       class: partenaire
       local: partenaire_id
@@ -48,11 +52,7 @@ profil:
       notnull: true
       autoincrement: true
     user_id:
-      type: integer(4)
-      notnull: true
-      unique: true
-    mail:
-      type: string(50)
+      type: bigint(20) 
       notnull: true
       unique: true
     credit:
@@ -67,12 +67,12 @@ profil:
       type: string(7)
       default: 'fr_FR'
   relations:
-    sfGuardUser:
+    User:
+      class: sfGuardUser
       local: user_id
-      foreign: id
       onDelete: CASCADE
       foreignType:  one
-      foreignAlias: userProfile
+      foreignAlias: Profile
 
 coupon:
   actAs: [Timestampable]
@@ -100,9 +100,13 @@ coupon:
       default: null
 
 userCoupon:
+  options:
+    symfony:
+      form: false
+      filter: false
   columns:
     user_id:
-      type: integer(4)
+      type: bigint(20) 
       primary: true
       notnull: true
     coupon_id:
@@ -110,16 +114,16 @@ userCoupon:
       primary: true
       notnull: true
   relations:
-    sfGuardUser:
+    User:
+      class: sfGuardUser
       local: user_id
-      foreign: id
       onDelete: CASCADE
-      foreignAlias: userCoupons
+      foreignAlias: Coupons
     coupon:
       class: coupon
       local: coupon_id
       foreign: id
-      foreignAlias: couponUser
+      foreignAlias: User
 
 organisme:
   actAs: 
@@ -142,7 +146,7 @@ organisme:
       type: string(128)
       notnull: true
     accroche:
-      type: string(255)
+      type: string(1000)
     description:
       type: clob(65535)
     logo:
@@ -166,7 +170,7 @@ programme:
     title:
       type: string(128)
     accroche:
-      type: string(255)
+      type: string(1000)
     description:
       type: clob(65535)
     geoadress:
@@ -205,6 +209,10 @@ tree:
       autoincrement: true
 
 treeProgramme:
+  options:
+    symfony:
+      form: false
+      filter: false
   columns:
     programme_id:
       type: integer(4)
@@ -219,17 +227,22 @@ treeProgramme:
       class: tree
       local: tree_id
       foreign: id
-      foreignAlias: treeProgramme
+      foreignType: one
+      foreignAlias: Programme
     programme:
       class: programme
       local: programme_id
       foreign: id
-      foreignAlias: programmeTrees
+      foreignAlias: Trees
 
 userTree:
+  options:
+    symfony:
+      form: false
+      filter: false
   columns:
     user_id:
-      type: integer(4)
+      type: bigint(20) 
       primary: true
       notnull: true
     tree_id:
@@ -237,12 +250,11 @@ userTree:
       primary: true
       notnull: true
   relations:
-    sfGuardUser:
+    User:
       class: sfGuardUser
       local: user_id
-      foreign: id
       onDelete: CASCADE
-      foreignAlias: userTrees
+      foreignAlias: Trees
     tree:
       class: tree
       local: tree_id
@@ -261,6 +273,8 @@ article:
       type: integer(4)
       primary: true
       autoincrement: true
+    category_id:
+      type: integer(4)
     unique_name:
       type: string(30)
       unique: true
@@ -268,7 +282,7 @@ article:
       type: string(255)
       notnull: true
     accroche:
-      type: string(255)
+      type: string(1000)
     description:
       type: clob(65535)
     logo:
@@ -277,11 +291,9 @@ article:
       type: boolean
       default: 0
   relations:
-    category:
+    Category:
       class: category
-      refClass: articleCategory
-      local: article_id
-      foreign: category_id
+      local: category_id
       foreignAlias: Articles
 
 newsletter:
@@ -296,6 +308,8 @@ newsletter:
       type: integer(4)
       primary: true
       autoincrement: true
+    category_id:
+      type: integer(4)
     unique_name:
       type: string(30)
       unique: true
@@ -317,6 +331,11 @@ newsletter:
       default: 0
     sent_at:
       type: timestamp
+  relations:
+    category:
+      class: category
+      local: category_id
+      foreignAlias: Newsletters
 
 lien:
   actAs:
@@ -330,6 +349,8 @@ lien:
       type: integer(4)
       primary: true
       autoincrement: true
+    category_id:
+      type: integer(4)
     title:
       type: string(255)
       notnull: true
@@ -338,21 +359,18 @@ lien:
     is_active:
       type: boolean
       default: 0 
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 1
   relations:
     category:
       class: category
-      refClass: lienCategory
-      local: lien_id
-      foreign: category_id
+      local: category_id
       foreignAlias: Liens
+      
 category:
-  actAs:
-    I18n:
-      fields: [name]
-      actAs:
-        Sluggable:
-          fields: [name]
-          uniqueBy: [lang, name] 
+  actAs: 
     NestedSet:
       hasManyRoots: true
       rootColumnName: root_id
@@ -368,94 +386,6 @@ category:
       type: boolean
       default: 1
      
-articleCategory:
-  options:
-    symfony:
-      form: false
-      filter: false
-  columns:
-    category_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    article_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-  relations:
-    category:
-      local: category_id
-      onDelete: CASCADE
-    article:
-      local: article_id
-      onDelete: CASCADE
-      
-lienCategory:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    category_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    lien_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-  relations:
-    category:
-      local: category_id
-      onDelete: CASCADE
-    lien:
-      local: lien_id
-      onDelete: CASCADE
-
-articleCategory:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    category_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    article_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-  relations:
-    category:
-      local: category_id
-      onDelete: CASCADE
-    article:
-      local: article_id
-      onDelete: CASCADE
-      
-newsletterCategory:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    category_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    newsletter_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-  relations:
-    category:
-      local: category_id
-      onDelete: CASCADE
-    newsletter:
-      local: newsletter_id
-      onDelete: CASCADE
-
 layout:
   actAs: [Timestampable]
   columns:

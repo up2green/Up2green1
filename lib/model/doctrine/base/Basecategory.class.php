@@ -9,27 +9,21 @@
  * @property string $unique_name
  * @property boolean $is_active
  * @property Doctrine_Collection $Articles
+ * @property Doctrine_Collection $Newsletters
  * @property Doctrine_Collection $Liens
- * @property Doctrine_Collection $articleCategory
- * @property Doctrine_Collection $lienCategory
- * @property Doctrine_Collection $newsletterCategory
  * 
- * @method integer             getId()                 Returns the current record's "id" value
- * @method string              getUniqueName()         Returns the current record's "unique_name" value
- * @method boolean             getIsActive()           Returns the current record's "is_active" value
- * @method Doctrine_Collection getArticles()           Returns the current record's "Articles" collection
- * @method Doctrine_Collection getLiens()              Returns the current record's "Liens" collection
- * @method Doctrine_Collection getArticleCategory()    Returns the current record's "articleCategory" collection
- * @method Doctrine_Collection getLienCategory()       Returns the current record's "lienCategory" collection
- * @method Doctrine_Collection getNewsletterCategory() Returns the current record's "newsletterCategory" collection
- * @method category            setId()                 Sets the current record's "id" value
- * @method category            setUniqueName()         Sets the current record's "unique_name" value
- * @method category            setIsActive()           Sets the current record's "is_active" value
- * @method category            setArticles()           Sets the current record's "Articles" collection
- * @method category            setLiens()              Sets the current record's "Liens" collection
- * @method category            setArticleCategory()    Sets the current record's "articleCategory" collection
- * @method category            setLienCategory()       Sets the current record's "lienCategory" collection
- * @method category            setNewsletterCategory() Sets the current record's "newsletterCategory" collection
+ * @method integer             getId()          Returns the current record's "id" value
+ * @method string              getUniqueName()  Returns the current record's "unique_name" value
+ * @method boolean             getIsActive()    Returns the current record's "is_active" value
+ * @method Doctrine_Collection getArticles()    Returns the current record's "Articles" collection
+ * @method Doctrine_Collection getNewsletters() Returns the current record's "Newsletters" collection
+ * @method Doctrine_Collection getLiens()       Returns the current record's "Liens" collection
+ * @method category            setId()          Sets the current record's "id" value
+ * @method category            setUniqueName()  Sets the current record's "unique_name" value
+ * @method category            setIsActive()    Sets the current record's "is_active" value
+ * @method category            setArticles()    Sets the current record's "Articles" collection
+ * @method category            setNewsletters() Sets the current record's "Newsletters" collection
+ * @method category            setLiens()       Sets the current record's "Liens" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -62,50 +56,21 @@ abstract class Basecategory extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('article as Articles', array(
-             'refClass' => 'articleCategory',
-             'local' => 'category_id',
-             'foreign' => 'article_id'));
+             'local' => 'id',
+             'foreign' => 'category_id'));
+
+        $this->hasMany('newsletter as Newsletters', array(
+             'local' => 'id',
+             'foreign' => 'category_id'));
 
         $this->hasMany('lien as Liens', array(
-             'refClass' => 'lienCategory',
-             'local' => 'category_id',
-             'foreign' => 'lien_id'));
-
-        $this->hasMany('articleCategory', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 
-        $this->hasMany('lienCategory', array(
-             'local' => 'id',
-             'foreign' => 'category_id'));
-
-        $this->hasMany('newsletterCategory', array(
-             'local' => 'id',
-             'foreign' => 'category_id'));
-
-        $i18n0 = new Doctrine_Template_I18n(array(
-             'fields' => 
-             array(
-              0 => 'name',
-             ),
-             ));
-        $sluggable1 = new Doctrine_Template_Sluggable(array(
-             'fields' => 
-             array(
-              0 => 'name',
-             ),
-             'uniqueBy' => 
-             array(
-              0 => 'lang',
-              1 => 'name',
-             ),
-             ));
-        $i18n0->addChild($sluggable1);
         $nestedset0 = new Doctrine_Template_NestedSet(array(
              'hasManyRoots' => true,
              'rootColumnName' => 'root_id',
              ));
-        $this->actAs($i18n0);
         $this->actAs($nestedset0);
     }
 }

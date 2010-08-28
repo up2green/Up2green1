@@ -1,6 +1,5 @@
 <?php
 
-
 class programmeTable extends Doctrine_Table
 {
 
@@ -57,29 +56,61 @@ class programmeTable extends Doctrine_Table
               ->leftJoin('p.Translation t')
               ->andWhere('t.slug = ?', $slug);
 
-    return $q->fetchOne();
+    return $this->getOne($q);
   }
 
+  public function getActiveByLang($lang, $limit = 10) {
+    $q = $this->createQuery('p');
+		$q = $this->addByLangQuery($lang, $q);
+		if(!empty($limit))
+		return $this->getActive($q->limit($limit));
+  }
+  
+  public function countActive(Doctrine_Query $q = null)
+	{
+		return $this->count($this->addActiveQuery($q));
+	}
+
+	public function getOneActive(Doctrine_Query $q)
+	{
+		return $this->getOne($this->addActiveQuery($q));
+	}
 
 
-
-    public function count(Doctrine_Query $q = null)
+	public function getActive(Doctrine_Query $q = null)
+	{
+		return $this->get($this->addActiveQuery($q));
+	}
+  
+	public function count(Doctrine_Query $q = null)
 	{
 		return $this->addQuery($q)->count();
 	}
 
-    public function getOne(Doctrine_Query $q)
-    {
-        return $this->addQuery($q)->fetchOne();
-    }
-    
+	public function getOne(Doctrine_Query $q)
+	{
+		return $this->addQuery($q)->fetchOne();
+	}
 
-    public function get(Doctrine_Query $q = null)
-    {
-        return $this->addQuery($q)->fetchOne();
-    }
+
+	public function get(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->execute();
+	}
     
-    public function addQuery(Doctrine_Query $q = null)
+	public function addByLangQuery($lang, Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)
+			->leftJoin('p.Translation t')
+			->andWhere('t.lang = ?', $lang);
+	}
+    
+	public function addActiveQuery(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->andwhere('p.is_active = ?', 1);
+	}
+    
+	public function addQuery(Doctrine_Query $q = null)
 	{
 		if (is_null($q)) {$q = Doctrine_Query::create()->from('programme p');}
 		

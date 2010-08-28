@@ -14,6 +14,11 @@ all:
       www.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSbkBb7lgVQWtlidns83ZgJO2fpbxT3-uEu-iZpJj4ZKSDBtjy1G1BJcw
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/
+    up2green:
+      blog: http://association.up2green.com/
+      moteur: http://www.up2green.com/
+      plantation: http://reforestation.up2green.com/
+      admin: http://admin.up2green.com/
   blog:
     bloc_articles_max: 3
     bloc_programmes_max: 1

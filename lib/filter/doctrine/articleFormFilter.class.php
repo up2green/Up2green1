@@ -8,36 +8,40 @@
  * @author     Your name here
  * @version    SVN: $Id: sfDoctrineFormFilterTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class articleFormFilter extends BasearticleFormFilter {
-    public function configure() {
+class articleFormFilter extends BasearticleFormFilter 
+{
+	public function configure() 
+	{
+		$this->widgetSchema['created_at'] = new sfWidgetFormDateRange(array(
+			'from_date' =>  new sfWidgetFormJQueryDate(array(
+							'image'=>'/images/calendar.png',
+			)),
+			'to_date'   =>  new sfWidgetFormJQueryDate(array(
+							'image'=>'/images/calendar.png',
+			)),
+			'template'  => 'From %from_date%<br />To %to_date%',
+		));
 
-        $this->widgetSchema['created_at'] = new sfWidgetFormDateRange(array(
-                        'from_date' =>  new sfWidgetFormJQueryDate(array(
-                                'image'=>'/images/calendar.png',
-                        )),
-                        'to_date'   =>  new sfWidgetFormJQueryDate(array(
-                                'image'=>'/images/calendar.png',
-                        )),
-                        'template'  => 'From %from_date%<br />To %to_date%',
-        ));
+		$this->widgetSchema['updated_at'] = new sfWidgetFormDateRange(array(
+			'from_date' =>  new sfWidgetFormJQueryDate(array(
+							'image'=>'/images/calendar.png',
+			)),
+			'to_date'   =>  new sfWidgetFormJQueryDate(array(
+							'image'=>'/images/calendar.png',
+			)),
+			'template'  => 'From %from_date%<br />To %to_date%',
+		));
 
-
-
-        $this->widgetSchema['updated_at'] = new sfWidgetFormDateRange(array(
-                        'from_date' =>  new sfWidgetFormJQueryDate(array(
-                                'image'=>'/images/calendar.png',
-                        )),
-                        'to_date'   =>  new sfWidgetFormJQueryDate(array(
-                                'image'=>'/images/calendar.png',
-                        )),
-                        'template'  => 'From %from_date%<br />To %to_date%',
-        ));
-
-
-        $this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
-                        'model'=>'Category',
-                        'add_empty' => "",
-                        "multiple"=>true
-        ));
-    }
+		$this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoice(array(
+			'model' => 'category',
+			'add_empty' => '~ (object is at root level)',
+			'order_by' => array('root_id, lft',''),
+			'method' => 'getIndentedName'
+		));
+		
+		$this->validatorSchema['category_list'] = new sfValidatorDoctrineChoice(array(
+      'required' => false,
+      'model' => 'category'
+    ));
+	}
 }

@@ -12,8 +12,8 @@ class newsletterTranslationForm extends BasenewsletterTranslationForm
 {
   public function configure()
   {
-      unset($this['slug']);
-      $this->widgetSchema['content'] = new sfWidgetFormCKEditor();
+  	unset($this['slug']);
+		$this->widgetSchema['content'] = new sfWidgetFormCKEditor();
   }
   
   

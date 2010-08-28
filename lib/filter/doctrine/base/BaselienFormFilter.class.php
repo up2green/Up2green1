@@ -13,19 +13,21 @@ abstract class BaselienFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'src'           => new sfWidgetFormFilterInput(),
-      'is_active'     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
-      'created_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'category_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'category')),
+      'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
+      'src'         => new sfWidgetFormFilterInput(),
+      'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'rank'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'created_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'src'           => new sfValidatorPass(array('required' => false)),
-      'is_active'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
-      'created_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'updated_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'category_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'category', 'required' => false)),
+      'category_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('category'), 'column' => 'id')),
+      'src'         => new sfValidatorPass(array('required' => false)),
+      'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'rank'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'created_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('lien_filters[%s]');
@@ -37,24 +39,6 @@ abstract class BaselienFormFilter extends BaseFormFilterDoctrine
     parent::setup();
   }
 
-  public function addCategoryListColumnQuery(Doctrine_Query $query, $field, $values)
-  {
-    if (!is_array($values))
-    {
-      $values = array($values);
-    }
-
-    if (!count($values))
-    {
-      return;
-    }
-
-    $query
-      ->leftJoin($query->getRootAlias().'.lienCategory lienCategory')
-      ->andWhereIn('lienCategory.category_id', $values)
-    ;
-  }
-
   public function getModelName()
   {
     return 'lien';
@@ -63,12 +47,13 @@ abstract class BaselienFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'            => 'Number',
-      'src'           => 'Text',
-      'is_active'     => 'Boolean',
-      'created_at'    => 'Date',
-      'updated_at'    => 'Date',
-      'category_list' => 'ManyKey',
+      'id'          => 'Number',
+      'category_id' => 'ForeignKey',
+      'src'         => 'Text',
+      'is_active'   => 'Boolean',
+      'rank'        => 'Number',
+      'created_at'  => 'Date',
+      'updated_at'  => 'Date',
     );
   }
 }

@@ -27,7 +27,7 @@
           $a = $articles[$i];
           echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
           	link_to($a->getTitle(), '@blog_article?slug='.$a->getSlug(), array('class' => 'title')) .
-          	'<p class="body">'.$a->getAccroche().'</p>' .
+          	'<p class="body">'.html_entity_decode($a->getAccroche()).'</p>' .
           	link_to(__('read_more'), '@blog_article?slug='.$a->getSlug(), array('class' => 'read_more')) .
           	'</div>';
         }

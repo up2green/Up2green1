@@ -17,7 +17,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'title'       => new sfWidgetFormInputText(),
-      'accroche'    => new sfWidgetFormInputText(),
+      'accroche'    => new sfWidgetFormTextarea(),
       'description' => new sfWidgetFormTextarea(),
       'url'         => new sfWidgetFormInputText(),
       'created_at'  => new sfWidgetFormDateTime(),
@@ -27,7 +27,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'title'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'accroche'    => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'accroche'    => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
       'url'         => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'created_at'  => new sfValidatorDateTime(),

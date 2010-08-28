@@ -11,22 +11,22 @@
  * @property boolean $is_active
  * @property timestamp $used_at
  * @property integer $used_by
- * @property Doctrine_Collection $couponUser
+ * @property Doctrine_Collection $User
  * 
- * @method integer             getId()         Returns the current record's "id" value
- * @method string              getCode()       Returns the current record's "code" value
- * @method integer             getCredit()     Returns the current record's "credit" value
- * @method boolean             getIsActive()   Returns the current record's "is_active" value
- * @method timestamp           getUsedAt()     Returns the current record's "used_at" value
- * @method integer             getUsedBy()     Returns the current record's "used_by" value
- * @method Doctrine_Collection getCouponUser() Returns the current record's "couponUser" collection
- * @method coupon              setId()         Sets the current record's "id" value
- * @method coupon              setCode()       Sets the current record's "code" value
- * @method coupon              setCredit()     Sets the current record's "credit" value
- * @method coupon              setIsActive()   Sets the current record's "is_active" value
- * @method coupon              setUsedAt()     Sets the current record's "used_at" value
- * @method coupon              setUsedBy()     Sets the current record's "used_by" value
- * @method coupon              setCouponUser() Sets the current record's "couponUser" collection
+ * @method integer             getId()        Returns the current record's "id" value
+ * @method string              getCode()      Returns the current record's "code" value
+ * @method integer             getCredit()    Returns the current record's "credit" value
+ * @method boolean             getIsActive()  Returns the current record's "is_active" value
+ * @method timestamp           getUsedAt()    Returns the current record's "used_at" value
+ * @method integer             getUsedBy()    Returns the current record's "used_by" value
+ * @method Doctrine_Collection getUser()      Returns the current record's "User" collection
+ * @method coupon              setId()        Sets the current record's "id" value
+ * @method coupon              setCode()      Sets the current record's "code" value
+ * @method coupon              setCredit()    Sets the current record's "credit" value
+ * @method coupon              setIsActive()  Sets the current record's "is_active" value
+ * @method coupon              setUsedAt()    Sets the current record's "used_at" value
+ * @method coupon              setUsedBy()    Sets the current record's "used_by" value
+ * @method coupon              setUser()      Sets the current record's "User" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -72,7 +72,7 @@ abstract class Basecoupon extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('userCoupon as couponUser', array(
+        $this->hasMany('userCoupon as User', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 

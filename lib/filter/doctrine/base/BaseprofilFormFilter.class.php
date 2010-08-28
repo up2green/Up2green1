@@ -13,16 +13,14 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
-      'mail'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => true)),
       'credit'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_newsletter' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'culture'       => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'user_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
-      'mail'          => new sfValidatorPass(array('required' => false)),
+      'user_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'id')),
       'credit'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_newsletter' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'culture'       => new sfValidatorPass(array('required' => false)),
@@ -47,7 +45,6 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'            => 'Number',
       'user_id'       => 'ForeignKey',
-      'mail'          => 'Text',
       'credit'        => 'Number',
       'is_newsletter' => 'Number',
       'culture'       => 'Text',

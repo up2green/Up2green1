@@ -22,6 +22,7 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
       'longitude'    => new sfWidgetFormInputText(),
       'is_active'    => new sfWidgetFormInputCheckbox(),
       'max_tree'     => new sfWidgetFormInputText(),
+      'logo'         => new sfWidgetFormInputText(),
       'created_at'   => new sfWidgetFormDateTime(),
       'updated_at'   => new sfWidgetFormDateTime(),
     ));
@@ -34,6 +35,7 @@ abstract class BaseprogrammeForm extends BaseFormDoctrine
       'longitude'    => new sfValidatorNumber(array('required' => false)),
       'is_active'    => new sfValidatorBoolean(array('required' => false)),
       'max_tree'     => new sfValidatorInteger(),
+      'logo'         => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'created_at'   => new sfValidatorDateTime(),
       'updated_at'   => new sfValidatorDateTime(),
     ));

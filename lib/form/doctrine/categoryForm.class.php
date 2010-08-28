@@ -3,38 +3,66 @@
 /**
  * category form.
  *
- * @package    up2green
- * @subpackage form
- * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * @package    form
+ * @subpackage category
+ * @version    SVN: $Id: sfDoctrineFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
  */
-class categoryForm extends BasecategoryForm {
-    public function configure() {
-        unset(
-                $this['root_id'],
-                $this['lft'],
-                $this['rgt'],
-                $this['level']
-        );
-        $this->languages = sfConfig::get('app_cultures_enabled');
+class categoryForm extends BasecategoryForm
+{
+  protected $parentId = null;
 
-        $langs = array_keys($this->languages);
+  public function configure()
+  {
+   	unset($this['root_id'], $this['lft'], $this['rgt'], $this['level']);
+    $this->widgetSchema['parent_id'] = new sfWidgetFormDoctrineChoice(array(
+      'model' => 'category',
+      'add_empty' => '~ (object is at root level)',
+      'order_by' => array('root_id, lft',''),
+      'method' => 'getIndentedName'
+		));
+    $this->validatorSchema['parent_id'] = new sfValidatorDoctrineChoice(array(
+      'required' => false,
+      'model' => 'category'
+    ));
+    $this->setDefault('parent_id', $this->object->getParentId());
+    $this->widgetSchema->setLabel('parent_id', 'Dans la catégorie');
 
-        $this->embedI18n($langs);
-        foreach($this->languages as $lang => $label) {
-            $this->widgetSchema[$lang]->setLabel($label);
+  }
+
+  public function updateParentIdColumn($parentId)
+  {
+    $this->parentId = $parentId;
+    // further action is handled in the save() method
+  }
+
+  protected function doSave($con = null)
+  {
+    parent::doSave($con);
+
+    $node = $this->object->getNode();
+
+    if ($this->parentId != $this->object->getParentId() || !$node->isValidNode())
+    {
+      if (empty($this->parentId))
+      {
+        //save as a root
+        if ($node->isValidNode())
+        {
+          $node->makeRoot($this->object['id']);
+          $this->object->save($con);
         }
-    }
-
-    protected function doSave($con = null) {
-        if (file_exists($this->getObject()->getFile())) {
-            unlink($this->getObject()->getFile());
+        else
+        {
+          $this->object->getTable()->getTree()->createRoot($this->object); //calls $this->object->save internally
         }
-
-        $file = $this->getValue('file');
-        $filename = sha1($file->getOriginalName()).$file->getExtension($file->getOriginalExtension());
-        $file->save(sfConfig::get('sf_upload_dir').'/'.$filename);
-
-        return parent::doSave($con);
+      }
+      else
+      {
+        //form validation ensures an existing ID for $this->parentId
+        $parent = $this->object->getTable()->find($this->parentId);
+        $method = ($node->isValidNode() ? 'move' : 'insert') . 'AsFirstChildOf';
+        $node->$method($parent); //calls $this->object->save internally
+      }
     }
+  }
 }

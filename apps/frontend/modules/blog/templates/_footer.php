@@ -1,16 +1,25 @@
-<div id="footer_page">
-  <div id="legal">
-    <span><a href="#">Up2green® 2010</a></span>
-    <span><a href="#">Mentions légales</a></span>
-    <span><a href="#">CNIL</a></span>
-    <span><a href="#">FAQ moteur</a></span>
-    <span><a href="#">Up2green dans les médias</a></span>
-    <span><a href="#">Contact</a></span>
-  </div>
-  <div id="copyright">
-    <p>
-      Développé par : Clément Gautier <br/>
-      Graphisme : Smart-ID
-    </p>
+<div class="blog_footer">
+  <div class="module">
+  	<div class="content">
+			<ul class="footer_associatif">
+				<li class="first">
+					<p><?php echo __('footer_associatif_provide_trees'); ?></p>
+					<?php echo link_to(__('footer_associatif_gift_cards'), '@plantation', array('class' => 'button white')); ?>
+				</li>
+				<li>
+					<p><?php echo __('footer_associatif_planting_trees'); ?></p>
+					<?php echo link_to(__('footer_associatif_search_engine'), '@plantation', array('class' => 'button white')); ?>
+				</li>
+				<li>
+					<p><?php echo __('footer_associatif_become_an_actor'); ?></p>
+					<?php echo link_to(__('footer_associatif_partnership'), '@plantation', array('class' => 'button white')); ?>
+				</li>
+				<li>
+					<p><?php echo __('footer_associatif_have_pass'); ?></p>
+					<?php echo link_to(__('footer_associatif_use_my_pass'), '@plantation', array('class' => 'button white')); ?>
+				</li>
+			</ul>
+		</div>
+		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
 </div>

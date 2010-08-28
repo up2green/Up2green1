@@ -17,34 +17,34 @@
  * @property integer $max_tree
  * @property string $logo
  * @property organisme $organisme
- * @property Doctrine_Collection $programmeTrees
+ * @property Doctrine_Collection $Trees
  * 
- * @method integer             getId()             Returns the current record's "id" value
- * @method integer             getOrganismeId()    Returns the current record's "organisme_id" value
- * @method string              getTitle()          Returns the current record's "title" value
- * @method string              getAccroche()       Returns the current record's "accroche" value
- * @method clob                getDescription()    Returns the current record's "description" value
- * @method string              getGeoadress()      Returns the current record's "geoadress" value
- * @method decimal             getLatitude()       Returns the current record's "latitude" value
- * @method decimal             getLongitude()      Returns the current record's "longitude" value
- * @method boolean             getIsActive()       Returns the current record's "is_active" value
- * @method integer             getMaxTree()        Returns the current record's "max_tree" value
- * @method string              getLogo()           Returns the current record's "logo" value
- * @method organisme           getOrganisme()      Returns the current record's "organisme" value
- * @method Doctrine_Collection getProgrammeTrees() Returns the current record's "programmeTrees" collection
- * @method programme           setId()             Sets the current record's "id" value
- * @method programme           setOrganismeId()    Sets the current record's "organisme_id" value
- * @method programme           setTitle()          Sets the current record's "title" value
- * @method programme           setAccroche()       Sets the current record's "accroche" value
- * @method programme           setDescription()    Sets the current record's "description" value
- * @method programme           setGeoadress()      Sets the current record's "geoadress" value
- * @method programme           setLatitude()       Sets the current record's "latitude" value
- * @method programme           setLongitude()      Sets the current record's "longitude" value
- * @method programme           setIsActive()       Sets the current record's "is_active" value
- * @method programme           setMaxTree()        Sets the current record's "max_tree" value
- * @method programme           setLogo()           Sets the current record's "logo" value
- * @method programme           setOrganisme()      Sets the current record's "organisme" value
- * @method programme           setProgrammeTrees() Sets the current record's "programmeTrees" collection
+ * @method integer             getId()           Returns the current record's "id" value
+ * @method integer             getOrganismeId()  Returns the current record's "organisme_id" value
+ * @method string              getTitle()        Returns the current record's "title" value
+ * @method string              getAccroche()     Returns the current record's "accroche" value
+ * @method clob                getDescription()  Returns the current record's "description" value
+ * @method string              getGeoadress()    Returns the current record's "geoadress" value
+ * @method decimal             getLatitude()     Returns the current record's "latitude" value
+ * @method decimal             getLongitude()    Returns the current record's "longitude" value
+ * @method boolean             getIsActive()     Returns the current record's "is_active" value
+ * @method integer             getMaxTree()      Returns the current record's "max_tree" value
+ * @method string              getLogo()         Returns the current record's "logo" value
+ * @method organisme           getOrganisme()    Returns the current record's "organisme" value
+ * @method Doctrine_Collection getTrees()        Returns the current record's "Trees" collection
+ * @method programme           setId()           Sets the current record's "id" value
+ * @method programme           setOrganismeId()  Sets the current record's "organisme_id" value
+ * @method programme           setTitle()        Sets the current record's "title" value
+ * @method programme           setAccroche()     Sets the current record's "accroche" value
+ * @method programme           setDescription()  Sets the current record's "description" value
+ * @method programme           setGeoadress()    Sets the current record's "geoadress" value
+ * @method programme           setLatitude()     Sets the current record's "latitude" value
+ * @method programme           setLongitude()    Sets the current record's "longitude" value
+ * @method programme           setIsActive()     Sets the current record's "is_active" value
+ * @method programme           setMaxTree()      Sets the current record's "max_tree" value
+ * @method programme           setLogo()         Sets the current record's "logo" value
+ * @method programme           setOrganisme()    Sets the current record's "organisme" value
+ * @method programme           setTrees()        Sets the current record's "Trees" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -70,9 +70,9 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'type' => 'string',
              'length' => 128,
              ));
-        $this->hasColumn('accroche', 'string', 255, array(
+        $this->hasColumn('accroche', 'string', 1000, array(
              'type' => 'string',
-             'length' => 255,
+             'length' => 1000,
              ));
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',
@@ -112,7 +112,7 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'local' => 'organisme_id',
              'foreign' => 'id'));
 
-        $this->hasMany('treeProgramme as programmeTrees', array(
+        $this->hasMany('treeProgramme as Trees', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 

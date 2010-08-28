@@ -16,8 +16,7 @@ abstract class BaseprofilForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
-      'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => false)),
-      'mail'          => new sfWidgetFormInputText(),
+      'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => false)),
       'credit'        => new sfWidgetFormInputText(),
       'is_newsletter' => new sfWidgetFormInputText(),
       'culture'       => new sfWidgetFormInputText(),
@@ -25,18 +24,14 @@ abstract class BaseprofilForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'user_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
-      'mail'          => new sfValidatorString(array('max_length' => 50)),
+      'user_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'))),
       'credit'        => new sfValidatorInteger(array('required' => false)),
       'is_newsletter' => new sfValidatorInteger(array('required' => false)),
       'culture'       => new sfValidatorString(array('max_length' => 7, 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorAnd(array(
-        new sfValidatorDoctrineUnique(array('model' => 'profil', 'column' => array('user_id'))),
-        new sfValidatorDoctrineUnique(array('model' => 'profil', 'column' => array('mail'))),
-      ))
+      new sfValidatorDoctrineUnique(array('model' => 'profil', 'column' => array('user_id')))
     );
 
     $this->widgetSchema->setNameFormat('profil[%s]');

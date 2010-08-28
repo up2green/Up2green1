@@ -12,6 +12,7 @@ class organismeTranslationForm extends BaseorganismeTranslationForm
 {
 	public function configure() 
 	{
+		unset($this['slug']);
 		$this->widgetSchema['accroche'] = new sfWidgetFormCKEditor(array('jsoptions'=>array(
 			'height' 	=> '75px',
 			'toolbar'	=> 'Basic'

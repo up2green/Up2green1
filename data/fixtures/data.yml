@@ -1,12 +1,391 @@
-coupon:
-  coupon_1:
-    code: test
-    credit: '1'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: webmaster@smartit.fr
+    username: admin
+    algorithm: sha1
+    salt: 555754a8ea338d568537ad244d1f72cf
+    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
-    used_at: null
-    used_by: null
-    created_at: '2010-06-26 18:29:36'
-    updated_at: '2010-06-26 18:29:36'
+    is_super_admin: true
+    last_login: '2010-08-28 21:12:25'
+    created_at: '2010-08-28 12:40:14'
+    updated_at: '2010-08-28 21:12:25'
+category:
+  category_1:
+    unique_name: blog
+    is_active: true
+    root_id: '6'
+    lft: '1'
+    rgt: '8'
+    level: '0'
+  category_2:
+    unique_name: main-menu
+    is_active: true
+    root_id: '6'
+    lft: '6'
+    rgt: '7'
+    level: '1'
+  category_3:
+    unique_name: footer
+    is_active: true
+    root_id: '6'
+    lft: '4'
+    rgt: '5'
+    level: '1'
+  category_4:
+    unique_name: footer-legal
+    is_active: true
+    root_id: '6'
+    lft: '2'
+    rgt: '3'
+    level: '1'
+newsletter:
+  newsletter_1:
+    unique_name: inscription
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:35'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_2:
+    unique_name: welcome
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_3:
+    unique_name: forgot_pwd
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_4:
+    unique_name: new_pwd
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
+newsletterTranslation:
+  newsletterTranslation_1_en:
+    newsletter: newsletter_1
+    title: Inscription
+    content: 'Please modify'
+    lang: en
+    slug: inscription
+  newsletterTranslation_1_fr:
+    newsletter: newsletter_1
+    title: Inscription
+    content: 'A modifier'
+    lang: fr
+    slug: inscription
+  newsletterTranslation_2_en:
+    newsletter: newsletter_2
+    title: welcome
+    content: 'Please modify'
+    lang: en
+    slug: welcome
+  newsletterTranslation_2_fr:
+    newsletter: newsletter_2
+    title: Bienvenu
+    content: 'A modifier'
+    lang: fr
+    slug: bienvenu
+  newsletterTranslation_3_en:
+    newsletter: newsletter_3
+    title: 'new password'
+    content: modify
+    lang: en
+    slug: new-password
+  newsletterTranslation_3_fr:
+    newsletter: newsletter_3
+    title: 'nouveau mot de passe'
+    content: 'a modifier'
+    lang: fr
+    slug: nouveau-mot-de-passe
+  newsletterTranslation_4_en:
+    newsletter: newsletter_4
+    title: change
+    content: modify
+    lang: en
+    slug: change
+  newsletterTranslation_4_fr:
+    newsletter: newsletter_4
+    title: changement
+    content: modifier
+    lang: fr
+    slug: changement
+article:
+  article_1:
+    unique_name: welcome
+    logo: null
+    is_active: true
+    created_at: '2010-08-02 21:25:50'
+    updated_at: '2010-08-02 21:25:50'
+  article_4:
+    unique_name: test
+    logo: null
+    is_active: true
+    created_at: '2010-08-27 16:25:07'
+    updated_at: '2010-08-27 16:25:07'
+  article_5:
+    unique_name: test2
+    logo: null
+    is_active: true
+    created_at: '2010-08-28 10:50:35'
+    updated_at: '2010-08-28 10:50:35'
+  article_6:
+    unique_name: 'Nos objectifs'
+    logo: null
+    is_active: true
+    created_at: '2010-08-28 10:53:49'
+    updated_at: '2010-08-28 10:53:49'
+  article_7:
+    unique_name: 'Notre ambition'
+    logo: null
+    is_active: true
+    created_at: '2010-08-28 13:39:13'
+    updated_at: '2010-08-28 13:39:13'
+  article_8:
+    unique_name: Fondateurs
+    logo: null
+    is_active: true
+    created_at: '2010-08-28 13:45:37'
+    updated_at: '2010-08-28 13:45:37'
+  article_9:
+    unique_name: 'La Déforestation'
+    logo: null
+    is_active: true
+    created_at: '2010-08-28 13:49:47'
+    updated_at: '2010-08-28 13:49:47'
+articleTranslation:
+  articleTranslation_1_en:
+    article: article_1
+    title: Welcome
+    accroche: 'Welcome to up2green'
+    description: ''
+    lang: en
+    slug: welcome
+  articleTranslation_1_fr:
+    article: article_1
+    title: Bienvenue
+    accroche: 'Bienvenue sur up2green'
+    description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
+    lang: fr
+    slug: bienvenue
+  articleTranslation_4_en:
+    article: article_4
+    title: testantoine
+    accroche: "<p>\r\n	njohnjfeahnfueroafhnazerogoauiefhneriogha</p>\r\n"
+    description: "<p>\r\n	blalallalalllallalalalalalllllalaafaergeagreagreabetb(zyz(nryzryb</p>\r\n<p>\r\n	<img alt=\"\" src=\"uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15%281%29.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	njnjonerjncojnzjoncffzf</p>\r\n"
+    lang: en
+    slug: testantoineenglish
+  articleTranslation_4_fr:
+    article: article_4
+    title: testantoine
+    accroche: "<p>\r\n	blablabla</p>\r\n"
+    description: "<p>\r\n	blalallalalllallalalalalalllllalaa</p>\r\n<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15(1).jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	njnjonerjncojnzjoncffzf</p>\r\n"
+    lang: fr
+    slug: testantoine
+  articleTranslation_5_en:
+    article: article_5
+    title: test2
+    accroche: '<br />'
+    description: '<br />'
+    lang: en
+    slug: test2
+  articleTranslation_5_fr:
+    article: article_5
+    title: test2
+    accroche: "<p>\r\n	test</p>"
+    description: "<p>\r\n	test</p>\r\n<div firebugversion=\"1.5.4\" id=\"_firebugConsole\" style=\"display: none;\">\r\n	&nbsp;</div>\r\n<br />\r\n"
+    lang: fr
+    slug: test2
+  articleTranslation_6_en:
+    article: article_6
+    title: 'Our objectives'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: our-objectives
+  articleTranslation_6_fr:
+    article: article_6
+    title: 'Nos objectifs'
+    accroche: "<p>\r\n	UP2GREEN REFORESTATION est une association Loi 1901 a but non lucratif.</p>\r\n<p>\r\n	Elle a pour principal objectif la lutte contre le r&eacute;chauffement climatique via le financement de programmes de reforestation durables (agroforesterie).</p>\r\n"
+    description: "<p>\r\n	UP2GREEN REFORESTATION est une association Loi 1901 a but non lucratif.</p>\r\n<p>\r\n	Elle a pour objets de :</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"LTR\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la <strong>lutte contre le r&eacute;chauffement climatique</strong>&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"LTR\"><u><strong>Participer au financement de programmes de reforestation dans le monde</strong>.</u></span></li>\r\n	<li>\r\n		<span dir=\"LTR\"><u>Collecter des fonds </u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"LTR\"><u>Etablir des partenariats </u></span>avec des organismes de plantation en vue du financement des programmes</li>\r\n	<li>\r\n		<strong><span dir=\"LTR\"><u>Aider les populations </u></span></strong>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international <span dir=\"LTR\">de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n<p>\r\n	Elle finance les programmes de reforestation en s&#39;appuyant sur :</p>\r\n<p>\r\n	- un moteur de recherche internet</p>\r\n<p>\r\n	- des partenariats avec les entreprises et les collectivit&eacute;s locales</p>\r\n<p>\r\n	Notre principale pr&eacute;occupation est la transparence et la tra&ccedil;abilit&eacute; de l&#39;ensemble des actions men&eacute;es.</p>\r\n"
+    lang: fr
+    slug: nos_objectifs
+  articleTranslation_7_en:
+    article: article_7
+    title: our_ambition
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: our_ambition
+  articleTranslation_7_fr:
+    article: article_7
+    title: Notre_ambition
+    accroche: "<p>\r\n	NOTRE AMBITION : INCITER LE PLUS GRAND NOMBRE A DEVENIR ACTEUR DE LA REFORESTATION</p>\r\n"
+    description: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	L&rsquo;ambition de toute l&rsquo;&eacute;quipe d&rsquo;Up2green est de sensibiliser le plus de monde possible au D&eacute;veloppement Durable et &agrave; la protection de la Plan&egrave;te en g&eacute;n&eacute;ral.</p>\r\n<p>\r\n	Le portail Internet UP2GREEN.COM est un outil engag&eacute; dans la lutte contre la d&eacute;forestation dans le Monde et le r&eacute;chauffement climatique.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Deux solutions innovantes ont &eacute;t&eacute; imagin&eacute;es par les fondateurs pour atteindre cet objectif. Ces deux solutions consistent &agrave; proposer un mod&egrave;le &eacute;conomique original aux entreprises et aux particuliers leur permettant de devenir concr&egrave;tement acteur de la reforestation, &agrave; moindre co&ucirc;t.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Up2grenn reforstation soutien ses propresprogrammes de reforestation.</p>\r\n<p>\r\n	Parall&egrave;lement, nous proposons de financer aussi dess partenaires de reforestation : Organismes institutionnels, ONG, Associations, Fondations,...</p>\r\n<p>\r\n	Nous ne s&eacute;lectionons que des programmes d&#39;agroforesterie qui sont garants du d&eacute;veloppemnt durable des populations locales, et respectueuses de toutes les composantes environnementales (essences locales et vari&eacute;es, respect de la biodiversit&eacute;,...)</p>\r\n<p>\r\n	Ainsi, Les programmes de reforestation que nous avons s&eacute;lectionn&eacute;s r&eacute;pondent tous aux enjeux des 3 piliers du d&eacute;veloppement durable :</p>\r\n<p>\r\n	- la protection de l&rsquo;environnement,</p>\r\n<p>\r\n	- le d&eacute;veloppement &eacute;conomique,</p>\r\n<p>\r\n	- la promotion sociale</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ces programmes de reforestation concernent notamment les pays suivants : Br&eacute;sil, Burundi, Ethiopie, France, Inde, Indon&eacute;sie, Ha&iuml;ti, Honduras, Mali, P&eacute;rou, Bolivie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	UNE SOLUTION POUR LES ENTREPRISES :</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Up2green propose &agrave; toute entreprise, petite ou grande, de devenir acteur de la reforestation en impliquant ses clients et collaborateurs. De plus en plus d&#39;entreprises cherchent &agrave; jouer un r&ocirc;le pour la Plan&egrave;te et &agrave; communiquer sur leur implication.</p>\r\n<p>\r\n	Up2green leur propose non seulement d&#39;&ecirc;tre acteur de la reforestation dans le Monde mais de surcro&icirc;t d&#39;impliquer directement leurs clients et collaborateurs.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	En partenariat avec Up2green, une entreprise peut :</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	1. Soit s&rsquo;engager &agrave; planter des arbres dans un ou plusieurs programmes de reforestation &agrave; chaque achat ou chaque moment cl&eacute; de la relation client et communiquer sur cet engagement.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	2. Soit offrir &agrave; ses clients des cr&eacute;dits arbres &agrave; l&#39;occasion d&#39;une campagne &quot;&eacute;co-citoyenne&quot; par exemple ou &agrave; tout moment de la relation client. Ce sont les clients eux-m&ecirc;mes qui choisissent ensuite o&ugrave; les planter sur notre plate-forme virtuelle de plantation. L&rsquo;entreprise peut par ailleurs suivre en temps r&eacute;el l&rsquo;utilisation des cr&eacute;dits arbres via un petit intranet d&eacute;di&eacute;.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Avec 1 cr&eacute;dit arbre inf&eacute;rieur &agrave; 1.5 euros, cette solution est abordable aussi bien pour les grandes que pour les petites entreprises.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	UNE SOLUTION POUR LES PARTICULIERS :</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Up2green permet aux particuliers de collecter gratuitement des cr&eacute;dits arbres &agrave; chacunes de leurs recherches sur Internet.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	L&rsquo;internaute qui a cr&eacute;&eacute; un compte sur Up2green obtient des cr&eacute;dits arbres &agrave; chacune des ses recherches en ligne, gratuitement. Il choisit ensuite o&ugrave; les planter parmi les programmes de reforestation partenaires d&rsquo;Up2green, sur la plate-forme de plantation virtuelle.</p>\r\n"
+    lang: fr
+    slug: notre_ambition
+  articleTranslation_8_en:
+    article: article_8
+    title: Fonders
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: fonders
+  articleTranslation_8_fr:
+    article: article_8
+    title: 'Les fondateurs'
+    accroche: ''
+    description: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"font-size: 14px;\"><span style=\"color: rgb(0, 100, 0);\"><strong>Antoine GERIGNE (36 ans)</strong></span></span></p>\r\n<p>\r\n	A sa sortie de l&rsquo;Ecole Normale Sup&eacute;rieure de Lyon, il s&rsquo;oriente vers l&rsquo;Ecole Nationale du G&eacute;nie Rural, des Eaux et des For&ecirc;ts o&ugrave; il se sp&eacute;cialise dans la gestion de la ressource en eau et travaille deux ans en Am&eacute;rique du Sud sur les sch&eacute;mas directeurs d&rsquo;eau potable et d&rsquo;assainissement. Apr&egrave;s six ans pass&eacute;s dans le conseil en strat&eacute;gie de croissance et efficacit&eacute; commerciale aupr&egrave;s des grands groupes industriels, il choisit de revenir de plein pied dans les probl&eacute;matiques de d&eacute;veloppement durable en int&eacute;grant le groupe leader des services &agrave; l&rsquo;environnement dans le domaine de l&rsquo;Energie, en tant que responsable Comptes Strat&eacute;giques.</p>\r\n<p>\r\n	Antoine est &eacute;galement administrateur du Club Horizons &laquo; Agir pour Demain &raquo; (www.club-horizons.com) et Vice-Pr&eacute;sident de l&#39;Association &quot;UP2GREEN REFORESTATION&quot;.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"color: rgb(0, 100, 0);\"><span style=\"font-size: 14px;\"><strong><span style=\"background-color: rgb(255, 255, 255);\">David COLON (37 </span><span style=\"background-color: rgb(255, 255, 255);\">ans</span><span style=\"background-color: rgb(255, 255, 255);\">)</span></strong></span></span></p>\r\n<p>\r\n	Apr&egrave;s l&rsquo;Ecole Polytechnique, il entre &agrave; l&rsquo;Ecole du G&eacute;nie Rural et des Eaux et For&ecirc;ts. Il aura l&rsquo;occasion d&rsquo;y mener des projets de reforestation pour le service RTM de l&rsquo;ONF (Restauration des Terrains en Montagne) puis de se sp&eacute;cialiser dans la gestion des d&eacute;l&eacute;gations de services publics notamment d&rsquo;eau et d&rsquo;assainissement. D&rsquo;abord en charge de centres d&rsquo;exploitations de services publics d&rsquo;eau en Angleterre et en France, il dirige actuellement en Ile-de-France les &eacute;tablissements et filiales de transport public de voyageurs de l&rsquo;un des groupes leaders des services &agrave; l&rsquo;environnement.</p>\r\n<p>\r\n	David est &eacute;galement membre de l&#39;Association X-Environnement (www.x-environnement.org) et Pr&eacute;sident de l&#39;Association &quot;UP2GREEN REFORESTATION&quot;.</p>\r\n"
+    lang: fr
+    slug: fondateurs
+  articleTranslation_9_en:
+    article: article_9
+    title: 'About deforestation'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: Deforestation_EN
+  articleTranslation_9_fr:
+    article: article_9
+    title: 'La Déforestation'
+    accroche: "<p>\r\n	Bref descriptif de ce que repr&eacute;sente la d&eacute;forestation sur la Plan&egrave;te</p>\r\n"
+    description: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em><strong>D&#39;apr&egrave;s la FAO</strong></em></p>\r\n<ul>\r\n	<li>\r\n		13 millions d&rsquo;Hectares sont d&eacute;truits chaque ann&eacute;e</li>\r\n	<li>\r\n		soit 1 terrain de football chaque seconde</li>\r\n	<li>\r\n		soit la surface de l&rsquo;Angleterre par an</li>\r\n	<li>\r\n		soit 86% de la for&ecirc;t fran&ccedil;aise par an</li>\r\n</ul>\r\n<p>\r\n	La perte annuelle de for&ecirc;t dans le Monde est de 0.18%.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em><strong>D&#39;apr&egrave;s le LAROUSSE</strong></em></p>\r\n<p>\r\n	Au rythme de destruction actuel, les enfants qui naissent au d&eacute;but du 21&egrave;me si&egrave;cle devraient assister avant la fin de leur vie &agrave; la disparition totale des for&ecirc;ts primaires du monde, &agrave; l&rsquo;exception de rares espaces difficilement accessibles. Les for&ecirc;ts primaires sont dans la situation la plus critique car, au rythme de la d&eacute;forestation actuel, elles auront disparu :</p>\r\n<ul>\r\n	<li>\r\n		en Afrique dans 10 ans</li>\r\n	<li>\r\n		en Asie du Sud- Est dans 15 ans</li>\r\n	<li>\r\n		en Amazonie dans 40 ans maximum</li>\r\n</ul>\r\n<p>\r\n	Concernant la for&ecirc;t amazonienne, on estime sa perte de superficie &agrave; pr&egrave;s de 5 millions d&rsquo;hectares/an et, &agrave; ce rythme, les &eacute;tudes scientifiques ne garantissent pas le cycle de 25 &agrave; 30 ans n&eacute;cessaire pour sa r&eacute;g&eacute;n&eacute;ration.</p>\r\n"
+    lang: fr
+    slug: Deforestation_FR
+lien:
+  lien_1:
+    category: category_2
+    src: programme
+    is_active: true
+    rank: '3'
+    created_at: '2010-08-28 16:46:04'
+    updated_at: '2010-08-28 17:48:29'
+  lien_2:
+    category: category_2
+    src: blog
+    is_active: true
+    rank: '1'
+    created_at: '2010-08-28 17:35:22'
+    updated_at: '2010-08-28 17:35:22'
+  lien_3:
+    category: category_2
+    src: articles
+    is_active: true
+    rank: '2'
+    created_at: '2010-08-28 17:48:21'
+    updated_at: '2010-08-28 17:48:21'
+  lien_4:
+    category: category_4
+    src: '#'
+    is_active: true
+    rank: '1'
+    created_at: '2010-08-28 18:14:46'
+    updated_at: '2010-08-28 18:16:41'
+  lien_5:
+    category: category_4
+    src: '#'
+    is_active: true
+    rank: '2'
+    created_at: '2010-08-28 18:15:21'
+    updated_at: '2010-08-28 18:15:21'
+  lien_6:
+    category: category_4
+    src: '#'
+    is_active: true
+    rank: '3'
+    created_at: '2010-08-28 18:15:50'
+    updated_at: '2010-08-28 18:15:50'
+  lien_7:
+    category: category_4
+    src: '#'
+    is_active: true
+    rank: '4'
+    created_at: '2010-08-28 18:16:15'
+    updated_at: '2010-08-28 18:16:15'
+lienTranslation:
+  lienTranslation_2_fr:
+    lien: lien_2
+    title: Accueil
+    lang: fr
+    slug: accueil
+  lienTranslation_3_en:
+    lien: lien_3
+    title: Blog
+    lang: en
+    slug: blog
+  lienTranslation_5_en:
+    lien: lien_5
+    title: CNIL
+    lang: en
+    slug: cnil
+  lienTranslation_5_fr:
+    lien: lien_5
+    title: CNIL
+    lang: fr
+    slug: cnil
+  lienTranslation_7_en:
+    lien: lien_7
+    title: Contact
+    lang: en
+    slug: contact
+  lienTranslation_7_fr:
+    lien: lien_7
+    title: Contact
+    lang: fr
+    slug: contact
+  lienTranslation_6_en:
+    lien: lien_6
+    title: FAQ
+    lang: en
+    slug: faq
+  lienTranslation_6_fr:
+    lien: lien_6
+    title: FAQ
+    lang: fr
+    slug: faq
+  lienTranslation_2_en:
+    lien: lien_2
+    title: Home
+    lang: en
+    slug: home
+  lienTranslation_3_fr:
+    lien: lien_3
+    title: 'Le Blog'
+    lang: fr
+    slug: le-blog
+  lienTranslation_4_en:
+    lien: lien_4
+    title: Legal
+    lang: en
+    slug: legal
+  lienTranslation_4_fr:
+    lien: lien_4
+    title: 'Mentions légales'
+    lang: fr
+    slug: mentions-legales
+  lienTranslation_1_fr:
+    lien: lien_1
+    title: 'Nos Programmes'
+    lang: fr
+    slug: nos-programmes
+  lienTranslation_1_en:
+    lien: lien_1
+    title: 'Our Programs'
+    lang: en
+    slug: our-programs
 organisme:
   organisme_1:
     name: 'Planete Urgence'
@@ -41,205 +420,21 @@ organisme:
   organisme_6:
     name: Oceanium
     url: 'http://www.oceanium.org/'
-    logo: organisme43.JPG
+    logo: fffe245898207a3ec732dd83e8104f5f31915bf0.jpg
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
-newsletter:
-  newsletter_1:
-    unique_name: inscription
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:35'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_2:
-    unique_name: welcome
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_3:
-    unique_name: forgot_pwd
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_4:
-    unique_name: new_pwd
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-programme:
-  programme_1:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '8.722218'
-    longitude: '39.440918'
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_2:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '22.786311'
-    longitude: '79.628906'
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_3:
-    organisme: organisme_2
-    geoadress: null
-    latitude: '-14.221789'
-    longitude: '-51.943359'
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_4:
-    organisme: organisme_2
-    geoadress: Honduras
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_5:
-    organisme: organisme_2
-    geoadress: Haiti
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_6:
-    organisme: organisme_2
-    geoadress: Burundi
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_7:
-    organisme: organisme_1
-    geoadress: Indonésie
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_8:
-    organisme: organisme_1
-    geoadress: Mali
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_9:
-    organisme: organisme_3
-    geoadress: 'Burkina Faso'
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_10:
-    organisme: organisme_4
-    geoadress: Guinée
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_11:
-    organisme: organisme_5
-    geoadress: Madagascar
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  programme_12:
-    organisme: organisme_6
-    geoadress: Senegal
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '0'
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-article:
-  article_1:
-    unique_name: welcome
-    logo: null
-    is_active: true
-    created_at: '2010-08-02 21:25:50'
-    updated_at: '2010-08-02 21:25:50'
-sfGuardUser:
-  sfGuardUser_1:
-    username: admin
-    algorithm: sha1
-    salt: fe82ec9669d103078a0a62565c3955ef
-    password: 1a8fa0dd3fe7dc2f8021082a8013cafb532a5600
-    is_active: true
-    is_super_admin: true
-    last_login: null
-    created_at: '2010-08-10 22:59:16'
-    updated_at: '2010-08-10 22:59:16'
-category:
-  category_1:
-    unique_name: common
-    is_active: true
-    root_id: '11'
-    lft: '1'
-    rgt: '6'
-    level: '0'
-  category_2:
-    unique_name: blog
-    is_active: true
-    root_id: '12'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_3:
-    unique_name: moteur
-    is_active: true
-    root_id: '13'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_4:
-    unique_name: plantation
-    is_active: true
-    root_id: '14'
-    lft: '1'
-    rgt: '2'
-    level: '0'
-  category_5:
-    unique_name: panel-footer
-    is_active: true
-    root_id: '11'
-    lft: '2'
-    rgt: '5'
-    level: '1'
+  organisme_19:
+    name: 'Projets + Actions'
+    url: 'http://www.projetsplusactions.org'
+    logo: a86680be561661e7f83d7e5ee8a3551d14dfe7cc.jpg
+    created_at: '2010-08-28 16:54:18'
+    updated_at: '2010-08-28 17:43:49'
+  organisme_20:
+    name: 'Up2green Reforestation'
+    url: 'http://www.up2green.com'
+    logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
+    created_at: '2010-08-28 16:56:24'
+    updated_at: '2010-08-28 16:56:24'
 organismeTranslation:
   organismeTranslation_1_en:
     organisme: organisme_1
@@ -314,66 +509,199 @@ organismeTranslation:
   organismeTranslation_6_en:
     organisme: organisme_6
     title: 'Oceanium Fondation'
-    accroche: null
-    description: null
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: oceanium-fondation
   organismeTranslation_6_fr:
     organisme: organisme_6
     title: 'Fondation Oceanium'
-    accroche: null
-    description: null
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: fr
     slug: fondation-oceanium
-newsletterTranslation:
-  newsletterTranslation_1_en:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'Please modify'
+  organismeTranslation_19_en:
+    organisme: organisme_19
+    title: 'Projets + Actions'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
-    slug: inscription
-  newsletterTranslation_1_fr:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'A modifier'
+    slug: projetsplusactions
+  organismeTranslation_19_fr:
+    organisme: organisme_19
+    title: 'Projets + Actions'
+    accroche: "<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;</p>\r\n"
+    description: "<h4>\r\n	L&#39;O.S.I. /</h4>\r\n<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;Projets Plus Actions&nbsp;intervient en soutien &agrave; des initiatives locales par le financement de microprojets et l&rsquo;apport de comp&eacute;tences techniques pour les r&eacute;aliser.</p>\r\n<h4>\r\n	L&#39;histoire de Projets Plus Actions /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de co-d&eacute;veloppement par Jean-Marc CIVIERE avec l&rsquo;ONG beninoise Andia. Financement d&rsquo;un cheptel de caprins et ovins dans le cadre d&rsquo;un projet d&rsquo;une ferme &eacute;cole.<br />\r\n	25 d&eacute;cembre 2006 : Cr&eacute;ation des statuts de Projets Plus Actions.<br />\r\n	Projets Plus Actions a &eacute;t&eacute; enregistr&eacute; le 28 d&eacute;cembre 2006.<br />\r\n	N&deg; 0953017593 &agrave; la sous-pr&eacute;fecture de Pontoise.</p>\r\n<h4>\r\n	Son fonctionnement /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de Projets Plus Actions&nbsp;soutien volontairement un nombre limit&eacute; de projets afin de les soutenir le mieux possible et d&rsquo;en contr&ocirc;ler la r&eacute;alisation. Les partenariats sont cr&eacute;&eacute;s pour une dur&eacute;e de 3 &agrave; 10 ans et ont pour perspectives l&rsquo;autonomie des populations.&nbsp;L&rsquo;am&eacute;lioration des conditions de vie, l&rsquo;autonomisation des populations, le respect des cadres de d&eacute;veloppement nationaux, l&rsquo;approche pertinente, novatrice et durable d&eacute;terminent le choix des projets aid&eacute;s et des partenariats contract&eacute;s.<br />\r\n	Les donateurs, sous certaines conditions, peuvent venir voir sur le terrain &agrave; quelles actions et comment sont utilis&eacute;s les fonds qui sont confi&eacute;s &agrave; Projets Plus Actions.</p>\r\n"
     lang: fr
-    slug: inscription
-  newsletterTranslation_2_en:
-    newsletter: newsletter_2
-    title: welcome
-    content: 'Please modify'
+    slug: projetsplusactions
+  organismeTranslation_20_en:
+    organisme: organisme_20
+    title: 'Up2green Reforestation'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
-    slug: welcome
-  newsletterTranslation_2_fr:
-    newsletter: newsletter_2
-    title: Bienvenu
-    content: 'A modifier'
+    slug: up2green-en
+  organismeTranslation_20_fr:
+    organisme: organisme_20
+    title: 'Up2green Reforestation'
+    accroche: ''
+    description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
     lang: fr
-    slug: bienvenu
-  newsletterTranslation_3_en:
-    newsletter: newsletter_3
-    title: 'new password'
-    content: modify
-    lang: en
-    slug: new-password
-  newsletterTranslation_3_fr:
-    newsletter: newsletter_3
-    title: 'nouveau mot de passe'
-    content: 'a modifier'
-    lang: fr
-    slug: nouveau-mot-de-passe
-  newsletterTranslation_4_en:
-    newsletter: newsletter_4
-    title: change
-    content: modify
-    lang: en
-    slug: change
-  newsletterTranslation_4_fr:
-    newsletter: newsletter_4
-    title: changement
-    content: modifier
-    lang: fr
-    slug: changement
+    slug: up2green
+programme:
+  programme_1:
+    organisme: organisme_2
+    geoadress: null
+    latitude: '8.722218'
+    longitude: '39.440918'
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_2:
+    organisme: organisme_2
+    geoadress: null
+    latitude: '22.786311'
+    longitude: '79.628906'
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_3:
+    organisme: organisme_2
+    geoadress: null
+    latitude: '-14.221789'
+    longitude: '-51.943359'
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_4:
+    organisme: organisme_2
+    geoadress: Honduras
+    latitude: null
+    longitude: null
+    is_active: false
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 18:06:06'
+  programme_29:
+    geoadress: Haiti
+    latitude: null
+    longitude: null
+    is_active: false
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 18:06:20'
+  programme_30:
+    geoadress: Burundi
+    latitude: null
+    longitude: null
+    is_active: false
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 18:06:38'
+  programme_31:
+    geoadress: Indonésie
+    latitude: null
+    longitude: null
+    is_active: false
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 18:06:54'
+  programme_32:
+    geoadress: Mali
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_33:
+    organisme: organisme_3
+    geoadress: 'Burkina Faso'
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: 48096bd65bd5fc3cdcaadd4e6c7a6d9c6e20bab6.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 17:42:24'
+  programme_34:
+    geoadress: Guinée
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '0'
+    logo: null
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  programme_35:
+    organisme: organisme_5
+    geoadress: Madagascar
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: ed42179f029ade214c71564211aa41a4e9f62d59.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 17:41:04'
+  programme_36:
+    geoadress: Senegal
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '100000000'
+    logo: d0233b1b41bb0bd76b010373cd4a1ad418a84fab.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-08-28 17:43:00'
+  programme_37:
+    geoadress: Benin
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '10000'
+    logo: null
+    created_at: '2010-08-28 17:14:19'
+    updated_at: '2010-08-28 17:14:19'
+  programme_38:
+    organisme: organisme_20
+    geoadress: Equateur
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: 44e1a9fb0b5468da0b9e5c9ca77174e54d886726.jpg
+    created_at: '2010-08-28 17:48:07'
+    updated_at: '2010-08-28 17:48:07'
+  programme_39:
+    organisme: organisme_20
+    geoadress: perou
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: 5d64301ad3d8e95068ff3a23487cb585b298960b.jpg
+    created_at: '2010-08-28 17:53:36'
+    updated_at: '2010-08-28 17:53:36'
+  programme_40:
+    organisme: organisme_20
+    geoadress: colombie
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '15000'
+    logo: 2209d6cd8d86b2027fb5e3044556e06f74e4e43f.jpg
+    created_at: '2010-08-28 18:03:15'
+    updated_at: '2010-08-28 18:03:15'
 programmeTranslation:
   programmeTranslation_1_en:
     programme: programme_1
@@ -420,141 +748,182 @@ programmeTranslation:
   programmeTranslation_4_en:
     programme: programme_4
     title: Honduras
-    accroche: 'In the mountains, to protect the aquifer and prevent the water shortage. Planting multiple species for different uses: fruit, firewood and construction.'
-    description: null
+    accroche: "<p>\r\n	In the mountains, to protect the aquifer and prevent the water shortage. Planting multiple species for different uses: fruit, firewood and construction.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: honduras
   programmeTranslation_4_fr:
     programme: programme_4
     title: Honduras
-    accroche: 'Dans les montagnes, pour protéger les aquifà¨res et éviter la pénurie d''eau. Plantation de multiples essences pour différents usages : production de fruits, de bois de chauffage et de construction.'
-    description: null
+    accroche: "<p>\r\n	Dans les montagnes, pour prot&eacute;ger les aquif&agrave;&uml;res et &eacute;viter la p&eacute;nurie d&#39;eau. Plantation de multiples essences pour diff&eacute;rents usages : production de fruits, de bois de chauffage et de construction.</p>\r\n"
+    description: "<br />\r\n"
     lang: fr
     slug: honduras
-  programmeTranslation_5_en:
-    programme: programme_5
+  programmeTranslation_29_en:
+    programme: programme_29
     title: 'Haiti (Arcanie Cost)'
-    accroche: 'In coastal area of Arcadins in order to restore the hillside and develop an economical activity (charcoal, biofuels, agriculture hillside).'
-    description: null
+    accroche: "<p>\r\n	In coastal area of Arcadins in order to restore the hillside and develop an economical activity (charcoal, biofuels, agriculture hillside).</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: haiti-arcanie-cost
-  programmeTranslation_5_fr:
-    programme: programme_5
+  programmeTranslation_29_fr:
+    programme: programme_29
     title: 'Haiti (Cote d''Arcanie)'
-    accroche: 'Dans la région cà´tià¨re d''Arcadine, pour restaurer les flans de colline et développer une activité économique (charbon de bois, biocarburants, agriculture à  flan de coteau).'
-    description: null
+    accroche: "<p>\r\n	Dans la r&eacute;gion c&agrave;&acute;ti&agrave;&uml;re d&#39;Arcadine, pour restaurer les flans de colline et d&eacute;velopper une activit&eacute; &eacute;conomique (charbon de bois, biocarburants, agriculture &agrave; flan de coteau).</p>\r\n"
+    description: "<br />\r\n"
     lang: fr
     slug: haiti-cote-d-arcanie
-  programmeTranslation_6_en:
-    programme: programme_6
+  programmeTranslation_30_en:
+    programme: programme_30
     title: Burundi
-    accroche: 'To fight against malnutrition by planting &quot;Morinfa oleifera&quot; specie tree which contains twice more calcium than milk and 4 times more vitamin A.'
-    description: null
+    accroche: "<p>\r\n	To fight against malnutrition by planting &quot;Morinfa oleifera&quot; specie tree which contains twice more calcium than milk and 4 times more vitamin A.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: burundi
-  programmeTranslation_6_fr:
-    programme: programme_6
+  programmeTranslation_30_fr:
+    programme: programme_30
     title: 'Burundi (région de Ruyigi )'
-    accroche: 'Pour lutter contre la malnutrition en plantant l''arbre &quot;Morinfa oleifera&quot; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.'
-    description: null
+    accroche: "<p>\r\n	Pour lutter contre la malnutrition en plantant l&#39;arbre &quot;Morinfa oleifera&quot; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.</p>\r\n"
+    description: "<br />\r\n"
     lang: fr
     slug: burundi-region-de-ruyigi
-  programmeTranslation_7_en:
-    programme: programme_7
+  programmeTranslation_31_en:
+    programme: programme_31
     title: Indonesia
-    accroche: 'In areas of Deli Serdang - Sumatra, to restore the mangroves, bank protection and biodiversity, and storing carbone.'
-    description: null
+    accroche: "<p>\r\n	In areas of Deli Serdang - Sumatra, to restore the mangroves, bank protection and biodiversity, and storing carbone.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: indonesia
-  programmeTranslation_7_fr:
-    programme: programme_7
+  programmeTranslation_31_fr:
+    programme: programme_31
     title: Indonésie
-    accroche: 'Dans les régions de Deli Serdang - Sumatra, pour restaurer les mangroves, protéger les berges et leur biodiversité, et stocker le carbone.'
-    description: null
+    accroche: "<p>\r\n	Dans les r&eacute;gions de Deli Serdang - Sumatra, pour restaurer les mangroves, prot&eacute;ger les berges et leur biodiversit&eacute;, et stocker le carbone.</p>\r\n"
+    description: "<br />\r\n"
     lang: fr
     slug: indonesie
-  programmeTranslation_8_en:
-    programme: programme_8
+  programmeTranslation_32_en:
+    programme: programme_32
     title: Mali
     accroche: 'In the Sahel region of Mopti, the aim is to fight against desertification and o help sedentary populations developing an economic activity planting fruit trees species - 1000 trees per family and per hectare.'
     description: null
     lang: en
     slug: mali
-  programmeTranslation_8_fr:
-    programme: programme_8
+  programmeTranslation_32_fr:
+    programme: programme_32
     title: Mali
     accroche: 'Dans la région de Mopti Sahel, pour lutter contre la désertification et sédentariser les populations en développant une activité économique à  partir des essences d arbres fruitiers qui sont plantés - 1000 arbres par famille et par hectare.'
     description: null
     lang: fr
     slug: mali
-  programmeTranslation_9_en:
-    programme: programme_9
+  programmeTranslation_33_en:
+    programme: programme_33
     title: 'Burkina Faso'
-    accroche: 'Reforestation program with a project of digging wells and starting the planting of 75 000 trees on 60 hectares in the province of Sanguié. This action is set up in collaboration with the local population, the Center for Protection of Nature, the heads of '
-    description: null
+    accroche: "<p>\r\n	Reforestation program with a project of digging wells and starting the planting of 75 000 trees on 60 hectares in the province of Sangui&eacute;.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: burkina-faso
-  programmeTranslation_9_fr:
-    programme: programme_9
+  programmeTranslation_33_fr:
+    programme: programme_33
     title: 'Burkina Faso'
-    accroche: 'Programme de reforestation avec un projet de creusement de puits et le démarrage de plantation de 75 000 arbres sur 60 hectares dans la province du Sanguié. Cette action se fait en collaboration avec la population locale, le Centre de Protection de la Nat'
-    description: null
+    accroche: "<p>\r\n	Programme de reforestation avec un projet de creusement de puits et le d&eacute;marrage de plantation de 75 000 arbres sur 60 hectares dans la province du Sangui&eacute;.&nbsp;</p>\r\n"
+    description: "<p>\r\n	<strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15.jpg\" style=\"width: 200px; height: 150px;\" /></strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_13.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: lutter contre l&rsquo;avanc&eacute;e du d&eacute;sert, lutter contre la pauvret&eacute;</p>\r\n<p>\r\n	<strong>Localisation&nbsp;</strong>: Province du Sanguie, Tenado, village de Tio, Burkina Faso</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: Les villageois des alentours de la bourgade de Tenado (50 000 habitants)</p>\r\n<p>\r\n	<strong>Partenaires du programme</strong>&nbsp;: Baobab 29 (association bretone), Centre de Protection de la Nature, Fondation Yves Rocher, Up2green Reforestation</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Plantons pour la plan&egrave;te, 21 324 arbres plant&eacute;s</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: contribuer aux activit&eacute;s de reboisement. Reboiser 10ha, et former les villageois pour le d&eacute;veloppement de leurs propres p&eacute;pini&egrave;res.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	L&rsquo;association BAOBAB29 poursuit, g&egrave;re et coordonne un programme de reforestation au Burkina Faso, province du Sangui&eacute;, engag&eacute; en 2006 par sa pr&eacute;sidente dans le cadre du PNUE .</p>\r\n<p>\r\n	Il s&rsquo;agit de plus de 60 ha de terrains lat&eacute;ritiques devant &ecirc;tre rebois&eacute;s sur plusieurs ann&eacute;es cons&eacute;cutives.</p>\r\n<p>\r\n	A la cr&eacute;ation, chaque parcelle de 2 ha&nbsp; revient &agrave; 3 000 euros : maison de gardien et de rangement du mat&eacute;riel, creusement de deux puits, am&eacute;nagement du terrain avec micro-barrage si n&eacute;cessaire, cordons pierreux v&eacute;g&eacute;talis&eacute;s au V&eacute;tiver, petit mat&eacute;riel agricole, panneaux explicatifs &agrave; l&rsquo;entr&eacute;e de la parcelle, engrais naturel &agrave; base de bouse de z&eacute;bu, fosse fumi&egrave;re, et surtout plantation de 2 250 arbres avec protection individuelle des fruitiers.</p>\r\n<p>\r\n	Puis, autogestion des parcelles :</p>\r\n<p>\r\n	Avec visites r&eacute;guli&egrave;res des partenaires, groupements f&eacute;minins et groupements villageois.</p>\r\n<p>\r\n	- Le gardien est log&eacute; sur place</p>\r\n<p>\r\n	- Le groupement f&eacute;minin du CPN cultive les jardins p&eacute;dagogiques li&eacute;s aux parcelles en suivant les conseils des fiches Fidafrique et de l&rsquo;INERA et reste propri&eacute;taire de la r&eacute;colte obtenue.</p>\r\n"
     lang: fr
     slug: burkina-faso
-  programmeTranslation_10_en:
-    programme: programme_10
+  programmeTranslation_34_en:
+    programme: programme_34
     title: Guinea
     accroche: 'In Upper and Lower Guinea, to fight against the afforestation of primary forest and educate local communities at''agro-forestry.'
     description: null
     lang: en
     slug: guinea
-  programmeTranslation_10_fr:
-    programme: programme_10
+  programmeTranslation_34_fr:
+    programme: programme_34
     title: Guinée
     accroche: 'En Haute et Basse Guinée, pour lutter contre la déforestation de la foret primaire et éduquer les communautés locales à  l''agro-foresterie.'
     description: null
     lang: fr
     slug: guinee
-  programmeTranslation_11_en:
-    programme: programme_11
+  programmeTranslation_35_en:
+    programme: programme_35
     title: 'Madagascar (Antalaha)'
-    accroche: 'In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).'
-    description: null
+    accroche: "<p>\r\n	In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: madagascar-antalaha
-  programmeTranslation_11_fr:
-    programme: programme_11
+  programmeTranslation_35_fr:
+    programme: programme_35
     title: 'Madagascar (Antalaha)'
-    accroche: 'Dans la région d''Antalaha au Nord-Est de l''à®le, pour la réinsertion sociale des anciens malades de la là¨pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d''essences de bois précieux (bois de rose, palissandre, hintsi,'
-    description: null
+    accroche: "<p>\r\n	Dans la r&eacute;gion d&#39;Antalaha, pour la r&eacute;insertion sociale des anciens malades de la l&egrave;pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d&#39;essences de bois pr&eacute;cieux.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/P1050437.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/P1020442.JPG\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: Protection des sols et cultures de l&rsquo;&icirc;le contre les cyclones, formation p&eacute;dagogique des adolescents, aide aux l&eacute;preux, autonomie alimentaire</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: R&eacute;gion d&rsquo;Antalaha, c&ocirc;te nord-est de Madagascar</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: Familles et anciens malades de la l&egrave;pre vivant dans la banlieue sud de la ville d&rsquo;Antalaha</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: CALA Madagascar</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Ecole Verte</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Participer aux activit&eacute;s de plantations et de formations des adolescents pour passer de 25 000 arbres plant&eacute;s &agrave; 40&nbsp;000 arbres.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	CALA coordonne diff&eacute;rents programmes de reforestation &agrave; Madagascar :</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jules village, 7 km au sud d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belfort village, 6 km an nord d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Macolline, 3 km au nord d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Ampahana ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Ambodikakaze ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Antalaha.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Le centre priv&eacute; CALA a &eacute;t&eacute; cr&eacute;&eacute; le 02 ao&ucirc;t 1988</strong></p>\r\n<p>\r\n	Le <strong>Comit&eacute; d&rsquo;Aide aux L&eacute;preux d&rsquo;Antalaha</strong> est l&rsquo;une des rares institutions priv&eacute;es la&iuml;ques oeuvrant pour la r&eacute;insertion sociale et professionnelle des anciens malades de la l&egrave;pre dans la r&eacute;gion d&rsquo;Antalaha. Ce centre priv&eacute; est soutenu entre autres, par l&rsquo;Association Fran&ccedil;aise Raoul Follereau. Sa&nbsp; vocation est de venir en aide m&eacute;dicalement et socialement aux plus d&eacute;munis.</p>\r\n<p>\r\n	Le CALA se donne comme objectif <strong>d&rsquo;aider les anciens malades de la l&egrave;pre</strong> de la r&eacute;gion d&rsquo;Antalaha &agrave; vivre comme les autres, au moyen de dons en m&eacute;dicaments, en nature ou financiers et d&rsquo;activit&eacute;s lucratives.</p>\r\n<p>\r\n	Le but est de mettre en place des assistances m&eacute;dicales et p&eacute;cuniaires, une &eacute;ducation sanitaire, des moyens d&rsquo;exploiter leurs aptitudes professionnelles, des aides au logement et &agrave; l&rsquo;&eacute;ducation de leurs enfants et donner une autonomie &agrave; tous ceux que la maladie a rendus handicap&eacute;s.</p>\r\n<p>\r\n	La <strong>reforestation des zones d&eacute;vast&eacute;es</strong> par les diff&eacute;rents cyclones par la cr&eacute;ation de p&eacute;pini&egrave;res et d&rsquo;une activit&eacute; &eacute;conomique li&eacute;e &agrave; l&rsquo;exploitation de ces plantations, est &rsquo;un des moyens de redonner cette autonomie.</p>\r\n"
     lang: fr
     slug: madagascar-antalaha
-  programmeTranslation_12_en:
-    programme: programme_12
+  programmeTranslation_36_en:
+    programme: programme_36
     title: Senegal
-    accroche: 'The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance. The enthusiasm of the people is the result of a long education which already affects 32 500 peo'
-    description: null
+    accroche: "<p>\r\n	The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
-    slug: senegal
-  programmeTranslation_12_fr:
-    programme: programme_12
+    slug: senegal-en
+  programmeTranslation_36_fr:
+    programme: programme_36
     title: Sénégal
-    accroche: 'Le programme de reboisement réalisé par l''association Oceanium rassemble 11 000 villageois qui se sont massivement mobilisés pour restaurer la mangrove en Casamance. Cet engouement des populations est le résultat d''une longue sensibilisation qui touche dé'
-    description: null
+    accroche: "<p>\r\n	Le programme de reboisement r&eacute;alis&eacute; par l&#39;association Oceanium rassemble 11 000 villageois qui se sont massivement mobilis&eacute;s pour restaurer la mangrove en Casamance.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation.jpg\" style=\"width: 200px; height: 133px;\" /><img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation2(1).jpg\" style=\"width: 200px; height: 134px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: restauration de l&rsquo;&eacute;cosyst&egrave;me de la mangrove, des ressources halieutiques, protection du littoral</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: Casamance, de Niafarang &agrave; Elinkine, de Nioumoune &agrave; Marssassoum en passant par Tobor.</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: sensibilisation de plus 32 000 villageois de la Casamance</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Oceanium</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Restaurer 6000 ha de mangrove, plantons pour la plan&egrave;te</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Aider Oceanium &agrave; passer de 1200 ha de Mangrove r&eacute;cup&eacute;r&eacute;e &agrave; 6000 ha par la plantation de plus de 40 000 pal&eacute;tuviers</p>\r\n"
     lang: fr
     slug: senegal
-articleTranslation:
-  articleTranslation_1_en:
-    article: article_1
-    title: Welcome
-    accroche: 'Welcome to up2green'
-    description: ''
+  programmeTranslation_37_en:
+    programme: programme_37
+    title: BENIN
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
-    slug: welcome
-  articleTranslation_1_fr:
-    article: article_1
-    title: Bienvenue
-    accroche: 'Bienvenue sur up2green'
-    description: 'up2green est un site associatif propulsé par son moteur de recherche qui vous permet de planter des arbres au fil de vos recherche'
+    slug: benin-en
+  programmeTranslation_37_fr:
+    programme: programme_37
+    title: BENIN
+    accroche: "<p>\r\n	Projet de mise en &oelig;uvre, dans le village de Firihoun, d&rsquo;activit&eacute;s alternatives &agrave; l&rsquo;exploitation abusive des ressources naturelles autour de la r&eacute;serve de la Pendjari.</p>\r\n"
+    description: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/deforestation-Firihoun-benin.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/action-developpement-benin.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>: lutter contre l&rsquo;exploitation abusive des ressources naturelles en p&eacute;riph&eacute;rie de la r&eacute;serve de la biosph&egrave;re de la Pendjari en cr&eacute;ant des activit&eacute;s alternatives</p>\r\n<p>\r\n	<strong>Localisation</strong> : Village de Firihoun, arrondissement de Tant&eacute;ga, commune de Mat&eacute;ri, d&eacute;partement de l&#39;Atacora, B&eacute;nin.</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong> : Village de Firihoun, 375 personnes, dont 120 femmes, 75 hommes et 160 jeunes.</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Actions et d&eacute;veloppement</p>\r\n<p>\r\n	<strong>Programme&nbsp;</strong>: Projet de mise en &oelig;uvre, dans le village de Firihoun, d&rsquo;activit&eacute;s alternatives &agrave; l&rsquo;exploitation abusive des ressources naturelles en p&eacute;riph&eacute;rie de la r&eacute;serve de la biosph&egrave;re de Pendjari</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Contribuer aux objectifs de l&rsquo;association &agrave; mettre en terre 45 000 plants dans le cadre du programme.&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	Firihoun est l&rsquo;un des 23 villages riverains de la R&eacute;serve de Biosph&egrave;re de la Pendjari au nord-ouest du Benin. En compl&eacute;ment de l&rsquo;agriculture, de la p&ecirc;che et de la chasse, les populations de Firihoun se sont lanc&eacute;es ces derni&egrave;res ann&eacute;es dans la commercialisation du bois de chauffe et du charbon. Cette activit&eacute;, bien que procurant des revenus compl&eacute;mentaires aux populations, est pratiqu&eacute;e anarchiquement et conduit les populations &agrave; couper les arbres et &agrave; braconner.</p>\r\n<p>\r\n	Projets Plus Actions soutient son partenaire local, Aides &amp; D&eacute;veloppement pour la cr&eacute;ation d&#39;activit&eacute;s alternatives agricoles g&eacute;n&eacute;ratrices de revenus. Les habitants de Firihoun pourront rendre cultivable des terres en friche et ainsi ne plus d&eacute;t&eacute;riorer la r&eacute;serve de la Pendjari.</p>\r\n"
     lang: fr
-    slug: bienvenue
+    slug: benin
+  programmeTranslation_38_en:
+    programme: programme_38
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: ''
+  programmeTranslation_38_fr:
+    programme: programme_38
+    title: Equateur
+    accroche: "<p>\r\n	Amazonie &eacute;quatorienne. Am&eacute;lioration de vie des populations indig&egrave;nes, d&eacute;veloppement d&rsquo;une coop&eacute;rative. 2500&nbsp; indiens&nbsp; Kichwas repartis en 18 communaut&eacute;s.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Perou4.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux&nbsp;: </strong>Am&eacute;lioration de vie des populations indig&egrave;nes, d&eacute;veloppement d&rsquo;une coop&eacute;rative</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: Canton du Talag, Province du Napo, Amazonie &eacute;quatorienne</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: 2500&nbsp; indiens&nbsp; Kichwas repartis en 18 communaut&eacute;s</p>\r\n<p>\r\n	<strong>Partenaires</strong>:&nbsp; Ishpingo</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: am&eacute;lioration notable de l&rsquo;utilisation des terres et la gestion raisonn&eacute;e des ressources foresti&egrave;res</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication </strong>Up2green&nbsp;: Participer aux activit&eacute;s de plantations pour passer de 33 000 arbres &agrave; 50 000 arbres plant&eacute;s en 2011</p>\r\n"
+    lang: fr
+    slug: equateur
+  programmeTranslation_39_en:
+    programme: programme_39
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: perou
+  programmeTranslation_39_fr:
+    programme: programme_39
+    title: Pérou
+    accroche: "<p>\r\n	Amazonie &eacute;quatorienne. Lutte contre la d&eacute;forestation, diversification alimentaire, promotion de la biodiversit&eacute;, d&eacute;veloppement de pratiques agricoles durables aupr&egrave;s de 37 familles.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Perou4(1).jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/Perou2.jpg\" style=\"width: 113px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green3.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux&nbsp;</strong>: lutte contre la d&eacute;forestation en Amazonie, diversification alimentaire, promotion de la biodiversit&eacute;, d&eacute;veloppement de pratiques agricoles durables</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: R&eacute;gion du Loreto, district d&rsquo;Iquitos, province de Maynas, communaut&eacute; de Fray Martin</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires&nbsp;</strong>: habitants de la communaut&eacute; de Fray Martin</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Latitud Sur, Forestever</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Programme&nbsp;</strong>: &laquo;&nbsp;Parcelles Int&eacute;grales&nbsp;&raquo;, &laquo;&nbsp;Chacras Integrales&nbsp;&raquo;</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: D&eacute;velopper les pratiques agricoles durables par l&rsquo;incitation &agrave; la plantation d&rsquo;arbres fruitiers et &agrave; bois &agrave; hauteur de 15000 arbres. L&rsquo;&eacute;quipe d&rsquo;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&rsquo;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	Les habitants de la communaut&eacute; de Fray Martin, soit 340 personnes, 37 familles. Ils vivent essentiellement de la culture du manioc et de la banane plantain. Leur principal revenu provient de la vente de charbon de bois, activit&eacute; d&eacute;vastatrice pour les for&ecirc;ts. La plantation d&rsquo;arbres est non seulement essentielle pour le maintien de la for&ecirc;t, mais aussi pour leur apporter les mati&egrave;res premi&egrave;res dont ils ont besoin.</p>\r\n"
+    lang: fr
+    slug: perou
+  programmeTranslation_40_en:
+    programme: programme_40
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: '2'
+  programmeTranslation_40_fr:
+    programme: programme_40
+    title: Colombie
+    accroche: "<p>\r\n	Amazonie colombienne. Conservation des modes de vie indig&egrave;nes, agroforesterie et de l&rsquo;&eacute;cotourisme, am&eacute;lioration des conditions alimentaires. <span>Projet d&eacute;velopp&eacute; sur le terrain par Up2green.</span></p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: conservation des modes de vie indig&egrave;nes, d&eacute;veloppement de l&rsquo;agroforesterie et de l&rsquo;&eacute;cotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: D&eacute;partement de l&rsquo;Amazonas, P&eacute;riph&eacute;rie de Leticia, Communaut&eacute; San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: 30 familles au total&nbsp;, communaut&eacute; de San Pedro de los Lagos, Communaut&eacute; du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: D&eacute;veloppement de pratiques agroforesti&egrave;res en Amazonie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Responsable du projet. Sensibilisation et formation des habitants de communaut&eacute;s. Mise en place de p&eacute;pini&egrave;res familiales pour la plantation de 15&nbsp;000 arbres en 2011.</p>\r\n<p>\r\n	&nbsp;L&rsquo;&eacute;quipe d&rsquo;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&rsquo;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communaut&eacute; indig&egrave;ne Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l&rsquo;agriculture mais son enclavement fait que les habitants ont du mal &agrave; developper des activit&eacute;s &eacute;conomiques g&eacute;n&eacute;ratrices de revenus. La bonne gestion de leur terre et le d&eacute;veloppement de plantations d&rsquo;arbres &agrave; bois et d&rsquo;arbres fruitiers permettra d&rsquo;<strong>entretenir</strong><strong> et de s&eacute;curiser leur mode de vie tr&egrave;s proche de la nature.</strong></p>\r\n"
+    lang: fr
+    slug: colombie

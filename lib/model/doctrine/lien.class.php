@@ -12,13 +12,4 @@
  */
 class lien extends Baselien
 {
-    public function getStringCategories(){
-        $arrCategs = $this->category;
-        $s = "";
-        foreach ($arrCategs as $categ){
-            if ($s == "") $s .= $categ->getUniqueName();
-            else $s .= ", " . $categ->getUniqueName();
-        }
-        return $s;
-    }
 }

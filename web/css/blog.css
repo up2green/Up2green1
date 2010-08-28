@@ -37,6 +37,7 @@ body {
 }
 
 #deja_planter {
+	display:none;
 	float:left;
 	height:30px;
 	margin-left:45px;
@@ -201,6 +202,12 @@ body {
   width: 590px;
   padding:5px 0 10px;
   font-weight:bold;
+  color:#ddd;
+}
+
+.diaporama .diapo table td{
+	vertical-align:middle;
+	height: 160px;
 }
 
 .diaporama .diapo h3{
@@ -210,7 +217,8 @@ body {
 }
 
 .diaporama .diapo img{
-  max-height: 160px;
+	max-height: 160px;
+  max-width: 290px;
 }
 
 .dpm_image {

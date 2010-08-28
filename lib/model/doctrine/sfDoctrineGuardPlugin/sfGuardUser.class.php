@@ -14,31 +14,39 @@ class sfGuardUser extends PluginsfGuardUser
 {
   public function setPassword($password)
   {
-    // store the backtrace
-    $bt = debug_backtrace();
-
-    // analyze backtrace to see if importing from fixtures
-    $is_importing = false;    
-    foreach ($bt as $cf)
-      if ($cf['function'] == 'loadData')
-        $is_importing = true;
-        
-    // if importing from fixtures
-    // then just save the encrypted password
-    if ($is_importing)
+    if (!$password && 0 == strlen($password))
     {
-      if ($password !== null && !is_string($password)) {
-        $password = (string) $password; 
-      }
+      return;
+    }
 
-      if ($this->password !== $password) {
-        $this->password = $password;
-/*
-        $this->modifiedColumns[] = sfGuardUserPeer::PASSWORD;
-*/
-      }
+    $fromdump = false;
+    if($this->isNew() && $this->getSalt()){
+     $fromdump=true;
+    }
 
-    } else
-      parent::setPassword($password);
+    if (!$salt = $this->getSalt())
+    {
+      $salt = md5(rand(100000, 999999).$this->getUsername());
+      $this->setSalt($salt);
+    }
+    $modified = $this->getModified();
+    if ((!$algorithm = $this->getAlgorithm()) || (isset($modified['algorithm']) && $modified['algorithm'] == $this->getTable()->getDefaultValueOf('algorithm')))
+    {
+      $algorithm = sfConfig::get('app_sf_guard_plugin_algorithm_callable', 'sha1');
+    }
+    $algorithmAsStr = is_array($algorithm) ? $algorithm[0].'::'.$algorithm[1] : $algorithm;
+    if (!is_callable($algorithm))
+    {
+      throw new sfException(sprintf('The algorithm callable "%s" is not callable.', $algorithmAsStr));
+    }
+    $this->setAlgorithm($algorithmAsStr);
+
+    if($fromdump){
+     parent::_set('password',$password);
+    }
+    else{
+     parent::_set('password', call_user_func_array($algorithm, array($salt.$password)));
+    }
+
   }
 }

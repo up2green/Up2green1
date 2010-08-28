@@ -33,7 +33,7 @@ all:
     escaping_method:        ESC_SPECIALCHARS
 
     standard_helpers: [Partial, Cache, I18N]
-    enabled_modules: [default, sfGuardAuth, sfJqueryTreeDoctrineManager]
+    enabled_modules: [default, sfGuardAuth]
 
     # Enable the database manager
     use_database:           true

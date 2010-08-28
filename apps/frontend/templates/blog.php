@@ -30,32 +30,22 @@
         <div class="module">
           <div class="content">
 
-            <?php include_partial('blog/menu'); ?>
+            <?php include_component('blog', 'menu'); ?>
 
             <div class="principale">
               <?php echo $sf_content; ?>
             </div>
 
             <div class="clear"></div>
-
-            <?php include_partial('blog/footerAssociatif'); ?>
-
+            <?php include_component('blog', 'footer'); ?>
             <div class="clear"></div>
-
-            <span class="border bt"></span>
-            <span class="border bb"></span>
-            <span class="border bl"></span>
-            <span class="border br"></span>
-            <span class="corner ctl"></span>
-            <span class="corner ctr"></span>
-            <span class="corner cbl"></span>
-            <span class="corner cbr"></span>
+            <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
           </div>
         </div>
       </div>
     </div>
     
-    <?php include_partial('blog/footer'); ?>
+    <?php include_component('blog', 'footerLegal'); ?>
     
   </body>
 </html>

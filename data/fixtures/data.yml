@@ -161,32 +161,27 @@ article:
     created_at: '2010-08-29 12:04:23'
     updated_at: '2010-08-29 12:04:23'
   article_9:
-    unique_name: '1.3 Certifications et labels'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:07:15'
     updated_at: '2010-08-29 12:07:15'
   article_10:
-    unique_name: '1.4 Idées reçues'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:09:59'
     updated_at: '2010-08-29 12:09:59'
   article_11:
-    unique_name: '1.5 Savez-vous planter'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:16:56'
     updated_at: '2010-08-29 12:16:56'
   article_12:
     Category: category_1
-    unique_name: '2.1 Nos programmes'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:19:56'
     updated_at: '2010-08-29 12:19:56'
   article_13:
-    unique_name: '2.2 Nos partenaires'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:23:07'

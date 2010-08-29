@@ -155,7 +155,6 @@ article:
     updated_at: '2010-08-28 13:49:47'
   article_8:
     Category: category_1
-    unique_name: '1.2 7 bonnes raisons'
     logo: null
     is_active: true
     created_at: '2010-08-29 12:04:23'

@@ -63,25 +63,25 @@ newsletter:
 lien:
   lien_1:
     category: category_2
-    src: programme
+    src: /programme
     is_active: true
     rank: '3'
     created_at: '2010-08-28 16:46:04'
-    updated_at: '2010-08-28 17:48:29'
+    updated_at: '2010-08-29 09:27:31'
   lien_2:
     category: category_2
-    src: blog
+    src: /blog
     is_active: true
     rank: '1'
     created_at: '2010-08-28 17:35:22'
-    updated_at: '2010-08-28 17:35:22'
+    updated_at: '2010-08-29 09:27:38'
   lien_3:
     category: category_2
-    src: articles
+    src: /articles
     is_active: true
     rank: '2'
     created_at: '2010-08-28 17:48:21'
-    updated_at: '2010-08-28 17:48:21'
+    updated_at: '2010-08-29 09:27:44'
   lien_4:
     category: category_4
     src: '#'
@@ -110,6 +110,13 @@ lien:
     rank: '4'
     created_at: '2010-08-28 18:16:15'
     updated_at: '2010-08-28 18:16:15'
+  lien_8:
+    category: category_2
+    src: /organisme
+    is_active: true
+    rank: '4'
+    created_at: '2010-08-29 09:27:10'
+    updated_at: '2010-08-29 09:27:10'
 sfGuardUser:
   sfGuardUser_1:
     first_name: null
@@ -473,6 +480,16 @@ lienTranslation:
     title: 'Nos Programmes'
     lang: fr
     slug: nos-programmes
+  lienTranslation_8_fr:
+    lien: lien_8
+    title: 'Organismes planteurs'
+    lang: fr
+    slug: organismes-planteurs
+  lienTranslation_8_en:
+    lien: lien_8
+    title: Organisms
+    lang: en
+    slug: organisms
   lienTranslation_1_en:
     lien: lien_1
     title: 'Our Programs'

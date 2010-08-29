@@ -394,9 +394,15 @@ div.module.social div.content {
 }
 
 .principale .colRight {
-	float:left;
-	width:300px;
+	float:right;
+	width:350px;
+	margin-right:10px;
 }
+
+.principale .colRight .module {
+	width:320px;
+}
+
 
 .principale .module span.ctl,
 .blog_footer .module span.ctl {
@@ -608,6 +614,23 @@ div.cartouche p.title.little {
 
 .first_article {
 	padding-top:60px;
+}
+
+.module2col .content ul{
+	list-style-type:circle;
+	padding: 15px 0 15px 15px;
+}
+
+.module2col .content li {
+	padding: 2px 0;
+}
+
+.module2col .content .accroche {
+	padding:0 10px 10px;
+}
+
+.module2col .content .description {
+	padding: 10px 0 0;
 }
 
 .up_n_down {

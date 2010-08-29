@@ -13,7 +13,7 @@ abstract class BaseorganismeTranslationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'title'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'title'       => new sfWidgetFormFilterInput(),
       'accroche'    => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
       'slug'        => new sfWidgetFormFilterInput(),

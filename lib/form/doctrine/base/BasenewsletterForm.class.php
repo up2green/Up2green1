@@ -17,7 +17,6 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
-      'unique_name' => new sfWidgetFormInputText(),
       'reply_to'    => new sfWidgetFormInputText(),
       'email_from'  => new sfWidgetFormInputText(),
       'is_forced'   => new sfWidgetFormInputCheckbox(),
@@ -29,7 +28,6 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'required' => false)),
-      'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'reply_to'    => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'email_from'  => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'is_forced'   => new sfValidatorBoolean(array('required' => false)),
@@ -37,10 +35,6 @@ abstract class BasenewsletterForm extends BaseFormDoctrine
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'newsletter', 'column' => array('unique_name')))
-    );
 
     $this->widgetSchema->setNameFormat('newsletter[%s]');
 

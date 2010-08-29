@@ -16,7 +16,6 @@ abstract class BaseorganismeForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
-      'name'       => new sfWidgetFormInputText(),
       'url'        => new sfWidgetFormInputText(),
       'logo'       => new sfWidgetFormInputText(),
       'created_at' => new sfWidgetFormDateTime(),
@@ -25,7 +24,6 @@ abstract class BaseorganismeForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'       => new sfValidatorString(array('max_length' => 128)),
       'url'        => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'logo'       => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'created_at' => new sfValidatorDateTime(),

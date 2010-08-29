@@ -58,13 +58,15 @@ class blogComponents extends sfComponents {
   }
 
   public function executeDiaporama(sfWebRequest $request) {
-    // Récupération des 3 derniers programmes
-    $this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), 3, 0);
+    // HOT-FIX incompréhenssible :
+    $this->programmes = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')
+    	->retrieveLastProgrammes($this->getUser()->getCulture(), 5, 0);
   }
 
   public function executeMenu(sfWebRequest $request) {
     // Récupération du menu-top dynamique
     $this->category = Doctrine::getTable('Category')->getByName('main-menu');
+    $this->programms = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')->getActiveByLang($this->getUser()->getCulture());
   }
 
   public function executeFooter(sfWebRequest $request) {

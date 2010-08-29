@@ -13,9 +13,10 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields: ~
       list:
-        display: [id, =unique_name, is_active]
+        display: [Category, =title, is_active]
+        sort: [category_id, asc]
       filter:  ~
       form:    ~
       edit:    ~

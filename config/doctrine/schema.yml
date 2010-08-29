@@ -137,14 +137,10 @@ organisme:
       type: integer(4)
       primary: true
       autoincrement: true
-    name:
-      type: string(128)
-      notnull: true
     url:
       type: string(128)
     title:
       type: string(128)
-      notnull: true
     accroche:
       type: string(1000)
     description:
@@ -167,6 +163,7 @@ programme:
       autoincrement: true
     organisme_id:
       type: integer(4)
+      default: null
     title:
       type: string(128)
     accroche:
@@ -194,11 +191,10 @@ programme:
       type: string(128)
       default: null
   relations:
-    organisme:
+    Organisme:
       class: organisme
       local: organisme_id
-      foreign: id
-      foreignAlias: programmeOrganisme
+      foreignAlias: Programmes
 
 tree:
   actAs: [Timestampable]
@@ -275,9 +271,6 @@ article:
       autoincrement: true
     category_id:
       type: integer(4)
-    unique_name:
-      type: string(30)
-      unique: true
     title:
       type: string(255)
       notnull: true
@@ -310,9 +303,6 @@ newsletter:
       autoincrement: true
     category_id:
       type: integer(4)
-    unique_name:
-      type: string(30)
-      unique: true
     title:
       type: string(255)
       notnull: true

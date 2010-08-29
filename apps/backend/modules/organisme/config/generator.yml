@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [id, =name, url, logo]
+        display: [id, =title, url]
       filter:  ~
       form:    ~
       edit:    ~

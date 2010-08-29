@@ -62,7 +62,6 @@ class programmeTable extends Doctrine_Table
   public function getActiveByLang($lang, $limit = 10) {
     $q = $this->createQuery('p');
 		$q = $this->addByLangQuery($lang, $q);
-		if(!empty($limit))
 		return $this->getActive($q->limit($limit));
   }
   
@@ -76,10 +75,14 @@ class programmeTable extends Doctrine_Table
 		return $this->getOne($this->addActiveQuery($q));
 	}
 
-
 	public function getActive(Doctrine_Query $q = null)
 	{
 		return $this->get($this->addActiveQuery($q));
+	}
+	
+	public function getArrayActive(Doctrine_Query $q = null)
+	{
+		return $this->getArray($this->addActiveQuery($q));
 	}
   
 	public function count(Doctrine_Query $q = null)
@@ -96,6 +99,11 @@ class programmeTable extends Doctrine_Table
 	public function get(Doctrine_Query $q = null)
 	{
 		return $this->addQuery($q)->execute();
+	}
+	
+	public function getArray(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->fetchArray();
 	}
     
 	public function addByLangQuery($lang, Doctrine_Query $q = null)

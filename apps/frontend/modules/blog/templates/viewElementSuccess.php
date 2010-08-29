@@ -8,9 +8,12 @@
     </div>
     <?php
       if(isset($element)) {
-        echo '<p class="first_article">';
-        echo '<h3>'.html_entity_decode($element->getAccroche()).'</h3>';
-        echo '<p class="ctn_texte">'.html_entity_decode($element->getDescription()).'</p>';
+        echo '<p class="first_article"></p>';
+        echo '<div class="accroche">';
+        echo html_entity_decode($element->getAccroche());
+        echo '</div>';
+        echo '<hr />';
+        echo '<div class="description">'.html_entity_decode($element->getDescription()).'</div>';
         if($type == 'article')
           echo '<img class="element_logo" alt="'.$element->getTitle().'" src="/uploads/article/'.$element->getLogo().'" />';
       }

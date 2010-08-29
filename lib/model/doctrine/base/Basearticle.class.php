@@ -7,7 +7,6 @@
  * 
  * @property integer $id
  * @property integer $category_id
- * @property string $unique_name
  * @property string $title
  * @property string $accroche
  * @property clob $description
@@ -17,7 +16,6 @@
  * 
  * @method integer  getId()          Returns the current record's "id" value
  * @method integer  getCategoryId()  Returns the current record's "category_id" value
- * @method string   getUniqueName()  Returns the current record's "unique_name" value
  * @method string   getTitle()       Returns the current record's "title" value
  * @method string   getAccroche()    Returns the current record's "accroche" value
  * @method clob     getDescription() Returns the current record's "description" value
@@ -26,7 +24,6 @@
  * @method category getCategory()    Returns the current record's "Category" value
  * @method article  setId()          Sets the current record's "id" value
  * @method article  setCategoryId()  Sets the current record's "category_id" value
- * @method article  setUniqueName()  Sets the current record's "unique_name" value
  * @method article  setTitle()       Sets the current record's "title" value
  * @method article  setAccroche()    Sets the current record's "accroche" value
  * @method article  setDescription() Sets the current record's "description" value
@@ -53,11 +50,6 @@ abstract class Basearticle extends sfDoctrineRecord
         $this->hasColumn('category_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
-             ));
-        $this->hasColumn('unique_name', 'string', 30, array(
-             'type' => 'string',
-             'unique' => true,
-             'length' => 30,
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',

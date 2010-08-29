@@ -58,6 +58,66 @@ class articleTable extends Doctrine_Table {
 
     return $q->fetchOne();
   }
+  
+  public function getActiveByLang($lang, $limit = 10) {
+    $q = $this->createQuery('a');
+		$q = $this->addByLangQuery($lang, $q);
+		return $this->getActive($q->limit($limit));
+  }
+  
+  public function countActive(Doctrine_Query $q = null)
+	{
+		return $this->count($this->addActiveQuery($q));
+	}
+
+	public function getOneActive(Doctrine_Query $q)
+	{
+		return $this->getOne($this->addActiveQuery($q));
+	}
+
+
+	public function getActive(Doctrine_Query $q = null)
+	{
+		return $this->get($this->addActiveQuery($q));
+	}
+  
+	public function count(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->count();
+	}
+
+	public function getOne(Doctrine_Query $q)
+	{
+		return $this->addQuery($q)->fetchOne();
+	}
+
+
+	public function get(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->execute();
+	}
+    
+	public function addByLangQuery($lang, Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)
+			->leftJoin('a.Translation t')
+			->andWhere('t.lang = ?', $lang);
+	}
+    
+	public function addActiveQuery(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->andwhere('a.is_active = ?', 1);
+	}
+    
+	public function addQuery(Doctrine_Query $q = null)
+	{
+		if (is_null($q)) {$q = Doctrine_Query::create()->from('article a');}
+		
+		$alias = $q->getRootAlias();
+		$q->addOrderBy($alias . '.created_at DESC');
+		
+		return $q;
+	}
 
   public static function getInstance() {
     return Doctrine_Core::getTable('article');

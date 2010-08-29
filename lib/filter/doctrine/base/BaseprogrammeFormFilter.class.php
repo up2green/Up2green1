@@ -13,7 +13,7 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('organisme'), 'add_empty' => true)),
+      'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Organisme'), 'add_empty' => true)),
       'geoadress'    => new sfWidgetFormFilterInput(),
       'latitude'     => new sfWidgetFormFilterInput(),
       'longitude'    => new sfWidgetFormFilterInput(),
@@ -25,7 +25,7 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('organisme'), 'column' => 'id')),
+      'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Organisme'), 'column' => 'id')),
       'geoadress'    => new sfValidatorPass(array('required' => false)),
       'latitude'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'longitude'    => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),

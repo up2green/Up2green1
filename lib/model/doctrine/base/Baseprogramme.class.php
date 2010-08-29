@@ -16,7 +16,7 @@
  * @property boolean $is_active
  * @property integer $max_tree
  * @property string $logo
- * @property organisme $organisme
+ * @property organisme $Organisme
  * @property Doctrine_Collection $Trees
  * 
  * @method integer             getId()           Returns the current record's "id" value
@@ -30,7 +30,7 @@
  * @method boolean             getIsActive()     Returns the current record's "is_active" value
  * @method integer             getMaxTree()      Returns the current record's "max_tree" value
  * @method string              getLogo()         Returns the current record's "logo" value
- * @method organisme           getOrganisme()    Returns the current record's "organisme" value
+ * @method organisme           getOrganisme()    Returns the current record's "Organisme" value
  * @method Doctrine_Collection getTrees()        Returns the current record's "Trees" collection
  * @method programme           setId()           Sets the current record's "id" value
  * @method programme           setOrganismeId()  Sets the current record's "organisme_id" value
@@ -43,7 +43,7 @@
  * @method programme           setIsActive()     Sets the current record's "is_active" value
  * @method programme           setMaxTree()      Sets the current record's "max_tree" value
  * @method programme           setLogo()         Sets the current record's "logo" value
- * @method programme           setOrganisme()    Sets the current record's "organisme" value
+ * @method programme           setOrganisme()    Sets the current record's "Organisme" value
  * @method programme           setTrees()        Sets the current record's "Trees" collection
  * 
  * @package    up2green
@@ -108,7 +108,7 @@ abstract class Baseprogramme extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('organisme', array(
+        $this->hasOne('organisme as Organisme', array(
              'local' => 'organisme_id',
              'foreign' => 'id'));
 

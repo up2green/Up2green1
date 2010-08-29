@@ -15,7 +15,8 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [id, unique_name, reply_to, email_from, is_forced, sent_at]
+        display: [Category, =title, is_forced, sent_at]
+        sort: [category_id, asc]
       filter:  ~
       form:    ~
       edit:    ~

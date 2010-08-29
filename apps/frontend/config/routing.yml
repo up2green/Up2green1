@@ -23,6 +23,18 @@ ajax_more_results:
 ##### BLOG
 ####################
 
+blog_organisme_list:
+  url:   /blog/organisme
+  param: { module: blog, action: viewList, type: organisme }
+
+blog_organisme:
+  url:   /blog/organisme/:slug
+  param: { module: blog, action: viewElement, type: organisme }
+
+blog_article_list:
+  url:   /blog/article
+  param: { module: blog, action: viewList, type: article }
+
 blog_article:
   url:   /blog/article/:slug
   param: { module: blog, action: viewElement, type: article }
@@ -39,7 +51,6 @@ blog:
   url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
   param: { module: blog, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
 
-
 homepage:
   url: /
   param: { module: recherche, action: index }
@@ -47,6 +58,10 @@ homepage:
 plantation:
   url: /plantation
   param: { module: plantation, action: index}
+
+blog:
+  url: /blog
+  param: { module: blog, action: index}
 
 # generic rules
 # please, remove them by adding more specific rules

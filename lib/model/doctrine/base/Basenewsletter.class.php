@@ -7,7 +7,6 @@
  * 
  * @property integer $id
  * @property integer $category_id
- * @property string $unique_name
  * @property string $title
  * @property clob $content
  * @property string $reply_to
@@ -18,7 +17,6 @@
  * 
  * @method integer    getId()          Returns the current record's "id" value
  * @method integer    getCategoryId()  Returns the current record's "category_id" value
- * @method string     getUniqueName()  Returns the current record's "unique_name" value
  * @method string     getTitle()       Returns the current record's "title" value
  * @method clob       getContent()     Returns the current record's "content" value
  * @method string     getReplyTo()     Returns the current record's "reply_to" value
@@ -28,7 +26,6 @@
  * @method category   getCategory()    Returns the current record's "category" value
  * @method newsletter setId()          Sets the current record's "id" value
  * @method newsletter setCategoryId()  Sets the current record's "category_id" value
- * @method newsletter setUniqueName()  Sets the current record's "unique_name" value
  * @method newsletter setTitle()       Sets the current record's "title" value
  * @method newsletter setContent()     Sets the current record's "content" value
  * @method newsletter setReplyTo()     Sets the current record's "reply_to" value
@@ -56,11 +53,6 @@ abstract class Basenewsletter extends sfDoctrineRecord
         $this->hasColumn('category_id', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
-             ));
-        $this->hasColumn('unique_name', 'string', 30, array(
-             'type' => 'string',
-             'unique' => true,
-             'length' => 30,
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',

@@ -17,7 +17,6 @@ abstract class BasearticleForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
-      'unique_name' => new sfWidgetFormInputText(),
       'logo'        => new sfWidgetFormInputText(),
       'is_active'   => new sfWidgetFormInputCheckbox(),
       'created_at'  => new sfWidgetFormDateTime(),
@@ -27,16 +26,11 @@ abstract class BasearticleForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'required' => false)),
-      'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'logo'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'article', 'column' => array('unique_name')))
-    );
 
     $this->widgetSchema->setNameFormat('article[%s]');
 

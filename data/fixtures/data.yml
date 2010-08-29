@@ -29,7 +29,6 @@ category:
     level: '1'
 newsletter:
   newsletter_1:
-    unique_name: inscription
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
     is_forced: false
@@ -37,7 +36,6 @@ newsletter:
     created_at: '2010-06-26 18:27:35'
     updated_at: '2010-06-26 18:27:36'
   newsletter_2:
-    unique_name: welcome
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
     is_forced: false
@@ -45,7 +43,6 @@ newsletter:
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
   newsletter_3:
-    unique_name: forgot_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
     is_forced: false
@@ -53,7 +50,6 @@ newsletter:
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-06-26 18:27:36'
   newsletter_4:
-    unique_name: new_pwd
     reply_to: noreply@up2green.com
     email_from: newsletter@up2green.com
     is_forced: false
@@ -133,87 +129,73 @@ sfGuardUser:
     updated_at: '2010-08-29 09:18:47'
 article:
   article_1:
-    unique_name: welcome
     logo: null
     is_active: true
     created_at: '2010-08-02 21:25:50'
     updated_at: '2010-08-02 21:25:50'
   article_4:
-    unique_name: 'Nos objectifs'
     logo: null
     is_active: true
     created_at: '2010-08-28 10:53:49'
     updated_at: '2010-08-28 10:53:49'
   article_5:
-    unique_name: 'Notre ambition'
     logo: null
     is_active: true
     created_at: '2010-08-28 13:39:13'
     updated_at: '2010-08-28 13:39:13'
   article_6:
-    unique_name: Fondateurs
     logo: null
     is_active: true
     created_at: '2010-08-28 13:45:37'
     updated_at: '2010-08-28 13:45:37'
   article_7:
-    unique_name: 'La Déforestation'
     logo: null
     is_active: true
     created_at: '2010-08-28 13:49:47'
     updated_at: '2010-08-28 13:49:47'
 organisme:
   organisme_1:
-    name: 'Planete Urgence'
     url: 'http://www.planete-urgence.org/'
     logo: organisme39.jpeg
     created_at: '2010-06-26 18:27:37'
     updated_at: '2010-06-26 18:27:37'
   organisme_2:
-    name: 'Trees For The Future'
     url: 'http://www.treesftf.org/'
     logo: organisme38.gif
     created_at: '2010-06-26 18:27:37'
     updated_at: '2010-06-26 18:27:37'
   organisme_3:
-    name: BAOBAB29
     url: null
     logo: organisme40.jpg
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   organisme_4:
-    name: Eco-Kyoto
     url: 'http://www.fondationecokyoto.org/'
     logo: organisme41.gif
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   organisme_5:
-    name: CALA
     url: 'http://www.calamada.org/'
     logo: organisme42.jpg
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   organisme_6:
-    name: Oceanium
     url: 'http://www.oceanium.org/'
     logo: fffe245898207a3ec732dd83e8104f5f31915bf0.jpg
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   organisme_7:
-    name: 'Projets + Actions'
     url: 'http://www.projetsplusactions.org'
     logo: a86680be561661e7f83d7e5ee8a3551d14dfe7cc.jpg
     created_at: '2010-08-28 16:54:18'
     updated_at: '2010-08-28 17:43:49'
   organisme_8:
-    name: 'Up2green Reforestation'
     url: 'http://www.up2green.com'
     logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
     created_at: '2010-08-28 16:56:24'
     updated_at: '2010-08-28 16:56:24'
 programme:
   programme_1:
-    organisme: organisme_2
     geoadress: null
     latitude: '8.722218'
     longitude: '39.440918'
@@ -223,7 +205,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   programme_2:
-    organisme: organisme_2
     geoadress: null
     latitude: '22.786311'
     longitude: '79.628906'
@@ -233,7 +214,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   programme_3:
-    organisme: organisme_2
     geoadress: null
     latitude: '-14.221789'
     longitude: '-51.943359'
@@ -243,7 +223,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   programme_4:
-    organisme: organisme_2
     geoadress: Honduras
     latitude: null
     longitude: null
@@ -289,7 +268,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   programme_9:
-    organisme: organisme_3
     geoadress: 'Burkina Faso'
     latitude: null
     longitude: null
@@ -308,7 +286,6 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-06-26 18:27:38'
   programme_11:
-    organisme: organisme_5
     geoadress: Madagascar
     latitude: null
     longitude: null
@@ -336,7 +313,6 @@ programme:
     created_at: '2010-08-28 17:14:19'
     updated_at: '2010-08-28 17:14:19'
   programme_14:
-    organisme: organisme_8
     geoadress: Equateur
     latitude: null
     longitude: null
@@ -346,7 +322,6 @@ programme:
     created_at: '2010-08-28 17:48:07'
     updated_at: '2010-08-28 17:48:07'
   programme_15:
-    organisme: organisme_8
     geoadress: perou
     latitude: null
     longitude: null
@@ -356,7 +331,6 @@ programme:
     created_at: '2010-08-28 17:53:36'
     updated_at: '2010-08-28 17:53:36'
   programme_16:
-    organisme: organisme_8
     geoadress: colombie
     latitude: null
     longitude: null

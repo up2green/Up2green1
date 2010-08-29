@@ -7,3 +7,8 @@ viewElementSuccess:
   stylesheets:    [blog.css]
   javascripts:    [blog.js]
   layout:         blog
+
+viewListSuccess:
+  stylesheets:    [blog.css]
+  javascripts:    [blog.js]
+  layout:         blog

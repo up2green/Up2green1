@@ -14,7 +14,6 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
-      'unique_name' => new sfWidgetFormFilterInput(),
       'reply_to'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'email_from'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_forced'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
@@ -25,7 +24,6 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'category_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('category'), 'column' => 'id')),
-      'unique_name' => new sfValidatorPass(array('required' => false)),
       'reply_to'    => new sfValidatorPass(array('required' => false)),
       'email_from'  => new sfValidatorPass(array('required' => false)),
       'is_forced'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
@@ -53,7 +51,6 @@ abstract class BasenewsletterFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'          => 'Number',
       'category_id' => 'ForeignKey',
-      'unique_name' => 'Text',
       'reply_to'    => 'Text',
       'email_from'  => 'Text',
       'is_forced'   => 'Boolean',

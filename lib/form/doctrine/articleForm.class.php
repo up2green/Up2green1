@@ -16,7 +16,7 @@ class articleForm extends BasearticleForm
 			$this['created_at'],
 			$this['updated_at']
 		);
-
+		
 		$this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(array(
 			'label' => 'Logo',
 			'file_src'  => '/uploads/article/'.$this->getObject()->getLogo(),
@@ -44,7 +44,6 @@ class articleForm extends BasearticleForm
 		));
 
 		$this->languages = sfConfig::get('app_cultures_enabled');
-
 		$langs = array_keys($this->languages);
 
 		$this->embedI18n($langs);

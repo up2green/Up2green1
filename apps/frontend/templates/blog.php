@@ -9,7 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php include_partial('blog/menuSocial'); ?>
+    <?php /* include_partial('blog/menuSocial'); */ ?>
 
     <div class="top_bar">
       <div id="deja_planter"><?php echo image_tag("icons/mini-tree_30x30.png"); ?><a href="">Deja 6543 arbres plantés ensemble</a></div>

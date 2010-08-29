@@ -68,15 +68,6 @@ newsletter:
     column:               id
     with_wildcard_routes: true
 
-categorie:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Category
-    module:               category
-    prefix_path:          /category
-    column:               id
-    with_wildcard_routes: true
-
 article:
   class: sfDoctrineRouteCollection
   options:

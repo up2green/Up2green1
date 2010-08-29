@@ -4,18 +4,8 @@
 ?>
 <div class="module">
   <div class="cartouche">
-    <div class="content">
-      <p class="title_blog">Blog Foret</p>
-    </div>
-    <span class="border bt"></span>
-    <span class="border bb"></span>
-    <span class="border bl"></span>
-    <span class="border br"></span>
-    <!-- corners -->
-    <span class="corner ctl"></span>
-    <span class="corner ctr"></span>
-    <span class="corner cbl"></span>
-    <span class="corner cbr"></span>
+    <div class="content"><p class="title_blog">Blog Foret</p></div>
+    <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
   <div class="content blocContent">
     <div class="blocObjects">

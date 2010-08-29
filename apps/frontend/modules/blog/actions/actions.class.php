@@ -55,15 +55,9 @@ class blogActions extends sfActions {
   */
   public function executeViewList(sfWebRequest $request) {
   	$this->type = $request->getParameter('type');
-    $this->elements = Doctrine::getTable(ucfirst($this->type))->getActiveByLang($this->getUser()->getCulture());
-  }
-
- /**
-  * Executes viewProgramme action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeViewProgramme(sfWebRequest $request) {
-    $this->programme = Doctrine::getTable('Programme')->retrieveBySlug($request->getParameter("slug"));
+  	if($this->type == 'organisme')
+    	$this->elements = Doctrine::getTable(ucfirst($this->type))->getByLang($this->getUser()->getCulture());
+    else
+    	$this->elements = Doctrine::getTable(ucfirst($this->type))->getActiveByLang($this->getUser()->getCulture());
   }
 }

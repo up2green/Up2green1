@@ -113,6 +113,13 @@ lien:
     rank: '4'
     created_at: '2010-08-29 09:27:10'
     updated_at: '2010-08-29 09:27:10'
+  lien_9:
+    category: category_2
+    src: /article/la-biodiversite
+    is_active: true
+    rank: '5'
+    created_at: '2010-08-29 17:55:50'
+    updated_at: '2010-08-29 17:55:50'
 sfGuardUser:
   sfGuardUser_1:
     first_name: null
@@ -124,9 +131,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-08-29 16:53:29'
+    last_login: '2010-08-29 19:38:49'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-08-29 16:53:29'
+    updated_at: '2010-08-29 19:38:49'
 article:
   article_1:
     logo: null
@@ -185,6 +192,12 @@ article:
     is_active: true
     created_at: '2010-08-29 12:23:07'
     updated_at: '2010-08-29 12:23:07'
+  article_12:
+    Category: category_2
+    logo: null
+    is_active: true
+    created_at: '2010-08-29 17:32:21'
+    updated_at: '2010-08-29 17:32:21'
 organisme:
   organisme_1:
     url: 'http://www.planete-urgence.org/'
@@ -427,6 +440,11 @@ lienTranslation:
     title: Accueil
     lang: fr
     slug: accueil
+  lienTranslation_9_en:
+    lien: lien_9
+    title: Biodiversity
+    lang: en
+    slug: biodiversity
   lienTranslation_3_en:
     lien: lien_3
     title: Blog
@@ -467,6 +485,11 @@ lienTranslation:
     title: Home
     lang: en
     slug: home
+  lienTranslation_9_fr:
+    lien: lien_9
+    title: 'La Biodiversité'
+    lang: fr
+    slug: la-biodiversite
   lienTranslation_3_fr:
     lien: lien_3
     title: 'Le Blog'
@@ -657,6 +680,20 @@ articleTranslation:
     description: "<p>\r\n	<span style=\"color: rgb(0, 128, 0);\"><strong>L&rsquo;Office National des F&ocirc;rets (ONF) :</strong></span></p>\r\n<p>\r\n	L&#39;ONF g&egrave;re directement pour le compte de l&#39;Etat et des Collectivit&eacute;s Locales plus de 12 millions d&#39;hectares de for&ecirc;ts et d&#39;espaces naturels d&#39;une grande diversit&eacute;. L&#39;Etat a confi&eacute; &agrave; l&#39;Office quatre grandes missions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral et qui le place parmi les acteurs incontournables du D&eacute;veloppement Durable :</p>\r\n<p>\r\n	&bull; La protection - du territoire par la gestion des risques naturels - de la for&ecirc;t par la cr&eacute;ation de r&eacute;serves naturelles et biologique;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La production en conjugant les exigences &eacute;conomiques, &eacute;cologiques et sociales;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L&#39;accueil du public par les am&eacute;nagements, l&#39;information et la sensibilisation &agrave; l&#39;environnement;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L&#39;activit&eacute; de &quot;partenaire naturel&quot; au service de tous les responsables de milieux naturels (au plan national et international)</p>\r\n<p>\r\n	L&#39;ONF intervient sur la dynamique d&#39;&eacute;volution des milieux pour :</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assurer le renouvellement des peuplements forestiers;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maintenir la biodiversit&eacute;;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Favoriser la restauration d&#39;un &eacute;quilibre quand il est d&eacute;grad&eacute;;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limiter certaines dynamiques d&#39;&eacute;volutions;</p>\r\n<p>\r\n	&bull;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minimiser les impacts n&eacute;gatifs sur les milieux;</p>\r\n<p>\r\n	Pour plus d&rsquo;informations, nous vous invitons &agrave; visiter le site de notre partenaire : www.onf.fr</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"color: rgb(0, 128, 0);\"><strong>Plan&egrave;te-Urgence :</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Plan&egrave;te Urgence est une association en pleine croissance, particuli&egrave;rement innovante, active, utile et efficace pour former les Hommes et prot&eacute;ger la Nature.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ainsi, elle permet &agrave; tous de partir en cong&eacute; solidaire au Sud. Les volontaires b&eacute;n&eacute;voles partent en mission d&#39;appui &agrave; des initiatives.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Son objectif est de favoriser les initiatives des citoyens du Sud, de leur transmettre des savoir-faire; pas de se substituer &agrave; eux. Qu&rsquo;il s&rsquo;agisse de missions de formation, de soutien ou de renforcement des capacit&eacute;s, ses partenaires du Sud d&eacute;finissent eux-m&ecirc;mes les besoins et les objectifs auxquels Plan&egrave;te-Urgence cherche &agrave; r&eacute;pondre.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Via ses packs de reforestation, cette association permet de compenser ses &eacute;missions de CO2.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Pour plus d&rsquo;informations, nous vous invitons &agrave; visiter le site de notre partenaire : www.planete-urgence.org<span _fck_bookmark=\"1\" style=\"display: none;\">&nbsp;<span _fck_bookmark=\"1\" style=\"display: none;\">&nbsp;</span></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"color: rgb(0, 128, 0);\"><strong>Trees For the Future :</strong></span></p>\r\n<p>\r\n	<span _fck_bookmark=\"1\" style=\"display: none;\">&nbsp;</span><span _fck_bookmark=\"1\" style=\"display: none;\">&nbsp;</span></p>\r\n<p>\r\n	Trees For the Future est une ONG am&eacute;ricaine qui m&egrave;ne des actions concr&egrave;tes sur le terrain dans le domaine de l&#39;agro-foresterie.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Par le biais de la distribution des semences, de cr&eacute;ation de p&eacute;pini&egrave;res, d&#39;encadrement et de formation &agrave; l&#39;agroforesterie et &agrave; la gestion durable des for&ecirc;ts, TFT contribue depuis 1989 &agrave; prot&eacute;ger l&#39;environnement et &agrave; pr&eacute;server les moyens de subsistance traditionnels des populations locales.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ainsi, TFT fournit des connaissances techniques sur l&#39;agroforesterie et le d&eacute;veloppement durable, ainsi que du mat&eacute;riel de plantation, afin que les collectivit&eacute;s puissent r&eacute;habiliter leurs terres souvent d&eacute;grad&eacute;es et promouvoir une production durable.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Pour plus d&rsquo;informations, nous vous invitons &agrave; visiter le site de notre partenaire (en anglais ou espagnol) : www.treesftf.org</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"color: rgb(0, 128, 0);\"><strong>Eco-Kyoto : </strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	La fondation Eco-Kyoto/Guin&eacute;ea &eacute;t&eacute; cr&eacute;&eacute;e en 2007 en Guin&eacute;e Conakry &agrave; l&rsquo;image de la Fondation Eco-Kyoto Canada qui a pour mission principale d&rsquo;accompagner des diff&eacute;rents intervenants environnementaux pour l&rsquo;attente des objectifs du &laquo;&nbsp;Protocole de Kyoto&nbsp;&raquo;.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Elle intervient dans les domaines ci-apr&egrave;s&nbsp;:</p>\r\n<p>\r\n	&eacute;tudes d&rsquo;incidence environnementale (am&eacute;nagement du territoire- urbanisme-&nbsp;gestion des d&eacute;chets&nbsp;- gestion de l&rsquo;eau)- Conseils en environnement (Eco-audits- expertises de terrain sur le plan environnemental)- Gestion de projets d&rsquo;assainissements-G&eacute;otechnique (&eacute;tudes de sol, ing&eacute;nierie)&nbsp;- Implantation d&rsquo;Eco-village&nbsp;- Education &agrave; l&rsquo;environnement- Traitements des eaux et des sols&nbsp;-R&eacute;habilitation des sites miniers&nbsp;- Reboisement&nbsp;&ndash; Industrie ( manufacturi&egrave;res &ndash; mini&egrave;res &ndash; chimiques)- Energies- renouvelables &ndash; Eco/ tourismes &ndash; agriculture durable.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	C&rsquo;est dans cette perspective que la fondation ECO-KYOTO a initi&eacute; le projet intitul&eacute; &quot;Reboisement&nbsp;d&#39;un million d&rsquo;arbres dans les 16 pr&eacute;fectures des r&eacute;gions de Haute et Basse Guin&eacute;e en 2009/2010&quot;</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Pour plus d&rsquo;informations, nous vous invitons &agrave; visiter le site de notre partenaire : www.fondationecokyoto.org</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<span style=\"color: rgb(0, 128, 0);\"><strong>CALA : </strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Le Comit&eacute; d&rsquo;Aide aux L&eacute;preux d&rsquo;Antalaha a &eacute;t&eacute; cr&eacute;&eacute; en 1988, afin d&rsquo;intervenir dans deux villages situ&eacute;s aux alentours d&rsquo;Antalaha (nord-est malgache).</p>\r\n<p>\r\n	Les habitants de ces villages, maintenant gu&eacute;ris de la l&egrave;pre, ne peuvent revenir dans leurs villages natals car ils sont d&eacute;laiss&eacute;s tant par la communaut&eacute; ainsi que par les autorit&eacute;s locales.</p>\r\n<p>\r\n	Les personnes les ayant soign&eacute;s ont donc d&eacute;cid&eacute; de cr&eacute;er une association pour les aider &agrave; se r&eacute;ins&eacute;rer socialement et &eacute;conomiquement dans la soci&eacute;t&eacute;.</p>\r\n<p>\r\n	CALA a pour but :</p>\r\n<p>\r\n	- de rendre leur dignit&eacute; aux anciens malades</p>\r\n<p>\r\n	- de les aider &agrave; se nourrir, se v&ecirc;tir et se loger</p>\r\n<p>\r\n	- de les aider &agrave; avoir un revenu les rendant ind&eacute;pendants</p>\r\n<p>\r\n	- de les &eacute;duquer, ainsi que leurs enfants, entre autres pour l&rsquo;&eacute;ducation sanitaire.</p>\r\n<p>\r\n	- de rentabiliser les propri&eacute;t&eacute;s occup&eacute;es en cr&eacute;ant des p&eacute;pini&egrave;res d&rsquo;arbres vivriers.</p>\r\n<p>\r\n	L&#39;Ecole Verte - l&#39;agroforesterie pour cr&eacute;er une activit&eacute; &eacute;conomique viable et p&eacute;renne : aider les jeunes &agrave; se prendre en main et &agrave; acqu&eacute;rir une formation d&rsquo;avenir. C&rsquo;est l&agrave; l&rsquo;objet de l&rsquo;&eacute;cole verte : former les jeunes adolescents &agrave; la culture des plants d&rsquo;arbres. R&eacute;colter les graines en for&ecirc;t, les faire germer, les mettre en semis, puis en plants et les commercialiser. Cela concerne autant le bois de chauffage que les bois pr&eacute;cieux (&eacute;b&egrave;ne, bois de rose, palissandre) dont le commerce fortement r&eacute;glement&eacute; induit toute sorte de trafic. D&eacute;j&agrave; plusieurs dizaines de milliers de plants sont disponibles et mis &agrave; la vente ou plant&eacute;s dans une serre tropicale &agrave; ciel ouvert.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Pour plus d&rsquo;informations, nous vous invitons &agrave; visiter le site de notre partenaire : http://cala-france.asso-web.com</p>\r\n"
     lang: fr
     slug: nos-partenaires-planteurs
+  articleTranslation_12_en:
+    article: article_12
+    title: Biodiversity
+    accroche: ''
+    description: ''
+    lang: en
+    slug: biodiversity
+  articleTranslation_12_fr:
+    article: article_12
+    title: 'La Biodiversité'
+    accroche: "<br />\r\n"
+    description: "<p>\r\n	Les for&ecirc;ts tropicales sont les plus grands r&eacute;servoirs de biodiversit&eacute; de notre plan&egrave;te.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ce sont des &eacute;cosyst&egrave;mes extr&ecirc;mement riches et complexes dont l&rsquo;&eacute;quilibre est menac&eacute;. Au fil des ann&eacute;es l&rsquo;homme a souvent exploit&eacute; la nature pour ses richesses sans se pr&eacute;occuper de sa capacit&eacute; &agrave; se r&eacute;g&eacute;n&eacute;rer pleinement</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Les agrofor&ecirc;ts sont des contre- exemples de ce constat. L&rsquo;association complexe des esp&egrave;ces &agrave; valeur alimentaire, m&eacute;dicinale et cosm&eacute;tique au sein de leur milieu forestier permettent &agrave; ceux qui les mettent en place de subvenir &agrave; leurs besoins tout en respectant les fonctions &eacute;cologiques de la for&ecirc;t et du paysage.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ces agrofor&ecirc;ts sont le moyen parfait de d&eacute;velopper des esp&egrave;ces locales et de lutter contre les syst&egrave;mes de monoculture mangeurs d&rsquo;espaces naturels et d&rsquo;intrants n&eacute;fastes pour l&rsquo;environnement.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Dans les programmes qu&rsquo;elle co-d&eacute;veloppe sur le terrain, UP2GREEN REFORESTATION veut donc cr&eacute;er des mod&egrave;les agroforestiers productifs o&ugrave; la biodiversit&eacute; locale est pr&eacute;serv&eacute;e et enrichie.</p>\r\n"
+    lang: fr
+    slug: la-biodiversite
 organismeTranslation:
   organismeTranslation_1_en:
     organisme: organisme_1

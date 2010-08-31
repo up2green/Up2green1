@@ -28,7 +28,7 @@ class category extends Basecategory
   	$output = array($this['level'] => $this['unique_name']);
   	if($this['level'] > 0)
   	{
-  		for($i=0; $i<$this['level']; $i++)
+  		for($i=0; $i<=$this['level']; $i++)
   		{
   			$q = Doctrine_Query::create()
 					->from('category c')
@@ -42,7 +42,8 @@ class category extends Basecategory
 				}
 			}
 		}
-  	
+		
+		ksort($output);  	
     return join(' -> ', $output);
   }
   
@@ -50,7 +51,9 @@ class category extends Basecategory
 	{
 		$q = Doctrine_Query::create()
 			->from('category c')
-			->where('c.root_id = ?', $this->getId());
+			->where('c.root_id = ?', $this->getRootId())
+			->andWhere('c.level = ?', $this->getLevel() + 1)
+			->andWhere('c.lft > ?', $this->getLft());
 		
 		return Doctrine_Core::getTable('category')->getActive($q);
 	}

@@ -52,7 +52,7 @@ class organismeTable extends Doctrine_Table
     
 	public function addQuery(Doctrine_Query $q = null)
 	{
-		if (is_null($q)) {$q = Doctrine_Query::create()->from('organisme o');}
+		if (is_null($q)) {$q = $this->createQuery('o');}
 		
 		$alias = $q->getRootAlias();
 		$q->addOrderBy($alias . '.created_at DESC');
@@ -62,6 +62,6 @@ class organismeTable extends Doctrine_Table
 	
 	public static function getInstance()
 	{
-		return Doctrine_Core::getTable('organisme');
+		return Doctrine_Core::getTable('Organisme');
 	}
 }

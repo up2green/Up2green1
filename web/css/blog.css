@@ -78,8 +78,7 @@ body {
 }
 
 #main-menu {
-	margin:15px 0;
-	text-align:center;
+	margin-top:15px;
 	width:1000px;
 }
 
@@ -103,7 +102,7 @@ body {
 		color:#eee;
 		font-weight:bold;
 		display:block;
-		padding:5px 8px;
+		padding:5px 0;
 		text-decoration:none;
 		text-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
 	}
@@ -125,7 +124,7 @@ body {
 	#main-menu ul ul {
 		border:0 none;
 		height:100%;
-		list-style-type:none;
+		list-style-image:url("../images/icons/puce.png");
 		margin:0;
 		padding:0;
 		width:auto;
@@ -134,7 +133,7 @@ body {
 	#main-menu ul ul li {
 		border:0 none;
 		float:none;
-		margin:0;
+		margin-left:20px;
 		padding:0;
 		width:auto;
 	}
@@ -219,6 +218,13 @@ body {
 .diaporama .diapo img{
 	max-height: 160px;
   max-width: 290px;
+}
+
+#bg_corps div.module.programme_bloc img {
+	float:left;
+	max-height:80px;
+	max-width:145px;
+	padding-right:5px;
 }
 
 .dpm_image {

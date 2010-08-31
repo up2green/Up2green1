@@ -372,6 +372,10 @@ category:
     unique_name:
       type: string(30)
       unique: true
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 1
     is_active:
       type: boolean
       default: 1

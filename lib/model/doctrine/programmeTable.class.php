@@ -13,11 +13,12 @@ class programmeTable extends Doctrine_Table
    */
   protected function buildQueryForRetrieveLastProgrammes($culture, $number = 2, $offset = 0) {
     $q = $this->createQuery('p')
-              ->leftJoin('p.Translation t')
-              ->where('t.lang = ?', $culture)
-              ->orderBy('p.created_at DESC')
-              ->limit($number)
-              ->offset($offset);
+			->leftJoin('p.Translation t')
+			->where('t.lang = ?', $culture)
+			->andWhere('p.is_active = ?', 1)
+			->orderBy('p.created_at DESC')
+			->limit($number)
+			->offset($offset);
     return $q;
   }
 
@@ -53,8 +54,9 @@ class programmeTable extends Doctrine_Table
    */
   public function retrieveBySlug($slug) {
     $q = $this->createQuery('p')
-              ->leftJoin('p.Translation t')
-              ->andWhere('t.slug = ?', $slug);
+    	->where('p.is_active = ?', 1)
+			->leftJoin('p.Translation t')
+			->andWhere('t.slug = ?', $slug);
 
     return $this->getOne($q);
   }
@@ -120,7 +122,7 @@ class programmeTable extends Doctrine_Table
     
 	public function addQuery(Doctrine_Query $q = null)
 	{
-		if (is_null($q)) {$q = Doctrine_Query::create()->from('programme p');}
+		if (is_null($q)) {$q = $this->createQuery('p');}
 		
 		$alias = $q->getRootAlias();
 		$q->addOrderBy($alias . '.created_at DESC');

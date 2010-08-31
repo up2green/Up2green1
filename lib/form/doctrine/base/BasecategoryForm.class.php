@@ -17,6 +17,7 @@ abstract class BasecategoryForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'unique_name' => new sfWidgetFormInputText(),
+      'rank'        => new sfWidgetFormInputText(),
       'is_active'   => new sfWidgetFormInputCheckbox(),
       'root_id'     => new sfWidgetFormInputText(),
       'lft'         => new sfWidgetFormInputText(),
@@ -27,6 +28,7 @@ abstract class BasecategoryForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'unique_name' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
+      'rank'        => new sfValidatorInteger(array('required' => false)),
       'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'root_id'     => new sfValidatorInteger(array('required' => false)),
       'lft'         => new sfValidatorInteger(array('required' => false)),

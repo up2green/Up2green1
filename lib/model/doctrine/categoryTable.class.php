@@ -11,6 +11,15 @@ class categoryTable extends Doctrine_Table
 		return $this->getOneActive($q);
 	}
 	
+	public function getArrayByName($name)
+	{
+		$q = Doctrine_Query::create()
+			->from('category c')
+			->where('c.unique_name = ?', $name);
+			
+		return $this->getArrayActive($q);
+	}
+	
 	public function countActive(Doctrine_Query $q = null)
 	{
 		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->count();
@@ -21,6 +30,10 @@ class categoryTable extends Doctrine_Table
 		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchOne();
 	}
 
+	public function getArrayActive(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchArray();
+	}
 
 	public function getActive(Doctrine_Query $q = null)
 	{
@@ -37,6 +50,10 @@ class categoryTable extends Doctrine_Table
 		return $this->addQuery($q)->fetchOne();
 	}
 
+	public function getArray(Doctrine_Query $q = null)
+	{
+		return $this->addQuery($q)->fetchArray();
+	}
 
 	public function get(Doctrine_Query $q = null)
 	{

@@ -22,21 +22,30 @@ $(document).ready(function(){
   // Chargement des éléments précédents / suivants en AJAX
   $('a.loadFromUri').click(function() {
     var self = $(this);
-    var content = self.parents('div.blocContent');
-    var objects = content.children('div.blocObjects')
-    // Récupération des éléments voulus en AJAX
-    $.ajax({
-      url: $(this).attr('href'),
-      success: function(data) {
-        objects.fadeOut(500, function(){
-        	$(this).empty().append(data).fadeIn(500, function(){
-        		// Mise à jour des boutons de navigations précédents / suivants
-				$('a.prevResults', content).attr('href', $('span.prevResultsUrl', objects).text());
-				$('a.nextResults', content).attr('href', $('span.nextResultsUrl', objects).text());
-        	});
-        });
-      }
-    });
+    if(!(self.attr("disabled") == "disabled"))
+    {
+			self.attr("disabled", "disabled");
+			var content = self.parents('div.blocContent');
+			var objects = content.children('div.blocObjects')
+			// Récupération des éléments voulus en AJAX
+			$.ajax({
+				url: $(this).attr('href'),
+				success: function(data) {
+					if(data != '')
+						objects.fadeOut(500, function(){
+							$(this).empty().append(data).fadeIn(500, function(){
+								// Mise à jour des boutons de navigations précédents / suivants
+								$('a.prevResults', content).attr('href', $('span.prevResultsUrl', objects).text());
+								$('a.nextResults', content).attr('href', $('span.nextResultsUrl', objects).text());
+								self.removeAttr("disabled");
+							});
+						});
+					else
+						self.removeAttr("disabled");
+				}
+			});
+			
+		}
     return false;
   });
   

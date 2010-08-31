@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property string $unique_name
+ * @property integer $rank
  * @property boolean $is_active
  * @property Doctrine_Collection $Articles
  * @property Doctrine_Collection $Newsletters
@@ -14,12 +15,14 @@
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getUniqueName()  Returns the current record's "unique_name" value
+ * @method integer             getRank()        Returns the current record's "rank" value
  * @method boolean             getIsActive()    Returns the current record's "is_active" value
  * @method Doctrine_Collection getArticles()    Returns the current record's "Articles" collection
  * @method Doctrine_Collection getNewsletters() Returns the current record's "Newsletters" collection
  * @method Doctrine_Collection getLiens()       Returns the current record's "Liens" collection
  * @method category            setId()          Sets the current record's "id" value
  * @method category            setUniqueName()  Sets the current record's "unique_name" value
+ * @method category            setRank()        Sets the current record's "rank" value
  * @method category            setIsActive()    Sets the current record's "is_active" value
  * @method category            setArticles()    Sets the current record's "Articles" collection
  * @method category            setNewsletters() Sets the current record's "Newsletters" collection
@@ -45,6 +48,12 @@ abstract class Basecategory extends sfDoctrineRecord
              'type' => 'string',
              'unique' => true,
              'length' => 30,
+             ));
+        $this->hasColumn('rank', 'integer', 4, array(
+             'type' => 'integer',
+             'notnull' => true,
+             'default' => 1,
+             'length' => 4,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',

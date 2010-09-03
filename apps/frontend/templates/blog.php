@@ -37,8 +37,8 @@
             </div>
 
             <div class="clear"></div>
-            <?php include_component('blog', 'footer'); ?>
-            <div class="clear"></div>
+            <?php /* include_component('blog', 'footer'); */ ?>
+            <!-- <div class="clear"></div> -->
             <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
           </div>
         </div>

@@ -14,6 +14,7 @@ abstract class BasecategoryFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'unique_name' => new sfWidgetFormFilterInput(),
+      'rank'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'root_id'     => new sfWidgetFormFilterInput(),
       'lft'         => new sfWidgetFormFilterInput(),
@@ -23,6 +24,7 @@ abstract class BasecategoryFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'unique_name' => new sfValidatorPass(array('required' => false)),
+      'rank'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'root_id'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'lft'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -49,6 +51,7 @@ abstract class BasecategoryFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'          => 'Number',
       'unique_name' => 'Text',
+      'rank'        => 'Number',
       'is_active'   => 'Boolean',
       'root_id'     => 'Number',
       'lft'         => 'Number',

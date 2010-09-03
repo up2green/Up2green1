@@ -24,13 +24,24 @@ class blogComponents extends sfComponents {
   public function executeProgrammesBloc(sfWebRequest $request) {
     // Récupération des programmes
     $currentOffset = $request->getParameter('programmesOffset', 0);
-    $this->offsets = $this->retrieveProgrammesOffsets($currentOffset);
-
-    // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
-    if($request->isXmlHttpRequest())
-      $this->noBloc = true;
     
-    $this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
+    //fix temporaire et permet de pas avoir 2 foios le même programme en homepage
+    if(!$request->isXmlHttpRequest() && empty($currentOffset))
+    	$currentOffset = 1;
+    
+    if(!in_array($currentOffset, array('min', 'max')))
+    {
+			$this->offsets = $this->retrieveProgrammesOffsets($currentOffset);
+			$this->offsets['next'] = $currentOffset == $this->offsets['next'] ? 'max' : $this->offsets['next']; 
+			$this->offsets['prev'] = $currentOffset == $this->offsets['prev'] ? 'min' : $this->offsets['prev']; 
+			// On n'affiche pas le bloc s'il s'agit d'une requête AJAX
+			if($request->isXmlHttpRequest())
+				$this->noBloc = true;
+			
+			$this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
+		}
+		elseif($request->isXmlHttpRequest())
+			die();
   }
 
   public function executePartenairesBloc(sfWebRequest $request) {
@@ -65,7 +76,20 @@ class blogComponents extends sfComponents {
 
   public function executeMenu(sfWebRequest $request) {
     // Récupération du menu-top dynamique
-    $this->category = Doctrine::getTable('Category')->getByName('main-menu');
+    $this->elements = array();
+    $main_category = Doctrine::getTable('Category')->getByName('main-menu');
+    
+    foreach($main_category->getActiveLinks() as $link)
+    	$this->elements[$link->getRank()] = array(
+    		'classname'	=> 'link',
+    		'object'		=> $link
+    	);
+    foreach($main_category->getActiveSubs() as $category)
+    	$this->elements[$category->getRank()] = array(
+    		'classname'	=> 'category',
+    		'object'		=> $category
+    	);
+    	
     $this->programms = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')->getActiveByLang($this->getUser()->getCulture());
   }
 
@@ -80,11 +104,11 @@ class blogComponents extends sfComponents {
   }
 
   protected function retrieveArticlesOffsets($offset) {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_articles_max'), Doctrine::getTable('Article')->count());
+    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_articles_max'), Doctrine::getTable('Article')->countActive());
   }
 
   protected function retrieveProgrammesOffsets($offset) {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_programmes_max'), Doctrine::getTable('Programme')->count());
+    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_programmes_max'), Doctrine::getTable('Programme')->countActive());
   }
 
   protected function retrievePartenairesOffsets($offset, $max) {

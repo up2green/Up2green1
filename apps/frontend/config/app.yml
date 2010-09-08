@@ -12,6 +12,7 @@ all:
       association.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSMxWziwZE0q5SnpdAzKN5C-SSmrxS8dKQfEWEuPSWPs2UKNN22RNPvPg
       reforestation.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxQlX5wtyYlsmBkElzWwNgT2s-GV5RTN5lj5AWZsN-OSo8hSur9dgaJ8LQ
       www.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSbkBb7lgVQWtlidns83ZgJO2fpbxT3-uEu-iZpJj4ZKSDBtjy1G1BJcw
+      green.loc: ABQIAAAAsFmetP8aGnqh9wKD7eV4aBSEaGoR3YvicAoDO3yJREyjCR7ArxQYNaiEAo53O2eaWhD_R2QsJh9Cgg
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/
     up2green:

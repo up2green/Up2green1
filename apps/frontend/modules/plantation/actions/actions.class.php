@@ -18,5 +18,11 @@ class plantationActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $params = $request->getParameterHolder();
+    $this->partenaire = null;
+    if ($this->getUser()->isAuthenticated()) {
+        $user = $this->getUser()->getGuardUser();
+        $this->partenaire = $user->getPartenaire();
+    }
+
   }
 }

@@ -112,7 +112,7 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'local' => 'organisme_id',
              'foreign' => 'id'));
 
-        $this->hasMany('treeProgramme as Trees', array(
+        $this->hasMany('tree as Trees', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 

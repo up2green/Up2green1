@@ -56,7 +56,6 @@ class SearchEngine {
 //        die($url);
         $dom = new DomDocument();
         $dom->load($url);
-        $dom->save("test.xml");
         foreach ($dom->getElementsByTagName("result") as $result){
             $this->search_results[] = array(
                 'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
@@ -79,7 +78,6 @@ class SearchEngine {
 //        die($url);
         $dom = new DomDocument();
         $dom->load($url);
-        $dom->save("test.xml");
         foreach ($dom->getElementsByTagName("result") as $result){
             $this->search_results[] = array(
                 'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
@@ -101,7 +99,6 @@ class SearchEngine {
 //        die($url);
         $dom = new DomDocument();
         $dom->load($url);
-        $dom->save("test.xml");
         foreach ($dom->getElementsByTagName("result") as $result){
             $this->search_results[] = array(
                 'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,

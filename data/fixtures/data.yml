@@ -1,3 +1,60 @@
+couponGen:
+  couponGen_1:
+    prix: '13.30'
+    credit: '10'
+    created_at: '2010-09-08 12:31:12'
+    updated_at: '2010-09-08 12:31:12'
+  couponGen_2:
+    prix: '7.56'
+    credit: '5'
+    created_at: '2010-09-08 12:41:50'
+    updated_at: '2010-09-08 12:41:50'
+  couponGen_3:
+    prix: '3.50'
+    credit: '1'
+    created_at: '2010-09-08 12:42:05'
+    updated_at: '2010-09-08 12:42:05'
+category:
+  category_1:
+    unique_name: blog
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '1'
+    rgt: '10'
+    level: '0'
+  category_2:
+    unique_name: main-menu
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '6'
+    rgt: '9'
+    level: '1'
+  category_3:
+    unique_name: footer
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '4'
+    rgt: '5'
+    level: '1'
+  category_4:
+    unique_name: footer-legal
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '2'
+    rgt: '3'
+    level: '1'
+  category_5:
+    unique_name: association
+    rank: '2'
+    is_active: false
+    root_id: '6'
+    lft: '7'
+    rgt: '8'
+    level: '2'
 organisme:
   organisme_1:
     url: 'http://www.planete-urgence.org/'
@@ -39,35 +96,77 @@ organisme:
     logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
     created_at: '2010-08-28 16:56:24'
     updated_at: '2010-08-28 16:56:24'
-newsletter:
-  newsletter_1:
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:35'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_2:
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_3:
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_4:
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: webmaster@smartit.fr
+    username: admin
+    algorithm: sha1
+    salt: 555754a8ea338d568537ad244d1f72cf
+    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
+    is_active: true
+    is_super_admin: true
+    last_login: '2010-09-08 12:29:47'
+    created_at: '2010-08-28 12:40:14'
+    updated_at: '2010-09-08 12:29:47'
+  sfGuardUser_2:
+    first_name: toto
+    last_name: toto
+    email_address: toto@toto.com
+    username: toto
+    algorithm: sha1
+    salt: 79c83a797fef66dbec666e9a17006ccb
+    password: 7385a72827a21a66df11cbd26be1f2a1c61ee8f3
+    is_active: true
+    is_super_admin: false
+    last_login: '2010-09-06 15:11:01'
+    created_at: '2010-09-06 11:33:53'
+    updated_at: '2010-09-06 15:11:01'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: administrateur
+    description: ''
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+sfGuardRememberKey:
+  sfGuardRememberKey_1:
+    User: sfGuardUser_1
+    remember_key: 8zljb7jax90c4wggso4wgwgsc0w08s8
+    ip_address: 127.0.0.1
+    created_at: '2010-09-08 12:29:47'
+    updated_at: '2010-09-08 12:29:47'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: acces_administration
+    description: 'Accès à l''administration'
+    created_at: '2010-09-06 11:28:52'
+    updated_at: '2010-09-06 11:28:52'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+couponPartenaire:
+  couponPartenaire_1_1:
+    coupon: coupon_1
+    partenaire_id: '1'
+partenaire:
+  partenaire_1:
+    User: sfGuardUser_2
+    title: 'Partenaire test'
+    accroche: 'accroche test'
+    description: 'description test'
+    url: 'http://url.com/'
+    created_at: '2010-09-06 11:35:34'
+    updated_at: '2010-09-06 11:35:34'
 programme:
   programme_1:
     geoadress: null
@@ -214,6 +313,35 @@ programme:
     logo: 2209d6cd8d86b2027fb5e3044556e06f74e4e43f.jpg
     created_at: '2010-08-28 18:03:15'
     updated_at: '2010-08-28 18:03:15'
+newsletter:
+  newsletter_1:
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:35'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_2:
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_3:
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
+  newsletter_4:
+    reply_to: noreply@up2green.com
+    email_from: newsletter@up2green.com
+    is_forced: false
+    sent_at: null
+    created_at: '2010-06-26 18:27:36'
+    updated_at: '2010-06-26 18:27:36'
 lien:
   lien_1:
     category: category_2
@@ -306,6 +434,15 @@ lien:
     rank: '5'
     created_at: '2010-08-31 23:25:09'
     updated_at: '2010-08-31 23:25:36'
+coupon:
+  coupon_1:
+    couponGen: couponGen_1
+    code: AZERTY
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
 article:
   article_1:
     logo: null
@@ -370,61 +507,6 @@ article:
     is_active: true
     created_at: '2010-08-29 17:32:21'
     updated_at: '2010-08-29 17:32:21'
-sfGuardUser:
-  sfGuardUser_1:
-    first_name: null
-    last_name: null
-    email_address: webmaster@smartit.fr
-    username: admin
-    algorithm: sha1
-    salt: 555754a8ea338d568537ad244d1f72cf
-    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
-    is_active: true
-    is_super_admin: true
-    last_login: '2010-08-31 23:19:43'
-    created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-08-31 23:19:43'
-category:
-  category_1:
-    unique_name: blog
-    rank: '1'
-    is_active: true
-    root_id: '6'
-    lft: '1'
-    rgt: '10'
-    level: '0'
-  category_2:
-    unique_name: main-menu
-    rank: '1'
-    is_active: true
-    root_id: '6'
-    lft: '6'
-    rgt: '9'
-    level: '1'
-  category_3:
-    unique_name: footer
-    rank: '1'
-    is_active: true
-    root_id: '6'
-    lft: '4'
-    rgt: '5'
-    level: '1'
-  category_4:
-    unique_name: footer-legal
-    rank: '1'
-    is_active: true
-    root_id: '6'
-    lft: '2'
-    rgt: '3'
-    level: '1'
-  category_5:
-    unique_name: association
-    rank: '2'
-    is_active: false
-    root_id: '6'
-    lft: '7'
-    rgt: '8'
-    level: '2'
 organismeTranslation:
   organismeTranslation_1_en:
     organisme: organisme_1
@@ -538,55 +620,6 @@ organismeTranslation:
     description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
     lang: fr
     slug: up2green
-newsletterTranslation:
-  newsletterTranslation_1_en:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'Please modify'
-    lang: en
-    slug: inscription
-  newsletterTranslation_1_fr:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'A modifier'
-    lang: fr
-    slug: inscription
-  newsletterTranslation_2_en:
-    newsletter: newsletter_2
-    title: welcome
-    content: 'Please modify'
-    lang: en
-    slug: welcome
-  newsletterTranslation_2_fr:
-    newsletter: newsletter_2
-    title: Bienvenu
-    content: 'A modifier'
-    lang: fr
-    slug: bienvenu
-  newsletterTranslation_3_en:
-    newsletter: newsletter_3
-    title: 'new password'
-    content: modify
-    lang: en
-    slug: new-password
-  newsletterTranslation_3_fr:
-    newsletter: newsletter_3
-    title: 'nouveau mot de passe'
-    content: 'a modifier'
-    lang: fr
-    slug: nouveau-mot-de-passe
-  newsletterTranslation_4_en:
-    newsletter: newsletter_4
-    title: change
-    content: modify
-    lang: en
-    slug: change
-  newsletterTranslation_4_fr:
-    newsletter: newsletter_4
-    title: changement
-    content: modifier
-    lang: fr
-    slug: changement
 programmeTranslation:
   programmeTranslation_1_en:
     programme: programme_1
@@ -812,6 +845,55 @@ programmeTranslation:
     description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: conservation des modes de vie indig&egrave;nes, d&eacute;veloppement de l&rsquo;agroforesterie et de l&rsquo;&eacute;cotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: D&eacute;partement de l&rsquo;Amazonas, P&eacute;riph&eacute;rie de Leticia, Communaut&eacute; San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: 30 familles au total&nbsp;, communaut&eacute; de San Pedro de los Lagos, Communaut&eacute; du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: D&eacute;veloppement de pratiques agroforesti&egrave;res en Amazonie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Responsable du projet. Sensibilisation et formation des habitants de communaut&eacute;s. Mise en place de p&eacute;pini&egrave;res familiales pour la plantation de 15&nbsp;000 arbres en 2011.</p>\r\n<p>\r\n	&nbsp;L&rsquo;&eacute;quipe d&rsquo;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&rsquo;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communaut&eacute; indig&egrave;ne Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l&rsquo;agriculture mais son enclavement fait que les habitants ont du mal &agrave; developper des activit&eacute;s &eacute;conomiques g&eacute;n&eacute;ratrices de revenus. La bonne gestion de leur terre et le d&eacute;veloppement de plantations d&rsquo;arbres &agrave; bois et d&rsquo;arbres fruitiers permettra d&rsquo;<strong>entretenir</strong><strong> et de s&eacute;curiser leur mode de vie tr&egrave;s proche de la nature.</strong></p>\r\n"
     lang: fr
     slug: colombie
+newsletterTranslation:
+  newsletterTranslation_1_en:
+    newsletter: newsletter_1
+    title: Inscription
+    content: 'Please modify'
+    lang: en
+    slug: inscription
+  newsletterTranslation_1_fr:
+    newsletter: newsletter_1
+    title: Inscription
+    content: 'A modifier'
+    lang: fr
+    slug: inscription
+  newsletterTranslation_2_en:
+    newsletter: newsletter_2
+    title: welcome
+    content: 'Please modify'
+    lang: en
+    slug: welcome
+  newsletterTranslation_2_fr:
+    newsletter: newsletter_2
+    title: Bienvenu
+    content: 'A modifier'
+    lang: fr
+    slug: bienvenu
+  newsletterTranslation_3_en:
+    newsletter: newsletter_3
+    title: 'new password'
+    content: modify
+    lang: en
+    slug: new-password
+  newsletterTranslation_3_fr:
+    newsletter: newsletter_3
+    title: 'nouveau mot de passe'
+    content: 'a modifier'
+    lang: fr
+    slug: nouveau-mot-de-passe
+  newsletterTranslation_4_en:
+    newsletter: newsletter_4
+    title: change
+    content: modify
+    lang: en
+    slug: change
+  newsletterTranslation_4_fr:
+    newsletter: newsletter_4
+    title: changement
+    content: modifier
+    lang: fr
+    slug: changement
 lienTranslation:
   lienTranslation_12_en:
     lien: lien_12

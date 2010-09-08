@@ -25,10 +25,10 @@
         </div>
         <div class="menu_connexion">
             <ul class="menu">
-                <li><a href="#">Planter mes arbres</a></li>
+                <li><a href="<?php echo url_for('@plantation') ?>">Planter mes arbres</a></li>
                 <li><a href="#">Parrainer des amis</a></li>
-                <li><a href="#">Mes crédits (38 arbres)</a></li>
-                <li><a href="#">Mon profil (antoinegergine@yahoo.fr)</a></li>
+                <li><a href="#">Mes crédits (<?php echo $sf_user->getProfile()->getCredit() ?> arbres)</a></li>
+                <li><a href="#">Mon profil (<?php echo $sf_user->getUsername() ?>) </a></li>
                 <li><a href="<?php echo url_for1('@sf_guard_signout') ?>">Déconnexion</a></li>
             </ul>
         </div>

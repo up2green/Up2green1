@@ -62,7 +62,7 @@ abstract class Basemodule extends sfDoctrineRecord
               6 => 'gmap',
               7 => 'recherche',
               8 => 'user',
-              9 => 'sgGuardAuth',
+              9 => 'sfGuardAuth',
              ),
              ));
         $this->hasColumn('is_active', 'boolean', null, array(

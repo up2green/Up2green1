@@ -27,6 +27,11 @@
 			<li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
 			<li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
 			<li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>
+                        <li><a href="<?php echo url_for('@sf_guard_user') ?>">Users</a></li>
+                        <li><a href="<?php echo url_for('@partenaire') ?>">Partenaires</a></li>
+                        <li><a href="<?php echo url_for('@sf_guard_group') ?>">Groupes</a></li>
+                        <li><a href="<?php echo url_for('@sf_guard_permission') ?>">Permissions</a></li>
+
 		</ul>
       </div>
  

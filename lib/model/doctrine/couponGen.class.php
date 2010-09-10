@@ -12,4 +12,7 @@
  */
 class couponGen extends BasecouponGen
 {
+    public function __toString(){
+        return "[" . $this->id . "] " . $this->credit . " arbres";
+    }
 }

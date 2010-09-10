@@ -7,6 +7,10 @@ partenaire:
     column:               id
     with_wildcard_routes: true
 
+generate_coupons:
+  url: /partenaire/generateCoupons/*
+  param: { module: partenaire, action: generateCoupons }
+  
 user_forgot_password:
   url:   /forgotpwd
   param: { module: user, action: forgotPassword }

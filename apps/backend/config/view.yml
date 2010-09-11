@@ -12,8 +12,18 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css, jquery-ui-1.8.1.custom.css, backend.css, jQuery.treeTable.css]
-  javascripts:    [min/jquery-1.4.2.min.js, min/jquery-ui-1.8.2.custom.min.js, jquery.treeTable.js]
+  stylesheets:
+    - main.css
+    - jquery-ui-1.8.1.custom.css
+    - backend.css
+    - jQuery.treeTable.css
+    
+  javascripts:
+    - min/jquery-1.4.2.min.js
+    - min/jquery-ui-1.8.2.custom.min.js
+    - backend.js
+    - jquery.treeTable.js
 
+    
   has_layout:     true
   layout:         layout

@@ -15,47 +15,65 @@ class gmapComponents extends sfComponents {
      * @param sfRequest $request A request object
      */
 
-    public function executeIndex(sfWebRequest $request) {
-        $this->gMap = new GMap();
-        $this->programmes = Doctrine::getTable('programme')->createQuery('a')->execute();
-        foreach($this->programmes as $programme) {
-            if(!is_null($programme->getGeoadress()) || (!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))) {
-                if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude())) {
-                    // latitude / longitude method
-                    $geocoded_addr = new GMapGeocodedAddress(null);
-                    $geocoded_addr->setLat($programme->getLatitude());
-                    $geocoded_addr->setLng($programme->getLongitude());
-                    $geocoded_addr->reverseGeocode($this->gMap->getGMapClient());
-                }
-                else {
-                    // adress user friendly method
-                    $geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
-                }
+	public function executeIndex(sfWebRequest $request) {
+		$this->gMap = new GMap();
+		$this->programmes = Doctrine::getTable('programme')->getActive();
+		foreach($this->programmes as $programme) {
+			
+			if(
+				!is_null($programme->getGeoadress()) || 
+				(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
+			) {
+				
+				if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude())) {
+						// latitude / longitude method
+						$geocoded_addr = new GMapGeocodedAddress(null);
+						$geocoded_addr->setLat($programme->getLatitude());
+						$geocoded_addr->setLng($programme->getLongitude());
+				}
+				else {
+						// adress user friendly method
+						$geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
+						$geocoded_addr->geocode($this->gMap->getGMapClient());
+				}
+				
+				$gMapMarker = new GMapMarker(
+					$geocoded_addr->getLat(),
+					$geocoded_addr->getLng(),
+					array(
+						'title ' => "'".$programme->getTitle()."'",
+						'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
+						'icon'	=> $this->getProgrammeIcon($programme)
+					)
+				);
+				
+				$html = '
+					<span class="title">'.$programme->getTitle().'</span>
+					<p class="content">'.$programme->getAccroche().'</p>
+				';
+				
+				if(!is_null($this->coupon)) {
+					$html .= '
+						<span class="action">
+							<button class="button really-small green">+</button>
+							<button class="button really-small gray">-</button>
+						</span>
+					';
+				}
+				
+				$gMapMarker->addEvent(new GMapEvent(
+					'click', 
+					'moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
+				));
+				
+				$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div class="gmap-info-bulle">'.$html.'</div>'));
+				
+				$this->gMap->addMarker($gMapMarker);
 
-                $gMapMarker = new GMapMarker(
-                        $programme->getLatitude(),
-                        $programme->getLongitude(),
-                        array(
-                        /*
-					'title ' => $programme->getTitle(),
-					'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
-					'clickable ' => null,
-					'shadow ' => null,
-					'flat ' => null
-                        */
-                                'icon'	=> $this->getProgrammeIcon($programme)
-                        )
-                );
-                $nbTrees = $this->getNbTrees($programme);
-                $descr = $geocoded_addr->getRawAddress();
-                if ($nbTrees > 0) $descr .= "<br />Vous avez planté " . $nbTrees . " arbre(s) ici.";
-                $gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div>'.$descr.'</div>'));
-                $this->gMap->addMarker($gMapMarker);
-
-            }
-        }
-        $this->gMap->centerAndZoomOnMarkers();
-    }
+			}
+		}
+		$this->gMap->centerAndZoomOnMarkers();
+	}
 
     private function getNbTrees(programme $programme) {
         // si l'utilisateur est connecté

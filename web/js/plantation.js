@@ -16,4 +16,10 @@ $(document).ready(function(){
 			{speed:1000, axis:'y', queued:true}
 		);
 	});
+	
+	function moveToMarker(lat, lng){
+		var marker = new google.maps.LatLng(lat, lng);
+		map.set_center(marker);
+	}
+
 });

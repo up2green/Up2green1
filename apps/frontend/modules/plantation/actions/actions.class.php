@@ -32,7 +32,7 @@ class plantationActions extends sfActions {
 
         $this->executePosts($request);
     }
-    private function executePosts(sfWebRequest $request){
+    private function executePosts(sfWebRequest $request) {
         if ($request->isMethod('post')) {
             if ($request->getParameter('numCouponToUse')) {
                 if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
@@ -50,4 +50,20 @@ class plantationActions extends sfActions {
 
     }
 
+    public function executeListeCouponsPartenaires(sfWebRequest $request) {
+        if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
+            $arrCoupons = array();
+            $arrCouponsUsed = array();
+
+            $totalCoupons = Doctrine_Query::create()->select('*')->from("coupon c")
+                    ->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $partenaire->getId())
+                            ->leftJoin('c.couponGen cg')->orderBy('cg.credit')->execute();
+            foreach ($totalCoupons as $coupon) {
+                if ($coupon->getIsActive()) $arrCoupons[] = $coupon;
+                else $arrCouponsUsed[] = $coupon;
+            }
+           $this->couponsUsed = $arrCouponsUsed;
+           $this->coupons = $arrCoupons;
+        }
+    }
 }

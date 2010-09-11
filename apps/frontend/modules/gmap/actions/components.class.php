@@ -16,7 +16,10 @@ class gmapComponents extends sfComponents {
      */
 
 	public function executeIndex(sfWebRequest $request) {
-		$this->gMap = new GMap();
+		$this->gMap = new GMap(array(
+			'scrollwheel' => 'false',
+			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE'
+		));
 		$this->programmes = Doctrine::getTable('programme')->getActive();
 		foreach($this->programmes as $programme) {
 			
@@ -52,7 +55,7 @@ class gmapComponents extends sfComponents {
 					<p class="content">'.$programme->getAccroche().'</p>
 				';
 				
-				if(!is_null($this->coupon)) {
+				if(isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)) {
 					$html .= '
 						<span class="action">
 							<button class="button really-small green">+</button>
@@ -66,7 +69,12 @@ class gmapComponents extends sfComponents {
 					'moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
 				));
 				
-				$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow('<div class="gmap-info-bulle">'.$html.'</div>'));
+				$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow(
+					'<div class="gmap-info-bulle">'.$html.'</div>',
+					array(
+						'maxWidth' => 300
+					)
+				));
 				
 				$this->gMap->addMarker($gMapMarker);
 

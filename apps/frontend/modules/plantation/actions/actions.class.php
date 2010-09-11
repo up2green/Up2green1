@@ -45,7 +45,22 @@ class plantationActions extends sfActions {
                 }
             }
             if ($request->getParameter('submitArbresProgramme')){
-                $this->phraseCoupon = "Arbres plantés";
+                if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
+                    if ($coupon->getIsActive()){
+                        foreach ($this->programmes as $programme){
+                            if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
+                                if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
+                                    $coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
+                                }
+                            }
+                        }
+                        $coupon->setUsedAt(date('c'));
+                        $coupon->setIsActive(false);
+                        $coupon->save();
+                        $this->phraseCoupon = "Vos arbres ont été plantés.";
+                    }
+                    else $this->phraseCoupon = "Ce coupon a déjà été utilisé";
+                }
             }
         }
     }

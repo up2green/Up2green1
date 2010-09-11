@@ -36,7 +36,7 @@
     <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
     <p class="title little indent">Coupons utilisés (<?php echo sizeof($couponsUsed) ?>)</p>
     <div class="content">
-        <?php if($showCouponNavigationUsed) : ?>
+        <?php if(sizeof($couponsUsed) > sfConfig::get('app_max_programme_plantation_list')) : ?>
         <span id="slideUp" class="button white">
             <img src="/images/icons/top.png" alt="Haut"/>
         </span>
@@ -51,7 +51,7 @@
             <?php endforeach; ?>
         </ul>
 
-        <?php if ($showCouponUsedNavigation) : ?>
+        <?php if(sizeof($couponsUsed) > sfConfig::get('app_max_programme_plantation_list')) : ?>
         <span id="slideDown" class="button white">
             <img src="/images/icons/bottom.png" alt="Bas"/>
         </span>

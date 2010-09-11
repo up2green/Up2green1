@@ -1,5 +1,6 @@
 <!-- module -->
 <form action="" method="post">
+    <input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
 <div id="form_programme_plantation" class="module">
     <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
     <p class="title little indent">Devenez acteur de la reforestation</p>

@@ -18,6 +18,7 @@
                 ));
         }
         if (!isset($coupon)) include_partial('formCoupon', array());
+        if (isset($coupon)) include_partial('formPlant', array('coupon', $coupon));
         ?>
     </div>
 </div>

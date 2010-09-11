@@ -33,10 +33,10 @@
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo $form['UserProfile']['mail']->renderLabel() ?></th>
+						<th><?php echo $form['email_address']->renderLabel() ?></th>
 						<td>
-							<?php echo $form['UserProfile']['mail']->renderError() ?>
-							<?php echo $form['UserProfile']['mail'] ?>
+							<?php echo $form['email_address']->renderError() ?>
+							<?php echo $form['email_address'] ?>
 						</td>
 					</tr>
 				</tbody>

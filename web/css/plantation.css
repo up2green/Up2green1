@@ -51,6 +51,12 @@ margin-top:10px;
 			width:120px;
 			font-size:0.75em;
 		}
+
+                #form_programme_plantation li span.bigitem{
+                        display: inline-block;
+                        font-size: 0.75em;
+                        width: 400px;
+                }
 		#form_programme_plantation li span.action {
 			float:right;
 			margin:0 0 2px;

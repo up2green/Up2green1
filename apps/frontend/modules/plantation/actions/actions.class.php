@@ -25,7 +25,7 @@ class plantationActions extends sfActions {
         $this->spendAll = false;
         if ($this->getUser()->isAuthenticated()) {
             $user = $this->getUser()->getGuardUser();
-            $this->partenaire = $user->getPartenaire();
+            $this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
             $this->nbArbresToPlant = $user->getProfile()->getCredit();
             $this->spendAll = false;
         }

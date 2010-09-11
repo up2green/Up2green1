@@ -31,10 +31,9 @@
         <span id="slideDown" class="button white">
             <img src="/images/icons/bottom.png" alt="Bas"/>
         </span>
-        <?php endif; ?>
+        <?php endif; ?><br /><br />
         <p class="center">
             <span id="buttonArbresProgramme" class="button gray">Planter mes arbres !</span>
-            <a href="@plantation" class="button white">Annuler</a>
         </p>
 
     </div>

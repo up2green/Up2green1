@@ -1,6 +1,6 @@
 <div id="body">
     <div id="center">
-        <?php include_component('gmap', 'index'); ?>
+        <?php include_partial('formGMap', array('gMap' => $gMap)); ?>
     </div>
     <!-- for SEO the sidebar after the content -->
     <div id="left">

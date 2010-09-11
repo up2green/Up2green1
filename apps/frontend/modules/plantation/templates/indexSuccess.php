@@ -17,8 +17,8 @@
                         'programmes' => $programmes,
                 ));
         }
-        if (!isset($coupon)) include_partial('formCoupon', array());
-        if (isset($coupon)) include_partial('formPlant', array('coupon', $coupon));
+        if (!isset($coupon)) include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
+        if (isset($coupon)) include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
         ?>
     </div>
 </div>

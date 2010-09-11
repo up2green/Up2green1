@@ -2,6 +2,7 @@
     <img class="title corner left" src="/images/module/green/icon/coupon.png" alt="" />
     <p class="title">Coupon</p>
     <div class="content">
+        <p><?php echo $phraseCoupon ?></p>
         <p>On vous a offert un coupon ou vous vous en êtes vous même offert un ? Entrez son code ici et planter vos arbres dès maintenant !</p>
         <form action="" method="post">
             <p class="center"><input type="text" name="code" value="Numéro de coupon" title="Numéro de coupon" /></p>

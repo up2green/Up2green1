@@ -17,7 +17,8 @@ class plantationActions extends sfActions {
     public function executeIndex(sfWebRequest $request) {
         // chargement des variables pour le form programmes
         $this->programmes = Doctrine_Core::getTable('programme')->findAll();
-        $this->showProgrammeNavigation = sizeof($this->programmes) > sfConfig::get('app_max_programme_plantation_list');
+
+        $this->phraseCoupon = "";
 
         // pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
         $this->partenaire = null;
@@ -30,9 +31,6 @@ class plantationActions extends sfActions {
             $this->spendAll = false;
         }
 
-        $this->executePosts($request);
-    }
-    private function executePosts(sfWebRequest $request) {
         if ($request->isMethod('post')) {
             if ($request->getParameter('numCouponToUse')) {
                 if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
@@ -46,7 +44,13 @@ class plantationActions extends sfActions {
                     else $this->coupon = null;
                 }
             }
+            if ($request->getParameter('submitArbresProgramme')){
+                $this->phraseCoupon = "Arbres plantés";
+            }
         }
+    }
+    private function executePosts(sfWebRequest $request) {
+        
 
     }
 

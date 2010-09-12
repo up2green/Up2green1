@@ -21,7 +21,7 @@
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
- * @property partenaireUser $Partenaire
+ * @property partenaire $Partenaire
  * @property profil $Profile
  * @property Doctrine_Collection $Coupons
  * @property Doctrine_Collection $Trees
@@ -42,7 +42,7 @@
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
- * @method partenaireUser        getPartenaire()            Returns the current record's "Partenaire" value
+ * @method partenaire            getPartenaire()            Returns the current record's "Partenaire" value
  * @method profil                getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getCoupons()               Returns the current record's "Coupons" collection
  * @method Doctrine_Collection   getTrees()                 Returns the current record's "Trees" collection
@@ -161,7 +161,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasOne('partenaireUser as Partenaire', array(
+        $this->hasOne('partenaire as Partenaire', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
@@ -169,11 +169,11 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('userCoupon as Coupons', array(
+        $this->hasMany('couponUser as Coupons', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('userTree as Trees', array(
+        $this->hasMany('treeUser as Trees', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

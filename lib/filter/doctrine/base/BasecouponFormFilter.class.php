@@ -13,8 +13,8 @@ abstract class BasecouponFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'gen_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('couponGen'), 'add_empty' => true)),
       'code'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'credit'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'is_active'  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'used_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'used_by'    => new sfWidgetFormFilterInput(),
@@ -23,8 +23,8 @@ abstract class BasecouponFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
+      'gen_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('couponGen'), 'column' => 'id')),
       'code'       => new sfValidatorPass(array('required' => false)),
-      'credit'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'is_active'  => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'used_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'used_by'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -50,8 +50,8 @@ abstract class BasecouponFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'         => 'Number',
+      'gen_id'     => 'ForeignKey',
       'code'       => 'Text',
-      'credit'     => 'Number',
       'is_active'  => 'Boolean',
       'used_at'    => 'Date',
       'used_by'    => 'Number',

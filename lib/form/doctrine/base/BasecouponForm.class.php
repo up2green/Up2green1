@@ -16,8 +16,8 @@ abstract class BasecouponForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
+      'gen_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('couponGen'), 'add_empty' => false)),
       'code'       => new sfWidgetFormInputText(),
-      'credit'     => new sfWidgetFormInputText(),
       'is_active'  => new sfWidgetFormInputCheckbox(),
       'used_at'    => new sfWidgetFormDateTime(),
       'used_by'    => new sfWidgetFormInputText(),
@@ -27,8 +27,8 @@ abstract class BasecouponForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'gen_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('couponGen'))),
       'code'       => new sfValidatorString(array('max_length' => 128)),
-      'credit'     => new sfValidatorInteger(array('required' => false)),
       'is_active'  => new sfValidatorBoolean(array('required' => false)),
       'used_at'    => new sfValidatorDateTime(array('required' => false)),
       'used_by'    => new sfValidatorInteger(array('required' => false)),

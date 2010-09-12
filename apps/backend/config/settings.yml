@@ -32,17 +32,17 @@ all:
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
 
-    standard_helpers: [Partial, Cache, I18N]
-    enabled_modules: [default, sfGuardAuth]
+    standard_helpers:       [Partial, Cache, I18N]
+    enabled_modules:        [default, sfGuardAuth, sfGuardUser, sfGuardGroup, sfGuardPermission]
 
     # Enable the database manager
     use_database:           true
 
-    i18n: true
-    default_culture: fr
+    i18n:                   true
+    default_culture:        fr
 
     
   .actions:
-    login_module: sfGuardAuth
-    login_action: signin
+    login_module:           sfGuardAuth
+    login_action:           signin
 

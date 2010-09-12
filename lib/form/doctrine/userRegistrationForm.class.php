@@ -29,11 +29,13 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 'username'     => 'Nom d\'utilisateur* :',
                 'password'     => 'Mot de passe* :',
                 'password_bis' => 'Confirmation* :',
+                'email_address'=> 'Adresse e-mail* :',
         ));
 
-        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true), array('invalid' => 'Cet nom n\'est pas valide.', 'required' => 'Champ obligatoire.'));
+        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true), array('invalid' => 'Ce nom n\'est pas valide.', 'required' => 'Champ obligatoire.'));
         $this->validatorSchema['password']     = new sfValidatorString(array('required' => true, 'min_length' => 6), array('min_length' => '"%value%" est trop court (%min_length% lettres minimum).', 'required' => 'Champ obligatoire.'));
         $this->validatorSchema['password_bis'] = new sfValidatorString(array('required' => true, 'min_length' => 6), array('min_length' => '"%value%" est trop court (%min_length% lettres minimum).', 'required' => 'Champ obligatoire.'));
+        $this->validatorSchema['email_address']= new sfValidatorEmail(array('required'  => true), array('required'=>'Champ obligatoire.', "invalid" => '"%value%" n\'est pas une adresse e-mail.'));
 
         $this->mergePostValidator(new sfValidatorSchemaCompare(
                 'password',
@@ -43,7 +45,7 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 array('invalid' => 'Les champs doivent être identiques.')
         ));
 
-        $profileForm = new profilForm($this->object->userProfile);
+        $profileForm = new profilForm($this->object->getProfile());
         unset(
                 $profileForm['user_id'],
                 $profileForm['id'],
@@ -51,7 +53,7 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 $profileForm['is_newsletter'],
                 $profileForm['culture']
         );
-        $profileForm->widgetSchema->setLabels(array('mail' => 'Adresse e-mail* :'));
+        $profileForm->widgetSchema->setLabels(array('email_address' => 'Adresse e-mail* :'));
 
         $this->embedForm('UserProfile', $profileForm);
     }

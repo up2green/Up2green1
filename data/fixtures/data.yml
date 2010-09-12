@@ -1,19 +1,3 @@
-couponGen:
-  couponGen_1:
-    prix: '13.30'
-    credit: '10'
-    created_at: '2010-09-08 12:31:12'
-    updated_at: '2010-09-08 12:31:12'
-  couponGen_2:
-    prix: '7.56'
-    credit: '5'
-    created_at: '2010-09-08 12:41:50'
-    updated_at: '2010-09-08 12:41:50'
-  couponGen_3:
-    prix: '3.50'
-    credit: '1'
-    created_at: '2010-09-08 12:42:05'
-    updated_at: '2010-09-08 12:42:05'
 category:
   category_1:
     unique_name: blog
@@ -55,264 +39,6 @@ category:
     lft: '7'
     rgt: '8'
     level: '2'
-organisme:
-  organisme_1:
-    url: 'http://www.planete-urgence.org/'
-    logo: organisme39.jpeg
-    created_at: '2010-06-26 18:27:37'
-    updated_at: '2010-06-26 18:27:37'
-  organisme_2:
-    url: 'http://www.treesftf.org/'
-    logo: organisme38.gif
-    created_at: '2010-06-26 18:27:37'
-    updated_at: '2010-06-26 18:27:37'
-  organisme_3:
-    url: null
-    logo: organisme40.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_4:
-    url: 'http://www.fondationecokyoto.org/'
-    logo: organisme41.gif
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_5:
-    url: 'http://www.calamada.org/'
-    logo: organisme42.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_6:
-    url: 'http://www.oceanium.org/'
-    logo: fffe245898207a3ec732dd83e8104f5f31915bf0.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-06-26 18:27:38'
-  organisme_7:
-    url: 'http://www.projetsplusactions.org'
-    logo: a86680be561661e7f83d7e5ee8a3551d14dfe7cc.jpg
-    created_at: '2010-08-28 16:54:18'
-    updated_at: '2010-08-28 17:43:49'
-  organisme_8:
-    url: 'http://www.up2green.com'
-    logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
-    created_at: '2010-08-28 16:56:24'
-    updated_at: '2010-08-28 16:56:24'
-sfGuardUser:
-  sfGuardUser_1:
-    first_name: null
-    last_name: null
-    email_address: webmaster@smartit.fr
-    username: admin
-    algorithm: sha1
-    salt: 555754a8ea338d568537ad244d1f72cf
-    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
-    is_active: true
-    is_super_admin: true
-    last_login: '2010-09-08 12:29:47'
-    created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-09-08 12:29:47'
-  sfGuardUser_2:
-    first_name: toto
-    last_name: toto
-    email_address: toto@toto.com
-    username: toto
-    algorithm: sha1
-    salt: 79c83a797fef66dbec666e9a17006ccb
-    password: 7385a72827a21a66df11cbd26be1f2a1c61ee8f3
-    is_active: true
-    is_super_admin: false
-    last_login: '2010-09-06 15:11:01'
-    created_at: '2010-09-06 11:33:53'
-    updated_at: '2010-09-06 15:11:01'
-sfGuardGroup:
-  sfGuardGroup_1:
-    name: administrateur
-    description: ''
-    created_at: '2010-09-06 11:29:10'
-    updated_at: '2010-09-06 11:29:10'
-sfGuardUserGroup:
-  sfGuardUserGroup_1_1:
-    User: sfGuardUser_1
-    Group: sfGuardGroup_1
-    created_at: '2010-09-06 11:29:10'
-    updated_at: '2010-09-06 11:29:10'
-sfGuardRememberKey:
-  sfGuardRememberKey_1:
-    User: sfGuardUser_1
-    remember_key: 8zljb7jax90c4wggso4wgwgsc0w08s8
-    ip_address: 127.0.0.1
-    created_at: '2010-09-08 12:29:47'
-    updated_at: '2010-09-08 12:29:47'
-sfGuardPermission:
-  sfGuardPermission_1:
-    name: acces_administration
-    description: 'Accès à l''administration'
-    created_at: '2010-09-06 11:28:52'
-    updated_at: '2010-09-06 11:28:52'
-sfGuardGroupPermission:
-  sfGuardGroupPermission_1_1:
-    Group: sfGuardGroup_1
-    Permission: sfGuardPermission_1
-    created_at: '2010-09-06 11:29:10'
-    updated_at: '2010-09-06 11:29:10'
-couponPartenaire:
-  couponPartenaire_1_1:
-    coupon: coupon_1
-    partenaire_id: '1'
-partenaire:
-  partenaire_1:
-    User: sfGuardUser_2
-    title: 'Partenaire test'
-    accroche: 'accroche test'
-    description: 'description test'
-    url: 'http://url.com/'
-    created_at: '2010-09-06 11:35:34'
-    updated_at: '2010-09-06 11:35:34'
-programme:
-  programme_1:
-    geoadress: null
-    latitude: '8.722218'
-    longitude: '39.440918'
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:15:47'
-  programme_2:
-    geoadress: null
-    latitude: '22.786311'
-    longitude: '79.628906'
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:16:01'
-  programme_3:
-    geoadress: null
-    latitude: '-14.221789'
-    longitude: '-51.943359'
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:16:18'
-  programme_4:
-    geoadress: Honduras
-    latitude: null
-    longitude: null
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 18:06:06'
-  programme_5:
-    geoadress: Haiti
-    latitude: null
-    longitude: null
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 18:06:20'
-  programme_6:
-    geoadress: Burundi
-    latitude: null
-    longitude: null
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 18:06:38'
-  programme_7:
-    geoadress: Indonésie
-    latitude: null
-    longitude: null
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 18:06:54'
-  programme_8:
-    geoadress: Mali
-    latitude: null
-    longitude: null
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:16:47'
-  programme_9:
-    geoadress: 'Burkina Faso'
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '15000'
-    logo: 48096bd65bd5fc3cdcaadd4e6c7a6d9c6e20bab6.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 17:42:24'
-  programme_10:
-    geoadress: Guinée
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '1000000'
-    logo: ff34ade51a010576405a2b1d147a66ca99227df0.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:14:07'
-  programme_11:
-    geoadress: Madagascar
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '15000'
-    logo: ed42179f029ade214c71564211aa41a4e9f62d59.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 17:41:04'
-  programme_12:
-    geoadress: Senegal
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '100000000'
-    logo: d0233b1b41bb0bd76b010373cd4a1ad418a84fab.jpg
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 17:43:00'
-  programme_13:
-    Organisme: organisme_7
-    geoadress: Benin
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '10000'
-    logo: f513d8fe1289e485aba17a6c6a4bf6ec3b6de423.jpg
-    created_at: '2010-08-28 17:14:19'
-    updated_at: '2010-08-29 16:54:54'
-  programme_14:
-    geoadress: Equateur
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '15000'
-    logo: 44e1a9fb0b5468da0b9e5c9ca77174e54d886726.jpg
-    created_at: '2010-08-28 17:48:07'
-    updated_at: '2010-08-28 17:48:07'
-  programme_15:
-    geoadress: perou
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '15000'
-    logo: 5d64301ad3d8e95068ff3a23487cb585b298960b.jpg
-    created_at: '2010-08-28 17:53:36'
-    updated_at: '2010-08-28 17:53:36'
-  programme_16:
-    geoadress: colombie
-    latitude: null
-    longitude: null
-    is_active: true
-    max_tree: '15000'
-    logo: 2209d6cd8d86b2027fb5e3044556e06f74e4e43f.jpg
-    created_at: '2010-08-28 18:03:15'
-    updated_at: '2010-08-28 18:03:15'
 newsletter:
   newsletter_1:
     reply_to: noreply@up2green.com
@@ -434,15 +160,20 @@ lien:
     rank: '5'
     created_at: '2010-08-31 23:25:09'
     updated_at: '2010-08-31 23:25:36'
-coupon:
-  coupon_1:
-    couponGen: couponGen_1
-    code: AZERTY
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: webmaster@smartit.fr
+    username: admin
+    algorithm: sha1
+    salt: 555754a8ea338d568537ad244d1f72cf
+    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
-    used_at: null
-    used_by: null
-    created_at: '0000-00-00 00:00:00'
-    updated_at: '0000-00-00 00:00:00'
+    is_super_admin: true
+    last_login: '2010-09-12 12:05:20'
+    created_at: '2010-08-28 12:40:14'
+    updated_at: '2010-09-12 12:05:20'
 article:
   article_1:
     logo: null
@@ -507,6 +238,47 @@ article:
     is_active: true
     created_at: '2010-08-29 17:32:21'
     updated_at: '2010-08-29 17:32:21'
+organisme:
+  organisme_1:
+    url: 'http://www.planete-urgence.org/'
+    logo: organisme39.jpeg
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_2:
+    url: 'http://www.treesftf.org/'
+    logo: organisme38.gif
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_3:
+    url: null
+    logo: organisme40.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_4:
+    url: 'http://www.fondationecokyoto.org/'
+    logo: organisme41.gif
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_5:
+    url: 'http://www.calamada.org/'
+    logo: organisme42.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_6:
+    url: 'http://www.oceanium.org/'
+    logo: fffe245898207a3ec732dd83e8104f5f31915bf0.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_7:
+    url: 'http://www.projetsplusactions.org'
+    logo: a86680be561661e7f83d7e5ee8a3551d14dfe7cc.jpg
+    created_at: '2010-08-28 16:54:18'
+    updated_at: '2010-08-28 17:43:49'
+  organisme_8:
+    url: 'http://www.up2green.com'
+    logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
+    created_at: '2010-08-28 16:56:24'
+    updated_at: '2010-08-28 16:56:24'
 programme:
   programme_1:
     geoadress: null
@@ -706,125 +478,6 @@ lienTranslation:
   lienTranslation_12_en:
     lien: lien_12
     title: 'à changer'
-organismeTranslation:
-  organismeTranslation_1_en:
-    organisme: organisme_1
-    title: 'Eco-Kyoto Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: eco-kyoto-fondation
-  organismeTranslation_1_fr:
-    organisme: organisme_1
-    title: 'Fondation Eco-Kyoto'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-eco-kyoto
-  organismeTranslation_2_en:
-    organisme: organisme_2
-    title: 'Trees For The Future Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: trees-for-the-future-fondation
-  organismeTranslation_2_fr:
-    organisme: organisme_2
-    title: 'Fondation Trees For The Future'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-trees-for-the-future
-  organismeTranslation_3_en:
-    organisme: organisme_3
-    title: BAOBAB29
-    accroche: null
-    description: null
-    lang: en
-    slug: baobab29
-  organismeTranslation_3_fr:
-    organisme: organisme_3
-    title: BAOBAB29
-    accroche: null
-    description: null
-    lang: fr
-    slug: baobab29
-  organismeTranslation_4_en:
-    organisme: organisme_4
-    title: 'Eco-Kyoto Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: eco-kyoto-fondation-1
-  organismeTranslation_4_fr:
-    organisme: organisme_4
-    title: 'Fondation Eco-Kyoto'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-eco-kyoto-1
-  organismeTranslation_5_en:
-    organisme: organisme_5
-    title: 'CALA Fondation'
-    accroche: null
-    description: null
-    lang: en
-    slug: cala-fondation
-  organismeTranslation_5_fr:
-    organisme: organisme_5
-    title: 'Fondation CALA'
-    accroche: null
-    description: null
-    lang: fr
-    slug: fondation-cala
-  organismeTranslation_6_en:
-    organisme: organisme_6
-    title: 'Oceanium Fondation'
-    accroche: "<br />\r\n"
-    description: "<br />\r\n"
-    lang: en
-    slug: oceanium-fondation
-  organismeTranslation_6_fr:
-    organisme: organisme_6
-    title: 'Fondation Oceanium'
-    accroche: "<br />\r\n"
-    description: "<br />\r\n"
-    lang: fr
-    slug: fondation-oceanium
-  organismeTranslation_7_en:
-    organisme: organisme_7
-    title: 'Projets + Actions'
-    accroche: "<br />\r\n"
-    description: "<br />\r\n"
-    lang: en
-    slug: projetsplusactions
-  organismeTranslation_7_fr:
-    organisme: organisme_7
-    title: 'Projets + Actions'
-    accroche: "<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;</p>\r\n"
-    description: "<h4>\r\n	L&#39;O.S.I. /</h4>\r\n<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;Projets Plus Actions&nbsp;intervient en soutien &agrave; des initiatives locales par le financement de microprojets et l&rsquo;apport de comp&eacute;tences techniques pour les r&eacute;aliser.</p>\r\n<h4>\r\n	L&#39;histoire de Projets Plus Actions /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de co-d&eacute;veloppement par Jean-Marc CIVIERE avec l&rsquo;ONG beninoise Andia. Financement d&rsquo;un cheptel de caprins et ovins dans le cadre d&rsquo;un projet d&rsquo;une ferme &eacute;cole.<br />\r\n	25 d&eacute;cembre 2006 : Cr&eacute;ation des statuts de Projets Plus Actions.<br />\r\n	Projets Plus Actions a &eacute;t&eacute; enregistr&eacute; le 28 d&eacute;cembre 2006.<br />\r\n	N&deg; 0953017593 &agrave; la sous-pr&eacute;fecture de Pontoise.</p>\r\n<h4>\r\n	Son fonctionnement /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de Projets Plus Actions&nbsp;soutien volontairement un nombre limit&eacute; de projets afin de les soutenir le mieux possible et d&rsquo;en contr&ocirc;ler la r&eacute;alisation. Les partenariats sont cr&eacute;&eacute;s pour une dur&eacute;e de 3 &agrave; 10 ans et ont pour perspectives l&rsquo;autonomie des populations.&nbsp;L&rsquo;am&eacute;lioration des conditions de vie, l&rsquo;autonomisation des populations, le respect des cadres de d&eacute;veloppement nationaux, l&rsquo;approche pertinente, novatrice et durable d&eacute;terminent le choix des projets aid&eacute;s et des partenariats contract&eacute;s.<br />\r\n	Les donateurs, sous certaines conditions, peuvent venir voir sur le terrain &agrave; quelles actions et comment sont utilis&eacute;s les fonds qui sont confi&eacute;s &agrave; Projets Plus Actions.</p>\r\n"
-    lang: fr
-    slug: projetsplusactions
-  organismeTranslation_8_en:
-    organisme: organisme_8
-    title: 'Up2green Reforestation'
-    accroche: "<br />\r\n"
-    description: "<br />\r\n"
-    lang: en
-    slug: up2green-en
-  organismeTranslation_8_fr:
-    organisme: organisme_8
-    title: 'Up2green Reforestation'
-    accroche: ''
-    description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
-    lang: fr
-    slug: up2green
-programmeTranslation:
-  programmeTranslation_1_en:
-    programme: programme_1
-    title: '1 tree in Ethiopy'
-    accroche: "<p>\r\n	In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)</p>\r\n"
-    description: "<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,</p>\r\n"
     lang: en
     slug: a-changer
   lienTranslation_13_en:
@@ -1232,97 +885,6 @@ organismeTranslation:
     title: 'Up2green Reforestation'
     accroche: ''
     description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
-    slug: '2'
-  programmeTranslation_16_fr:
-    programme: programme_16
-    title: Colombie
-    accroche: "<p>\r\n	Amazonie colombienne. Conservation des modes de vie indig&egrave;nes, agroforesterie et de l&rsquo;&eacute;cotourisme, am&eacute;lioration des conditions alimentaires. <span>Projet d&eacute;velopp&eacute; sur le terrain par Up2green.</span></p>\r\n"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: conservation des modes de vie indig&egrave;nes, d&eacute;veloppement de l&rsquo;agroforesterie et de l&rsquo;&eacute;cotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: D&eacute;partement de l&rsquo;Amazonas, P&eacute;riph&eacute;rie de Leticia, Communaut&eacute; San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: 30 familles au total&nbsp;, communaut&eacute; de San Pedro de los Lagos, Communaut&eacute; du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: D&eacute;veloppement de pratiques agroforesti&egrave;res en Amazonie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Responsable du projet. Sensibilisation et formation des habitants de communaut&eacute;s. Mise en place de p&eacute;pini&egrave;res familiales pour la plantation de 15&nbsp;000 arbres en 2011.</p>\r\n<p>\r\n	&nbsp;L&rsquo;&eacute;quipe d&rsquo;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&rsquo;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communaut&eacute; indig&egrave;ne Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l&rsquo;agriculture mais son enclavement fait que les habitants ont du mal &agrave; developper des activit&eacute;s &eacute;conomiques g&eacute;n&eacute;ratrices de revenus. La bonne gestion de leur terre et le d&eacute;veloppement de plantations d&rsquo;arbres &agrave; bois et d&rsquo;arbres fruitiers permettra d&rsquo;<strong>entretenir</strong><strong> et de s&eacute;curiser leur mode de vie tr&egrave;s proche de la nature.</strong></p>\r\n"
-    lang: fr
-    slug: colombie
-newsletterTranslation:
-  newsletterTranslation_1_en:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'Please modify'
-    lang: en
-    slug: inscription
-  newsletterTranslation_1_fr:
-    newsletter: newsletter_1
-    title: Inscription
-    content: 'A modifier'
-    lang: fr
-    slug: inscription
-  newsletterTranslation_2_en:
-    newsletter: newsletter_2
-    title: welcome
-    content: 'Please modify'
-    lang: en
-    slug: welcome
-  newsletterTranslation_2_fr:
-    newsletter: newsletter_2
-    title: Bienvenu
-    content: 'A modifier'
-    lang: fr
-    slug: bienvenu
-  newsletterTranslation_3_en:
-    newsletter: newsletter_3
-    title: 'new password'
-    content: modify
-    lang: en
-    slug: new-password
-  newsletterTranslation_3_fr:
-    newsletter: newsletter_3
-    title: 'nouveau mot de passe'
-    content: 'a modifier'
-    lang: fr
-    slug: nouveau-mot-de-passe
-  newsletterTranslation_4_en:
-    newsletter: newsletter_4
-    title: change
-    content: modify
-    lang: en
-    slug: change
-  newsletterTranslation_4_fr:
-    newsletter: newsletter_4
-    title: changement
-    content: modifier
-    lang: fr
-    slug: changement
-lienTranslation:
-  lienTranslation_12_en:
-    lien: lien_12
-    title: 'à changer'
-    lang: en
-    slug: a-changer
-  lienTranslation_13_en:
-    lien: lien_13
-    title: 'à changer'
-    lang: en
-    slug: a-changer-1
-  lienTranslation_2_fr:
-    lien: lien_2
-    title: Accueil
-    lang: fr
-    slug: accueil
-  lienTranslation_9_en:
-    lien: lien_9
-    title: Biodiversity
-    lang: en
-    slug: biodiversity
-  lienTranslation_3_en:
-    lien: lien_3
-    title: Blog
-    lang: en
-    slug: blog
-  lienTranslation_5_en:
-    lien: lien_5
-    title: CNIL
-    lang: en
-    slug: cnil
-  lienTranslation_5_fr:
-    lien: lien_5
-    title: CNIL
     lang: fr
     slug: up2green
 programmeTranslation:

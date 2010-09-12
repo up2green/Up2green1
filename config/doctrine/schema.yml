@@ -5,6 +5,10 @@ partenaire:
       type: integer(4)
       primary: true
       autoincrement: true
+    user_id:
+      type: bigint(20)
+      notnull: true
+      unique: true
     title:
       type: string(45)
       default: null
@@ -17,39 +21,21 @@ partenaire:
     url:
       type: string(150)
       default: null
-
-partenaireUser:
-  options:
-    symfony:
-      form: false
-      filter: false
-  columns:
-    partenaire_id:
-      type: integer(4)
-      primary: true
-      notnull: true
-    user_id:
-      type: bigint(20) 
-      primary: true
-      notnull: true
   relations:
     User:
       class: sfGuardUser
       local: user_id
-      foreignType: one
+      onDelete: CASCADE
+      foreignType:  one
       foreignAlias: Partenaire
-    partenaire:
-      class: partenaire
-      local: partenaire_id
-      foreign: id
-      foreignAlias: partenaireUsers
+
+
       
 profil:
   columns:
     id:
       type: integer(4)
       primary: true
-      notnull: true
       autoincrement: true
     user_id:
       type: bigint(20) 
@@ -74,6 +60,21 @@ profil:
       foreignType:  one
       foreignAlias: Profile
 
+couponGen:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    prix:
+      type: float
+      notnull: true
+    credit:
+      type: integer(4)
+      notnull: true
+
+
 coupon:
   actAs: [Timestampable]
   columns:
@@ -81,14 +82,13 @@ coupon:
       type: integer(4)
       primary: true
       autoincrement: true
+    gen_id:
+      type: integer(4)
+      notnull: true
     code:
       type: string(128)
       unique: true
       notnull: true
-    credit:
-      type: integer(4)
-      notnull: true
-      default: 1
     is_active:
       type: boolean
       default: 1
@@ -98,32 +98,53 @@ coupon:
     used_by:
       type: integer(4)
       default: null
+  relations:
+    couponGen:
+      class: couponGen
+      local: gen_id
+      foreignAlias: Coupons
 
-userCoupon:
+couponUser:
   options:
     symfony:
-      form: false
+      form:   false
       filter: false
   columns:
-    user_id:
-      type: bigint(20) 
-      primary: true
-      notnull: true
     coupon_id:
       type: integer(4)
       primary: true
-      notnull: true
+    user_id:
+      type: bigint(20)
+      primary: true
   relations:
-    User:
+    user:
       class: sfGuardUser
       local: user_id
-      onDelete: CASCADE
       foreignAlias: Coupons
     coupon:
-      class: coupon
       local: coupon_id
-      foreign: id
-      foreignAlias: User
+
+couponPartenaire:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    coupon_id:
+      type: integer(4)
+      primary: true
+    partenaire_id:
+      type: integer(4)
+      primary: true
+  relations:
+    partenaire:
+      class: partenaire
+      local: partenaire_id
+      foreignAlias: CouponsPartenaires
+    coupon:
+      local: coupon_id
+      foreignAlias: CouponsPartenaires
+
 
 organisme:
   actAs: 
@@ -203,59 +224,55 @@ tree:
       type: integer(4)
       primary: true
       autoincrement: true
-
-treeProgramme:
-  options:
-    symfony:
-      form: false
-      filter: false
-  columns:
     programme_id:
       type: integer(4)
-      primary: true
-      notnull: true
-    tree_id:
-      type: integer(4)
-      primary: true
       notnull: true
   relations:
-    tree:
-      class: tree
-      local: tree_id
-      foreign: id
-      foreignType: one
-      foreignAlias: Programme
-    programme:
+    Programme:
       class: programme
       local: programme_id
-      foreign: id
       foreignAlias: Trees
 
-userTree:
+treeUser:
   options:
     symfony:
-      form: false
+      form:   false
       filter: false
   columns:
-    user_id:
-      type: bigint(20) 
-      primary: true
-      notnull: true
     tree_id:
       type: integer(4)
       primary: true
-      notnull: true
+    user_id:
+      type: bigint(20)
+      primary: true
   relations:
-    User:
+    tree:
+      local: tree_id
+    user:
       class: sfGuardUser
       local: user_id
-      onDelete: CASCADE
       foreignAlias: Trees
+
+
+treeCoupon:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    tree_id:
+      type: integer(4)
+      primary: true
+    coupon_id:
+      type: integer(4)
+      primary: true
+  relations:
     tree:
-      class: tree
       local: tree_id
-      foreign: id
-      foreignAlias: userTree
+      foreignAlias: treeCoupon
+    coupon:
+      local: coupon_id
+      foreignAlias: treeCoupon
 
 article:
   actAs: 
@@ -422,7 +439,7 @@ module:
       notnull: true
     content_type:
       type: enum
-      values: [category, lien, article, newsletter, programme, organisme, gmap, recherche, user, sgGuardAuth]
+      values: [category, lien, article, newsletter, programme, organisme, gmap, recherche, user, sfGuardAuth]
     is_active:
       type: boolean
       default: 0
@@ -521,11 +538,9 @@ engineTag:
     engine_id:
       type: integer(4)
       primary: true
-      notnull: true
     tag_id:
       type: integer(4)
       primary: true
-      notnull: true
   relations:
     engine:
       local: engine_id

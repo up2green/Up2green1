@@ -16,6 +16,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
+      'user_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('User'), 'add_empty' => false)),
       'title'       => new sfWidgetFormInputText(),
       'accroche'    => new sfWidgetFormTextarea(),
       'description' => new sfWidgetFormTextarea(),
@@ -26,6 +27,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'user_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'))),
       'title'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'accroche'    => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
@@ -33,6 +35,10 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'partenaire', 'column' => array('user_id')))
+    );
 
     $this->widgetSchema->setNameFormat('partenaire[%s]');
 

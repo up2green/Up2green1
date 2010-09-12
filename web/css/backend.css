@@ -31,23 +31,82 @@ a
 #content
 {
   padding: 25px;
-  padding-top: 0;
 }
 
-#menu
-{
-  padding: 10px;
-  padding-left: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #aaa;
-  background-color: #fff;
+#menu-wrapper {
+	height:40px;
+	width:100%;
 }
 
-#menu li
-{
-  margin-right: 15px;
-  display: inline;
+#menu {
+	list-style: none;
+	padding: 0 20px;
+	margin: 0;
+	float: left;
+	width: 100%;
+	background: #222;
+	background: url(/images/backend/topnav_bg.gif) repeat-x;
 }
+
+	#menu li {
+		list-style: none;
+		float: left;
+		margin: 0;
+		padding: 0 15px 0 0;
+		position: relative; /*--Declare X and Y axis base for sub navigation--*/
+	}
+
+	#menu li a{
+		padding: 10px 5px;
+		color: #fff;
+		display: block;
+		text-decoration: none;
+		float: left;
+	}
+
+	#menu li a:hover{
+		background: url(/images/backend/topnav_hover.gif) no-repeat center top;
+	}
+
+	#menu li span { /*--Drop down trigger styles--*/
+		width: 17px;
+		height: 35px;
+		float: left;
+		background: url(/images/backend/subnav_btn.gif) no-repeat center top;
+	}
+
+	#menu li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+
+	#menu li ul.subnav {
+		list-style: none;
+		position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+		left: 0; top: 35px;
+		background: #333;
+		margin: 0; padding: 0;
+		display: none;
+		float: left;
+		width: 170px;
+		border: 1px solid #111;
+	}
+
+	#menu li ul.subnav li{
+		margin: 0; padding: 0;
+		border-top: 1px solid #252525; /*--Create bevel effect--*/
+		border-bottom: 1px solid #444; /*--Create bevel effect--*/
+		clear: both;
+		width: 170px;
+	}
+
+	html #menu li ul.subnav li a {
+		float: left;
+		width: 145px;
+		background: #333 url(/images/backend/dropdown_linkbg.gif) no-repeat 10px center;
+		padding-left: 20px;
+	}
+
+	html #menu li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+		background: #222 url(/images/backend/dropdown_linkbg.gif) no-repeat 10px center;
+	}
 
 #content h1
 {

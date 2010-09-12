@@ -18,11 +18,11 @@
 	}
 
 div.content a {
-margin-top:10px;
+	margin-top:10px;
 }
 
 div.content input {
-margin-top:10px;
+	margin-top:10px;
 }
 
 #form_programme_plantation {}
@@ -51,6 +51,12 @@ margin-top:10px;
 			width:120px;
 			font-size:0.75em;
 		}
+
+                #form_programme_plantation li span.bigitem{
+                        display: inline-block;
+                        font-size: 0.75em;
+                        width: 400px;
+                }
 		#form_programme_plantation li span.action {
 			float:right;
 			margin:0 0 2px;
@@ -58,3 +64,7 @@ margin-top:10px;
 	#form_programme_plantation span.button {
 		width:70%;
 	}
+
+div.gmap-info-bulle {
+	overflow:hidden;
+}

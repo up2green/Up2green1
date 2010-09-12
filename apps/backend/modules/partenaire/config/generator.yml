@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Partenaire
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          partenaire
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        object_actions:
+          _edit:        ~
+          _delete:      ~
+          generateCoupon:   { label: Generation de coupons, action: generateCoupons }
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

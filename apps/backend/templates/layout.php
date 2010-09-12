@@ -18,16 +18,37 @@
         </h1>
       </div>
  
-      <div id="menu">
-        <ul>
-			<li><a href="<?php echo url_for('@category')?>">Categories</a></li>
-			<li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
-			<li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
-			<li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
-			<li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
-			<li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
-			<li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>
-		</ul>
+      <div id="menu-wrapper">
+        <ul id="menu">
+        	<li>
+        		<a href="<?php echo url_for('@sf_guard_user') ?>">Utilisateurs</a>
+        		<ul class="subnav">
+        			<li><a href="<?php echo url_for('@sf_guard_user') ?>">Utilisateurs</a></li>
+							<li><a href="<?php echo url_for('@partenaire') ?>">Partenaires</a></li>
+							<li><a href="<?php echo url_for('@sf_guard_group') ?>">Groupes</a></li>
+							<li><a href="<?php echo url_for('@sf_guard_permission') ?>">Permissions</a></li>
+        		</ul>
+        	</li>
+					<li>
+						<a href="#">Contenu</a>
+						<ul class="subnav">
+							<li><a href="<?php echo url_for('@category') ?>">Catégories</a></li>
+							<li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
+							<li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
+							<li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Plantation</a>
+						<ul class="subnav">
+							<li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
+							<li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
+							<li><a href="<?php echo url_for('@coupon') ?>">Type de coupons</a></li>
+						</ul>
+					</li>
+					
+					
+				</ul>
       </div>
  
       <div id="content">

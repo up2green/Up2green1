@@ -15,15 +15,17 @@ abstract class BasetreeForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'created_at' => new sfWidgetFormDateTime(),
-      'updated_at' => new sfWidgetFormDateTime(),
+      'id'           => new sfWidgetFormInputHidden(),
+      'programme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Programme'), 'add_empty' => false)),
+      'created_at'   => new sfWidgetFormDateTime(),
+      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'programme_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Programme'))),
+      'created_at'   => new sfValidatorDateTime(),
+      'updated_at'   => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('tree[%s]');

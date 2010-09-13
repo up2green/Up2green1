@@ -1,7 +1,7 @@
 <!-- module -->
 <div class="module">
 	<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
-	<p class="title">Nos Programmes de reforestation</p>
+	<p class="title">Les programmes de reforestation que nous soutenons</p>
 	<div class="content">
 		<?php use_helper('Javascript','GMap') ?>
 		<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>

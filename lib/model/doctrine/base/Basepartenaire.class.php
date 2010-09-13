@@ -7,6 +7,7 @@
  * 
  * @property integer $id
  * @property bigint $user_id
+ * @property string $logo
  * @property string $title
  * @property string $accroche
  * @property clob $description
@@ -16,6 +17,7 @@
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method bigint              getUserId()             Returns the current record's "user_id" value
+ * @method string              getLogo()               Returns the current record's "logo" value
  * @method string              getTitle()              Returns the current record's "title" value
  * @method string              getAccroche()           Returns the current record's "accroche" value
  * @method clob                getDescription()        Returns the current record's "description" value
@@ -24,6 +26,7 @@
  * @method Doctrine_Collection getCouponsPartenaires() Returns the current record's "CouponsPartenaires" collection
  * @method partenaire          setId()                 Sets the current record's "id" value
  * @method partenaire          setUserId()             Sets the current record's "user_id" value
+ * @method partenaire          setLogo()               Sets the current record's "logo" value
  * @method partenaire          setTitle()              Sets the current record's "title" value
  * @method partenaire          setAccroche()           Sets the current record's "accroche" value
  * @method partenaire          setDescription()        Sets the current record's "description" value
@@ -52,6 +55,10 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 20,
+             ));
+        $this->hasColumn('logo', 'string', 128, array(
+             'type' => 'string',
+             'length' => 128,
              ));
         $this->hasColumn('title', 'string', 45, array(
              'type' => 'string',

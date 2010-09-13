@@ -69,3 +69,11 @@ div.content input {
 div.gmap-info-bulle {
 	overflow:hidden;
 }
+
+.module img.organisme-image {
+	display:block;
+	margin:0 auto;
+	max-width:200px;
+	padding-bottom:5px;
+	text-align:center;
+}

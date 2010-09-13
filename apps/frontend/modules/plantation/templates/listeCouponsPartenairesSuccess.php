@@ -2,7 +2,7 @@
 <?php if (sizeof($coupons) > 0) : ?>
 <div id="form_programme_plantation" class="module">
     <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-    <p class="title little indent">Coupons non utilisés (<?php echo sizeof($coupons) ?>)</p>
+    <p class="title little indent">Coupons non utilisés (<?php echo sizeof($coupons) ?>) <a href="<?php echo url_for('@couponsCSV') ?>">CSV</a></p>
     <div class="content">
         <?php if(sizeof($coupons) > sfConfig::get('app_max_programme_plantation_list')) : ?>
         <center><span id="slideUp" class="button white">
@@ -34,7 +34,7 @@
 <?php if (sizeof($couponsUsed) > 0): ?>
 <div id="form_programme_plantation" class="module">
     <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-    <p class="title little indent">Coupons utilisés (<?php echo sizeof($couponsUsed) ?>)</p>
+    <p class="title little indent">Coupons utilisés (<?php echo sizeof($couponsUsed) ?>) <a href="<?php echo url_for('@couponsUsedCSV') ?>">CSV</a></p>
     <div class="content">
         <?php if(sizeof($couponsUsed) > sfConfig::get('app_max_programme_plantation_list')) : ?>
         <span id="slideUp" class="button white">

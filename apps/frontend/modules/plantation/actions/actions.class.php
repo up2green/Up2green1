@@ -16,7 +16,7 @@ class plantationActions extends sfActions {
      */
     public function executeIndex(sfWebRequest $request) {
         // chargement des variables pour le form programmes
-        $this->programmes = Doctrine_Core::getTable('programme')->findAll();
+        $this->programmes = Doctrine_Core::getTable('programme')->getActive();
 
         $this->phraseCoupon = "";
 
@@ -38,8 +38,6 @@ class plantationActions extends sfActions {
                         $this->coupon = $coupon;
                         $this->spendAll = true;
                         $this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
-//                            $coupon->setIsActive(false);
-                        // utilisation du coupon
                     }
                     else {
                         $this->coupon = null;
@@ -74,13 +72,31 @@ class plantationActions extends sfActions {
     }
 
 
+    public function executeCouponsCSV(sfWebRequest $request){
+	if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
+	    $this->coupons = Doctrine_Query::create()->from('coupon c')->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $partenaire->getId())
+		    ->andWhere('c.is_active = ?', true)->execute();
+	}
+	else $this->forward404();
+	$this->setLayout(false);
+    }
+
+        public function executeCouponsUsedCSV(sfWebRequest $request){
+	if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
+	    $this->coupons = Doctrine_Query::create()->from('coupon c')->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $partenaire->getId())
+		    ->andWhere('c.is_active = ?', false)->execute();
+	}
+	else $this->forward404();
+	$this->setLayout(false);
+    }
+
 
     private function getGmap() {
 		$this->gMap = new GMap(array(
 			'scrollwheel' => 'false',
 			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE'
 		));
-		$this->programmes = Doctrine::getTable('programme')->getActive();
+//		$this->programmes = Doctrine::getTable('programme')->getActive();
 		foreach($this->programmes as $programme) {
 
 			if(
@@ -118,8 +134,8 @@ class plantationActions extends sfActions {
 				if(isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)) {
 					$html .= '
 						<span class="action">
-							<button id="addArbreProgrammeMap_"'.$programme->getId().' class="button really-small green">+</button>
-							<button id="removeArbreProgrammeMap_"'.$programme->getId().' class="button really-small gray">-</button>
+							<button id="addArbreProgrammeMap_'.$programme->getId().'" class="button really-small green">+</button>
+							<button id="removeArbreProgrammeMap_'.$programme->getId().'" class="button really-small gray">-</button>
 						</span>
 					';
 				}
@@ -128,6 +144,7 @@ class plantationActions extends sfActions {
 					'click',
 					'moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
 				));
+
 
 				$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow(
 					'<div class="gmap-info-bulle">'.$html.'</div>',

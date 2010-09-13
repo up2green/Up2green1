@@ -3,6 +3,21 @@ var moveToMarker = function(lat, lng){
 	map.setCenter(marker);
 }
 
+var updateBoutonsBulle = function(id){
+    alert("bubulle");
+    if ($("#addArbreProgramme_"+id).hasClass('gray')){
+	$("#addArbreProgrammeMap_"+id).removeClass('green');
+	$("#addArbreProgrammeMap_"+id).addClass('gray');
+    }
+    if ($("#removeArbreProgramme_"+id).hasClass('green')){
+	$("#removeArbreProgrammeMap_"+id).removeClass('gray');
+	$("#removeArbreProgrammeMap_"+id).addClass('green');
+    }
+//    $("#addArbreProgrammeMap_"+id).attr('class', $("addArbreProgramme_"+id).attr('class'));
+//    $("#removeArbreProgrammeMap_"+id).attr('class', $("removeArbreProgramme_"+id).attr('class'));
+//    alert($("#addArbreProgrammeMap_"+id).attr('class'));
+}
+
 google.maps.Map.prototype.markers = new Array();
 
 google.maps.Map.prototype.getMarkers = function() {

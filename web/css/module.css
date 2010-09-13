@@ -1,69 +1,89 @@
 span.corner  {
 	background-repeat: no-repeat;
-	background-color: transparent;
+	background-color:#FFFFFF;
 	display:block;
 	font-size:0;
 	position:absolute;
 	width:13px;
 }
 
-span.ctl{
-	background:url(/images/module/green/corners.png) no-repeat scroll left top transparent;
-	height:46px;
+span.ctl, span.ctr {
+	height:44px;
 	top:0;
+}
+
+span.ctl{
+	background-position: top left;
 	left:0;
 }
 
 span.ctr{
-	background:url(/images/module/green/corners.png) no-repeat scroll right top transparent;
-	height:46px;
-	top:0;
+	background-position: top right;
 	right:0;
 }
 
-span.cbl{
-	background:url(/images/module/green/corners.png) no-repeat scroll left bottom transparent;
-	height:23px;
+span.cbl, span.cbr{
+	height:25px;
 	bottom:0;
+}
+
+span.cbl{
+	background-position: bottom left;
 	left:0;
 }
 
 span.cbr{
-	background:url(/images/module/green/corners.png) no-repeat scroll right bottom transparent;
-	height:23px;
-	bottom:0;
+	background-position: bottom right;
 	right:0;
 }
+
+/* borders */
+
+span.border {position:absolute;}
+
+span.border.bb, span.border.bt{
+	width:100%;
+	background-repeat:repeat-x;
+}
+
+span.border.bl, span.border.br{
+	width:13px;
+	height:100%;
+	background-repeat:repeat-y;
+}
+
 span.border.bb{
-	background:url(/images/module/green/bottom-middle.png) repeat-x scroll 0 0 transparent;
+	background-position:bottom left;
 	height:25px;
 	bottom:-2px;
 }
+
 span.border.bt{
-	background:url(/images/module/green/top-middle.png) repeat-x scroll 0 0 transparent;
+	background-position:top left;
 	height:44px;
 	top:2px;
 }
-span.border.bl{
-	background:url(/images/module/green/middle-left.png) repeat-y scroll 0 0 transparent;
-	left:0;
-}
+
 span.border.br{
-	background:url(/images/module/green/middle-right.png) repeat-y scroll 0 0 transparent;
+	background-position:top right;
 	right:0;
+	top:0;
 }
 
-span.border {position:absolute;}
-span.border.bb, span.border.bt{width:100%;}
-span.border.bl, span.border.br{top:0;width:13px;height:100%;}
+span.border.bl{
+	background-position:top left;
+	left:0;
+	top:0;
+}
 
-span.border.bb{background-position:bottom left;}
-span.border.bt{background-position:top left;}
-span.border.br{background-position:top right;}
-span.border.bl{background-position:top left;}
 /* module/green */
 
-div.module{height:auto;position:relative;}
+div.module{
+	height:auto;
+	position:relative;
+	background:none;
+	border:medium none;
+}
 	div.module p.title{
 		left:50px;
 		color:#7AA520;
@@ -77,7 +97,7 @@ div.module{height:auto;position:relative;}
 	}
 	div.module p.title.indent{left:70px;top:10px;width:65%;}
 	div.module p.title.little{font-size:12px;top:10px}
-	div.module img.title{z-index:10;position:absolute;}
+	div.module img.title{z-index:10;position:absolute;background-color:#FFFFFF;}
 	div.module img.title.corner.left{left:-16px;top:-10px;}
 	div.module img.title.middle.left{left:14px;top:-9px;}
 	div.module img.title.middle.right{right:14px;top:-9px; float:right}
@@ -86,3 +106,35 @@ div.module{height:auto;position:relative;}
 #left div.module {
 	margin-bottom:20px;
 }
+
+/* green (default) */
+div.module p.title, div.module.green p.title{color:#7AA520;}
+div.module span.border.br, div.module.green span.border.br{background-image:url(/images/module/green/middle-right.png);}
+div.module span.border.bl, div.module.green span.border.bl{background-image:url(/images/module/green/middle-left.png);}
+div.module span.border.bt, div.module.green span.border.bt{background-image:url(/images/module/green/top-middle.png);}
+div.module span.border.bb, div.module.green span.border.bb{background-image:url(/images/module/green/bottom-middle.png);}
+div.module span.corner, div.module.green span.corner{background-image:url(/images/module/green/corners.png);}
+
+/* div.purple */
+div.module.purple p.title{color:#2E005F;}
+div.module.purple span.border.br{background-image:url(/images/module/purple/middle-right.png);}
+div.module.purple span.border.bl{background-image:url(/images/module/purple/middle-left.png);}
+div.module.purple span.border.bt{background-image:url(/images/module/purple/top-middle.png);}
+div.module.purple span.border.bb{background-image:url(/images/module/purple/bottom-middle.png);}
+div.module.purple span.corner{background-image:url(/images/module/purple/corners.png);}
+
+/* div.blue2 */
+div.module.blue2 p.title{color:#2E005F;}
+div.module.blue2 span.border.br{background-image:url(/images/module/blue2/middle-right.png);}
+div.module.blue2 span.border.bl{background-image:url(/images/module/blue2/middle-left.png);}
+div.module.blue2 span.border.bt{background-image:url(/images/module/blue2/top-middle.png);}
+div.module.blue2 span.border.bb{background-image:url(/images/module/blue2/bottom-middle.png);}
+div.module.blue2 span.corner{background-image:url(/images/module/blue2/corners.png);}
+
+/* div.grey */
+div.module.grey p.title{color:#2E005F;}
+div.module.grey span.border.br{background-image:url(/images/module/grey/middle-right.png);}
+div.module.grey span.border.bl{background-image:url(/images/module/grey/middle-left.png);}
+div.module.grey span.border.bt{background-image:url(/images/module/grey/top-middle.png);}
+div.module.grey span.border.bb{background-image:url(/images/module/grey/bottom-middle.png);}
+div.module.grey span.corner{background-image:url(/images/module/grey/corners.png);}

@@ -87,8 +87,6 @@
 	}
 	else {
 	    include_partial('formInscription', array());
-	    if ($nbArbresToPlant > 0)
-		include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
 	}
 
 	if($view !== 'listeCouponsPartenaires') {

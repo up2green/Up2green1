@@ -547,3 +547,24 @@ engineTag:
     tag:
       local: tag_id
       onDelete: CASCADE
+
+logCoupon:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    ip:
+      type: string(15)
+      notnull: true
+    email:
+      type: string(50)
+    coupon_id:
+      type: integer(4)
+      notnull: true
+      unique: true
+  relations:
+    coupon:
+      local: coupon_id

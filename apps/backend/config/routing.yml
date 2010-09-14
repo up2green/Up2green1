@@ -1,3 +1,12 @@
+log_coupon:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                logCoupon
+    module:               log_coupon
+    prefix_path:          /log_coupon
+    column:               id
+    with_wildcard_routes: true
+
 coupon:
   class: sfDoctrineRouteCollection
   options:

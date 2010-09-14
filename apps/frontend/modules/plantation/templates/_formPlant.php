@@ -32,6 +32,9 @@
             <img src="/images/icons/bottom.png" alt="Bas"/>
         </span>
         <?php endif; ?><br /><br />
+	<?php if (! $sf_user->isAuthenticated()): ?>
+	<p>E-mail : <input type="text" name="email_user_deco" /></p>
+	<?php endif; ?>
         <p class="center">
             <span id="buttonArbresProgramme" class="button gray">Planter mes arbres !</span>
         </p>

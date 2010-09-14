@@ -15,6 +15,7 @@
  * @property Doctrine_Collection $couponUser
  * @property Doctrine_Collection $CouponsPartenaires
  * @property Doctrine_Collection $treeCoupon
+ * @property Doctrine_Collection $logCoupon
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method integer             getGenId()              Returns the current record's "gen_id" value
@@ -26,6 +27,7 @@
  * @method Doctrine_Collection getCouponUser()         Returns the current record's "couponUser" collection
  * @method Doctrine_Collection getCouponsPartenaires() Returns the current record's "CouponsPartenaires" collection
  * @method Doctrine_Collection getTreeCoupon()         Returns the current record's "treeCoupon" collection
+ * @method Doctrine_Collection getLogCoupon()          Returns the current record's "logCoupon" collection
  * @method coupon              setId()                 Sets the current record's "id" value
  * @method coupon              setGenId()              Sets the current record's "gen_id" value
  * @method coupon              setCode()               Sets the current record's "code" value
@@ -36,6 +38,7 @@
  * @method coupon              setCouponUser()         Sets the current record's "couponUser" collection
  * @method coupon              setCouponsPartenaires() Sets the current record's "CouponsPartenaires" collection
  * @method coupon              setTreeCoupon()         Sets the current record's "treeCoupon" collection
+ * @method coupon              setLogCoupon()          Sets the current record's "logCoupon" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -93,6 +96,10 @@ abstract class Basecoupon extends sfDoctrineRecord
              'foreign' => 'coupon_id'));
 
         $this->hasMany('treeCoupon', array(
+             'local' => 'id',
+             'foreign' => 'coupon_id'));
+
+        $this->hasMany('logCoupon', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 

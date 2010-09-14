@@ -9,6 +9,9 @@ partenaire:
       type: bigint(20)
       notnull: true
       unique: true
+    logo:
+      type: string(128)
+      default: null
     title:
       type: string(45)
       default: null
@@ -28,8 +31,6 @@ partenaire:
       onDelete: CASCADE
       foreignType:  one
       foreignAlias: Partenaire
-
-
       
 profil:
   columns:
@@ -73,8 +74,7 @@ couponGen:
     credit:
       type: integer(4)
       notnull: true
-
-
+      
 coupon:
   actAs: [Timestampable]
   columns:
@@ -144,8 +144,7 @@ couponPartenaire:
     coupon:
       local: coupon_id
       foreignAlias: CouponsPartenaires
-
-
+      
 organisme:
   actAs: 
     Timestampable: ~

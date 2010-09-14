@@ -9,9 +9,9 @@ class couponTable extends Doctrine_Table {
 
     public static function getNumUnused() {
 
-        $string = substr(md5(date('Y-m-d h:i:s:u') . rand(0, 100)), 0, 20);
+        $string = substr(md5(date('Y-m-d h:i:s:u') . rand(0, 100)), 0, 9);
         if (! $coupon = self::getInstance()->createQuery('c')->where('c.code = ?', $string)->fetchOne())
-            return $string;
+            return strtoupper($string);
 //        else return $this->getNumUnused();
         else return self::getNumUnused();
     }

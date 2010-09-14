@@ -18,6 +18,7 @@ var updateBoutonsBulle = function(id){
 //    alert($("#addArbreProgrammeMap_"+id).attr('class'));
 }
 
+/*
 google.maps.Map.prototype.markers = new Array();
 
 google.maps.Map.prototype.getMarkers = function() {
@@ -39,24 +40,29 @@ google.maps.Marker.prototype.setMap = function(map) {
 	}
 	this._setMap(map);
 }
+*/
 
 $(document).ready(function(){
 	
-	$("ul:first", "#form_programme_plantation").scrollTo( 0 ); 
-	size = 5 * $("ul:first > li", "#form_programme_plantation").height();
+	// list modules sccrollable	
+	$(".scrollableWrapper").each(function() {
+		self = $(this);
+		$("ul.scrollable", self).scrollTo( 0 ); 
+		var size = 120;
 	
-	$("#slideUp").click(function(){
-		$("ul:first", "#form_programme_plantation").scrollTo(
-			'-=' + size + 'px', 
-			{speed:1000, axis:'y', queued:true}
-		);
+		$("span.slideUp", self).click(function(){
+			$("ul.scrollable", self).scrollTo(
+				'-=' + size + 'px', 
+				{speed:500, axis:'y', queued:true}
+			);
+		});
+	
+		$("span.slideDown").click(function(){
+			$("ul:first", self).scrollTo(
+				'+=' + size + 'px', 
+				{speed:500, axis:'y', queued:true}
+			);
+		});
 	});
 	
-	$("#slideDown").click(function(){
-		$("ul:first", "#form_programme_plantation").scrollTo(
-			'+=' + size + 'px', 
-			{speed:1000, axis:'y', queued:true}
-		);
-	});
-
 });

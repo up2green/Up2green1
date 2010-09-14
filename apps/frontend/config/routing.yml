@@ -63,17 +63,25 @@ blog:
   url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
   param: { module: blog, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
 
-homepage:
-  url: /
-  param: { module: recherche, action: index }
+blog:
+  url: /blog
+  param: { module: blog, action: index}
+  
+####################
+##### PLANTATION
+####################
+
+plantation_liste_coupon_partenaire:
+  url: /plantation/listeCouponsPartenaires
+  param: { module: plantation, action: index, view: listeCouponsPartenaires }
 
 plantation:
   url: /plantation
   param: { module: plantation, action: index}
 
-blog:
-  url: /blog
-  param: { module: blog, action: index}
+homepage:
+  url: /
+  param: { module: recherche, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

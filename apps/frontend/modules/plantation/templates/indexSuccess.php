@@ -72,31 +72,31 @@
 	    <?php
 	    endif;
 
-	} else {
-	    include_partial('formGMap', array('gMap' => $gMap));
-	}
-	?>
-    </div>
-    <!-- for SEO the sidebar after the content -->
-    <div id="left">
-	<?php
-	if ($sf_user->isAuthenticated()) {
-	    if (!is_null($partenaire)) {
-		include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
-	    }
-	}
+	} 
 	else {
-	    include_partial('formInscription', array());
+		include_partial('formGMap', array('gMap' => $gMap));
 	}
-
-	if($view !== 'listeCouponsPartenaires') {
-	    if (isset($coupon)) {
-		include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
-	    }
-	    else {
-		include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
-	    }
+	
+	echo '</div><div id="left">';
+	
+	if($view !== 'listeCouponsPartenaires' or !$sf_user->isAuthenticated()) {
+		if (isset($coupon)) {
+			include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
+		} 
+		else {
+			include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
+		}
 	}
+	
+	if ($sf_user->isAuthenticated()) {
+		if (!is_null($partenaire)) {
+			include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
+		}
+	} 
+	else {
+		include_partial('formInscription', array());
+	}
+	
 	?>
     </div>
 </div>

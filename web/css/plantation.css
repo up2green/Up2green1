@@ -1,5 +1,21 @@
 .general .header {display:none;}
 #footer_wrapper{display:none;} /*en attendant*/
+/*
+body{background:url("../images/blog/backgrounds/main1.jpg") no-repeat fixed center center transparent;}
+*/
+
+a.read_more {
+	color:#AAAAAA;
+	display:block;
+	font-size:0.9em;
+	font-style:italic;
+	font-weight:bold;
+	text-align:right;
+}
+
+a.read_more:hover {
+	color:#91BF83;
+}
 
 /*CORPS du SITE*/
 #body{
@@ -11,6 +27,10 @@
 		background-color:#FFFFFF;
 		float:right;
 		width:750px;
+	}
+	
+	#center .module{
+		margin-bottom:20px;
 	}
 
 	#left {
@@ -52,21 +72,19 @@ ul.scrollable.medium  {
 		background-color:#eee;
 	}
 	
-		ul.scrollable  li span.item {
-			display: inline-block;
-			width:120px;
+		ul.scrollable  li p.item {
 			font-size:0.75em;
 		}
 
-		ul.scrollable  li span.bigitem{
+		ul.scrollable  li p.bigitem{
 			display: inline-block;
 			font-size: 0.75em;
 			width: 400px;
 		}
 		
 		ul.scrollable  li span.action {
-			float:right;
-			margin:0 0 2px;
+			position:absolute;
+			right:0;
 		}
 	
 .scrollableWrapper span.button {
@@ -83,6 +101,22 @@ span.button.maxWidth {
 
 div.gmap-info-bulle {
 	overflow:hidden;
+}
+
+.gmap-info-bulle span.title {
+	font-weight:bold;
+	color:#213F17;
+}
+
+div.gmap-info-bulle a {
+	margin:0;
+}
+
+.gmap-info-bulle img.gmap-programme {
+	float:left;
+	max-height:80px;
+	max-width:145px;
+	padding-right:5px;
 }
 
 .module img.organisme-image {

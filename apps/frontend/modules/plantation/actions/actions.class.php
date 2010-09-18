@@ -114,7 +114,7 @@ class plantationActions extends sfActions {
     }
 
 
-    private function getGmap() {
+	private function getGmap() {
 		$this->gMap = new GMap(array(
 			'scrollwheel' => 'false',
 			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE'
@@ -145,27 +145,43 @@ class plantationActions extends sfActions {
 					array(
 						'title ' => "'".$programme->getTitle()."'",
 						'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
-						'icon'	=> $this->getProgrammeIcon($programme)
+						'icon'	=> $this->getProgrammeIcon($programme),
+						
 					)
 				);
-
-				$html = '
-					<span class="title">'.$programme->getTitle().'</span>
-					<p class="content">'.$programme->getAccroche().'</p>
-				';
+				
+				$gMapMarker->SetCustomProperties(array(
+					'class' => 'gmap-marker'
+				));
+				
+				$html = '<span class="title">'.$programme->getTitle().'</span>';
+				$html .= '<p class="content">';
+				
+				if(
+					$programme->getLogo() != '' && 
+					file_exists(sfConfig::get('sf_upload_dir').'/programme/'.$programme->getLogo())
+				) {
+					$html .= '<img class="gmap-programme" src="/uploads/programme/'.$programme->getLogo().'" alt="Diapo Image" />';
+				}
+				
+				$html .= $programme->getAccroche();
+				$html .= '<a href="http://association.up2green.com/programme/'.$programme->getSlug().'" class="read_more" target="_blank">Lire la suite</a>';
+				$html .= '</p>';
 
 				if(isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)) {
 					$html .= '
 						<span class="action">
-							<button id="addArbreProgrammeMap_'.$programme->getId().'" class="button really-small green">+</button>
-							<button id="removeArbreProgrammeMap_'.$programme->getId().'" class="button really-small gray">-</button>
+							<button class="addTree button really-small green" programme="'.$programme->getId().'">+</button>
+							<button class="removeTree button really-small gray" programme="'.$programme->getId().'">-</button>
 						</span>
 					';
 				}
+				
+				$html .= '<br />';
 
 				$gMapMarker->addEvent(new GMapEvent(
 					'click',
-					'moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
+					'$.fn.moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
 				));
 
 
@@ -206,14 +222,14 @@ class plantationActions extends sfActions {
         return 0;
     }
 
-    private function getProgrammeIcon(programme $programme) {
-        return new GMapMarkerImage(
-                '/images/gmap/tree.png',
-                array(
-                        'width' => 32,
-                        'height' => 32,
-                )
-        );
-    }
+	private function getProgrammeIcon(programme $programme) {
+		return new GMapMarkerImage(
+			'/images/gmap/tree.png',
+			array(
+				'width' => 32,
+				'height' => 32,
+			)
+		);
+	}
 
 }

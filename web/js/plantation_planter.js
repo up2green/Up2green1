@@ -1,86 +1,89 @@
 $(document).ready(function(){
-    // gestion des boutons "+"
-    $("button[id^='addArbreProgramme']").live("click", function(){
-	if (($(this).hasClass('green')) && ($('#nbArbresToPlantLeft').attr('innerHTML') != "0")){
-	    // récupération id du programme
-	    id = $(this).attr('id').substr(18);
-	    if (id.substr(0, 1) == "a") id = id.substr(3);
+	
+	// Ajout d'accesseur pour la lib google
+	$.fn.extend({
+		moveToMarker: function(lat, lng){
+			var marker = new google.maps.LatLng(lat, lng);
+			map.setCenter(marker);
+			// on ferme les autres info bulles
+			var zIndex = $(".gmap-info-bulle").parent().parent().parent().parent().css("z-index");
+			$("div", $(".gmap-info-bulle").parent().parent().parent().parent().parent().parent()).each(function() {
+				console.log($(this).css("z-index"));
+				if($(this).css("z-index") == zIndex) {
+					$(this).remove();
+				}
+			});
+			
+			// on attend que la pop in s'ouvre et on applique la fonction
+			setTimeout('$.fn.refreshInfoBulles()',200);
+		},
+		
+		refreshInfoBulles: function(){
+			$(".gmap-info-bulle").each(function() {
+				if($("button.addTree", this).length) {
+					var idProgramme = $("button.addTree", this).attr('programme');
+					if($("button.addTree[programme='"+idProgramme+"']", $("form[name='plant']")).hasClass('green')) {
+						$("button.addTree", this).removeClass('grey').addClass('green');
+					}
+				}
+				if($("button.removeTree", this).length) {
+					var idProgramme = $("button.removeTree", this).attr('programme');
+					if($("button.removeTree[programme='"+idProgramme+"']", $("form[name='plant']")).hasClass('green')) {
+						$("button.removeTree", this).removeClass('grey').addClass('green');
+					}
+				}
+			});
+		}
+	});
 
-	    // modification du nombre d'arbres à planter sur ce programme
-	    total = $("#nbArbresProgramme_"+id).attr('innerHTML');
-	    if ((total == null) || (total == "")) total = 0;
-	    $("#nbArbresProgramme_"+id).attr('innerHTML', parseInt(total) + 1);
-	    $("#nbArbresProgrammeHidden_"+id).attr('value', parseInt(total) + 1);
-
-	    // autorisation de suppression d'arbre si le programme avait 0 arbres avant le clic
-	    if (total == 0) {
-		$("#removeArbreProgramme_"+id).removeClass("gray");
-		$("#removeArbreProgramme_"+id).addClass("green");
-		$("#removeArbreProgrammeMap_"+id).removeClass("gray");
-		$("#removeArbreProgrammeMap_"+id).addClass("green");
-	    }
-
-	    // changement du total d'arbres restant à planter
-	    totalToPlant = parseInt($('#nbArbresToPlantLeft').attr('innerHTML'));
-	    $('#nbArbresToPlantLeft').attr('innerHTML', totalToPlant - 1);
-
-	    // si plus d'arbres à planter
-	    if ($('#nbArbresToPlantLeft').attr('innerHTML') == "0"){
-		// passage de tout les boutons + en gris
-		$("button[id^='addArbreProgramme']").removeClass("green");
-		$("button[id^='addArbreProgramme']").addClass("gray");
-
-		// passage du bouton de submit en vert
-		$("#buttonArbresProgramme").removeClass("gray");
-		$("#buttonArbresProgramme").addClass("green");
-	    }
-	}
-	return false;
-    });
-
-    // gestion des boutons "-"
-    $("button[id^='removeArbreProgramme']").live("click", function(){
-	if ($(this).hasClass('green')) {
-	    id = $(this).attr('id').substr(21);
-	    if (id.substr(0, 1) == "a") id = id.substr(3);
-            
-	    // modification du nombre d'arbres à planter sur ce programme
-	    total = parseInt($("#nbArbresProgramme_"+id).attr('innerHTML'));
-	    if (total - 1 == 0) $("#nbArbresProgramme_"+id).attr('innerHTML', "");
-	    else $("#nbArbresProgramme_"+id).attr('innerHTML', parseInt(total) - 1);
-	    $("#nbArbresProgrammeHidden_"+id).attr('value', parseInt(total) - 1);
-
-	    // suppression de l'autorisation de suppression d'arbre si le programme a 0 arbres après le clic
-	    if (total - 1 == 0) {
-		$("#removeArbreProgramme_"+id).removeClass("green");
-		$("#removeArbreProgramme_"+id).addClass("gray");
-		$("#removeArbreProgrammeMap_"+id).removeClass("green");
-		$("#removeArbreProgrammeMap_"+id).addClass("gray");
-	    }
-
-	    // changement du total d'arbres restant à planter
-	    totalToPlant = parseInt($('#nbArbresToPlantLeft').attr('innerHTML'));
-	    $('#nbArbresToPlantLeft').attr('innerHTML', totalToPlant + 1);
-
-	    // si à nouveau des arbres à planter
-	    if ($('#nbArbresToPlantLeft').attr('innerHTML') == "1"){
-		// passage de tout les boutons + en vert
-		$("button[id^='addArbreProgramme']").removeClass("gray");
-		$("button[id^='addArbreProgramme']").addClass("green");
-
-		// passage du bouton de submit en gris
-		$("#buttonArbresProgramme").removeClass("green");
-		$("#buttonArbresProgramme").addClass("gray");
-	    }
-	}
-	return false;
-    });
-
-    // gestion du bouton de validation
-    $("#buttonArbresProgramme").click(function(){
-	if ($(this).hasClass('green')){
-	    $("#submitArbresProgramme").trigger('click');
-	}
-	return false;
-    });
+	var hiddenTotalLeft = $('input:hidden[name="nbArbresToPlantLeft"]');
+	var totalMax = parseInt($('input:hidden[name="nbTreeMax"]').val());
+	
+	// gestion de la plantation
+	$("button.addTree, button.removeTree").live("click", function(e){
+		
+		e.preventDefault();
+		
+		var idProgramme = $(this).attr('programme');
+		var hiddenProgrammeTotal = $('input:hidden[name="nbArbresProgrammeHidden_'+idProgramme+'"]');
+		var totalProgramme = parseInt(hiddenProgrammeTotal.val());
+		var totalLeft = parseInt(hiddenTotalLeft.val());
+		
+		if($(this).hasClass('addTree')) {
+			if(totalLeft == 0) {
+				return;
+			}
+			var newTotalProgramme = totalProgramme + 1;
+			var newTotalLeft = totalLeft - 1;
+		}
+		else {
+			if(totalLeft == totalMax || totalProgramme == 0) {
+				return;
+			}
+			var newTotalProgramme = totalProgramme - 1;
+			var newTotalLeft = totalLeft + 1;
+		}
+				
+		// changement du total d'arbres à planter
+		$('.nbArbresToPlantLeft').html(newTotalLeft);
+		hiddenTotalLeft.val(newTotalLeft);
+		
+		$("button.addTree")
+			.removeClass((newTotalLeft > 0) ? 'gray' : 'green')
+			.addClass((newTotalLeft > 0) ? 'green' : 'gray');
+		
+		$('input:submit[name="submitArbresProgramme"]')
+			.removeClass((newTotalLeft > 0) ? 'green' : 'gray')
+			.addClass((newTotalLeft > 0) ? 'gray' : 'green');
+		
+		// modification du nombre d'arbres à planter sur ce programme
+		hiddenProgrammeTotal.val(newTotalProgramme);
+		$('.nbTree[programme="'+idProgramme+'"]').html(newTotalProgramme);
+		
+		$('.removeTree[programme="'+idProgramme+'"]')
+			.removeClass((newTotalProgramme > 0) ? 'gray' : 'green')
+			.addClass((newTotalProgramme > 0) ? 'green' : 'gray');
+				
+	});
+	
 });

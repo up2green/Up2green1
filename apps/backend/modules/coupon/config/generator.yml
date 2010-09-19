@@ -1,7 +1,7 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           couponGen
+    model_class:           coupon
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
@@ -15,11 +15,9 @@ generator:
       actions: ~
       fields:  ~
       list:
-        title: Liste des coupons
-        
+        title:   Gestion des coupons
+        display: [id, CouponGen, code, is_active, used_at]
       filter:  ~
       form:    ~
-      edit:
-        title: Modifier un coupon
-      new:
-        title: Nouveau coupon
+      edit:    ~
+      new:     ~

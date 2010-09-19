@@ -12,22 +12,30 @@
  */
 class coupon extends Basecoupon {
     public function plantArbre($nb, programme $programme, $user) {
-        for ($i = 0; $i < $nb; $i ++) {
-            $tree = new tree();
-            $tree->setProgramme($programme);
-            $tree->save();
+	for ($i = 0; $i < $nb; $i ++) {
+	    $tree = new tree();
+	    $tree->setProgramme($programme);
+	    $tree->save();
 
-            $treeCoupon = new treeCoupon();
-            $treeCoupon->setCoupon($this);
-            $treeCoupon->setTree($tree);
-            $treeCoupon->save();
+	    $treeCoupon = new treeCoupon();
+	    $treeCoupon->setCoupon($this);
+	    $treeCoupon->setTree($tree);
+	    $treeCoupon->save();
 
-            if ($user->getGuardUser()) {
-                $treeUser = new treeUser();
-                $treeUser->setTree($tree);
-                $treeUser->setUser($user->getGuardUser());
-                $treeUser->save();
-            }
-        }
+	    if ($user->getGuardUser()) {
+		$treeUser = new treeUser();
+		$treeUser->setTree($tree);
+		$treeUser->setUser($user->getGuardUser());
+		$treeUser->save();
+	    }
+	}
+    }
+
+    public function logUser($email) {
+	$logCoupon = new logCoupon();
+	$logCoupon->setEmail($email);
+	$logCoupon->setIp($_SERVER['REMOTE_ADDR']);
+	$logCoupon->setCoupon($this);
+	$logCoupon->save();
     }
 }

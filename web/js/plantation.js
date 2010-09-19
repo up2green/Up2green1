@@ -1,47 +1,33 @@
-var moveToMarker = function(lat, lng){
-	var marker = new google.maps.LatLng(lat, lng);
-	map.setCenter(marker);
-}
-
-google.maps.Map.prototype.markers = new Array();
-
-google.maps.Map.prototype.getMarkers = function() {
-	return this.markers
-};
-
-google.maps.Map.prototype.clearMarkers = function() {
-	for(var i=0; i<this.markers.length; i++){
-			this.markers[i].setMap(null);
-	}
-	this.markers = new Array();
-};
-
-google.maps.Marker.prototype._setMap = google.maps.Marker.prototype.setMap;
-
-google.maps.Marker.prototype.setMap = function(map) {
-	if (map) {
-			map.markers[map.markers.length] = this;
-	}
-	this._setMap(map);
-}
-
 $(document).ready(function(){
 	
-	$("ul:first", "#form_programme_plantation").scrollTo( 0 ); 
-	size = 5 * $("ul:first > li", "#form_programme_plantation").height();
+	// fix ie submit form
+	if($.browser.msie) {
+		$('input:not(:submit)').keypress(function(e){
+			if (e.keyCode == '13') {
+				 e.preventDefault();
+			 }
+		});
+	}
 	
-	$("#slideUp").click(function(){
-		$("ul:first", "#form_programme_plantation").scrollTo(
-			'-=' + size + 'px', 
-			{speed:1000, axis:'y', queued:true}
-		);
+	// list modules sccrollable	
+	$(".scrollableWrapper").each(function() {
+		var self = $(this);
+		$("ul.scrollable", self).scrollTo( 0 ); 
+		var size = 120;
+	
+		$("span.slideUp", self).click(function(){
+			$("ul.scrollable", self).scrollTo(
+				'-=' + size + 'px', 
+				{speed:500, axis:'y', queued:true}
+			);
+		});
+	
+		$("span.slideDown", self).click(function(){
+			$("ul:first", self).scrollTo(
+				'+=' + size + 'px', 
+				{speed:500, axis:'y', queued:true}
+			);
+		});
 	});
 	
-	$("#slideDown").click(function(){
-		$("ul:first", "#form_programme_plantation").scrollTo(
-			'+=' + size + 'px', 
-			{speed:1000, axis:'y', queued:true}
-		);
-	});
-
 });

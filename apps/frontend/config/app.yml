@@ -14,6 +14,7 @@ all:
       www.up2green.com: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxSbkBb7lgVQWtlidns83ZgJO2fpbxT3-uEu-iZpJj4ZKSDBtjy1G1BJcw
       green.loc: ABQIAAAAsFmetP8aGnqh9wKD7eV4aBSEaGoR3YvicAoDO3yJREyjCR7ArxQYNaiEAo53O2eaWhD_R2QsJh9Cgg
       localhost: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQgsz41bwGYX_jBw9Zh-vi7zT4z-A
+      reforestation-up2green.smartit.fr: ABQIAAAA2WG-bF-JJB9XacJsjS1oChRmKgIyMo5pKNttaUp8WCuH0kqYzBTjVkZIFSLyKW6fXpfNJEp4FsNSBw
   url:
     web: http://boss.yahooapis.com/ysearch/web/v1/
     up2green:

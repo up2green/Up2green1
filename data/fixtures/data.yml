@@ -1,11 +1,84 @@
+<<<<<<< HEAD
+=======
+couponPartenaire:
+  couponPartenaire_1_1:
+    coupon: coupon_1
+    partenaire: partenaire_1
+  couponPartenaire_2_1:
+    coupon: coupon_2
+    partenaire: partenaire_1
+  couponPartenaire_3_1:
+    coupon: coupon_3
+    partenaire: partenaire_1
+  couponPartenaire_4_1:
+    coupon: coupon_4
+    partenaire: partenaire_1
+  couponPartenaire_5_1:
+    coupon: coupon_5
+    partenaire: partenaire_1
+  couponPartenaire_6_1:
+    coupon: coupon_6
+    partenaire: partenaire_1
+coupon:
+  coupon_1:
+    couponGen: couponGen_1
+    code: AZERTY
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:00:00'
+    updated_at: '2010-09-12 18:00:00'
+  coupon_2:
+    couponGen: couponGen_1
+    code: 53d61c24d6eba7d88db1
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:24:57'
+    updated_at: '2010-09-12 18:24:57'
+  coupon_3:
+    couponGen: couponGen_1
+    code: 8e268bbb148035c846d5
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:24:57'
+    updated_at: '2010-09-12 18:24:57'
+  coupon_4:
+    couponGen: couponGen_1
+    code: a010520b2bc7c301f0de
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:24:57'
+    updated_at: '2010-09-12 18:24:57'
+  coupon_5:
+    couponGen: couponGen_1
+    code: a71f4c80bfcbac98af0e
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:24:57'
+    updated_at: '2010-09-12 18:24:57'
+  coupon_6:
+    couponGen: couponGen_1
+    code: 40d52ccbeb332faa6c2a
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-12 18:24:57'
+    updated_at: '2010-09-12 18:24:57'
+>>>>>>> dev
 partenaire:
   partenaire_1:
     User: sfGuardUser_2
+    logo: 985aaaa39c1f931b0b792edf9ae5d68529735b52.jpg
     title: 'Partenaire test'
-    accroche: 'accroche test'
-    description: 'description test'
+    accroche: "<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales tellus ut lacus condimentum id rhoncus dolor porttitor. Suspendisse velit est, sagittis at pharetra sit amet, ornare quis sem.</p>"
+    description: "<p>\r\n	<img alt=\"\" src=\"http://www.lipsum.com/images/lipsum07.gif\" style=\"width: 100px; height: 100px; float: left;\" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales tellus ut lacus condimentum id rhoncus dolor porttitor. Suspendisse velit est, sagittis at pharetra sit amet, ornare quis sem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris placerat ornare porttitor. Donec quam nisl, suscipit eget auctor quis, elementum ac metus. Integer tellus purus, pretium vitae fringilla vitae, fermentum id lorem. Maecenas mi turpis, commodo cursus placerat quis, tincidunt quis sem. Duis gravida vehicula libero sit amet commodo. Mauris a orci neque. Ut sodales turpis at eros semper sit amet facilisis odio semper. Vestibulum eu justo lorem, id ullamcorper nisi. Sed luctus, velit id facilisis laoreet, turpis nibh porttitor nisl, id bibendum purus tellus non sem. Vivamus fermentum tellus non dolor adipiscing ullamcorper. Phasellus consequat leo ac elit rutrum pharetra. Donec eleifend tempor nisl, ut porta turpis gravida et. Donec mollis ipsum quis felis tristique sit amet tincidunt tellus aliquet. Curabitur iaculis augue <img alt=\"\" src=\"http://www.lipsum.com/images/lipsum07.gif\" style=\"width: 100px; height: 100px; float: right;\" />non orci molestie bibendum. Integer a lectus est, aliquam blandit risus.</p>\r\n<p>\r\n	Integer pellentesque lorem vitae diam pellentesque accumsan. Aenean quis leo non dolor mollis pellentesque a non lorem. Nulla sagittis, arcu nec semper interdum, urna est suscipit metus, ac iaculis metus ligula vel libero. Fusce scelerisque, sem nec cursus rhoncus, mi augue semper justo, quis lobortis mi lorem nec est. Mauris semper tortor non lorem tristique ac cursus nunc commodo. In congue ultrices metus sed placerat. Sed at dui eget libero ultrices imperdiet. Donec odio nulla, imperdiet eu aliquam a, bibendum et enim. Vestibulum et lorem eget felis dictum cursus ut non purus. Etiam egestas lorem blandit orci porta a tincidunt tortor dignissim. Proin sed velit odio, eget volutpat velit.</p>"
     url: 'http://url.com/'
     created_at: '2010-09-06 11:35:34'
+<<<<<<< HEAD
     updated_at: '2010-09-06 11:35:34'
 category:
   category_1:
@@ -64,6 +137,50 @@ couponGen:
     credit: '1'
     created_at: '2010-09-08 12:42:05'
     updated_at: '2010-09-08 12:42:05'
+=======
+    updated_at: '2010-09-13 23:12:35'
+organisme:
+  organisme_1:
+    url: 'http://www.planete-urgence.org/'
+    logo: organisme39.jpeg
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_2:
+    url: 'http://www.treesftf.org/'
+    logo: organisme38.gif
+    created_at: '2010-06-26 18:27:37'
+    updated_at: '2010-06-26 18:27:37'
+  organisme_3:
+    url: null
+    logo: organisme40.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_4:
+    url: 'http://www.fondationecokyoto.org/'
+    logo: organisme41.gif
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_5:
+    url: 'http://www.calamada.org/'
+    logo: organisme42.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_6:
+    url: 'http://www.oceanium.org/'
+    logo: fffe245898207a3ec732dd83e8104f5f31915bf0.jpg
+    created_at: '2010-06-26 18:27:38'
+    updated_at: '2010-06-26 18:27:38'
+  organisme_7:
+    url: 'http://www.projetsplusactions.org'
+    logo: a86680be561661e7f83d7e5ee8a3551d14dfe7cc.jpg
+    created_at: '2010-08-28 16:54:18'
+    updated_at: '2010-08-28 17:43:49'
+  organisme_8:
+    url: 'http://www.up2green.com'
+    logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
+    created_at: '2010-08-28 16:56:24'
+    updated_at: '2010-08-28 16:56:24'
+>>>>>>> dev
 newsletter:
   newsletter_1:
     reply_to: noreply@up2green.com
@@ -316,6 +433,7 @@ article:
     is_active: true
     created_at: '2010-08-29 17:32:21'
     updated_at: '2010-08-29 17:32:21'
+<<<<<<< HEAD
 organisme:
   organisme_1:
     url: 'http://www.planete-urgence.org/'
@@ -507,6 +625,229 @@ programme:
     logo: 2209d6cd8d86b2027fb5e3044556e06f74e4e43f.jpg
     created_at: '2010-08-28 18:03:15'
     updated_at: '2010-08-28 18:03:15'
+=======
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: acces_administration
+    description: 'Accès à l''administration'
+    created_at: '2010-09-06 11:28:52'
+    updated_at: '2010-09-06 11:28:52'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: webmaster@smartit.fr
+    username: admin
+    algorithm: sha1
+    salt: 555754a8ea338d568537ad244d1f72cf
+    password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
+    is_active: true
+    is_super_admin: true
+    last_login: '2010-09-12 18:23:53'
+    created_at: '2010-08-28 12:40:14'
+    updated_at: '2010-09-12 18:23:53'
+  sfGuardUser_2:
+    first_name: toto
+    last_name: toto
+    email_address: toto@toto.com
+    username: toto
+    algorithm: sha1
+    salt: 79c83a797fef66dbec666e9a17006ccb
+    password: 7385a72827a21a66df11cbd26be1f2a1c61ee8f3
+    is_active: true
+    is_super_admin: false
+    last_login: '2010-09-13 23:05:34'
+    created_at: '2010-09-06 11:33:53'
+    updated_at: '2010-09-13 23:05:34'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: administrateur
+    description: ''
+    created_at: '2010-09-06 11:29:10'
+    updated_at: '2010-09-06 11:29:10'
+category:
+  category_1:
+    unique_name: blog
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '1'
+    rgt: '10'
+    level: '0'
+  category_2:
+    unique_name: main-menu
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '6'
+    rgt: '9'
+    level: '1'
+  category_3:
+    unique_name: footer
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '4'
+    rgt: '5'
+    level: '1'
+  category_4:
+    unique_name: footer-legal
+    rank: '1'
+    is_active: true
+    root_id: '6'
+    lft: '2'
+    rgt: '3'
+    level: '1'
+  category_5:
+    unique_name: association
+    rank: '2'
+    is_active: true
+    root_id: '6'
+    lft: '7'
+    rgt: '8'
+    level: '2'
+couponGen:
+  couponGen_1:
+    prix: '13.30'
+    credit: '10'
+    created_at: '2010-09-08 12:31:12'
+    updated_at: '2010-09-08 12:31:12'
+  couponGen_2:
+    prix: '7.56'
+    credit: '5'
+    created_at: '2010-09-08 12:41:50'
+    updated_at: '2010-09-08 12:41:50'
+  couponGen_3:
+    prix: '3.50'
+    credit: '1'
+    created_at: '2010-09-08 12:42:05'
+    updated_at: '2010-09-08 12:42:05'
+organismeTranslation:
+  organismeTranslation_1_en:
+    organisme: organisme_1
+    title: 'Eco-Kyoto Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: eco-kyoto-fondation
+  organismeTranslation_1_fr:
+    organisme: organisme_1
+    title: 'Fondation Eco-Kyoto'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-eco-kyoto
+  organismeTranslation_2_en:
+    organisme: organisme_2
+    title: 'Trees For The Future Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: trees-for-the-future-fondation
+  organismeTranslation_2_fr:
+    organisme: organisme_2
+    title: 'Fondation Trees For The Future'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-trees-for-the-future
+  organismeTranslation_3_en:
+    organisme: organisme_3
+    title: BAOBAB29
+    accroche: null
+    description: null
+    lang: en
+    slug: baobab29
+  organismeTranslation_3_fr:
+    organisme: organisme_3
+    title: BAOBAB29
+    accroche: null
+    description: null
+    lang: fr
+    slug: baobab29
+  organismeTranslation_4_en:
+    organisme: organisme_4
+    title: 'Eco-Kyoto Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: eco-kyoto-fondation-1
+  organismeTranslation_4_fr:
+    organisme: organisme_4
+    title: 'Fondation Eco-Kyoto'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-eco-kyoto-1
+  organismeTranslation_5_en:
+    organisme: organisme_5
+    title: 'CALA Fondation'
+    accroche: null
+    description: null
+    lang: en
+    slug: cala-fondation
+  organismeTranslation_5_fr:
+    organisme: organisme_5
+    title: 'Fondation CALA'
+    accroche: null
+    description: null
+    lang: fr
+    slug: fondation-cala
+  organismeTranslation_6_en:
+    organisme: organisme_6
+    title: 'Oceanium Fondation'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: oceanium-fondation
+  organismeTranslation_6_fr:
+    organisme: organisme_6
+    title: 'Fondation Oceanium'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: fr
+    slug: fondation-oceanium
+  organismeTranslation_7_en:
+    organisme: organisme_7
+    title: 'Projets + Actions'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: projetsplusactions
+  organismeTranslation_7_fr:
+    organisme: organisme_7
+    title: 'Projets + Actions'
+    accroche: "<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;</p>\r\n"
+    description: "<h4>\r\n	L&#39;O.S.I. /</h4>\r\n<p>\r\n	Projets Plus Actions est une Organisation de Solidarit&eacute; Internationale intervenant sur les 5 continents.&nbsp;Projets Plus Actions&nbsp;intervient en soutien &agrave; des initiatives locales par le financement de microprojets et l&rsquo;apport de comp&eacute;tences techniques pour les r&eacute;aliser.</p>\r\n<h4>\r\n	L&#39;histoire de Projets Plus Actions /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de co-d&eacute;veloppement par Jean-Marc CIVIERE avec l&rsquo;ONG beninoise Andia. Financement d&rsquo;un cheptel de caprins et ovins dans le cadre d&rsquo;un projet d&rsquo;une ferme &eacute;cole.<br />\r\n	25 d&eacute;cembre 2006 : Cr&eacute;ation des statuts de Projets Plus Actions.<br />\r\n	Projets Plus Actions a &eacute;t&eacute; enregistr&eacute; le 28 d&eacute;cembre 2006.<br />\r\n	N&deg; 0953017593 &agrave; la sous-pr&eacute;fecture de Pontoise.</p>\r\n<h4>\r\n	Son fonctionnement /</h4>\r\n<p>\r\n	Janvier 2006 : D&eacute;but des actions de Projets Plus Actions&nbsp;soutien volontairement un nombre limit&eacute; de projets afin de les soutenir le mieux possible et d&rsquo;en contr&ocirc;ler la r&eacute;alisation. Les partenariats sont cr&eacute;&eacute;s pour une dur&eacute;e de 3 &agrave; 10 ans et ont pour perspectives l&rsquo;autonomie des populations.&nbsp;L&rsquo;am&eacute;lioration des conditions de vie, l&rsquo;autonomisation des populations, le respect des cadres de d&eacute;veloppement nationaux, l&rsquo;approche pertinente, novatrice et durable d&eacute;terminent le choix des projets aid&eacute;s et des partenariats contract&eacute;s.<br />\r\n	Les donateurs, sous certaines conditions, peuvent venir voir sur le terrain &agrave; quelles actions et comment sont utilis&eacute;s les fonds qui sont confi&eacute;s &agrave; Projets Plus Actions.</p>\r\n"
+    lang: fr
+    slug: projetsplusactions
+  organismeTranslation_8_en:
+    organisme: organisme_8
+    title: 'Up2green Reforestation'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: up2green-en
+  organismeTranslation_8_fr:
+    organisme: organisme_8
+    title: 'Up2green Reforestation'
+    accroche: ''
+    description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
+    lang: fr
+    slug: up2green
+>>>>>>> dev
 newsletterTranslation:
   newsletterTranslation_1_en:
     newsletter: newsletter_1

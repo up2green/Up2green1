@@ -51,7 +51,8 @@ abstract class BasetreeUser extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('tree', array(
              'local' => 'tree_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $this->hasOne('sfGuardUser as user', array(
              'local' => 'user_id',

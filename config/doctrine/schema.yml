@@ -9,6 +9,9 @@ partenaire:
       type: bigint(20)
       notnull: true
       unique: true
+    logo:
+      type: string(128)
+      default: null
     title:
       type: string(45)
       default: null
@@ -28,8 +31,28 @@ partenaire:
       onDelete: CASCADE
       foreignType:  one
       foreignAlias: Partenaire
-
-
+      
+partenaireProgramme:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    partenaire_id:
+      type: integer(4)
+      primary: true
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    partenaire:
+      local: partenaire_id
+      foreignAlias: Programmes
+      onDelete: CASCADE
+    programme:
+      local: programme_id
+      foreignAlias: Partenaires
+      onDelete: CASCADE
       
 profil:
   columns:
@@ -73,8 +96,7 @@ couponGen:
     credit:
       type: integer(4)
       notnull: true
-
-
+      
 coupon:
   actAs: [Timestampable]
   columns:
@@ -138,14 +160,14 @@ couponPartenaire:
       primary: true
   relations:
     partenaire:
-      class: partenaire
       local: partenaire_id
-      foreignAlias: CouponsPartenaires
+      foreignAlias: Coupons
     coupon:
       local: coupon_id
-      foreignAlias: CouponsPartenaires
-
-
+      foreignAlias: Partenaire
+      foreignType:  one
+      onDelete: CASCADE
+      
 organisme:
   actAs: 
     Timestampable: ~
@@ -248,11 +270,13 @@ treeUser:
   relations:
     tree:
       local: tree_id
+      foreignType:  one
+      foreignAlias: User
+      onDelete: CASCADE
     user:
       class: sfGuardUser
       local: user_id
       foreignAlias: Trees
-
 
 treeCoupon:
   options:
@@ -269,10 +293,12 @@ treeCoupon:
   relations:
     tree:
       local: tree_id
-      foreignAlias: treeCoupon
+      foreignType:  one
+      foreignAlias: Coupon
+      onDelete: CASCADE
     coupon:
       local: coupon_id
-      foreignAlias: treeCoupon
+      foreignAlias: Trees
 
 article:
   actAs: 
@@ -548,3 +574,24 @@ engineTag:
     tag:
       local: tag_id
       onDelete: CASCADE
+
+logCoupon:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    ip:
+      type: string(15)
+      notnull: true
+    email:
+      type: string(50)
+    coupon_id:
+      type: integer(4)
+      notnull: true
+      unique: true
+  relations:
+    coupon:
+      local: coupon_id

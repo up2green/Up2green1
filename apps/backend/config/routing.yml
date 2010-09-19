@@ -1,3 +1,21 @@
+log_coupon:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                logCoupon
+    module:               log_coupon
+    prefix_path:          /log_coupon
+    column:               id
+    with_wildcard_routes: true
+
+coupon:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                coupon
+    module:               coupon
+    prefix_path:          /coupon
+    column:               id
+    with_wildcard_routes: true
+
 partenaire:
   class: sfDoctrineRouteCollection
   options:
@@ -45,12 +63,12 @@ category:
     column:              id
     with_wildcard_routes: true
 
-coupon:
+couponGen:
   class: sfDoctrineRouteCollection
   options:
     model:                couponGen
-    module:               coupon
-    prefix_path:          /coupon
+    module:               couponGen
+    prefix_path:          /couponGen
     column:               id
     with_wildcard_routes: true
 

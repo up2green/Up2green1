@@ -13,29 +13,32 @@
  * @property integer $used_by
  * @property couponGen $couponGen
  * @property Doctrine_Collection $couponUser
- * @property Doctrine_Collection $CouponsPartenaires
- * @property Doctrine_Collection $treeCoupon
+ * @property couponPartenaire $Partenaire
+ * @property Doctrine_Collection $Trees
+ * @property Doctrine_Collection $logCoupon
  * 
- * @method integer             getId()                 Returns the current record's "id" value
- * @method integer             getGenId()              Returns the current record's "gen_id" value
- * @method string              getCode()               Returns the current record's "code" value
- * @method boolean             getIsActive()           Returns the current record's "is_active" value
- * @method timestamp           getUsedAt()             Returns the current record's "used_at" value
- * @method integer             getUsedBy()             Returns the current record's "used_by" value
- * @method couponGen           getCouponGen()          Returns the current record's "couponGen" value
- * @method Doctrine_Collection getCouponUser()         Returns the current record's "couponUser" collection
- * @method Doctrine_Collection getCouponsPartenaires() Returns the current record's "CouponsPartenaires" collection
- * @method Doctrine_Collection getTreeCoupon()         Returns the current record's "treeCoupon" collection
- * @method coupon              setId()                 Sets the current record's "id" value
- * @method coupon              setGenId()              Sets the current record's "gen_id" value
- * @method coupon              setCode()               Sets the current record's "code" value
- * @method coupon              setIsActive()           Sets the current record's "is_active" value
- * @method coupon              setUsedAt()             Sets the current record's "used_at" value
- * @method coupon              setUsedBy()             Sets the current record's "used_by" value
- * @method coupon              setCouponGen()          Sets the current record's "couponGen" value
- * @method coupon              setCouponUser()         Sets the current record's "couponUser" collection
- * @method coupon              setCouponsPartenaires() Sets the current record's "CouponsPartenaires" collection
- * @method coupon              setTreeCoupon()         Sets the current record's "treeCoupon" collection
+ * @method integer             getId()         Returns the current record's "id" value
+ * @method integer             getGenId()      Returns the current record's "gen_id" value
+ * @method string              getCode()       Returns the current record's "code" value
+ * @method boolean             getIsActive()   Returns the current record's "is_active" value
+ * @method timestamp           getUsedAt()     Returns the current record's "used_at" value
+ * @method integer             getUsedBy()     Returns the current record's "used_by" value
+ * @method couponGen           getCouponGen()  Returns the current record's "couponGen" value
+ * @method Doctrine_Collection getCouponUser() Returns the current record's "couponUser" collection
+ * @method couponPartenaire    getPartenaire() Returns the current record's "Partenaire" value
+ * @method Doctrine_Collection getTrees()      Returns the current record's "Trees" collection
+ * @method Doctrine_Collection getLogCoupon()  Returns the current record's "logCoupon" collection
+ * @method coupon              setId()         Sets the current record's "id" value
+ * @method coupon              setGenId()      Sets the current record's "gen_id" value
+ * @method coupon              setCode()       Sets the current record's "code" value
+ * @method coupon              setIsActive()   Sets the current record's "is_active" value
+ * @method coupon              setUsedAt()     Sets the current record's "used_at" value
+ * @method coupon              setUsedBy()     Sets the current record's "used_by" value
+ * @method coupon              setCouponGen()  Sets the current record's "couponGen" value
+ * @method coupon              setCouponUser() Sets the current record's "couponUser" collection
+ * @method coupon              setPartenaire() Sets the current record's "Partenaire" value
+ * @method coupon              setTrees()      Sets the current record's "Trees" collection
+ * @method coupon              setLogCoupon()  Sets the current record's "logCoupon" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -88,11 +91,15 @@ abstract class Basecoupon extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'coupon_id'));
 
-        $this->hasMany('couponPartenaire as CouponsPartenaires', array(
+        $this->hasOne('couponPartenaire as Partenaire', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 
-        $this->hasMany('treeCoupon', array(
+        $this->hasMany('treeCoupon as Trees', array(
+             'local' => 'id',
+             'foreign' => 'coupon_id'));
+
+        $this->hasMany('logCoupon', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 

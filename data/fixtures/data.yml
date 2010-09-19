@@ -192,12 +192,12 @@ sfGuardGroup:
     created_at: '2010-09-06 11:29:10'
     updated_at: '2010-09-06 11:29:10'
 sfGuardRememberKey:
-  sfGuardRememberKey_1:
+  sfGuardRememberKey_2:
     User: sfGuardUser_1
-    remember_key: 6td5lmsc3hyp8gc484084wcgs8kkg44
-    ip_address: 83.199.91.102
-    created_at: '2010-09-12 20:02:21'
-    updated_at: '2010-09-12 20:02:21'
+    remember_key: pkbc3ghecnps844og40gggsows4g0kg
+    ip_address: 82.241.89.76
+    created_at: '2010-09-19 19:35:39'
+    updated_at: '2010-09-19 19:35:39'
 sfGuardUserGroup:
   sfGuardUserGroup_1_1:
     User: sfGuardUser_1
@@ -221,9 +221,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-09-17 09:51:00'
+    last_login: '2010-09-19 19:35:39'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-09-17 09:51:00'
+    updated_at: '2010-09-19 19:35:39'
   sfGuardUser_2:
     first_name: toto
     last_name: toto
@@ -324,9 +324,9 @@ organisme:
     updated_at: '2010-06-26 18:27:37'
   organisme_2:
     url: 'http://www.treesftf.org/'
-    logo: organisme38.gif
+    logo: 35e6117410137236cc6e230f1430fee6f3dae445.gif
     created_at: '2010-06-26 18:27:37'
-    updated_at: '2010-06-26 18:27:37'
+    updated_at: '2010-09-19 19:46:50'
   organisme_3:
     url: null
     logo: organisme40.jpg
@@ -357,6 +357,11 @@ organisme:
     logo: 307fc050fe8fcead37845cc7c4ae48036b6c8bba.jpg
     created_at: '2010-08-28 16:56:24'
     updated_at: '2010-08-28 16:56:24'
+  organisme_9:
+    url: 'http://www.onf.fr/'
+    logo: 5328a62d79fdcf31677521a61760c08c80607272.png
+    created_at: '2010-09-19 19:52:43'
+    updated_at: '2010-09-19 19:52:43'
 couponPartenaire:
   couponPartenaire_1_1:
     coupon: coupon_1
@@ -408,14 +413,15 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-28 18:06:20'
   programme_6:
+    Organisme: organisme_2
     geoadress: Burundi
     latitude: null
     longitude: null
     is_active: false
-    max_tree: '0'
-    logo: null
+    max_tree: '1000000'
+    logo: 728e3c40721fe5a130c178f62c7c403290d78f35.jpg
     created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 18:06:38'
+    updated_at: '2010-09-19 20:36:45'
   programme_7:
     geoadress: Indonésie
     latitude: null
@@ -507,6 +513,16 @@ programme:
     logo: 2209d6cd8d86b2027fb5e3044556e06f74e4e43f.jpg
     created_at: '2010-08-28 18:03:15'
     updated_at: '2010-08-28 18:03:15'
+  programme_17:
+    Organisme: organisme_9
+    geoadress: France
+    latitude: null
+    longitude: null
+    is_active: true
+    max_tree: '1000'
+    logo: 65cbd4f14cf9ee86910173b0314615418910379e.jpg
+    created_at: '2010-09-19 20:03:40'
+    updated_at: '2010-09-19 20:17:14'
 newsletterTranslation:
   newsletterTranslation_1_en:
     newsletter: newsletter_1
@@ -874,15 +890,15 @@ organismeTranslation:
   organismeTranslation_2_en:
     organisme: organisme_2
     title: 'Trees For The Future Fondation'
-    accroche: null
-    description: null
+    accroche: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Since 1989, Trees for the Future has been helping communities around the world plant trees. Through seed distribution, agroforestry training, and our country programs, we have empowered rural groups to restore tree cover to their lands. Planting trees protects the environment and helps to preserve traditional livelihoods and cultures for generations.</p>\r\n"
+    description: "<p>\r\n	Since 1989, Trees for the Future has been helping communities around the world plant trees. Through seed distribution, agroforestry training, and our country programs, we have empowered rural groups to restore tree cover to their lands. Planting trees protects the environment and helps to preserve traditional livelihoods and cultures for generations.</p>\r\n<p>\r\n	Our mission and history demonstrate how dedicated we are to sustainable agroforestry.&nbsp;</p>\r\n"
     lang: en
     slug: trees-for-the-future-fondation
   organismeTranslation_2_fr:
     organisme: organisme_2
-    title: 'Fondation Trees For The Future'
-    accroche: null
-    description: null
+    title: 'Trees For The Future'
+    accroche: "<p>\r\n	Since 1989, Trees for the Future has been helping communities around the world plant trees. Through seed distribution, agroforestry training, and our country programs, we have empowered rural groups to restore tree cover to their lands. Planting trees protects the environment and helps to preserve traditional livelihoods and cultures for generations.</p>\r\n"
+    description: "<p>\r\n	Since 1989, Trees for the Future has been helping communities around the world plant trees. Through seed distribution, agroforestry training, and our country programs, we have empowered rural groups to restore tree cover to their lands. Planting trees protects the environment and helps to preserve traditional livelihoods and cultures for generations.</p>\r\n<p>\r\n	Our mission and history demonstrate how dedicated we are to sustainable agroforestry.&nbsp;</p>\r\n"
     lang: fr
     slug: fondation-trees-for-the-future
   organismeTranslation_3_en:
@@ -969,6 +985,20 @@ organismeTranslation:
     description: "<p>\r\n	L&#39;association a pour buts de&nbsp;:</p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Favoriser, d&eacute;velopper et promouvoir toute action positive en lien avec la lutte contre le r&eacute;chauffement climatique&nbsp;: reforestation, conservation de la biodiversit&eacute;, aide aux populations touch&eacute;es par les p&eacute;nuries d&rsquo;origine climatique, s&eacute;questration du CO2 atmosph&eacute;rique,&hellip;</span></li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Participer au financement de programmes de reforestation dans le </u></span><span dir=\"ltr\"><u>monde.</u></span>Ces programmes peuvent &ecirc;tre r&eacute;alis&eacute;s par tout type d&rsquo;organisme (associatif, fondation, ONG,&hellip;), Etat, entreprise priv&eacute;e ou &eacute;tablissement public,&hellip;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Collecter des </u></span><span dir=\"ltr\"><u>fonds</u></span>en vue du financement de ces programmes de reforestation ou de tout programme &agrave; vocation &eacute;cologique&nbsp;;</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Etablir des </u></span><span dir=\"ltr\"><u>partenariats</u></span>avec ces organismes en vu du financement des programmes</li>\r\n	<li>\r\n		<span dir=\"ltr\"><u>Aider les </u></span><span dir=\"ltr\"><u>populations</u></span>touch&eacute;es par la d&eacute;forestation ou par la perte de ma&icirc;trise fonci&egrave;re leur assurant une activit&eacute; locale durable</li>\r\n	<li>\r\n		<span dir=\"ltr\">Participer au d&eacute;ploiement en France et &agrave; l&rsquo;international de m&eacute;thodologies de certification des programmes de reforestation.</span></li>\r\n</ul>\r\n"
     lang: fr
     slug: up2green
+  organismeTranslation_9_en:
+    organisme: organisme_9
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: ''
+  organismeTranslation_9_fr:
+    organisme: organisme_9
+    title: ONF
+    accroche: "<p>\r\n	Etablissement public &agrave; caract&egrave;re industriel et commercial cr&eacute;&eacute; en 1966, l&#39;ONF a pour principales missions la gestion des for&ecirc;ts domaniales et des for&ecirc;ts publiques relevant du R&eacute;gime forestier ainsi que la r&eacute;alisation de missions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral confi&eacute;es par l&#39;Etat.<br />\r\n	L&#39;ONF d&eacute;veloppe &eacute;galement diverses prestations de services : gestion, expertise, travaux, au profit de tous clients dans ses domaines d&#39;excellence que sont les espaces naturels, l&#39;environnement, la fili&egrave;re for&ecirc;t bois et le d&eacute;veloppement des territoires.</p>\r\n"
+    description: "<h3 class=\"first\">\r\n	L&#39;ONF en bref :</h3>\r\n<p>\r\n	Etablissement public &agrave; caract&egrave;re industriel et commercial cr&eacute;&eacute; en 1966, l&#39;ONF a pour principales missions la gestion des for&ecirc;ts domaniales et des for&ecirc;ts publiques relevant du R&eacute;gime forestier ainsi que la r&eacute;alisation de missions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral confi&eacute;es par l&#39;Etat.</p>\r\n<p>\r\n	L&#39;ONF d&eacute;veloppe &eacute;galement diverses prestations de services : gestion, expertise, travaux, au profit de tous clients dans ses domaines d&#39;excellence que sont les espaces naturels, l&#39;environnement, la fili&egrave;re for&ecirc;t bois et le d&eacute;veloppement des territoires.</p>\r\n<h3 class=\"first\">\r\n	La gestion des for&ecirc;ts publiques fran&ccedil;aises</h3>\r\n<p>\r\n	Le c&oelig;ur de m&eacute;tier de l&rsquo;ONF est centr&eacute; sur la gestion durable des for&ecirc;ts appartenant &agrave; l&rsquo;Etat ou aux collectivit&eacute;s territoriales. Il est par essence fond&eacute; sur les principes du d&eacute;veloppement durable, affirm&eacute;s par le Code forestier : l&rsquo;efficacit&eacute; &eacute;conomique, la performance environnementale et la responsabilit&eacute; sociale.<br />\r\n	<br />\r\n	L&rsquo;ONF g&egrave;re ainsi en m&eacute;tropole 1,8 Mha de for&ecirc;ts domaniales et 2,9 Mha de for&ecirc;ts communales, d&eacute;partementales, r&eacute;gionales ou d&rsquo;&eacute;tablissements publics. Soit 27% de la for&ecirc;t fran&ccedil;aise et plus de 8% du territoire national. S&#39;y ajoutent 6 Mha dans les d&eacute;partements d&rsquo;Outre-mer (Guyane, Guadeloupe, Martinique et La R&eacute;union).<br />\r\n	&nbsp;</p>\r\n<h3>\r\n	Un seul r&eacute;gime pour toutes les for&ecirc;ts publiques : le R&eacute;gime forestier</h3>\r\n<p>\r\n	Le R&eacute;gime forestier est d&#39;abord un ensemble de garanties permettant de pr&eacute;server la for&ecirc;t sur le long terme forestier : il constitue un v&eacute;ritable statut de protection du patrimoine forestier contre les ali&eacute;nations, les d&eacute;frichements, les d&eacute;gradations, les surexploitations et les abus de jouissance.<br />\r\n	<br />\r\n	C&#39;est aussi un r&eacute;gime de gestion avec un souci de renouvellement des ressources en bois, des autres produits et services fournis par les for&ecirc;ts, et de transmission aux g&eacute;n&eacute;rations futures de ces ressources. Ces objectifs se mat&eacute;rialisent au travers de &quot;l&#39;am&eacute;nagement forestier&quot; &eacute;tabli pour chaque for&ecirc;t.&nbsp;</p>\r\n<h3>\r\n	Un contrat pluriannuel avec l&rsquo;Etat</h3>\r\n<p>\r\n	L&#39;exercice des diff&eacute;rentes missions de l&#39;ONF est encadr&eacute; par un contrat pluriannuel d&#39;objectifs et de moyens avec l&#39;Etat. Sign&eacute; en juin 2006, ce contrat couvre la p&eacute;riode 2007/2011.<br />\r\n	<br />\r\n	Par ce contrat, l&#39;ONF s&#39;engage en particulier sur :</p>\r\n<ul>\r\n	<li class=\"puce_verte\">\r\n		une gestion durable, innovante et exemplaire des for&ecirc;ts publiques</li>\r\n	<li class=\"puce_verte\">\r\n		une contribution renforc&eacute;e &agrave; l&#39;approvisionnement r&eacute;gulier de la fili&egrave;re bois et au d&eacute;veloppement des usages &eacute;nerg&eacute;tiques du bois</li>\r\n	<li class=\"puce_verte\">\r\n		un d&eacute;veloppement de ses activit&eacute;s de prestation de services dans un double souci de r&eacute;ponse aux attentes des march&eacute;s et de financement de ses actions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral, notamment dans l&#39;environnement, l&#39;accueil du public en for&ecirc;t et la pr&eacute;vention des risques naturels.&nbsp;</li>\r\n</ul>\r\n<h3>\r\n	La mise en &oelig;uvre des missions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral confi&eacute;es par l&rsquo;Etat</h3>\r\n<p>\r\n	L&#39;ONF assure diff&eacute;rentes missions d&#39;int&eacute;r&ecirc;t g&eacute;n&eacute;ral (MIG) qui lui sont confi&eacute;es par conventions avec le minist&egrave;re charg&eacute; de la for&ecirc;t et celui charg&eacute; de l&#39;&eacute;cologie et du d&eacute;veloppement durable.<br />\r\n	<br />\r\n	Elles portent sur la pr&eacute;vention des risques naturels et la s&eacute;curit&eacute; des biens et des personnes : en montagne avec le service de Restauration des terrains en montagne (RTM), dans les zones sensibles aux incendies (D&eacute;fense des for&ecirc;ts contre les incendies), dans les DOM et sur les dunes du littoral.&nbsp;</p>\r\n<h3>\r\n	La mobilisation et la r&eacute;colte de la ressource bois disponible</h3>\r\n<p>\r\n	L&#39;ONF mobilise et met en vente l&#39;ensemble des bois issus des op&eacute;rations sylvicoles d&#39;am&eacute;lioration et de r&eacute;g&eacute;n&eacute;ration des for&ecirc;ts publiques, soit pr&egrave;s de 40% des bois mis en march&eacute; sur le territoire national.<br />\r\n	<br />\r\n	Pour le bois d&#39;&oelig;uvre, les for&ecirc;ts publiques fournissent plus de 50% du Ch&ecirc;ne, 85% du H&ecirc;tre et 50% du Sapin-Epic&eacute;a mis en march&eacute;, ce qui conf&egrave;re &agrave; l&#39;ONF une responsabilit&eacute; particuli&egrave;re au sein de la fili&egrave;re-bois.</p>\r\n<h3>\r\n	Le d&eacute;veloppement de prestations de services</h3>\r\n<p>\r\n	L&#39;expertise de l&#39;ONF en mati&egrave;re de for&ecirc;t s&#39;&eacute;tend &eacute;galement aux autres espaces naturels. L&#39;ONF propose ainsi aux collectivit&eacute;s, entreprises ou particuliers des prestations de services dans diff&eacute;rents domaines : gestion de l&#39;arbre, &eacute;valuation et pr&eacute;vention des risques naturels, qualit&eacute; des paysages, r&eacute;habilitation de sites, protection et valorisation des milieux naturel, gestion de l&#39;eau, d&eacute;veloppement des loisirs nature...<br />\r\n	<br />\r\n	Dans les pays en d&eacute;veloppement, l&#39;ONF valorise &agrave; travers sa filiale ONF International (ONF I), un savoir-faire reconnu par des prestations de conseil, d&#39;expertise et d&#39;ing&eacute;nierie en mati&egrave;re de s&eacute;questration de carbone biologique.</p>\r\n"
+    lang: fr
+    slug: onf
 programmeTranslation:
   programmeTranslation_1_en:
     programme: programme_1
@@ -1044,14 +1074,14 @@ programmeTranslation:
     programme: programme_6
     title: Burundi
     accroche: "<p>\r\n	To fight against malnutrition by planting &quot;Morinfa oleifera&quot; specie tree which contains twice more calcium than milk and 4 times more vitamin A.</p>\r\n"
-    description: "<br />\r\n"
+    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization.&nbsp; The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%.&nbsp; Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes.&nbsp; However, the majority, around 95%, of the land is under no land protection.&nbsp; As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil. &nbsp;Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost.&nbsp;Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources.&nbsp;Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer.&nbsp; Burundi&rsquo;s wildlife diversity is also threatened.&nbsp; Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100.&nbsp; The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country.&nbsp; Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14.&nbsp; Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides.&nbsp; This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects.&nbsp; Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi.&nbsp; John&rsquo;s approach &mdash; utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income &mdash; has effectively brought together people and cultures who have been in conflict for too many years.&nbsp; A strong focus has been placed on the planting of <em>Morinfa oleifera. </em>&nbsp;In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called &ldquo;the miracle tree&rdquo; boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity.&nbsp; People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>\r\n"
     lang: en
     slug: burundi
   programmeTranslation_6_fr:
     programme: programme_6
     title: 'Burundi (région de Ruyigi )'
     accroche: "<p>\r\n	Pour lutter contre la malnutrition en plantant l&#39;arbre &quot;Morinfa oleifera&quot; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.</p>\r\n"
-    description: "<br />\r\n"
+    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization.&nbsp; The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%.&nbsp; Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes.&nbsp; However, the majority, around 95%, of the land is under no land protection.&nbsp; As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil. &nbsp;Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost.&nbsp;Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources.&nbsp;Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer.&nbsp; Burundi&rsquo;s wildlife diversity is also threatened.&nbsp; Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100.&nbsp; The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country.&nbsp; Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14.&nbsp; Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides.&nbsp; This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects.&nbsp; Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi.&nbsp; John&rsquo;s approach &mdash; utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income &mdash; has effectively brought together people and cultures who have been in conflict for too many years.&nbsp; A strong focus has been placed on the planting of <em>Morinfa oleifera. </em>&nbsp;In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called &ldquo;the miracle tree&rdquo; boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity.&nbsp; People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>\r\n"
     lang: fr
     slug: burundi-region-de-ruyigi
   programmeTranslation_7_en:
@@ -1194,3 +1224,17 @@ programmeTranslation:
     description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: conservation des modes de vie indig&egrave;nes, d&eacute;veloppement de l&rsquo;agroforesterie et de l&rsquo;&eacute;cotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: D&eacute;partement de l&rsquo;Amazonas, P&eacute;riph&eacute;rie de Leticia, Communaut&eacute; San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: 30 familles au total&nbsp;, communaut&eacute; de San Pedro de los Lagos, Communaut&eacute; du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: D&eacute;veloppement de pratiques agroforesti&egrave;res en Amazonie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Responsable du projet. Sensibilisation et formation des habitants de communaut&eacute;s. Mise en place de p&eacute;pini&egrave;res familiales pour la plantation de 15&nbsp;000 arbres en 2011.</p>\r\n<p>\r\n	&nbsp;L&rsquo;&eacute;quipe d&rsquo;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&rsquo;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communaut&eacute; indig&egrave;ne Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l&rsquo;agriculture mais son enclavement fait que les habitants ont du mal &agrave; developper des activit&eacute;s &eacute;conomiques g&eacute;n&eacute;ratrices de revenus. La bonne gestion de leur terre et le d&eacute;veloppement de plantations d&rsquo;arbres &agrave; bois et d&rsquo;arbres fruitiers permettra d&rsquo;<strong>entretenir</strong><strong> et de s&eacute;curiser leur mode de vie tr&egrave;s proche de la nature.</strong></p>\r\n"
     lang: fr
     slug: colombie
+  programmeTranslation_17_en:
+    programme: programme_17
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: '1'
+  programmeTranslation_17_fr:
+    programme: programme_17
+    title: France
+    accroche: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en for&ecirc;t domaniale de Lyons</strong><br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p>\r\n	<strong>Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n"
+    description: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en for&ecirc;t domaniale de Lyons</strong><br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p style=\"text-align: justify;\">\r\n	<span class=\"Style10\"><strong class=\"bold-orange\">Le contexte :</strong></span><br />\r\n	<br />\r\n	<span class=\"champs-texte\">La for&ecirc;t domaniale de Lyons, d&rsquo;une superficie de 10695,71 ha, est affect&eacute;e principalement &agrave; la production de bois d&rsquo;&oelig;uvre feuillus, en particulier de h&ecirc;tre. En effet, la sylviculture pass&eacute;e a fortement favoris&eacute; cette essence qui est aujourd&rsquo;hui pr&eacute;sente sur environ 60% de la surface du massif. Aujourd&rsquo;hui, les perspectives de changements climatiques radicaux posent la question de la place du h&ecirc;tre &agrave; grande &eacute;chelle. De plus, plusieurs observations de d&eacute;p&eacute;rissements massifs dans les derni&egrave;res d&eacute;cennies ont conduit les gestionnaires, lors du dernier am&eacute;nagement (2004/2023), &agrave; favoriser le ch&ecirc;ne sessile, notamment en le choisissant de fa&ccedil;on privil&eacute;gi&eacute;e en r&eacute;g&eacute;n&eacute;ration artificielle afin de diversifier les peuplements et d&rsquo;augmenter la r&eacute;silience de la for&ecirc;t aujourd&rsquo;hui menac&eacute;e.</span></p>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n	<p style=\"text-align: center;\">\r\n		<br />\r\n		<img alt=\"\" src=\"/uploads/ck/images/ONF-Up2green-Lyonslaforet.jpg\" style=\"width: 450px; height: 356px;\" /></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Descriptif des travaux &agrave; r&eacute;aliser pour l&rsquo;op&eacute;ration :</strong></p>\r\n</center>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Travaux pr&eacute;paratoires &agrave; la plantation :</u></p>\r\n</center>\r\n<div style=\"text-align: justify;\">\r\n	Broyage des r&eacute;manents d&rsquo;exploitation avant plantation Travail pr&eacute;paratoire du sol</div>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Programme de plantation d&rsquo;environ 6600 plants :<br />\r\n		</u>Fourniture et mise en place de plants de ch&ecirc;ne sessile (1500pl/ha)<br />\r\n		et de feuillus divers (100pl/ha).</p>\r\n	<p style=\"text-align: justify;\">\r\n		&nbsp;</p>\r\n	<p style=\"text-align: justify;\">\r\n		<span style=\"font-size: 16px;\"><u><strong>La for&ecirc;t de Lyons :</strong></u></span><br />\r\n		<br />\r\n		&laquo; Etendue sur plus de 10 700 hectares entre l&#39;Eure et la Seine Maritime, <strong><em>la for&ecirc;t domaniale de Lyons est tr&egrave;s certainement la plus belle h&ecirc;traie d&#39;Europe.</em></strong><br />\r\n		R&eacute;put&eacute;e pour ses arbres &agrave; haut f&ucirc;t, lui donnant cet aspect &quot; cath&eacute;drale &quot;, qui impressionne d&egrave;s le premier regard, et pour ses sous-bois giboyeux, la for&ecirc;t de Lyons n&#39;en demeure pas moins un massif forestier aux dimensions humaines.<br />\r\n		<br />\r\n		Des clairi&egrave;res, perc&eacute;es d&egrave;s le Moyen Age (avec la pratique de l&#39;essartage), entrecoupent le massif forestier et accueillent villages et cultures dans les vallons abrit&eacute;s et au flanc des coteaux baign&eacute;s de soleil.<br />\r\n		<br />\r\n		Avec plus de 300 kilom&egrave;tres de routes foresti&egrave;res goudronn&eacute;es ou empierr&eacute;es, la for&ecirc;t de Lyons permet toutes les pratiques sportives. La randonn&eacute;e p&eacute;destre b&eacute;n&eacute;ficie d&#39;un cadre d&#39;exception avec une multitude de sentiers balis&eacute;s et entretenus. La randonn&eacute;e &eacute;questre s&#39;y pratique tout aussi ais&eacute;ment et acquiert ses lettres de noblesse lors des journ&eacute;es de chasse &agrave; courre qui se d&eacute;roulent tous les automnes dans le massif (les mardis et samedis d&#39;octobre &agrave; mars).<br />\r\n		Le VTT est &eacute;galement une activit&eacute; tr&egrave;s pratiqu&eacute;e et les routes foresti&egrave;res peu emprunt&eacute;es par les automobilistes font le bonheur des cyclotouristes.<br />\r\n		<br />\r\n		Visites et <a href=\"http://www.lyons.tourisme.free.fr/randonnees.htm\" target=\"_blank\">randonn&eacute;es</a> accompagn&eacute;es en for&ecirc;t au cours de l&#39;ann&eacute;e. &raquo;<br />\r\n		<br />\r\n		<strong>Source : <a href=\"http://www.lyons.tourisme.free.fr/\" target=\"_blank\">Office de Tourisme du Pays de Lyons</a></strong></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong><img alt=\"\" src=\"/uploads/ck/images/carte-reforestation.jpg\" style=\"width: 500px; height: 288px;\" /></strong></p>\r\n</center>\r\n"
+    lang: fr
+    slug: france

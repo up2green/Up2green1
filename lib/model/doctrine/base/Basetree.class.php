@@ -8,19 +8,19 @@
  * @property integer $id
  * @property integer $programme_id
  * @property programme $Programme
- * @property Doctrine_Collection $treeUser
- * @property Doctrine_Collection $treeCoupon
+ * @property treeUser $User
+ * @property treeCoupon $Coupon
  * 
- * @method integer             getId()           Returns the current record's "id" value
- * @method integer             getProgrammeId()  Returns the current record's "programme_id" value
- * @method programme           getProgramme()    Returns the current record's "Programme" value
- * @method Doctrine_Collection getTreeUser()     Returns the current record's "treeUser" collection
- * @method Doctrine_Collection getTreeCoupon()   Returns the current record's "treeCoupon" collection
- * @method tree                setId()           Sets the current record's "id" value
- * @method tree                setProgrammeId()  Sets the current record's "programme_id" value
- * @method tree                setProgramme()    Sets the current record's "Programme" value
- * @method tree                setTreeUser()     Sets the current record's "treeUser" collection
- * @method tree                setTreeCoupon()   Sets the current record's "treeCoupon" collection
+ * @method integer    getId()           Returns the current record's "id" value
+ * @method integer    getProgrammeId()  Returns the current record's "programme_id" value
+ * @method programme  getProgramme()    Returns the current record's "Programme" value
+ * @method treeUser   getUser()         Returns the current record's "User" value
+ * @method treeCoupon getCoupon()       Returns the current record's "Coupon" value
+ * @method tree       setId()           Sets the current record's "id" value
+ * @method tree       setProgrammeId()  Sets the current record's "programme_id" value
+ * @method tree       setProgramme()    Sets the current record's "Programme" value
+ * @method tree       setUser()         Sets the current record's "User" value
+ * @method tree       setCoupon()       Sets the current record's "Coupon" value
  * 
  * @package    up2green
  * @subpackage model
@@ -52,11 +52,11 @@ abstract class Basetree extends sfDoctrineRecord
              'local' => 'programme_id',
              'foreign' => 'id'));
 
-        $this->hasMany('treeUser', array(
+        $this->hasOne('treeUser as User', array(
              'local' => 'id',
              'foreign' => 'tree_id'));
 
-        $this->hasMany('treeCoupon', array(
+        $this->hasOne('treeCoupon as Coupon', array(
              'local' => 'id',
              'foreign' => 'tree_id'));
 

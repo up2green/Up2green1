@@ -1,11 +1,28 @@
-<div class="module">
-    <img class="title middle left" src="/images/module/purple/module_icon-partenaires_55x55.png" alt="" />
-    <p class="title little indent"><?php echo $partenaire->getTitle() ?></p>
+<div class="module purple">
+    <img class="title middle left" src="/images/module/purple/icon/icon-partenaires.png" alt="" />
+    <p class="title indent"><?php echo $partenaire->getTitle() ?></p>
     <div class="content">
-        <p><?php echo $partenaire->getAccroche() ?></p>
-        <p class="center">
-            <a href="plantation/listeCouponsPartenaires" class="button rosy">Voir mes coupons</a>
-        </p>
+	<?php
+	if(
+	$partenaire->getLogo() != '' &&
+		file_exists(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getLogo())
+	) :
+	    ?>
+	<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
+	<?php endif; ?>
+	<p><?php echo html_entity_decode($partenaire->getAccroche()); ?></p>
+	<p class="center">
+		<?php
+		if($sf_user->isAuthenticated() && !is_null($partenaire)) {
+			if($view === 'listeCouponsPartenaires') {
+				echo '<a href="/" class="button green">Retour à la Carte</a>';
+			}
+			else {
+				echo '<a href="/listeCouponsPartenaires" class="button purple">Voir mes coupons</a>';
+			}
+		}
+		?>
+	</p>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

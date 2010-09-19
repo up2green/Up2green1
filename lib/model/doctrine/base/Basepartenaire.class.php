@@ -7,29 +7,35 @@
  * 
  * @property integer $id
  * @property bigint $user_id
+ * @property string $logo
  * @property string $title
  * @property string $accroche
  * @property clob $description
  * @property string $url
  * @property sfGuardUser $User
- * @property Doctrine_Collection $CouponsPartenaires
+ * @property Doctrine_Collection $Programmes
+ * @property Doctrine_Collection $Coupons
  * 
- * @method integer             getId()                 Returns the current record's "id" value
- * @method bigint              getUserId()             Returns the current record's "user_id" value
- * @method string              getTitle()              Returns the current record's "title" value
- * @method string              getAccroche()           Returns the current record's "accroche" value
- * @method clob                getDescription()        Returns the current record's "description" value
- * @method string              getUrl()                Returns the current record's "url" value
- * @method sfGuardUser         getUser()               Returns the current record's "User" value
- * @method Doctrine_Collection getCouponsPartenaires() Returns the current record's "CouponsPartenaires" collection
- * @method partenaire          setId()                 Sets the current record's "id" value
- * @method partenaire          setUserId()             Sets the current record's "user_id" value
- * @method partenaire          setTitle()              Sets the current record's "title" value
- * @method partenaire          setAccroche()           Sets the current record's "accroche" value
- * @method partenaire          setDescription()        Sets the current record's "description" value
- * @method partenaire          setUrl()                Sets the current record's "url" value
- * @method partenaire          setUser()               Sets the current record's "User" value
- * @method partenaire          setCouponsPartenaires() Sets the current record's "CouponsPartenaires" collection
+ * @method integer             getId()          Returns the current record's "id" value
+ * @method bigint              getUserId()      Returns the current record's "user_id" value
+ * @method string              getLogo()        Returns the current record's "logo" value
+ * @method string              getTitle()       Returns the current record's "title" value
+ * @method string              getAccroche()    Returns the current record's "accroche" value
+ * @method clob                getDescription() Returns the current record's "description" value
+ * @method string              getUrl()         Returns the current record's "url" value
+ * @method sfGuardUser         getUser()        Returns the current record's "User" value
+ * @method Doctrine_Collection getProgrammes()  Returns the current record's "Programmes" collection
+ * @method Doctrine_Collection getCoupons()     Returns the current record's "Coupons" collection
+ * @method partenaire          setId()          Sets the current record's "id" value
+ * @method partenaire          setUserId()      Sets the current record's "user_id" value
+ * @method partenaire          setLogo()        Sets the current record's "logo" value
+ * @method partenaire          setTitle()       Sets the current record's "title" value
+ * @method partenaire          setAccroche()    Sets the current record's "accroche" value
+ * @method partenaire          setDescription() Sets the current record's "description" value
+ * @method partenaire          setUrl()         Sets the current record's "url" value
+ * @method partenaire          setUser()        Sets the current record's "User" value
+ * @method partenaire          setProgrammes()  Sets the current record's "Programmes" collection
+ * @method partenaire          setCoupons()     Sets the current record's "Coupons" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -52,6 +58,10 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 20,
+             ));
+        $this->hasColumn('logo', 'string', 128, array(
+             'type' => 'string',
+             'length' => 128,
              ));
         $this->hasColumn('title', 'string', 45, array(
              'type' => 'string',
@@ -79,7 +89,11 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 
-        $this->hasMany('couponPartenaire as CouponsPartenaires', array(
+        $this->hasMany('partenaireProgramme as Programmes', array(
+             'local' => 'id',
+             'foreign' => 'partenaire_id'));
+
+        $this->hasMany('couponPartenaire as Coupons', array(
              'local' => 'id',
              'foreign' => 'partenaire_id'));
 

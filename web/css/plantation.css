@@ -1,4 +1,21 @@
 .general .header {display:none;}
+#footer_wrapper{display:none;} /*en attendant*/
+/*
+body{background:url("../images/blog/backgrounds/main1.jpg") no-repeat fixed center center transparent;}
+*/
+
+a.read_more {
+	color:#AAAAAA;
+	display:block;
+	font-size:0.9em;
+	font-style:italic;
+	font-weight:bold;
+	text-align:right;
+}
+
+a.read_more:hover {
+	color:#91BF83;
+}
 
 /*CORPS du SITE*/
 #body{
@@ -10,6 +27,10 @@
 		background-color:#FFFFFF;
 		float:right;
 		width:750px;
+	}
+	
+	#center .module{
+		margin-bottom:20px;
 	}
 
 	#left {
@@ -25,46 +46,88 @@ div.content input {
 	margin-top:10px;
 }
 
-#form_programme_plantation {}
-	#form_programme_plantation ul {
-		padding:3px;
-		overflow:hidden;
+ul.scrollable  {
+	padding:3px;
+	overflow:hidden;
+	position:relative;
+	height:150px;
+}
+
+ul.scrollable.medium  {
+	height:200px;
+}
+	ul.scrollable  li {
+		cursor:pointer;
+		display:block;
 		position:relative;
-		height:150px;
+		padding:2px 5px;
+		border-top:1px #ccc solid;
+		line-height:25px;
+		text-decoration:none;
+		color:#666;
 	}
-		#form_programme_plantation li {
-			cursor:pointer;
-			display:block;
-			position:relative;
-			padding:2px 5px;
-			border-top:1px #ccc solid;
-			line-height:25px;
-			text-decoration:none;
-			color:#666;
-		}
-		#form_programme_plantation li:hover {
-			color:#F33;
-			background-color:#eee;
-		}
-		#form_programme_plantation li span.item {
-			display: inline-block;
-			width:120px;
+	
+	ul.scrollable  li:hover {
+		color:#F33;
+		background-color:#eee;
+	}
+	
+		ul.scrollable  li p.item {
 			font-size:0.75em;
 		}
 
-                #form_programme_plantation li span.bigitem{
-                        display: inline-block;
-                        font-size: 0.75em;
-                        width: 400px;
-                }
-		#form_programme_plantation li span.action {
-			float:right;
-			margin:0 0 2px;
+		ul.scrollable  li p.bigitem{
+			display: inline-block;
+			font-size: 0.75em;
+			width: 400px;
 		}
-	#form_programme_plantation span.button {
-		width:70%;
-	}
+		
+		ul.scrollable  li span.action {
+			position:absolute;
+			right:0;
+		}
+	
+.scrollableWrapper span.button {
+	margin:10px 0;
+}
+	
+span.button.fixedWidth {
+	width:70%;
+}
+	
+span.button.maxWidth {
+	width:90%;
+}
 
 div.gmap-info-bulle {
 	overflow:hidden;
+}
+
+.gmap-info-bulle span.title {
+	font-weight:bold;
+	color:#213F17;
+}
+
+div.gmap-info-bulle a {
+	margin:0;
+}
+
+.gmap-info-bulle img.gmap-programme {
+	float:left;
+	max-height:80px;
+	max-width:145px;
+	padding-right:5px;
+}
+
+#map span.nbTreeMap {
+	color: #000;
+	position:absolute;
+}
+
+.module img.organisme-image {
+	display:block;
+	margin:0 auto;
+	max-width:200px;
+	padding-bottom:5px;
+	text-align:center;
 }

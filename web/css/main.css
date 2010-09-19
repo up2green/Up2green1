@@ -56,6 +56,11 @@ margin:0px;
 list-style-type:none;
 float:left;
 }
+
+.menu_accueil .menu li {
+	padding:5px 0 0;
+}
+
 .menu li{
 padding-top:10px;
 padding-left:10px;

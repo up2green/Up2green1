@@ -12,17 +12,16 @@
 	<?php endif; ?>
 	<p><?php echo html_entity_decode($partenaire->getAccroche()); ?></p>
 	<p class="center">
-	    <?php
-	    if(
-	    $sf_user->isAuthenticated() &&
-		    $view === 'listeCouponsPartenaires' &&
-		    !is_null($partenaire)
-	    ) :
+		<?php
+		if($sf_user->isAuthenticated() && !is_null($partenaire)) {
+			if($view === 'listeCouponsPartenaires') {
+				echo '<a href="/" class="button green">Retour à la Carte</a>';
+			}
+			else {
+				echo '<a href="/listeCouponsPartenaires" class="button purple">Voir mes coupons</a>';
+			}
+		}
 		?>
-	    <a href="/" class="button green">Retour à la Carte</a>
-	    <?php else : ?>
-	    <a href="/listeCouponsPartenaires" class="button purple">Voir mes coupons</a>
-	    <?php endif; ?>
 	</p>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

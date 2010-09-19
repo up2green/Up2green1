@@ -3,19 +3,22 @@ $(document).ready(function(){
 	// Ajout d'accesseur pour la lib google
 	$.fn.extend({
 		moveToMarker: function(lat, lng){
-			var marker = new google.maps.LatLng(lat, lng);
-			map.setCenter(marker);
+			
 			// on ferme les autres info bulles
 			var zIndex = $(".gmap-info-bulle").parent().parent().parent().parent().css("z-index");
 			$("div", $(".gmap-info-bulle").parent().parent().parent().parent().parent().parent()).each(function() {
-				console.log($(this).css("z-index"));
 				if($(this).css("z-index") == zIndex) {
 					$(this).remove();
 				}
 			});
 			
+			// on centre la map
+			var marker = new google.maps.LatLng(lat, lng);
+			map.setCenter(marker);
+			
 			// on attend que la pop in s'ouvre et on applique la fonction
-			setTimeout('$.fn.refreshInfoBulles()',200);
+			setTimeout('$.fn.refreshInfoBulles()',400);
+			
 		},
 		
 		refreshInfoBulles: function(){
@@ -85,5 +88,33 @@ $(document).ready(function(){
 			.addClass((newTotalProgramme > 0) ? 'green' : 'gray');
 				
 	});
+	
+	// mode de visualisation de la gMap
+	$("input[type=radio][name='gMapMode']", $("#gmapWrapper")).live("change", function(e){
+		var mode = $(this).val();
+		
+		if(mode != '') {
+			for(x in gMapModes) {
+				if(gMapModes[x].name == mode) {
+					for(programme in gMapModes[x].values) {
+						var nbTree = gMapModes[x].values[programme];
+						var div = $('div[title="'+programme+'"]', '#map');
+						
+						if(div.position() != null) {
+							div.find('span.nbTreeMap').remove();
+							var zIndex =  parseInt(div.css('z-index')) + 1;
+							var left = (div.position().left + 24) + 'px';
+							var top = (div.position().top + 12) + 'px';
+							
+							div.parent().append('<span style="z-index:'+zIndex+';left:'+left+';top:'+top+';" class="nbTreeMap">'+nbTree+'</span>');
+						}
+					}
+				}
+			}
+		}		
+	});
+	
+	setTimeout(function(){$("input[type=radio][name='gMapMode'][selected=selected]").trigger("change");},400);
+	
 	
 });

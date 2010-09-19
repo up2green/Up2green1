@@ -49,4 +49,9 @@ class sfGuardUser extends PluginsfGuardUser
     }
 
   }
+  
+  public function countTrees() {
+  	return sizeof($this->getTrees());
+	}
+	
 }

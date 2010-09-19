@@ -25,6 +25,7 @@ class plantationActions extends sfActions {
         $this->partenaire = null;
         $this->nbArbresToPlant = 0;
         $this->spendAll = false;
+        
         if ($this->getUser()->isAuthenticated()) {
             $user = $this->getUser()->getGuardUser();
             $this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
@@ -37,9 +38,14 @@ class plantationActions extends sfActions {
 								$arrCoupons = array();
 								$arrCouponsUsed = array();
 
-								$totalCoupons = Doctrine_Query::create()->select('*')->from("coupon c")
-												->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $this->partenaire->getId())
-																->leftJoin('c.couponGen cg')->orderBy('cg.credit')->execute();
+								$totalCoupons = Doctrine_Query::create()
+									->select('*')
+									->from("coupon c")
+									->leftJoin('c.Partenaire cp')
+									->where('cp.partenaire_id = ?', $this->partenaire->getId())
+									->leftJoin('c.couponGen cg')
+									->orderBy('cg.credit')->execute();
+									
 								foreach ($totalCoupons as $coupon) {
 										if ($coupon->getIsActive()) $arrCoupons[] = $coupon;
 										else $arrCouponsUsed[] = $coupon;
@@ -54,6 +60,11 @@ class plantationActions extends sfActions {
                 if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
                     if ($coupon->getIsActive()) {
                         $this->coupon = $coupon;
+                        if(
+                        	is_null($this->partenaire)
+                        ) {
+                        	$this->partenaire = $coupon->getPartenaire()->getPartenaire();
+												}
                         $this->spendAll = true;
                         $this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
                     }
@@ -95,23 +106,35 @@ class plantationActions extends sfActions {
     }
 
 
-    public function executeCouponsCSV(sfWebRequest $request){
-	if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
-	    $this->coupons = Doctrine_Query::create()->from('coupon c')->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $partenaire->getId())
-		    ->andWhere('c.is_active = ?', true)->execute();
+	public function executeCouponsCSV(sfWebRequest $request){
+		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
+			$this->coupons = Doctrine_Query::create()
+				->from('coupon c')
+				->leftJoin('c.CouponsPartenaires cp')
+				->where('cp.partenaire_id = ?', $partenaire->getId())
+				->andWhere('c.is_active = ?', true)->execute();
+		}
+		else {
+			$this->forward404();
+		}
+		
+		$this->setLayout(false);
 	}
-	else $this->forward404();
-	$this->setLayout(false);
-    }
 
-        public function executeCouponsUsedCSV(sfWebRequest $request){
-	if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
-	    $this->coupons = Doctrine_Query::create()->from('coupon c')->leftJoin('c.CouponsPartenaires cp')->where('cp.partenaire_id = ?', $partenaire->getId())
-		    ->andWhere('c.is_active = ?', false)->execute();
+	public function executeCouponsUsedCSV(sfWebRequest $request){
+		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
+			$this->coupons = Doctrine_Query::create()
+				->from('coupon c')
+				->leftJoin('c.CouponsPartenaires cp')
+				->where('cp.partenaire_id = ?', $partenaire->getId())
+				->andWhere('c.is_active = ?', false)->execute();
+		}
+		else {
+			$this->forward404();
+		}
+		
+		$this->setLayout(false);
 	}
-	else $this->forward404();
-	$this->setLayout(false);
-    }
 
 
 	private function getGmap() {
@@ -119,24 +142,23 @@ class plantationActions extends sfActions {
 			'scrollwheel' => 'false',
 			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE'
 		));
-//		$this->programmes = Doctrine::getTable('programme')->getActive();
-		foreach($this->programmes as $programme) {
-
+		//		$this->programmes = Doctrine::getTable('programme')->getActive();
+		foreach($this->programmes as $programme)
 			if(
-				!is_null($programme->getGeoadress()) ||
-				(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
+			!is_null($programme->getGeoadress()) ||
+			(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude()))
 			) {
 
 				if(!is_null($programme->getLatitude()) && !is_null($programme->getLongitude())) {
-						// latitude / longitude method
-						$geocoded_addr = new GMapGeocodedAddress(null);
-						$geocoded_addr->setLat($programme->getLatitude());
-						$geocoded_addr->setLng($programme->getLongitude());
+					// latitude / longitude method
+					$geocoded_addr = new GMapGeocodedAddress(null);
+					$geocoded_addr->setLat($programme->getLatitude());
+					$geocoded_addr->setLng($programme->getLongitude());
 				}
 				else {
-						// adress user friendly method
-						$geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
-						$geocoded_addr->geocode($this->gMap->getGMapClient());
+					// adress user friendly method
+					$geocoded_addr = new GMapGeocodedAddress($programme->getGeoadress());
+					$geocoded_addr->geocode($this->gMap->getGMapClient());
 				}
 
 				$gMapMarker = new GMapMarker(
@@ -146,24 +168,23 @@ class plantationActions extends sfActions {
 						'title ' => "'".$programme->getTitle()."'",
 						'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
 						'icon'	=> $this->getProgrammeIcon($programme),
-						
 					)
 				);
-				
+
 				$gMapMarker->SetCustomProperties(array(
 					'class' => 'gmap-marker'
 				));
-				
+
 				$html = '<span class="title">'.$programme->getTitle().'</span>';
 				$html .= '<p class="content">';
-				
+
 				if(
 					$programme->getLogo() != '' && 
 					file_exists(sfConfig::get('sf_upload_dir').'/programme/'.$programme->getLogo())
 				) {
 					$html .= '<img class="gmap-programme" src="/uploads/programme/'.$programme->getLogo().'" alt="Diapo Image" />';
 				}
-				
+
 				$html .= $programme->getAccroche();
 				$html .= '<a href="http://association.up2green.com/programme/'.$programme->getSlug().'" class="read_more" target="_blank">Lire la suite</a>';
 				$html .= '</p>';
@@ -176,7 +197,7 @@ class plantationActions extends sfActions {
 						</span>
 					';
 				}
-				
+
 				$html .= '<br />';
 
 				$gMapMarker->addEvent(new GMapEvent(
@@ -195,39 +216,94 @@ class plantationActions extends sfActions {
 				$this->gMap->addMarker($gMapMarker);
 
 			}
-		}
+				
 		$this->gMap->centerAndZoomOnMarkers();
+		$this->gMapModes = $this->getGmapModeSelector();
+	}
+	
+	private function getGmapModeSelector() {
+		$modes = array();
+		$selected = false;
+		
+		// mode tous
+		$allValues = array();
+		foreach($this->programmes as $programme) {
+			$allValues[$programme->getTitle()] = $programme->countTrees();
+			$allValuesEmpty[$programme->getTitle()] = 0;
+		}
+		
+		// mode partenaire
+		if(!is_null($this->partenaire)) {
+			
+			$partenaireValues = $allValuesEmpty;
+			foreach($this->partenaire->getCoupons() as $coupon) {
+				foreach($coupon->getCoupon()->getTrees() as $tree) {
+					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+				}
+			}
+			$selected = true;
+			$modes[] = array(
+				'name' => 'partenaire-'.$this->partenaire->getId(),
+				'label' => 'Tout les arbes plantés par '.$this->partenaire->getTitle(),
+				'values' => $partenaireValues,
+				'selected' => $selected
+			);
+		}
+		
+		// mode user
+		if ($this->getUser()->isAuthenticated()) {
+			$userValues = $allValuesEmpty;
+			foreach($this->getUser()->getGuardUser()->getTrees() as $tree) {
+				$userValues[$tree->getProgramme()->getTitle()] ++;
+			}
+			$selected = !$selected;
+			$modes[] = array(
+				'name' => 'user',
+				'label' => "Les arbres que j'ai planté",
+				'values' => $userValues,
+				'selected' => $selected
+			);
+		}
+		
+		$modes[] = array(
+			'name' => 'all',
+			'label' => 'Tout les arbes plantés',
+			'values' => $allValues,
+			'selected' => !$selected
+		);
+		
+		return $modes;
 	}
 
-    private function getNbTrees(programme $programme) {
-        // si l'utilisateur est connecté
-        if ($user = $this->getUser()->getGuardUser()) {
-            // si c'est un partenaire
-            if ($partenaire = $user->getPartenaire()) {
-                // récupération des coupons du partenaire
-                $coupons = $partenaire->getCouponsPartenaires();
-                // comptage des arbres faisant parti du programme
-                $cpt = 0;
-                foreach ($coupons as $couponPartenaire) {
-                    $coupon = $couponPartenaire->getCoupon();
-                    foreach ($coupon->getTreeCoupon() as $treeCoupon) {
-                        $tree = $treeCoupon->getTree();
-                        if ($tree->getProgramme() == $programme) $cpt ++;
-                    }
-                }
-                return $cpt;
-            }
-            return 0;
-        }
-        return 0;
-    }
+	private function getNbTrees(programme $programme) {
+		// si l'utilisateur est connecté
+		if ($user = $this->getUser()->getGuardUser()) {
+			// si c'est un partenaire
+			if ($partenaire = $user->getPartenaire()) {
+				// récupération des coupons du partenaire
+				$coupons = $partenaire->getCoupons();
+				// comptage des arbres faisant parti du programme
+				$cpt = 0;
+				foreach ($coupons as $couponPartenaire) {
+					$coupon = $couponPartenaire->getCoupon();
+					foreach ($coupon->getTreeCoupon() as $treeCoupon) {
+						$tree = $treeCoupon->getTree();
+						if ($tree->getProgramme() == $programme) $cpt ++;
+					}
+				}
+				return $cpt;
+			}
+			return 0;
+		}
+		return 0;
+	}
 
 	private function getProgrammeIcon(programme $programme) {
 		return new GMapMarkerImage(
-			'/images/gmap/tree.png',
+			'/images/gmap/pointeur/60x60/empty/vert.png',
 			array(
-				'width' => 32,
-				'height' => 32,
+				'width' => 60,
+				'height' => 60,
 			)
 		);
 	}

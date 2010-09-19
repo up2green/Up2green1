@@ -119,6 +119,11 @@ div.gmap-info-bulle a {
 	padding-right:5px;
 }
 
+#map span.nbTreeMap {
+	color: #000;
+	position:absolute;
+}
+
 .module img.organisme-image {
 	display:block;
 	margin:0 auto;

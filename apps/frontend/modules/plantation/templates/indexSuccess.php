@@ -1,9 +1,13 @@
+<?php 
+
+?>
+
 <div id="body">
     <div id="center">
 	<?php
 
 	if(
-	$sf_user->isAuthenticated() &&
+		$sf_user->isAuthenticated() &&
 		$view === 'listeCouponsPartenaires' &&
 		!is_null($partenaire)
 	) {
@@ -74,7 +78,7 @@
 
 	} 
 	else {
-		include_partial('formGMap', array('gMap' => $gMap));
+		include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
 	}
 	
 	echo '</div><div id="left">';
@@ -88,12 +92,10 @@
 		}
 	}
 	
-	if ($sf_user->isAuthenticated()) {
-		if (!is_null($partenaire)) {
-			include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
-		}
-	} 
-	else {
+	if(!is_null($partenaire)) {
+		include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
+	}
+	elseif(!$sf_user->isAuthenticated()) {
 		include_partial('formInscription', array());
 	}
 	

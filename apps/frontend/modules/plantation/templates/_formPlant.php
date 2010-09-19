@@ -7,8 +7,7 @@
 		
 		<div class="content">
 			
-			<p><?php if (isset($coupon)) : ?>Coupon n° <?php echo $coupon->getCode() ?><?php endif; ?></p>
-			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.<br /><br /></p>
+			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.</p>
 			
 			<?php if(sizeof($programmes) > 5) : ?>
 			<span class="button white fixedWidth slideUp">

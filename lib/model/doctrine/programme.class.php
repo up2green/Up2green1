@@ -12,4 +12,9 @@
  */
 class programme extends Baseprogramme
 {
+	
+	public function countTrees() {
+		return sizeof($this->getTrees()); // a optimimser avec requete count
+	}
+	
 }

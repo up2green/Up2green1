@@ -55,6 +55,7 @@ abstract class BasecouponPartenaire extends sfDoctrineRecord
 
         $this->hasOne('coupon', array(
              'local' => 'coupon_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
     }
 }

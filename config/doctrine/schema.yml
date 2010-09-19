@@ -32,6 +32,28 @@ partenaire:
       foreignType:  one
       foreignAlias: Partenaire
       
+partenaireProgramme:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    partenaire_id:
+      type: integer(4)
+      primary: true
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    partenaire:
+      local: partenaire_id
+      foreignAlias: Programmes
+      onDelete: CASCADE
+    programme:
+      local: programme_id
+      foreignAlias: Partenaires
+      onDelete: CASCADE
+      
 profil:
   columns:
     id:
@@ -138,12 +160,13 @@ couponPartenaire:
       primary: true
   relations:
     partenaire:
-      class: partenaire
       local: partenaire_id
-      foreignAlias: CouponsPartenaires
+      foreignAlias: Coupons
     coupon:
       local: coupon_id
-      foreignAlias: CouponsPartenaires
+      foreignAlias: Partenaire
+      foreignType:  one
+      onDelete: CASCADE
       
 organisme:
   actAs: 
@@ -247,11 +270,13 @@ treeUser:
   relations:
     tree:
       local: tree_id
+      foreignType:  one
+      foreignAlias: User
+      onDelete: CASCADE
     user:
       class: sfGuardUser
       local: user_id
       foreignAlias: Trees
-
 
 treeCoupon:
   options:
@@ -268,10 +293,12 @@ treeCoupon:
   relations:
     tree:
       local: tree_id
-      foreignAlias: treeCoupon
+      foreignType:  one
+      foreignAlias: Coupon
+      onDelete: CASCADE
     coupon:
       local: coupon_id
-      foreignAlias: treeCoupon
+      foreignAlias: Trees
 
 article:
   actAs: 

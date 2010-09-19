@@ -12,24 +12,24 @@
  */
 class partenaire extends Basepartenaire {
 
-    public function generateCoupons($nb,couponGen $couponGen ) {
-        $tab = array();
-        for ($i = 0; $i < $nb; $i ++){
-            $num = couponTable::getNumUnused();
-            $coupon = new coupon();
-            $coupon->setCouponGen($couponGen);
-            $coupon->setCode($num);
-            $coupon->save();
+	public function generateCoupons($nb,couponGen $couponGen ) {
+		$tab = array();
+		for ($i = 0; $i < $nb; $i ++){
+			$num = couponTable::getNumUnused();
+			$coupon = new coupon();
+			$coupon->setCouponGen($couponGen);
+			$coupon->setCode($num);
+			$coupon->save();
 
-            $jointure = new couponPartenaire();
-            $jointure->setPartenaire($this);
-            $jointure->setCoupon($coupon);
+			$jointure = new couponPartenaire();
+			$jointure->setPartenaire($this);
+			$jointure->setCoupon($coupon);
 
-            $jointure->save();
+			$jointure->save();
 
-            $tab[] = $num;
-        }
-        return $tab;
-    }
-
+			$tab[] = $num;
+		}
+		return $tab;
+	}
+	
 }

@@ -23,6 +23,12 @@ class partenaireForm extends BasepartenaireForm
 			'edit_mode' => !$this->isNew(),
 			'template'  => '<div>%file%<br />%input%<br />%delete% %delete_label%</div>',
 		));
+		
+		$this->widgetSchema['programmes'] = new sfWidgetFormDoctrineChoice(array(
+			'model' => 'programme', 
+			'add_empty' => true,
+			'multiple' => true
+		));
 
 		$this->validatorSchema['logo'] = new sfValidatorFile(array(
 			'required'   => false,

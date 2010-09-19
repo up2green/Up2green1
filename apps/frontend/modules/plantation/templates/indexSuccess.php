@@ -7,7 +7,7 @@
 	<?php
 
 	if(
-		$sf_user->isAuthenticated() &&
+	$sf_user->isAuthenticated() &&
 		$view === 'listeCouponsPartenaires' &&
 		!is_null($partenaire)
 	) {
@@ -60,7 +60,9 @@
 			    <?php foreach($couponsUsed as $coupon) : ?>
 		    <li>
 			<span class="bigitem"><?php echo $coupon->getCode(); ?> [<?php echo $coupon->getCouponGen()->getCredit() ?> arbre(s)]
-														Utilisé le <?php echo format_date($coupon->getUsedAt(), 'p', $sf_user->getCulture()) ?></span>
+			    Utilisé le <?php echo format_date($coupon->getUsedAt(), 'p', $sf_user->getCulture()) ?> sur les programmes : 
+			    <?php echo $coupon->getFormatedListProgrammes() ?>
+			</span>
 		    </li>
 			    <?php endforeach; ?>
 		</ul>
@@ -76,29 +78,29 @@
 	    <?php
 	    endif;
 
-	} 
+	}
 	else {
-		include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
+	    include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
 	}
-	
+
 	echo '</div><div id="left">';
-	
+
 	if($view !== 'listeCouponsPartenaires' or !$sf_user->isAuthenticated()) {
-		if (isset($coupon)) {
-			include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
-		} 
-		else {
-			include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
-		}
+	    if (isset($coupon)) {
+		include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
+	    }
+	    else {
+		include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
+	    }
 	}
-	
+
 	if(!is_null($partenaire)) {
-		include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
+	    include_partial('formPartenaire', array('partenaire' => $partenaire, 'view' => $view));
 	}
 	elseif(!$sf_user->isAuthenticated()) {
-		include_partial('formInscription', array());
+	    include_partial('formInscription', array());
 	}
-	
+
 	?>
     </div>
 </div>

@@ -18,7 +18,7 @@
 				echo '<a href="/" class="button green">Retour à la Carte</a>';
 			}
 			else {
-				echo '<a href="/listeCouponsPartenaires" class="button purple">Voir mes coupons</a>';
+				echo '<a href="' . url_for('@plantation_liste_coupon_partenaire') . '" class="button purple">Voir mes coupons</a>';
 			}
 		}
 		?>

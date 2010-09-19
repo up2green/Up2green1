@@ -9,101 +9,110 @@
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class plantationActions extends sfActions {
-    /**
-     * Executes index action
-     *
-     * @param sfRequest $request A request object
-     */
-    public function executeIndex(sfWebRequest $request) {
-        // chargement des variables pour le form programmes
-        $this->programmes = Doctrine_Core::getTable('programme')->getActive();
-				$this->view = $request->getParameter('view');
-				
-        $this->phraseCoupon = "";
-        
-				// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
-        $this->partenaire = null;
-        $this->nbArbresToPlant = 0;
-        $this->spendAll = false;
-        
-        if ($this->getUser()->isAuthenticated()) {
-            $user = $this->getUser()->getGuardUser();
-            $this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
-            $this->nbArbresToPlant = $user->getProfile()->getCredit();
-            $this->spendAll = false;
-            
-						if($this->view === 'listeCouponsPartenaires' &&
-							!is_null($this->partenaire)
-						) {
-								$arrCoupons = array();
-								$arrCouponsUsed = array();
+	/**
+	 * Executes index action
+	 *
+	 * @param sfRequest $request A request object
+	 */
+	public function executeIndex(sfWebRequest $request) {
+		// chargement des variables pour le form programmes
+		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
+		$this->view = $request->getParameter('view');
+		
+		$this->phraseCoupon = "";
+		
+		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
+		$this->partenaire = null;
+		$this->nbArbresToPlant = 0;
+		$this->spendAll = false;
+		
+		if ($this->getUser()->isAuthenticated()) {
+			$user = $this->getUser()->getGuardUser();
+			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+			$this->nbArbresToPlant = $user->getProfile()->getCredit();
+			$this->spendAll = false;
+			
+			if($this->view === 'listeCouponsPartenaires' &&
+				!is_null($this->partenaire)
+			) {
+				$arrCoupons = array();
+				$arrCouponsUsed = array();
 
-								$totalCoupons = Doctrine_Query::create()
-									->select('*')
-									->from("coupon c")
-									->leftJoin('c.Partenaire cp')
-									->where('cp.partenaire_id = ?', $this->partenaire->getId())
-									->leftJoin('c.couponGen cg')
-									->orderBy('cg.credit')->execute();
-									
-								foreach ($totalCoupons as $coupon) {
-										if ($coupon->getIsActive()) $arrCoupons[] = $coupon;
-										else $arrCouponsUsed[] = $coupon;
-								}
-							 $this->couponsUsed = $arrCouponsUsed;
-							 $this->coupons = $arrCoupons;
-						}
-        }
-
-        if ($request->isMethod('post')) {
-            if ($request->getParameter('numCouponToUse')) {
-                if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
-                    if ($coupon->getIsActive()) {
-                        $this->coupon = $coupon;
-                        if(
-                        	is_null($this->partenaire)
-                        ) {
-                        	$this->partenaire = $coupon->getPartenaire()->getPartenaire();
-												}
-                        $this->spendAll = true;
-                        $this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
-                    }
-                    else {
-                        $this->coupon = null;
-                        $this->phraseCoupon = "Ce coupon a déjà été utilisé";
-                    }
-                }
-            }
-            if ($request->getParameter('submitArbresProgramme')){
-                if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
-                    if ($coupon->getIsActive()){
-			$email = "";
-			if (($request->hasParameter('email_user_deco')) && ($request->getParameter('email_user_deco') != "")) {
-			    $email = $request->getParameter('email_user_deco');
+				$totalCoupons = Doctrine_Query::create()
+					->select('*')
+					->from("coupon c")
+					->leftJoin('c.Partenaire cp')
+					->where('cp.partenaire_id = ?', $this->partenaire->getId())
+					->leftJoin('c.couponGen cg')
+					->orderBy('cg.credit')->execute();
+					
+				foreach ($totalCoupons as $coupon) {
+					if ($coupon->getIsActive()) $arrCoupons[] = $coupon;
+					else $arrCouponsUsed[] = $coupon;
+				}
+			 $this->couponsUsed = $arrCouponsUsed;
+			 $this->coupons = $arrCoupons;
 			}
-                        foreach ($this->programmes as $programme){
-                            if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
-                                if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
-                                    $coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
-                                }
-                            }
-                        }
-                        $coupon->setUsedAt(date('c'));
-                        $coupon->setIsActive(false);
-                        $coupon->save();
-			if (! ($this->getUser()->getGuardUser())) $coupon->logUser($email);
-                        $this->phraseCoupon = "Vos arbres ont été plantés.";
-                    }
-                    else {
-                        $this->phraseCoupon = "Ce coupon a déjà été utilisé";
-                        $this->coupon = null;
-                    }
-                }
-            }
-        }
+		}
 
-        $this->getGmap();
-    }
+		if ($request->isMethod('post')) {
+			
+			// l'utilisateur a entré son numéro de coupon
+			if ($request->getParameter('numCouponToUse')) {
+				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
+					if ($coupon->getIsActive()) {
+						$this->coupon = $coupon;
+						if(is_null($this->partenaire)) {
+							$this->partenaire = $coupon->getPartenaire()->getPartenaire();
+						}
+						$this->spendAll = true;
+						$this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
+					}
+					else {
+						$this->coupon = null;
+						$this->phraseCoupon = "Ce coupon a déjà été utilisé";
+					}
+				}
+			}
+			
+			// submit pour planter les arbres
+			if ($request->getParameter('submitArbresProgramme')){
+				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
+					if ($coupon->getIsActive()){
+						
+						$email = "";
+						if (($request->hasParameter('email_user_deco')) && ($request->getParameter('email_user_deco') != "")) {
+							$email = $request->getParameter('email_user_deco');
+						}
+						
+						foreach ($this->programmes as $programme){
+							if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
+								if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
+									$coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
+								}
+							}
+						}
+						
+						$coupon->setUsedAt(date('c'));
+						$coupon->setIsActive(false);
+						$coupon->save();
+						
+						if (! ($this->getUser()->getGuardUser())) {
+							$coupon->logUser($email);
+						}
+
+						$this->phraseCoupon = "Vos arbres ont été plantés.";
+					}
+					else {
+						$this->phraseCoupon = "Ce coupon a déjà été utilisé";
+						$this->coupon = null;
+					}
+				}
+			}
+		}
+
+		$this->getGmap();
+	}
 
 
 	public function executeCouponsCSV(sfWebRequest $request){

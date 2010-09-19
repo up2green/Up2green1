@@ -36,6 +36,8 @@ class partenaireForm extends BasepartenaireForm {
 				'height' 	=> '75px',
 				'toolbar'	=> 'Basic'
 		)));
+		
+	$this->widgetSchema['description'] = new sfWidgetFormCKEditor();
 
 	$this->widgetSchema['programmes_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'programme'));
 	$this->validatorSchema['programmes_list'] = new sfValidatorDoctrineChoice(array(

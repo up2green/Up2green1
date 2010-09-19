@@ -19,7 +19,7 @@
 			<ul>
 				<?php foreach($gMapModes as $gMapMode) : ?>
 				<li>
-					<input type='radio' class="gMapMode" name="gMapMode" value="<?php echo $gMapMode['name'] ?>" id="gMapMode_<?php echo $gMapMode['name'] ?>"<?php echo ($gMapMode['selected']) ? ' selected="selected"' : '' ?>>
+					<input type='radio' class="gMapMode" name="gMapMode" value="<?php echo $gMapMode['name'] ?>" id="gMapMode_<?php echo $gMapMode['name'] ?>"<?php echo ($gMapMode['checked']) ? ' checked="checked"' : '' ?>>
 					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" ><?php echo $gMapMode['label'] ?></label>
 				</li>
 				<?php endforeach; ?>

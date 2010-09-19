@@ -223,7 +223,7 @@ class plantationActions extends sfActions {
 	
 	private function getGmapModeSelector() {
 		$modes = array();
-		$selected = false;
+		$checked = false;
 		
 		// mode tous
 		$allValues = array();
@@ -241,12 +241,12 @@ class plantationActions extends sfActions {
 					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
 				}
 			}
-			$selected = true;
+			$checked = true;
 			$modes[] = array(
 				'name' => 'partenaire-'.$this->partenaire->getId(),
 				'label' => 'Tout les arbes plantés par '.$this->partenaire->getTitle(),
 				'values' => $partenaireValues,
-				'selected' => $selected
+				'checked' => $checked
 			);
 		}
 		
@@ -256,12 +256,12 @@ class plantationActions extends sfActions {
 			foreach($this->getUser()->getGuardUser()->getTrees() as $tree) {
 				$userValues[$tree->getProgramme()->getTitle()] ++;
 			}
-			$selected = !$selected;
+			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'user',
 				'label' => "Les arbres que j'ai planté",
 				'values' => $userValues,
-				'selected' => $selected
+				'checked' => $checked
 			);
 		}
 		
@@ -269,7 +269,7 @@ class plantationActions extends sfActions {
 			'name' => 'all',
 			'label' => 'Tout les arbes plantés',
 			'values' => $allValues,
-			'selected' => !$selected
+			'checked' => !$checked
 		);
 		
 		return $modes;

@@ -114,7 +114,7 @@ $(document).ready(function(){
 		}		
 	});
 	
-	setTimeout(function(){$("input[type=radio][name='gMapMode'][selected=selected]").trigger("change");},400);
+	setTimeout(function(){$("input:checked[type=radio][name='gMapMode']").trigger("change");},400);
 	
 	
 });

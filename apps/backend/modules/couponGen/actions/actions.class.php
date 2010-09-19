@@ -1,16 +1,16 @@
 <?php
 
-require_once dirname(__FILE__).'/../lib/couponGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/couponGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/couponGenGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/couponGenGeneratorHelper.class.php';
 
 /**
- * coupon actions.
+ * couponGen actions.
  *
  * @package    up2green
- * @subpackage coupon
+ * @subpackage couponGen
  * @author     Clément Gautier
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class couponActions extends autoCouponActions
+class couponGenActions extends autoCouponGenActions
 {
 }

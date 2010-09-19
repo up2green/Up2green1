@@ -7,7 +7,7 @@ generator:
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          coupon
+    route_prefix:          couponGen
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
@@ -16,7 +16,6 @@ generator:
       fields:  ~
       list:
         title: Liste des coupons
-        
       filter:  ~
       form:    ~
       edit:

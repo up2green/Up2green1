@@ -134,7 +134,7 @@ class plantationActions extends sfActions {
 		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
 			$this->coupons = Doctrine_Query::create()
 				->from('coupon c')
-				->leftJoin('c.CouponsPartenaires cp')
+				->leftJoin('c.Partenaire cp')
 				->where('cp.partenaire_id = ?', $partenaire->getId())
 				->andWhere('c.is_active = ?', false)->execute();
 		}
@@ -246,7 +246,8 @@ class plantationActions extends sfActions {
 			
 			$partenaireValues = $allValuesEmpty;
 			foreach($this->partenaire->getCoupons() as $coupon) {
-				foreach($coupon->getCoupon()->getTrees() as $tree) {
+				foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
+					$tree = $treeCoupon->getTree();
 					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
 				}
 			}
@@ -262,7 +263,8 @@ class plantationActions extends sfActions {
 		// mode user
 		if ($this->getUser()->isAuthenticated()) {
 			$userValues = $allValuesEmpty;
-			foreach($this->getUser()->getGuardUser()->getTrees() as $tree) {
+			foreach($this->getUser()->getGuardUser()->getTrees() as $treeUser) {
+				$tree = $treeUser->getTree();
 				$userValues[$tree->getProgramme()->getTitle()] ++;
 			}
 			$checked = !$checked;

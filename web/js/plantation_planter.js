@@ -103,7 +103,7 @@ $(document).ready(function(){
 						if(div.position() != null) {
 							div.find('span.nbTreeMap').remove();
 							var zIndex =  parseInt(div.css('z-index')) + 1;
-							var left = (div.position().left + 24) + 'px';
+							var left = (div.position().left + 13) + 'px';
 							var top = (div.position().top + 12) + 'px';
 							
 							div.parent().append('<span style="z-index:'+zIndex+';left:'+left+';top:'+top+';" class="nbTreeMap">'+nbTree+'</span>');

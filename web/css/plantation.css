@@ -120,8 +120,12 @@ div.gmap-info-bulle a {
 }
 
 #map span.nbTreeMap {
-	color: #000;
+	color:#000000;
+	font-size:11px;
+	font-weight:bold;
 	position:absolute;
+	text-align:center;
+	width:30px;
 }
 
 .module img.organisme-image {

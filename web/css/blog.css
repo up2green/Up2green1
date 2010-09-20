@@ -297,6 +297,10 @@ body {
 	background-color:#FFFFFF
 }
 
+div.module span.corner {
+	background-color:transparent;
+}
+
 
 div.module span.corner {
 	background-image: url("../images/blog/bg_corps/corner_bg_corps.png");

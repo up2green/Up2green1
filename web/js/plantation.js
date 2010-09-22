@@ -13,18 +13,18 @@ $(document).ready(function(){
 	$(".scrollableWrapper").each(function() {
 		var self = $(this);
 		$("ul.scrollable", self).scrollTo( 0 ); 
-		var size = 120;
-	
+		var size = $("ul.scrollable", self).height();
+		
 		$("span.slideUp", self).click(function(){
 			$("ul.scrollable", self).scrollTo(
-				'-=' + size + 'px', 
+				'-=' + size, 
 				{speed:500, axis:'y', queued:true}
 			);
 		});
 	
 		$("span.slideDown", self).click(function(){
 			$("ul:first", self).scrollTo(
-				'+=' + size + 'px', 
+				'+=' + size, 
 				{speed:500, axis:'y', queued:true}
 			);
 		});

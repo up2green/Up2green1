@@ -50,7 +50,7 @@ ul.scrollable  {
 	padding:3px;
 	overflow:hidden;
 	position:relative;
-	height:150px;
+	height:100px;
 }
 
 ul.scrollable.medium  {
@@ -126,6 +126,12 @@ div.gmap-info-bulle a {
 	position:absolute;
 	text-align:center;
 	width:30px;
+}
+
+.module {
+	color:#0F3F00;
+	font-size:12px;
+	font-weight:bold;
 }
 
 .module img.organisme-image {

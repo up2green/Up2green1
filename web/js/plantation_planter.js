@@ -81,7 +81,7 @@ $(document).ready(function(){
 		
 		// modification du nombre d'arbres à planter sur ce programme
 		hiddenProgrammeTotal.val(newTotalProgramme);
-		$('.nbTree[programme="'+idProgramme+'"]').html(newTotalProgramme);
+		$('.nbTree[programme="'+idProgramme+'"]').html("("+newTotalProgramme+")");
 		
 		$('.removeTree[programme="'+idProgramme+'"]')
 			.removeClass((newTotalProgramme > 0) ? 'gray' : 'green')
@@ -97,18 +97,21 @@ $(document).ready(function(){
 			for(x in gMapModes) {
 				if(gMapModes[x].name == mode) {
 					for(programme in gMapModes[x].values) {
+						
 						var nbTree = gMapModes[x].values[programme];
 						var div = $('div[title="'+programme+'"]', '#map');
 						
 						if(div.position() != null) {
-							div.find('span.nbTreeMap').remove();
+							div.parent().find('span.nbTreeMap[title="'+programme+'"]').remove();
 							var zIndex =  parseInt(div.css('z-index')) + 1;
 							var left = (div.position().left + 13) + 'px';
 							var top = (div.position().top + 12) + 'px';
 							
-							div.parent().append('<span style="z-index:'+zIndex+';left:'+left+';top:'+top+';" class="nbTreeMap">'+nbTree+'</span>');
+							div.parent().append('<span title="'+programme+'" style="z-index:'+zIndex+';left:'+left+';top:'+top+';" class="nbTreeMap">'+nbTree+'</span>');
 						}
 					}
+					
+					
 				}
 			}
 		}		

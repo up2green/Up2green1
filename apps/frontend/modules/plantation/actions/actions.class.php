@@ -32,6 +32,15 @@ class plantationActions extends sfActions {
 			$this->nbArbresToPlant = $user->getProfile()->getCredit();
 			$this->spendAll = false;
 			
+			if(!is_null($this->partenaire)) {
+				$partenaireProgrammes = $this->partenaire->getProgrammes();
+				$programmes = array();
+				foreach($partenaireProgrammes as $partenaireProgramme) {
+					$programmes[] = $partenaireProgramme->getProgramme();
+				}
+				$this->programmes = $programmes;
+			}
+			
 			if($this->view === 'listeCouponsPartenaires' &&
 				!is_null($this->partenaire)
 			) {
@@ -203,8 +212,10 @@ class plantationActions extends sfActions {
 				if(isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)) {
 					$html .= '
 						<span class="action">
+							<span>Plantez vos arbres <span class="nbTree" programme="'.$programme->getId().'"></span> : </span>
 							<button class="addTree button really-small green" programme="'.$programme->getId().'">+</button>
 							<button class="removeTree button really-small gray" programme="'.$programme->getId().'">-</button>
+							
 						</span>
 					';
 				}
@@ -253,7 +264,7 @@ class plantationActions extends sfActions {
 					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
 				}
 			}
-			$checked = true;
+			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'partenaire-'.$this->partenaire->getId(),
 				'label' => 'Tout les arbes plantés par '.$this->partenaire->getTitle(),
@@ -261,9 +272,7 @@ class plantationActions extends sfActions {
 				'checked' => $checked
 			);
 		}
-		
-		// mode user
-		if ($this->getUser()->isAuthenticated()) {
+		elseif ($this->getUser()->isAuthenticated()) {
 			$userValues = $allValuesEmpty;
 			foreach($this->getUser()->getGuardUser()->getTrees() as $treeUser) {
 				$tree = $treeUser->getTree();

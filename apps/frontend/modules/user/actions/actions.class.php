@@ -48,9 +48,9 @@ class userActions extends sfActions {
                 $user->setPassword($pwd);
                 $user->save();
                 $message = $this->getMailer()->compose(
-                        array('noreply@up2green.com' => 'Up2Green Mailer'),
+                        array('webmaster@up2green.com' => 'Up2Green'),
                         $user->getEmailAddress(),
-                        '[Up2Green] Nouveau mot de passe'
+                        'Votre nouveau mot de passe'
                 );
                 
                 $html = "Bonjour " . $user->getUsername() . ", <br />".

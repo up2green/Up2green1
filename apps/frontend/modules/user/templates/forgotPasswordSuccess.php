@@ -3,7 +3,9 @@
 	<p class="title indent">Nouveau mot de passe</p>
 	<div class="content center" style="min-height:250px;">
 		<?php if (isset($pwd)): ?>
-		Le nouveau mot de passe a été envoyé par mail à l'adresse renseignée sur le profil.
+		Le nouveau mot de passe a été envoyé par mail à l'adresse renseignée sur le profil.<br />
+		Regardez dans votre boite à SPAM si vous ne voyez pas l'e-mail dans votre boite de réception, 
+		il est possible que votre logiciel de messagerie bloque ce message.
 		<?php else: ?>
 		<?php if (isset($error)) echo $error ?>
 		<form method="post" action="" name="pwd">

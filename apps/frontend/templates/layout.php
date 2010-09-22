@@ -20,6 +20,7 @@
             <?php echo $sf_content ?>
             
             <div class="clear"></div>
+			<!-- 
 			<div id="footer_wrapper">
 				<div id="footer_inner">
 					<div class="onglet">
@@ -38,12 +39,13 @@
 					</div>
 					<div class="content_wrapper">
 						<div class="content_inner">
-							<?php include_component('lien', 'footerPanel'); ?>
+							<?php /*include_component('lien', 'footerPanel');*/ ?>
 						</div>
 					</div>
 					<div class="bottom"></div>
 				</div>
 			</div>
+			-->
         </div>
     </body>
 </html>

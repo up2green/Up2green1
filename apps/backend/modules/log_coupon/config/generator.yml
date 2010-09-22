@@ -14,8 +14,8 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        object_actions: []
+        actions: []
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~

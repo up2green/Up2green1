@@ -83,8 +83,16 @@
 	    include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
 	}
 
-	echo '</div><div id="left">';
-
+	echo '</div>';
+	
+	// Left
+	
+	echo '<div id="left">';
+	
+	if(!isset($coupon)) {
+		include_partial('logo');
+	}
+	
 	if($view !== 'listeCouponsPartenaires' or !$sf_user->isAuthenticated()) {
 	    if (isset($coupon)) {
 		include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));

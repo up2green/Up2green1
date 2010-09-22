@@ -75,6 +75,14 @@ plantation_liste_coupon_partenaire:
   url: /plantation/listeCouponsPartenaires
   param: { module: plantation, action: index, view: listeCouponsPartenaires }
 
+plantation_login:
+  url:   /plantation/login
+  param: { module: sfGuardAuth, action: signin }
+
+plantation_logout:
+  url:   /plantation/logout
+  param: { module: sfGuardAuth, action: signout }
+  
 plantation:
   url: /plantation
   param: { module: plantation, action: index}

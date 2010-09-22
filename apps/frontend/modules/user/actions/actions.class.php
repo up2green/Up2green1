@@ -49,19 +49,17 @@ class userActions extends sfActions {
                 $user->save();
                 $message = $this->getMailer()->compose(
                         array('noreply@up2green.com' => 'Up2Green Mailer'),
-                        $user->userProfile->getMail(),
-                        '[Up2Green] Nouveau mot de passe',
-                        "Bonjour " . $user->getUsername() . ", <br />".
+                        $user->getEmailAddress(),
+                        '[Up2Green] Nouveau mot de passe'
+                );
+                
+                $html = "Bonjour " . $user->getUsername() . ", <br />".
                         "Vous avez demandé à changer votre mot de passe. <br />".
                         "Votre nouveau mot de passe est : " . $pwd . "<br /><br />".
                         "Nous vous conseillons de changer votre mot de passe à votre prochaine connexion.<br /><br />".
-                        "A bientôt pour de nouvelles recherches sur http://up2green.com/ !"
-                );
-//                $message->getHeaders()->remove('Content-Type');
-//                $message->getHeaders()->addParameterizedHeader('Content-Type', 'text/html');
-//                $message->getHeaders()->addParameterizedHeader('charset', 'utf-8');
-//                $type->setValue('text/html');
-//                $this->getMail()->c
+                        "A bientôt pour de nouvelles recherches sur http://up2green.com/ !";
+                
+                $message->setBody($html, 'text/html');
                 
                 $this->getMailer()->send($message);
                 $this->pwd = $pwd;

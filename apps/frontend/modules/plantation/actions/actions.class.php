@@ -149,7 +149,9 @@ class plantationActions extends sfActions {
 	private function getGmap() {
 		$this->gMap = new GMap(array(
 			'scrollwheel' => 'false',
-			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE'
+			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE',
+			'mapTypeControl' => 'false',
+			'navigationControl' => 'false'
 		));
 		//		$this->programmes = Doctrine::getTable('programme')->getActive();
 		foreach($this->programmes as $programme)

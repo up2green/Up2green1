@@ -32,15 +32,6 @@ class plantationActions extends sfActions {
 			$this->nbArbresToPlant = $user->getProfile()->getCredit();
 			$this->spendAll = false;
 			
-			if(!is_null($this->partenaire)) {
-				$partenaireProgrammes = $this->partenaire->getProgrammes();
-				$programmes = array();
-				foreach($partenaireProgrammes as $partenaireProgramme) {
-					$programmes[] = $partenaireProgramme->getProgramme();
-				}
-				$this->programmes = $programmes;
-			}
-			
 			if($this->view === 'listeCouponsPartenaires' &&
 				!is_null($this->partenaire)
 			) {
@@ -63,7 +54,9 @@ class plantationActions extends sfActions {
 			 $this->coupons = $arrCoupons;
 			}
 		}
-
+		
+		$this->setProgrammesFromPartenaire();
+		
 		if ($request->isMethod('post')) {
 			
 			// l'utilisateur a entré son numéro de coupon
@@ -73,6 +66,7 @@ class plantationActions extends sfActions {
 						$this->coupon = $coupon;
 						if(is_null($this->partenaire)) {
 							$this->partenaire = $coupon->getPartenaire()->getPartenaire();
+							$this->setProgrammesFromPartenaire();
 						}
 						$this->spendAll = true;
 						$this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
@@ -122,8 +116,18 @@ class plantationActions extends sfActions {
 
 		$this->getGmap();
 	}
-
-
+	
+	public function setProgrammesFromPartenaire() {
+		if(!is_null($this->partenaire)) {
+			$partenaireProgrammes = $this->partenaire->getProgrammes();
+			$programmes = array();
+			foreach($partenaireProgrammes as $partenaireProgramme) {
+				$programmes[] = $partenaireProgramme->getProgramme();
+			}
+			$this->programmes = $programmes;
+		}
+	}
+	
 	public function executeCouponsCSV(sfWebRequest $request){
 		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
 			$this->coupons = Doctrine_Query::create()
@@ -162,6 +166,7 @@ class plantationActions extends sfActions {
 			'mapTypeControl' => 'false',
 			'navigationControl' => 'false'
 		));
+		
 		//		$this->programmes = Doctrine::getTable('programme')->getActive();
 		foreach($this->programmes as $programme)
 			if(
@@ -258,12 +263,20 @@ class plantationActions extends sfActions {
 		if(!is_null($this->partenaire)) {
 			
 			$partenaireValues = $allValuesEmpty;
+			//Les arbres plantés par ses coupons
 			foreach($this->partenaire->getCoupons() as $coupon) {
 				foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
 					$tree = $treeCoupon->getTree();
 					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
 				}
 			}
+			//Les arbres plantés directement
+			foreach($this->partenaire->getUser()->getTrees() as $treeUser) {
+				die('coin');
+				$tree = $treeUser->getTree();
+				$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+			}
+			
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'partenaire-'.$this->partenaire->getId(),

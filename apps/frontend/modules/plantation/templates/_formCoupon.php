@@ -1,13 +1,13 @@
 <div id="form_programme_plantation" class="module">
 	<img class="title corner left" src="/images/module/green/icon/coupon.png" alt="" />
-	<p class="title">Coupon</p>
+	<p class="title">Plantez vos arbres</p>
 	<div class="content">
 		<?php 
 			if(!empty($phraseCoupon)) {
 				echo '<p>'.$phraseCoupon.'</p><br />';
-			}			
+			}
 		?>
-		<p>On vous a offert un coupon ou vous vous en êtes vous même offert un ? Entrez son code ici et planter vos arbres dès maintenant !</p>
+		<p>Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !</p>
 		<form action="" method="post">
 		<p class="center"><input type="text" name="code" value="Numéro de coupon" title="Numéro de coupon" /></p>
 		<p class="center"><input type="submit" class="button white" name="numCouponToUse" value="Utiliser" /></p>

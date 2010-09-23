@@ -15,6 +15,16 @@ class programme extends Baseprogramme
 	
 	public function countTrees() {
 		return sizeof($this->getTrees()); // a optimimser avec requete count
+/*
+		var_dump(
+			Doctrine_Query::create()
+				->count()
+				->from('tree t')
+				->innerJoin('c.Partenaire cp')
+				->where('cp.partenaire_id = ?', $partenaire->getId())
+				->andWhere('c.is_active = ?', false)->execute();
+		)
+*/
 	}
 	
 }

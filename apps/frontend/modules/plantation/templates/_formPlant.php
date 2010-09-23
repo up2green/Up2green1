@@ -9,7 +9,7 @@
 			
 			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.</p>
 			
-			<?php if(sizeof($programmes) > 5) : ?>
+			<?php if(sizeof($programmes) > 3) : ?>
 			<span class="button white fixedWidth slideUp">
 				<img src="/images/icons/top.png" alt="Haut"/>
 			</span>
@@ -29,7 +29,7 @@
 				<?php endforeach; ?>
 			</ul>
 
-			<?php if(sizeof($programmes) > 5) : ?>
+			<?php if(sizeof($programmes) > 3) : ?>
 			<span class="button white fixedWidth slideDown">
 				<img src="/images/icons/bottom.png" alt="Bas"/>
 			</span>

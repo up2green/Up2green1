@@ -47,10 +47,10 @@ div.content input {
 }
 
 ul.scrollable  {
-	padding:3px;
+	padding:20px 3px 0;
 	overflow:hidden;
 	position:relative;
-	height:100px;
+	height:120px;
 }
 
 ul.scrollable.medium  {
@@ -119,6 +119,12 @@ div.gmap-info-bulle a {
 	padding-right:5px;
 }
 
+.modeSelector li {
+	width:350px;
+	float:left;
+	display:block;
+}
+
 #map span.nbTreeMap {
 	color:#000000;
 	font-size:11px;
@@ -126,6 +132,12 @@ div.gmap-info-bulle a {
 	position:absolute;
 	text-align:center;
 	width:30px;
+}
+
+span.nbArbresToPlantLeft,
+span.nbTree {
+	color: #EF9D0E;
+	font-weight:bold;
 }
 
 .module {

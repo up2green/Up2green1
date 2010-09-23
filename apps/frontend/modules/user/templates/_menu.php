@@ -7,7 +7,7 @@
 		<div class="menu_accueil">
 			<div class="flag"></div>
 			<ul class="menu">
-				<li><a class="button small green" href="/">Acceuil</a></li>
+				<li><a class="button small green" href="/">Accueil</a></li>
 				<li><a class="button small gray disabled" href="#<?php /*echo url_for("user/inscription")*/ ?>">Créer mon compte (bientot disponible)</a></li>
 			</ul>
 		</div>
@@ -20,6 +20,7 @@
 		<div class="menu_accueil">
 			<div class="flag"></div>
 			<ul class="menu">
+				<li><a class="button small green" href="/">Accueil</a></li>
 				<li><a class="button small gray disabled" href="#">Définir comme page d'accueil</a></li>
 			</ul>
 		</div>

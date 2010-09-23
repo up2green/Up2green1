@@ -6,7 +6,7 @@
 	
 		<?php if(!empty($gMapModes)) : ?>
 		<script type="text/javascript">
-			var gMapModes = <?php echo json_encode($gMapModes->getRawValue()); ?>
+			var gMapModes = <?php echo json_encode($gMapModes); ?>;
 		</script>
 		<?php endif; ?>
 		
@@ -25,6 +25,7 @@
 				<?php endforeach; ?>
 			</ul>
 		</div>
+		<div class="clear"></div>
 		<?php endif; ?>
 		
 	</div>

@@ -9,7 +9,7 @@
 			
 			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.</p>
 			
-			<?php if(sizeof($programmes) > 3) : ?>
+			<?php if(sizeof($programmes) > 4) : ?>
 			<span class="button white fixedWidth slideUp">
 				<img src="/images/icons/top.png" alt="Haut"/>
 			</span>
@@ -29,7 +29,7 @@
 				<?php endforeach; ?>
 			</ul>
 
-			<?php if(sizeof($programmes) > 3) : ?>
+			<?php if(sizeof($programmes) > 4) : ?>
 			<span class="button white fixedWidth slideDown">
 				<img src="/images/icons/bottom.png" alt="Bas"/>
 			</span>
@@ -37,12 +37,13 @@
 			
 			<br />
 			
-			<?php if (! $sf_user->isAuthenticated()): ?>
+			<?php if (false && ! $sf_user->isAuthenticated()): ?>
 				<p>E-mail : <input type="text" name="email_user_deco" /></p>
 			<?php endif; ?>
 			
 			<p class="center">
-				<input type="submit" name="submitArbresProgramme" class="button gray" value="Planter mes arbres !" />
+				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="Planter" />
+				<a href="/" style="padding:10px 20px;margin:0 2px;" class="button white" >Annuler</a>
 			</p>
 
 		</div>

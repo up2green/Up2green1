@@ -17,7 +17,7 @@ $(document).ready(function(){
 			map.setCenter(marker);
 			
 			// on attend que la pop in s'ouvre et on applique la fonction
-			setTimeout('$.fn.refreshInfoBulles()',400);
+			setTimeout('$.fn.refreshInfoBulles()',700);
 			
 		},
 		
@@ -89,7 +89,7 @@ $(document).ready(function(){
 				
 	});
 	
-	// mode de visualisation de la gMap
+	//~ // mode de visualisation de la gMap
 	$("input[type=radio][name='gMapMode']", $("#gmapWrapper")).live("change", function(e){
 		var mode = $(this).val();
 		

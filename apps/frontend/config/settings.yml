@@ -5,6 +5,7 @@ prod:
   .settings:
     no_script_name:         true
     logging_enabled:        false
+    escaping_strategy:      false
 
 dev:
   .settings:
@@ -13,6 +14,7 @@ dev:
     cache:                  false
     no_script_name:         false
     etag:                   false
+    escaping_strategy:      false
 
 test:
   .settings:

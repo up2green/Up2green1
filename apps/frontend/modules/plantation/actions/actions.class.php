@@ -201,7 +201,7 @@ class plantationActions extends sfActions {
 				));
 
 				$html = '<span class="title">'.$programme->getTitle().'</span>';
-				$html .= '<p class="content">';
+				$html .= '<span style="display:block;padding-top:10px;" class="content">';
 
 				if(
 					$programme->getLogo() != '' && 
@@ -212,7 +212,7 @@ class plantationActions extends sfActions {
 
 				$html .= $programme->getAccroche();
 				$html .= '<a href="http://association.up2green.com/programme/'.$programme->getSlug().'" class="read_more" target="_blank">Lire la suite</a>';
-				$html .= '</p>';
+				$html .= '<br /></span>';
 
 				if(isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)) {
 					$html .= '
@@ -220,12 +220,9 @@ class plantationActions extends sfActions {
 							<span>Plantez vos arbres <span class="nbTree" programme="'.$programme->getId().'"></span> : </span>
 							<button class="addTree button really-small green" programme="'.$programme->getId().'">+</button>
 							<button class="removeTree button really-small gray" programme="'.$programme->getId().'">-</button>
-							
 						</span>
 					';
 				}
-
-				$html .= '<br />';
 
 				$gMapMarker->addEvent(new GMapEvent(
 					'click',
@@ -243,8 +240,9 @@ class plantationActions extends sfActions {
 				$this->gMap->addMarker($gMapMarker);
 
 			}
-				
-		$this->gMap->centerAndZoomOnMarkers();
+		
+		$this->gMap->setZoom(2);
+		$this->gMap->setCenter(25, 0);
 		$this->gMapModes = $this->getGmapModeSelector();
 	}
 	
@@ -254,55 +252,85 @@ class plantationActions extends sfActions {
 		
 		// mode tous
 		$allValues = array();
+		$allValuesEmpty = array();
 		foreach($this->programmes as $programme) {
-			$allValues[$programme->getTitle()] = $programme->countTrees();
-			$allValuesEmpty[$programme->getTitle()] = 0;
+			$allValues += array($programme->getTitle() => $programme->countTrees());
+			$allValuesEmpty += array($programme->getTitle() => 0);
 		}
 		
 		// mode partenaire
-		if(!is_null($this->partenaire)) {
+		if(!$this->getUser()->isAuthenticated() && !is_null($this->partenaire)) {
 			
 			$partenaireValues = $allValuesEmpty;
 			//Les arbres plantés par ses coupons
 			foreach($this->partenaire->getCoupons() as $coupon) {
 				foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
 					$tree = $treeCoupon->getTree();
-					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+					if(isset($partenaireValues[$tree->getProgramme()->getTitle()])) {
+						$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+					}
 				}
 			}
 			//Les arbres plantés directement
 			foreach($this->partenaire->getUser()->getTrees() as $treeUser) {
-				die('coin');
 				$tree = $treeUser->getTree();
-				$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+				if(isset($partenaireValues[$tree->getProgramme()->getTitle()])) {
+					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
+				}
 			}
 			
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'partenaire-'.$this->partenaire->getId(),
-				'label' => 'Tout les arbes plantés par '.$this->partenaire->getTitle(),
+				'label' => "Tous les arbes plantés par ".$this->partenaire->getTitle(),
 				'values' => $partenaireValues,
 				'checked' => $checked
 			);
 		}
-		elseif ($this->getUser()->isAuthenticated()) {
+		
+		if ($this->getUser()->isAuthenticated()) {
 			$userValues = $allValuesEmpty;
 			foreach($this->getUser()->getGuardUser()->getTrees() as $treeUser) {
 				$tree = $treeUser->getTree();
-				$userValues[$tree->getProgramme()->getTitle()] ++;
+				if(isset($userValues[$tree->getProgramme()->getTitle()])) {
+					$userValues[$tree->getProgramme()->getTitle()] ++;
+				}
 			}
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'user',
-				'label' => "Les arbres que j'ai planté",
+				'label' => "Les arbres plantés avec mon compte",
 				'values' => $userValues,
 				'checked' => $checked
 			);
+			
+			if(!is_null($this->partenaire)) {
+				
+				$couponValues = $allValuesEmpty;
+				//Les arbres plantés par ses coupons
+				foreach($this->partenaire->getCoupons() as $coupon) {
+					foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
+						$tree = $treeCoupon->getTree();
+						if(isset($couponValues[$tree->getProgramme()->getTitle()])) {
+							$couponValues[$tree->getProgramme()->getTitle()] ++;
+						}
+					}
+				}
+				
+				$modes[] = array(
+					'name' => 'coupon',
+					'label' => "Les arbres plantés avec mes coupons",
+					'values' => $couponValues,
+					'checked' => $checked
+				);
+				
+			}
+			
 		}
 		
 		$modes[] = array(
 			'name' => 'all',
-			'label' => 'Tout les arbes plantés',
+			'label' => "Tous les arbres plantés",
 			'values' => $allValues,
 			'checked' => !$checked
 		);

@@ -136,7 +136,7 @@ category:
     is_active: true
     root_id: '6'
     lft: '1'
-    rgt: '10'
+    rgt: '12'
     level: '0'
   category_2:
     unique_name: main-menu
@@ -144,7 +144,7 @@ category:
     is_active: true
     root_id: '6'
     lft: '6'
-    rgt: '9'
+    rgt: '11'
     level: '1'
   category_3:
     unique_name: footer
@@ -165,6 +165,14 @@ category:
   category_5:
     unique_name: association
     rank: '2'
+    is_active: true
+    root_id: '6'
+    lft: '9'
+    rgt: '10'
+    level: '2'
+  category_6:
+    unique_name: ''
+    rank: '1'
     is_active: true
     root_id: '6'
     lft: '7'
@@ -343,9 +351,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-09-22 20:14:54'
+    last_login: '2010-09-26 19:27:44'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-09-22 20:14:54'
+    updated_at: '2010-09-26 19:27:44'
   sfGuardUser_2:
     first_name: DYRUP
     last_name: ''
@@ -22062,6 +22070,30 @@ coupon:
     used_by: '0'
     created_at: '2020-09-10 00:00:00'
     updated_at: '0000-00-00 00:00:00'
+  coupon_1980:
+    couponGen: couponGen_2
+    code: B9EF99B99
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-23 21:59:58'
+  coupon_1981:
+    couponGen: couponGen_2
+    code: 4E84F7A6C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-23 21:59:58'
+  coupon_1982:
+    couponGen: couponGen_2
+    code: 8B4582E47
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-23 21:59:58'
 article:
   article_1:
     logo: null
@@ -28110,6 +28142,15 @@ couponPartenaire:
   couponPartenaire_1700_2:
     coupon: coupon_1700
     partenaire: partenaire_2
+  couponPartenaire_1980_3:
+    coupon: coupon_1980
+    partenaire: partenaire_3
+  couponPartenaire_1981_3:
+    coupon: coupon_1981
+    partenaire: partenaire_3
+  couponPartenaire_1982_3:
+    coupon: coupon_1982
+    partenaire: partenaire_3
 programme:
   programme_1:
     geoadress: null
@@ -28185,6 +28226,7 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-08-29 14:16:47'
   programme_9:
+    Organisme: organisme_3
     geoadress: 'Burkina Faso'
     latitude: null
     longitude: null
@@ -28192,7 +28234,7 @@ programme:
     max_tree: '15000'
     logo: 48096bd65bd5fc3cdcaadd4e6c7a6d9c6e20bab6.jpg
     created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 17:42:24'
+    updated_at: '2010-09-23 21:34:48'
   programme_10:
     geoadress: Guinée
     latitude: null
@@ -28203,6 +28245,7 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-09-22 23:25:23'
   programme_11:
+    Organisme: organisme_5
     geoadress: Madagascar
     latitude: null
     longitude: null
@@ -28210,7 +28253,7 @@ programme:
     max_tree: '15000'
     logo: ed42179f029ade214c71564211aa41a4e9f62d59.jpg
     created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-28 17:41:04'
+    updated_at: '2010-09-23 21:36:20'
   programme_12:
     geoadress: Sénégal
     latitude: null
@@ -28928,7 +28971,7 @@ programmeTranslation:
   programmeTranslation_9_fr:
     programme: programme_9
     title: 'Burkina Faso'
-    accroche: "<p>\r\n	Programme de reforestation avec un projet de creusement de puits et le d&eacute;marrage de plantation de 75 000 arbres sur 60 hectares dans la province du Sangui&eacute;.&nbsp;</p>\r\n"
+    accroche: "<p>\r\n	<strong>Enjeux : d&eacute;veloppement agro-sylvicole + cr&eacute;ation d&#39;activit&eacute; &eacute;conomique.</strong></p>\r\n<p>\r\n	R&eacute;gion : province du Sangui&eacute;.</p>\r\n<p>\r\n	Programme de plantation d&#39;arbres fruitiers et de bois d&#39;oeuvre pour les populations locales, avec creusement des puits et logement du gardien des parcelles reforest&eacute;es. D&eacute;marrage de plantation de 75 000 arbres sur 60 hectares.&nbsp;</p>\r\n"
     description: "<p>\r\n	<strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_15.jpg\" style=\"width: 200px; height: 150px;\" /></strong><img alt=\"\" src=\"/uploads/ck/images/reforestation-Burkina_Faso-BAOBAB-Up2green_13.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: lutter contre l&rsquo;avanc&eacute;e du d&eacute;sert, lutter contre la pauvret&eacute;</p>\r\n<p>\r\n	<strong>Localisation&nbsp;</strong>: Province du Sanguie, Tenado, village de Tio, Burkina Faso</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: Les villageois des alentours de la bourgade de Tenado (50 000 habitants)</p>\r\n<p>\r\n	<strong>Partenaires du programme</strong>&nbsp;: Baobab 29 (association bretone), Centre de Protection de la Nature, Fondation Yves Rocher, Up2green Reforestation</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Plantons pour la plan&egrave;te, 21 324 arbres plant&eacute;s</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: contribuer aux activit&eacute;s de reboisement. Reboiser 10ha, et former les villageois pour le d&eacute;veloppement de leurs propres p&eacute;pini&egrave;res.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	L&rsquo;association BAOBAB29 poursuit, g&egrave;re et coordonne un programme de reforestation au Burkina Faso, province du Sangui&eacute;, engag&eacute; en 2006 par sa pr&eacute;sidente dans le cadre du PNUE .</p>\r\n<p>\r\n	Il s&rsquo;agit de plus de 60 ha de terrains lat&eacute;ritiques devant &ecirc;tre rebois&eacute;s sur plusieurs ann&eacute;es cons&eacute;cutives.</p>\r\n<p>\r\n	A la cr&eacute;ation, chaque parcelle de 2 ha&nbsp; revient &agrave; 3 000 euros : maison de gardien et de rangement du mat&eacute;riel, creusement de deux puits, am&eacute;nagement du terrain avec micro-barrage si n&eacute;cessaire, cordons pierreux v&eacute;g&eacute;talis&eacute;s au V&eacute;tiver, petit mat&eacute;riel agricole, panneaux explicatifs &agrave; l&rsquo;entr&eacute;e de la parcelle, engrais naturel &agrave; base de bouse de z&eacute;bu, fosse fumi&egrave;re, et surtout plantation de 2 250 arbres avec protection individuelle des fruitiers.</p>\r\n<p>\r\n	Puis, autogestion des parcelles :</p>\r\n<p>\r\n	Avec visites r&eacute;guli&egrave;res des partenaires, groupements f&eacute;minins et groupements villageois.</p>\r\n<p>\r\n	- Le gardien est log&eacute; sur place</p>\r\n<p>\r\n	- Le groupement f&eacute;minin du CPN cultive les jardins p&eacute;dagogiques li&eacute;s aux parcelles en suivant les conseils des fiches Fidafrique et de l&rsquo;INERA et reste propri&eacute;taire de la r&eacute;colte obtenue.</p>\r\n"
     lang: fr
     slug: burkina-faso
@@ -28956,7 +28999,7 @@ programmeTranslation:
   programmeTranslation_11_fr:
     programme: programme_11
     title: 'Madagascar (Antalaha)'
-    accroche: "<p>\r\n	Dans la r&eacute;gion d&#39;Antalaha, pour la r&eacute;insertion sociale des anciens malades de la l&egrave;pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d&#39;essences de bois pr&eacute;cieux.</p>\r\n"
+    accroche: "<p>\r\n	<strong>Enjeux : r&eacute;habilitation d&#39;anciens malades de la l&egrave;pre + d&eacute;veloppement agro-sylvicole</strong></p>\r\n<p>\r\n	Dans la r&eacute;gion d&#39;Antalaha, pour la r&eacute;insertion sociale des anciens malades de la l&egrave;pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d&#39;essences de bois pr&eacute;cieux.</p>\r\n"
     description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/P1050437.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/P1020442.JPG\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>&nbsp;: Protection des sols et cultures de l&rsquo;&icirc;le contre les cyclones, formation p&eacute;dagogique des adolescents, aide aux l&eacute;preux, autonomie alimentaire</p>\r\n<p>\r\n	<strong>Localisation</strong>&nbsp;: R&eacute;gion d&rsquo;Antalaha, c&ocirc;te nord-est de Madagascar</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong>&nbsp;: Familles et anciens malades de la l&egrave;pre vivant dans la banlieue sud de la ville d&rsquo;Antalaha</p>\r\n<p>\r\n	<strong>Partenaires</strong>&nbsp;: CALA Madagascar</p>\r\n<p>\r\n	<strong>Programme</strong>&nbsp;: Ecole Verte</p>\r\n<p>\r\n	<strong>Implication Up2Green&nbsp;</strong>: Participer aux activit&eacute;s de plantations et de formations des adolescents pour passer de 25 000 arbres plant&eacute;s &agrave; 40&nbsp;000 arbres.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e&nbsp;:</strong></p>\r\n<p>\r\n	CALA coordonne diff&eacute;rents programmes de reforestation &agrave; Madagascar :</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jules village, 7 km au sud d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belfort village, 6 km an nord d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Macolline, 3 km au nord d&rsquo;Antalaha ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Ampahana ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Ambodikakaze ;</p>\r\n<p>\r\n	-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Commune d&rsquo;Antalaha.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Le centre priv&eacute; CALA a &eacute;t&eacute; cr&eacute;&eacute; le 02 ao&ucirc;t 1988</strong></p>\r\n<p>\r\n	Le <strong>Comit&eacute; d&rsquo;Aide aux L&eacute;preux d&rsquo;Antalaha</strong> est l&rsquo;une des rares institutions priv&eacute;es la&iuml;ques oeuvrant pour la r&eacute;insertion sociale et professionnelle des anciens malades de la l&egrave;pre dans la r&eacute;gion d&rsquo;Antalaha. Ce centre priv&eacute; est soutenu entre autres, par l&rsquo;Association Fran&ccedil;aise Raoul Follereau. Sa&nbsp; vocation est de venir en aide m&eacute;dicalement et socialement aux plus d&eacute;munis.</p>\r\n<p>\r\n	Le CALA se donne comme objectif <strong>d&rsquo;aider les anciens malades de la l&egrave;pre</strong> de la r&eacute;gion d&rsquo;Antalaha &agrave; vivre comme les autres, au moyen de dons en m&eacute;dicaments, en nature ou financiers et d&rsquo;activit&eacute;s lucratives.</p>\r\n<p>\r\n	Le but est de mettre en place des assistances m&eacute;dicales et p&eacute;cuniaires, une &eacute;ducation sanitaire, des moyens d&rsquo;exploiter leurs aptitudes professionnelles, des aides au logement et &agrave; l&rsquo;&eacute;ducation de leurs enfants et donner une autonomie &agrave; tous ceux que la maladie a rendus handicap&eacute;s.</p>\r\n<p>\r\n	La <strong>reforestation des zones d&eacute;vast&eacute;es</strong> par les diff&eacute;rents cyclones par la cr&eacute;ation de p&eacute;pini&egrave;res et d&rsquo;une activit&eacute; &eacute;conomique li&eacute;e &agrave; l&rsquo;exploitation de ces plantations, est &rsquo;un des moyens de redonner cette autonomie.</p>\r\n"
     lang: fr
     slug: madagascar-antalaha
@@ -29040,21 +29083,21 @@ programmeTranslation:
   programmeTranslation_17_fr:
     programme: programme_17
     title: France
-    accroche: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en for&ecirc;t domaniale de Lyons</strong><br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p>\r\n	<strong>Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n"
+    accroche: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Enjeux : reboisement ma&icirc;tris&eacute; de ch&ecirc;nes sessiles en raison de la disparition du h&ecirc;tre </strong>&agrave; cause du r&eacute;chauffement climatique.<br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p>\r\n	Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</p>\r\n"
     description: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en for&ecirc;t domaniale de Lyons</strong><br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p style=\"text-align: justify;\">\r\n	<span class=\"Style10\"><strong class=\"bold-orange\">Le contexte :</strong></span><br />\r\n	<br />\r\n	<span class=\"champs-texte\">La for&ecirc;t domaniale de Lyons, d&rsquo;une superficie de 10695,71 ha, est affect&eacute;e principalement &agrave; la production de bois d&rsquo;&oelig;uvre feuillus, en particulier de h&ecirc;tre. En effet, la sylviculture pass&eacute;e a fortement favoris&eacute; cette essence qui est aujourd&rsquo;hui pr&eacute;sente sur environ 60% de la surface du massif. Aujourd&rsquo;hui, les perspectives de changements climatiques radicaux posent la question de la place du h&ecirc;tre &agrave; grande &eacute;chelle. De plus, plusieurs observations de d&eacute;p&eacute;rissements massifs dans les derni&egrave;res d&eacute;cennies ont conduit les gestionnaires, lors du dernier am&eacute;nagement (2004/2023), &agrave; favoriser le ch&ecirc;ne sessile, notamment en le choisissant de fa&ccedil;on privil&eacute;gi&eacute;e en r&eacute;g&eacute;n&eacute;ration artificielle afin de diversifier les peuplements et d&rsquo;augmenter la r&eacute;silience de la for&ecirc;t aujourd&rsquo;hui menac&eacute;e.</span></p>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n	<p style=\"text-align: center;\">\r\n		<br />\r\n		<img alt=\"\" src=\"/uploads/ck/images/ONF-Up2green-Lyonslaforet.jpg\" style=\"width: 450px; height: 356px;\" /></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Descriptif des travaux &agrave; r&eacute;aliser pour l&rsquo;op&eacute;ration :</strong></p>\r\n</center>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Travaux pr&eacute;paratoires &agrave; la plantation :</u></p>\r\n</center>\r\n<div style=\"text-align: justify;\">\r\n	Broyage des r&eacute;manents d&rsquo;exploitation avant plantation Travail pr&eacute;paratoire du sol</div>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Programme de plantation d&rsquo;environ 6600 plants :<br />\r\n		</u>Fourniture et mise en place de plants de ch&ecirc;ne sessile (1500pl/ha)<br />\r\n		et de feuillus divers (100pl/ha).</p>\r\n	<p style=\"text-align: justify;\">\r\n		&nbsp;</p>\r\n	<p style=\"text-align: justify;\">\r\n		<span style=\"font-size: 16px;\"><u><strong>La for&ecirc;t de Lyons :</strong></u></span><br />\r\n		<br />\r\n		&laquo; Etendue sur plus de 10 700 hectares entre l&#39;Eure et la Seine Maritime, <strong><em>la for&ecirc;t domaniale de Lyons est tr&egrave;s certainement la plus belle h&ecirc;traie d&#39;Europe.</em></strong><br />\r\n		R&eacute;put&eacute;e pour ses arbres &agrave; haut f&ucirc;t, lui donnant cet aspect &quot; cath&eacute;drale &quot;, qui impressionne d&egrave;s le premier regard, et pour ses sous-bois giboyeux, la for&ecirc;t de Lyons n&#39;en demeure pas moins un massif forestier aux dimensions humaines.<br />\r\n		<br />\r\n		Des clairi&egrave;res, perc&eacute;es d&egrave;s le Moyen Age (avec la pratique de l&#39;essartage), entrecoupent le massif forestier et accueillent villages et cultures dans les vallons abrit&eacute;s et au flanc des coteaux baign&eacute;s de soleil.<br />\r\n		<br />\r\n		Avec plus de 300 kilom&egrave;tres de routes foresti&egrave;res goudronn&eacute;es ou empierr&eacute;es, la for&ecirc;t de Lyons permet toutes les pratiques sportives. La randonn&eacute;e p&eacute;destre b&eacute;n&eacute;ficie d&#39;un cadre d&#39;exception avec une multitude de sentiers balis&eacute;s et entretenus. La randonn&eacute;e &eacute;questre s&#39;y pratique tout aussi ais&eacute;ment et acquiert ses lettres de noblesse lors des journ&eacute;es de chasse &agrave; courre qui se d&eacute;roulent tous les automnes dans le massif (les mardis et samedis d&#39;octobre &agrave; mars).<br />\r\n		Le VTT est &eacute;galement une activit&eacute; tr&egrave;s pratiqu&eacute;e et les routes foresti&egrave;res peu emprunt&eacute;es par les automobilistes font le bonheur des cyclotouristes.<br />\r\n		<br />\r\n		Visites et <a href=\"http://www.lyons.tourisme.free.fr/randonnees.htm\" target=\"_blank\">randonn&eacute;es</a> accompagn&eacute;es en for&ecirc;t au cours de l&#39;ann&eacute;e. &raquo;<br />\r\n		<br />\r\n		<strong>Source : <a href=\"http://www.lyons.tourisme.free.fr/\" target=\"_blank\">Office de Tourisme du Pays de Lyons</a></strong></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong><img alt=\"\" src=\"/uploads/ck/images/carte-reforestation.jpg\" style=\"width: 500px; height: 288px;\" /></strong></p>\r\n</center>\r\n"
     lang: fr
     slug: france
   programmeTranslation_18_en:
     programme: programme_18
     title: ''
-    accroche: '<br />'
-    description: '<br />'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: '3'
   programmeTranslation_18_fr:
     programme: programme_18
     title: Ethiopie
-    accroche: "<p>\r\n	&nbsp;</p>"
-    description: "<p>\r\n	&nbsp;</p>\r\n<div firebugversion=\"1.5.4\" id=\"_firebugConsole\" style=\"display: none;\">\r\n	&nbsp;</div>\r\n<br />\r\n"
+    accroche: "<p>\r\n	<strong>Enjeux : d&eacute;veloppement agro-sylvicole + d&eacute;sertification + activit&eacute; &eacute;conomique</strong></p>\r\n<p>\r\n	R&eacute;gions de Guraghe, Konso et lac Tana.</p>\r\n<p>\r\n	D&eacute;veloppement agricole et lutte contre la d&eacute;forestation. Plantation de multiples essences pour diff&eacute;rents usages : production de fruits, de fourrage pour le b&eacute;tail, de plantes m&eacute;dicinales et de bois de chauffage et de construction.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/barrenland_198(3).jpg\" style=\"width: 198px; height: 143px;\" /><img alt=\"\" src=\"/uploads/ck/images/honey_198(3).jpg\" style=\"width: 214px; height: 143px;\" /></p>\r\n<p>\r\n	<strong>Environmental Issues </strong><br />\r\n	Ethiopia loses 2 billion tons of topsoil every year because widespread deforestation is leading to massive soil erosion. Land degradation is a serious problem throughout the Ethiopia, due to extensive population pressure, compounded by the large livestock population. The increased demand for cultivable land, deforestation, and tillage of steep slopes and mountains has enhanced soil erosion and decrease productivity. In addition, grazing land scarcity and scarcity of clean drinking water are problems that persist in Southern Regional states.</p>\r\n<p>\r\n	<strong>Social Issues </strong><br />\r\n	With more than 80% of the population dependent on wood for their basic energy needs, there is a real crisis in their fuel supply - women and children must walk miles every day to gather a few twigs to cook with, and fuelwood is very expensive!</p>\r\n<p>\r\n	The main underlying causes of land degradation are socio economic (e.g. population growth and associated activities including deforestation, overgrazing, agricultural expansion, fuel wood scavenging, etc.) natural (e.g. topography, soil type, drought/rainfall intensity, etc), institutional (e.g. coordination and capacity) and policy factors. These situations have a synergistic effect and highly enhance soil degradation which in turn greatly reduces agricultural and other forms of biological production, exacerbates poverty, and leads to the removal of biological resources beyond the replacement capacity of the natural resources. This keeps accelerating further the rate of land degradation, thus creating a vicious circle linking human and environmental degradation.</p>\r\n<p>\r\n	<strong>Trees For the Future response :</strong></p>\r\n<p>\r\n	Our goal is to rehabilitate and improve productive potential of degraded and marginal lands, thereby improving the socio economic conditions of the participating communities. Our philosophy is community driven, and the community participation and ownership of the projects is crucial to the sustainability and success of our approach.</p>\r\n<p>\r\n	Community members, mostly small and disadvantaged farmers, are considered to be at the forefront of project implementation. Their participation from the inception up to the termination of this project will highly be considered and maintained.</p>\r\n<p>\r\n	TREES&#39; technicians have made several trips to Ethiopia over the past few years, combining to provide 160 days of on-site technical assistance. Everywhere we have gone, local groups are asking the same thing:&ldquo;How fast can you get this program started?&rdquo; People are very interested in sustainable harvesting of fuelwood, fuel-efficient stoves, and confinement rearing of animals &ndash; after having seen how livestock have stripped their terrain.</p>\r\n"
     lang: fr
     slug: ethiopie

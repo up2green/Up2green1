@@ -167,7 +167,6 @@ class plantationActions extends sfActions {
 			'navigationControl' => 'false'
 		));
 		
-		//		$this->programmes = Doctrine::getTable('programme')->getActive();
 		foreach($this->programmes as $programme)
 			if(
 			!is_null($programme->getGeoadress()) ||
@@ -195,11 +194,7 @@ class plantationActions extends sfActions {
 						'icon'	=> $this->getProgrammeIcon($programme),
 					)
 				);
-
-				$gMapMarker->SetCustomProperties(array(
-					'class' => 'gmap-marker'
-				));
-
+				
 				$html = '<span class="title">'.$programme->getTitle().'</span>';
 				$html .= '<span style="display:block;padding-top:10px;" class="content">';
 

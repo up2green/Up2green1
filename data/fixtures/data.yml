@@ -1,10 +1,4 @@
 partenaireProgramme:
-  partenaireProgramme_1_1:
-    partenaire: partenaire_1
-    programme: programme_1
-  partenaireProgramme_2_1:
-    partenaire: partenaire_2
-    programme: programme_1
   partenaireProgramme_2_2:
     partenaire: partenaire_2
     programme: programme_2
@@ -101,6 +95,12 @@ partenaireProgramme:
   partenaireProgramme_2_17:
     partenaire: partenaire_2
     programme: programme_17
+  partenaireProgramme_1_18:
+    partenaire: partenaire_1
+    programme: programme_18
+  partenaireProgramme_2_18:
+    partenaire: partenaire_2
+    programme: programme_18
 partenaire:
   partenaire_1:
     User: sfGuardUser_2
@@ -343,9 +343,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-09-27 10:42:18'
+    last_login: '2010-09-27 21:18:11'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-09-27 10:42:18'
+    updated_at: '2010-09-27 21:18:11'
   sfGuardUser_2:
     first_name: DYRUP
     last_name: ''
@@ -356,9 +356,9 @@ sfGuardUser:
     password: f1b1735bd50c4f0cfb6e45cf5959c4300331bde7
     is_active: true
     is_super_admin: false
-    last_login: '2010-09-27 11:05:01'
+    last_login: '2010-09-27 20:55:49'
     created_at: '2010-09-06 11:33:53'
-    updated_at: '2010-09-27 11:05:01'
+    updated_at: '2010-09-27 20:55:49'
   sfGuardUser_3:
     first_name: ''
     last_name: ''
@@ -401,7 +401,7 @@ tree:
     created_at: '2009-12-28 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_3:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '2009-12-31 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_4:
@@ -433,7 +433,7 @@ tree:
     created_at: '2010-01-02 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_11:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '2009-12-30 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_12:
@@ -441,11 +441,11 @@ tree:
     created_at: '2009-12-29 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_13:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '2009-12-11 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_14:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '2009-12-10 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_15:
@@ -2549,1035 +2549,1035 @@ tree:
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_540:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_541:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_542:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_543:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_544:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_545:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_546:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_547:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_548:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_549:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_550:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_551:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_552:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_553:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_554:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_555:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_556:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_557:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_558:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_559:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_560:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_561:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_562:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_563:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_564:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_565:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_566:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_567:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_568:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_569:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_570:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_571:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_572:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_573:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_574:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_575:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_576:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_577:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_578:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_579:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_580:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_581:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_582:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_583:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_584:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_585:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_586:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_587:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_588:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_589:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_590:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_591:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_592:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_593:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_594:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_595:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_596:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_597:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_598:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_599:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_600:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_601:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_602:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_603:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_604:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_605:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_606:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_607:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_608:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_609:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_610:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_611:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_612:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_613:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_614:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_615:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_616:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_617:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_618:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_619:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_620:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_621:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_622:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_623:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_624:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_625:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_626:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_627:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_628:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_629:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_630:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_631:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_632:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_633:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_634:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_635:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_636:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_637:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_638:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_639:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_640:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_641:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_642:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_643:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_644:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_645:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_646:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_647:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_648:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_649:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_650:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_651:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_652:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_653:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_654:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_655:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_656:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_657:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_658:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_659:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_660:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_661:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_662:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_663:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_664:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_665:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_666:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_667:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_668:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_669:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_670:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_671:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_672:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_673:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_674:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_675:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_676:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_677:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_678:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_679:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_680:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_681:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_682:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_683:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_684:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_685:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_686:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_687:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_688:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_689:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_690:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_691:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_692:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_693:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_694:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_695:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_696:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_697:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_698:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_699:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_700:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_701:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_702:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_703:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_704:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_705:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_706:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_707:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_708:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_709:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_710:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_711:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_712:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_713:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_714:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_715:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_716:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_717:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_718:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_719:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_720:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_721:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_722:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_723:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_724:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_725:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_726:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_727:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_728:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_729:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_730:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_731:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_732:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_733:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_734:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_735:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_736:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_737:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_738:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_739:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_740:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_741:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_742:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_743:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_744:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_745:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_746:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_747:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_748:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_749:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_750:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_751:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_752:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_753:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_754:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_755:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_756:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_757:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_758:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_759:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_760:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_761:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_762:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_763:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_764:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_765:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_766:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_767:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_768:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_769:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_770:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_771:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_772:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_773:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_774:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_775:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_776:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_777:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_778:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_779:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_780:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_781:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_782:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_783:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_784:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_785:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_786:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_787:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_788:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_789:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_790:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_791:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_792:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_793:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_794:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_795:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_796:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_797:
-    Programme: programme_1
+    Programme: programme_18
     created_at: '0000-00-00 00:00:00'
     updated_at: '0000-00-00 00:00:00'
   tree_798:
@@ -22069,7 +22069,7 @@ coupon:
     used_at: null
     used_by: null
     created_at: '2010-09-23 21:59:58'
-    updated_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-27 21:20:00'
   coupon_1981:
     couponGen: couponGen_2
     code: 4E84F7A6C
@@ -22077,7 +22077,7 @@ coupon:
     used_at: null
     used_by: null
     created_at: '2010-09-23 21:59:58'
-    updated_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-27 19:39:26'
   coupon_1982:
     couponGen: couponGen_2
     code: 8B4582E47
@@ -22085,7 +22085,207 @@ coupon:
     used_at: null
     used_by: null
     created_at: '2010-09-23 21:59:58'
-    updated_at: '2010-09-23 21:59:58'
+    updated_at: '2010-09-27 19:22:06'
+  coupon_1983:
+    couponGen: couponGen_2
+    code: 0D6C37355
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:47'
+  coupon_1984:
+    couponGen: couponGen_2
+    code: D5B09E944
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1985:
+    couponGen: couponGen_2
+    code: A6A568384
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1986:
+    couponGen: couponGen_2
+    code: 53E4A04ED
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1987:
+    couponGen: couponGen_2
+    code: 82D267791
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1988:
+    couponGen: couponGen_2
+    code: EC8AF07A7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1989:
+    couponGen: couponGen_2
+    code: 620CCB125
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1990:
+    couponGen: couponGen_2
+    code: C59762CA6
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1991:
+    couponGen: couponGen_2
+    code: 2DC97B8E4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1992:
+    couponGen: couponGen_2
+    code: 8D4D6C431
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1993:
+    couponGen: couponGen_2
+    code: 6A8163588
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1994:
+    couponGen: couponGen_2
+    code: EF6C56821
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1995:
+    couponGen: couponGen_2
+    code: 24ECE26E4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1996:
+    couponGen: couponGen_2
+    code: 4D5949B1B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1997:
+    couponGen: couponGen_2
+    code: B1F0518DA
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1998:
+    couponGen: couponGen_2
+    code: 16EC4C0AA
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_1999:
+    couponGen: couponGen_2
+    code: B130E6ACB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_2000:
+    couponGen: couponGen_2
+    code: BB3F1C274
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_2001:
+    couponGen: couponGen_2
+    code: 159F07437
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_2002:
+    couponGen: couponGen_2
+    code: 084D62583
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:51:30'
+  coupon_2003:
+    couponGen: couponGen_2
+    code: 8E2F6E61E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:54:31'
+  coupon_2004:
+    couponGen: couponGen_2
+    code: 052BE1049
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:32:23'
+  coupon_2005:
+    couponGen: couponGen_2
+    code: 32F91874B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:43:23'
+  coupon_2006:
+    couponGen: couponGen_2
+    code: 2518C8BF4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:42:35'
+  coupon_2007:
+    couponGen: couponGen_2
+    code: DE7C21810
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-09-27 21:32:23'
+    updated_at: '2010-09-27 21:48:46'
 article:
   article_1:
     logo: null
@@ -22196,6 +22396,66 @@ organisme:
     logo: 5328a62d79fdcf31677521a61760c08c80607272.png
     created_at: '2010-09-19 19:52:43'
     updated_at: '2010-09-19 19:52:43'
+  organisme_10:
+    url: 'http://www.ishpingo.org/'
+    logo: null
+    created_at: '2010-09-27 21:06:45'
+    updated_at: '2010-09-27 21:06:45'
+logCoupon:
+  logCoupon_1:
+    ip: 93.20.168.124
+    email: ''
+    coupon: coupon_1982
+    created_at: '2010-09-27 19:22:06'
+    updated_at: '2010-09-27 19:22:06'
+  logCoupon_2:
+    ip: 88.160.179.194
+    email: ''
+    coupon: coupon_1981
+    created_at: '2010-09-27 19:39:26'
+    updated_at: '2010-09-27 19:39:26'
+  logCoupon_3:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_1980
+    created_at: '2010-09-27 21:20:00'
+    updated_at: '2010-09-27 21:20:00'
+  logCoupon_4:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_1983
+    created_at: '2010-09-27 21:32:47'
+    updated_at: '2010-09-27 21:32:47'
+  logCoupon_5:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_2006
+    created_at: '2010-09-27 21:42:35'
+    updated_at: '2010-09-27 21:42:35'
+  logCoupon_6:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_2005
+    created_at: '2010-09-27 21:43:23'
+    updated_at: '2010-09-27 21:43:23'
+  logCoupon_7:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_2007
+    created_at: '2010-09-27 21:48:46'
+    updated_at: '2010-09-27 21:48:46'
+  logCoupon_8:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_2002
+    created_at: '2010-09-27 21:51:30'
+    updated_at: '2010-09-27 21:51:30'
+  logCoupon_9:
+    ip: 88.160.179.194
+    email: clement.gautier.76@gmail.com
+    coupon: coupon_2003
+    created_at: '2010-09-27 21:54:31'
+    updated_at: '2010-09-27 21:54:31'
 couponPartenaire:
   couponPartenaire_1701_1:
     coupon: coupon_1701
@@ -28143,16 +28403,82 @@ couponPartenaire:
   couponPartenaire_1982_3:
     coupon: coupon_1982
     partenaire: partenaire_3
+  couponPartenaire_1983_3:
+    coupon: coupon_1983
+    partenaire: partenaire_3
+  couponPartenaire_1984_3:
+    coupon: coupon_1984
+    partenaire: partenaire_3
+  couponPartenaire_1985_3:
+    coupon: coupon_1985
+    partenaire: partenaire_3
+  couponPartenaire_1986_3:
+    coupon: coupon_1986
+    partenaire: partenaire_3
+  couponPartenaire_1987_3:
+    coupon: coupon_1987
+    partenaire: partenaire_3
+  couponPartenaire_1988_3:
+    coupon: coupon_1988
+    partenaire: partenaire_3
+  couponPartenaire_1989_3:
+    coupon: coupon_1989
+    partenaire: partenaire_3
+  couponPartenaire_1990_3:
+    coupon: coupon_1990
+    partenaire: partenaire_3
+  couponPartenaire_1991_3:
+    coupon: coupon_1991
+    partenaire: partenaire_3
+  couponPartenaire_1992_3:
+    coupon: coupon_1992
+    partenaire: partenaire_3
+  couponPartenaire_1993_3:
+    coupon: coupon_1993
+    partenaire: partenaire_3
+  couponPartenaire_1994_3:
+    coupon: coupon_1994
+    partenaire: partenaire_3
+  couponPartenaire_1995_3:
+    coupon: coupon_1995
+    partenaire: partenaire_3
+  couponPartenaire_1996_3:
+    coupon: coupon_1996
+    partenaire: partenaire_3
+  couponPartenaire_1997_3:
+    coupon: coupon_1997
+    partenaire: partenaire_3
+  couponPartenaire_1998_3:
+    coupon: coupon_1998
+    partenaire: partenaire_3
+  couponPartenaire_1999_3:
+    coupon: coupon_1999
+    partenaire: partenaire_3
+  couponPartenaire_2000_3:
+    coupon: coupon_2000
+    partenaire: partenaire_3
+  couponPartenaire_2001_3:
+    coupon: coupon_2001
+    partenaire: partenaire_3
+  couponPartenaire_2002_3:
+    coupon: coupon_2002
+    partenaire: partenaire_3
+  couponPartenaire_2003_3:
+    coupon: coupon_2003
+    partenaire: partenaire_3
+  couponPartenaire_2004_3:
+    coupon: coupon_2004
+    partenaire: partenaire_3
+  couponPartenaire_2005_3:
+    coupon: coupon_2005
+    partenaire: partenaire_3
+  couponPartenaire_2006_3:
+    coupon: coupon_2006
+    partenaire: partenaire_3
+  couponPartenaire_2007_3:
+    coupon: coupon_2007
+    partenaire: partenaire_3
 programme:
-  programme_1:
-    geoadress: null
-    latitude: '8.722218'
-    longitude: '39.440918'
-    is_active: false
-    max_tree: '0'
-    logo: null
-    created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-08-29 14:15:47'
   programme_2:
     geoadress: null
     latitude: '22.786311'
@@ -28247,6 +28573,7 @@ programme:
     created_at: '2010-06-26 18:27:38'
     updated_at: '2010-09-23 21:36:20'
   programme_12:
+    Organisme: organisme_6
     geoadress: Sénégal
     latitude: null
     longitude: null
@@ -28254,7 +28581,7 @@ programme:
     max_tree: '100000000'
     logo: d0233b1b41bb0bd76b010373cd4a1ad418a84fab.jpg
     created_at: '2010-06-26 18:27:38'
-    updated_at: '2010-09-22 23:25:50'
+    updated_at: '2010-09-27 21:13:35'
   programme_13:
     Organisme: organisme_7
     geoadress: Benin
@@ -28281,9 +28608,9 @@ programme:
     longitude: null
     is_active: true
     max_tree: '15000'
-    logo: 5d64301ad3d8e95068ff3a23487cb585b298960b.jpg
+    logo: 871d72fb738bd451e7876f0b7a2fd969927c754b.jpg
     created_at: '2010-08-28 17:53:36'
-    updated_at: '2010-08-28 17:53:36'
+    updated_at: '2010-09-27 20:55:39'
   programme_16:
     geoadress: colombie
     latitude: null
@@ -28841,21 +29168,21 @@ organismeTranslation:
     description: "<h3 class=\"first\">\r\n	L'ONF en bref :</h3>\r\n<p>\r\n	Etablissement public à caractère industriel et commercial créé en 1966, l'ONF a pour principales missions la gestion des forêts domaniales et des forêts publiques relevant du Régime forestier ainsi que la réalisation de missions d'intérêt général confiées par l'Etat.</p>\r\n<p>\r\n	L'ONF développe également diverses prestations de services : gestion, expertise, travaux, au profit de tous clients dans ses domaines d'excellence que sont les espaces naturels, l'environnement, la filière forêt bois et le développement des territoires.</p>\r\n<h3 class=\"first\">\r\n	La gestion des forêts publiques françaises</h3>\r\n<p>\r\n	Le coeur de métier de l'ONF est centré sur la gestion durable des forêts appartenant à l'Etat ou aux collectivités territoriales. Il est par essence fondé sur les principes du développement durable, affirmés par le Code forestier : l'efficacité économique, la performance environnementale et la responsabilité sociale.<br />\r\n	<br />\r\n	L'ONF gère ainsi en métropole 1,8 Mha de forêts domaniales et 2,9 Mha de forêts communales, départementales, régionales ou d'établissements publics. Soit 27% de la forêt française et plus de 8% du territoire national. S'y ajoutent 6 Mha dans les départements d'Outre-mer (Guyane, Guadeloupe, Martinique et La Réunion).<br />\r\n	 </p>\r\n<h3>\r\n	Un seul régime pour toutes les forêts publiques : le Régime forestier</h3>\r\n<p>\r\n	Le Régime forestier est d'abord un ensemble de garanties permettant de préserver la forêt sur le long terme forestier : il constitue un véritable statut de protection du patrimoine forestier contre les aliénations, les défrichements, les dégradations, les surexploitations et les abus de jouissance.<br />\r\n	<br />\r\n	C'est aussi un régime de gestion avec un souci de renouvellement des ressources en bois, des autres produits et services fournis par les forêts, et de transmission aux générations futures de ces ressources. Ces objectifs se matérialisent au travers de 'l'aménagement forestier' établi pour chaque forêt. </p>\r\n<h3>\r\n	Un contrat pluriannuel avec l'Etat</h3>\r\n<p>\r\n	L'exercice des différentes missions de l'ONF est encadré par un contrat pluriannuel d'objectifs et de moyens avec l'Etat. Signé en juin 2006, ce contrat couvre la période 2007/2011.<br />\r\n	<br />\r\n	Par ce contrat, l'ONF s'engage en particulier sur :</p>\r\n<ul>\r\n	<li class=\"puce_verte\">\r\n		une gestion durable, innovante et exemplaire des forêts publiques</li>\r\n	<li class=\"puce_verte\">\r\n		une contribution renforcée à l'approvisionnement régulier de la filière bois et au développement des usages énergétiques du bois</li>\r\n	<li class=\"puce_verte\">\r\n		un développement de ses activités de prestation de services dans un double souci de réponse aux attentes des marchés et de financement de ses actions d'intérêt général, notamment dans l'environnement, l'accueil du public en forêt et la prévention des risques naturels. </li>\r\n</ul>\r\n<h3>\r\n	La mise en oeuvre des missions d'intérêt général confiées par l'Etat</h3>\r\n<p>\r\n	L'ONF assure différentes missions d'intérêt général (MIG) qui lui sont confiées par conventions avec le ministère chargé de la forêt et celui chargé de l'écologie et du développement durable.<br />\r\n	<br />\r\n	Elles portent sur la prévention des risques naturels et la sécurité des biens et des personnes : en montagne avec le service de Restauration des terrains en montagne (RTM), dans les zones sensibles aux incendies (Défense des forêts contre les incendies), dans les DOM et sur les dunes du littoral. </p>\r\n<h3>\r\n	La mobilisation et la récolte de la ressource bois disponible</h3>\r\n<p>\r\n	L'ONF mobilise et met en vente l'ensemble des bois issus des opérations sylvicoles d'amélioration et de régénération des forêts publiques, soit près de 40% des bois mis en marché sur le territoire national.<br />\r\n	<br />\r\n	Pour le bois d'oeuvre, les forêts publiques fournissent plus de 50% du Chêne, 85% du Hêtre et 50% du Sapin-Epicéa mis en marché, ce qui confère à l'ONF une responsabilité particulière au sein de la filière-bois.</p>\r\n<h3>\r\n	Le développement de prestations de services</h3>\r\n<p>\r\n	L'expertise de l'ONF en matière de forêt s'étend également aux autres espaces naturels. L'ONF propose ainsi aux collectivités, entreprises ou particuliers des prestations de services dans différents domaines : gestion de l'arbre, évaluation et prévention des risques naturels, qualité des paysages, réhabilitation de sites, protection et valorisation des milieux naturel, gestion de l'eau, développement des loisirs nature...<br />\r\n	<br />\r\n	Dans les pays en développement, l'ONF valorise à travers sa filiale ONF International (ONF I), un savoir-faire reconnu par des prestations de conseil, d'expertise et d'ingénierie en matière de séquestration de carbone biologique.</p>\r\n"
     lang: fr
     slug: onf
-programmeTranslation:
-  programmeTranslation_1_en:
-    programme: programme_1
-    title: '1 tree in Ethiopy'
-    accroche: "<p>\r\n	In areas of Guraghe, Konso and Lake Tana, the aim is to fight against desertification and provide incomes to local people (fruit, honey, furniture, lumber, etc..)</p>\r\n"
-    description: "<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,</p>\r\n"
+  organismeTranslation_10_en:
+    organisme: organisme_10
+    title: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
-    slug: 1-tree-in-ethiopy
-  programmeTranslation_1_fr:
-    programme: programme_1
-    title: '1 arbre en Ethiopie'
-    accroche: "<p>\r\n	Dans les régions de Guraghe, Konso et du lac Tana, pour lutter contre la désertification et assurer des revenus aux populations locales (fruits, miel, meubles, bois de construction, etc.)</p>\r\n"
-    description: "<p>\r\n	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque libero sed nunc ullamcorper iaculis commodo ante ultricies. Donec in orci metus. Curabitur vitae ultricies felis. Maecenas dignissim porta tortor, vitae adipiscing ante venenatis in. In congue facilisis tempus. Duis adipiscing dapibus elit volutpat congue. Nulla laoreet consequat nunc non malesuada. Nullam lobortis, purus at lobortis placerat, felis diam tincidunt dolor, vel luctus orci quam ac justo. Pellentesque eget odio in quam suscipit accumsan vitae et libero. Vestibulum euismod,</p>\r\n"
+    slug: '1'
+  organismeTranslation_10_fr:
+    organisme: organisme_10
+    title: Ishpingo
+    accroche: "<p>\r\n	Ishpingo est une association &eacute;quatorienne qui d&eacute;veloppe la plantation d&#39;esp&egrave;ces fruiti&egrave;res et d&#39;esp&egrave;ces &agrave; bois avec les communaut&eacute;s d&#39;indiens d&#39;Amazonie Equatorienne.</p>\r\n"
+    description: ''
     lang: fr
-    slug: 1-arbre-en-ethiopie
+    slug: ishpingo
+programmeTranslation:
   programmeTranslation_2_en:
     programme: programme_2
     title: Inde
@@ -28915,15 +29242,15 @@ programmeTranslation:
   programmeTranslation_6_en:
     programme: programme_6
     title: Burundi
-    accroche: "<p>\r\n	To fight against malnutrition by planting 'Morinfa oleifera' specie tree which contains twice more calcium than milk and 4 times more vitamin A.</p>"
-    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization.  The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%.  Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes.  However, the majority, around 95%, of the land is under no land protection.  As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil.  Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost. Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources. Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer.  Burundi's wildlife diversity is also threatened.  Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100.  The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country.  Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14.  Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides.  This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects.  Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi.  John's approach — utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income — has effectively brought together people and cultures who have been in conflict for too many years.  A strong focus has been placed on the planting of <em>Morinfa oleifera. </em> In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called “the miracle tree” boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity.  People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>"
+    accroche: "<p>\r\n	To fight against malnutrition by planting &#39;Morinfa oleifera&#39; specie tree which contains twice more calcium than milk and 4 times more vitamin A.</p>"
+    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization. The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%. Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes. However, the majority, around 95%, of the land is under no land protection. As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil. Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost. Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources. Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer. Burundi&#39;s wildlife diversity is also threatened. Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100. The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country. Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14. Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides. This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects. Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi. John&#39;s approach &mdash; utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income &mdash; has effectively brought together people and cultures who have been in conflict for too many years. A strong focus has been placed on the planting of <em>Morinfa oleifera. </em> In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called &ldquo;the miracle tree&rdquo; boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity. People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>"
     lang: en
     slug: burundi
   programmeTranslation_6_fr:
     programme: programme_6
-    title: 'Burundi (région de Ruyigi )'
-    accroche: "<p>\r\n	Pour lutter contre la malnutrition en plantant l'arbre 'Morinfa oleifera' qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.</p>"
-    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization.  The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%.  Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes.  However, the majority, around 95%, of the land is under no land protection.  As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil.  Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost. Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources. Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer.  Burundi's wildlife diversity is also threatened.  Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100.  The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country.  Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14.  Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides.  This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects.  Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi.  John's approach — utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income — has effectively brought together people and cultures who have been in conflict for too many years.  A strong focus has been placed on the planting of <em>Morinfa oleifera. </em> In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called “the miracle tree” boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity.  People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>"
+    title: Burundi
+    accroche: "<p>\r\n	Pour lutter contre la malnutrition en plantant l&#39;arbre &#39;Morinfa oleifera&#39; qui contient 2 fois plus de calcium que le lait et 4 fois plus de vitamine A.</p>"
+    description: "<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Environmental Issues </span></strong></u><br />\r\n	Burundi suffers from a history of unsustainable land-use, even before colonization. The percentage of people living rurally and dependent on agriculture is extremely high at 90% with the average for sub Saharan Africa at 60%. Land is either held by small farmers, of which 80% is less than 1.5 hectares, or is leased to local communes. However, the majority, around 95%, of the land is under no land protection. As a result, agricultural expansion, overgrazing and fuelwood collection have seriously degraded the soil. Only around 6% of Burundi is forested and, in total, between 1990 and 2005 close to 50% of the forest cover was lost. Rampant deforestation has resulted in serious soil erosion, nutrient poor soils, and decreased water resources. Moreover, the long history of conflicts decimated the livestock populations, decreasing an important source of natural fertilizer. Burundi&#39;s wildlife diversity is also threatened. Many species are considered endangered, including the magnificent mountain gorillas in the highland</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong><u><span class=\"fontTXBLKund\">Social Issues </span></u></strong><br />\r\n	Burundi is one of the most impoverished nations in Africa, with average annual income at $100. The ethnic conflicts between the Tutsis and the Hutus, largely over decreased natural resources, throughout the 1980s and 1990s crippled the country. Even worse, the AIDS epidemic that ravages the country has left over half of the 8 million inhabitants under the age of 14. Its current development is being further slowed by climatic events including drought, fires and torrential rains which cause flooding and landslides. This, along with unsustainable land-use practices have deeply affected this agrarian population, to the point that 53% of children under the age of five are suffering from chronic malnutrition. For these reasons and more, Trees for the Future and Hope for Burundi are committed in partnership to combat these issues.</p>\r\n<p>\r\n	<u><strong><span class=\"fontTXBLKund\">Response of Trees For the Future :<br />\r\n	</span></strong></u><span class=\"fontTXBLK\">We began working in Burundi in 1996, supporting small community reforestation projects. Since 2008, TREES has partnered with John Bosco Hakizimana of Hope for Burundi. John&#39;s approach &mdash; utilizing trees to reclaim degraded lands, feed starving people, and provide a source of income &mdash; has effectively brought together people and cultures who have been in conflict for too many years. A strong focus has been placed on the planting of <em>Morinfa oleifera. </em> In a country where 57% of children under 5 suffer from chronic malnutrition, <em>Moringa, </em>also called &ldquo;the miracle tree&rdquo; boasts twice the calcium as milk and four times as much Vitamin A (which prevents blindness) as in carrots. Moreover, Hope for Burundi has brought Hutu and Tutsi together in the staff of his organization and has administered community training in non-violent communication to promote Burundian solidarity. People are being educated about agroforestry technologies, sustainable agriculture production, including the development of the Forest Garden model.</span></p>"
     lang: fr
     slug: burundi-region-de-ruyigi
   programmeTranslation_7_en:
@@ -28985,29 +29312,29 @@ programmeTranslation:
   programmeTranslation_11_en:
     programme: programme_11
     title: 'Madagascar (Antalaha)'
-    accroche: "<p>\r\n	In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).</p>\r\n"
-    description: "<br />\r\n"
+    accroche: "<p>\r\n	In the region of Antalaha in the North-East of the island, for social reintegration of people previously sick of leprosy through reforestation of littoral facing cyclonic risks, and planting of pecious wood (rosewood, palissandra, hintsi).</p>"
+    description: '<br />'
     lang: en
     slug: madagascar-antalaha
   programmeTranslation_11_fr:
     programme: programme_11
-    title: 'Madagascar (Antalaha)'
-    accroche: "<p>\r\n	<strong>Enjeux : réhabilitation d'anciens malades de la lèpre + développement agro-sylvicole</strong></p>\r\n<p>\r\n	Dans la région d'Antalaha, pour la réinsertion sociale des anciens malades de la lèpre via la reforestation des littoraux face aux risques cycloniques, et la plantation d'essences de bois précieux.</p>\r\n"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/P1050437.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/P1020442.JPG\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong> : Protection des sols et cultures de l'île contre les cyclones, formation pédagogique des adolescents, aide aux lépreux, autonomie alimentaire</p>\r\n<p>\r\n	<strong>Localisation</strong> : Région d'Antalaha, côte nord-est de Madagascar</p>\r\n<p>\r\n	<strong>Bénéficiaires</strong> : Familles et anciens malades de la lèpre vivant dans la banlieue sud de la ville d'Antalaha</p>\r\n<p>\r\n	<strong>Partenaires</strong> : CALA Madagascar</p>\r\n<p>\r\n	<strong>Programme</strong> : Ecole Verte</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Participer aux activités de plantations et de formations des adolescents pour passer de 25 000 arbres plantés à 40 000 arbres.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Description plus détaillée :</strong></p>\r\n<p>\r\n	CALA coordonne différents programmes de reforestation à Madagascar :</p>\r\n<p>\r\n	-              Jules village, 7 km au sud d'Antalaha ;</p>\r\n<p>\r\n	-              Belfort village, 6 km an nord d'Antalaha ;</p>\r\n<p>\r\n	-              Macolline, 3 km au nord d'Antalaha ;</p>\r\n<p>\r\n	-              Commune d'Ampahana ;</p>\r\n<p>\r\n	-              Commune d'Ambodikakaze ;</p>\r\n<p>\r\n	-              Commune d'Antalaha.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Le centre privé CALA a été créé le 02 août 1988</strong></p>\r\n<p>\r\n	Le <strong>Comité d'Aide aux Lépreux d'Antalaha</strong> est l'une des rares institutions privées laïques oeuvrant pour la réinsertion sociale et professionnelle des anciens malades de la lèpre dans la région d'Antalaha. Ce centre privé est soutenu entre autres, par l'Association Française Raoul Follereau. Sa  vocation est de venir en aide médicalement et socialement aux plus démunis.</p>\r\n<p>\r\n	Le CALA se donne comme objectif <strong>d'aider les anciens malades de la lèpre</strong> de la région d'Antalaha à vivre comme les autres, au moyen de dons en médicaments, en nature ou financiers et d'activités lucratives.</p>\r\n<p>\r\n	Le but est de mettre en place des assistances médicales et pécuniaires, une éducation sanitaire, des moyens d'exploiter leurs aptitudes professionnelles, des aides au logement et à l'éducation de leurs enfants et donner une autonomie à tous ceux que la maladie a rendus handicapés.</p>\r\n<p>\r\n	La <strong>reforestation des zones dévastées</strong> par les différents cyclones par la création de pépinières et d'une activité économique liée à l'exploitation de ces plantations, est 'un des moyens de redonner cette autonomie.</p>\r\n"
+    title: Madagascar
+    accroche: "<p>\r\n	<strong>Enjeux : r&eacute;habilitation d&#39;anciens malades de la l&egrave;pre + d&eacute;veloppement agro-sylvicole</strong></p>\r\n<p>\r\n	Dans la r&eacute;gion d&#39;Antalaha, pour la r&eacute;insertion sociale des anciens malades de la l&egrave;pre via la reforestation des littoraux face aux risques cycloniques, et la plantation d&#39;essences de bois pr&eacute;cieux.</p>"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/P1050437.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/P1020442.JPG\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong> : Protection des sols et cultures de l&#39;&icirc;le contre les cyclones, formation p&eacute;dagogique des adolescents, aide aux l&eacute;preux, autonomie alimentaire</p>\r\n<p>\r\n	<strong>Localisation</strong> : R&eacute;gion d&#39;Antalaha, c&ocirc;te nord-est de Madagascar</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong> : Familles et anciens malades de la l&egrave;pre vivant dans la banlieue sud de la ville d&#39;Antalaha</p>\r\n<p>\r\n	<strong>Partenaires</strong> : CALA Madagascar</p>\r\n<p>\r\n	<strong>Programme</strong> : Ecole Verte</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Participer aux activit&eacute;s de plantations et de formations des adolescents pour passer de 25 000 arbres plant&eacute;s &agrave; 40 000 arbres.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e :</strong></p>\r\n<p>\r\n	CALA coordonne diff&eacute;rents programmes de reforestation &agrave; Madagascar :</p>\r\n<p>\r\n	- Jules village, 7 km au sud d&#39;Antalaha ;</p>\r\n<p>\r\n	- Belfort village, 6 km an nord d&#39;Antalaha ;</p>\r\n<p>\r\n	- Macolline, 3 km au nord d&#39;Antalaha ;</p>\r\n<p>\r\n	- Commune d&#39;Ampahana ;</p>\r\n<p>\r\n	- Commune d&#39;Ambodikakaze ;</p>\r\n<p>\r\n	- Commune d&#39;Antalaha.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Le centre priv&eacute; CALA a &eacute;t&eacute; cr&eacute;&eacute; le 02 ao&ucirc;t 1988</strong></p>\r\n<p>\r\n	Le <strong>Comit&eacute; d&#39;Aide aux L&eacute;preux d&#39;Antalaha</strong> est l&#39;une des rares institutions priv&eacute;es la&iuml;ques oeuvrant pour la r&eacute;insertion sociale et professionnelle des anciens malades de la l&egrave;pre dans la r&eacute;gion d&#39;Antalaha. Ce centre priv&eacute; est soutenu entre autres, par l&#39;Association Fran&ccedil;aise Raoul Follereau. Sa vocation est de venir en aide m&eacute;dicalement et socialement aux plus d&eacute;munis.</p>\r\n<p>\r\n	Le CALA se donne comme objectif <strong>d&#39;aider les anciens malades de la l&egrave;pre</strong> de la r&eacute;gion d&#39;Antalaha &agrave; vivre comme les autres, au moyen de dons en m&eacute;dicaments, en nature ou financiers et d&#39;activit&eacute;s lucratives.</p>\r\n<p>\r\n	Le but est de mettre en place des assistances m&eacute;dicales et p&eacute;cuniaires, une &eacute;ducation sanitaire, des moyens d&#39;exploiter leurs aptitudes professionnelles, des aides au logement et &agrave; l&#39;&eacute;ducation de leurs enfants et donner une autonomie &agrave; tous ceux que la maladie a rendus handicap&eacute;s.</p>\r\n<p>\r\n	La <strong>reforestation des zones d&eacute;vast&eacute;es</strong> par les diff&eacute;rents cyclones par la cr&eacute;ation de p&eacute;pini&egrave;res et d&#39;une activit&eacute; &eacute;conomique li&eacute;e &agrave; l&#39;exploitation de ces plantations, est &#39;un des moyens de redonner cette autonomie.</p>"
     lang: fr
     slug: madagascar-antalaha
   programmeTranslation_12_en:
     programme: programme_12
     title: Senegal
-    accroche: "<p>\r\n	The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance.</p>"
-    description: '<br />'
+    accroche: "<p>\r\n	The reforestation program conducted by the association gathers Oceanium 11 000 villagers who were massively mobilized to restore mangrove forests in Casamance.</p>\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: senegal-en
   programmeTranslation_12_fr:
     programme: programme_12
     title: Sénégal
-    accroche: "<p>\r\n	Le programme de reboisement réalisé par l'association Oceanium rassemble 11 000 villageois qui se sont massivement mobilisés pour restaurer la mangrove en Casamance.</p>"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation.jpg\" style=\"width: 200px; height: 133px;\" /><img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation2(1).jpg\" style=\"width: 200px; height: 134px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong> : restauration de l'écosystème de la mangrove, des ressources halieutiques, protection du littoral</p>\r\n<p>\r\n	<strong>Localisation</strong> : Casamance, de Niafarang à Elinkine, de Nioumoune à Marssassoum en passant par Tobor.</p>\r\n<p>\r\n	<strong>Bénéficiaires</strong> : sensibilisation de plus 32 000 villageois de la Casamance</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Oceanium</p>\r\n<p>\r\n	<strong>Programme</strong> : Restaurer 6000 ha de mangrove, plantons pour la planète</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Aider Oceanium à passer de 1200 ha de Mangrove récupérée à 6000 ha par la plantation de plus de 40 000 palétuviers</p>"
+    accroche: "<p>\r\n	Le programme de reboisement r&eacute;alis&eacute; par l&#39;association Oceanium rassemble 11 000 villageois qui se sont massivement mobilis&eacute;s pour restaurer la mangrove en Casamance.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation.jpg\" style=\"width: 200px; height: 133px;\" /><img alt=\"\" src=\"/uploads/ck/images/Senegal-Oceanium-reforestation2(1).jpg\" style=\"width: 200px; height: 134px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong> : restauration de l&#39;&eacute;cosyst&egrave;me de la mangrove, des ressources halieutiques, protection du littoral</p>\r\n<p>\r\n	<strong>Localisation</strong> : Casamance, de Niafarang &agrave; Elinkine, de Nioumoune &agrave; Marssassoum en passant par Tobor.</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong> : sensibilisation de plus 32 000 villageois de la Casamance</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Oceanium</p>\r\n<p>\r\n	<strong>Programme</strong> : Restaurer 6000 ha de mangrove, plantons pour la plan&egrave;te</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Aider Oceanium &agrave; passer de 1200 ha de Mangrove r&eacute;cup&eacute;r&eacute;e &agrave; 6000 ha par la plantation de plus de 40 000 pal&eacute;tuviers</p>\r\n"
     lang: fr
     slug: senegal
   programmeTranslation_13_en:
@@ -29041,15 +29368,15 @@ programmeTranslation:
   programmeTranslation_15_en:
     programme: programme_15
     title: ''
-    accroche: '<br />'
-    description: '<br />'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: perou
   programmeTranslation_15_fr:
     programme: programme_15
     title: Pérou
-    accroche: "<p>\r\n	Amazonie équatorienne. Lutte contre la déforestation, diversification alimentaire, promotion de la biodiversité, développement de pratiques agricoles durables auprès de 37 familles.</p>"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/Perou4(1).jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/Perou2.jpg\" style=\"width: 113px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green3.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	 </p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-développé sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Enjeux </strong>: lutte contre la déforestation en Amazonie, diversification alimentaire, promotion de la biodiversité, développement de pratiques agricoles durables</p>\r\n<p>\r\n	<strong>Localisation</strong> : Région du Loreto, district d'Iquitos, province de Maynas, communauté de Fray Martin</p>\r\n<p>\r\n	<strong>Bénéficiaires </strong>: habitants de la communauté de Fray Martin</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Latitud Sur, Forestever</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Programme </strong>: « Parcelles Intégrales », « Chacras Integrales »</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Développer les pratiques agricoles durables par l'incitation à la plantation d'arbres fruitiers et à bois à hauteur de 15000 arbres. L'équipe d'Up2green Reforestation réalise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Description plus détaillée :</strong></p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Améliorer les conditions de vie des communautés</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations à des pratiques agricoles durables et à une gestion plus raisonnée des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communautés un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la déforestation (causée essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Préserver l'environnement et la biodiversité locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	 </p>\r\n<p>\r\n	<em>Les bénéficiaires du projet :</em></p>\r\n<p>\r\n	Les habitants de la communauté de Fray Martin, soit 340 personnes, 37 familles. Ils vivent essentiellement de la culture du manioc et de la banane plantain. Leur principal revenu provient de la vente de charbon de bois, activité dévastatrice pour les forêts. La plantation d'arbres est non seulement essentielle pour le maintien de la forêt, mais aussi pour leur apporter les matières premières dont ils ont besoin.</p>"
+    accroche: "<p>\r\n	Amazonie p&eacute;ruvienne. Lutte contre la d&eacute;forestation, diversification alimentaire, promotion de la biodiversit&eacute;, d&eacute;veloppement de pratiques agricoles durables&nbsp; &quot;chacras int&eacute;grales&quot; aupr&egrave;s de la communaut&eacute; de Fray Martin.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/7.JPG\" style=\"width: 203px; height: 152px;\" /><img alt=\"\" src=\"../../uploads/ck/images/1.jpg\" style=\"width: 144px; height: 152px;\" /><img alt=\"\" src=\"/uploads/ck/images/macambo.jpg\" style=\"width: 203px; height: 152px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux </strong>: lutte contre la d&eacute;forestation en Amazonie, diversification alimentaire, promotion de la biodiversit&eacute;, d&eacute;veloppement de pratiques agricoles durables</p>\r\n<p>\r\n	<strong>Localisation</strong> : R&eacute;gion du Loreto, district d&#39;Iquitos, province de Maynas, communaut&eacute; de Fray Martin</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires </strong>: habitants de la communaut&eacute; de Fray Martin</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Latitud Sur, Forestever</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Programme </strong>: &laquo; Parcelles Int&eacute;grales &raquo;, &laquo; Chacras Integrales &raquo;</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: D&eacute;velopper les pratiques agricoles durables par l&#39;incitation &agrave; la plantation d&#39;arbres fruitiers et &agrave; bois &agrave; hauteur de 15000 arbres. L&#39;&eacute;quipe d&#39;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e :</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&#39;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	Les habitants de la communaut&eacute; de Fray Martin, soit 340 personnes, 37 familles. Ils vivent essentiellement de la culture du manioc et de la banane plantain. Leur principal revenu provient de la vente de charbon de bois, activit&eacute; d&eacute;vastatrice pour les for&ecirc;ts. La plantation d&#39;arbres est non seulement essentielle pour le maintien de la for&ecirc;t, mais aussi pour leur apporter les mati&egrave;res premi&egrave;res dont ils ont besoin.</p>\r\n"
     lang: fr
     slug: perou
   programmeTranslation_16_en:

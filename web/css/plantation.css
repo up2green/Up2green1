@@ -4,6 +4,13 @@
 body{background:url("../images/blog/backgrounds/main1.jpg") no-repeat fixed center center transparent;}
 */
 
+p.error {
+	color:#9F0000;
+	font-size:1.1em;
+	padding:0 0 10px;
+	text-align:center;
+}
+
 a.read_more {
 	color:#AAAAAA;
 	display:block;

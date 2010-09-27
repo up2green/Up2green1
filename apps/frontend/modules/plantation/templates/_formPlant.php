@@ -7,6 +7,12 @@
 		
 		<div class="content">
 			
+			<?php 
+				if(!empty($errors)) {
+					echo '<p class="error">'.join('</p><p class="error">', $errors).'</p>';
+				} 
+			?>
+			
 			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.</p>
 			
 			<?php if(sizeof($programmes) > 4) : ?>
@@ -35,12 +41,12 @@
 			</span>
 			<?php endif; ?>
 			
+			<hr />
+			<p style="text-align: center; color: rgb(63, 111, 0); font-size: 1.1em; font-weight: bold;">Afin de recevoir une attestation, merci de remplir votre email ici :</p>
+			<p>E-mail : <input type="text" name="email_user_deco" /></p>
+			
 			<br />
-			
-			<?php if (false && ! $sf_user->isAuthenticated()): ?>
-				<p>E-mail : <input type="text" name="email_user_deco" /></p>
-			<?php endif; ?>
-			
+		
 			<p class="center">
 				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="Planter" />
 				<a href="/" style="padding:10px 20px;margin:0 2px;" class="button white" >Annuler</a>

@@ -94,12 +94,12 @@
 	}
 	
 	if($view !== 'listeCouponsPartenaires' or !$sf_user->isAuthenticated()) {
-	    if (isset($coupon)) {
-		include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes));
-	    }
-	    else {
-		include_partial('formCoupon', array("phraseCoupon" => $phraseCoupon));
-	    }
+		if (isset($coupon)) {
+			include_partial('formPlant', array('coupon' => $coupon, 'nbArbresToPlant' => $nbArbresToPlant, 'programmes' => $programmes, 'errors' => $errors));
+		}
+		else {
+			include_partial('formCoupon', array('errors' => $errors));
+		}
 	}
 
 	if(!is_null($partenaire)) {

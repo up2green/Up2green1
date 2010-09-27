@@ -17,9 +17,8 @@ class plantationActions extends sfActions {
 	public function executeIndex(sfWebRequest $request) {
 		// chargement des variables pour le form programmes
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
+		$this->errors = array();
 		$this->view = $request->getParameter('view');
-		
-		$this->phraseCoupon = "";
 		
 		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
 		$this->partenaire = null;
@@ -73,7 +72,7 @@ class plantationActions extends sfActions {
 					}
 					else {
 						$this->coupon = null;
-						$this->phraseCoupon = "Ce coupon a déjà été utilisé";
+						$this->errors[] = "Ce coupon a déjà été utilisé";
 					}
 				}
 			}
@@ -82,32 +81,58 @@ class plantationActions extends sfActions {
 			if ($request->getParameter('submitArbresProgramme')){
 				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
 					if ($coupon->getIsActive()){
-						
+						$this->coupon = $coupon;
 						$email = "";
 						if (($request->hasParameter('email_user_deco')) && ($request->getParameter('email_user_deco') != "")) {
-							$email = $request->getParameter('email_user_deco');
+							$email = trim($request->getParameter('email_user_deco'));
 						}
 						
-						foreach ($this->programmes as $programme){
-							if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
-								if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
-									$coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
+						if ($request->getParameter('nbArbresToPlantLeft') == 0){
+							foreach ($this->programmes as $programme){
+								if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
+									if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
+										$coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
+									}
 								}
 							}
+							
+							$coupon->setUsedAt(date('c'));
+							$coupon->setIsActive(false);
+							$coupon->save();
+							
+							if (! ($this->getUser()->getGuardUser())) {
+								$coupon->logUser($email);
+							}
+							
+							$this->errors[] = "Vos arbres ont bien été plantés !";
+							
+							if(!empty($email)) {
+								// on envoi le mail avec attestation :
+								$message = $this->getMailer()->compose(
+                        array('webmaster@up2green.com' => 'Up2Green'),
+                        $email,
+                        'Attestation de plantation sur Up2Green !'
+                );
+                
+                $html = "Bonjour, <br />".
+                        "Vous venez de planter ".$request->getParameter('nbTreeMax')." arbre(s) sur la planète !<br />".
+                        "A très bientôt pour faire avancer la reforestation sur http://reforestation.up2green.com/ !";
+                
+                $message->setBody($html, 'text/html');
+                
+                $this->getMailer()->send($message);
+                $this->errors[] = "Vous aller recevoir un email attestant de votre plantation.";
+							}
+							
+							$this->coupon = null;
+							
 						}
-						
-						$coupon->setUsedAt(date('c'));
-						$coupon->setIsActive(false);
-						$coupon->save();
-						
-						if (! ($this->getUser()->getGuardUser())) {
-							$coupon->logUser($email);
+						else {
+							$this->errors[] = "Veuillez planter tous vos arbres avant de valider !";
 						}
-
-						$this->phraseCoupon = "Vos arbres ont été plantés.";
 					}
 					else {
-						$this->phraseCoupon = "Ce coupon a déjà été utilisé";
+						$this->errors[] = "Ce coupon a déjà été utilisé";
 						$this->coupon = null;
 					}
 				}
@@ -219,11 +244,12 @@ class plantationActions extends sfActions {
 					';
 				}
 
-				$gMapMarker->addEvent(new GMapEvent(
-					'click',
-					'$.fn.moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
-				));
-
+				if($geocoded_addr->getLat() != '' && $geocoded_addr->getLng() != '') {
+					$gMapMarker->addEvent(new GMapEvent(
+						'click',
+						'$.fn.moveToMarker('.$geocoded_addr->getLat().', '.$geocoded_addr->getLng().');'
+					));
+				}
 
 				$gMapMarker->addHtmlInfoWindow(new GMapInfoWindow(
 					'<div class="gmap-info-bulle">'.$html.'</div>',

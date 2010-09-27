@@ -3,9 +3,9 @@
 	<p class="title">Plantez vos arbres</p>
 	<div class="content">
 		<?php 
-			if(!empty($phraseCoupon)) {
-				echo '<p>'.$phraseCoupon.'</p><br />';
-			}
+			if(!empty($errors)) {
+				echo '<p class="error">'.join('</p><p class="error">', $errors).'</p>';
+			} 
 		?>
 		<p>Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !</p>
 		<form action="" method="post">

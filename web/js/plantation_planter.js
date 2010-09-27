@@ -17,7 +17,7 @@ $(document).ready(function(){
 			map.setCenter(marker);
 			
 			// on attend que la pop in s'ouvre et on applique la fonction
-			setTimeout('$.fn.refreshInfoBulles()',700);
+			setTimeout('$.fn.refreshInfoBulles()',600);
 			
 		},
 		
@@ -89,7 +89,10 @@ $(document).ready(function(){
 				
 	});
 	
-	//~ // mode de visualisation de la gMap
+	// désactivation du bouton submit si tree left > 0
+	$("input:submit[name='submitArbresProgramme'].gray").live('click', function(e) {e.preventDefault();});
+	
+	// mode de visualisation de la gMap
 	$("input[type=radio][name='gMapMode']", $("#gmapWrapper")).live("change", function(e){
 		var mode = $(this).val();
 		
@@ -117,7 +120,7 @@ $(document).ready(function(){
 		}		
 	});
 	
-	setTimeout(function(){$("input:checked[type=radio][name='gMapMode']").trigger("change");},400);
+	setTimeout(function(){$("input:checked[type=radio][name='gMapMode']").trigger("change");},800);
 	
 	
 });

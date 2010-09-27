@@ -108,18 +108,30 @@ class plantationActions extends sfActions {
 							
 							if(!empty($email)) {
 								// on envoi le mail avec attestation :
-								$message = $this->getMailer()->compose(
-                        array('webmaster@up2green.com' => 'Up2Green'),
-                        $email,
-                        'Attestation de plantation sur Up2Green !'
-                );
-                
-                $html = "Bonjour, <br />".
+/*
+								$this->buildAttestation();
+*/
+								
+								$html = "Bonjour, <br />".
                         "Vous venez de planter ".$request->getParameter('nbTreeMax')." arbre(s) sur la planète !<br />".
+                        "Attention l'attestation est momentanément indisponible.<br />Elle sera disponible dans les plus brefs délais.<br />Merci de votre compréhension.<br />".
                         "A très bientôt pour faire avancer la reforestation sur http://reforestation.up2green.com/ !";
                 
-                $message->setBody($html, 'text/html');
-                
+								$message = $this->getMailer()
+									->compose(
+										array('webmaster@up2green.com' => 'Up2Green'),
+										$email,
+										'Attestation de plantation sur Up2Green !')
+									->setBody($html, 'text/html');
+								
+/*
+								if(file_exists('/tmp/attestation.pdf')) {
+									$message->attach(
+										Swift_Attachment::fromPath('/tmp/attestation.pdf')
+									);
+								}
+*/
+								
                 $this->getMailer()->send($message);
                 $this->errors[] = "Vous aller recevoir un email attestant de votre plantation.";
 							}
@@ -140,6 +152,31 @@ class plantationActions extends sfActions {
 		}
 
 		$this->getGmap();
+	}
+	
+	public function buildAttestation() {
+		$config = sfTCPDFPluginConfigHandler::loadConfig();
+ 
+		// pdf object
+		$pdf = new sfTCPDF();
+	 
+		// settings
+		$pdf->SetFont("FreeSerif", "", 12);
+		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+	 
+		// init pdf doc
+		$pdf->AliasNbPages();
+		$pdf->AddPage();
+		$pdf->Cell(80, 10, "Hello World !!! €àèéìòù");
+	 
+		// output
+		file_put_contents('/tmp/attestation.pdf', $pdf->Output('/tmp/attestation.pdf', 's'));
+
 	}
 	
 	public function setProgrammesFromPartenaire() {

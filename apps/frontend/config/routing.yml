@@ -79,6 +79,10 @@ blog:
 ##### PLANTATION
 ####################
 
+plantation:
+  url: /plantation
+  param: { module: plantation, action: index}
+
 plantation_liste_coupon_partenaire:
   url: /plantation/listeCouponsPartenaires
   param: { module: plantation, action: index, view: listeCouponsPartenaires }
@@ -91,9 +95,17 @@ plantation_logout:
   url:   /plantation/logout
   param: { module: sfGuardAuth, action: signout }
   
-plantation:
-  url: /plantation
-  param: { module: plantation, action: index}
+plantation_landing_homepage:
+  url: /plantation/landing
+  param: {module: landing, action: index}
+  
+plantation_landing_plantation_homepage:
+  url: /plantation/landing/plantation
+  param: {module: landing, action: plantation}
+
+plantation_landing_plantation:
+  url: /plantation/landing/plantation/:partenaireOffset
+  param: {module: landing, action: plantation, partenaireOffset: 0}
 
 homepage:
   url: /

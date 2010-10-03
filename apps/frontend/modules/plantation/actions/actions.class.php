@@ -219,7 +219,7 @@ class plantationActions extends sfActions {
 		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
 			$this->coupons = Doctrine_Query::create()
 				->from('coupon c')
-				->leftJoin('c.CouponsPartenaires cp')
+				->leftJoin('c.Partenaire cp')
 				->where('cp.partenaire_id = ?', $partenaire->getId())
 				->andWhere('c.is_active = ?', true)->execute();
 		}
@@ -227,6 +227,8 @@ class plantationActions extends sfActions {
 			$this->forward404();
 		}
 		
+		
+
 		$this->setLayout(false);
 	}
 

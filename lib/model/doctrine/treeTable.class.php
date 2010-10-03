@@ -8,4 +8,28 @@ class treeTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('tree');
     }
+    
+    public function countFromUserByProgramme($idUser, $idProgrammes) {
+    	return $this->createQuery('t')
+				->select('t.id, t.programme_id, COUNT(t.id) AS nbTree')
+				->innerJoin('t.User tu')
+				->where('tu.user_id = ?', $idUser)
+				->whereIn('t.programme_id', $idProgrammes)
+				->groupBy('t.programme_id')
+				->fetchArray();
+				
+		}
+		
+    public function countFromCouponPartenaireByProgramme($idPartenaire, $idProgrammes) {
+    	return $this->createQuery('t')
+				->select('t.id, t.programme_id, COUNT(t.id) AS nbTree')
+				->innerJoin('t.Coupon tc')
+				->innerJoin('tc.coupon c')
+				->innerJoin('c.Partenaire cp')
+				->where('cp.partenaire_id = ?', $idPartenaire)
+				->whereIn('t.programme_id', $idProgrammes)
+				->groupBy('t.programme_id')
+				->fetchArray();
+				
+		}
 }

@@ -1,0 +1,48 @@
+body {
+	background:url("../images/blog/backgrounds/main1.jpg") no-repeat fixed center center transparent;
+	font-size:12px;
+}
+
+#content {
+	width: 1000px;
+	position: relative;
+	margin:50px auto 0;
+}
+
+#content div.module {
+	float:left;
+	margin: 20px;
+	color:#eee;
+	text-align:center;
+}
+
+#content div.module h1,
+#content div.module h2,
+#content div.module h3,
+#content div.module p{
+	padding:5px;
+}
+
+#content div.module a{
+	color:#DCFFAF;
+}
+
+#content div.module a:hover{
+	color:#C1FF6F;
+}
+
+#title {
+	width:95%
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+h3 {
+	font-size: 1.2em;
+}

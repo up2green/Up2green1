@@ -278,7 +278,7 @@ class plantationActions extends sfActions {
 					$geocoded_addr->getLat(),
 					$geocoded_addr->getLng(),
 					array(
-						'title ' => "'".$programme->getTitle()."'",
+						'title ' => "'".$programme->getId()."'",
 						'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
 						'icon'	=> $this->getProgrammeIcon($programme),
 					)
@@ -338,30 +338,35 @@ class plantationActions extends sfActions {
 		// mode tous
 		$allValues = array();
 		$allValuesEmpty = array();
+		$programmesIds = array();
+		
 		foreach($this->programmes as $programme) {
-			$allValues += array($programme->getTitle() => $programme->countTrees());
-			$allValuesEmpty += array($programme->getTitle() => 0);
+			$allValuesEmpty += array($programme->getId() => array(
+				'title' => $programme->getTitle(),
+				'number' => 0
+			));
+		}
+		
+		$results = Doctrine_Core::getTable('programme')->countTrees(array_keys($allValuesEmpty));
+		$allValues = $allValuesEmpty;
+		foreach($results as $result) {
+			$allValues[$result['id']]['number'] = $result['nbTree'];
 		}
 		
 		// mode partenaire
 		if(!$this->getUser()->isAuthenticated() && !is_null($this->partenaire)) {
 			
 			$partenaireValues = $allValuesEmpty;
-			//Les arbres plantés par ses coupons
-			foreach($this->partenaire->getCoupons() as $coupon) {
-				foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
-					$tree = $treeCoupon->getTree();
-					if(isset($partenaireValues[$tree->getProgramme()->getTitle()])) {
-						$partenaireValues[$tree->getProgramme()->getTitle()] ++;
-					}
-				}
+			
+			$resultsFromUser = Doctrine_Core::getTable('tree')->countFromUserByProgramme($this->partenaire->getUser()->getId(), array_keys($allValuesEmpty));
+			$resultsFromCoupon = Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), array_keys($allValuesEmpty));
+			
+			foreach($resultsFromUser as $result) {
+				$partenaireValues[$result['programme_id']]['number'] += $result['nbTree'];
 			}
-			//Les arbres plantés directement
-			foreach($this->partenaire->getUser()->getTrees() as $treeUser) {
-				$tree = $treeUser->getTree();
-				if(isset($partenaireValues[$tree->getProgramme()->getTitle()])) {
-					$partenaireValues[$tree->getProgramme()->getTitle()] ++;
-				}
+			
+			foreach($resultsFromCoupon as $result) {
+				$partenaireValues[$result['programme_id']]['number'] += $result['nbTree'];
 			}
 			
 			$checked = !$checked;
@@ -375,12 +380,12 @@ class plantationActions extends sfActions {
 		
 		if ($this->getUser()->isAuthenticated()) {
 			$userValues = $allValuesEmpty;
-			foreach($this->getUser()->getGuardUser()->getTrees() as $treeUser) {
-				$tree = $treeUser->getTree();
-				if(isset($userValues[$tree->getProgramme()->getTitle()])) {
-					$userValues[$tree->getProgramme()->getTitle()] ++;
-				}
+			
+			$resultsFromUser = Doctrine_Core::getTable('tree')->countFromUserByProgramme($this->getUser()->getGuardUser()->getId(), array_keys($allValuesEmpty));
+			foreach($resultsFromUser as $result) {
+				$userValues[$result['programme_id']]['number'] += $result['nbTree'];
 			}
+			
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'user',
@@ -393,13 +398,9 @@ class plantationActions extends sfActions {
 				
 				$couponValues = $allValuesEmpty;
 				//Les arbres plantés par ses coupons
-				foreach($this->partenaire->getCoupons() as $coupon) {
-					foreach($coupon->getCoupon()->getTrees() as $treeCoupon) {
-						$tree = $treeCoupon->getTree();
-						if(isset($couponValues[$tree->getProgramme()->getTitle()])) {
-							$couponValues[$tree->getProgramme()->getTitle()] ++;
-						}
-					}
+				$resultsFromCoupon = Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), array_keys($allValuesEmpty));
+				foreach($resultsFromCoupon as $result) {
+					$couponValues[$result['programme_id']]['number'] += $result['nbTree'];
 				}
 				
 				$modes[] = array(

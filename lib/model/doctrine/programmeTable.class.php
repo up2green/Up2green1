@@ -60,6 +60,20 @@ class programmeTable extends Doctrine_Table
 
     return $this->getOne($q);
   }
+  
+  public function countTrees($programmes = array()) {
+  	$q = $this->createQuery('p')
+		->select('p.id, COUNT(t.id) AS nbTree')
+		->innerJoin('p.Trees t');
+		
+		if(!empty($programmes)) {
+			$q = $q->whereIn('p.id', $programmes);
+		}
+		
+		$q = $q->groupBy('p.id');
+		
+		return $this->getArray($q);
+	}
 
   public function getActiveByLang($lang, $limit = 10) {
     $q = $this->createQuery('p');

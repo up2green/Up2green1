@@ -101,7 +101,7 @@ $(document).ready(function(){
 				if(gMapModes[x].name == mode) {
 					for(programme in gMapModes[x].values) {
 						
-						var nbTree = gMapModes[x].values[programme];
+						var nbTree = gMapModes[x].values[programme]['number'];
 						var div = $('div[title="'+programme+'"]', '#map');
 						
 						if(div.position() != null) {

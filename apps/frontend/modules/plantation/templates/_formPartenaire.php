@@ -22,7 +22,7 @@
 	    ?>
 	<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
 	<?php endif; ?>
-	<p><?php echo html_entity_decode($partenaire->getAccroche()); ?></p>
+	<p><?php echo $partenaire->getAccroche(); ?></p>
 	<p class="center">
 		<?php
 		if($sf_user->isAuthenticated() && !is_null($partenaire)) {

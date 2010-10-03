@@ -32,6 +32,14 @@ couponsUsedCSV:
   param:  {module: plantation, action: couponsUsedCSV}
 
 ####################
+##### LANDING
+####################
+
+landing_plantation:
+  url: /landing/plantation/:partenaireOffset
+  param: {module: landing, action: plantation, partenaireOffset: 0}
+
+####################
 ##### BLOG
 ####################
 

@@ -12,6 +12,8 @@ couponsUsedCSVSuccess:
 
 
 default:
+  metas:
+    title: Up2green : La plate-forme de Reforestation
   stylesheets:    [reset.css, main.css, button.css, module.css, plantation.css]
   javascripts:
     - min/jquery-1.4.2.min.js

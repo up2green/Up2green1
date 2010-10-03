@@ -6,7 +6,7 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        Up2green
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en
@@ -17,4 +17,5 @@ default:
   javascripts:    [jquery-1.4.2.js, main.js, moteur.js]
 
   has_layout:     true
+  title: Up2green
   layout:         layout

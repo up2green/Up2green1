@@ -4,7 +4,8 @@
         <?php include_http_metas() ?>
         <?php include_metas() ?>
         <?php include_title() ?>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
     </head>

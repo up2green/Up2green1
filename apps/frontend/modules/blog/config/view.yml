@@ -12,3 +12,7 @@ viewListSuccess:
   stylesheets:    [blog.css]
   javascripts:    [blog.js]
   layout:         blog
+
+default:
+  metas:
+    title: Up2green : Le site Associatif

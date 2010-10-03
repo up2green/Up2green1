@@ -1,0 +1,12 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/fr/13-View
+
+default:
+  metas:
+    title: Up2green Reforestation
+  stylesheets:    [reset.css, main.css, button.css, module.css, plantation.css]
+  layout:         landing
+  javascripts:
+    - min/jquery-1.4.2.min.js
+    - min/jquery-ui-1.8.2.custom.min.js
+    - main.js

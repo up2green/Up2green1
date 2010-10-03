@@ -28,6 +28,7 @@ class plantationActions extends sfActions {
 		if ($this->getUser()->isAuthenticated()) {
 			$user = $this->getUser()->getGuardUser();
 			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+			$this->setProgrammesFromPartenaire($this->partenaire);
 			$this->nbArbresToPlant = $user->getProfile()->getCredit();
 			$this->spendAll = false;
 			
@@ -54,8 +55,6 @@ class plantationActions extends sfActions {
 			}
 		}
 		
-		$this->setProgrammesFromPartenaire();
-		
 		if ($request->isMethod('post')) {
 			
 			// l'utilisateur a entré son numéro de coupon
@@ -65,8 +64,8 @@ class plantationActions extends sfActions {
 						$this->coupon = $coupon;
 						if(is_null($this->partenaire)) {
 							$this->partenaire = $coupon->getPartenaire()->getPartenaire();
-							$this->setProgrammesFromPartenaire();
 						}
+						$this->setProgrammesFromPartenaire($this->partenaire);
 						$this->spendAll = true;
 						$this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
 					}
@@ -82,17 +81,19 @@ class plantationActions extends sfActions {
 				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
 					if ($coupon->getIsActive()){
 						$this->coupon = $coupon;
+						$this->setProgrammesFromPartenaire($coupon->getPartenaire()->getPartenaire());
+						
 						$email = "";
 						if (($request->hasParameter('email_user_deco')) && ($request->getParameter('email_user_deco') != "")) {
 							$email = trim($request->getParameter('email_user_deco'));
 						}
 						
 						if ($request->getParameter('nbArbresToPlantLeft') == 0){
+							$trees = array();
 							foreach ($this->programmes as $programme){
-								if (1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId())){
-									if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
-										$coupon->plantArbre(1*$request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
-									}
+								if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
+									$trees += array($programme->getTitle() => $request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()));
+									$coupon->plantArbre($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
 								}
 							}
 							
@@ -107,10 +108,8 @@ class plantationActions extends sfActions {
 							$this->errors[] = "Vos arbres ont bien été plantés !";
 							
 							if(!empty($email)) {
-								// on envoi le mail avec attestation :
-/*
-								$this->buildAttestation();
-*/
+								// on construit l'attestation :
+								$filename = $this->buildAttestation($email, $trees);
 								
 								$html = "Bonjour, <br />".
                         "Vous venez de planter ".$request->getParameter('nbTreeMax')." arbre(s) sur la planète !<br />".
@@ -124,13 +123,11 @@ class plantationActions extends sfActions {
 										'Attestation de plantation sur Up2Green !')
 									->setBody($html, 'text/html');
 								
-/*
-								if(file_exists('/tmp/attestation.pdf')) {
+								if(file_exists($filename)) {
 									$message->attach(
-										Swift_Attachment::fromPath('/tmp/attestation.pdf')
+										Swift_Attachment::fromPath($filename)
 									);
 								}
-*/
 								
                 $this->getMailer()->send($message);
                 $this->errors[] = "Vous aller recevoir un email attestant de votre plantation.";
@@ -153,35 +150,63 @@ class plantationActions extends sfActions {
 
 		$this->getGmap();
 	}
-	
-	public function buildAttestation() {
-		$config = sfTCPDFPluginConfigHandler::loadConfig();
- 
+	/*
+	 * Construit l'attestation pdf dans le dossier temporaire
+	 * @return: (string) nom du fichier physique
+	 */
+	public function buildAttestation($username, $trees) {
+		$config = sfTCPDFPluginConfigHandler::loadConfig('my_config');
+
 		// pdf object
-		$pdf = new sfTCPDF();
-	 
+		$pdf = new attestationPDF();
+
 		// settings
-		$pdf->SetFont("FreeSerif", "", 12);
-		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-		$pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
-		$pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-	 
+		$pdf->SetMargins(10, 20);
+		$pdf->SetHeaderMargin(0);
+		$pdf->setPrintFooter(false);
+
 		// init pdf doc
 		$pdf->AliasNbPages();
 		$pdf->AddPage();
-		$pdf->Cell(80, 10, "Hello World !!! €àèéìòù");
-	 
+		
+		$nbTotal = array_sum($trees);
+		
+		//body
+		$pdf->Cell(0,10,'certifie que',0,1,'C');
+		
+		$pdf->SetTextColor(73,115,16);
+		$pdf->SetFontSize(16);
+		$pdf->Cell(0,7,$username,0,1,'C');
+		$pdf->SetFontSize(12);
+		$pdf->SetTextColor(0);
+		$pdf->Cell(0, 5, '', 0, 1); // saut de ligne
+		$pdf->Cell(0,5,'a fincancé la plantation '.($nbTotal > 1 ? 'de '.$nbTotal.' arbres' : 'd\'un arbre'),0,1,'C');
+		
+		if(sizeof($trees) > 1) {
+			$pdf->Cell(0,5,'dans les programmes de reforestation suivants :',0,1,'C');
+		}
+		else {
+			$pdf->Cell(0,5,'dans le programme de reforestation suivant :',0,1,'C');
+		}
+		
+		$current_y_position = $pdf->getY();
+		$pdf->SetTextColor(73,115,16);
+		$pdf->SetFontSize(13);
+		$pdf->writeHTMLCell(130, 0, 15, $current_y_position, join(', ', array_keys($trees)),0,1,false, true, 'C');
+		$pdf->SetFontSize(12);
+		$pdf->SetTextColor(0);
+			
+		$pdf->writeHTMLCell(0, 0, 15, 85, '<b><font size="-4">A Paris, le '.date('d/m/Y').'</font></b>', 0, 1, false, true, 'L');
+		
 		// output
-		file_put_contents('/tmp/attestation.pdf', $pdf->Output('/tmp/attestation.pdf', 's'));
-
+		$filename = '/tmp/attestation-'.uniqid().'.pdf';
+		$pdf->Output($filename , 'F');
+		return $filename;
 	}
 	
-	public function setProgrammesFromPartenaire() {
-		if(!is_null($this->partenaire)) {
-			$partenaireProgrammes = $this->partenaire->getProgrammes();
+	public function setProgrammesFromPartenaire($partenaire) {
+		if(!is_null($partenaire)) {
+			$partenaireProgrammes = $partenaire->getProgrammes();
 			$programmes = array();
 			foreach($partenaireProgrammes as $partenaireProgramme) {
 				$programmes[] = $partenaireProgramme->getProgramme();

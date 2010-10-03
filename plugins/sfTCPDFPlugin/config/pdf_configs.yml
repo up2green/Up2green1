@@ -67,16 +67,3 @@ default:
   K_TITLE_MAGNIFICATION: "1.3"
   # reduction factor for small font
   K_SMALL_RATIO: "2/3"
-
-# Specific configs (copy this file in your application config directory to ovveride it)
-my_config:
-  K_TCPDF_EXTERNAL_CONFIG: true
-  K_PATH_MAIN: /var/www/my-symfony-project/plugins/sfTCPDFPlugin/tcpdf/
-  K_PATH_URL: http://dev.my-symfony-project/ 
-  K_PATH_FONTS: /var/www/my-symfony-project/plugins/sfTCPDFPlugin/tcpdf/fonts
-  K_PATH_CACHE: /var/www/my-symfony-project/plugins/sfTCPDFPlugin/tcpdf/cache
-  K_PATH_URL_CACHE: http://dev.my-symfony-project/cache
-  K_PATH_IMAGES: /var/www/my-symfony-project/plugins/sfTCPDFPlugin/tcpdf/images
-  K_BLANK_IMAGE: /var/www/my-symfony-project/plugins/sfTCPDFPlugin/tcpdf/images/_blank.png
-
-  # ... copy paste from defaulf config.

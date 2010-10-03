@@ -113,7 +113,7 @@ class plantationActions extends sfActions {
 								
 								$html = "Bonjour, <br />".
                         "Vous venez de planter ".$request->getParameter('nbTreeMax')." arbre(s) sur la planète !<br />".
-                        "Attention l'attestation est momentanément indisponible.<br />Elle sera disponible dans les plus brefs délais.<br />Merci de votre compréhension.<br />".
+                        "Retrouvez en pièce jointe l'attestation de plantation.<br />".
                         "A très bientôt pour faire avancer la reforestation sur http://reforestation.up2green.com/ !";
                 
 								$message = $this->getMailer()

@@ -16,7 +16,9 @@
 
 	<div class="module">
 	    <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-	    <p class="title little indent">Coupons non utilisés (<?php echo sizeof($coupons) ?>) <a href="<?php echo url_for('@couponsCSV') ?>">CSV</a></p>
+	    <p class="title little indent">
+	    	Coupons non utilisés (<?php echo sizeof($coupons) ?>)
+	    </p>
 	    <div class="content scrollableWrapper">
 			<?php if(sizeof($coupons) > 6) : ?>
 		<center><span class="button white maxWidth slideUp">
@@ -35,20 +37,30 @@
 			    <?php endforeach; ?>
 		</ul>
 
-			<?php if(sizeof($coupons) > 6) : ?>
-		<center><span class="button white maxWidth slideDown">
-			<img src="/images/icons/bottom.png" alt="Bas"/>
-		    </span></center>
-			<?php endif; ?>
-	    </div>
-		    <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+		<?php if(sizeof($coupons) > 6) : ?>
+		<center>
+			<span class="button white maxWidth slideDown">
+				<img src="/images/icons/bottom.png" alt="Bas"/>
+		  </span>
+		</center>
+		<?php endif; ?>
+	  
+	  <p style="text-align:right;height: 32px;">
+	  	<span style="line-height:32px;vertical-align:middle;">Exporter : </span>
+			<a href="/couponsCSV" style="float:right;margin:0;" >
+				<img src="/images/icons/32x32/csv.png" alt="CSV" />
+			</a>
+	  </p>
+
+		</div>
+		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 	</div>
 
 	    <?php endif; ?>
 	    <?php if (sizeof($couponsUsed) > 0): ?>
 	<div class="module scrollableWrapper">
 	    <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-	    <p class="title little indent">Coupons utilisés (<?php echo sizeof($couponsUsed) ?>) <a href="<?php echo url_for('@couponsUsedCSV') ?>">CSV</a></p>
+	    <p class="title little indent">Coupons utilisés (<?php echo sizeof($couponsUsed) ?>)</p>
 	    <div class="content">
 			<?php if(sizeof($couponsUsed) > 6) : ?>
 		<span class="button white maxWidth slideUp">
@@ -67,13 +79,21 @@
 			    <?php endforeach; ?>
 		</ul>
 
-			<?php if(sizeof($couponsUsed) > 6) : ?>
+		<?php if(sizeof($couponsUsed) > 6) : ?>
 		<span class="button white maxWidth slideDown">
-		    <img src="/images/icons/bottom.png" alt="Bas"/>
+			<img src="/images/icons/bottom.png" alt="Bas"/>
 		</span>
-			<?php endif; ?>
-	    </div>
-		    <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+		<?php endif; ?>
+		
+		<p style="text-align:right;height: 32px;">
+	  	<span style="line-height:32px;vertical-align:middle;">Exporter : </span>
+			<a href="/couponsUsedCSV" style="float:right;margin:0;" >
+				<img src="/images/icons/32x32/csv.png" alt="CSV" />
+			</a>
+	  </p>
+	  
+		</div>
+		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 	</div>
 	    <?php
 	    endif;

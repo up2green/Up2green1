@@ -16,6 +16,10 @@ body {
 	text-align:center;
 }
 
+#content div.module img.organisme-image {
+	max-width:180px;
+}
+
 #content div.module h1,
 #content div.module h2,
 #content div.module h3,

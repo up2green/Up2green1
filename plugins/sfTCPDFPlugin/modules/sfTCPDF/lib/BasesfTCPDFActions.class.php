@@ -15,7 +15,7 @@ class BasesfTCPDFActions extends sfActions
    */
   public function executeTest()
   {
-    $config = sfTCPDFPluginConfigHandler::loadConfig();
+    $config = sfTCPDFPluginConfigHandler::loadConfig('my_config');
     
     // pdf object
     $pdf = new sfTCPDF();
@@ -40,6 +40,71 @@ class BasesfTCPDFActions extends sfActions
     // Stop symfony process
     throw new sfStopException();
   }
+  
+  public function executeAttestation($undefinedVar = '', $username = 'username', $trees = array()) {
+		$config = sfTCPDFPluginConfigHandler::loadConfig('my_config');
+
+		// pdf object
+		$pdf = new attestationPDF();
+
+		// settings
+		$pdf->SetMargins(10, 20);
+		$pdf->SetHeaderMargin(0);
+		$pdf->setPrintFooter(false);
+
+		// init pdf doc
+		$pdf->AliasNbPages();
+		$pdf->AddPage();
+		
+		$trees = array(
+			'Burundi' => 2,
+			'Ethiopie' => 1,
+			'Ethiopie1' => 10,
+			'Ethiopie2' => 10,
+			'Ethiopie3' => 100,
+			'Ethiopie4' => 1,
+			'Ethiopie5' => 10,
+			'Ethiopie6' => 10,
+			'Ethiopie7' => 100,
+			'Ethiopie8' => 100,
+			'Ethiopie9' => 1,
+			'Ethiopie10' => 1
+		);
+		
+		$nbTotal = array_sum($trees);
+		
+		$list = array();
+		foreach($trees as $programme => $nbTrees) {
+			$list[] = $programme.'['.($nbTrees > 1 ? $nbTrees.' arbres' : 'un arbre').']';
+		}
+		
+		
+		
+		//body
+		$pdf->Cell(0,10,'certifie que',0,1,'C');
+		
+		$pdf->SetTextColor(73,115,16);
+		$pdf->SetFontSize(16);
+		$pdf->Cell(0,7,$username,0,1,'C');
+		$pdf->SetFontSize(12);
+		$pdf->SetTextColor(0);
+		$pdf->Cell(0, 5, '', 0, 1); // saut de ligne
+		$pdf->Cell(0,5,'a fincancé la plantation '.($nbTotal > 1 ? 'de '.$nbTotal.' arbres' : 'd\'un arbre'),0,1,'C');
+		$pdf->Cell(0,5,'dans le(s) programme(s) de reforestation suivant(s) :',0,1,'C');
+		$current_y_position = $pdf->getY();
+		$pdf->SetTextColor(73,115,16);
+		$pdf->SetFontSize(13);
+		$pdf->writeHTMLCell(130, 0, 15, $current_y_position, htmlentities(join(', ', $list)),0,1,false, true, 'C');
+		$pdf->SetFontSize(12);
+		$pdf->SetTextColor(0);
+			
+		$pdf->writeHTMLCell(0, 0, 15, 85, '<b><font size="-4">A Paris, le '.date('d/m/Y').'</font></b>', 0, 1, false, true, 'L');
+		
+		$pdf->Output();
+
+		// Stop symfony process
+		throw new sfStopException();
+	}
 
   /**
    * Full test.
@@ -99,7 +164,9 @@ class BasesfTCPDFActions extends sfActions
 
     // output some UTF-8 test content
     $pdf->AddPage();
+/*
     $pdf->SetFont("FreeSerif", "", 12);
+*/
 
     $utf8text = file_get_contents(K_PATH_CACHE. "utf8test.txt", false); // get utf-8 text form file
     $pdf->SetFillColor(230, 240, 255, true);

@@ -1,4 +1,9 @@
 <?php 
+	$formAction = sfConfig::get('sf_environment') === 'dev' ?
+		'http://reforestation-up2green.smartit.fr/' :
+		'http://reforestation.up2green.com/';
+
+
 	if($isPartenaire = (isset($partenaire) && !empty($partenaire))) {
 		$blocWidth = "20%";
 		$contentWidth = "45%";
@@ -49,9 +54,10 @@
 			plate-forme de plantation</a> et choisir vos programmes de reforestation
 		</p>
 		<p>
-		<form action="http://reforestation.up2green.com/" method="post">
+		<form action="<?php echo $formAction; ?>" method="post">
 			<input type="text" name="code" value="Numéro de coupon" title="Numéro de coupon" /><br />
 			<input type="submit" class="button green" name="numCouponToUse" value="Utiliser" />
+			<input type="hidden" name="fromUrl" value="http://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" />
 		</form>
 		</p>
 	</div>

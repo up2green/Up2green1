@@ -56,7 +56,7 @@ class plantationActions extends sfActions {
 		}
 		
 		if ($request->isMethod('post')) {
-			
+			$this->fromUrl = $request->getParameter('fromUrl');
 			// l'utilisateur a entré son numéro de coupon
 			if ($request->getParameter('numCouponToUse')) {
 				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
@@ -146,6 +146,10 @@ class plantationActions extends sfActions {
 					}
 				}
 			}
+		}
+		
+		if(is_null($this->coupon) && !empty($this->fromUrl)) {
+			return $this->redirect($this->fromUrl);
 		}
 
 		$this->getGmap();

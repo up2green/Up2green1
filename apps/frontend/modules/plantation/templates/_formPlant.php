@@ -59,5 +59,5 @@
 	<input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
 	<input type="hidden" name="nbTreeMax" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
 	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
-	
+	<input type="hidden" name="fromUrl" value="<?php echo $fromUrl; ?>" />
 </form>

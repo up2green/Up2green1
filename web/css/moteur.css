@@ -1,30 +1,5 @@
 .header .slogan {display:block;}
 
-/* menu recherche */
-.menu_left li{float:left;}
-.menu_left a{
-text-decoration:none;
-color:black;
-width:150px;
-line-height:28px;
-height:40px;
-border:none;
-margin:0px;
-display:block;
-text-align:center;
-}
-.menu_left a:hover{
-color:green;
-background-image:url();
-text-decoration:none;
-text-align:center;
-}
-.menu_left a:active{
-color:green;
-text-decoration:none;
-font-size:18px;
-}
-
 /*FIXE*/
 .header{
 background: url(/images/moteur/header_bg_650x115.png);
@@ -46,9 +21,17 @@ font-size:18px;
 color:#2F8D00;
 text-align:center;
 }
+
+#searchForm {
+	display:block;
+	height:100px;
+	margin:0 auto;
+	width:80%;
+}
+
 .search{
-background-color:#CCCCCC;
-width:600px;
+	background-color:#CCCCCC;
+	width:600px;
 }
 .champs{
 float:left;
@@ -56,7 +39,6 @@ text-align:left;
 background-color:#FFFFFF;
 }
 .btn_search{
-/*background: url(/images/btn_recherche.png);*/
 float:right;
 font-size:12px;
 text-align:center;
@@ -134,10 +116,10 @@ width:65px;
 height:26px;
 }
 .avancees a{
-float:right;
-color:#2F8D00;
-text-decoration: underline;
-font-size:14px;
+	float:right;
+	color:#2F8D00;
+	text-decoration: underline;
+	font-size:14px;
 }
 .avancees a:hover{
 color:#2F8D00;
@@ -145,12 +127,12 @@ text-decoration: none;
 font-size:14px;
 }
 /*CORPS ACCUEIL*/
+
 .menu_centre{
-min-height:370px;
-width:600px;
-clear:both;
-padding-top:20px;
+	min-height:370px;
+	width:100%;
 }
+
 /*encart gauche*/
 .acteur{
 width:352px;
@@ -237,4 +219,46 @@ font-size:12px;
 margin:0px;
 padding:5px;
 list-style-type:none;
+}
+
+div.more-result {
+	width: 100%; 
+	margin: 20px auto; 
+	text-align: center;
+}
+
+#searchMore {
+	width:70%;
+}
+
+/* recherche Image */
+
+div.img-result div.result {
+	float:left;
+	height:210px;
+	margin:10px;
+	width:180px;
+}
+
+div.img-result div.result img {
+	border:1px solid #CCCCCC;
+	padding:1px;
+}
+
+div.img-result a {
+	color:#2D64A7;
+	font-size:0.9em;
+}
+
+div.img-result a:hover {
+	color:#18314F;
+}
+
+div.img-result span.filename {
+	color:#015F00;
+	font-size:0.8em;
+}
+
+div.img-result p.content {
+	width:150px;
 }

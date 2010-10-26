@@ -33,6 +33,11 @@
 	-moz-border-radius: 2em;
 	border-radius: 2em;
 }
+.button.big {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 1em 2em;
+}
 .button.medium {
 	font-size: 12px;
 	padding: .4em 1.5em .42em;

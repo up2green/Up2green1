@@ -18,6 +18,27 @@ width:1024px;
 .clear{clear:both;}
 .hidden{display:none;}
 
+/* 
+ * 	"..." automatique en CSS ;) 
+ * @syntax : <div class="ellipsis"><span>my long text</span></div>
+*/
+
+.ellipsis, .ellipsis div {
+	white-space:nowrap;
+	text-overflow:ellipsis; /* for internet explorer */
+	overflow:hidden;
+	width:190px;
+}
+
+html>body .ellipsis div{
+	width:178px;
+	float:left
+}
+
+html>body .ellipsis:after{
+	content: "...";
+}
+
 /*MENU HAUT*/
 .menu_haut{
 width:1024px;

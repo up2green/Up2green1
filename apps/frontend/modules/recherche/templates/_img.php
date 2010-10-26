@@ -1,6 +1,14 @@
 <div class="result">
-    <h3><?php echo html_entity_decode($result['title']) ?></h3>
-    <img src="<?php echo $result['thumbnail'] ?>" /><br />
-    <?php if ($result['content'] != "") : ?><?php echo html_entity_decode($result['content']) ?><br /><?php endif; ?>
-    <a href="<?php echo html_entity_decode($result['clickUrl'])?>"><?php echo html_entity_decode($result['displayUrl']) ?></a>
+	<a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+		<img src="<?php echo $result['thumbnail'] ?>" />
+    </a>
+    <?php if ($result['content'] != "") : ?>
+	<p class="content">
+		<?php echo html_entity_decode($result['content']) ?>
+	</p>
+	<?php endif; ?>
+    <a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+		<?php echo html_entity_decode($result['displayUrl']) ?>
+	</a>
+	<span class="filename">[<?php echo html_entity_decode($result['title']) ?>]</span>
 </div>

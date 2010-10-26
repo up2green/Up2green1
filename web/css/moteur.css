@@ -1,57 +1,46 @@
-.header .slogan {display:block;}
-
 /*FIXE*/
 .header{
-background: url(/images/moteur/header_bg_650x115.png);
-background-repeat:no-repeat;
-background-position: top;
-margin:auto;
-width:1024px;
-height:195px;
-text-align:center;
+	background: url(/images/moteur/header_bg_650x115.png);
+	background-repeat:no-repeat;
+	background-position: top;
+	margin:auto;
+	width:1024px;
+	height:195px;
+	text-align:center;
 }
 .logo{
-background: url(/images/moteur/logo_350x115.png);
-margin:auto;
-width:350px;
-height:115px;
+	background: url(/images/moteur/logo_350x115.png);
+	margin:auto;
+	width:350px;
+	height:115px;
 }
 .slogan{
-font-size:18px;
-color:#2F8D00;
-text-align:center;
+	font-size:18px;
+	color:#2F8D00;
+	text-align:center;
 }
 
 #searchForm {
 	display:block;
 	height:100px;
 	margin:0 auto;
-	width:80%;
+	width:520px;
 }
 
-.search{
-	background-color:#CCCCCC;
-	width:600px;
+#recherche_text{
+	text-align:left;
+	background-color:#FFFFFF;
 }
-.champs{
-float:left;
-text-align:left;
-background-color:#FFFFFF;
+
+#recherche_submit{
+	top:-2px;
+	margin-left:10px;
+	position:relative;
 }
-.btn_search{
-float:right;
-font-size:12px;
-text-align:center;
-width:100px;
-height:27px;
-}
+
 .more_search{
-clear:both;
-padding-top:5px;
-}
-.filtres{
-float:left;
-width:450px;
+	clear:both;
+	padding-top:5px;
 }
 
 .filtres a{
@@ -126,86 +115,71 @@ color:#2F8D00;
 text-decoration: none;
 font-size:14px;
 }
-/*CORPS ACCUEIL*/
+/* CORPS ACCUEIL */
 
-.menu_centre{
+#bodyContentHomme {
 	min-height:370px;
+	width:700px;
+	margin:0 auto;
+}
+
+/* encart accroche */
+
+div.module.acteur{
+	width:400px;
+	float:left;
+}
+
+div.module.acteur p{left:70px;width:100%;}
+div.module.acteur a{margin-top:20px;width:255px;}
+div.module.acteur p.title{left:70px;width:100%;}
+
+/* encarts statistiques */
+
+div.module.statistiques{
+	width:250px;
+	float:right;
+}
+
+div.module.statistiques p.title,
+div.module.partenaires p.title {
+	text-align:right;
+	left:-70px;
 	width:100%;
 }
 
-/*encart gauche*/
-.acteur{
-width:352px;
-float:left;
-}
-div.acteur div.module p{left:70px;width:100%;}
-div.acteur div.module a{margin-top:20px;width:255px;}
-div.acteur div.module p.title{left:70px;width:100%;}
-/*encarts droit*/
-.statistiques{
-width:229px;
-height:187px;
-float:right;
-}
-div.statistiques div.module p.title{text-align:right;left:-70px;width:100%;}
+/* encart partenaires */
 
-/*partenaires pas mis a jour avec les nouveaux modules*/
-
-.head_partenaires{
-background: url(/images/head_partenaires_229x50.png);
-background-repeat:no-repeat;
-width:229px;
-height:50px;
-}
-.titre_partenaires{
-text-align:right;
-font-size:15px;
-font-weight:bold;
-line-height:57px;
-padding-left:15px;
-padding-right:70px;
-color:#6600cc;
-}
-.corps_partenaires{
-background: url(/images/middle_partenaires_229x1.png);
-width:229px;
-}
-.contenus_partenaires{
-margin:auto;
-width:203px;
-padding-top:10px;
-padding-left:10px;
-font-size:12px;
+.module.partenaires{
+	width:250px;
+	float:right;
+	margin-top:20px;
 }
 
 .lien_partenaires{
-text-align:right;
-width:229px;
-font-size:13px;
-line-height:20px;
+	text-align:right;
+	width:229px;
+	font-size:13px;
+	line-height:20px;
 }
+
 .lien_partenaires a{
-text-decoration: underline;
-color:#7113d0;
-padding:10px;
+	text-decoration: underline;
+	color:#7113d0;
+	padding:10px;
 }
+
 .lien_partenaires a:hover{
-color:#7113d0;
-text-decoration:none;
-
+	color:#7113d0;
+	text-decoration:none;
 }
+
 .lien_partenaires a:active{
-color:#7113d0;
-text-decoration:underline;
-font-size:13px;
+	color:#7113d0;
+	text-decoration:underline;
+	font-size:13px;
+}
 
-}
-.pied_partenaires{
-margin:auto;
-background: url(/images/footer_partenaires_229x20.png);
-width:229px;
-height:20px;
-}
 /*MENU GAUCHE affiner recherches*/
 .menu_left{
 background-color:#FFFFFF;

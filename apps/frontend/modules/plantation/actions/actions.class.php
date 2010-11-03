@@ -184,7 +184,7 @@ class plantationActions extends sfActions {
 		$pdf->SetFontSize(12);
 		$pdf->SetTextColor(0);
 		$pdf->Cell(0, 5, '', 0, 1); // saut de ligne
-		$pdf->Cell(0,5,'a fincancé la plantation '.($nbTotal > 1 ? 'de '.$nbTotal.' arbres' : 'd\'un arbre'),0,1,'C');
+		$pdf->Cell(0,5,'a financé la plantation '.($nbTotal > 1 ? 'de '.$nbTotal.' arbres' : 'd\'un arbre'),0,1,'C');
 		
 		if(sizeof($trees) > 1) {
 			$pdf->Cell(0,5,'dans les programmes de reforestation suivants :',0,1,'C');

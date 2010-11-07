@@ -8,7 +8,7 @@
 	</p>
 	<?php endif; ?>
     <a href="<?php echo html_entity_decode($result['clickUrl'])?>">
-		<?php echo html_entity_decode($result['displayUrl']) ?>
+		<?php echo $result['displayUrl'] ?>
 	</a>
-	<span class="filename">[<?php echo html_entity_decode($result['title']) ?>]</span>
+	<span class="filename">[<?php echo $result['title'] ?>]</span>
 </div>

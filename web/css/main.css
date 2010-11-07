@@ -5,6 +5,7 @@ body{
 font-family: sans-serif;
 font-size:14px;
 }
+
 .general{
 margin:auto;
 padding:0px;
@@ -43,12 +44,6 @@ height:40px;
 float:left;
 }
 /*MENU HAUT gauche*/
-.menu_accueil{
-float:left;
-height:40px;
-font-size:12px;
-color:#FFFFFF;
-}
 .menu{
 display: block;
 font-size:10px;
@@ -57,15 +52,16 @@ list-style-type:none;
 float:left;
 }
 
-.menu_accueil .menu li {
-	padding:5px 0 0;
-}
-
 .menu li{
 padding-top:10px;
 padding-left:10px;
 float:left;
 }
+
+.menu_accueil .menu li{
+	padding-top:6px;
+}
+
 .menu a{
 text-decoration:underline;
 color:white;
@@ -239,3 +235,48 @@ height:23px;
 	height:20px;
 	background: url(/images/footer_bottom_1027x20.png);
 	}
+
+/* list style */
+
+ul.list  {
+	border:1px solid #CCCCCC;
+	border-top:none;
+	margin: 10px 5px;
+}
+
+	ul.list li {
+		cursor:pointer;
+		display:block;
+		position:relative;
+		padding:2px 5px;
+		border-top:1px #ccc solid;
+		line-height:25px;
+		text-decoration:none;
+		color:#666;
+	}
+	
+	ul.list li:hover {
+		color:#F33;
+		background-color:#eee;
+	}
+		ul.list li a{
+			color:#666666;
+			display:block;
+			height:100%;
+			width:100%;
+		}
+	
+		ul.list li p.item {
+			font-size:0.75em;
+		}
+
+		ul.list li p.bigitem{
+			display: inline-block;
+			font-size: 0.75em;
+			width: 400px;
+		}
+		
+		ul.list li span.action {
+			position:absolute;
+			right:0;
+		}

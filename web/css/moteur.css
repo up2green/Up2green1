@@ -158,7 +158,6 @@ div.module.partenaires p.title {
 
 .lien_partenaires{
 	text-align:right;
-	width:229px;
 	font-size:13px;
 	line-height:20px;
 }
@@ -203,6 +202,76 @@ div.more-result {
 
 #searchMore {
 	width:70%;
+}
+
+/* recherche Web */
+
+div.web-result div.result {
+	border-bottom:1px solid #CCCCCC;
+	margin:10px;
+	padding: 5px 0;
+	width:490px;
+	height: 70px;
+	float:left;
+}
+
+div.web-result p.content {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.web-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.web-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
+
+/* recherche Image */
+
+div.news-result div.result {
+	border-bottom:1px solid #CCCCCC;
+	margin:10px;
+	padding: 5px 0;
+	width:490px;
+	height: 100px;
+	float:left;
+}
+
+div.news-result p.content {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.news-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.news-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
+
+div.news-result div.result h4 {
+	color:#015F00;
+	font-size:0.85em;
+	padding: 5px 10px 0 0;
+	font-style:italic;
+	font-weight:bold;
+	text-align:right;
+}
+
+div.news-result span.filename {
+	color:#aaa;
+	font-size:0.9em;
+	font-weight:normal;
+	margin-left:5px;
 }
 
 /* recherche Image */

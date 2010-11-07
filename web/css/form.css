@@ -3,10 +3,6 @@ form ul.error_list li {
 	font-style:italic;
 }
 
-form tfoot td{
-	padding: 10px 5px 0 0;
-}
-
 form tbody th {
 	text-align:right;
 	vertical-align:middle;
@@ -15,4 +11,36 @@ form tbody th {
 
 form tbody th, form tbody td {
 	padding: 2px 5px;
+}
+
+fieldset { 
+	border:1px solid green;
+	padding:10px;
+	margin: 10px 0;
+}
+
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:90%;
+}
+
+table.form {
+width: 100%;
+}
+
+table.form td.label {
+	color:#909090;
+	text-align:right;
+}
+
+table.form td.field {
+	text-align:left;
+	min-width:70%;
+}
+
+table.form tfoot td{
+	padding: 10px 5px 0 0;
+	text-align:right;
 }

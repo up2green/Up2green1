@@ -1,6 +1,6 @@
 <div id="form_programme_plantation" class="module">
 	<img class="title corner left" src="/images/module/green/icon/coupon.png" alt="" />
-	<p class="title">Plantez vos arbres</p>
+	<p class="title">Utiliser un coupon</p>
 	<div class="content">
 		<?php 
 			if(!empty($errors)) {

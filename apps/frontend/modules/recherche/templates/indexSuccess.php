@@ -45,7 +45,8 @@
 	
 	<?php if ($textSearch == ""): ?>
 	<div id="bodyContentHomme">
-		
+	
+		<?php if (!$sf_user->isAuthenticated()): ?>
 		<div class="module acteur">
 			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
 			<p class="title">Devenez acteur de la reforestation</p>
@@ -53,7 +54,7 @@
 				<p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
 				<p>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</p>
 				<p class="center">
-					<a href="#" class="button green">Créer un compte</a>
+					<a href="<?php echo url_for("user/inscription"); ?>" class="button green">Créer un compte</a>
 				</p>
 				<p class="center">
 					<a href="#" class="button green">Définir Up2green comme moteur<br/>de recherche par defaut</a>
@@ -61,17 +62,31 @@
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 		</div>
+		<?php else: ?>
+		<div class="module acteur">
+			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
+			<p class="title">Plantez vos arbres</p>
+			<div class="content">
+				<p>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collecté suffisement</p>
+				<p class="center">
+					<a href="<?php echo url_for("plantation/index"); ?>" class="button green">Accéder à la plateforme de reforestation</a>
+				</p>
+			</div>
+			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+		</div>
+		<?php endif; ?>
 		
 		<div class="module statistiques">
 			<img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
 			<p class="title">Statistiques</p>
 			<div class="content">
 				<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png" /></p>
-				<p class="center">Arbres plantés : <a href="#">1353</a> <br/>Plus de <a href="#">4534</a> tonnes<br/> de CO</p>
+				<p class="center" style="padding:10px 0;">Arbres plantés : <strong style="color:#015F00;"><?php echo $totalTrees; ?></strong> <br/>soit plus de <strong style="color:#015F00;"><?php echo number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' '); ?></strong> tonnes<br/> de CO<sub>2</sub> compensés</p>
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 		</div>
 		
+		<?php if (!$sf_user->isAuthenticated()): ?>
 		<div class="module purple partenaires">
 			<img class="title middle right" src="/images/module/purple/icon/icon-partenaires.png" alt="" />
 			<p class="title">Partenaires</p>
@@ -83,22 +98,29 @@
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 		</div>
+		<?php endif; ?>
 	
 	</div>
 	<?php else: ?>
 	<div id="bodyContent">
 		<?php
 		if ($moteur == SearchEngine::WEB) {
-			foreach ($results as $result) { echo include_partial("web", array("result" => $result)); echo "<hr />" ;}
+			echo '<div id="searchResults" class="web-result">';
+			foreach ($results as $result) { echo include_partial("web", array('result' => $result)); }
+			echo '</div>';
+			echo '<div class="clear"></div>';
 		}
 		elseif ($moteur == SearchEngine::IMG) {
 			echo '<div id="searchResults" class="img-result">';
-			foreach ($results as $result) { echo include_partial("img", array("result" => $result));}
+			foreach ($results as $result) { echo include_partial("img", array("result" => $result)); }
 			echo '</div>';
 			echo '<div class="clear"></div>';
 		}
 		elseif ($moteur == SearchEngine::NEWS) {
-			foreach ($results as $result) { echo include_partial("new", array("result" => $result)) ; echo "<hr />" ;}
+			echo '<div id="searchResults" class="news-result">';
+			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
+			echo '</div>';
+			echo '<div class="clear"></div>';
 		}
 		?>
 		<div class="more-result">

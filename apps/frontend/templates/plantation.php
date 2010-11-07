@@ -12,13 +12,6 @@
     <body>
         <div class="general">
             <?php include_component('user', 'menu'); ?>
-
-            <div class="header">
-				<a href="/">
-					<div class="logo"></div>
-					<div class="slogan">Etre acteur de la reforestation au fil de ses recherches</div>
-				</a>
-            </div>
             
             <?php echo $sf_content ?>
             

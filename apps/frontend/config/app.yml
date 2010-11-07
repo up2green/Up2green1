@@ -1,4 +1,5 @@
 all:
+  conversion_tree_co2: 0.1
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10
@@ -16,7 +17,9 @@ all:
       localhost: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQgsz41bwGYX_jBw9Zh-vi7zT4z-A
       reforestation-up2green.smartit.fr: ABQIAAAA2WG-bF-JJB9XacJsjS1oChRmKgIyMo5pKNttaUp8WCuH0kqYzBTjVkZIFSLyKW6fXpfNJEp4FsNSBw
   url:
-    web: http://boss.yahooapis.com/ysearch/web/v1/
+    engine_web: http://boss.yahooapis.com/ysearch/web/v1/
+    engine_image: http://boss.yahooapis.com/ysearch/images/v1/
+    engine_news: http://boss.yahooapis.com/ysearch/news/v1/
     up2green:
       blog: http://association.up2green.com/
       moteur: http://www.up2green.com/

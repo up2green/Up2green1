@@ -96,12 +96,15 @@ div.module{
 		z-index:20;
 	}
 	div.module p.title.indent{left:70px;top:10px;width:65%;}
+	div.module p.title.noindent{left:20px;top:10px;width:65%;}
 	div.module p.title.little{font-size:12px;top:10px}
 	div.module img.title{z-index:10;position:absolute;background-color:#FFFFFF;}
 	div.module img.title.corner.left{left:-16px;top:-10px;}
 	div.module img.title.middle.left{left:14px;top:-9px;}
 	div.module img.title.middle.right{right:14px;top:-9px; float:right}
 	div.module div.content{padding:46px 20px 27px;}
+	div.module div.content.notitle{padding-top:20px;position:relative;z-index:10;}
+	
 
 #left div.module {
 	margin-bottom:20px;

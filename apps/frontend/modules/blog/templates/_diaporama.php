@@ -8,9 +8,8 @@
     echo '<div class="diapo">';
     echo '<table><tr><td>';
     echo '<h3>'.html_entity_decode($p->getTitle()).'</h3>';
-    echo '<span class="accroche">';
-    echo html_entity_decode($p->getAccroche());
-    echo '</span></td><td>';
+    echo '<span class="accroche">'.$p->getAccroche().'</span>';
+	echo '</td><td>';
     // image
     if($p->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/programme/'.$p->getLogo()))
     	echo '<img src="/uploads/programme/'.$p->getLogo().'" alt="Diapo Image">';

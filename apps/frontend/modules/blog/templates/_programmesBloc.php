@@ -24,7 +24,7 @@
           <img src="/uploads/programme/<?php echo $p->getLogo(); ?>" alt="Diapo Image">
           <?php endif; ?>
           <?php	echo link_to($p->getTitle(), '@blog_programme?slug='.$p->getSlug(), array('class' => 'title')); ?>
-          <div class="body"><?php echo html_entity_decode($p->getAccroche()); ?></div>
+          <div class="body"><?php echo $p->getAccroche(); ?></div>
          	<?php echo link_to(__('read_more'), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')); ?>
           </div>
           

@@ -10,10 +10,10 @@
       if(isset($element)) {
         echo '<p class="first_article"></p>';
         echo '<div class="accroche">';
-        echo html_entity_decode($element->getAccroche());
+        echo $element->getAccroche();
         echo '</div>';
         echo '<hr />';
-        echo '<div class="description">'.html_entity_decode($element->getDescription()).'</div>';
+        echo '<div class="description">'.$element->getDescription().'</div>';
         if($type == 'article')
           echo '<img class="element_logo" alt="'.$element->getTitle().'" src="/uploads/article/'.$element->getLogo().'" />';
       }

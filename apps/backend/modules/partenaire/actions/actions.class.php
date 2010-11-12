@@ -17,9 +17,13 @@ class partenaireActions extends autoPartenaireActions {
         $this->form = new generationCouponPartenaireForm();
 
         if ($request->isMethod('post')) {
-            $this->form->bind($request->getParameter('couponPartenaire'));
+			$this->form->bind($request->getParameter('couponPartenaire'));
             if ($this->form->isValid()) {
-                $this->tabCoupons = $this->partenaire->generateCoupons($this->form->getValue("nombre"), Doctrine_Core::getTable('couponGen')->findOneBy('id', $this->form->getValue("type_coupon")));
+                $this->tabCoupons = $this->partenaire->generateCoupons(
+					$this->form->getValue("nombre"),
+					Doctrine_Core::getTable('couponGen')->findOneBy('id', $this->form->getValue("type_coupon")),
+					$this->form->getValue("prefix")
+				);
             }
         }
     }

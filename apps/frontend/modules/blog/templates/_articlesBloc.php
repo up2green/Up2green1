@@ -30,16 +30,6 @@
         if (!isset($noBloc) || !$noBloc):
       ?>
     </div>
-    <!--
-    <p class="first_article">
-      <p class="ctn_texte">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-      <a href="#" class="left">lire la suite</a>
-    </p>
-    <p class="article">
-      <p class="ctn_texte">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
-      <a href="#" class="left">lire la suite</a>
-    </p>
-    -->
     <p class="up_n_down">
       <span class="btn_up">
         <a href="<?php echo url_for('@blog?articlesOffset='.$offsets['prev'].'&changement=articles'); ?>" class="button white loadFromUri prevResults">
@@ -53,17 +43,7 @@
       </span>
     </p>
   </div>
-  <!-- borders blog foret-->
-
-  <span class="border bt"></span>
-  <span class="border bb"></span>
-  <span class="border bl"></span>
-  <span class="border br"></span>
-  <!-- corners -->
-  <span class="corner ctl"></span>
-  <span class="corner ctr"></span>
-  <span class="corner cbl"></span>
-  <span class="corner cbr"></span>
+  <?php require(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>
 <?php
   endif;

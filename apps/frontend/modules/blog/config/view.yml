@@ -16,3 +16,4 @@ viewListSuccess:
 default:
   metas:
     title: Up2green : Le site Associatif
+    javascripts:    [blog.js]

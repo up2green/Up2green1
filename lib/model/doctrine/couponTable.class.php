@@ -17,7 +17,7 @@ class couponTable extends Doctrine_Table {
 			return strtoupper($string);
 		}
 		else {
-			return self::getNumUnused();
+			return self::getNumUnused($prefix);
 		}
 	}
 }

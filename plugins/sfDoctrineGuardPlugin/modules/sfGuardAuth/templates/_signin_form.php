@@ -36,7 +36,7 @@
 									<a class="button small gray" href="<?php echo url_for('@sf_guard_forgot_password') ?>"><?php echo __('Mot de passe oublié ?', null, 'sf_guard') ?></a>
 								<?php endif; ?>
 
-								<?php if (false and isset($routes['sf_guard_register'])): ?>
+								<?php if (isset($routes['sf_guard_register'])): ?>
 									&nbsp; <a style="padding:0.4em 1em;" class="button small gray" href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __('S \'inscrire', null, 'sf_guard') ?></a>
 								<?php endif; ?>
 							</td>

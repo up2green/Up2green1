@@ -107,12 +107,14 @@ plantation_landing_plantation:
   url: /plantation/landing/plantation/:partenaireOffset
   param: {module: landing, action: plantation, partenaireOffset: 0}
 
+####################
+##### GENERAL
+####################
+
 homepage:
   url: /
   param: { module: recherche, action: index }
 
-# generic rules
-# please, remove them by adding more specific rules
 default_index:
   url:   /:module
   param: { action: index }

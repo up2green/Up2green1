@@ -12,10 +12,10 @@
  */
 class partenaire extends Basepartenaire {
 
-	public function generateCoupons($nb,couponGen $couponGen ) {
+	public function generateCoupons($nb,couponGen $couponGen, $prefix = '' ) {
 		$tab = array();
 		for ($i = 0; $i < $nb; $i ++){
-			$num = couponTable::getNumUnused();
+			$num = couponTable::getNumUnused($prefix);
 			$coupon = new coupon();
 			$coupon->setCouponGen($couponGen);
 			$coupon->setCode($num);

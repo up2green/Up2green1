@@ -19,6 +19,7 @@ class plantationActions extends sfActions {
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		$this->errors = array();
 		$this->view = $request->getParameter('view');
+		$this->fromUrl = '';
 		
 		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
 		$this->partenaire = null;

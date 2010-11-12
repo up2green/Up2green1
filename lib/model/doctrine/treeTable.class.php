@@ -9,6 +9,14 @@ class treeTable extends Doctrine_Table
         return Doctrine_Core::getTable('tree');
     }
     
+    public function countFromUser($idUser) {
+    	return $this->createQuery('t')
+				->select('COUNT(t.id) AS nbTree')
+				->innerJoin('t.User tu')
+				->where('tu.user_id = ?', $idUser)
+				->count();
+		}
+		
     public function countFromUserByProgramme($idUser, $idProgrammes) {
     	return $this->createQuery('t')
 				->select('t.id, t.programme_id, COUNT(t.id) AS nbTree')

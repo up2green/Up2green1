@@ -5,18 +5,13 @@
         <?php include_metas() ?>
         <?php include_title() ?>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
-				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
     </head>
     <body>
         <div class="general">
             <?php include_component('user', 'menu'); ?>
-
-            <div class="header">
-                <div class="logo"></div>
-                <div class="slogan hidden">Etre acteur de la reforestation au fil de ses recherches</div>
-            </div>
             
             <?php echo $sf_content ?>
             

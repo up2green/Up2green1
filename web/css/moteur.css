@@ -1,75 +1,46 @@
-.header .slogan {display:block;}
-
-/* menu recherche */
-.menu_left li{float:left;}
-.menu_left a{
-text-decoration:none;
-color:black;
-width:150px;
-line-height:28px;
-height:40px;
-border:none;
-margin:0px;
-display:block;
-text-align:center;
-}
-.menu_left a:hover{
-color:green;
-background-image:url();
-text-decoration:none;
-text-align:center;
-}
-.menu_left a:active{
-color:green;
-text-decoration:none;
-font-size:18px;
-}
-
 /*FIXE*/
 .header{
-background: url(/images/moteur/header_bg_650x115.png);
-background-repeat:no-repeat;
-background-position: top;
-margin:auto;
-width:1024px;
-height:195px;
-text-align:center;
+	background: url(/images/moteur/header_bg_650x115.png);
+	background-repeat:no-repeat;
+	background-position: top;
+	margin:auto;
+	width:1024px;
+	height:195px;
+	text-align:center;
 }
 .logo{
-background: url(/images/moteur/logo_350x115.png);
-margin:auto;
-width:350px;
-height:115px;
+	background: url(/images/moteur/logo_350x115.png);
+	margin:auto;
+	width:350px;
+	height:115px;
 }
 .slogan{
-font-size:18px;
-color:#2F8D00;
-text-align:center;
+	font-size:18px;
+	color:#2F8D00;
+	text-align:center;
 }
-.search{
-background-color:#CCCCCC;
-width:600px;
+
+#searchForm {
+	display:block;
+	height:100px;
+	margin:0 auto;
+	width:520px;
 }
-.champs{
-float:left;
-text-align:left;
-background-color:#FFFFFF;
+
+#recherche_text{
+	text-align:left;
+	background-color:#FFFFFF;
 }
-.btn_search{
-/*background: url(/images/btn_recherche.png);*/
-float:right;
-font-size:12px;
-text-align:center;
-width:100px;
-height:27px;
+
+#recherche_submit{
+	top:-2px;
+	margin-left:10px;
+	position:relative;
 }
+
 .more_search{
-clear:both;
-padding-top:5px;
-}
-.filtres{
-float:left;
-width:450px;
+	clear:both;
+	padding-top:5px;
 }
 
 .filtres a{
@@ -134,96 +105,80 @@ width:65px;
 height:26px;
 }
 .avancees a{
-float:right;
-color:#2F8D00;
-text-decoration: underline;
-font-size:14px;
+	float:right;
+	color:#2F8D00;
+	text-decoration: underline;
+	font-size:14px;
 }
 .avancees a:hover{
 color:#2F8D00;
 text-decoration: none;
 font-size:14px;
 }
-/*CORPS ACCUEIL*/
-.menu_centre{
-min-height:370px;
-width:600px;
-clear:both;
-padding-top:20px;
-}
-/*encart gauche*/
-.acteur{
-width:352px;
-float:left;
-}
-div.acteur div.module p{left:70px;width:100%;}
-div.acteur div.module a{margin-top:20px;width:255px;}
-div.acteur div.module p.title{left:70px;width:100%;}
-/*encarts droit*/
-.statistiques{
-width:229px;
-height:187px;
-float:right;
-}
-div.statistiques div.module p.title{text-align:right;left:-70px;width:100%;}
+/* CORPS ACCUEIL */
 
-/*partenaires pas mis a jour avec les nouveaux modules*/
+#bodyContentHomme {
+	min-height:370px;
+	width:700px;
+	margin:0 auto;
+}
 
-.head_partenaires{
-background: url(/images/head_partenaires_229x50.png);
-background-repeat:no-repeat;
-width:229px;
-height:50px;
+/* encart accroche */
+
+div.module.acteur{
+	width:400px;
+	float:left;
 }
-.titre_partenaires{
-text-align:right;
-font-size:15px;
-font-weight:bold;
-line-height:57px;
-padding-left:15px;
-padding-right:70px;
-color:#6600cc;
+
+div.module.acteur p{left:70px;width:100%;}
+div.module.acteur a{margin-top:20px;width:255px;}
+div.module.acteur p.title{left:70px;width:100%;}
+
+/* encarts statistiques */
+
+div.module.statistiques{
+	width:250px;
+	float:right;
 }
-.corps_partenaires{
-background: url(/images/middle_partenaires_229x1.png);
-width:229px;
+
+div.module.statistiques p.title,
+div.module.partenaires p.title {
+	text-align:right;
+	left:-70px;
+	width:100%;
 }
-.contenus_partenaires{
-margin:auto;
-width:203px;
-padding-top:10px;
-padding-left:10px;
-font-size:12px;
+
+/* encart partenaires */
+
+.module.partenaires{
+	width:250px;
+	float:right;
+	margin-top:20px;
 }
 
 .lien_partenaires{
-text-align:right;
-width:229px;
-font-size:13px;
-line-height:20px;
+	text-align:right;
+	font-size:13px;
+	line-height:20px;
 }
+
 .lien_partenaires a{
-text-decoration: underline;
-color:#7113d0;
-padding:10px;
+	text-decoration: underline;
+	color:#7113d0;
+	padding:10px;
 }
+
 .lien_partenaires a:hover{
-color:#7113d0;
-text-decoration:none;
-
+	color:#7113d0;
+	text-decoration:none;
 }
+
 .lien_partenaires a:active{
-color:#7113d0;
-text-decoration:underline;
-font-size:13px;
+	color:#7113d0;
+	text-decoration:underline;
+	font-size:13px;
+}
 
-}
-.pied_partenaires{
-margin:auto;
-background: url(/images/footer_partenaires_229x20.png);
-width:229px;
-height:20px;
-}
 /*MENU GAUCHE affiner recherches*/
 .menu_left{
 background-color:#FFFFFF;
@@ -237,4 +192,116 @@ font-size:12px;
 margin:0px;
 padding:5px;
 list-style-type:none;
+}
+
+div.more-result {
+	width: 100%; 
+	margin: 20px auto; 
+	text-align: center;
+}
+
+#searchMore {
+	width:70%;
+}
+
+/* recherche Web */
+
+div.web-result div.result {
+	border-bottom:1px solid #CCCCCC;
+	margin:10px;
+	padding: 5px 0;
+	width:490px;
+	height: 70px;
+	float:left;
+}
+
+div.web-result p.content {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.web-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.web-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
+
+/* recherche Image */
+
+div.news-result div.result {
+	border-bottom:1px solid #CCCCCC;
+	margin:10px;
+	padding: 5px 0;
+	width:490px;
+	height: 100px;
+	float:left;
+}
+
+div.news-result p.content {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.news-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.news-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
+
+div.news-result div.result h4 {
+	color:#015F00;
+	font-size:0.85em;
+	padding: 5px 10px 0 0;
+	font-style:italic;
+	font-weight:bold;
+	text-align:right;
+}
+
+div.news-result span.filename {
+	color:#aaa;
+	font-size:0.9em;
+	font-weight:normal;
+	margin-left:5px;
+}
+
+/* recherche Image */
+
+div.img-result div.result {
+	float:left;
+	height:210px;
+	margin:10px;
+	width:180px;
+}
+
+div.img-result div.result img {
+	border:1px solid #CCCCCC;
+	padding:1px;
+}
+
+div.img-result a {
+	color:#2D64A7;
+	font-size:0.9em;
+}
+
+div.img-result a:hover {
+	color:#18314F;
+}
+
+div.img-result span.filename {
+	color:#015F00;
+	font-size:0.8em;
+}
+
+div.img-result p.content {
+	width:150px;
 }

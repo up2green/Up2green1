@@ -46,66 +46,76 @@ class SearchEngine {
 
 
     private function executeImg($min=0) {
-        $url = "http://boss.yahooapis.com/ysearch/images/v1/" .urlencode($this->search_text);
+        $url = sfConfig::get('app_url_engine_image') .urlencode($this->search_text);
         $url .= "?appid=" . sfConfig::get('app_yahoo_id');
         $url .= "&format=xml";
         $url .= "&start=".$min;
         $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
         $url .= "&lang=fr";
         $url .= "&region=fr";
-//        die($url);
+        
         $dom = new DomDocument();
         $dom->load($url);
         foreach ($dom->getElementsByTagName("result") as $result){
+			$displayUrl = trim($result->getElementsByTagName('refererurl')->item(0)->nodeValue);
+			$displayUrl = substr($displayUrl, 0, strpos($displayUrl, '/', 7));
+            
             $this->search_results[] = array(
                 'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
                 'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
                 'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
-                'displayUrl' => $result->getElementsByTagName('refererurl')->item(0)->nodeValue,
+                'displayUrl' => $displayUrl,
                 'thumbnail' => $result->getElementsByTagName('thumbnail_url')->item(0)->nodeValue
                 );
         }
     }
 
     private function executeWeb($min = 0) {
-        $url = "http://boss.yahooapis.com/ysearch/web/v1/" .urlencode($this->search_text);
-        $url .= "?appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--";
+        $url = sfConfig::get('app_url_engine_web') .urlencode($this->search_text);
+        $url .= "?appid=" . sfConfig::get('app_yahoo_id');
         $url .= "&format=xml";
         $url .= "&start=".$min;
         $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
         $url .= "&lang=fr";
         $url .= "&region=fr";
-//        die($url);
+        
         $dom = new DomDocument();
         $dom->load($url);
         foreach ($dom->getElementsByTagName("result") as $result){
             $this->search_results[] = array(
-                'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
-                'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
-                'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
-                'displayUrl' => $result->getElementsByTagName('dispurl')->item(0)->nodeValue,
+                'title' => htmlspecialchars($result->getElementsByTagName('title')->item(0)->nodeValue),
+                'content' => htmlspecialchars($result->getElementsByTagName('abstract')->item(0)->nodeValue),
+                'clickUrl' => htmlspecialchars($result->getElementsByTagName('clickurl')->item(0)->nodeValue),
+                'displayUrl' => htmlspecialchars($result->getElementsByTagName('dispurl')->item(0)->nodeValue)
                 );
         }
     }
 
      private function executeNews($min = 0) {
-        $url = "http://boss.yahooapis.com/ysearch/news/v1/" .urlencode($this->search_text);
-        $url .= "?appid=%20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--";
+        $url = sfConfig::get('app_url_engine_news') . urlencode($this->search_text);
+        $url .= "?appid=" . sfConfig::get('app_yahoo_id');
         $url .= "&format=xml";
+        $url .= "&age=7d";
+        $url .= "&orderby=date";
         $url .= "&start=".$min;
         $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
         $url .= "&lang=fr";
         $url .= "&region=fr";
-//        die($url);
+        
         $dom = new DomDocument();
         $dom->load($url);
         foreach ($dom->getElementsByTagName("result") as $result){
+			$date = $result->getElementsByTagName('date')->item(0)->nodeValue;
+			$date = date('d/m/Y', strtotime($date));
+			
             $this->search_results[] = array(
                 'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
                 'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
                 'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
                 'source' => $result->getElementsByTagName('source')->item(0)->nodeValue,
-                'source_url' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
+                'sourceUrl' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
+                'date' => $date,
+                'time' => $result->getElementsByTagName('time')->item(0)->nodeValue,
                 );
         }
     }

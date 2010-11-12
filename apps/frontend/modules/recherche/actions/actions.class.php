@@ -26,6 +26,7 @@ class rechercheActions extends sfActions {
             $this->textSearch = "";
             $this->results = array();
             $this->moteur = SearchEngine::WEB;
+            $this->totalTrees = Doctrine_Core::getTable('tree')->count();
         }
     }
 }

@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!-- module -->
 <form name="plant" action="" method="post">
 	<div class="module scrollableWrapper">
@@ -56,8 +60,11 @@
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 	</div>
 	
+	<?php if(!is_null($coupon)) : ?>
 	<input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
 	<input type="hidden" name="nbTreeMax" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
 	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
+	<?php endif; ?>
+	
 	<input type="hidden" name="fromUrl" value="<?php echo $fromUrl; ?>" />
 </form>

@@ -19,6 +19,14 @@ width:1024px;
 .clear{clear:both;}
 .hidden{display:none;}
 
+p.warning {
+	border:1px solid #FF5A00;
+	color:#FF7124;
+	margin:10px;
+	padding:5px;
+	text-align:center;
+}
+
 /*MENU HAUT*/
 .menu_haut{
 width:1024px;

@@ -1,11 +1,14 @@
 <div id="body">
+
 	<form id="searchForm" name="recherche" action="" method="post">
+		
 		<div class="search">
 			<input type="hidden" id="hidden_text_search" name="hidden_text_search" value="<?php echo $textSearch ?>" />
 			<input type="hidden" id="hidden_moteur_search" name="hidden_moteur_search" value="<?php echo $moteur ?>" />
 			<input type="text" id="recherche_text" name="recherche_text" size="65" value="<?php echo $textSearch ?>" />
 			<input type="submit" id="recherche_submit" name="recherche_submit" value="Rechercher" class="button white small" />
 		</div>
+
 		<div class="more_search">
 			<div class="filtres">
 				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::WEB ?>);">
@@ -103,7 +106,19 @@
 	</div>
 	<?php else: ?>
 	<div id="bodyContent">
+
 		<?php
+		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
+			echo '
+				<div id="ads_search">
+					<p class="warning" style="width:75%;margin:0 auto;">
+						Les recherches sponsorisés vous permettant de collecter des crédits arbres au clic sont pour le moment désactivés.<br />
+						Nous vous remercions de votre compréhention.
+					</p>
+				</div>
+			';
+		}
+		
 		if ($moteur == SearchEngine::WEB) {
 			echo '<div id="searchResults" class="web-result">';
 			foreach ($results as $result) { echo include_partial("web", array('result' => $result)); }
@@ -118,6 +133,12 @@
 		}
 		elseif ($moteur == SearchEngine::NEWS) {
 			echo '<div id="searchResults" class="news-result">';
+			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
+			echo '</div>';
+			echo '<div class="clear"></div>';
+		}
+		elseif ($moteur == SearchEngine::SHOP) {
+			echo '<div id="searchResults" class="shop-result">';
 			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
 			echo '</div>';
 			echo '<div class="clear"></div>';

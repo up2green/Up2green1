@@ -1,9 +1,14 @@
+prod:
+  yahoo_id: qCd9GP_V34GziYYOdugq_jWiY102W85s.9Hu9pjAkOTa8w1Q7XvgPa2i2jxPl689t9egrleLb1g-
+
+dev:
+  yahoo_id: .Zxf34nV34EVzJToKAQqU49YyS3jqm7E3po9WOgtA0tiFvw6tsZ1l_Wb.EK4U9YhhVlVyf30cWI-
+
 all:
   conversion_tree_co2: 0.1
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10
-  yahoo_id: %20Kj_TvU_V34EbCKKfZ4yPkczw6EL_AFnECTq9EVUyhMyTGgpSf97RhYE6KHWsPQ--
   google_maps_api:
     keys:
       88.160.179.194: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxTzS27WZts-8OABpbNREg0l7jdhvxS_F5G6BDQGS2k5eFsNty94e0_K2Q

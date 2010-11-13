@@ -13,6 +13,7 @@ class SearchEngine {
     const IMG = 1;
     const WEB = 2;
     const NEWS = 3;
+    const SHOP = 4;
 
     private $search_moteur ;
     private $search_text;

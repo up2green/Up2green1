@@ -44,6 +44,9 @@ partenaireProgramme:
   partenaireProgramme_7_9:
     partenaire: partenaire_7
     programme: programme_9
+  partenaireProgramme_8_9:
+    partenaire: partenaire_8
+    programme: programme_9
   partenaireProgramme_2_10:
     partenaire: partenaire_2
     programme: programme_10
@@ -67,6 +70,9 @@ partenaireProgramme:
     programme: programme_11
   partenaireProgramme_7_11:
     partenaire: partenaire_7
+    programme: programme_11
+  partenaireProgramme_8_11:
+    partenaire: partenaire_8
     programme: programme_11
   partenaireProgramme_2_12:
     partenaire: partenaire_2
@@ -116,6 +122,9 @@ partenaireProgramme:
   partenaireProgramme_7_15:
     partenaire: partenaire_7
     programme: programme_15
+  partenaireProgramme_8_15:
+    partenaire: partenaire_8
+    programme: programme_15
   partenaireProgramme_3_16:
     partenaire: partenaire_3
     programme: programme_16
@@ -130,6 +139,9 @@ partenaireProgramme:
     programme: programme_18
   partenaireProgramme_2_18:
     partenaire: partenaire_2
+    programme: programme_18
+  partenaireProgramme_8_18:
+    partenaire: partenaire_8
     programme: programme_18
 partenaire:
   partenaire_1:
@@ -186,6 +198,15 @@ partenaire:
     url: 'http://www.aqoba.com'
     created_at: '2010-11-09 18:42:04'
     updated_at: '2010-11-11 17:50:10'
+  partenaire_8:
+    User: sfGuardUser_10
+    logo: e7fde2bbbec2fafa96b3e8b2e976cd5c7c66e917.jpg
+    title: URBIPARC
+    accroche: "<p>\r\n	<span style=\"font-size: 14px;\">A l&#39;occasion de la pose de la premi&egrave;re pierre des <strong>Reflets du Vercors</strong>, URBIPARC vous offre <strong>un arbre &agrave; planter sur la Plan&egrave;te !</strong></span><br />\r\n	&nbsp;</p>\r\n"
+    description: "<p>\r\n	...</p>\r\n"
+    url: 'http://www.urbiparc.com/'
+    created_at: '2010-11-12 18:13:07'
+    updated_at: '2010-11-12 18:13:07'
 category:
   category_1:
     unique_name: blog
@@ -371,12 +392,12 @@ sfGuardGroup:
     created_at: '2010-09-06 11:29:10'
     updated_at: '2010-09-06 11:29:10'
 sfGuardRememberKey:
-  sfGuardRememberKey_1:
-    User: sfGuardUser_1
-    remember_key: k19s67wckdts84k8wkg8444kgws8ccc
-    ip_address: 82.241.89.76
-    created_at: '2010-09-21 19:31:44'
-    updated_at: '2010-09-21 19:31:44'
+  sfGuardRememberKey_2:
+    User: sfGuardUser_2
+    remember_key: fsdrk8kg1xre8swc484wskogscgk88k
+    ip_address: 93.20.168.124
+    created_at: '2010-11-12 14:07:26'
+    updated_at: '2010-11-12 14:07:26'
 sfGuardUserGroup:
   sfGuardUserGroup_1_1:
     User: sfGuardUser_1
@@ -400,9 +421,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-11-11 17:33:37'
+    last_login: '2010-11-12 19:02:00'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-11-11 17:33:37'
+    updated_at: '2010-11-12 19:02:00'
   sfGuardUser_2:
     first_name: DYRUP
     last_name: ''
@@ -413,9 +434,9 @@ sfGuardUser:
     password: f1b1735bd50c4f0cfb6e45cf5959c4300331bde7
     is_active: true
     is_super_admin: false
-    last_login: '2010-11-11 12:03:12'
+    last_login: '2010-11-12 14:07:26'
     created_at: '2010-09-06 11:33:53'
-    updated_at: '2010-11-11 12:03:12'
+    updated_at: '2010-11-12 14:07:26'
   sfGuardUser_3:
     first_name: ''
     last_name: ''
@@ -507,6 +528,19 @@ sfGuardUser:
     last_login: null
     created_at: '2010-11-09 18:38:04'
     updated_at: '2010-11-09 18:38:04'
+  sfGuardUser_10:
+    first_name: URBIPARC
+    last_name: ''
+    email_address: diana.tanhchaleun@urbiparc.com
+    username: urbiparc
+    algorithm: sha1
+    salt: 54976a6daa2216659fd9a7cb1e7e412d
+    password: 10a5568add840a284e0327b897eac240b7a7233a
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2010-11-12 18:09:53'
+    updated_at: '2010-11-12 18:09:53'
 sfGuardGroupPermission:
   sfGuardGroupPermission_1_1:
     Group: sfGuardGroup_1
@@ -22224,6 +22258,1230 @@ coupon:
     used_by: null
     created_at: '2010-11-09 18:51:17'
     updated_at: '2010-11-09 18:51:17'
+  coupon_2179:
+    couponGen: couponGen_1
+    code: WELDO89E8
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2180:
+    couponGen: couponGen_1
+    code: WELDO911F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2181:
+    couponGen: couponGen_1
+    code: WELDO438B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2182:
+    couponGen: couponGen_1
+    code: WELDO6D98
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2183:
+    couponGen: couponGen_1
+    code: WELDOD0EB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2184:
+    couponGen: couponGen_1
+    code: WELDOB405
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2185:
+    couponGen: couponGen_1
+    code: WELDO783D
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2186:
+    couponGen: couponGen_1
+    code: WELDOFF7C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2187:
+    couponGen: couponGen_1
+    code: WELDO65DB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2188:
+    couponGen: couponGen_1
+    code: WELDO787A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2189:
+    couponGen: couponGen_1
+    code: WELDO1F79
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2190:
+    couponGen: couponGen_1
+    code: WELDOAD6C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2191:
+    couponGen: couponGen_1
+    code: WELDO9022
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2192:
+    couponGen: couponGen_1
+    code: WELDOB025
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2193:
+    couponGen: couponGen_1
+    code: WELDOCC05
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2194:
+    couponGen: couponGen_1
+    code: WELDOA3FF
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2195:
+    couponGen: couponGen_1
+    code: WELDO9D6E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2196:
+    couponGen: couponGen_1
+    code: WELDOA072
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2197:
+    couponGen: couponGen_1
+    code: WELDO3085
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2198:
+    couponGen: couponGen_1
+    code: WELDO9855
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2199:
+    couponGen: couponGen_1
+    code: WELDO6650
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2200:
+    couponGen: couponGen_1
+    code: WELDO3549
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2201:
+    couponGen: couponGen_1
+    code: WELDO91E3
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:40'
+    updated_at: '2010-11-12 17:59:40'
+  coupon_2202:
+    couponGen: couponGen_1
+    code: WELDO289F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2203:
+    couponGen: couponGen_1
+    code: WELDO2D75
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2204:
+    couponGen: couponGen_1
+    code: WELDO390B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2205:
+    couponGen: couponGen_1
+    code: WELDO1A5C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2206:
+    couponGen: couponGen_1
+    code: WELDO5826
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2207:
+    couponGen: couponGen_1
+    code: WELDO6A2B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2208:
+    couponGen: couponGen_1
+    code: WELDOAFB7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2209:
+    couponGen: couponGen_1
+    code: WELDO814A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2210:
+    couponGen: couponGen_1
+    code: WELDOCD65
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2211:
+    couponGen: couponGen_1
+    code: WELDOBB51
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2212:
+    couponGen: couponGen_1
+    code: WELDO9008
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2213:
+    couponGen: couponGen_1
+    code: WELDO9327
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2214:
+    couponGen: couponGen_1
+    code: WELDO85D6
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2215:
+    couponGen: couponGen_1
+    code: WELDOF0F1
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2216:
+    couponGen: couponGen_1
+    code: WELDO8E1F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2217:
+    couponGen: couponGen_1
+    code: WELDO3829
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2218:
+    couponGen: couponGen_1
+    code: WELDO5DE3
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2219:
+    couponGen: couponGen_1
+    code: WELDO6100
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2220:
+    couponGen: couponGen_1
+    code: WELDO6DF1
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2221:
+    couponGen: couponGen_1
+    code: WELDO609F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2222:
+    couponGen: couponGen_1
+    code: WELDO8838
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2223:
+    couponGen: couponGen_1
+    code: WELDO2903
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2224:
+    couponGen: couponGen_1
+    code: WELDO016C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2225:
+    couponGen: couponGen_1
+    code: WELDO985C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2226:
+    couponGen: couponGen_1
+    code: WELDO603A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2227:
+    couponGen: couponGen_1
+    code: WELDOAFFE
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2228:
+    couponGen: couponGen_1
+    code: WELDO6FA4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2229:
+    couponGen: couponGen_1
+    code: WELDO3A2F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2230:
+    couponGen: couponGen_1
+    code: WELDOB1C8
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2231:
+    couponGen: couponGen_1
+    code: WELDOD413
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2232:
+    couponGen: couponGen_1
+    code: WELDO64F7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2233:
+    couponGen: couponGen_1
+    code: WELDO7BBC
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2234:
+    couponGen: couponGen_1
+    code: WELDODB70
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2235:
+    couponGen: couponGen_1
+    code: WELDO38C4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2236:
+    couponGen: couponGen_1
+    code: WELDOA5ED
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2237:
+    couponGen: couponGen_1
+    code: WELDO6442
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2238:
+    couponGen: couponGen_1
+    code: WELDO336E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2239:
+    couponGen: couponGen_1
+    code: WELDO09EB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2240:
+    couponGen: couponGen_1
+    code: WELDO2219
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2241:
+    couponGen: couponGen_1
+    code: WELDO930D
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2242:
+    couponGen: couponGen_1
+    code: WELDOC962
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2243:
+    couponGen: couponGen_1
+    code: WELDO977F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2244:
+    couponGen: couponGen_1
+    code: WELDOFCC0
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2245:
+    couponGen: couponGen_1
+    code: WELDOE9CD
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2246:
+    couponGen: couponGen_1
+    code: WELDO4D0E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2247:
+    couponGen: couponGen_1
+    code: WELDO5B66
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2248:
+    couponGen: couponGen_1
+    code: WELDO57AA
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2249:
+    couponGen: couponGen_1
+    code: WELDO65C0
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2250:
+    couponGen: couponGen_1
+    code: WELDOD1FF
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2251:
+    couponGen: couponGen_1
+    code: WELDOF442
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2252:
+    couponGen: couponGen_1
+    code: WELDO9794
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2253:
+    couponGen: couponGen_1
+    code: WELDO7660
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2254:
+    couponGen: couponGen_1
+    code: WELDOE6FD
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2255:
+    couponGen: couponGen_1
+    code: WELDO995C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2256:
+    couponGen: couponGen_1
+    code: WELDO87D4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2257:
+    couponGen: couponGen_1
+    code: WELDO3C35
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2258:
+    couponGen: couponGen_1
+    code: WELDO1749
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2259:
+    couponGen: couponGen_1
+    code: WELDOD4F8
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2260:
+    couponGen: couponGen_1
+    code: WELDOE50B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2261:
+    couponGen: couponGen_1
+    code: WELDO11C6
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2262:
+    couponGen: couponGen_1
+    code: WELDO7D6C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2263:
+    couponGen: couponGen_1
+    code: WELDOF84A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2264:
+    couponGen: couponGen_1
+    code: WELDOC18C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2265:
+    couponGen: couponGen_1
+    code: WELDOFA29
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2266:
+    couponGen: couponGen_1
+    code: WELDOC943
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2267:
+    couponGen: couponGen_1
+    code: WELDO35E6
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2268:
+    couponGen: couponGen_1
+    code: WELDO6931
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2269:
+    couponGen: couponGen_1
+    code: WELDOFAF0
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2270:
+    couponGen: couponGen_1
+    code: WELDO96E9
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2271:
+    couponGen: couponGen_1
+    code: WELDO8516
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2272:
+    couponGen: couponGen_1
+    code: WELDO0A80
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2273:
+    couponGen: couponGen_1
+    code: WELDO9CE7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2274:
+    couponGen: couponGen_1
+    code: WELDO8FBA
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2275:
+    couponGen: couponGen_1
+    code: WELDOC87F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2276:
+    couponGen: couponGen_1
+    code: WELDOA72C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2277:
+    couponGen: couponGen_1
+    code: WELDO29F7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2278:
+    couponGen: couponGen_1
+    code: WELDO94F2
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2279:
+    couponGen: couponGen_1
+    code: WELDO3954
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2280:
+    couponGen: couponGen_1
+    code: WELDOEF23
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2281:
+    couponGen: couponGen_1
+    code: WELDO1279
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2282:
+    couponGen: couponGen_1
+    code: WELDO64B4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2283:
+    couponGen: couponGen_1
+    code: WELDOE110
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2284:
+    couponGen: couponGen_1
+    code: WELDOABA2
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:41'
+    updated_at: '2010-11-12 17:59:41'
+  coupon_2285:
+    couponGen: couponGen_1
+    code: WELDO3A14
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2286:
+    couponGen: couponGen_1
+    code: WELDO6B82
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2287:
+    couponGen: couponGen_1
+    code: WELDO6E8C
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2288:
+    couponGen: couponGen_1
+    code: WELDOED86
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2289:
+    couponGen: couponGen_1
+    code: WELDOC2AE
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2290:
+    couponGen: couponGen_1
+    code: WELDO4DFE
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2291:
+    couponGen: couponGen_1
+    code: WELDO3721
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2292:
+    couponGen: couponGen_1
+    code: WELDOB35F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2293:
+    couponGen: couponGen_1
+    code: WELDODA97
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2294:
+    couponGen: couponGen_1
+    code: WELDOE7E3
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2295:
+    couponGen: couponGen_1
+    code: WELDO5B83
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2296:
+    couponGen: couponGen_1
+    code: WELDO338B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2297:
+    couponGen: couponGen_1
+    code: WELDO3275
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2298:
+    couponGen: couponGen_1
+    code: WELDO0C89
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2299:
+    couponGen: couponGen_1
+    code: WELDO5998
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2300:
+    couponGen: couponGen_1
+    code: WELDOF9EB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2301:
+    couponGen: couponGen_1
+    code: WELDO5765
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2302:
+    couponGen: couponGen_1
+    code: WELDO6C07
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2303:
+    couponGen: couponGen_1
+    code: WELDO096B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2304:
+    couponGen: couponGen_1
+    code: WELDODA6E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2305:
+    couponGen: couponGen_1
+    code: WELDOC71F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2306:
+    couponGen: couponGen_1
+    code: WELDO659A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2307:
+    couponGen: couponGen_1
+    code: WELDODFEB
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2308:
+    couponGen: couponGen_1
+    code: WELDOC72E
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2309:
+    couponGen: couponGen_1
+    code: WELDOB227
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2310:
+    couponGen: couponGen_1
+    code: WELDO6D58
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2311:
+    couponGen: couponGen_1
+    code: WELDOA7A9
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2312:
+    couponGen: couponGen_1
+    code: WELDO873F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2313:
+    couponGen: couponGen_1
+    code: WELDOBE91
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2314:
+    couponGen: couponGen_1
+    code: WELDO7BBF
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2315:
+    couponGen: couponGen_1
+    code: WELDOC703
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2316:
+    couponGen: couponGen_1
+    code: WELDOEFBD
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2317:
+    couponGen: couponGen_1
+    code: WELDO1F83
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2318:
+    couponGen: couponGen_1
+    code: WELDO15FF
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2319:
+    couponGen: couponGen_1
+    code: WELDOC8B1
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2320:
+    couponGen: couponGen_1
+    code: WELDOF3B9
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2321:
+    couponGen: couponGen_1
+    code: WELDO2EF7
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2322:
+    couponGen: couponGen_1
+    code: WELDO963F
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2323:
+    couponGen: couponGen_1
+    code: WELDOA1D1
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2324:
+    couponGen: couponGen_1
+    code: WELDOCF88
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2325:
+    couponGen: couponGen_1
+    code: WELDOA0B6
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2326:
+    couponGen: couponGen_1
+    code: WELDOC292
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2327:
+    couponGen: couponGen_1
+    code: WELDO1105
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2328:
+    couponGen: couponGen_1
+    code: WELDO77A4
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 17:59:42'
+    updated_at: '2010-11-12 17:59:42'
+  coupon_2332:
+    couponGen: couponGen_3
+    code: TESTU007A
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 18:15:33'
+    updated_at: '2010-11-12 18:15:33'
+  coupon_2333:
+    couponGen: couponGen_3
+    code: TESTU22F5
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 18:15:33'
+    updated_at: '2010-11-12 18:15:33'
+  coupon_2334:
+    couponGen: couponGen_3
+    code: TESTUF07B
+    is_active: true
+    used_at: null
+    used_by: null
+    created_at: '2010-11-12 18:15:33'
+    updated_at: '2010-11-12 18:15:33'
 article:
   article_1:
     logo: null
@@ -23486,6 +24744,456 @@ couponPartenaire:
     partenaire: partenaire_1
   couponPartenaire_1879_1:
     coupon: coupon_1879
+    partenaire: partenaire_1
+  couponPartenaire_2179_1:
+    coupon: coupon_2179
+    partenaire: partenaire_1
+  couponPartenaire_2180_1:
+    coupon: coupon_2180
+    partenaire: partenaire_1
+  couponPartenaire_2181_1:
+    coupon: coupon_2181
+    partenaire: partenaire_1
+  couponPartenaire_2182_1:
+    coupon: coupon_2182
+    partenaire: partenaire_1
+  couponPartenaire_2183_1:
+    coupon: coupon_2183
+    partenaire: partenaire_1
+  couponPartenaire_2184_1:
+    coupon: coupon_2184
+    partenaire: partenaire_1
+  couponPartenaire_2185_1:
+    coupon: coupon_2185
+    partenaire: partenaire_1
+  couponPartenaire_2186_1:
+    coupon: coupon_2186
+    partenaire: partenaire_1
+  couponPartenaire_2187_1:
+    coupon: coupon_2187
+    partenaire: partenaire_1
+  couponPartenaire_2188_1:
+    coupon: coupon_2188
+    partenaire: partenaire_1
+  couponPartenaire_2189_1:
+    coupon: coupon_2189
+    partenaire: partenaire_1
+  couponPartenaire_2190_1:
+    coupon: coupon_2190
+    partenaire: partenaire_1
+  couponPartenaire_2191_1:
+    coupon: coupon_2191
+    partenaire: partenaire_1
+  couponPartenaire_2192_1:
+    coupon: coupon_2192
+    partenaire: partenaire_1
+  couponPartenaire_2193_1:
+    coupon: coupon_2193
+    partenaire: partenaire_1
+  couponPartenaire_2194_1:
+    coupon: coupon_2194
+    partenaire: partenaire_1
+  couponPartenaire_2195_1:
+    coupon: coupon_2195
+    partenaire: partenaire_1
+  couponPartenaire_2196_1:
+    coupon: coupon_2196
+    partenaire: partenaire_1
+  couponPartenaire_2197_1:
+    coupon: coupon_2197
+    partenaire: partenaire_1
+  couponPartenaire_2198_1:
+    coupon: coupon_2198
+    partenaire: partenaire_1
+  couponPartenaire_2199_1:
+    coupon: coupon_2199
+    partenaire: partenaire_1
+  couponPartenaire_2200_1:
+    coupon: coupon_2200
+    partenaire: partenaire_1
+  couponPartenaire_2201_1:
+    coupon: coupon_2201
+    partenaire: partenaire_1
+  couponPartenaire_2202_1:
+    coupon: coupon_2202
+    partenaire: partenaire_1
+  couponPartenaire_2203_1:
+    coupon: coupon_2203
+    partenaire: partenaire_1
+  couponPartenaire_2204_1:
+    coupon: coupon_2204
+    partenaire: partenaire_1
+  couponPartenaire_2205_1:
+    coupon: coupon_2205
+    partenaire: partenaire_1
+  couponPartenaire_2206_1:
+    coupon: coupon_2206
+    partenaire: partenaire_1
+  couponPartenaire_2207_1:
+    coupon: coupon_2207
+    partenaire: partenaire_1
+  couponPartenaire_2208_1:
+    coupon: coupon_2208
+    partenaire: partenaire_1
+  couponPartenaire_2209_1:
+    coupon: coupon_2209
+    partenaire: partenaire_1
+  couponPartenaire_2210_1:
+    coupon: coupon_2210
+    partenaire: partenaire_1
+  couponPartenaire_2211_1:
+    coupon: coupon_2211
+    partenaire: partenaire_1
+  couponPartenaire_2212_1:
+    coupon: coupon_2212
+    partenaire: partenaire_1
+  couponPartenaire_2213_1:
+    coupon: coupon_2213
+    partenaire: partenaire_1
+  couponPartenaire_2214_1:
+    coupon: coupon_2214
+    partenaire: partenaire_1
+  couponPartenaire_2215_1:
+    coupon: coupon_2215
+    partenaire: partenaire_1
+  couponPartenaire_2216_1:
+    coupon: coupon_2216
+    partenaire: partenaire_1
+  couponPartenaire_2217_1:
+    coupon: coupon_2217
+    partenaire: partenaire_1
+  couponPartenaire_2218_1:
+    coupon: coupon_2218
+    partenaire: partenaire_1
+  couponPartenaire_2219_1:
+    coupon: coupon_2219
+    partenaire: partenaire_1
+  couponPartenaire_2220_1:
+    coupon: coupon_2220
+    partenaire: partenaire_1
+  couponPartenaire_2221_1:
+    coupon: coupon_2221
+    partenaire: partenaire_1
+  couponPartenaire_2222_1:
+    coupon: coupon_2222
+    partenaire: partenaire_1
+  couponPartenaire_2223_1:
+    coupon: coupon_2223
+    partenaire: partenaire_1
+  couponPartenaire_2224_1:
+    coupon: coupon_2224
+    partenaire: partenaire_1
+  couponPartenaire_2225_1:
+    coupon: coupon_2225
+    partenaire: partenaire_1
+  couponPartenaire_2226_1:
+    coupon: coupon_2226
+    partenaire: partenaire_1
+  couponPartenaire_2227_1:
+    coupon: coupon_2227
+    partenaire: partenaire_1
+  couponPartenaire_2228_1:
+    coupon: coupon_2228
+    partenaire: partenaire_1
+  couponPartenaire_2229_1:
+    coupon: coupon_2229
+    partenaire: partenaire_1
+  couponPartenaire_2230_1:
+    coupon: coupon_2230
+    partenaire: partenaire_1
+  couponPartenaire_2231_1:
+    coupon: coupon_2231
+    partenaire: partenaire_1
+  couponPartenaire_2232_1:
+    coupon: coupon_2232
+    partenaire: partenaire_1
+  couponPartenaire_2233_1:
+    coupon: coupon_2233
+    partenaire: partenaire_1
+  couponPartenaire_2234_1:
+    coupon: coupon_2234
+    partenaire: partenaire_1
+  couponPartenaire_2235_1:
+    coupon: coupon_2235
+    partenaire: partenaire_1
+  couponPartenaire_2236_1:
+    coupon: coupon_2236
+    partenaire: partenaire_1
+  couponPartenaire_2237_1:
+    coupon: coupon_2237
+    partenaire: partenaire_1
+  couponPartenaire_2238_1:
+    coupon: coupon_2238
+    partenaire: partenaire_1
+  couponPartenaire_2239_1:
+    coupon: coupon_2239
+    partenaire: partenaire_1
+  couponPartenaire_2240_1:
+    coupon: coupon_2240
+    partenaire: partenaire_1
+  couponPartenaire_2241_1:
+    coupon: coupon_2241
+    partenaire: partenaire_1
+  couponPartenaire_2242_1:
+    coupon: coupon_2242
+    partenaire: partenaire_1
+  couponPartenaire_2243_1:
+    coupon: coupon_2243
+    partenaire: partenaire_1
+  couponPartenaire_2244_1:
+    coupon: coupon_2244
+    partenaire: partenaire_1
+  couponPartenaire_2245_1:
+    coupon: coupon_2245
+    partenaire: partenaire_1
+  couponPartenaire_2246_1:
+    coupon: coupon_2246
+    partenaire: partenaire_1
+  couponPartenaire_2247_1:
+    coupon: coupon_2247
+    partenaire: partenaire_1
+  couponPartenaire_2248_1:
+    coupon: coupon_2248
+    partenaire: partenaire_1
+  couponPartenaire_2249_1:
+    coupon: coupon_2249
+    partenaire: partenaire_1
+  couponPartenaire_2250_1:
+    coupon: coupon_2250
+    partenaire: partenaire_1
+  couponPartenaire_2251_1:
+    coupon: coupon_2251
+    partenaire: partenaire_1
+  couponPartenaire_2252_1:
+    coupon: coupon_2252
+    partenaire: partenaire_1
+  couponPartenaire_2253_1:
+    coupon: coupon_2253
+    partenaire: partenaire_1
+  couponPartenaire_2254_1:
+    coupon: coupon_2254
+    partenaire: partenaire_1
+  couponPartenaire_2255_1:
+    coupon: coupon_2255
+    partenaire: partenaire_1
+  couponPartenaire_2256_1:
+    coupon: coupon_2256
+    partenaire: partenaire_1
+  couponPartenaire_2257_1:
+    coupon: coupon_2257
+    partenaire: partenaire_1
+  couponPartenaire_2258_1:
+    coupon: coupon_2258
+    partenaire: partenaire_1
+  couponPartenaire_2259_1:
+    coupon: coupon_2259
+    partenaire: partenaire_1
+  couponPartenaire_2260_1:
+    coupon: coupon_2260
+    partenaire: partenaire_1
+  couponPartenaire_2261_1:
+    coupon: coupon_2261
+    partenaire: partenaire_1
+  couponPartenaire_2262_1:
+    coupon: coupon_2262
+    partenaire: partenaire_1
+  couponPartenaire_2263_1:
+    coupon: coupon_2263
+    partenaire: partenaire_1
+  couponPartenaire_2264_1:
+    coupon: coupon_2264
+    partenaire: partenaire_1
+  couponPartenaire_2265_1:
+    coupon: coupon_2265
+    partenaire: partenaire_1
+  couponPartenaire_2266_1:
+    coupon: coupon_2266
+    partenaire: partenaire_1
+  couponPartenaire_2267_1:
+    coupon: coupon_2267
+    partenaire: partenaire_1
+  couponPartenaire_2268_1:
+    coupon: coupon_2268
+    partenaire: partenaire_1
+  couponPartenaire_2269_1:
+    coupon: coupon_2269
+    partenaire: partenaire_1
+  couponPartenaire_2270_1:
+    coupon: coupon_2270
+    partenaire: partenaire_1
+  couponPartenaire_2271_1:
+    coupon: coupon_2271
+    partenaire: partenaire_1
+  couponPartenaire_2272_1:
+    coupon: coupon_2272
+    partenaire: partenaire_1
+  couponPartenaire_2273_1:
+    coupon: coupon_2273
+    partenaire: partenaire_1
+  couponPartenaire_2274_1:
+    coupon: coupon_2274
+    partenaire: partenaire_1
+  couponPartenaire_2275_1:
+    coupon: coupon_2275
+    partenaire: partenaire_1
+  couponPartenaire_2276_1:
+    coupon: coupon_2276
+    partenaire: partenaire_1
+  couponPartenaire_2277_1:
+    coupon: coupon_2277
+    partenaire: partenaire_1
+  couponPartenaire_2278_1:
+    coupon: coupon_2278
+    partenaire: partenaire_1
+  couponPartenaire_2279_1:
+    coupon: coupon_2279
+    partenaire: partenaire_1
+  couponPartenaire_2280_1:
+    coupon: coupon_2280
+    partenaire: partenaire_1
+  couponPartenaire_2281_1:
+    coupon: coupon_2281
+    partenaire: partenaire_1
+  couponPartenaire_2282_1:
+    coupon: coupon_2282
+    partenaire: partenaire_1
+  couponPartenaire_2283_1:
+    coupon: coupon_2283
+    partenaire: partenaire_1
+  couponPartenaire_2284_1:
+    coupon: coupon_2284
+    partenaire: partenaire_1
+  couponPartenaire_2285_1:
+    coupon: coupon_2285
+    partenaire: partenaire_1
+  couponPartenaire_2286_1:
+    coupon: coupon_2286
+    partenaire: partenaire_1
+  couponPartenaire_2287_1:
+    coupon: coupon_2287
+    partenaire: partenaire_1
+  couponPartenaire_2288_1:
+    coupon: coupon_2288
+    partenaire: partenaire_1
+  couponPartenaire_2289_1:
+    coupon: coupon_2289
+    partenaire: partenaire_1
+  couponPartenaire_2290_1:
+    coupon: coupon_2290
+    partenaire: partenaire_1
+  couponPartenaire_2291_1:
+    coupon: coupon_2291
+    partenaire: partenaire_1
+  couponPartenaire_2292_1:
+    coupon: coupon_2292
+    partenaire: partenaire_1
+  couponPartenaire_2293_1:
+    coupon: coupon_2293
+    partenaire: partenaire_1
+  couponPartenaire_2294_1:
+    coupon: coupon_2294
+    partenaire: partenaire_1
+  couponPartenaire_2295_1:
+    coupon: coupon_2295
+    partenaire: partenaire_1
+  couponPartenaire_2296_1:
+    coupon: coupon_2296
+    partenaire: partenaire_1
+  couponPartenaire_2297_1:
+    coupon: coupon_2297
+    partenaire: partenaire_1
+  couponPartenaire_2298_1:
+    coupon: coupon_2298
+    partenaire: partenaire_1
+  couponPartenaire_2299_1:
+    coupon: coupon_2299
+    partenaire: partenaire_1
+  couponPartenaire_2300_1:
+    coupon: coupon_2300
+    partenaire: partenaire_1
+  couponPartenaire_2301_1:
+    coupon: coupon_2301
+    partenaire: partenaire_1
+  couponPartenaire_2302_1:
+    coupon: coupon_2302
+    partenaire: partenaire_1
+  couponPartenaire_2303_1:
+    coupon: coupon_2303
+    partenaire: partenaire_1
+  couponPartenaire_2304_1:
+    coupon: coupon_2304
+    partenaire: partenaire_1
+  couponPartenaire_2305_1:
+    coupon: coupon_2305
+    partenaire: partenaire_1
+  couponPartenaire_2306_1:
+    coupon: coupon_2306
+    partenaire: partenaire_1
+  couponPartenaire_2307_1:
+    coupon: coupon_2307
+    partenaire: partenaire_1
+  couponPartenaire_2308_1:
+    coupon: coupon_2308
+    partenaire: partenaire_1
+  couponPartenaire_2309_1:
+    coupon: coupon_2309
+    partenaire: partenaire_1
+  couponPartenaire_2310_1:
+    coupon: coupon_2310
+    partenaire: partenaire_1
+  couponPartenaire_2311_1:
+    coupon: coupon_2311
+    partenaire: partenaire_1
+  couponPartenaire_2312_1:
+    coupon: coupon_2312
+    partenaire: partenaire_1
+  couponPartenaire_2313_1:
+    coupon: coupon_2313
+    partenaire: partenaire_1
+  couponPartenaire_2314_1:
+    coupon: coupon_2314
+    partenaire: partenaire_1
+  couponPartenaire_2315_1:
+    coupon: coupon_2315
+    partenaire: partenaire_1
+  couponPartenaire_2316_1:
+    coupon: coupon_2316
+    partenaire: partenaire_1
+  couponPartenaire_2317_1:
+    coupon: coupon_2317
+    partenaire: partenaire_1
+  couponPartenaire_2318_1:
+    coupon: coupon_2318
+    partenaire: partenaire_1
+  couponPartenaire_2319_1:
+    coupon: coupon_2319
+    partenaire: partenaire_1
+  couponPartenaire_2320_1:
+    coupon: coupon_2320
+    partenaire: partenaire_1
+  couponPartenaire_2321_1:
+    coupon: coupon_2321
+    partenaire: partenaire_1
+  couponPartenaire_2322_1:
+    coupon: coupon_2322
+    partenaire: partenaire_1
+  couponPartenaire_2323_1:
+    coupon: coupon_2323
+    partenaire: partenaire_1
+  couponPartenaire_2324_1:
+    coupon: coupon_2324
+    partenaire: partenaire_1
+  couponPartenaire_2325_1:
+    coupon: coupon_2325
+    partenaire: partenaire_1
+  couponPartenaire_2326_1:
+    coupon: coupon_2326
+    partenaire: partenaire_1
+  couponPartenaire_2327_1:
+    coupon: coupon_2327
+    partenaire: partenaire_1
+  couponPartenaire_2328_1:
+    coupon: coupon_2328
     partenaire: partenaire_1
   couponPartenaire_1_2:
     coupon: coupon_1
@@ -28734,6 +30442,15 @@ couponPartenaire:
   couponPartenaire_2028_7:
     coupon: coupon_2028
     partenaire: partenaire_7
+  couponPartenaire_2332_8:
+    coupon: coupon_2332
+    partenaire: partenaire_8
+  couponPartenaire_2333_8:
+    coupon: coupon_2333
+    partenaire: partenaire_8
+  couponPartenaire_2334_8:
+    coupon: coupon_2334
+    partenaire: partenaire_8
 programme:
   programme_2:
     geoadress: null
@@ -29676,15 +31393,15 @@ articleTranslation:
   articleTranslation_12_en:
     article: article_12
     title: Biodiversity
-    accroche: ''
-    description: ''
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: biodiversity
   articleTranslation_12_fr:
     article: article_12
-    title: 'La Biodiversit'
-    accroche: "<br />\r\n"
-    description: "<p>\r\n	Les forêts tropicales sont les plus grands réservoirs de biodiversité de notre planète.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	Ce sont des écosystèmes extrêmement riches et complexes dont l'équilibre est menacé. Au fil des années l'homme a souvent exploité la nature pour ses richesses sans se préoccuper de sa capacité à se régénérer pleinement</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	Les agroforêts sont des contre- exemples de ce constat. L'association complexe des espèces à valeur alimentaire, médicinale et cosmétique au sein de leur milieu forestier permettent à ceux qui les mettent en place de subvenir à leurs besoins tout en respectant les fonctions écologiques de la forêt et du paysage.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	Ces agroforêts sont le moyen parfait de développer des espèces locales et de lutter contre les systèmes de monoculture mangeurs d'espaces naturels et d'intrants néfastes pour l'environnement.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	Dans les programmes qu'elle co-développe sur le terrain, UP2GREEN REFORESTATION veut donc créer des modèles agroforestiers productifs où la biodiversité locale est préservée et enrichie.</p>\r\n"
+    title: 'La Biodiversité'
+    accroche: ''
+    description: "<p>\r\n	Les for&ecirc;ts tropicales sont les plus grands r&eacute;servoirs de biodiversit&eacute; de notre plan&egrave;te.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ce sont des &eacute;cosyst&egrave;mes extr&ecirc;mement riches et complexes dont l&#39;&eacute;quilibre est menac&eacute;. Au fil des ann&eacute;es l&#39;homme a souvent exploit&eacute; la nature pour ses richesses sans se pr&eacute;occuper de sa capacit&eacute; &agrave; se r&eacute;g&eacute;n&eacute;rer pleinement</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Les agrofor&ecirc;ts sont des contre- exemples de ce constat. L&#39;association complexe des esp&egrave;ces &agrave; valeur alimentaire, m&eacute;dicinale et cosm&eacute;tique au sein de leur milieu forestier permettent &agrave; ceux qui les mettent en place de subvenir &agrave; leurs besoins tout en respectant les fonctions &eacute;cologiques de la for&ecirc;t et du paysage.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ces agrofor&ecirc;ts sont le moyen parfait de d&eacute;velopper des esp&egrave;ces locales et de lutter contre les syst&egrave;mes de monoculture mangeurs d&#39;espaces naturels et d&#39;intrants n&eacute;fastes pour l&#39;environnement.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Dans les programmes qu&#39;elle co-d&eacute;veloppe sur le terrain, UP2GREEN REFORESTATION veut donc cr&eacute;er des mod&egrave;les agroforestiers productifs o&ugrave; la biodiversit&eacute; locale est pr&eacute;serv&eacute;e et enrichie.</p>\r\n"
     lang: fr
     slug: la-biodiversite
 organismeTranslation:

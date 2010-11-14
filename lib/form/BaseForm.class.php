@@ -10,4 +10,11 @@
  */
 class BaseForm extends sfFormSymfony
 {
+	public function setup()
+	{
+		sfValidatorBase::setDefaultMessage('invalid', 'Champ invalide.');
+		sfValidatorBase::setDefaultMessage('required', 'Champ obligatoire.');
+		sfValidatorBase::setDefaultMessage('min_length', '"%value%" est trop court (%min_length% lettres minimum).');
+		
+	}
 }

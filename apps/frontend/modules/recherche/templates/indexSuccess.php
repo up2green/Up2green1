@@ -57,7 +57,7 @@
 				<p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
 				<p>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</p>
 				<p class="center">
-					<a href="<?php echo url_for("user/inscription"); ?>" class="button green">Créer un compte</a>
+					<a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong>Créer un compte</strong></a>
 				</p>
 				<p class="center">
 					<a href="#" class="button green">Définir Up2green comme moteur<br/>de recherche par defaut</a>

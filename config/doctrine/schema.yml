@@ -65,7 +65,7 @@ profil:
       notnull: true
       unique: true
     credit:
-      type: integer(4)
+      type: float(18,4)
       notnull: true
       default: 0
     is_newsletter:

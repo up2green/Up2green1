@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
     
-  stylesheets:    [reset.css, main.css, button.css, module.css, form.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, form.css, jquery.gritter.css]
 
-  javascripts:    [jquery-1.4.2.js, main.js]
+  javascripts:    [jquery-1.4.2.js, main.js, min/jquery.gritter.min.js]
 
   has_layout:     true
   title: Up2green

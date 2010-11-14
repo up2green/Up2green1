@@ -21,7 +21,7 @@ abstract class BaseprofilFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'user_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('User'), 'column' => 'id')),
-      'credit'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'credit'        => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'is_newsletter' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'culture'       => new sfValidatorPass(array('required' => false)),
     ));

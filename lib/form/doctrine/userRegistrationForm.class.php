@@ -7,7 +7,14 @@
  * @author     Lexik
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
  */
+
+
+
 class userRegistrationForm extends PluginsfGuardUserForm {
+
+    public function setup() {
+		parent::setup();
+	}
 
     public function configure() {
         unset(
@@ -21,7 +28,7 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 $this['created_at'],
                 $this['updated_at']
         );
-
+		
         $this->widgetSchema['password']     = new sfWidgetFormInputPassword();
         $this->widgetSchema['password_bis'] = new sfWidgetFormInputPassword();
 
@@ -32,9 +39,9 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 'email_address'=> 'Adresse e-mail* :',
         ));
 
-        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true), array('invalid' => 'Ce nom n\'est pas valide.', 'required' => 'Champ obligatoire.'));
-        $this->validatorSchema['password']     = new sfValidatorString(array('required' => true, 'min_length' => 6), array('min_length' => '"%value%" est trop court (%min_length% lettres minimum).', 'required' => 'Champ obligatoire.'));
-        $this->validatorSchema['password_bis'] = new sfValidatorString(array('required' => true, 'min_length' => 6), array('min_length' => '"%value%" est trop court (%min_length% lettres minimum).', 'required' => 'Champ obligatoire.'));
+        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true));
+        $this->validatorSchema['password']     = new sfValidatorString(array('required' => true, 'min_length' => 6));
+        $this->validatorSchema['password_bis'] = new sfValidatorString(array('required' => true, 'min_length' => 6));
         $this->validatorSchema['email_address']= new sfValidatorEmail(array('required'  => true), array('required'=>'Champ obligatoire.', "invalid" => '"%value%" n\'est pas une adresse e-mail.'));
 
         $this->mergePostValidator(new sfValidatorSchemaCompare(

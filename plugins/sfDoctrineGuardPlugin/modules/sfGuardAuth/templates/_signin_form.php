@@ -7,7 +7,7 @@
 			<?php use_helper('I18N') ?>
 
 			<form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
-				<table>
+				<table class="form" style="width:50%;">
 						<tbody>
 					<?php echo $form->renderGlobalErrors() ?>
 					<tr>

@@ -1,8 +1,17 @@
-<?php
+<?php if($nbArbresToPlant < 1) : ?>
+<div class="module">
+	<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
+	<p class="title indent">Planter vos arbres</p>
 
-?>
+	<div class="content">
+		<p class="error">Vous n'avez pas assez de crédit pour planter un arbre !</p>
+		<p class="error">Collectez plus de crédits et revenez planter vos arbres quand vous en aurez suffisamment.</p>
+	</div>
+	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+</div>
 
-<!-- module -->
+<?php else : ?>
+
 <form name="plant" action="" method="post">
 	<div class="module scrollableWrapper">
 		
@@ -44,11 +53,12 @@
 				<img src="/images/icons/bottom.png" alt="Bas"/>
 			</span>
 			<?php endif; ?>
-			
+
+			<?php if(!$sf_user->isAuthenticated()) : ?>
 			<hr />
 			<p style="text-align: center; color: rgb(63, 111, 0); font-size: 1.1em; font-weight: bold;">Afin de recevoir une attestation, merci de remplir votre email ici :</p>
 			<p>E-mail : <input type="text" name="email_user_deco" /></p>
-			
+			<?php endif; ?>
 			<br />
 		
 			<p class="center">
@@ -62,9 +72,10 @@
 	
 	<?php if(!is_null($coupon)) : ?>
 	<input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
-	<input type="hidden" name="nbTreeMax" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
-	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo $coupon->getCouponGen()->getCredit() ?>" />
 	<?php endif; ?>
 	
+	<input type="hidden" name="nbTreeMax" value="<?php echo $nbArbresToPlant ?>" />
+	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo $nbArbresToPlant ?>" />
 	<input type="hidden" name="fromUrl" value="<?php echo $fromUrl; ?>" />
 </form>
+<?php endif; ?>

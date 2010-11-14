@@ -430,29 +430,6 @@ class plantationActions extends sfActions {
 		return $modes;
 	}
 
-	private function getNbTrees(programme $programme) {
-		// si l'utilisateur est connecté
-		if ($user = $this->getUser()->getGuardUser()) {
-			// si c'est un partenaire
-			if ($partenaire = $user->getPartenaire()) {
-				// récupération des coupons du partenaire
-				$coupons = $partenaire->getCoupons();
-				// comptage des arbres faisant parti du programme
-				$cpt = 0;
-				foreach ($coupons as $couponPartenaire) {
-					$coupon = $couponPartenaire->getCoupon();
-					foreach ($coupon->getTreeCoupon() as $treeCoupon) {
-						$tree = $treeCoupon->getTree();
-						if ($tree->getProgramme() == $programme) $cpt ++;
-					}
-				}
-				return $cpt;
-			}
-			return 0;
-		}
-		return 0;
-	}
-
 	private function getProgrammeIcon(programme $programme) {
 		return new GMapMarkerImage(
 			'/images/gmap/pointeur/60x60/empty/vert.png',

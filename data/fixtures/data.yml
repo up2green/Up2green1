@@ -43176,6 +43176,12 @@ treeUser:
   treeUser_841_2:
     tree: tree_841
     user: sfGuardUser_2
+profil:
+  profil_4:
+    User: sfGuardUser_14
+    credit: '0'
+    is_newsletter: '0'
+    culture: fr_FR
 lien:
   lien_1:
     category: category_2
@@ -43475,6 +43481,19 @@ sfGuardUser:
     last_login: null
     created_at: '2010-11-12 18:09:53'
     updated_at: '2010-11-12 18:09:53'
+  sfGuardUser_14:
+    first_name: Clément
+    last_name: Gautier
+    email_address: clement.gautier.76@gmail.com
+    username: megatest
+    algorithm: ''
+    salt: ''
+    password: 27b5cda017ba92fcf5064a6b8f881d4dd73e70a9
+    is_active: false
+    is_super_admin: false
+    last_login: null
+    created_at: '2010-11-14 19:04:27'
+    updated_at: '2010-11-14 19:04:51'
 sfGuardRememberKey:
   sfGuardRememberKey_1:
     User: sfGuardUser_2

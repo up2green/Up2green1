@@ -51,7 +51,10 @@ class userActions extends sfActions {
 				$message->setBody($html, 'text/html');
 
 				$this->getMailer()->send($message);
-				
+
+				$flash = "Vous êtes maintenant inscris et connecté à up2green.";
+				$this->getUser()->setFlash('notice', $flash);
+
 				$this->redirect('@homepage');
 			}
 		}
@@ -69,26 +72,32 @@ class userActions extends sfActions {
 		$userForm = new sfGuardUserForm($this->getUser()->getGuardUser());
 		$profilForm = new profilForm($this->getUser()->getGuardUser()->getProfile());
 
+		$userForm->useFields(array('first_name', 'last_name'));
+
 		$this->form = new sfForm();
 		$this->form->embedForm('profil', $profilForm);
 		$this->form->embedForm('user', $userForm);
-		
-		// dont allow username and email change
-		unset($userForm['username'], $userForm['email_address']);
 
 		$this->nbTrees = Doctrine_Core::getTable('tree')->countFromUser($this->getUser()->getGuardUser()->getId());
 		
 		if($request->isMethod('post')) {
 		 
 			$userForm->bind($request->getPostParameter('user'));
-			$profilForm->bind($request->getPostParameter('profil'));
+
+			$profilPostData = $request->getPostParameter('profil');
+			$profilForm->bind($profilPostData);
 
 			if($userForm->isValid() && $profilForm->isValid()) {
+
 				$profil = $profilForm->save();
 				$user = $userForm->save();
 				
 				$profil->save();
 				$user->save();
+
+
+				$flash = "Vos modification ont bien été pris en compte.";
+				$this->getUser()->setFlash('notice', $flash);
 
 				// @TODO: retirer cette redirection ?
 				$this->redirect('user/profil');

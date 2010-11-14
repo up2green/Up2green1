@@ -1,0 +1,22 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Engine
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          engine
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [Category, site_display, remun_type, remun_min, remun_max, is_active]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

@@ -48,6 +48,14 @@
 							<li><a href="<?php echo url_for('@log_coupon') ?>">Log coupons</a></li>
 						</ul>
 					</li>
+					<li>
+						<a href="#">Moteur</a>
+						<ul class="subnav">
+							<li><a href="<?php echo url_for('@engine') ?>">Affiliates</a></li>
+							<li><a href="<?php echo url_for('@devise') ?>">Devises</a></li>
+							<li><a href="<?php echo url_for('@affiliate_plateforme') ?>">Plateformes</a></li>
+						</ul>
+					</li>
 					
 					
 				</ul>

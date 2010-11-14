@@ -13,23 +13,37 @@ abstract class BaseengineFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'url'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'html'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'description' => new sfWidgetFormFilterInput(),
-      'remun_type'  => new sfWidgetFormChoice(array('choices' => array('' => '', 'number' => 'number', 'pourcent' => 'pourcent', 'price' => 'price'))),
-      'remun_min'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'remun_max'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'rank'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'id_category'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
+      'id_plateforme' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('plateforme'), 'add_empty' => true)),
+      'id_devise'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('devise'), 'add_empty' => true)),
+      'site_display'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'site_url'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'html'          => new sfWidgetFormFilterInput(),
+      'logo'          => new sfWidgetFormFilterInput(),
+      'description'   => new sfWidgetFormFilterInput(),
+      'remun_type'    => new sfWidgetFormChoice(array('choices' => array('' => '', 'number' => 'number', 'pourcent' => 'pourcent', 'price' => 'price'))),
+      'remun_min'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'remun_max'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'is_active'     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'created_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'url'         => new sfValidatorPass(array('required' => false)),
-      'html'        => new sfValidatorPass(array('required' => false)),
-      'description' => new sfValidatorPass(array('required' => false)),
-      'remun_type'  => new sfValidatorChoice(array('required' => false, 'choices' => array('number' => 'number', 'pourcent' => 'pourcent', 'price' => 'price'))),
-      'remun_min'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'remun_max'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'rank'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'id_category'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('category'), 'column' => 'id')),
+      'id_plateforme' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('plateforme'), 'column' => 'id')),
+      'id_devise'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('devise'), 'column' => 'id')),
+      'site_display'  => new sfValidatorPass(array('required' => false)),
+      'site_url'      => new sfValidatorPass(array('required' => false)),
+      'html'          => new sfValidatorPass(array('required' => false)),
+      'logo'          => new sfValidatorPass(array('required' => false)),
+      'description'   => new sfValidatorPass(array('required' => false)),
+      'remun_type'    => new sfValidatorChoice(array('required' => false, 'choices' => array('number' => 'number', 'pourcent' => 'pourcent', 'price' => 'price'))),
+      'remun_min'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'remun_max'     => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'is_active'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'created_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('engine_filters[%s]');
@@ -49,14 +63,21 @@ abstract class BaseengineFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'          => 'Number',
-      'url'         => 'Text',
-      'html'        => 'Text',
-      'description' => 'Text',
-      'remun_type'  => 'Enum',
-      'remun_min'   => 'Number',
-      'remun_max'   => 'Number',
-      'rank'        => 'Number',
+      'id'            => 'Number',
+      'id_category'   => 'ForeignKey',
+      'id_plateforme' => 'ForeignKey',
+      'id_devise'     => 'ForeignKey',
+      'site_display'  => 'Text',
+      'site_url'      => 'Text',
+      'html'          => 'Text',
+      'logo'          => 'Text',
+      'description'   => 'Text',
+      'remun_type'    => 'Enum',
+      'remun_min'     => 'Number',
+      'remun_max'     => 'Number',
+      'is_active'     => 'Boolean',
+      'created_at'    => 'Date',
+      'updated_at'    => 'Date',
     );
   }
 }

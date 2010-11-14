@@ -507,35 +507,87 @@ content:
     module:
       local: module_id
       onDelete: CASCADE
-      
-engine:
+
+affiliatePlateforme:
+  actAs: [Timestampable]
   columns:
     id:
       type: integer(4)
       primary: true
       autoincrement: true
-    url:
+    unique_name:
+      type: string(30)
+      unique: true
+
+devise:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    unique_name:
+      type: string(30)
+      unique: true
+    conversion:
+      type: double(18,10)
+      notnull: true
+
+engine:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    id_category:
+      type: integer(4)
+      notnull: true
+    id_plateforme:
+      type: integer(4)
+      notnull: true
+    id_devise:
+      type: integer(4)
+      notnull: true
+    site_display:
       type: string(128)
       notnull: true      
-    html:
+    site_url:
       type: string(128)
       notnull: true
+    html:
+      type: string(128)
+      default: null
+    logo:
+      type: string(128)
+      default: null
     description:
       type: string(128)
+      default: null
     remun_type:
       type: enum
       values: [number, pourcent, price]
     remun_min:
-      type: integer(4)
+      type: float
       notnull: true
-      default: 0      
+      default: 0
     remun_max:
-      type: integer(4)
+      type: float
       notnull: true
-    rank:
-      type: integer(4)
-      notnull: true
-      
+    is_active:
+      type: boolean
+      default: 1
+  relations:
+    devise:
+      local: id_devise
+    plateforme:
+      class: affiliatePlateforme
+      local: id_plateforme
+      foreignAlias: Affiliates
+    category:
+      local: id_category
+      foreignAlias: Affiliates
+
 tag:
   actAs: [Timestampable]
   columns:

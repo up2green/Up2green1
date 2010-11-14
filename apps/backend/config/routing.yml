@@ -117,6 +117,33 @@ lien:
     column:               id
     with_wildcard_routes: true
 
+devise:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Devise
+    module:               devise
+    prefix_path:          /devise
+    column:               id
+    with_wildcard_routes: true
+
+affiliate_plateforme:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AffiliatePlateforme
+    module:               affiliate_plateforme
+    prefix_path:          /affiliate_plateforme
+    column:               id
+    with_wildcard_routes: true
+
+engine:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Engine
+    module:               engine
+    prefix_path:          /engine
+    column:               id
+    with_wildcard_routes: true
+
 # default
 homepage:
   url:   /

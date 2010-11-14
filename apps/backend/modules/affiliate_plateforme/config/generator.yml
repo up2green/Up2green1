@@ -1,0 +1,22 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AffiliatePlateforme
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          affiliate_plateforme
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [unique_name]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

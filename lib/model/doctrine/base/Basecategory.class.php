@@ -12,6 +12,7 @@
  * @property Doctrine_Collection $Articles
  * @property Doctrine_Collection $Newsletters
  * @property Doctrine_Collection $Liens
+ * @property Doctrine_Collection $Affiliates
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getUniqueName()  Returns the current record's "unique_name" value
@@ -20,6 +21,7 @@
  * @method Doctrine_Collection getArticles()    Returns the current record's "Articles" collection
  * @method Doctrine_Collection getNewsletters() Returns the current record's "Newsletters" collection
  * @method Doctrine_Collection getLiens()       Returns the current record's "Liens" collection
+ * @method Doctrine_Collection getAffiliates()  Returns the current record's "Affiliates" collection
  * @method category            setId()          Sets the current record's "id" value
  * @method category            setUniqueName()  Sets the current record's "unique_name" value
  * @method category            setRank()        Sets the current record's "rank" value
@@ -27,6 +29,7 @@
  * @method category            setArticles()    Sets the current record's "Articles" collection
  * @method category            setNewsletters() Sets the current record's "Newsletters" collection
  * @method category            setLiens()       Sets the current record's "Liens" collection
+ * @method category            setAffiliates()  Sets the current record's "Affiliates" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -75,6 +78,10 @@ abstract class Basecategory extends sfDoctrineRecord
         $this->hasMany('lien as Liens', array(
              'local' => 'id',
              'foreign' => 'category_id'));
+
+        $this->hasMany('engine as Affiliates', array(
+             'local' => 'id',
+             'foreign' => 'id_category'));
 
         $nestedset0 = new Doctrine_Template_NestedSet(array(
              'hasManyRoots' => true,

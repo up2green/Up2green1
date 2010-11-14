@@ -26,22 +26,16 @@ class category extends Basecategory
   public function getFullPathName()
   {
   	$output = array($this['level'] => $this['unique_name']);
-  	if($this['level'] > 0)
-  	{
-  		for($i=0; $i<=$this['level']; $i++)
-  		{
-  			$q = Doctrine_Query::create()
-					->from('category c')
-					->where('c.root_id = ?', $this['root_id'])
-					->andwhere('c.level = ?', $this['level']-$i);
-				
-				$tmp_categ = Doctrine_Core::getTable('category')->getOne($q);
-				if(!empty($tmp_categ))
-				{
-					$output += array($tmp_categ['level'] => $tmp_categ['unique_name']);
-				}
-			}
-		}
+
+	$parent = $this;
+	while(
+		$parent->getNode()->isValidNode() &&
+		!$parent->getNode()->isRoot() &&
+		$parent['level'] > 0){
+
+		$parent = $parent->getNode()->getParent();
+		$output += array($parent['level'] => $parent['unique_name']);
+	}
 		
 		ksort($output);  	
     return join(' -> ', $output);

@@ -163,3 +163,10 @@ th
   display: inline;
   float: none;
 }
+
+#engine_filters_id_category,
+#article_filters_category_id,
+#newsletter_filters_category_id,
+#lien_filters[id_category] {
+	width:200px;
+}

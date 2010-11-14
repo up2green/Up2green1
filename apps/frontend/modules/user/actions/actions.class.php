@@ -19,7 +19,7 @@ class userActions extends sfActions {
 	}
 
 	public function executeInscription(sfWebRequest $request) {
-		if (!$this->getUser()->isAuthenticated()){
+		if ($this->getUser()->isAuthenticated()){
 			$this->redirect('@homepage');
 			return;
 		}
@@ -27,15 +27,31 @@ class userActions extends sfActions {
 		$this->form = new userRegistrationForm();
 
 		if($request->isMethod('post')) {
-			$this->form->bind($request->getParameter($this->form->getName()));
+			$formPost = $request->getParameter($this->form->getName());
+			$this->form->bind($formPost);
 
 			if($this->form->isValid()) {
+
 				$utilisateur = $this->form->save();
 				$utilisateur->save();
-				
-				// @TODO: envoyer un email ici
-
 				$this->getUser()->signIn($utilisateur);
+
+				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('inscription');
+
+				$message = $this->getMailer()->compose(
+					array($newsletter->getEmailFrom() => 'Up2Green'),
+					$utilisateur->getEmailAddress(),
+					$newsletter->getTitle()
+				);
+
+				$html = $newsletter->getContent();
+				$html = str_replace('%username%', $utilisateur->getUsername(), $html);
+				$html = str_replace('%password%', $formPost['password'], $html);
+
+				$message->setBody($html, 'text/html');
+
+				$this->getMailer()->send($message);
+				
 				$this->redirect('@homepage');
 			}
 		}
@@ -90,18 +106,19 @@ class userActions extends sfActions {
 				$pwd = substr(md5(rand().rand()), 0, 8);
 				$user->setPassword($pwd);
 				$user->save();
+
+				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('nouveau-mot-de-passe');
+
 				$message = $this->getMailer()->compose(
-								array('webmaster@up2green.com' => 'Up2Green'),
-								$user->getEmailAddress(),
-								'Votre nouveau mot de passe'
+					array($newsletter->getEmailFrom() => 'Up2Green'),
+					$user->getEmailAddress(),
+					$newsletter->getTitle()
 				);
-				
-				$html = "Bonjour " . $user->getUsername() . ", <br />".
-								"Vous avez demandé à changer votre mot de passe. <br />".
-								"Votre nouveau mot de passe est : " . $pwd . "<br /><br />".
-								"Nous vous conseillons de changer votre mot de passe à votre prochaine connexion.<br /><br />".
-								"A bientôt pour de nouvelles recherches sur http://up2green.com/ !";
-				
+
+				$html = $newsletter->getContent();
+				$html = str_replace('%username%', $user->getUsername(), $html);
+				$html = str_replace('%password%', $pwd, $html);
+
 				$message->setBody($html, 'text/html');
 				
 				$this->getMailer()->send($message);

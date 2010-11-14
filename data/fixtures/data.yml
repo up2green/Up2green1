@@ -40518,33 +40518,29 @@ affiliatePlateforme:
     updated_at: '2010-11-14 14:17:57'
 newsletter:
   newsletter_1:
+    category: category_139
     reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
+    email_from: webmaster@up2green.com
     is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:35'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_2:
-    reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
-    is_forced: false
-    sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
+    updated_at: '2010-11-14 18:15:53'
   newsletter_3:
+    category: category_139
     reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
+    email_from: webmaster@up2green.com
     is_forced: false
     sent_at: null
     created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
-  newsletter_4:
+    updated_at: '2010-11-14 18:16:24'
+  newsletter_5:
+    category: category_139
     reply_to: noreply@up2green.com
-    email_from: newsletter@up2green.com
+    email_from: webmaster@up2green.com
     is_forced: false
     sent_at: null
-    created_at: '2010-06-26 18:27:36'
-    updated_at: '2010-06-26 18:27:36'
+    created_at: '2010-11-14 18:07:04'
+    updated_at: '2010-11-14 18:16:15'
 programme:
   programme_1:
     geoadress: null
@@ -44595,6 +44591,30 @@ category:
     lft: '231'
     rgt: '232'
     level: '4'
+  category_138:
+    unique_name: newsletter
+    rank: '3'
+    is_active: true
+    root_id: '138'
+    lft: '1'
+    rgt: '6'
+    level: '0'
+  category_139:
+    unique_name: newsletter-internal
+    rank: '1'
+    is_active: true
+    root_id: '138'
+    lft: '4'
+    rgt: '5'
+    level: '1'
+  category_140:
+    unique_name: mailing-list
+    rank: '2'
+    is_active: true
+    root_id: '138'
+    lft: '2'
+    rgt: '3'
+    level: '1'
 partenaireProgramme:
   partenaireProgramme_2_1:
     partenaire: partenaire_2
@@ -44916,52 +44936,40 @@ organismeTranslation:
 newsletterTranslation:
   newsletterTranslation_1_en:
     newsletter: newsletter_1
-    title: Inscription
-    content: 'Please modify'
+    title: 'Confirmation d''inscription'
+    content: "<p>\r\n	<span>Bonjour</span> %username%,</p>\r\n<p>\r\n	<span>Nous</span> <span>avons</span> <span>le</span> <span>plaisir</span> de <span>vous</span> <span>confirmer</span> <span>votre</span> inscription <span>sur</span> <span>up2green</span>.</p>\r\n<p>\r\n	<span>Votre</span> mot de passe <span>est</span> : %password%</p>\r\n<p>\r\n	<span>Gardez</span> <span>bien</span> <span>cet</span> email car pour <span>des</span> raisons de <span>s&eacute;curit&eacute;</span> <span>nous</span> <span>ne</span> <span>pourrons</span> <span>retrouver</span> <span>votre</span> mot de passe pour <span>vous</span>, <span>vous</span> <span>devrez</span> <span>le</span> <span>r&eacute;initialiser</span> <span>si</span> <span>vous</span> <span>le</span> <span>perdez</span></p>\r\n<p>\r\n	<span>Vous</span> <span>pouvez</span> <span>d&egrave;s</span> <span>&agrave;</span> <span>pr&eacute;sent</span> <span>commencer</span> la <span>collecte</span> de <span>vos</span> <span>cr&eacute;dits</span> <span>arbres</span> <span>gr&acirc;ce</span> au <span>moteur</span> de recherche.</p>\r\n<p>\r\n	<br />\r\n	A <span>tr&egrave;s</span> <span>bient&ocirc;t</span> <span>sur</span> http://<span>up2green.com</span>/</p>\r\n"
     lang: en
     slug: inscription
   newsletterTranslation_1_fr:
     newsletter: newsletter_1
-    title: Inscription
-    content: 'A modifier'
+    title: 'Confirmation d''inscription'
+    content: "<p>\r\n	Bonjour %username%,</p>\r\n<p>\r\n	Nous avons le plaisir de vous confirmer votre inscription sur up2green.</p>\r\n<p>\r\n	Votre mot de passe est : %password%</p>\r\n<p>\r\n	Gardez bien cet email car pour des raisons de s&eacute;curit&eacute; nous ne pourrons retrouver votre mot de passe pour vous, vous devrez le r&eacute;initialiser si vous le perdez</p>\r\n<p>\r\n	Vous pouvez d&egrave;s &agrave; pr&eacute;sent commencer la collecte de vos cr&eacute;dits arbres gr&acirc;ce au moteur de recherche.</p>\r\n<p>\r\n	<br />\r\n	A tr&egrave;s bient&ocirc;t sur http://up2green.com/</p>\r\n"
     lang: fr
     slug: inscription
-  newsletterTranslation_2_en:
-    newsletter: newsletter_2
-    title: welcome
-    content: 'Please modify'
-    lang: en
-    slug: welcome
-  newsletterTranslation_2_fr:
-    newsletter: newsletter_2
-    title: Bienvenu
-    content: 'A modifier'
-    lang: fr
-    slug: bienvenu
   newsletterTranslation_3_en:
     newsletter: newsletter_3
-    title: 'new password'
-    content: modify
+    title: 'Votre nouveau mot de passe'
+    content: "<p>\r\n	<span>Bonjour</span> %username%,</p>\r\n<p>\r\n	<span>Vous</span> <span>avez</span> <span>demand&eacute;</span> <span>&agrave;</span> changer <span>votre</span> mot de passe.</p>\r\n<p>\r\n	<span>Votre</span> nouveau mot de passe <span>est</span> : %password%</p>\r\n<p>\r\n	<span>Nous</span> <span>vous</span> <span>conseillons</span> de changer <span>votre</span> mot de passe <span>&agrave;</span> <span>votre</span> <span>prochaine</span> <span>connexion</span>.</p>\r\n<p>\r\n	A <span>bient&ocirc;t</span> pour de <span>nouvelles</span> <span>recherches</span> <span>sur</span> http://<span>up2green.com</span>/ !</p>\r\n"
     lang: en
     slug: new-password
   newsletterTranslation_3_fr:
     newsletter: newsletter_3
-    title: 'nouveau mot de passe'
-    content: 'a modifier'
+    title: 'Votre nouveau mot de passe'
+    content: "<p>\r\n	Bonjour %username%,</p>\r\n<p>\r\n	Vous avez demand&eacute; &agrave; changer votre mot de passe.</p>\r\n<p>\r\n	Votre nouveau mot de passe est : %password%</p>\r\n<p>\r\n	Nous vous conseillons de changer votre mot de passe &agrave; votre prochaine connexion.</p>\r\n<p>\r\n	A bient&ocirc;t pour de nouvelles recherches sur http://up2green.com/ !</p>\r\n"
     lang: fr
     slug: nouveau-mot-de-passe
-  newsletterTranslation_4_en:
-    newsletter: newsletter_4
-    title: change
-    content: modify
+  newsletterTranslation_5_en:
+    newsletter: newsletter_5
+    title: 'Attestation de plantation'
+    content: "<p>\r\n	<span>Bonjour</span>,</p>\r\n<p>\r\n	<span>Vous</span> <span>venez</span> de planter %<span>treeNumber</span>% <span>arbre</span>(<span>s</span>) <span>sur</span> la <span>plan&egrave;te</span> !</p>\r\n<p>\r\n	<span>Retrouvez</span> en <span>pi&egrave;ce</span> <span>jointe</span> <span>l&#39;attestation</span> de plantation.</p>\r\n<p>\r\n	A <span>tr&egrave;s</span> <span>bient&ocirc;t</span> pour faire <span>avancer</span> la reforestation <span>sur</span> http://<span>reforestation.up2green.com</span>/ !</p>\r\n"
     lang: en
-    slug: change
-  newsletterTranslation_4_fr:
-    newsletter: newsletter_4
-    title: changement
-    content: modifier
+    slug: attestation-de-plantation
+  newsletterTranslation_5_fr:
+    newsletter: newsletter_5
+    title: 'Attestation de plantation'
+    content: "<p>\r\n	Bonjour,</p>\r\n<p>\r\n	Vous venez de planter %treeNumber% arbre(s) sur la plan&egrave;te !</p>\r\n<p>\r\n	Retrouvez en pi&egrave;ce jointe l&#39;attestation de plantation.</p>\r\n<p>\r\n	A tr&egrave;s bient&ocirc;t pour faire avancer la reforestation sur http://reforestation.up2green.com/ !</p>\r\n"
     lang: fr
-    slug: changement
+    slug: attestation-de-plantation
 programmeTranslation:
   programmeTranslation_1_en:
     programme: programme_1

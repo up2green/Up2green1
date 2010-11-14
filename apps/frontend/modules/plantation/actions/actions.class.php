@@ -111,18 +111,19 @@ class plantationActions extends sfActions {
 							if(!empty($email)) {
 								// on construit l'attestation :
 								$filename = $this->buildAttestation($email, $trees);
-								
-								$html = "Bonjour, <br />".
-                        "Vous venez de planter ".$request->getParameter('nbTreeMax')." arbre(s) sur la planète !<br />".
-                        "Retrouvez en pièce jointe l'attestation de plantation.<br />".
-                        "A très bientôt pour faire avancer la reforestation sur http://reforestation.up2green.com/ !";
-                
-								$message = $this->getMailer()
-									->compose(
-										array('webmaster@up2green.com' => 'Up2Green'),
-										$email,
-										'Attestation de plantation sur Up2Green !')
-									->setBody($html, 'text/html');
+
+								$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
+
+								$message = $this->getMailer()->compose(
+									array($newsletter->getEmailFrom() => 'Up2Green'),
+									$email,
+									$newsletter->getTitle()
+								);
+
+								$html = $newsletter->getContent();
+								$html = str_replace('%treeNumber%', $request->getParameter('nbTreeMax'), $html);
+
+								$message->setBody($html, 'text/html');
 								
 								if(file_exists($filename)) {
 									$message->attach(

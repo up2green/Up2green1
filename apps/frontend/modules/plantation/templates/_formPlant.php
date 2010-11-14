@@ -5,7 +5,7 @@
 
 	<div class="content">
 		<p class="error">Vous n'avez pas assez de crédit pour planter un arbre !</p>
-		<p class="error">Collectez plus de crédits et revenez planter vos arbres quand vous en aurez suffisamment.</p>
+		<p class="error">Collectez plus de crédits au fil de vos recherches grâce au moteur Up2green.</p>
 	</div>
 	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

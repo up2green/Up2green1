@@ -96,7 +96,7 @@ class userActions extends sfActions {
 				$user->save();
 
 
-				$flash = "Vos modification ont bien été pris en compte.";
+				$flash = "Vos modifications ont bien été prises en compte.";
 				$this->getUser()->setFlash('notice', $flash);
 
 				// @TODO: retirer cette redirection ?

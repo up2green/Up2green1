@@ -40525,7 +40525,7 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:35'
     updated_at: '2010-11-14 18:15:53'
-  newsletter_3:
+  newsletter_2:
     category: category_139
     reply_to: noreply@up2green.com
     email_from: webmaster@up2green.com
@@ -40533,7 +40533,7 @@ newsletter:
     sent_at: null
     created_at: '2010-06-26 18:27:36'
     updated_at: '2010-11-14 18:16:24'
-  newsletter_5:
+  newsletter_3:
     category: category_139
     reply_to: noreply@up2green.com
     email_from: webmaster@up2green.com
@@ -43178,8 +43178,8 @@ treeUser:
     user: sfGuardUser_2
 profil:
   profil_4:
-    User: sfGuardUser_14
-    credit: '0'
+    User: sfGuardUser_1
+    credit: '0.0000'
     is_newsletter: '0'
     culture: fr_FR
 lien:
@@ -43338,6 +43338,12 @@ article:
     is_active: true
     created_at: '2010-08-29 17:32:21'
     updated_at: '2010-08-29 17:32:21'
+  article_13:
+    Category: category_4
+    logo: null
+    is_active: true
+    created_at: '2010-11-13 15:02:16'
+    updated_at: '2010-11-13 15:02:16'
 sfGuardPermission:
   sfGuardPermission_1:
     name: acces_administration
@@ -43352,8 +43358,8 @@ sfGuardGroupPermission:
     updated_at: '2010-09-06 11:29:10'
 sfGuardUser:
   sfGuardUser_1:
-    first_name: null
-    last_name: null
+    first_name: ''
+    last_name: ''
     email_address: webmaster@smartit.fr
     username: admin
     algorithm: sha1
@@ -43361,9 +43367,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2010-11-14 16:01:17'
+    last_login: '2010-11-14 23:05:19'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2010-11-14 16:01:17'
+    updated_at: '2010-11-14 23:05:19'
   sfGuardUser_2:
     first_name: DYRUP
     last_name: ''
@@ -43481,19 +43487,6 @@ sfGuardUser:
     last_login: null
     created_at: '2010-11-12 18:09:53'
     updated_at: '2010-11-12 18:09:53'
-  sfGuardUser_14:
-    first_name: Clément
-    last_name: Gautier
-    email_address: clement.gautier.76@gmail.com
-    username: megatest
-    algorithm: ''
-    salt: ''
-    password: 27b5cda017ba92fcf5064a6b8f881d4dd73e70a9
-    is_active: false
-    is_super_admin: false
-    last_login: null
-    created_at: '2010-11-14 19:04:27'
-    updated_at: '2010-11-14 19:04:51'
 sfGuardRememberKey:
   sfGuardRememberKey_1:
     User: sfGuardUser_2
@@ -44962,29 +44955,29 @@ newsletterTranslation:
   newsletterTranslation_1_fr:
     newsletter: newsletter_1
     title: 'Confirmation d''inscription'
-    content: "<p>\r\n	Bonjour %username%,</p>\r\n<p>\r\n	Nous avons le plaisir de vous confirmer votre inscription sur up2green.</p>\r\n<p>\r\n	Votre mot de passe est : %password%</p>\r\n<p>\r\n	Gardez bien cet email car pour des raisons de s&eacute;curit&eacute; nous ne pourrons retrouver votre mot de passe pour vous, vous devrez le r&eacute;initialiser si vous le perdez</p>\r\n<p>\r\n	Vous pouvez d&egrave;s &agrave; pr&eacute;sent commencer la collecte de vos cr&eacute;dits arbres gr&acirc;ce au moteur de recherche.</p>\r\n<p>\r\n	<br />\r\n	A tr&egrave;s bient&ocirc;t sur http://up2green.com/</p>\r\n"
+    content: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/logo-Up2green2.jpg\" style=\"width: 391px; height: 90px;\" /></p>\r\n<p>\r\n	Bonjour <strong>%username%</strong>,</p>\r\n<p>\r\n	Nous avons le plaisir de vous confirmer votre inscription sur up2green.</p>\r\n<p>\r\n	Votre mot de passe est : %password%</p>\r\n<p>\r\n	Gardez bien cet email car pour des raisons de s&eacute;curit&eacute; nous ne pourrons retrouver votre mot de passe pour vous, vous devrez le r&eacute;initialiser si vous le perdez</p>\r\n<p>\r\n	Vous pouvez d&egrave;s &agrave; pr&eacute;sent commencer la collecte de vos cr&eacute;dits arbres gr&acirc;ce au moteur de recherche.</p>\r\n<p>\r\n	<br />\r\n	A tr&egrave;s bient&ocirc;t sur http://up2green.com/</p>\r\n"
     lang: fr
     slug: inscription
-  newsletterTranslation_3_en:
-    newsletter: newsletter_3
+  newsletterTranslation_2_en:
+    newsletter: newsletter_2
     title: 'Votre nouveau mot de passe'
     content: "<p>\r\n	<span>Bonjour</span> %username%,</p>\r\n<p>\r\n	<span>Vous</span> <span>avez</span> <span>demand&eacute;</span> <span>&agrave;</span> changer <span>votre</span> mot de passe.</p>\r\n<p>\r\n	<span>Votre</span> nouveau mot de passe <span>est</span> : %password%</p>\r\n<p>\r\n	<span>Nous</span> <span>vous</span> <span>conseillons</span> de changer <span>votre</span> mot de passe <span>&agrave;</span> <span>votre</span> <span>prochaine</span> <span>connexion</span>.</p>\r\n<p>\r\n	A <span>bient&ocirc;t</span> pour de <span>nouvelles</span> <span>recherches</span> <span>sur</span> http://<span>up2green.com</span>/ !</p>\r\n"
     lang: en
     slug: new-password
-  newsletterTranslation_3_fr:
-    newsletter: newsletter_3
+  newsletterTranslation_2_fr:
+    newsletter: newsletter_2
     title: 'Votre nouveau mot de passe'
     content: "<p>\r\n	Bonjour %username%,</p>\r\n<p>\r\n	Vous avez demand&eacute; &agrave; changer votre mot de passe.</p>\r\n<p>\r\n	Votre nouveau mot de passe est : %password%</p>\r\n<p>\r\n	Nous vous conseillons de changer votre mot de passe &agrave; votre prochaine connexion.</p>\r\n<p>\r\n	A bient&ocirc;t pour de nouvelles recherches sur http://up2green.com/ !</p>\r\n"
     lang: fr
     slug: nouveau-mot-de-passe
-  newsletterTranslation_5_en:
-    newsletter: newsletter_5
+  newsletterTranslation_3_en:
+    newsletter: newsletter_3
     title: 'Attestation de plantation'
     content: "<p>\r\n	<span>Bonjour</span>,</p>\r\n<p>\r\n	<span>Vous</span> <span>venez</span> de planter %<span>treeNumber</span>% <span>arbre</span>(<span>s</span>) <span>sur</span> la <span>plan&egrave;te</span> !</p>\r\n<p>\r\n	<span>Retrouvez</span> en <span>pi&egrave;ce</span> <span>jointe</span> <span>l&#39;attestation</span> de plantation.</p>\r\n<p>\r\n	A <span>tr&egrave;s</span> <span>bient&ocirc;t</span> pour faire <span>avancer</span> la reforestation <span>sur</span> http://<span>reforestation.up2green.com</span>/ !</p>\r\n"
     lang: en
     slug: attestation-de-plantation
-  newsletterTranslation_5_fr:
-    newsletter: newsletter_5
+  newsletterTranslation_3_fr:
+    newsletter: newsletter_3
     title: 'Attestation de plantation'
     content: "<p>\r\n	Bonjour,</p>\r\n<p>\r\n	Vous venez de planter %treeNumber% arbre(s) sur la plan&egrave;te !</p>\r\n<p>\r\n	Retrouvez en pi&egrave;ce jointe l&#39;attestation de plantation.</p>\r\n<p>\r\n	A tr&egrave;s bient&ocirc;t pour faire avancer la reforestation sur http://reforestation.up2green.com/ !</p>\r\n"
     lang: fr
@@ -45528,3 +45521,17 @@ articleTranslation:
     description: "<p>\r\n	Les for&ecirc;ts tropicales sont les plus grands r&eacute;servoirs de biodiversit&eacute; de notre plan&egrave;te.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ce sont des &eacute;cosyst&egrave;mes extr&ecirc;mement riches et complexes dont l&#39;&eacute;quilibre est menac&eacute;. Au fil des ann&eacute;es l&#39;homme a souvent exploit&eacute; la nature pour ses richesses sans se pr&eacute;occuper de sa capacit&eacute; &agrave; se r&eacute;g&eacute;n&eacute;rer pleinement</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Les agrofor&ecirc;ts sont des contre- exemples de ce constat. L&#39;association complexe des esp&egrave;ces &agrave; valeur alimentaire, m&eacute;dicinale et cosm&eacute;tique au sein de leur milieu forestier permettent &agrave; ceux qui les mettent en place de subvenir &agrave; leurs besoins tout en respectant les fonctions &eacute;cologiques de la for&ecirc;t et du paysage.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Ces agrofor&ecirc;ts sont le moyen parfait de d&eacute;velopper des esp&egrave;ces locales et de lutter contre les syst&egrave;mes de monoculture mangeurs d&#39;espaces naturels et d&#39;intrants n&eacute;fastes pour l&#39;environnement.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	Dans les programmes qu&#39;elle co-d&eacute;veloppe sur le terrain, UP2GREEN REFORESTATION veut donc cr&eacute;er des mod&egrave;les agroforestiers productifs o&ugrave; la biodiversit&eacute; locale est pr&eacute;serv&eacute;e et enrichie.</p>\r\n"
     lang: fr
     slug: la-biodiversite
+  articleTranslation_13_en:
+    article: article_13
+    title: 'Legal Policy'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
+    lang: en
+    slug: legal-policy
+  articleTranslation_13_fr:
+    article: article_13
+    title: 'Informations l<C3><A9>gales'
+    accroche: "<p>\r\n Le pr&eacute;sent site web, accessible &agrave; partir de l&#39;adresse URL <a href=\"http://www.up2green.com/\">www.up2green.com</
+    description: "<p>\r\n      Le pr&eacute;sent site web, accessible &agrave; partir de l&#39;adresse URL <a href=\"http://www.up2green.com/\">www.up2gre
+    lang: fr
+    slug: informations-legales

@@ -70,7 +70,7 @@
 			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
 			<p class="title">Plantez vos arbres</p>
 			<div class="content">
-				<p>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collecté suffisement</p>
+				<p>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement</p>
 				<p class="center">
 					<a href="<?php echo url_for("plantation/index"); ?>" class="button green">Accéder à la plateforme de reforestation</a>
 				</p>
@@ -112,8 +112,7 @@
 			echo '
 				<div id="ads_search">
 					<p class="warning" style="width:75%;margin:0 auto;">
-						Les recherches sponsorisés vous permettant de collecter des crédits arbres au clic sont pour le moment désactivés.<br />
-						Nous vous remercions de votre compréhention.
+						L\'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.
 					</p>
 				</div>
 			';

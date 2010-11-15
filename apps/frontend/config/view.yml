@@ -7,8 +7,8 @@ default:
 
   metas:
     title:        Up2green
-    #description:  symfony project
-    #keywords:     symfony, project
+    description:  Moteur de recherche, plateforme de reforestation et site associatif
+    keywords:     up2green, recherche, reforestation, foret, arbre, biodiversite, coupon, carbone, CO2, uptogreen, terre, planète, programme, organisme, plantation en ligne, émission, compensation, collectivité, partenaire, cadeau, vert
     #language:     en
     #robots:       index, follow
     

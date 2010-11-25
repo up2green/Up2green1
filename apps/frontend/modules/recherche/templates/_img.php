@@ -7,7 +7,7 @@
 		<?php echo html_entity_decode($result['content']) ?>
 	</p>
 	<?php endif; ?>
-    <a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+    <a target="_blank" href="<?php echo html_entity_decode($result['clickUrl'])?>">
 		<?php echo $result['displayUrl'] ?>
 	</a>
 	<span class="filename">[<?php echo $result['title'] ?>]</span>

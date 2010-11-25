@@ -40,6 +40,9 @@ class SearchEngine {
             case self::NEWS:
                 $this->executeNews($min);
                 break;
+			case self::SHOP:
+                $this->executeShop($min);
+                break;
         }
         
         return $this->search_results;
@@ -92,34 +95,63 @@ class SearchEngine {
         }
     }
 
-     private function executeNews($min = 0) {
-        $url = sfConfig::get('app_url_engine_news') . urlencode($this->search_text);
-        $url .= "?appid=" . sfConfig::get('app_yahoo_id');
-        $url .= "&format=xml";
-        $url .= "&age=7d";
-        $url .= "&orderby=date";
-        $url .= "&start=".$min;
-        $url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
-        $url .= "&lang=fr";
-        $url .= "&region=fr";
-        
-        $dom = new DomDocument();
-        $dom->load($url);
-        foreach ($dom->getElementsByTagName("result") as $result){
+	private function executeNews($min = 0) {
+		$url = sfConfig::get('app_url_engine_news') . urlencode($this->search_text);
+		$url .= "?appid=" . sfConfig::get('app_yahoo_id');
+		$url .= "&format=xml";
+		$url .= "&age=7d";
+		$url .= "&orderby=date";
+		$url .= "&start=".$min;
+		$url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
+		$url .= "&lang=fr";
+		$url .= "&region=fr";
+
+		$dom = new DomDocument();
+		$dom->load($url);
+		foreach ($dom->getElementsByTagName("result") as $result){
 			$date = $result->getElementsByTagName('date')->item(0)->nodeValue;
 			$date = date('d/m/Y', strtotime($date));
-			
-            $this->search_results[] = array(
-                'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
-                'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
-                'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
-                'source' => $result->getElementsByTagName('source')->item(0)->nodeValue,
-                'sourceUrl' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
-                'date' => $date,
-                'time' => $result->getElementsByTagName('time')->item(0)->nodeValue,
-                );
-        }
-    }
+
+			$this->search_results[] = array(
+				'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+				'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
+				'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
+				'source' => $result->getElementsByTagName('source')->item(0)->nodeValue,
+				'sourceUrl' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
+				'date' => $date,
+				'time' => $result->getElementsByTagName('time')->item(0)->nodeValue,
+				);
+		}
+	}
+
+	private function executeShop($min = 0) {
+		$url = sfConfig::get('app_url_engine_news') . urlencode($this->search_text);
+		$url .= "?appid=" . sfConfig::get('app_yahoo_id');
+		$url .= "&format=xml";
+		$url .= "&age=7d";
+		$url .= "&orderby=date";
+		$url .= "&start=".$min;
+		$url .= "&count=".($min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'));
+		$url .= "&lang=fr";
+		$url .= "&region=fr";
+
+		$dom = new DomDocument();
+		$dom->load($url);
+		foreach ($dom->getElementsByTagName("result") as $result){
+			$date = $result->getElementsByTagName('date')->item(0)->nodeValue;
+			$date = date('d/m/Y', strtotime($date));
+
+			$this->search_results[] = array(
+				'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+				'content' => $result->getElementsByTagName('abstract')->item(0)->nodeValue,
+				'clickUrl' => $result->getElementsByTagName('clickurl')->item(0)->nodeValue,
+				'source' => $result->getElementsByTagName('source')->item(0)->nodeValue,
+				'sourceUrl' => $result->getElementsByTagName('sourceurl')->item(0)->nodeValue,
+				'date' => $date,
+				'time' => $result->getElementsByTagName('time')->item(0)->nodeValue,
+				);
+		}
+	}
 }
 //<source>Fox News</source>
 //      <sourceurl>http://www.foxnews.com/</sourceurl>

@@ -32,13 +32,12 @@
 						<div id="right<?php echo SearchEngine::IMG ?>" class="onglet_right <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
 					</div>
 				</a>
-				<a href="#">
-					<div class="onglet_recherches">
-						<div class="onglet_left"></div>
-						<div class="onglet_middle">Shopping</div>
-						<div class="onglet_right"></div>
+				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP ?>);">
+					<div id="recherches<?php echo SearchEngine::SHOP ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">
+						<div id="left<?php echo SearchEngine::SHOP ?>" class="onglet_left <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
+						<div id="middle<?php echo SearchEngine::SHOP ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">Shopping</div>
+						<div id="right<?php echo SearchEngine::SHOP ?>" class="onglet_right <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
 					</div>
-					<div class="onglet_decoration"></div>
 				</a>
 			</div>
 			<div class="avancees"><a href="#">Recherches Avancées</a></div>
@@ -138,7 +137,7 @@
 		}
 		elseif ($moteur == SearchEngine::SHOP) {
 			echo '<div id="searchResults" class="shop-result">';
-			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
+			foreach ($results as $result) { echo include_partial("shop", array("result" => $result)); }
 			echo '</div>';
 			echo '<div class="clear"></div>';
 		}

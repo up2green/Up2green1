@@ -80,16 +80,17 @@ class blogComponents extends sfComponents {
     $main_category = Doctrine::getTable('Category')->getByName('main-menu');
     
     foreach($main_category->getActiveLinks() as $link)
-    	$this->elements[$link->getRank()] = array(
+    	$this->elements[] = array(
     		'classname'	=> 'link',
     		'object'		=> $link
     	);
+	
     foreach($main_category->getActiveSubs() as $category)
-    	$this->elements[$category->getRank()] = array(
+    	$this->elements[] = array(
     		'classname'	=> 'category',
     		'object'		=> $category
     	);
-    	
+    
     $this->programms = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')->getActiveByLang($this->getUser()->getCulture());
   }
 

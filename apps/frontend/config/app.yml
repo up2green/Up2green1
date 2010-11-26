@@ -1,8 +1,16 @@
 prod:
   yahoo_id: qCd9GP_V34GziYYOdugq_jWiY102W85s.9Hu9pjAkOTa8w1Q7XvgPa2i2jxPl689t9egrleLb1g-
+  url_blog: http://association.up2green.com/
+  url_moteur: http://www.up2green.com/
+  url_plantation: http://reforestation.up2green.com/
+  url_admin: http://admin.up2green.com/
 
 dev:
   yahoo_id: .Zxf34nV34EVzJToKAQqU49YyS3jqm7E3po9WOgtA0tiFvw6tsZ1l_Wb.EK4U9YhhVlVyf30cWI-
+  url_blog: http://association-up2green.smartit.fr/
+  url_moteur: http://up2green.smartit.fr/
+  url_plantation: http://reforestation-up2green.smartit.fr/
+  url_admin: http://admin-up2green.smartit.fr/
 
 all:
   conversion_tree_co2: 0.1
@@ -25,11 +33,7 @@ all:
     engine_web: http://boss.yahooapis.com/ysearch/web/v1/
     engine_image: http://boss.yahooapis.com/ysearch/images/v1/
     engine_news: http://boss.yahooapis.com/ysearch/news/v1/
-    up2green:
-      blog: http://association.up2green.com/
-      moteur: http://www.up2green.com/
-      plantation: http://reforestation.up2green.com/
-      admin: http://admin.up2green.com/
+    
   blog:
     bloc_articles_max: 3
     bloc_programmes_max: 1

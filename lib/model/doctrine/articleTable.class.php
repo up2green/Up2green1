@@ -12,13 +12,13 @@ class articleTable extends Doctrine_Table {
    * @return <Query> Requête
    */
   protected function buildQueryForRetrieveLastArticles($culture, $number = 2, $offset = 0) {
-    $q = $this->createQuery('a')
-              ->leftJoin('a.Translation t')
-              ->where('t.lang = ?', $culture)
-              ->orderBy('a.created_at DESC')
-              ->limit($number)
-              ->offset($offset);
-    return $q;
+    return $this->createQuery('a')
+		->leftJoin('a.Translation t')
+		->where('t.lang = ?', $culture)
+		->andWhere('a.is_active = ?', 1)
+		->orderBy('a.created_at DESC')
+		->limit($number)
+		->offset($offset);
   }
 
   /**

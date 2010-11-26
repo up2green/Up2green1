@@ -12,6 +12,7 @@
  * @property clob $description
  * @property string $logo
  * @property boolean $is_active
+ * @property integer $rank
  * @property category $Category
  * 
  * @method integer  getId()          Returns the current record's "id" value
@@ -21,6 +22,7 @@
  * @method clob     getDescription() Returns the current record's "description" value
  * @method string   getLogo()        Returns the current record's "logo" value
  * @method boolean  getIsActive()    Returns the current record's "is_active" value
+ * @method integer  getRank()        Returns the current record's "rank" value
  * @method category getCategory()    Returns the current record's "Category" value
  * @method article  setId()          Sets the current record's "id" value
  * @method article  setCategoryId()  Sets the current record's "category_id" value
@@ -29,6 +31,7 @@
  * @method article  setDescription() Sets the current record's "description" value
  * @method article  setLogo()        Sets the current record's "logo" value
  * @method article  setIsActive()    Sets the current record's "is_active" value
+ * @method article  setRank()        Sets the current record's "rank" value
  * @method article  setCategory()    Sets the current record's "Category" value
  * 
  * @package    up2green
@@ -71,6 +74,12 @@ abstract class Basearticle extends sfDoctrineRecord
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 0,
+             ));
+        $this->hasColumn('rank', 'integer', 4, array(
+             'type' => 'integer',
+             'notnull' => true,
+             'default' => 1,
+             'length' => 4,
              ));
     }
 

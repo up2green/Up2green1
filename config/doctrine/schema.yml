@@ -326,6 +326,10 @@ article:
     is_active:
       type: boolean
       default: 0
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 1
   relations:
     Category:
       class: category

@@ -32,7 +32,10 @@
 						<div id="right<?php echo SearchEngine::IMG ?>" class="onglet_right <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
 					</div>
 				</a>
-				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP ?>);">
+				<?php 
+				// <a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP );">
+				?>
+				<a href="#">
 					<div id="recherches<?php echo SearchEngine::SHOP ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">
 						<div id="left<?php echo SearchEngine::SHOP ?>" class="onglet_left <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
 						<div id="middle<?php echo SearchEngine::SHOP ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">Shopping</div>
@@ -95,7 +98,7 @@
 			<div class="content">
 				<p>Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</p>
 				<div class="lien_partenaires righter">
-					<a href="#">plus d'informations ici</a>
+					<a href="<?php echo sfConfig::get('app_url_blog'); ?>">plus d'informations ici</a>
 				</div>
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

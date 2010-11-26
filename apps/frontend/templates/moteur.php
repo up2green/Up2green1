@@ -67,6 +67,8 @@
 			-->
         </div>
 
+		<?php include_component('blog', 'footerLegal'); ?>
+
 		<?php if ($sf_user->hasFlash('notice') || $sf_user->hasFlash('error')): ?>
 		<script type="text/javascript">
 			$(document).ready(function(){

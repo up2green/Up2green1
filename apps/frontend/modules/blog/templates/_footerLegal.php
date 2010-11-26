@@ -10,7 +10,7 @@
 			$prefix = sfConfig::get('app_url_blog');
 
 			if(substr($linkDisplay, 0, 1) === '/') {
-				$prefix = substr($prefix, 0, sizeof($prefix)-1);
+				$linkDisplay = substr($linkDisplay, 1);
 			}
 
 			$linkDisplay = $prefix.$linkDisplay;

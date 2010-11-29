@@ -1,3 +1,7 @@
+<?php
+	$totalTrees = (int)$totalTrees + 10120;
+?>
+
 <div id="body">
 
 	<form id="searchForm" name="recherche" action="" method="post">
@@ -32,10 +36,7 @@
 						<div id="right<?php echo SearchEngine::IMG ?>" class="onglet_right <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
 					</div>
 				</a>
-				<?php 
-				// <a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP );">
-				?>
-				<a href="#">
+				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP ?>);">
 					<div id="recherches<?php echo SearchEngine::SHOP ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">
 						<div id="left<?php echo SearchEngine::SHOP ?>" class="onglet_left <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
 						<div id="middle<?php echo SearchEngine::SHOP ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">Shopping</div>
@@ -86,7 +87,11 @@
 			<p class="title">Statistiques</p>
 			<div class="content">
 				<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png" /></p>
-				<p class="center" style="padding:10px 0;">Arbres plantés : <strong style="color:#015F00;"><?php echo $totalTrees; ?></strong> <br/>soit plus de <strong style="color:#015F00;"><?php echo number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' '); ?></strong> tonnes<br/> de CO<sub>2</sub> compensés</p>
+				<p class="center tooltiped" tooltip="Les forêts sont reconnues pour être de véritables puits de carbone.<br /> A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes" style="padding:10px 0;">
+					Arbres plantés : <strong style="color:#015F00;"><?php echo $totalTrees; ?></strong> <br/>
+					soit plus de <strong style="color:#015F00;"><?php echo number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' '); ?></strong> tonnes<br/>
+					de CO<sub>2</sub> compensés
+				</p>
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 		</div>

@@ -4,19 +4,13 @@
     <?php foreach($category->getActiveLinks() as $link) : ?>
 	<?php
 		$linkDisplay = $link->getSrc();
+		$target = '_self';
 
-		if(!preg_match('/mailto/', $linkDisplay)) {
-
-			$prefix = sfConfig::get('app_url_blog');
-
-			if(substr($linkDisplay, 0, 1) === '/') {
-				$linkDisplay = substr($linkDisplay, 1);
-			}
-
-			$linkDisplay = $prefix.$linkDisplay;
+		if(preg_match('/http/', $linkDisplay)) {
+			$target = '_blank';
 		}
 	?>
-  	<span>| <a href="<?php echo $linkDisplay; ?>"><?php echo $link->getTitle(); ?></a></span>
+  	<span>| <a target="<?php echo $target; ?>" href="<?php echo $linkDisplay; ?>"><?php echo $link->getTitle(); ?></a></span>
   	<?php endforeach; ?>
   </div>
   <div id="copyright">

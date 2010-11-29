@@ -3,7 +3,7 @@ user_forgot_password:
   param: { module: user, action: forgotPassword }
 
 sf_guard_signin:
-  url:   /login
+  url: /login
   param: { module: sfGuardAuth, action: signin }
 
 sf_guard_signout:
@@ -110,6 +110,10 @@ plantation_landing_plantation:
 ####################
 ##### GENERAL
 ####################
+
+general_article:
+  url:   /article/:slug
+  param: { module: recherche, action: viewElement, type: article }
 
 homepage:
   url: /

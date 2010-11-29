@@ -5,12 +5,13 @@ default:
   metas:
     title: Up2green : Le Moteur de recherche
   layout: moteur
-  stylesheets:    [reset.css, main.css, button.css, module.css, moteur.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, moteur.css, jquery.tooltip.css]
   javascripts:
-    - min/jquery-1.4.2.min.js
+    - min/jquery-1.4.4.min.js
     - min/jquery-ui-1.8.2.custom.min.js
     - min/jquery.gritter.min.js
     - jquery.scrollTo.js
     - main.js
     - moteur.js
     - min/jquery.text-overflow.min.js
+    - min/jquery.tooltip.min.js

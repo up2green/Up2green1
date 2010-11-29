@@ -13,24 +13,32 @@ if(preg_match('/admin(.*)/', $_SERVER['HTTP_HOST'])) {
 	$app = 'backend';
 }
 elseif(preg_match('/association(.*)/', $_SERVER['HTTP_HOST'])) {
+	// site associatif
+	
 	$separator = '';
 
 	if(empty($_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] === '/') {
 		$_SERVER['REQUEST_URI'] = '/blog';
 	}
-	elseif(substr($_SERVER['REQUEST_URI'], 0, 6) !== '/blog/') {
+	elseif(substr($_SERVER['REQUEST_URI'], 0, 5) !== '/blog') {
 		$_SERVER['REQUEST_URI'] = '/blog'.$_SERVER['REQUEST_URI'];
 	}
 }
 elseif(preg_match('/reforestation(.*)/', $_SERVER['HTTP_HOST'])) {
+	// plateforme de reforestation
+
 	$separator = '';
 
 	if(empty($_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] === '/') {
 		$_SERVER['REQUEST_URI'] = '/plantation';
 	}
-	elseif(substr($_SERVER['REQUEST_URI'], 0, 6) !== '/plantation/') {
+	elseif(substr($_SERVER['REQUEST_URI'], 0, 11) !== '/plantation') {
 		$_SERVER['REQUEST_URI'] = '/plantation'.$_SERVER['REQUEST_URI'];
 	}
+}
+else {
+	// moteur de recherche
+
 }
 
 /* on définit l'environement : */

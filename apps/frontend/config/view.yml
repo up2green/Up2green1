@@ -9,12 +9,12 @@ default:
     title:        Up2green
     description:  Moteur de recherche, plateforme de reforestation et site associatif
     keywords:     up2green, recherche, reforestation, foret, arbre, biodiversite, coupon, carbone, CO2, uptogreen, terre, planète, programme, organisme, plantation en ligne, émission, compensation, collectivité, partenaire, cadeau, vert
+    robots:       index, follow
     #language:     en
-    #robots:       index, follow
     
-  stylesheets:    [reset.css, main.css, button.css, module.css, form.css, jquery.gritter.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, form.css, jquery.gritter.css, jquery.tooltip.css]
 
-  javascripts:    [jquery-1.4.2.js, main.js, min/jquery.gritter.min.js]
+  javascripts:    [min/jquery-1.4.4.min.js, main.js, min/jquery.gritter.min.js, jquery.qtip-1.0.min]
 
   has_layout:     true
   title: Up2green

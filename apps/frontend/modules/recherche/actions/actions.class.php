@@ -29,4 +29,9 @@ class rechercheActions extends sfActions {
             $this->totalTrees = Doctrine_Core::getTable('tree')->count();
         }
     }
+
+	public function executeViewElement(sfWebRequest $request) {
+		$this->type = $request->getParameter('type');
+		$this->element = Doctrine::getTable(ucfirst($this->type))->retrieveBySlug($request->getParameter("slug"));
+	}
 }

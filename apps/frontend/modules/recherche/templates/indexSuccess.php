@@ -1,5 +1,5 @@
 <?php
-	$totalTrees = (int)$totalTrees + 10120;
+	$totalTrees = (int)$totalTrees + 8847;
 ?>
 
 <div id="body">
@@ -36,6 +36,7 @@
 						<div id="right<?php echo SearchEngine::IMG ?>" class="onglet_right <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
 					</div>
 				</a>
+				<?php if(false) : ?>
 				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::SHOP ?>);">
 					<div id="recherches<?php echo SearchEngine::SHOP ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>">
 						<div id="left<?php echo SearchEngine::SHOP ?>" class="onglet_left <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
@@ -43,6 +44,7 @@
 						<div id="right<?php echo SearchEngine::SHOP ?>" class="onglet_right <?php echo ($moteur == SearchEngine::SHOP ? "onglet_selected" : "") ?>"></div>
 					</div>
 				</a>
+				<?php endif; ?>
 			</div>
 			<div class="avancees"><a href="#">Recherches Avancées</a></div>
 

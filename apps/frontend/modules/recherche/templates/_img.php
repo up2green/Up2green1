@@ -1,5 +1,5 @@
 <div class="result">
-	<a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+	<a target="_blank" href="<?php echo html_entity_decode($result['clickUrl'])?>">
 		<img src="<?php echo $result['thumbnail'] ?>" />
     </a>
     <?php if ($result['content'] != "") : ?>

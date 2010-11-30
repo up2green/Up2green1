@@ -26,7 +26,7 @@ $(function() {
 						case IMG : 
 							$(this).find('result').each(function(){
 								var html = '<div class="result hidden">';
-								html += '<a href="'+$(this).find('clickUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += '<img src="'+$(this).find('thumbnail').text()+'" />';
 								html += '</a>';
 								if($(this).find('content').text() != '') {
@@ -34,7 +34,7 @@ $(function() {
 									html += $(this).find('content').text();
 									html += '</p>';
 								}
-								html += '<a href="'+$(this).find('clickUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += $(this).find('displayUrl').text();
 								html += '</a>';
 								
@@ -52,7 +52,7 @@ $(function() {
 								var html = '<div class="result hidden">';
 								
 								html += '<h3>';
-								html += '<a href="'+$(this).find('clickUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += $(this).find('title').text();
 								html += '</a>';
 								html += '</h3>';
@@ -62,7 +62,7 @@ $(function() {
 									html += $(this).find('content').text();
 									html += '</p>';
 								}
-								html += '<a href="'+$(this).find('clickUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += $(this).find('displayUrl').text();
 								html += '</a>';
 								
@@ -77,7 +77,7 @@ $(function() {
 								var html = '<div class="result hidden">';
 								
 								html += '<h3>';
-								html += '<a href="'+$(this).find('clickUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += $(this).find('title').text();
 								html += '</a>';
 								html += '</h3>';
@@ -89,7 +89,7 @@ $(function() {
 								}
 								
 								html += '<h4>Source : ';
-								html += '<a href="'+$(this).find('sourceUrl').text()+'">';
+								html += '<a target="_blank" href="'+$(this).find('sourceUrl').text()+'">';
 								html += $(this).find('source').text();
 								html += '</a>';
 								html += '<span class="filename">';

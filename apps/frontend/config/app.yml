@@ -13,7 +13,11 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
+  cultures:
+    enabled:
+      fr: Français
   conversion_tree_co2: 0.1
+  hardcode_tree_number: 8847
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10

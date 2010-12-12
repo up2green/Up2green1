@@ -28,11 +28,30 @@
 	top: 1px;
 }
 
+/*
+----------------------------------------------
+border styles
+----------------------------------------------
+*/
+
 .bigrounded {
 	-webkit-border-radius: 2em;
 	-moz-border-radius: 2em;
 	border-radius: 2em;
 }
+
+.top-not-rounded {
+	-webkit-border-radius: 0 0 0.5em 0.5em;
+	-moz-border-radius: 0 0 0.5em 0.5em;
+	border-radius: 0 0 0.5em 0.5em;
+}
+
+/*
+----------------------------------------------
+size styles
+----------------------------------------------
+*/
+
 .button.big {
 	font-size: 14px;
 	font-weight: bold;
@@ -51,8 +70,11 @@
 	padding:0.15em 0.5em 0.2em;
 }
 
-/* color styles 
----------------------------------------------- */
+/*
+----------------------------------------------
+color styles 
+----------------------------------------------
+*/
 
 /* black */
 .button.black {
@@ -140,6 +162,28 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
 	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+/* orange-gray */
+.button.orange-gray {
+	color: #fef4e9;
+	border: solid 1px #9F7C66;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DFD2AB), to(#7F5942));
+	background: -moz-linear-gradient(top,  #DFD2AB,  #7F5942);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#DFD2AB', endColorstr='#7F5942');
+}
+.button.orange-gray:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#CFB19F), to(#8F5F43));
+	background: -moz-linear-gradient(top, #CFB19F ,  #8F5F43);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#CFB19F', endColorstr='#8F5F43');
+}
+.button.orange-gray:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#7F5942), to(#DFD2AB));
+	background: -moz-linear-gradient(top,  #7F5942,  #DFD2AB);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F5942', endColorstr='#DFD2AB');
 }
 
 /* red */

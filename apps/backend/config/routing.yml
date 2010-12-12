@@ -144,6 +144,15 @@ engine:
     column:               id
     with_wildcard_routes: true
 
+profil:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Profil
+    module:               profil
+    prefix_path:          /profil
+    column:               id
+    with_wildcard_routes: true
+
 # default
 homepage:
   url:   /

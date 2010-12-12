@@ -11,9 +11,9 @@
  * @property integer $id_devise
  * @property string $site_display
  * @property string $site_url
- * @property string $html
- * @property string $logo
- * @property string $description
+ * @property clob $html
+ * @property clob $logo
+ * @property clob $description
  * @property enum $remun_type
  * @property float $remun_min
  * @property float $remun_max
@@ -29,9 +29,9 @@
  * @method integer             getIdDevise()      Returns the current record's "id_devise" value
  * @method string              getSiteDisplay()   Returns the current record's "site_display" value
  * @method string              getSiteUrl()       Returns the current record's "site_url" value
- * @method string              getHtml()          Returns the current record's "html" value
- * @method string              getLogo()          Returns the current record's "logo" value
- * @method string              getDescription()   Returns the current record's "description" value
+ * @method clob                getHtml()          Returns the current record's "html" value
+ * @method clob                getLogo()          Returns the current record's "logo" value
+ * @method clob                getDescription()   Returns the current record's "description" value
  * @method enum                getRemunType()     Returns the current record's "remun_type" value
  * @method float               getRemunMin()      Returns the current record's "remun_min" value
  * @method float               getRemunMax()      Returns the current record's "remun_max" value
@@ -99,17 +99,14 @@ abstract class Baseengine extends sfDoctrineRecord
              'notnull' => true,
              'length' => 128,
              ));
-        $this->hasColumn('html', 'string', 128, array(
-             'type' => 'string',
-             'length' => 128,
+        $this->hasColumn('html', 'clob', null, array(
+             'type' => 'clob',
              ));
-        $this->hasColumn('logo', 'string', 128, array(
-             'type' => 'string',
-             'length' => 128,
+        $this->hasColumn('logo', 'clob', null, array(
+             'type' => 'clob',
              ));
-        $this->hasColumn('description', 'string', 128, array(
-             'type' => 'string',
-             'length' => 128,
+        $this->hasColumn('description', 'clob', null, array(
+             'type' => 'clob',
              ));
         $this->hasColumn('remun_type', 'enum', null, array(
              'type' => 'enum',
@@ -119,6 +116,7 @@ abstract class Baseengine extends sfDoctrineRecord
               1 => 'pourcent',
               2 => 'price',
              ),
+             'default' => 'number',
              ));
         $this->hasColumn('remun_min', 'float', null, array(
              'type' => 'float',

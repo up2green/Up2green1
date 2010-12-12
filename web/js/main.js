@@ -42,6 +42,9 @@ $(document).ready(function(){
 	}
 
 	/* tooltips */
+	var tooltipImg = '<img class="tooltip-icon" src="/images/icons/16x16/consulting.png" />';
+	$('.tooltiped:not(img)').append(tooltipImg);
+
 	$('.tooltiped[tooltip]').each(function() {
 		var self = $(this);
 		self.tooltip({

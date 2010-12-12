@@ -34,7 +34,7 @@
 			<div id="ads_search">
 				<ul class="content-list warning" style="width:75%;margin:0 auto 20px;">
 					<li>L\'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.</li>
-					<li>L\'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d\'une à 3 semaines.</li>
+					<li>L\'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d\'environ une semaine.</li>
 				</p>
 			</div>
 		';

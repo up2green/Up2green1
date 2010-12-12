@@ -183,20 +183,16 @@ class SearchEngine {
 			';
 		}
 
-		$gains = '';
-		switch($result['remun_type']) {
-			case 'pourcent':
-				$gains = '<small>% du prix de vos achats</small>';
-				break;
-			case 'number':
-				$gains = '<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />';
-				break;
-			default:
-				break;
-		}
+		$gains = '<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />';
 
 		$from = $result['remun_min'];
 		$to = $result['remun_max'];
+
+		if($result['remun_type'] === 'pourcent') {
+			$from = $from * 30 / (sfConfig::get('app_prix_arbre') * 100);
+			$to = $to * 30 / (sfConfig::get('app_prix_arbre') * 100);
+			$gains .= " pour 30€ d'achat";
+		}
 
 		$from = (floor($from) == $from) ? (int)$from : number_format($from, 2, ',', ' ');
 		$to = (floor($to) == $to) ? (int)$to : number_format($to, 2, ',', ' ');

@@ -73,6 +73,7 @@ class userActions extends sfActions {
 		$profilForm = new profilForm($this->getUser()->getGuardUser()->getProfile());
 
 		$userForm->useFields(array('first_name', 'last_name'));
+		$profilForm->useFields(array('is_newsletter'));
 
 		$this->form = new sfForm();
 		$this->form->embedForm('profil', $profilForm);
@@ -91,7 +92,7 @@ class userActions extends sfActions {
 
 				$profil = $profilForm->save();
 				$user = $userForm->save();
-				
+
 				$profil->save();
 				$user->save();
 

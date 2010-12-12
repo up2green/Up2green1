@@ -2,7 +2,15 @@
   <div id="legal">
     <span>Up2green® 2010 </span>
     <?php foreach($category->getActiveLinks() as $link) : ?>
-  	<span>| <a href="<?php echo $link->getSrc(); ?>"><?php echo $link->getTitle(); ?></a></span>
+	<?php
+		$linkDisplay = $link->getSrc();
+		$target = '_self';
+
+		if(preg_match('/http/', $linkDisplay)) {
+			$target = '_blank';
+		}
+	?>
+  	<span>| <a target="<?php echo $target; ?>" href="<?php echo $linkDisplay; ?>"><?php echo $link->getTitle(); ?></a></span>
   	<?php endforeach; ?>
   </div>
   <div id="copyright">

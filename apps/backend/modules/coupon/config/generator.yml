@@ -17,6 +17,7 @@ generator:
       list:
         title:   Gestion des coupons
         display: [id, CouponGen, code, is_active, used_at]
+        max_per_page:   50
       filter:  ~
       form:    ~
       edit:    ~

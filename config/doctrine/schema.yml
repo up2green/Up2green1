@@ -326,6 +326,10 @@ article:
     is_active:
       type: boolean
       default: 0
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 1
   relations:
     Category:
       class: category
@@ -556,17 +560,18 @@ engine:
       type: string(128)
       notnull: true
     html:
-      type: string(128)
+      type: clob
       default: null
     logo:
-      type: string(128)
+      type: clob
       default: null
     description:
-      type: string(128)
+      type: clob
       default: null
     remun_type:
       type: enum
       values: [number, pourcent, price]
+      default: number
     remun_min:
       type: float
       notnull: true

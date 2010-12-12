@@ -47,7 +47,8 @@ class category extends Basecategory
 			->from('category c')
 			->where('c.root_id = ?', $this->getRootId())
 			->andWhere('c.level = ?', $this->getLevel() + 1)
-			->andWhere('c.lft > ?', $this->getLft());
+			->andWhere('c.lft > ?', $this->getLft())
+			->andWhere('c.rgt < ?', $this->getRgt());
 		
 		return Doctrine_Core::getTable('category')->getActive($q);
 	}
@@ -56,7 +57,8 @@ class category extends Basecategory
   {
 		$q = Doctrine_Query::create()
 			->from('lien l')
-			->where('l.category_id = ?', $this->getId());
+			->where('l.category_id = ?', $this->getId())
+			->orderBy('l.rank ASC');
 		
 		if(!is_null($max))
 			$q->addlimit($max);

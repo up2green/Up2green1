@@ -1,151 +1,84 @@
+<?php $moteur = (int)$moteur; ?>
+
 <div id="body">
 
 	<form id="searchForm" name="recherche" action="" method="post">
-		
 		<div class="search">
 			<input type="hidden" id="hidden_text_search" name="hidden_text_search" value="<?php echo $textSearch ?>" />
 			<input type="hidden" id="hidden_moteur_search" name="hidden_moteur_search" value="<?php echo $moteur ?>" />
-			<input type="text" id="recherche_text" name="recherche_text" size="65" value="<?php echo $textSearch ?>" />
+			<input type="text" id="recherche_text" name="recherche_text" size="60" value="<?php echo $textSearch ?>" />
 			<input type="submit" id="recherche_submit" name="recherche_submit" value="Rechercher" class="button white small" />
 		</div>
 
-		<div class="more_search">
-			<div class="filtres">
-				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::WEB ?>);">
-					<div id="recherches<?php echo SearchEngine::WEB ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::WEB ? "onglet_selected" : "") ?>">
-						<div id="left<?php echo SearchEngine::WEB ?>" class="onglet_left <?php echo ($moteur == SearchEngine::WEB ? "onglet_selected" : "") ?>"></div>
-						<div id="middle<?php echo SearchEngine::WEB ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::WEB ? "onglet_selected" : "") ?>">Web</div>
-						<div id="right<?php echo SearchEngine::WEB ?>" class="onglet_right <?php echo ($moteur == SearchEngine::WEB ? "onglet_selected" : "") ?>"></div>
-					</div>
-				</a>
-				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::NEWS ?>);">
-					<div id="recherches<?php echo SearchEngine::NEWS ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::NEWS ? "onglet_selected" : "") ?>">
-						<div id="left<?php echo SearchEngine::NEWS ?>" class="onglet_left <?php echo ($moteur == SearchEngine::NEWS ? "onglet_selected" : "") ?>"></div>
-						<div id="middle<?php echo SearchEngine::NEWS ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::NEWS ? "onglet_selected" : "") ?>">News</div>
-						<div id="right<?php echo SearchEngine::NEWS ?>" class="onglet_right <?php echo ($moteur == SearchEngine::NEWS ? "onglet_selected" : "") ?>"></div>
-					</div>
-				</a>
-				<a href="javascript:" onclick="changeMoteur(<?php echo SearchEngine::IMG ?>);">
-					<div id="recherches<?php echo SearchEngine::IMG ?>" class="onglet_recherches <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>">
-						<div id="left<?php echo SearchEngine::IMG ?>" class="onglet_left <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
-						<div id="middle<?php echo SearchEngine::IMG ?>" class="onglet_middle <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>">Images</div>
-						<div id="right<?php echo SearchEngine::IMG ?>" class="onglet_right <?php echo ($moteur == SearchEngine::IMG ? "onglet_selected" : "") ?>"></div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="onglet_recherches">
-						<div class="onglet_left"></div>
-						<div class="onglet_middle">Shopping</div>
-						<div class="onglet_right"></div>
-					</div>
-					<div class="onglet_decoration"></div>
-				</a>
-			</div>
-			<div class="avancees"><a href="#">Recherches Avancées</a></div>
+		<div class="filtres">
+			<span searchMode="<?php echo SearchEngine::WEB ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::WEB ? 'green active' : 'gray'); ?> medium first">Web</span>
+			<span searchMode="<?php echo SearchEngine::IMG ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::IMG ? 'green active' : 'gray'); ?> medium">Images</span>
+			<span searchMode="<?php echo SearchEngine::NEWS ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::NEWS ? 'green active' : 'gray'); ?> medium">News</span>
+			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium">Achats</span>
 
+			<a class="more-search" href="#">Recherches Avancées</a>
 		</div>
 	</form>
 	
-	<?php if ($textSearch == ""): ?>
-	<div id="bodyContentHomme">
-	
-		<?php if (!$sf_user->isAuthenticated()): ?>
-		<div class="module acteur">
-			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-			<p class="title">Devenez acteur de la reforestation</p>
-			<div class="content">
-				<p>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</p>
-				<p>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</p>
-				<p class="center">
-					<a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong>Créer un compte</strong></a>
-				</p>
-				<p class="center">
-					<a href="#" class="button green">Définir Up2green comme moteur<br/>de recherche par defaut</a>
-				</p>
-			</div>
-			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-		</div>
-		<?php else: ?>
-		<div class="module acteur">
-			<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-			<p class="title">Plantez vos arbres</p>
-			<div class="content">
-				<p>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement</p>
-				<p class="center">
-					<a href="<?php echo url_for("plantation/index"); ?>" class="button green">Accéder à la plateforme de reforestation</a>
-				</p>
-			</div>
-			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-		</div>
-		<?php endif; ?>
-		
-		<div class="module statistiques">
-			<img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
-			<p class="title">Statistiques</p>
-			<div class="content">
-				<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png" /></p>
-				<p class="center" style="padding:10px 0;">Arbres plantés : <strong style="color:#015F00;"><?php echo $totalTrees; ?></strong> <br/>soit plus de <strong style="color:#015F00;"><?php echo number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' '); ?></strong> tonnes<br/> de CO<sub>2</sub> compensés</p>
-			</div>
-			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-		</div>
-		
-		<?php if (!$sf_user->isAuthenticated()): ?>
-		<div class="module purple partenaires">
-			<img class="title middle right" src="/images/module/purple/icon/icon-partenaires.png" alt="" />
-			<p class="title">Partenaires</p>
-			<div class="content">
-				<p>Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</p>
-				<div class="lien_partenaires righter">
-					<a href="#">plus d'informations ici</a>
-				</div>
-			</div>
-			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-		</div>
-		<?php endif; ?>
-	
-	</div>
-	<?php else: ?>
-	<div id="bodyContent">
+	<?php 
+	if ($textSearch == "") {
+		include_partial('home', array(
+			'totalTrees' => $totalTrees
+		));
+	}
+	elseif (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS, SearchEngine::SHOP))) {
 
-		<?php
+		// warning
+
+		echo '
+			<div id="ads_search">
+				<ul class="content-list warning" style="width:75%;margin:0 auto 20px;">
+					<li>L\'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.</li>
+					<li>L\'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d\'une à 3 semaines.</li>
+				</p>
+			</div>
+		';
+
 		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
+			if(!empty($singleShopResult)) {
+				echo '<div class="shop-result">';
+				include_partial('shop', array('result' => $singleShopResult));
+				echo '</div>';
+			}
+		}
+
+		// results
+		$partial = ($moteur === SearchEngine::WEB) ? "web" :
+			(($moteur === SearchEngine::IMG) ? "img" :
+			(($moteur === SearchEngine::NEWS) ? "news" :
+			(($moteur === SearchEngine::SHOP) ? "shop" : "default")));
+
+		echo '<div id="searchResults" class="'.$partial.'-result">';
+		
+		if(sizeof($results) === 0) {
 			echo '
-				<div id="ads_search">
-					<p class="warning" style="width:75%;margin:0 auto;">
-						L\'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.
-					</p>
+				<p style="text-align: center; font-style: italic; font-weight: bold;">
+					Aucun résultat ne correspond à votre recherche.
+				</p>
+			';
+		}
+
+		foreach ($results as $result) {
+			echo include_partial($partial, array('result' => $result));
+		}
+
+		echo '</div>';
+		echo '<div class="clear"></div>';
+
+		// more results
+		
+		if(sizeof($results) >= sfConfig::get('app_base_search')) {
+			echo '
+				<div class="more-result">
+					<span id="searchMore" class="button white big">Plus de Résultats</span>
 				</div>
 			';
 		}
-		
-		if ($moteur == SearchEngine::WEB) {
-			echo '<div id="searchResults" class="web-result">';
-			foreach ($results as $result) { echo include_partial("web", array('result' => $result)); }
-			echo '</div>';
-			echo '<div class="clear"></div>';
-		}
-		elseif ($moteur == SearchEngine::IMG) {
-			echo '<div id="searchResults" class="img-result">';
-			foreach ($results as $result) { echo include_partial("img", array("result" => $result)); }
-			echo '</div>';
-			echo '<div class="clear"></div>';
-		}
-		elseif ($moteur == SearchEngine::NEWS) {
-			echo '<div id="searchResults" class="news-result">';
-			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
-			echo '</div>';
-			echo '<div class="clear"></div>';
-		}
-		elseif ($moteur == SearchEngine::SHOP) {
-			echo '<div id="searchResults" class="shop-result">';
-			foreach ($results as $result) { echo include_partial("new", array("result" => $result)); }
-			echo '</div>';
-			echo '<div class="clear"></div>';
-		}
-		?>
-		<div class="more-result">
-			<span id="searchMore" class="button white big">Plus de Résultats</span>
-		</div>
-	</div>
-	<?php endif ; ?>
+	}
+	?>
 </div>

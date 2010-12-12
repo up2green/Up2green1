@@ -16,17 +16,26 @@ class rechercheActions extends sfActions {
      */
     public function executeIndex(sfWebRequest $request) {
         $params = $request->getParameterHolder();
+
+		$this->results = array();
+		$this->textSearch = "";
+		$this->singleShopResult = array();
+		
         if ($strRecherche = $params->get('recherche_text')) {
             $this->moteur = $params->get('hidden_moteur_search');
             $this->textSearch = $strRecherche;
             $engine = new SearchEngine($this->textSearch, $this->moteur);
             $this->results = $engine->getResults();
+			$this->singleShopResult = $engine->getOneShopResult();
         }
         else {
-            $this->textSearch = "";
-            $this->results = array();
             $this->moteur = SearchEngine::WEB;
             $this->totalTrees = Doctrine_Core::getTable('tree')->count();
         }
     }
+
+	public function executeViewElement(sfWebRequest $request) {
+		$this->type = $request->getParameter('type');
+		$this->element = Doctrine::getTable(ucfirst($this->type))->retrieveBySlug($request->getParameter("slug"));
+	}
 }

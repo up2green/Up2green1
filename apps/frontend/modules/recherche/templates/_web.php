@@ -1,6 +1,6 @@
 <div class="result">
     <h3>
-		<a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+		<a target="_blank" href="<?php echo html_entity_decode($result['clickUrl'])?>">
 			<?php echo html_entity_decode($result['title']) ?>
 		</a>
 	</h3>
@@ -11,7 +11,7 @@
     </p>
     <?php endif; ?>
     
-    <a href="<?php echo html_entity_decode($result['clickUrl'])?>">
+    <a target="_blank" href="<?php echo html_entity_decode($result['clickUrl'])?>">
 		<?php echo html_entity_decode($result['displayUrl']) ?>
 	</a>
 </div>

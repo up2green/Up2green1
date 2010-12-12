@@ -42,5 +42,71 @@ class couponFormFilter extends BasecouponFormFilter
                         )),
                         'template'  => 'From %from_date%<br />To %to_date%',
         ));
+
+		$this->widgetSchema['user'] = new sfWidgetFormFilterInput(array(
+			'template' => '%input%'
+		));
+
+		$this->widgetSchema['partenaire'] = new sfWidgetFormFilterInput(array(
+			'template' => '%input%'
+		));
+
+		$this->validatorSchema['user'] = new sfValidatorPass(array('required' => false));
+		$this->validatorSchema['partenaire'] = new sfValidatorPass(array('required' => false));
+
   }
+
+	public function getFields() {
+		return array_merge(array(
+			'user' => 'User',
+			'partenaire' => 'Partenaire',
+			), parent::getFields()
+		);
+	}
+
+	public function addUserColumnQuery(Doctrine_Query $query, $field, $values)
+	{
+		if (isset($values['text']) && !empty($values['text']))
+		{
+			$user = Doctrine_Core::getTable('sfGuardUser')
+				->createQuery('u')
+				->where('u.username = ?', $values['text'])
+				->fetchOne();
+
+			if(!empty($user)) {
+				$query
+				  ->innerJoin($query->getRootAlias().'.couponUser cu')
+				  ->andWhere('cu.user_id = ?', $user->getId())
+				;
+			}
+		}
+	}
+
+	public function addPartenaireColumnQuery(Doctrine_Query $query, $field, $values)
+	{
+		if (isset($values['text']) && !empty($values['text']))
+		{
+			// get the user
+			$user = Doctrine_Core::getTable('sfGuardUser')
+				->createQuery('u')
+				->where('u.username = ?', $values['text'])
+				->fetchOne();
+
+			if(!empty($user)) {
+				// get the partenaire
+				$partenaire = Doctrine_Core::getTable('partenaire')
+					->createQuery('p')
+					->where('p.user_id = ?', $user->getId())
+					->fetchOne();
+
+				if(!empty($partenaire)) {
+					$query
+					  ->innerJoin($query->getRootAlias().'.Partenaire cp')
+					  ->andWhere('cp.partenaire_id = ?', $partenaire->getId())
+					;
+				}
+			}
+		}
+	}
+
 }

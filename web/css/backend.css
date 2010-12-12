@@ -167,6 +167,6 @@ th
 #engine_filters_id_category,
 #article_filters_category_id,
 #newsletter_filters_category_id,
-#lien_filters[id_category] {
+#lien_filters_category_id {
 	width:200px;
 }

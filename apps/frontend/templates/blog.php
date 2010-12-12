@@ -35,7 +35,7 @@
 
     <div class="fond_banner">
       <div class="banner">
-        <p class="logo"><?php echo image_tag("blog/logo_03.png"); ?></p>
+        <a href="<?php echo sfConfig::get('app_url_blog'); ?>" class="logo"><?php echo image_tag("blog/logo_03.png"); ?></a>
         <?php include_component('blog', 'diaporama'); ?>
       </div>
     </div>

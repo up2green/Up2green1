@@ -15,9 +15,9 @@ default:
   metas:
     title: Up2green : La plate-forme de Reforestation
   layout: plantation
-  stylesheets:    [reset.css, main.css, button.css, module.css, plantation.css]
+  stylesheets:    [reset.css, main.css, button.css, module.css, plantation.css, jquery.tooltip.css]
   javascripts:
-    - min/jquery-1.4.2.min.js
+    - min/jquery-1.4.4.min.js
     - min/jquery-ui-1.8.2.custom.min.js
     - main.js
     - jquery.scrollTo.js

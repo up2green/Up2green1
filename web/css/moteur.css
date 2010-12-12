@@ -30,6 +30,7 @@
 #recherche_text{
 	text-align:left;
 	background-color:#FFFFFF;
+	border: 1px solid #AAAAAA;
 }
 
 #recherche_submit{
@@ -38,86 +39,37 @@
 	position:relative;
 }
 
-.more_search{
-	clear:both;
-	padding-top:5px;
+#searchForm div.search{
+	height: 20px;
 }
 
-.filtres a{
-float:left;
-color:#2f8d00;
-font-size:14px;
-text-align:center;
-line-height:20px;
+.filtres {
+	position: relative;
 }
-.onglet_recherches .onglet_selected{
-float:left;
-border-top:1px;
-border-top-color:white;
-color:black;
+
+.filtres a.more-search {
+	bottom: 0;
+	position: absolute;
+	right: 0;
 }
-.onglet_recherches{
-float:left;
-border-top:1px;
-border-top-style: solid;
-border-top-color:green;
+
+.filtres span.button {
+	position: relative;
+	margin-left:-6px;
+	padding-left:5px;
+	padding-right:15px;
+	-webkit-border-radius: 0 0 2em 0.5em;
+	-moz-border-radius: 0 0 2em 0.5em;
+	border-radius: 0 0 2em 0.5em;
 }
-a .onglet_left{
-border-top:1px;
-border-top-color:green;
-float:left;
-width:11px;
-height:26px;
+
+.filtres span.button.first {
+	margin-left:0px;
 }
-a .onglet_middle{
-border-top:1px;
-border-top-color:green;
-float:left;
-height:26px;
-}
-a .onglet_right{
-border-top:1px;
-border-top-color:green;
-float:left;
-height:26px;
-}
-.onglet_left.onglet_selected{
-float:left;
-background: url(/images/categorie_left_11x26.png);
-width:11px;
-height:26px;
-}
-.onglet_middle.onglet_selected{
-float:left;
-background: url(/images/categorie_middle_1x26.png);
-height:26px;
-}
-.onglet_right.onglet_selected{
-float:left;
-background: url(/images/categorie_right_26x26.png);
-width:26px;
-height:26px;
-}
-.onglet_decoration{
-float:left;
-background: url(/images/categorie_decoration-65x26.png);
-width:65px;
-height:26px;
-}
-.avancees a{
-	float:right;
-	color:#2F8D00;
-	text-decoration: underline;
-	font-size:14px;
-}
-.avancees a:hover{
-color:#2F8D00;
-text-decoration: none;
-font-size:14px;
-}
+
 /* CORPS ACCUEIL */
 
-#bodyContentHomme {
+#home {
 	min-height:370px;
 	width:700px;
 	margin:0 auto;
@@ -204,6 +156,61 @@ div.more-result {
 	width:70%;
 }
 
+/* recherche Achat */
+
+div.shop-result div.result {
+	padding:5px;
+}
+
+div.shop-result div.result table {
+	border:3px solid #FFBA90;
+	margin:0 10px;
+	width:100%;
+}
+
+div.shop-result div.result table:hover {
+	border:3px solid #FF7124;
+}
+
+div.shop-result div.result td {
+	padding: 20px 5px;
+    vertical-align: middle;
+}
+
+div.shop-result div.result td.affiliate-logo img {
+	max-height:80px;
+	max-width:300px;
+}
+
+div.shop-result div.result td.affiliate-logo {
+	text-align:center;
+	width:320px;
+}
+
+div.shop-result div.result td.affiliate-content {
+	max-width:400px;
+}
+
+div.shop-result div.result td.affiliate-gains {
+	width:150px;
+	text-align: center;
+}
+
+div.shop-result div.content p {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.shop-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.shop-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
 /* recherche Web */
 
 div.web-result div.result {
@@ -304,4 +311,11 @@ div.img-result span.filename {
 
 div.img-result p.content {
 	width:150px;
+}
+
+#footer_page {
+	font-size:10px;
+	height:50px;
+	margin:50px 0 0;
+	text-align:center;
 }

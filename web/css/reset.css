@@ -22,6 +22,10 @@ blockquote:before, blockquote:after, q:before, q:after {
 	content: none;
 }
 
+input {
+	margin: 0px;
+}
+
 /* remember to define focus styles! */
 :focus {
 	outline: 0;

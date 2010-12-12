@@ -19,4 +19,10 @@ require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
+	public function executeSignout($request) {
+		$this->getUser()->signOut();
+		$flash = "Vous êtes maintenant déconnecté d'up2green.";
+		$this->getUser()->setFlash('notice', $flash);
+		$this->redirect('@homepage');
+	}
 }

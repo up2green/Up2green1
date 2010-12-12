@@ -1,10 +1,13 @@
-$(function() { 
+$(function() {
+
+	var txtReadMore = $("#searchMore").html();
+	var IMG = '1';
+	var WEB = '2';
+	var NEWS = '3';
+	var SHOP = '4';
+	
     $("#searchMore").click(function(){
-		var txtReadMore = $("#searchMore").html();
-		var IMG = '1';
-		var WEB = '2';
-		var NEWS = '3';
-    
+		
 		$("#searchMore").html('<img src="/images/icons/16x16/ajax-loader.gif" alt="Loading" />');
 		
         $.ajax({
@@ -37,14 +40,12 @@ $(function() {
 								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += $(this).find('displayUrl').text();
 								html += '</a>';
-								
-								html += '<span class="filename">';
+								html += ' <span class="filename">';
 								html += '['+$(this).find('title').text()+']';
 								html += '</span>';
 								html += '</div>';	
 								$('#searchResults').append(html);
 							});
-							$('div.result.hidden p.content, div.result.hidden a', $('#searchResults')).textOverflow(null, true);
 							break;
 						
 						case WEB :
@@ -69,7 +70,6 @@ $(function() {
 								html += '</div>';	
 								$('#searchResults').append(html);
 							});
-							$('div.result.hidden a', $('#searchResults')).textOverflow(null, true);
 							break;
 						
 						case NEWS :
@@ -101,12 +101,42 @@ $(function() {
 								$('#searchResults').append(html);
 							});
 							break;
+
+						case SHOP :
+							$(this).find('result').each(function(){
+								var html = '<div class="result hidden">';
+
+								html += '<table>';
+								html += '<tr>';
+
+								if($(this).find('logo').text() != '') {
+									html += '<td class="affiliate-logo">';
+									html += $(this).find('logo').text();
+									html += '</td>';
+								}
+
+								html += '<td class="affiliate-content">';
+								html += $(this).find('html').text();
+								html += '</td>';
+
+								html += '<td class="affiliate-gains">';
+								html += '<h3>Gains :</h3>';
+								html += '<p>'+$(this).find('gains').text()+'</p>';
+								html += '</td>';
+
+								html += '</tr>';
+								html += '</table>';
+								html += '</div>';
+
+								$('#searchResults').append(html);
+							});
+							break;
 					}
 					                    
 					$('div.result.hidden', $('#searchResults')).fadeIn('slow', function() {
 						$("body").scrollTo( 'max', { axis:'y' } );
 					}).removeClass('hidden');
-                    
+
 					$("#searchMore").html(txtReadMore);
 				});
             }
@@ -114,27 +144,41 @@ $(function() {
         
     });
     
-    $('div.img-result p.content, div.img-result a', '#body').textOverflow(null, true);
+    $(".filtres > span[searchMode]", "#searchForm").each(function(){
+		$(this).bind('click', {mode: $(this).attr('searchMode')}, changeMoteur)
+	});
+
 });
 
 
-function changeMoteur(valeur){
+function changeMoteur(event){
+
+	var valeur = event.data.mode;
+	var ongletActif = $(".filtres > span[searchMode].active", "#searchForm");
+	var ongletCible = $(".filtres > span[searchMode="+valeur+"]", "#searchForm");
+
+	// désactivation de l'ancien onglet
+	if(ongletActif.is('.green')) {
+		ongletActif.removeClass('green').addClass('gray');
+	}
+	else if(ongletActif.is('.orange')) {
+		ongletActif.removeClass('orange').addClass('orange-gray');
+	}
+	ongletActif.removeClass('active');
+
+	// activation de l'ancien onglet
+	if(ongletCible.is('.gray')) {
+		ongletCible.removeClass('gray').addClass('green');
+	}
+	else if(ongletCible.is('.orange-gray')) {
+		ongletCible.removeClass('orange-gray').addClass('orange');
+	}
+	ongletCible.addClass('active');
+
     $("#hidden_moteur_search").val(valeur);
-    $(".onglet_recherches").each(function(){
-        $(this).removeClass("onglet_selected");
-        if ($(this).attr('id') == "recherches"+valeur) $(this).addClass("onglet_selected");
-    });
-    $(".onglet_left").each(function(){
-        $(this).removeClass("onglet_selected");
-        if ($(this).attr('id') == "left"+valeur) $(this).addClass("onglet_selected");
-    });
-    $(".onglet_middle").each(function(){
-        $(this).removeClass("onglet_selected");
-        if ($(this).attr('id') == "middle"+valeur) $(this).addClass("onglet_selected");
-    });
-    $(".onglet_right").each(function(){
-        $(this).removeClass("onglet_selected");
-        if ($(this).attr('id') == "right"+valeur) $(this).addClass("onglet_selected");
-    });
-    if ($("#recherche_text").val() != "") document.recherche.submit();
+	
+    if ($("#recherche_text").val() != "") {
+		$("#searchForm").submit();
+	}
+
 }

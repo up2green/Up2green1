@@ -32,42 +32,15 @@
             <div class="header">
 				<a href="/">
 					<div class="logo"></div>
-					<div class="slogan">Etre acteur de la reforestation au fil de ses recherches</div>
+					<div class="slogan"><?php echo __("Etre acteur de la reforestation au fil de ses recherches") ?></div>
 				</a>
             </div>
             
             <?php echo $sf_content ?>
             
             <div class="clear"></div>
-			<!-- 
-			<div id="footer_wrapper">
-				<div id="footer_inner">
-					<div class="onglet">
-						<div class="left"></div>
-						<div class="middle">en savoir plus</div>
-						<div class="right"></div>
-					</div>
-					<div class="head">
-						<ul>
-							<li><a href="#">Pourquoi planter des arbres</a></li>
-							<li><a href="#">Nos programmes reforestation</a></li>
-							<li><a href="#">Qui sommes-nous ?</a></li>
-							<li><a href="#">Offrir des arbres en cadeau</a></li>
-							<li><a href="#">Partenaires entreprises et collectivités</a></li>
-						</ul>
-					</div>
-					<div class="content_wrapper">
-						<div class="content_inner">
-							<?php /*include_component('lien', 'footerPanel');*/ ?>
-						</div>
-					</div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			-->
+			
         </div>
-
-		<?php include_component('blog', 'footerLegal'); ?>
 
 		<?php if ($sf_user->hasFlash('notice') || $sf_user->hasFlash('error')): ?>
 		<script type="text/javascript">
@@ -92,6 +65,8 @@
 			});
 		</script>
 		<?php endif ?>
+
+		<?php include_component('blog', 'footerLegal'); ?>
 
     </body>
 </html>

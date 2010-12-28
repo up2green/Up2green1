@@ -18,6 +18,10 @@ sf_guard_password:
   url:   /request_password
   param: { module: sfGuardAuth, action: password }
 
+change_language:
+  url:   /change_language
+  param: { module: user, action: changeLanguage }
+
 ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
@@ -42,6 +46,10 @@ landing_plantation:
 ####################
 ##### BLOG
 ####################
+
+blog_change_language:
+  url:   /blog/change_language
+  param: { module: user, action: changeLanguage }
 
 blog_organisme_list:
   url:   /blog/organisme
@@ -106,6 +114,10 @@ plantation_landing_plantation_homepage:
 plantation_landing_plantation:
   url: /plantation/landing/plantation/:partenaireOffset
   param: {module: landing, action: plantation, partenaireOffset: 0}
+
+plantation_change_language:
+  url:   /plantation/change_language
+  param: { module: user, action: changeLanguage }
 
 ####################
 ##### GENERAL

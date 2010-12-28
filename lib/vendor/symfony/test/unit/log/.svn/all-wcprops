@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 42
-/!svn/ver/23881/branches/1.4/test/unit/log
+/!svn/ver/30790/branches/1.4/test/unit/log
 END
 sfLoggerWrapperTest.php
 K 25
@@ -14,6 +14,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 66
 /!svn/ver/23881/branches/1.4/test/unit/log/sfConsoleLoggerTest.php
+END
+sfWebDebugLoggerTest.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/!svn/ver/30790/branches/1.4/test/unit/log/sfWebDebugLoggerTest.php
 END
 sfAggregateLoggerTest.php
 K 25

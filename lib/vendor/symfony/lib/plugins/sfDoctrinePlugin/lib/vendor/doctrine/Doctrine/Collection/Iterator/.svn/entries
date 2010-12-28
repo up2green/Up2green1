@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Collection/Iterator
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 8e73c741c7874d616c8415f485992a93
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 9cc99c9f130cd88c76a97002f25681e1
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 61626c56793d59ba90a541b431c0b4c6
 2010-03-29T19:53:27.209172Z
 7490

@@ -1,7 +1,4 @@
-<?php 
-	use_helper('I18N');
-	include_partial('menuProfil'); 
-?>
+<?php include_partial('menuProfil'); ?>
 
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">

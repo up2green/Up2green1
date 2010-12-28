@@ -1,7 +1,7 @@
-10
+9
 
 dir
-30593
+31726
 http://svn.symfony-project.com/branches/1.4/lib/task/generator/skeleton/project/web
 http://svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://svn.symfony-project.com
 fabien
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -35,7 +35,7 @@ file
 
 
 
-2010-08-08T13:16:45.000000Z
+2010-12-28T14:42:21.000000Z
 58358960364e26d020c98d05aa8f27ad
 2006-11-17T19:41:57.127276Z
 2749
@@ -75,7 +75,7 @@ file
 
 
 
-2010-08-08T13:16:45.000000Z
+2010-12-28T14:42:21.000000Z
 06b539362d5de8d6a15d520abefc8cca
 2008-02-27T21:00:15.615729Z
 7638

@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Import/Builder
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 has-props
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 7d99e860fb046847c66b7c59a37ae99f
 2010-03-29T19:53:27.209172Z
 7490

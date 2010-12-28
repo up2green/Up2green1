@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Data
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 fa8eb872e8b52db36ba5b1a21f949927
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 936e59857d19ee90d409e765a5e27c67
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 f4619183cab1c968c3b75d29942a278a
 2010-06-08T14:53:44.149827Z
 7642

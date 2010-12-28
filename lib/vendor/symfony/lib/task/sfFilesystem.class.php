@@ -14,7 +14,7 @@
  * @package    symfony
  * @subpackage util
  * @author     Fabien Potencier <fabien.potencier@symfony-project.com>
- * @version    SVN: $Id: sfFilesystem.class.php 30527 2010-08-04 16:21:44Z fabien $
+ * @version    SVN: $Id: sfFilesystem.class.php 31247 2010-10-26 12:26:15Z fabien $
  */
 class sfFilesystem
 {
@@ -302,7 +302,7 @@ class sfFilesystem
 
     $output = '';
     $err = '';
-    while (!feof($pipes[1]))
+    while (!feof($pipes[1]) || !feof($pipes[2]))
     {
       foreach ($pipes as $key => $pipe)
       {
@@ -427,7 +427,14 @@ class sfFilesystem
 
     if ($commonLength)
     {
-      $levelUp = substr_count($from, DIRECTORY_SEPARATOR, $commonLength);
+      if (extension_loaded('mbstring'))
+      {
+        $levelUp = mb_substr_count(mb_strcut($from, $commonLength), DIRECTORY_SEPARATOR);
+      }
+      else
+      {
+        $levelUp = substr_count($from, DIRECTORY_SEPARATOR, $commonLength);
+      }
 
       // up that many level
       $relativeDir = str_repeat('..'.DIRECTORY_SEPARATOR, $levelUp);

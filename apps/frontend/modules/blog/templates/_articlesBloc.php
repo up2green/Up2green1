@@ -4,7 +4,9 @@
 ?>
 <div class="module">
   <div class="cartouche">
-    <div class="content"><p class="title_blog">Blog Foret</p></div>
+    <div class="content">
+		<p class="title_blog"><?php echo __("Blog Foret") ?></p>
+	</div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
   <div class="content blocContent">
@@ -18,7 +20,7 @@
           echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
           	link_to($a->getTitle(), '@blog_article?slug='.$a->getSlug(), array('class' => 'title')) .
           	'<p class="body">'.$a->getAccroche().'</p>' .
-          	link_to(__('read_more'), '@blog_article?slug='.$a->getSlug(), array('class' => 'read_more')) .
+          	link_to(__("Lire la suite"), '@blog_article?slug='.$a->getSlug(), array('class' => 'read_more')) .
           	'</div>';
         }
 

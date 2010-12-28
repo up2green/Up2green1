@@ -5,7 +5,7 @@
 <div class="module">
   <div class="cartouche">
     <div class="content">
-      <p class="title_blog">L'Actualité web</p>
+      <p class="title_blog"><?php echo __("L'Actualité web") ?></p>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
@@ -21,7 +21,7 @@
           echo ($i==0 ? '' : '<hr />') . '<div class="article' . ($i==0 ? ' first' : '') . '">' .
           	'<a class="title" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.$p->getElementsByTagName('title')->item(0)->nodeValue.'</a>' .
           	'<p class="body"></p>' .
-          	'<a class="read_more" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.__('read_more').'</a>' .
+          	'<a class="read_more" '.$target.' href="'.$p->getElementsByTagName('link')->item(0)->nodeValue.'">'.__("Lire la suite").'</a>' .
           	'</div>';
         }
 

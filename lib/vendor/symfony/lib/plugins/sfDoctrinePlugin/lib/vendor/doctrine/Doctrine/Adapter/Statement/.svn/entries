@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Adapter/Statement
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 adrive
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 b98dfc0b5a75d1722b9e8728b0bb51f0
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 230871852c0234321d38230fe69b1de0
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 43020004d0f8f1997b4b69bcc525da36
 2010-04-27T07:56:38.675634Z
 7578

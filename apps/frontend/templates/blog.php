@@ -26,16 +26,14 @@
 
   </head>
   <body>
-    <?php /* include_partial('blog/menuSocial'); */ ?>
 
-    <div class="top_bar">
-      <div id="deja_planter"><?php echo image_tag("icons/mini-tree_30x30.png"); ?><a href="">Deja 6543 arbres plantés ensemble</a></div>
-      <div id="tool_box"><div class="fltr"><?php echo image_tag("icons/mini-sound_20x20.png"); ?></div><div class="button white medium fltr">Francais</div></div>
-    </div>
+	<?php include_component('blog', 'topbar'); ?>
 
     <div class="fond_banner">
       <div class="banner">
-        <a href="<?php echo sfConfig::get('app_url_blog'); ?>" class="logo"><?php echo image_tag("blog/logo_03.png"); ?></a>
+        <a href="<?php echo sfConfig::get('app_url_blog'); ?>" class="logo">
+			<?php echo image_tag("blog/logo_03.png"); ?>
+		</a>
         <?php include_component('blog', 'diaporama'); ?>
       </div>
     </div>
@@ -54,8 +52,7 @@
             </div>
 
             <div class="clear"></div>
-            <?php /* include_component('blog', 'footer'); */ ?>
-            <!-- <div class="clear"></div> -->
+			
             <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
           </div>
         </div>

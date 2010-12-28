@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/!svn/ver/28260/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts
+/!svn/ver/30774/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts
 END
 fieldsConfiguration.php
 K 25
@@ -73,7 +73,7 @@ sortingAction.php
 K 25
 svn:wc:ra_dav:version-url
 V 119
-/!svn/ver/28260/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/sortingAction.php
+/!svn/ver/30774/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/sortingAction.php
 END
 filterAction.php
 K 25
@@ -91,7 +91,7 @@ paginationAction.php
 K 25
 svn:wc:ra_dav:version-url
 V 122
-/!svn/ver/24039/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/paginationAction.php
+/!svn/ver/30774/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/admin/parts/paginationAction.php
 END
 newAction.php
 K 25

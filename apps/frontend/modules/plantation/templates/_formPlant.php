@@ -1,11 +1,11 @@
 <?php if($nbArbresToPlant < 1) : ?>
 <div class="module">
 	<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-	<p class="title indent">Planter vos arbres</p>
+	<p class="title indent"><?php echo __("Planter vos arbres") ?></p>
 
 	<div class="content">
-		<p class="error">Vous n'avez pas assez de crédit pour planter un arbre !</p>
-		<p class="error">Collectez plus de crédits au fil de vos recherches grâce au moteur Up2green.</p>
+		<p class="error"><?php echo __("Vous n'avez pas assez de crédit pour planter un arbre !") ?></p>
+		<p class="error"><?php echo __("Collectez plus de crédits au fil de vos recherches grâce au moteur Up2green.") ?></p>
 	</div>
 	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>
@@ -16,7 +16,7 @@
 	<div class="module scrollableWrapper">
 		
 		<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-		<p class="title indent">Planter vos arbres</p>
+		<p class="title indent"><?php echo __("Planter vos arbres") ?></p>
 		
 		<div class="content">
 			
@@ -26,7 +26,11 @@
 				} 
 			?>
 			
-			<p>Vous avez <span class="nbArbresToPlantLeft"><?php echo $nbArbresToPlant ?></span> arbre(s) à planter.</p>
+			<p><?php echo format_number_choice(
+				"(-Inf,0]Vous n'avez pas d'arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter",
+				array('{number}' => '<span class="nbArbresToPlantLeft">'.$nbArbresToPlant.'</span>'),
+				$nbArbresToPlant
+			) ?></p>
 			
 			<?php if(sizeof($programmes) > 4) : ?>
 			<span class="button white fixedWidth slideUp">
@@ -56,14 +60,16 @@
 
 			<?php if(!$sf_user->isAuthenticated()) : ?>
 			<hr />
-			<p style="text-align: center; color: rgb(63, 111, 0); font-size: 1.1em; font-weight: bold;">Afin de recevoir une attestation, merci de remplir votre email ici :</p>
-			<p>E-mail : <input type="text" name="email_user_deco" /></p>
+			<p style="text-align: center; color: rgb(63, 111, 0); font-size: 1.1em; font-weight: bold;">
+				<?php echo __("Afin de recevoir une attestation, merci de remplir votre email ici :") ?>
+			</p>
+			<p><?php echo __("E-mail : {input}", array('{input}' => '<input type="text" name="email_user_deco" />')) ?></p>
 			<?php endif; ?>
 			<br />
 		
 			<p class="center">
-				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="Planter" />
-				<a href="/" style="padding:10px 20px;margin:0 2px;" class="button white" >Annuler</a>
+				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="<?php echo __("Planter") ?>" />
+				<a href="/" style="padding:10px 20px;margin:0 2px;" class="button white" ><?php echo __("Annuler") ?></a>
 			</p>
 
 		</div>

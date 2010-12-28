@@ -1,18 +1,18 @@
-10
+9
 
 dir
-30593
+31726
 http://svn.symfony-project.com/branches/1.4/lib/plugins/sfDoctrinePlugin/data/generator/sfDoctrineModule/default/parts
 http://svn.symfony-project.com
 
 
 
-2009-11-14T20:31:18.902327Z
-23950
-FabianLange
+2010-08-27T19:29:21.281295Z
+30774
+Kris.Wallsmith
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
-077c3a9dfce8f9f45dcaa5d4e6b7eecd
-2009-11-14T20:31:18.902327Z
-23950
-FabianLange
+2010-12-28T14:42:33.000000Z
+4d04ecdbffffcd03d6d5bf22e0fdd62b
+2010-08-27T19:29:21.281295Z
+30774
+Kris.Wallsmith
 has-props
 
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-533
+538
 
 deleteAction.php
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
-14b45392a2300aad499838c62d0df343
-2009-11-14T20:31:18.902327Z
-23950
-FabianLange
+2010-12-28T14:42:33.000000Z
+5fe050aa4cce6c22c06cec4671cf6a4f
+2010-08-27T19:29:21.281295Z
+30774
+Kris.Wallsmith
 has-props
 
 
@@ -92,7 +92,7 @@ has-props
 
 
 
-923
+928
 
 processFormAction.php
 file
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
+2010-12-28T14:42:33.000000Z
 fa5c350aad1b2a29c27401bad8ec0ecd
 2009-11-12T11:07:44.003356Z
 23810
@@ -134,11 +134,11 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
-54da1cae69b85e81e53fd841fe2e7e73
-2009-11-14T20:31:18.902327Z
-23950
-FabianLange
+2010-12-28T14:42:33.000000Z
+56b1531c2645fcc1c30edc0bae6b33e3
+2010-08-27T19:29:21.281295Z
+30774
+Kris.Wallsmith
 has-props
 
 
@@ -160,7 +160,7 @@ has-props
 
 
 
-922
+927
 
 createAction.php
 file
@@ -168,7 +168,7 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
+2010-12-28T14:42:33.000000Z
 f0f0d7e82214ab54031a913d238372cc
 2009-11-12T11:07:44.003356Z
 23810
@@ -202,44 +202,10 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
-bf99769a6d879b0666aa80cee861e959
-2009-11-14T20:31:18.902327Z
-23950
-FabianLange
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-735
-
-indexAction.php
-file
-
-
-
-
-2010-08-08T13:16:55.000000Z
-e7c833ed907479d72d189a270123a946
-2009-11-12T11:07:44.003356Z
-23810
+2010-12-28T14:42:33.000000Z
+113be8ba7ff17aec8a50ca1ac42e4d0b
+2010-08-27T19:29:21.281295Z
+30774
 Kris.Wallsmith
 has-props
 
@@ -262,7 +228,41 @@ has-props
 
 
 
-428
+740
+
+indexAction.php
+file
+
+
+
+
+2010-12-28T14:42:33.000000Z
+92092593fa8c28ef0a90804314e88222
+2010-08-27T19:29:21.281295Z
+30774
+Kris.Wallsmith
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+433
 
 newAction.php
 file
@@ -270,7 +270,7 @@ file
 
 
 
-2010-08-08T13:16:55.000000Z
+2010-12-28T14:42:33.000000Z
 ecbfe080acadd58bdc3d13928049c855
 2009-11-12T11:07:44.003356Z
 23810

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 42
-/!svn/ver/28959/branches/1.4/lib/validator
+/!svn/ver/30915/branches/1.4/lib/validator
 END
 sfValidatorEmail.class.php
 K 25
@@ -13,7 +13,7 @@ sfValidatedFile.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/!svn/ver/26264/branches/1.4/lib/validator/sfValidatedFile.class.php
+/!svn/ver/30915/branches/1.4/lib/validator/sfValidatedFile.class.php
 END
 sfValidatorNumber.class.php
 K 25

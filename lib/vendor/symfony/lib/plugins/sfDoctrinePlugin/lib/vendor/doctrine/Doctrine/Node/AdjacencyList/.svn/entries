@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Node/AdjacencyList
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:50.000000Z
 82303f202179c20642bdb670c813e75e
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:50.000000Z
 a6ce9737a8a5f32cb1a0e7fc956ae934
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:50.000000Z
 e11948926d7bdfc8bf8b86aca896a70f
 2010-03-29T19:53:27.209172Z
 7490

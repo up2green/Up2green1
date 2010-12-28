@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Record/Listener
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 05b4d9fc487643210bb570bb886d9d54
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 36e01f5578d80378b23ec64499363fbf
 2010-03-29T19:53:27.209172Z
 7490

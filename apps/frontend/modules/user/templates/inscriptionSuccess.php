@@ -1,6 +1,6 @@
 <div class="module">
 	<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-	<p class="title indent">Inscription</p>
+	<p class="title indent"><?php echo __('Inscription'); ?></p>
 	<div class="content" style="min-height:250px;">
 		<center>
 		<form action="" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
@@ -44,7 +44,7 @@
 					<tr>
 						<td colspan="2" class="right">
 							<?php echo $form->renderHiddenFields(false) ?>
-							<input class="button small white" type="submit" value="Enregistrer" />
+							<input class="button small white" type="submit" value="<?php echo __('Enregistrer'); ?>" />
 						</td>
 					</tr>
 				</tfoot>

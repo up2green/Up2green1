@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Hook
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 5f151edb7615f28c4bead00d3e7f1650
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 8babd8bd0a956bd2cedd9f1a1165b79d
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 c5a4201fc88233369004c2180fdb0f5f
 2010-03-29T19:53:27.209172Z
 7490
@@ -137,7 +137,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:52.000000Z
 82add55656f23077b98540eeeeaf0003
 2010-03-29T19:53:27.209172Z
 7490

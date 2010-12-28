@@ -1,5 +1,3 @@
-﻿<?php use_helper('I18N') ?>
-
 <div class="module grey" style="width:300px;float:left;">
 	<div class="content center notitle">
 		<ul class="list">

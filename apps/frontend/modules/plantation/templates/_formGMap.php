@@ -1,7 +1,7 @@
 <!-- module -->
 <div id="gmapWrapper" class="module">
 	<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
-	<p class="title">Les programmes de reforestation que nous soutenons</p>
+	<p class="title"><?php echo __("Les programmes de reforestation que nous soutenons") ?></p>
 	<div class="content">
 	
 		<?php if(!empty($gMapModes)) : ?>

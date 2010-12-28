@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 40
-/!svn/ver/29519/branches/1.4/lib/storage
+/!svn/ver/31471/branches/1.4/lib/storage
 END
 sfCacheSessionStorage.class.php
 K 25
@@ -49,7 +49,7 @@ sfSessionStorage.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/!svn/ver/23881/branches/1.4/lib/storage/sfSessionStorage.class.php
+/!svn/ver/31471/branches/1.4/lib/storage/sfSessionStorage.class.php
 END
 sfSessionTestStorage.class.php
 K 25

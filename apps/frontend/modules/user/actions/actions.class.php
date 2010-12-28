@@ -18,6 +18,25 @@ class userActions extends sfActions {
 			$this->forward404();
 	}
 
+	public function executeChangeLanguage(sfWebRequest $request) {
+		$langs = sfConfig::get('app_cultures_enabled');
+
+		$form = new sfFormLanguage(
+			$this->getUser(),
+			array('languages' => array_keys($langs))
+		);
+
+		$form->process($request);
+
+		if ($this->getUser()->isAuthenticated()){
+			$profil = $this->getUser()->getGuardUser()->getProfile();
+			$profil->setCulture($form->getValue('language'));
+			$profil->save();
+		}
+
+		return $this->redirect('@homepage');
+	}
+
 	public function executeInscription(sfWebRequest $request) {
 		if ($this->getUser()->isAuthenticated()){
 			$this->redirect('@homepage');

@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Search/Analyzer
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:34.000000Z
+2010-12-28T14:42:55.000000Z
 b9bf555af82de1d9c13878eb0a123dc4
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:34.000000Z
+2010-12-28T14:42:55.000000Z
 e7b683144f106138665ab0274acd3432
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:34.000000Z
+2010-12-28T14:42:55.000000Z
 b6b7566e59bd0bc7edd62e16a22e8253
 2010-03-29T19:53:27.209172Z
 7490
@@ -134,7 +134,7 @@ file
 
 
 
-2010-08-08T13:17:34.000000Z
+2010-12-28T14:42:55.000000Z
 55310949e02e17af470a2df8b2e2ac37
 2010-03-29T19:53:27.209172Z
 7490

@@ -16,7 +16,9 @@ all:
   cultures:
     enabled:
       fr: Français
+      en: English
   conversion_tree_co2: 0.1
+  prix_arbre: 1
   hardcode_tree_number: 8847
   base_search: 10
   more_search: 10

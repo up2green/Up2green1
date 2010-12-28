@@ -1,22 +1,36 @@
-<div id="footer_page">
-  <div id="legal">
-    <span>Up2green® 2010 </span>
-    <?php foreach($category->getActiveLinks() as $link) : ?>
-	<?php
-		$linkDisplay = $link->getSrc();
-		$target = '_self';
+<?php
 
-		if(preg_match('/http/', $linkDisplay)) {
-			$target = '_blank';
-		}
-	?>
-  	<span>| <a target="<?php echo $target; ?>" href="<?php echo $linkDisplay; ?>"><?php echo $link->getTitle(); ?></a></span>
-  	<?php endforeach; ?>
-  </div>
-  <div id="copyright">
-    <p>
-      Développé par : Clément Gautier <br/>
-      Graphisme : Smart-ID
-    </p>
-  </div>
+echo '
+	<div id="footer_page">
+	  <div id="legal">
+		<p>
+';
+
+$first = true;
+foreach($category->getActiveLinks() as $link) {
+
+	$target = (preg_match('/http/', $link->getSrc())) ? '_blank' : '_self';
+	$comma = $first ? '' : ' | ';
+	echo '
+		<span>
+			'.$comma.'
+			<a target="'.$target.'" href="'.$link->getSrc().'">
+				'.$link->getTitle().'
+			</a>
+		</span>
+	';
+
+	$first = false;
+}
+
+echo '
+		</p>
+		<p class="adress">Association Up2green Reforestation - 38 rue Desaix 75015 Paris - FRANCE</p>
+		<p class="copyright">
+			'.__("Développement : {society}", array('{society}' => '<a target="_blank" href="http://www.smartit.fr/">SmartIT</a>')).'
+			| '.__("Graphisme : {society}", array('{society}' => '<a target="_blank" href="http://www.smart-id.fr/">Smart-ID</a>')).'
+			| '.__("Intégration : {society}", array('{society}' => '<a target="_blank" href="http://mycoinfographie.artblog.fr/">mY.co Infographie</a>')).'
+		</p>
+	</div>
 </div>
+';

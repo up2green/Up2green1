@@ -9,6 +9,10 @@
  */
 class blogComponents extends sfComponents {
   
+	public function executeTopbar(sfWebRequest $request) {
+		$this->totalTrees = Doctrine_Core::getTable('tree')->count() + sfConfig::get('app_hardcode_tree_number');
+	}
+
   public function executeArticlesBloc(sfWebRequest $request) {
     // Récupération des articles
     $currentOffset = $request->getParameter('articlesOffset', 0);

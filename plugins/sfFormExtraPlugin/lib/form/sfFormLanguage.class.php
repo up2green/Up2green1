@@ -99,11 +99,11 @@ class sfFormLanguage extends sfForm
   public function configure()
   {
     $this->setValidators(array(
-      'language' => new sfValidatorI18nChoiceLanguage(array('culture' => $this->user->getCulture(), 'languages' => $this->options['languages'])),
+      'language' => new sfValidatorI18nChoiceLanguage(array('languages' => $this->options['languages'])),
     ));
 
     $this->setWidgets(array(
-      'language' => new sfWidgetFormI18nChoiceLanguage(array('culture' => $this->user->getCulture(), 'languages' => $this->options['languages'])),
+      'language' => new sfWidgetFormI18nChoiceLanguage(array('languages' => $this->options['languages'])),
     ));
   }
 }

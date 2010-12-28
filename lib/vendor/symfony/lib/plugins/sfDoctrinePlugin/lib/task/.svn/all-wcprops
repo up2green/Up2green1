@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/!svn/ver/29677/branches/1.4/lib/plugins/sfDoctrinePlugin/lib/task
+/!svn/ver/30901/branches/1.4/lib/plugins/sfDoctrinePlugin/lib/task
 END
 sfDoctrineInsertSqlTask.class.php
 K 25
@@ -145,7 +145,7 @@ sfDoctrineBuildModelTask.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 101
-/!svn/ver/24745/branches/1.4/lib/plugins/sfDoctrinePlugin/lib/task/sfDoctrineBuildModelTask.class.php
+/!svn/ver/30901/branches/1.4/lib/plugins/sfDoctrinePlugin/lib/task/sfDoctrineBuildModelTask.class.php
 END
 sfDoctrineGenerateMigrationsDiffTask.class.php
 K 25

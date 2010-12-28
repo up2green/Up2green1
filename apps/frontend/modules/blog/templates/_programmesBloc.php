@@ -4,7 +4,9 @@
 ?>
 <div class="module programme_bloc">
   <div class="cartouche">
-    <div class="content"><p class="title_blog">Nos programmes</p></div>
+    <div class="content">
+		<p class="title_blog"><?php echo __("Nos programmes") ?></p>
+	</div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
   </div>
 
@@ -25,7 +27,7 @@
           <?php endif; ?>
           <?php	echo link_to($p->getTitle(), '@blog_programme?slug='.$p->getSlug(), array('class' => 'title')); ?>
           <div class="body"><?php echo $p->getAccroche(); ?></div>
-         	<?php echo link_to(__('read_more'), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')); ?>
+         	<?php echo link_to(__("Lire la suite"), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')); ?>
           </div>
           
         <?php endfor; ?>

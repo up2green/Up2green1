@@ -313,9 +313,22 @@ div.img-result p.content {
 	width:150px;
 }
 
+/* footer */
+
 #footer_page {
 	font-size:10px;
 	height:50px;
 	margin:50px 0 0;
 	text-align:center;
+}
+
+#footer_page a,
+#footer_page a:visited {
+	text-decoration: none;
+	color: #5C8A1D;
+	font-weight: bold;
+}
+
+#footer_page a:hover {
+	color: #184F11;
 }

@@ -8,12 +8,14 @@ class userComponents extends sfComponents {
         $class = sfConfig::get('app_sf_guard_plugin_signin_form', 'sfGuardFormSignin');
         $this->signinForm = new $class();
     }
-
+	
 	public function executeLanguage(sfWebRequest $request){
-		$langs = sfConfig::get('app_cultures_enabled');
-        $this->langForm = new sfFormLanguage(
+		$this->languages = sfConfig::get('app_cultures_enabled');
+		$this->current = $this->getUser()->getCulture();
+		
+        $this->form = new sfFormLanguage(
 			$this->getUser(),
-			array('languages' => array_keys($langs))
+			array('languages' => array_keys($this->languages))
 		);
 	}
 }

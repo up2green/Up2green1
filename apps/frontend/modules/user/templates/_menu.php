@@ -3,7 +3,7 @@
 	<div class="middle_menu_haut">
 	
 		<div class="menu_accueil">
-			<div class="flag">
+			<div id="language-wrapper">
 				<?php echo include_component('user', 'language'); ?>
 			</div>
 			<ul class="menu">

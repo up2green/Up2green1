@@ -23,10 +23,6 @@ small {
 .clear{clear:both;}
 .hidden{display:none;}
 
-.tooltiped {
-	cursor:pointer;
-}
-
 p.warning {
 	border:1px solid #FF5A00;
 	color:#FF7124;
@@ -91,13 +87,35 @@ text-align:center;
 color:#C2C2C2;
 text-decoration:underline;
 }
-.flag{
-float:left;
-background: url(/images/moteur/flag_40x40.png);
-width:40px;
-height:40px;
-text-align:left;
+
+#language-wrapper{
+    float: left;
+    left: -5px;
+    position: relative;
+    text-align: center;
+    width: 52px;
 }
+
+#language-wrapper div.flags-hidden {
+	display:none;
+	position: relative;
+    top: -2px;
+	width:52px;
+	background: url("/images/language-bar-y.png") repeat-y scroll 0 0 transparent;
+	z-index:50;
+}
+
+#language-wrapper div.flags-hidden ul {
+    background: url("/images/language-bar-bottom.png") no-repeat scroll 0 bottom transparent;
+    position: relative;
+    top: 15px;
+}
+
+#language-wrapper div.flags-hidden li {
+	position: relative;
+	top: -12px;
+}
+
 /*MENU HAUT droit*/
 .menu_connexion{
 float:right;

@@ -20,7 +20,7 @@ sf_guard_password:
 
 change_language:
   url:   /change_language
-  param: { module: user, action: language }
+  param: { module: user, action: changeLanguage }
 
 ajax_more_results:
   url: /ajax/moreresults/*

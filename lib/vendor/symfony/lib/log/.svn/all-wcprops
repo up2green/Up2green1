@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 36
-/!svn/ver/26989/branches/1.4/lib/log
+/!svn/ver/30790/branches/1.4/lib/log
 END
 sfNoLogger.class.php
 K 25
@@ -43,7 +43,7 @@ sfWebDebugLogger.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/!svn/ver/23881/branches/1.4/lib/log/sfWebDebugLogger.class.php
+/!svn/ver/30790/branches/1.4/lib/log/sfWebDebugLogger.class.php
 END
 sfAggregateLogger.class.php
 K 25

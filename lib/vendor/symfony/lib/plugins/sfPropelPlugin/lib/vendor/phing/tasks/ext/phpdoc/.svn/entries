@@ -1,7 +1,7 @@
-10
+9
 
 dir
-805
+1019
 http://phing.mirror.svn.symfony-project.com/tags/2.3.3/classes/phing/tasks/ext/phpdoc
 http://phing.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://phing.mirror.svn.symfony-project.com
 hans
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:07.000000Z
+2010-12-28T14:42:40.000000Z
 bc92b0ecd002b9cf55f4d7e7b200ab0e
 2008-02-06T15:26:43.601600Z
 352
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:07.000000Z
+2010-12-28T14:42:40.000000Z
 4d9800afe49af99997854cc7e1cf0285
 2008-02-06T15:26:43.601600Z
 352
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:07.000000Z
+2010-12-28T14:42:40.000000Z
 64e9057798922f7c5900afaa8e61179f
 2008-02-06T20:32:45.917095Z
 354

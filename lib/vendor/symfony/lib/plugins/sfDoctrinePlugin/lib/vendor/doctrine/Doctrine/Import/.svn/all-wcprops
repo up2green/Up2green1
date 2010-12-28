@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/!svn/ver/7675/branches/1.2/lib/Doctrine/Import
+/!svn/ver/7689/branches/1.2/lib/Doctrine/Import
 END
 Exception.php
 K 25
@@ -49,5 +49,5 @@ Pgsql.php
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/!svn/ver/7641/branches/1.2/lib/Doctrine/Import/Pgsql.php
+/!svn/ver/7689/branches/1.2/lib/Doctrine/Import/Pgsql.php
 END

@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 39
-/!svn/ver/29597/branches/1.4/lib/helper
+/!svn/ver/31396/branches/1.4/lib/helper
 END
 EscapingHelper.php
 K 25
@@ -55,7 +55,7 @@ UrlHelper.php
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/!svn/ver/27753/branches/1.4/lib/helper/UrlHelper.php
+/!svn/ver/31396/branches/1.4/lib/helper/UrlHelper.php
 END
 CacheHelper.php
 K 25

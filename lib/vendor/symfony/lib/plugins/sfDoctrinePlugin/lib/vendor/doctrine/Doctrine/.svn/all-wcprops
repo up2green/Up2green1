@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 40
-/!svn/ver/7678/branches/1.2/lib/Doctrine
+/!svn/ver/7690/branches/1.2/lib/Doctrine
 END
 Parser.php
 K 25
@@ -13,7 +13,7 @@ Hydrator.php
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/!svn/ver/7490/branches/1.2/lib/Doctrine/Hydrator.php
+/!svn/ver/7679/branches/1.2/lib/Doctrine/Hydrator.php
 END
 Overloadable.php
 K 25
@@ -31,7 +31,7 @@ Formatter.php
 K 25
 svn:wc:ra_dav:version-url
 V 54
-/!svn/ver/7627/branches/1.2/lib/Doctrine/Formatter.php
+/!svn/ver/7682/branches/1.2/lib/Doctrine/Formatter.php
 END
 Cli.php
 K 25
@@ -121,7 +121,7 @@ Core.php
 K 25
 svn:wc:ra_dav:version-url
 V 49
-/!svn/ver/7678/branches/1.2/lib/Doctrine/Core.php
+/!svn/ver/7687/branches/1.2/lib/Doctrine/Core.php
 END
 Migration.php
 K 25
@@ -133,7 +133,7 @@ Collection.php
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/!svn/ver/7671/branches/1.2/lib/Doctrine/Collection.php
+/!svn/ver/7686/branches/1.2/lib/Doctrine/Collection.php
 END
 Column.php
 K 25
@@ -289,5 +289,5 @@ Table.php
 K 25
 svn:wc:ra_dav:version-url
 V 50
-/!svn/ver/7668/branches/1.2/lib/Doctrine/Table.php
+/!svn/ver/7681/branches/1.2/lib/Doctrine/Table.php
 END

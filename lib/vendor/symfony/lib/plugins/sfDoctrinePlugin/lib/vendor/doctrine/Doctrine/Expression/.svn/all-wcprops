@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 51
-/!svn/ver/7490/branches/1.2/lib/Doctrine/Expression
+/!svn/ver/7685/branches/1.2/lib/Doctrine/Expression
 END
 Mock.php
 K 25
@@ -49,5 +49,5 @@ Pgsql.php
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/!svn/ver/7490/branches/1.2/lib/Doctrine/Expression/Pgsql.php
+/!svn/ver/7685/branches/1.2/lib/Doctrine/Expression/Pgsql.php
 END

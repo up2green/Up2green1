@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/!svn/ver/30526/branches/1.4/lib/plugins/sfPropelPlugin/i18n
+/!svn/ver/31584/branches/1.4/lib/plugins/sfPropelPlugin/i18n
 END
 sf_admin.ar.xml
 K 25
@@ -25,7 +25,7 @@ sf_admin.es.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/24532/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.es.xml
+/!svn/ver/31401/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.es.xml
 END
 sf_admin.eu.xml
 K 25
@@ -37,7 +37,7 @@ sf_admin.it.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/24091/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.it.xml
+/!svn/ver/30969/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.it.xml
 END
 sf_admin.sk.xml
 K 25
@@ -49,7 +49,7 @@ sf_admin.sl.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/23881/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.sl.xml
+/!svn/ver/30966/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.sl.xml
 END
 sf_admin.uk.xml
 K 25
@@ -67,7 +67,7 @@ sf_admin.fa.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/28642/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.fa.xml
+/!svn/ver/30968/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.fa.xml
 END
 sf_admin.sv.xml
 K 25
@@ -85,7 +85,7 @@ sf_admin.de.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/24976/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.de.xml
+/!svn/ver/30969/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.de.xml
 END
 sf_admin.ja.xml
 K 25
@@ -97,7 +97,7 @@ sf_admin.zh_TW.xml
 K 25
 svn:wc:ra_dav:version-url
 V 79
-/!svn/ver/29416/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.zh_TW.xml
+/!svn/ver/30967/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.zh_TW.xml
 END
 sf_admin.fi.xml
 K 25
@@ -121,7 +121,7 @@ sf_admin.nl.xml
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/!svn/ver/23881/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.nl.xml
+/!svn/ver/31584/branches/1.4/lib/plugins/sfPropelPlugin/i18n/sf_admin.nl.xml
 END
 sf_admin.hr.xml
 K 25

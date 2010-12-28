@@ -1,18 +1,18 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib
 http://doctrine.mirror.svn.symfony-project.com
 
 
 
-2010-07-28T03:57:00.609670Z
-7678
-kriswallsmith
+2010-08-31T17:11:24.489694Z
+7690
+jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -35,7 +35,7 @@ file
 
 
 
-2010-08-08T13:17:35.000000Z
+2010-12-28T14:42:55.000000Z
 4c64f6817c2db9eb88d53db8a32160ed
 2010-03-29T19:53:27.209172Z
 7490

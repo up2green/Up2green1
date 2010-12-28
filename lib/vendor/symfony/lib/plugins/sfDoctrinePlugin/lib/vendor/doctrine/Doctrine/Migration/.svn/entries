@@ -1,7 +1,7 @@
-10
+9
 
 dir
-7678
+7690
 http://doctrine.mirror.svn.symfony-project.com/branches/1.2/lib/Doctrine/Migration
 http://doctrine.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://doctrine.mirror.svn.symfony-project.com
 jwage
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 7f5d43baf4de8fb31c70c0f1e6fbab40
 2010-03-29T19:53:27.209172Z
 7490
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 48eaeddf7bc849231a0d421f0490c7af
 2010-03-29T19:53:27.209172Z
 7490
@@ -100,7 +100,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 a7053af4a237fbdf26dababc8bca7217
 2010-03-29T19:53:27.209172Z
 7490
@@ -134,7 +134,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 0e47ad444dc985d16a042ec781cca85b
 2010-03-29T19:53:27.209172Z
 7490
@@ -168,7 +168,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 0a301ea98d380cd0cb29a86c9bd55933
 2010-03-29T19:53:27.209172Z
 7490
@@ -202,7 +202,7 @@ file
 
 
 
-2010-08-08T13:17:33.000000Z
+2010-12-28T14:42:51.000000Z
 eb36cb7a6837b0dab2cdd05c3b67d313
 2010-06-08T18:36:29.434018Z
 7661

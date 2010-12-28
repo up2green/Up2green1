@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 37
-/!svn/ver/28712/branches/1.4/data/bin
+/!svn/ver/30952/branches/1.4/data/bin
 END
 sandbox_installer.php
 K 25
@@ -43,5 +43,5 @@ changelog.php
 K 25
 svn:wc:ra_dav:version-url
 V 51
-/!svn/ver/24071/branches/1.4/data/bin/changelog.php
+/!svn/ver/30952/branches/1.4/data/bin/changelog.php
 END

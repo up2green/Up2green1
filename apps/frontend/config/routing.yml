@@ -18,6 +18,10 @@ sf_guard_password:
   url:   /request_password
   param: { module: sfGuardAuth, action: password }
 
+change_language:
+  url:   /change_language
+  param: { module: user, action: language }
+
 ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }

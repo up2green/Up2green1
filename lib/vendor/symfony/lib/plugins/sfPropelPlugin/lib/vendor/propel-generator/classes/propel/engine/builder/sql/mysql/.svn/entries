@@ -1,7 +1,7 @@
-10
+9
 
 dir
-1882
+2127
 http://propel.mirror.svn.symfony-project.com/tags/1.4.2/generator/classes/propel/engine/builder/sql/mysql
 http://propel.mirror.svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://propel.mirror.svn.symfony-project.com
 francois
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:17:11.000000Z
+2010-12-28T14:42:45.000000Z
 28eeba2e387813929668c9cd3bd390de
 2010-04-19T21:59:18.421712Z
 1690
@@ -66,7 +66,7 @@ file
 
 
 
-2010-08-08T13:17:11.000000Z
+2010-12-28T14:42:45.000000Z
 ed2abc1e04c759c65cdafc92f9530521
 2009-10-26T20:54:39.333354Z
 1262

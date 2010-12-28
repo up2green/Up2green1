@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 49
-/!svn/ver/7671/branches/1.2/lib/Doctrine/Hydrator
+/!svn/ver/7679/branches/1.2/lib/Doctrine/Hydrator
 END
 ArrayHierarchyDriver.php
 K 25
@@ -55,7 +55,7 @@ Abstract.php
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/!svn/ver/7490/branches/1.2/lib/Doctrine/Hydrator/Abstract.php
+/!svn/ver/7679/branches/1.2/lib/Doctrine/Hydrator/Abstract.php
 END
 SingleScalarDriver.php
 K 25

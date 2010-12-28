@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/!svn/ver/28848/branches/1.4/lib/i18n/extract
+/!svn/ver/31248/branches/1.4/lib/i18n/extract
 END
 sfI18nExtractorInterface.class.php
 K 25
@@ -25,7 +25,7 @@ sfI18nModuleExtract.class.php
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/!svn/ver/23881/branches/1.4/lib/i18n/extract/sfI18nModuleExtract.class.php
+/!svn/ver/31248/branches/1.4/lib/i18n/extract/sfI18nModuleExtract.class.php
 END
 sfI18nPhpExtractor.class.php
 K 25

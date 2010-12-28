@@ -1,7 +1,7 @@
-10
+9
 
 dir
-30593
+31726
 http://svn.symfony-project.com/branches/1.4/lib/plugins/sfPropelPlugin/config
 http://svn.symfony-project.com
 
@@ -12,7 +12,7 @@ http://svn.symfony-project.com
 fabien
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2010-08-08T13:16:57.000000Z
+2010-12-28T14:42:35.000000Z
 928b7873c0c9b632cb117bec4a1fb681
 2009-11-12T11:07:44.003356Z
 23810
@@ -69,7 +69,7 @@ file
 
 
 
-2010-08-08T13:16:57.000000Z
+2010-12-28T14:42:35.000000Z
 5da77df25770f016afee9db26288883b
 2009-11-18T12:14:06.001244Z
 24134
@@ -103,7 +103,7 @@ file
 
 
 
-2010-08-08T13:16:57.000000Z
+2010-12-28T14:42:35.000000Z
 9c60a9dfe071d8b1acd7ae99cb9c727e
 2009-11-09T23:32:46.492714Z
 23739

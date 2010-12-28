@@ -49,7 +49,7 @@ $(document).ready(function(){
 	var langForm = $("form#formLanguage");
 	
 	$("#language-wrapper").hover(function(e) {
-		$(this).find(".flags-hidden").slideDown('fast');
+		$(this).find(".flags-hidden").stop(true, true).slideDown('fast');
 	}, function(e) {
 		$(this).find(".flags-hidden").slideUp('fast');
 	});

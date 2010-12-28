@@ -12,13 +12,22 @@
     <?php endif; ?>
     
     <h4>
-		Source : 
-		<a target="_blank" href="<?php echo html_entity_decode($result['sourceUrl'])?>">
-			<?php echo html_entity_decode($result['source']) ?>
-		</a>
-		<span class="filename">
-			[le <?php echo html_entity_decode($result['date']) ?> à <?php echo html_entity_decode($result['time']) ?>]
-		</span>
+		<?php
+
+		echo __("Source : {link}", array(
+			'{lien}' => '<a target="_blank" href="'.html_entity_decode($result['sourceUrl']).'">'.html_entity_decode($result['source']).'</a>'
+		));
+		
+		echo '
+			<span class="filename">[
+			'.__("le {date} à {time}", array(
+				'{date}' => html_entity_decode($result['date']),
+				'{time}' => html_entity_decode($result['time']),
+			)).'
+			]</span>
+		';
+
+		?>
 	</h4>
 	
 </div>

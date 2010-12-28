@@ -167,6 +167,14 @@ class SearchEngine {
 
 	private function processShopResult(&$result) {
 		$result = array_map('trim', $result);
+
+		$isFirst = preg_match('\.php&', $subject) || preg_match('\/&', $subject);
+		$idUser = $this->getUser()->isAuthenticated() ? $this->getUser()->getId() : 0;
+
+		$result['site_url'] .= $isFirst ? '?' : '&';
+		$result['site_url'] .= 'up2greenUserId='.$this->getUser()->getId();
+
+
 		$linkOpen = '<a target="_blank" href="'.$result['site_url'].'">';
 
 		if(substr($result['logo'], 0, 7) === 'http://') {

@@ -11,12 +11,12 @@
 		</div>
 
 		<div class="filtres">
-			<span searchMode="<?php echo SearchEngine::WEB ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::WEB ? 'green active' : 'gray'); ?> medium first">Web</span>
-			<span searchMode="<?php echo SearchEngine::IMG ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::IMG ? 'green active' : 'gray'); ?> medium">Images</span>
-			<span searchMode="<?php echo SearchEngine::NEWS ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::NEWS ? 'green active' : 'gray'); ?> medium">News</span>
-			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium">Achats</span>
+			<span searchMode="<?php echo SearchEngine::WEB ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::WEB ? 'green active' : 'gray'); ?> medium first"><?php echo __("Web") ?></span>
+			<span searchMode="<?php echo SearchEngine::IMG ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::IMG ? 'green active' : 'gray'); ?> medium"><?php echo __("Images") ?></span>
+			<span searchMode="<?php echo SearchEngine::NEWS ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::NEWS ? 'green active' : 'gray'); ?> medium"><?php echo __("News") ?></span>
+			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium"><?php echo __("Achats") ?></span>
 
-			<a class="more-search" href="#">Recherches Avancées</a>
+			<a class="more-search" href="#"><?php echo __("Recherches Avancées") ?></a>
 		</div>
 	</form>
 	
@@ -33,8 +33,8 @@
 		echo '
 			<div id="ads_search">
 				<ul class="content-list warning" style="width:75%;margin:0 auto 20px;">
-					<li>L\'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.</li>
-					<li>L\'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d\'environ une semaine.</li>
+					<li>'.__("L'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.").'</li>
+					<li>'.__("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.").'</li>
 				</p>
 			</div>
 		';
@@ -58,7 +58,7 @@
 		if(sizeof($results) === 0) {
 			echo '
 				<p style="text-align: center; font-style: italic; font-weight: bold;">
-					Aucun résultat ne correspond à votre recherche.
+					'.__("Aucun résultat ne correspond à votre recherche.").'
 				</p>
 			';
 		}
@@ -75,7 +75,7 @@
 		if(sizeof($results) >= sfConfig::get('app_base_search')) {
 			echo '
 				<div class="more-result">
-					<span id="searchMore" class="button white big">Plus de Résultats</span>
+					<span id="searchMore" class="button white big">'.__("Plus de Résultats").'</span>
 				</div>
 			';
 		}

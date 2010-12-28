@@ -650,15 +650,36 @@ div.cartouche p.title.little {
 	z-index:360;
 }
 
+/* footer */
+
 #footer_page {
-	background:url("../images/blog/footer/bg_footer.png") repeat-x scroll 0 0 transparent;
-	height:70px;
-	margin:0;
+	background: url("../images/blog/footer/bg_footer.png") repeat-x scroll 0 0 transparent;
+	color: #DDDDDD;
+	display: table;
+	font-size: 10px;
+	height: 70px;
+	text-align: center;
+	text-shadow: 2px 2px 2px #000000;
+	width: 100%;
+	position: fixed;
+	bottom:0;
 }
 
-#footer_page p, #footer_page span, #footer_page a {
-	color:#FFFFFF;
-	font-size:12px;
+#footer_page a,
+#footer_page a:visited {
+	text-decoration: none;
+	color: #BACF2C;
+	font-weight: bold;
+}
+
+#legal {
+	display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#footer_page a:hover {
+	color: #D7EF33;
 }
 
 .footer_associatif a.button {
@@ -669,10 +690,7 @@ div.cartouche p.title.little {
 	width:15%;
 }
 
-#legal {
-	margin:20px auto auto;
-	text-align:center;
-}
+
 
 img.element_logo {
   max-width: 200px;

@@ -1,6 +1,5 @@
 <?php 
 	$url = $partenaire->getUrl();
-	
 ?>
 
 <div class="module purple">
@@ -14,12 +13,7 @@
     	<?php if(!empty($url)) : ?>
     	<a target="_blank" href="<?php echo $url; ?>">
     	<?php endif; ?>
-	<?php
-	if(
-	$partenaire->getLogo() != '' &&
-		file_exists(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getLogo())
-	) :
-	    ?>
+	<?php if($partenaire->getLogo() != '') : ?>
 	<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
 	<?php endif; ?>
 	<p><?php echo $partenaire->getAccroche(); ?></p>
@@ -27,10 +21,10 @@
 		<?php
 		if($sf_user->isAuthenticated() && !is_null($partenaire)) {
 			if($view === 'listeCouponsPartenaires') {
-				echo '<a href="/" class="button green">Retour à la Carte</a>';
+				echo '<a href="/" class="button green">'.__("Retour à la Carte").'</a>';
 			}
 			else {
-				echo '<a href="' . url_for('@plantation_liste_coupon_partenaire') . '" class="button purple">Voir mes coupons</a>';
+				echo '<a href="' . url_for('@plantation_liste_coupon_partenaire') . '" class="button purple">'.__("Voir mes coupons").'</a>';
 			}
 		}
 		?>

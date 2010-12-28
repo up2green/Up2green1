@@ -27,6 +27,8 @@
   </head>
   <body>
 
+	<?php include_component('blog', 'topbar'); ?>
+
     <div class="fond_banner">
       <div class="banner">
         <a href="<?php echo sfConfig::get('app_url_blog'); ?>" class="logo">

@@ -12,7 +12,7 @@ class userComponents extends sfComponents {
 	public function executeLanguage(sfWebRequest $request){
 		$this->languages = sfConfig::get('app_cultures_enabled');
 		$this->current = $this->getUser()->getCulture();
-		
+
         $this->form = new sfFormLanguage(
 			$this->getUser(),
 			array('languages' => array_keys($this->languages))

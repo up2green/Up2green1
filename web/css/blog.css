@@ -26,28 +26,52 @@ body {
   display: none;
 }
 
-.top_bar {
+/* topbar */
+
+#topbar {
 	background-color:#254A14;
 	height:40px;
 	margin:auto;
 }
 
-#deja_planter img {
-	float:left;
+#topbar a {
+	color:#FFFFFF;
+	font-size: 12px;
 }
 
-#deja_planter {
-	display:none;
-	float:left;
-	height:30px;
-	margin-left:45px;
-	min-width:300px;
+#topbar a:hover {
+	text-decoration: underline;
 }
 
-#tool_box {
+#topbar .deja_planter img {
+	float: left;
+	margin: 5px;
+}
+
+#topbar .deja_planter {
+	float: left;
+	line-height: 40px;
+	margin-left: 10px;
+	min-width: 300px;
+}
+
+#language-wrapper {
+	float: none;
+	left: auto;
+}
+
+#language-wrapper div.flags-hidden,
+#language-wrapper div.flags-hidden ul {
+	background: none;
+}
+
+#topbar .tool_box {
 	float:right;
-	height:30px;
-	margin:7px 7px 0;
+	height: 40px;
+}
+
+#language-wrapper {
+	padding-top: 5px;
 }
 
 .fltr {
@@ -189,7 +213,6 @@ body {
 .diaporama {
 	float:right;
 	height:190px;
-	padding-top:10px;
 	width:660px;
 }
 
@@ -696,9 +719,6 @@ img.element_logo {
   max-width: 200px;
   max-height: 200px;
 }
-
-/* Maintenance */
-#deja_planter, #tool_box {display:none;}
 
 /* articles */
 .article.first {

@@ -47,6 +47,10 @@ landing_plantation:
 ##### BLOG
 ####################
 
+blog_change_language:
+  url:   /blog/change_language
+  param: { module: user, action: changeLanguage }
+
 blog_organisme_list:
   url:   /blog/organisme
   param: { module: blog, action: viewList, type: organisme }
@@ -110,6 +114,10 @@ plantation_landing_plantation_homepage:
 plantation_landing_plantation:
   url: /plantation/landing/plantation/:partenaireOffset
   param: {module: landing, action: plantation, partenaireOffset: 0}
+
+plantation_change_language:
+  url:   /plantation/change_language
+  param: { module: user, action: changeLanguage }
 
 ####################
 ##### GENERAL

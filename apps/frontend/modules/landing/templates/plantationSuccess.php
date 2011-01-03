@@ -47,7 +47,7 @@
 <div class="module" style="width:<?php echo $contentWidth; ?>">
 	<div class="content">
 		<h2><?php echo $contentTitle; ?></h2>
-		<h3>Choisissez où planter votre (vos) arbr(s) sur la Planète</h3>
+		<h3>Choisissez où planter votre(vos) arbre(s) sur la Planète</h3>
 		<p>
 			Entrez simplement votre code sécurisé pour accéder à la 
 			<a href="http://reforestation.up2green.com" target="_blank">

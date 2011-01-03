@@ -12,11 +12,11 @@
 		$partenaireHasImage = $partenaire->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getLogo());
 		
 		$title = "Déjà ".$nbArbres." arbres plantés avec ".$partenaire->getTitle();
-		$contentTitle = "Faites grandir la forêt de ".$partenaire->getTitle()." sur le planète !";
+		$contentTitle = "Faites grandir la forêt de ".$partenaire->getTitle()." sur a planète !";
 	}
 	else {
 		$title = "Devenez acteur de la reforestation en plantant vos arbres avec up2gren !";
-		$contentTitle = "Faites grandir les forêts des programmes que nous soutenons sur le planète en quelques clics.";
+		$contentTitle = "Faites grandir les forêts des programmes que nous soutenons sur a planète en quelques clics.";
 		
 		$blocWidth = "45%";
 		$contentWidth = "45%";
@@ -47,7 +47,7 @@
 <div class="module" style="width:<?php echo $contentWidth; ?>">
 	<div class="content">
 		<h2><?php echo $contentTitle; ?></h2>
-		<h3>Choisissez où planter votre (vos) arbre(z) sur la Planète</h3>
+		<h3>Choisissez où planter votre (vos) arbres) sur la Planète</h3>
 		<p>
 			Entrez simplement votre code sécurisé pour accéder à la 
 			<a href="http://reforestation.up2green.com" target="_blank">

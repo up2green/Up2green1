@@ -11,13 +11,13 @@
 			'{affiliate}' => $partenaire->getTitle()
 		));
 
-		$contentTitle = __("Faites grandir la forêt de {affiliate} sur le planète !", array(
+		$contentTitle = __("Faites grandir la forêt de {affiliate} sur la planète !", array(
 			'{affiliate}' => $partenaire->getTitle()
 		));
 	}
 	else {
 		$title = __("Devenez acteur de la reforestation en plantant vos arbres avec up2gren !");
-		$contentTitle = __("Faites grandir les forêts des programmes que nous soutenons sur le planète en quelques clics.");
+		$contentTitle = __("Faites grandir les forêts des programmes que nous soutenons sur la planète en quelques clics.");
 		
 		$blocWidth = "45%";
 		$contentWidth = "45%";
@@ -48,7 +48,7 @@
 <div class="module" style="width:<?php echo $contentWidth; ?>">
 	<div class="content">
 		<h2><?php echo $contentTitle; ?></h2>
-		<h3><?php echo __("Choisissez où planter votre (vos) arbre(z) sur la Planète") ?></h3>
+		<h3><?php echo __("Choisissez où planter votre (vos) arbre(s) sur la Planète") ?></h3>
 		<p>
 		<?php echo __("Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation", array(
 			'{lien}' => '<a href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',

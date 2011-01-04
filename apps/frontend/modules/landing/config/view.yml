@@ -6,12 +6,12 @@ default:
     title: Up2green Reforestation
   layout: landing
   stylesheets:
-    - "reset?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "button?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "module?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "plantation?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "reset.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "button.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "module.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - "min/jquery-1.4.2.min?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "min/jquery-ui-1.8.2.custom.min?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery-1.4.2.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery-ui-1.8.2.custom.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main.js?v=<?php echo sfConfig::get('app_media_version') ?>"

@@ -4,7 +4,7 @@ default:
 
 all:
   stylesheets:
-    - "blog?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "blog.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - "blog?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "blog.js?v=<?php echo sfConfig::get('app_media_version') ?>"
   layout: blog

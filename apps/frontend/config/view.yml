@@ -12,18 +12,18 @@ default:
     robots:       index, follow
     #language:     en
   stylesheets:
-    - "reset?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "button?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "module?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "form?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "tooltip?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "jquery.gritter?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "reset.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "button.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "module.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "form.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "tooltip.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.gritter.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - "min/jquery-1.4.4.min?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "min/jquery.gritter.min?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "moteur?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery-1.4.4.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery.gritter.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "moteur.js?v=<?php echo sfConfig::get('app_media_version') ?>"
   has_layout: true
   title: Up2green
   layout: layout

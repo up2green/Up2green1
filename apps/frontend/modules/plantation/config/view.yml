@@ -10,16 +10,21 @@ couponsUsedCSVSuccess:
   http_metas:
     content-type: application/msexcel
 
-
 default:
   metas:
-    title: Up2green : La plate-forme de Reforestation
+    title: "Up2green : La plate-forme de Reforestation"
   layout: plantation
-  stylesheets:    [reset.css, main.css, button.css, module.css, plantation.css, tooltip.css]
+  stylesheets:
+    - "reset?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "button?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "module?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "plantation?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "tooltip?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - min/jquery-1.4.4.min.js
-    - min/jquery-ui-1.8.2.custom.min.js
-    - main.js
-    - jquery.scrollTo.js
-    - plantation.js
-    - plantation_planter.js
+    - "min/jquery-1.4.4.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery-ui-1.8.2.custom.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.scrollTo?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "plantation?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "plantation_planter?v=<?php echo sfConfig::get('app_media_version') ?>"

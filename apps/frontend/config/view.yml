@@ -11,11 +11,19 @@ default:
     keywords:     up2green, recherche, reforestation, foret, arbre, biodiversite, coupon, carbone, CO2, uptogreen, terre, planète, programme, organisme, plantation en ligne, émission, compensation, collectivité, partenaire, cadeau, vert
     robots:       index, follow
     #language:     en
-    
-  stylesheets:    [reset.css, main.css, button.css, module.css, form.css, tooltip.css, jquery.gritter.css]
-
-  javascripts:    [min/jquery-1.4.4.min.js, main.js, min/jquery.gritter.min.js, jquery.qtip-1.0.min]
-
-  has_layout:     true
+  stylesheets:
+    - "reset?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "button?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "module?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "form?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "tooltip?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.gritter?v=<?php echo sfConfig::get('app_media_version') ?>"
+  javascripts:
+    - "min/jquery-1.4.4.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery.gritter.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "moteur?v=<?php echo sfConfig::get('app_media_version') ?>"
+  has_layout: true
   title: Up2green
-  layout:         layout
+  layout: layout

@@ -1,19 +1,10 @@
-indexSuccess:
-  stylesheets:    [blog.css]
-  javascripts:    [blog.js]
-  layout:         blog
-
-viewElementSuccess:
-  stylesheets:    [blog.css]
-  javascripts:    [blog.js]
-  layout:         blog
-
-viewListSuccess:
-  stylesheets:    [blog.css]
-  javascripts:    [blog.js]
-  layout:         blog
-
 default:
   metas:
-    title: Up2green : Le site Associatif
-    javascripts:    [blog.js]
+    title: "Up2green : Le site Associatif"
+
+all:
+  stylesheets:
+    - "blog?v=<?php echo sfConfig::get('app_media_version') ?>"
+  javascripts:
+    - "blog?v=<?php echo sfConfig::get('app_media_version') ?>"
+  layout: blog

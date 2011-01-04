@@ -3,14 +3,21 @@
 
 default:
   metas:
-    title: Up2green : Le Moteur de recherche
+    title: "Up2green : Le Moteur de recherche"
   layout: moteur
-  stylesheets:    [reset.css, main.css, button.css, module.css, moteur.css, tooltip.css, jquery.gritter.css]
+  stylesheets:
+    - "reset?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "button?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "module?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "moteur?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "tooltip?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.gritter?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - min/jquery-1.4.4.min.js
-    - min/jquery-ui-1.8.2.custom.min.js
-    - min/jquery.gritter.min.js
-    - jquery.scrollTo.js
-    - main.js
-    - moteur.js
-    - min/jquery.text-overflow.min.js
+    - "min/jquery-1.4.4.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery-ui-1.8.2.custom.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery.gritter.min?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.scrollTo?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "main?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "moteur?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "min/jquery.text-overflow.min?v=<?php echo sfConfig::get('app_media_version') ?>"

@@ -23,8 +23,8 @@
 		$contentWidth = "45%";
 	}
 	
-	use_stylesheet('landingPlantation?v='.sfConfig::get('app_media_version'));
-	use_stylesheet('blog?v='.sfConfig::get('app_media_version'));
+	use_stylesheet('landingPlantation.css?v='.sfConfig::get('app_media_version'));
+	use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 ?>
 
 <div id="content">

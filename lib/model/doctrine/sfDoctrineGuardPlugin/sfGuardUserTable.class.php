@@ -8,4 +8,14 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return Doctrine_Core::getTable('sfGuardUser');
     }
+
+    public function getUp2greenId()
+    {
+        $user = self::getInstance()
+			->createQuery('u')
+			->where('u.username = ?', 'up2green')
+			->fetchOne();
+
+		return $user ? $user->getId() : 0;
+    }
 }

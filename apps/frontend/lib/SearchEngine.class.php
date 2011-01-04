@@ -167,14 +167,8 @@ class SearchEngine {
 
 	private function processShopResult(&$result) {
 		$result = array_map('trim', $result);
-
-		$isFirst = preg_match('\.php&', $subject) || preg_match('\/&', $subject);
-		$idUser = $this->getUser()->isAuthenticated() ? $this->getUser()->getId() : 0;
-
-		$result['site_url'] .= $isFirst ? '?' : '&';
-		$result['site_url'] .= 'up2greenUserId='.$this->getUser()->getId();
-
-
+		$result = array_map(array('SearchEngine', 'addUrlId'), $result);
+		
 		$linkOpen = '<a target="_blank" href="'.$result['site_url'].'">';
 
 		if(substr($result['logo'], 0, 7) === 'http://') {
@@ -211,6 +205,14 @@ class SearchEngine {
 
 		$result = array_map('htmlspecialchars', $result);
 		return $result;
+	}
+
+	private static function addUrlId($value) {
+		$idUser = sfContext::getInstance()->getUser()->isAuthenticated()
+				? sfContext::getInstance()->getUser()->getGuardUser()->getId()
+				: Doctrine::getTable('sfGuardUser')->getUp2greenId();
+
+		return str_replace('{up2greenId}', $idUser, $value);
 	}
 
 }

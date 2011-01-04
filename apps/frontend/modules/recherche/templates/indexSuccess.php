@@ -6,7 +6,7 @@
 		<div class="search">
 			<input type="hidden" id="hidden_text_search" name="hidden_text_search" value="<?php echo $textSearch ?>" />
 			<input type="hidden" id="hidden_moteur_search" name="hidden_moteur_search" value="<?php echo $moteur ?>" />
-			<input type="text" id="recherche_text" name="recherche_text" size="60" value="<?php echo $textSearch ?>" />
+			<input type="text" id="recherche_text" name="recherche_text" value="<?php echo $textSearch ?>" />
 			<input type="submit" id="recherche_submit" name="recherche_submit" value="Rechercher" class="button white small" />
 		</div>
 

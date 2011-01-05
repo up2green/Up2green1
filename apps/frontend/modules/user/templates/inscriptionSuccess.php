@@ -12,28 +12,28 @@
 				<tbody>
 					<?php echo $form->renderGlobalErrors() ?>
 					<tr>
-						<th><?php echo $form['username']->renderLabel() ?></th>
+						<th><?php echo __("Nom d'utilisateur :") ?></th>
 						<td>
 							<?php echo $form['username']->renderError() ?>
 							<?php echo $form['username'] ?>
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo $form['password']->renderLabel() ?></th>
+						<th><?php echo __("Mot de passe :") ?></th>
 						<td>
 							<?php echo $form['password']->renderError() ?>
 							<?php echo $form['password'] ?>
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo $form['password_bis']->renderLabel() ?></th>
+						<th><?php echo __("Confirmation du mot de passe :") ?></th>
 						<td>
 							<?php echo $form['password_bis']->renderError() ?>
 							<?php echo $form['password_bis'] ?>
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo $form['email_address']->renderLabel() ?></th>
+						<th><?php echo __("Adresse e-mail :") ?></th>
 						<td>
 							<?php echo $form['email_address']->renderError() ?>
 							<?php echo $form['email_address'] ?>

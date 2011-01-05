@@ -31,14 +31,6 @@ class userRegistrationForm extends PluginsfGuardUserForm {
 		
         $this->widgetSchema['password']     = new sfWidgetFormInputPassword();
         $this->widgetSchema['password_bis'] = new sfWidgetFormInputPassword();
-
-        $this->widgetSchema->setLabels(array(
-                'username'     => 'Nom d\'utilisateur* :',
-                'password'     => 'Mot de passe* :',
-                'password_bis' => 'Confirmation* :',
-                'email_address'=> 'Adresse e-mail* :',
-        ));
-
         $this->validatorSchema['username']     = new sfValidatorString(array('required' => true));
         $this->validatorSchema['password']     = new sfValidatorString(array('required' => true, 'min_length' => 6));
         $this->validatorSchema['password_bis'] = new sfValidatorString(array('required' => true, 'min_length' => 6));

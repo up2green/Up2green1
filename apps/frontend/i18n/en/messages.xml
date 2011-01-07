@@ -108,10 +108,10 @@
       <trans-unit id="102" translate="yes" reformat="yes" xml:space="default"><source>Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !</source><target xml:lang="en" state="needs-translation">Choose where to plant your trees on the Planet entering your tree code number now !</target><?sid -462094004-0?></trans-unit>
       <trans-unit id="103" translate="yes" reformat="yes" xml:space="default"><source>Coupons non utilisés ({number})</source><target xml:lang="en" state="needs-translation">Codes not used ({number})</target><?sid -462094004-0?></trans-unit>
       <trans-unit id="104" translate="yes" reformat="yes" xml:space="default"><source>{code} [{number} arbres] Généré le {date}</source><target xml:lang="en" state="needs-translation">{code} [{number} trees] Created on the {date}</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="104" translate="yes" reformat="yes" xml:space="default"><source>Nom d'utilisateur :</source><target xml:lang="en" state="needs-translation">Username :</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="104" translate="yes" reformat="yes" xml:space="default"><source>Mot de passe :</source><target xml:lang="en" state="needs-translation">Password</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="104" translate="yes" reformat="yes" xml:space="default"><source>Confirmation du mot de passe :</source><target xml:lang="en" state="needs-translation">Password confirmation</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="104" translate="yes" reformat="yes" xml:space="default"><source>Adresse e-mail :</source><target xml:lang="en" state="needs-translation">Email adress</target><?sid -462094004-0?></trans-unit>
+      <trans-unit id="105" translate="yes" reformat="yes" xml:space="default"><source>Nom d'utilisateur :</source><target xml:lang="en" state="needs-translation">Username :</target><?sid -462094004-0?></trans-unit>
+      <trans-unit id="106" translate="yes" reformat="yes" xml:space="default"><source>Mot de passe :</source><target xml:lang="en" state="needs-translation">Password</target><?sid -462094004-0?></trans-unit>
+      <trans-unit id="107" translate="yes" reformat="yes" xml:space="default"><source>Confirmation du mot de passe :</source><target xml:lang="en" state="needs-translation">Password confirmation</target><?sid -462094004-0?></trans-unit>
+      <trans-unit id="108" translate="yes" reformat="yes" xml:space="default"><source>Adresse e-mail :</source><target xml:lang="en" state="needs-translation">Email adress</target><?sid -462094004-0?></trans-unit>
     </body>
   </file>
 </xliff>

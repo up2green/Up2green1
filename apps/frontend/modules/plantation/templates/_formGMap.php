@@ -17,10 +17,29 @@
 		<?php if(!empty($gMapModes)) : ?>
 		<div class="modeSelector">
 			<ul>
-				<?php foreach($gMapModes as $gMapMode) : ?>
+				<?php 
+				
+				foreach($gMapModes as $gMapMode) :
+
+					$gMapModesLabels = array(
+						'user' => __("Les arbres plantés avec mon compte"),
+						'coupon' => __("Les arbres plantés avec mes coupons"),
+						'all' => __("Tous les arbres plantés"),
+						
+					);
+
+				if(isset($gMapMode['partenaireTitle']) && isset($gMapMode['partenaireId'])) {
+					$gMapModesLabels += array(
+						'partenaire-'.$gMapMode['partenaireId'] => __("Tous les arbes plantés par {partenaire}", array(
+							'partenaire' => $gMapMode['partenaireTitle']
+						))
+					);
+				}
+				
+				?>
 				<li>
 					<input type='radio' class="gMapMode" name="gMapMode" value="<?php echo $gMapMode['name'] ?>" id="gMapMode_<?php echo $gMapMode['name'] ?>"<?php echo ($gMapMode['checked']) ? ' checked="checked"' : '' ?>>
-					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" ><?php echo $gMapMode['label'] ?></label>
+					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" ><?php echo $gMapModesLabels[$gMapMode['name']] ?></label>
 				</li>
 				<?php endforeach; ?>
 			</ul>

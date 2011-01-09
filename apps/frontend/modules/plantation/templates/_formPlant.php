@@ -20,16 +20,10 @@
 		
 		<div class="content">
 			
-			<?php 
-				if(!empty($errors)) {
-					echo '<p class="error">'.join('</p><p class="error">', $errors).'</p>';
-				} 
-			?>
-			
 			<p><?php echo format_number_choice(
 				"(-Inf,0]Vous n'avez pas d'arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter",
-				array('{number}' => '<span class="nbArbresToPlantLeft">'.$nbArbresToPlant.'</span>'),
-				$nbArbresToPlant
+				array('{number}' => '<span class="nbArbresToPlantLeft">'.floor($nbArbresToPlant).'</span>'),
+				floor($nbArbresToPlant)
 			) ?></p>
 			
 			<?php if(sizeof($programmes) > 4) : ?>
@@ -69,7 +63,7 @@
 		
 			<p class="center">
 				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="<?php echo __("Planter") ?>" />
-				<a href="/" style="padding:10px 20px;margin:0 2px;" class="button white" ><?php echo __("Annuler") ?></a>
+				<a href="<?php echo sfConfig::get('sf_app_url_plantation') ?>" style="padding:10px 20px;margin:0 2px;" class="button white" ><?php echo __("Annuler") ?></a>
 			</p>
 
 		</div>
@@ -80,8 +74,8 @@
 	<input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
 	<?php endif; ?>
 	
-	<input type="hidden" name="nbTreeMax" value="<?php echo $nbArbresToPlant ?>" />
-	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo $nbArbresToPlant ?>" />
+	<input type="hidden" name="nbTreeMax" value="<?php echo floor($nbArbresToPlant) ?>" />
+	<input type="hidden" name="nbArbresToPlantLeft" value="<?php echo floor($nbArbresToPlant) ?>" />
 	<input type="hidden" name="fromUrl" value="<?php echo $fromUrl; ?>" />
 </form>
 <?php endif; ?>

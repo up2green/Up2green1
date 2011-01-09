@@ -25,7 +25,7 @@
 				<li><a href="<?php echo url_for('@sf_guard_signout') ?>"><?php echo __("Déconnexion") ?></a></li>
 				<li><a href="<?php echo url_for('@plantation') ?>"><?php echo __(
 					"Planter mes arbres ({number})",
-					array('{number}' => floor($sf_user->getProfile()->getCredit()))
+					array('{number}' => number_format($sf_user->getProfile()->getCredit(), 3))
 				) ?></a></li>
 				<li><a href="<?php echo url_for("user/profil"); ?>"><?php echo __(
 					"Mon profil ({username})",

@@ -2,11 +2,6 @@
 	<img class="title corner left" src="/images/module/green/icon/coupon.png" alt="" />
 	<p class="title"><?php echo __("Utiliser un coupon") ?></p>
 	<div class="content">
-		<?php 
-			if(!empty($errors)) {
-				echo '<p class="error">'.join('</p><p class="error">', $errors).'</p>';
-			} 
-		?>
 		<p><?php echo __("Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !") ?></p>
 		<form action="" method="post">
 		<p class="center"><input type="text" name="code" value="<?php echo __("Numéro de coupon") ?>" title="<?php echo __("Numéro de coupon") ?>" /></p>

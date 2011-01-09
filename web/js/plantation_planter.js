@@ -74,11 +74,18 @@ $(document).ready(function(){
 		$("button.addTree")
 			.removeClass((newTotalLeft > 0) ? 'gray' : 'green')
 			.addClass((newTotalLeft > 0) ? 'green' : 'gray');
-		
-		$('input:submit[name="submitArbresProgramme"]')
-			.removeClass((newTotalLeft > 0) ? 'green' : 'gray')
-			.addClass((newTotalLeft > 0) ? 'gray' : 'green');
-		
+
+		if($('input:hidden[name="plantCouponCode"]').length) {
+			$('input:submit[name="submitArbresProgramme"]')
+				.removeClass((newTotalLeft > 0) ? 'green' : 'gray')
+				.addClass((newTotalLeft > 0) ? 'gray' : 'green');
+		}
+		else {
+			$('input:submit[name="submitArbresProgramme"]')
+				.removeClass((hiddenProgrammeTotal === 0) ? 'green' : 'gray')
+				.addClass((hiddenProgrammeTotal === 0 ) ? 'gray' : 'green');
+		}
+
 		// modification du nombre d'arbres à planter sur ce programme
 		hiddenProgrammeTotal.val(newTotalProgramme);
 		$('.nbTree[programme="'+idProgramme+'"]').html("("+newTotalProgramme+")");

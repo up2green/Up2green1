@@ -7,7 +7,7 @@
 			<input type="hidden" id="hidden_text_search" name="hidden_text_search" value="<?php echo $textSearch ?>" />
 			<input type="hidden" id="hidden_moteur_search" name="hidden_moteur_search" value="<?php echo $moteur ?>" />
 			<input type="text" id="recherche_text" name="recherche_text" value="<?php echo $textSearch ?>" />
-			<input type="submit" id="recherche_submit" name="recherche_submit" value="Rechercher" class="button white small" />
+			<input type="submit" id="recherche_submit" name="recherche_submit" value="<?php echo __("Rechercher") ?>" class="button white small" />
 		</div>
 
 		<div class="filtres">
@@ -28,21 +28,20 @@
 	}
 	elseif (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS, SearchEngine::SHOP))) {
 
-		// warning
-
-		echo '
-			<div id="ads_search">
-				<ul class="content-list warning" style="width:75%;margin:0 auto 20px;">
-					<li>'.__("L'obtention des arbres au fil de vos recherches, grâce aux liens publicitaires, sera active dans les prochains jours.").'</li>
-					<li>'.__("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.").'</li>
-				</p>
-			</div>
-		';
-
+		echo '<div id="searchResults"';
+		
 		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
 			if(!empty($singleShopResult)) {
 				echo '<div class="shop-result">';
 				include_partial('shop', array('result' => $singleShopResult));
+				echo '</div>';
+			}
+
+			if(!empty($pubResults)) {
+				echo '<div class="pub-result">';
+				foreach ($pubResults as $result) {
+					echo include_partial('pub', array('result' => $result));
+				}
 				echo '</div>';
 			}
 		}
@@ -53,7 +52,7 @@
 			(($moteur === SearchEngine::NEWS) ? "news" :
 			(($moteur === SearchEngine::SHOP) ? "shop" : "default")));
 
-		echo '<div id="searchResults" class="'.$partial.'-result">';
+		echo '<div class="'.$partial.'-result">';
 		
 		if(sizeof($results) === 0) {
 			echo '
@@ -79,6 +78,8 @@
 				</div>
 			';
 		}
+
+		echo '</div>';
 	}
 	?>
 </div>

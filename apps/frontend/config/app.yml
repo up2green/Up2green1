@@ -21,6 +21,7 @@ all:
   conversion_tree_co2: 0.1
   prix_arbre: 1
   hardcode_tree_number: 8847
+  gain_cpc: 0.01
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10
@@ -47,3 +48,8 @@ all:
     bloc_partenaires_max: 3
     partenaires_url: http://news.google.fr/news?hl=fr&client=firefox-a&hs=yN1&rls=org.mozilla:fr:official&q=reforestation&um=1&ie=UTF-8&output=rss
     partenaires_open_in_new_window: true
+
+  ddc:
+    id: 16945
+    hostname: http://yssads.ddc.com/
+    path: x1.php

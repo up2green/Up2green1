@@ -18,10 +18,19 @@ class ajaxActions extends sfActions
   public function executeMoreresults(sfWebRequest $request)
   {
       $params = $request->getParameterHolder();
+	  
       $min = $params->get('nb_items_affiche');
+      $minPub = $params->get('nb_pub');
+      $minAffiliate = $params->get('nb_affiliate');
       $text = $params->get('text_search');
       $moteur = $params->get('moteur_search');
+
       $engine = new SearchEngine($text, $moteur);
+	  
+	  $affiliateResult = $engine->getOneShopResult($minAffiliate);
+	  
       $this->results = $engine->getResults($min);
+      $this->affiliateResults = empty($affiliateResult) ? array() : array($affiliateResult);
+      $this->pubResults = $engine->getPubResults(2, $minPub);
   }
 }

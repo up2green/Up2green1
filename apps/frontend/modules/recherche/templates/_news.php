@@ -15,7 +15,7 @@
 		<?php
 
 		echo __("Source : {link}", array(
-			'{lien}' => '<a target="_blank" href="'.html_entity_decode($result['sourceUrl']).'">'.html_entity_decode($result['source']).'</a>'
+			'{link}' => '<a target="_blank" href="'.html_entity_decode($result['sourceUrl']).'">'.html_entity_decode($result['source']).'</a>'
 		));
 		
 		echo '

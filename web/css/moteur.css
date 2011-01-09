@@ -22,7 +22,7 @@
 
 #searchForm {
 	display:block;
-	height:100px;
+	height:75px;
 	margin:0 auto;
 	width:520px;
 }
@@ -160,17 +160,16 @@ div.more-result {
 /* recherche Achat */
 
 div.shop-result div.result {
-	padding:5px;
+    border: 1px solid #DA7C0C;
+    margin: 5px;
+}
+
+div.shop-result div.result:hover {
+    border: 1px solid #FF7124;
 }
 
 div.shop-result div.result table {
-	border:3px solid #FFBA90;
-	margin:0 10px;
 	width:100%;
-}
-
-div.shop-result div.result table:hover {
-	border:3px solid #FF7124;
 }
 
 div.shop-result div.result td {
@@ -234,6 +233,33 @@ div.web-result a {
 }
 
 div.web-result div.result h3 a {
+	color:#015F00;
+	padding:2px;
+	font-style:normal;
+}
+
+/* recherche Pub */
+
+div.pub-result div.result {
+    border: 1px solid #538312;
+    float: left;
+    height: 50px;
+    margin: 5px;
+    padding: 10px;
+    width: 480px;
+}
+
+div.pub-result p.content {
+	font-size:0.9em;
+	padding:3px 0;
+}
+
+div.pub-result a {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+div.pub-result div.result h3 a {
 	color:#015F00;
 	padding:2px;
 	font-style:normal;

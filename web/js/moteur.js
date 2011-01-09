@@ -7,6 +7,10 @@ $(function() {
 	var SHOP = '4';
 	
     $("#searchMore").click(function(){
+
+		var mode = $('#hidden_moteur_search', '#searchForm').val();
+		var nb_pub = $(".pub-result .result").length;
+		var nb_affiliate = $(".shop-result .result").length;
 		
 		$("#searchMore").html('<img src="/images/icons/16x16/ajax-loader.gif" alt="Loading" />');
 		
@@ -15,20 +19,76 @@ $(function() {
             type: 'post',
             dataType: "xml",
             data: {
-                nb_items_affiche: $(".result").length,
-                text_search: $('#hidden_text_search', '#searchForm').val(),
-                moteur_search: $('#hidden_moteur_search', '#searchForm').val()
+                'nb_items_affiche': (mode == SHOP) ? $(".result").length : ($(".result").length - nb_pub - nb_affiliate),
+                'nb_pub': nb_pub,
+                'nb_affiliate': nb_affiliate,
+                'text_search': $('#hidden_text_search', '#searchForm').val(),
+                'moteur_search': $('#hidden_moteur_search', '#searchForm').val()
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
 				$("#searchMore").html(txtReadMore);
             },
             success: function(xml) {
-				var mode = $('#hidden_moteur_search', '#searchForm').val();
+				var firstPub = true;
+
 				$(xml).find('root').each(function(){
+					var root = $(this);
+					var html = '';
+//					var tooltipPub = $('.pub-result:first .result:first span.tooltip-content:first');
+
+					// ajout des affiliates
+					if($(this).find('affiliateResult').length) {
+						$('#searchResults > .more-result').before('<div class="shop-result"></div>');
+					}
+
+					$(this).find('affiliateResult').each(function(){
+						
+						html = '<div class="result hidden">';
+						html += '<table>';
+						html += '<tr>';
+
+						if ($(this).find('logo').text().length) {
+							html += '<td class="affiliate-logo">'+$(this).find('logo').text()+'</td>';
+						}
+						
+						html += '<td class="affiliate-content">'+$(this).find('content').text()+'</td>';
+						html += '<td class="affiliate-gains">'+$(this).find('tooltip').text().replace("\\", "")+'</td>';
+						html += '</tr>';
+						html += '</table>';
+						html += '</div>';
+
+						$('#searchResults .shop-result:last').append(html);
+					});
+
+					if($(this).find('pubResult').length) {
+						$('#searchResults > .more-result').before('<div class="pub-result"></div>');
+					}
+					// ajout des liens sponsorisés
+					$(this).find('pubResult').each(function(){
+						html = '';
+						html += '<div class="result hidden">';
+						html += '<h3 class="tooltip"><a target="_blank" href="'+$(this).find('url').text()+'">';
+						html += $(this).find('title').text();
+						html += '</a></h3>';
+						if($(this).find('description').text() != '') {
+							html += '<p class="content">';
+							html += $(this).find('description').text();
+							html += '</p>';
+						}
+						html += '<h4 class="tooltip">'+$(this).find('source').text()+'</h4>';
+						html += '</div>';
+
+						$('#searchResults .pub-result:last').append($(html));
+						
+					});
+					
 					switch(mode) {
-						case IMG : 
+						case IMG :
+							if($(this).find('result').length) {
+								$('#searchResults > .more-result').before('<div class="img-result"></div>');
+							}
 							$(this).find('result').each(function(){
-								var html = '<div class="result hidden">';
+								html = '<div class="result hidden">';
 								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
 								html += '<img src="'+$(this).find('thumbnail').text()+'" />';
 								html += '</a>';
@@ -44,13 +104,16 @@ $(function() {
 								html += '['+$(this).find('title').text()+']';
 								html += '</span>';
 								html += '</div>';	
-								$('#searchResults').append(html);
+								$('#searchResults .img-result:last').append(html);
 							});
 							break;
 						
 						case WEB :
+							if($(this).find('result').length) {
+								$('#searchResults > .more-result').before('<div class="web-result"></div>');
+							}
 							$(this).find('result').each(function(){
-								var html = '<div class="result hidden">';
+								html = '<div class="result hidden">';
 								
 								html += '<h3>';
 								html += '<a target="_blank" href="'+$(this).find('clickUrl').text()+'">';
@@ -68,11 +131,14 @@ $(function() {
 								html += '</a>';
 								
 								html += '</div>';	
-								$('#searchResults').append(html);
+								$('#searchResults .web-result:last').append(html);
 							});
 							break;
 						
 						case NEWS :
+							if($(this).find('result').length) {
+								$('#searchResults > .more-result').before('<div class="news-result"></div>');
+							}
 							$(this).find('result').each(function(){
 								var html = '<div class="result hidden">';
 								
@@ -98,11 +164,14 @@ $(function() {
 								html += '</h4>';
 								
 								html += '</div>';
-								$('#searchResults').append(html);
+								$('#searchResults .news-result:last').append(html);
 							});
 							break;
 
 						case SHOP :
+							if($(this).find('result').length) {
+								$('#searchResults > .more-result').before('<div class="shop-result"></div>');
+							}
 							$(this).find('result').each(function(){
 								var html = '<div class="result hidden">';
 
@@ -128,13 +197,17 @@ $(function() {
 								html += '</table>';
 								html += '</div>';
 
-								$('#searchResults').append(html);
+								$('#searchResults .shop-result:last').append(html);
 							});
 							break;
 					}
-					                    
+
+					if($(this).find('result').length || $(this).find('affiliateResult').length || $(this).find('pubResult').length) {
+						$('#searchResults > .more-result').before('<div class="clear"></div>');
+					}
+
 					$('div.result.hidden', $('#searchResults')).fadeIn('slow', function() {
-						$("body").scrollTo( 'max', { axis:'y' } );
+						$("body").scrollTo( 'max', {axis:'y'} );
 					}).removeClass('hidden');
 
 					$("#searchMore").html(txtReadMore);
@@ -143,8 +216,8 @@ $(function() {
         });
         
     });
-    
-    $(".filtres > span[searchMode]", "#searchForm").each(function(){
+
+	$(".filtres > span[searchMode]", "#searchForm").each(function(){
 		$(this).bind('click', {mode: $(this).attr('searchMode')}, changeMoteur)
 	});
 

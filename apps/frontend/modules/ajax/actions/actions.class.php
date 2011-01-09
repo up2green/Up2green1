@@ -10,18 +10,61 @@
  */
 class ajaxActions extends sfActions
 {
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
+	public function executeClicPub(sfWebRequest $request) {
+		$params = $request->getParameterHolder();
+		$url = $params->get('url');
+		$this->messageImage = '/images/icons/48x48/tick.png';
+		
+		if($this->getUser()->isAuthenticated()) {
+
+			$log = Doctrine_Core::getTable('logPub')
+				->getForUrlAndUser($url, $this->getUser()->getGuardUser()->getId());
+
+			if(empty($log)) {
+				$log = new logPub();
+				$log->setIp($_SERVER['REMOTE_ADDR']);
+				$log->setUserId($this->getUser()->getGuardUser()->getId());
+				$log->setUrl($url);
+				$log->save();
+				
+				$profil = $this->getUser()->getGuardUser()->getProfile();
+				$profil->setCredit($profil->getCredit() + sfConfig::get('app_gain_cpc'));
+				$profil->save();
+				
+				$this->message = 'success';
+				$this->messageType = 'flash_notice';
+			}
+			else {
+				$this->message = 'error-log';
+				$this->messageType = 'error';
+				$this->messageImage = '/images/icons/48x48/warning.png';
+			}
+			
+		}
+		else {
+			$this->message = 'not-connected';
+			$this->messageType = 'flash_notice';
+			$this->messageImage = '/images/icons/48x48/warning.png';
+		}
+  }
+
   public function executeMoreresults(sfWebRequest $request)
   {
       $params = $request->getParameterHolder();
+
       $min = $params->get('nb_items_affiche');
+      $minPub = $params->get('nb_pub');
+      $minAffiliate = $params->get('nb_affiliate');
       $text = $params->get('text_search');
       $moteur = $params->get('moteur_search');
+
       $engine = new SearchEngine($text, $moteur);
+
+//	  $affiliateResult = $engine->getOneShopResult($minAffiliate);
+	  $affiliateResult = array();
+
       $this->results = $engine->getResults($min);
+      $this->affiliateResults = empty($affiliateResult) ? array() : array($affiliateResult);
+      $this->pubResults = $engine->getPubResults(2, $minPub);
   }
 }

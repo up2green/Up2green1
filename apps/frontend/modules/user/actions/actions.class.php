@@ -34,7 +34,7 @@ class userActions extends sfActions {
 			$profil->save();
 		}
 
-		return $this->redirect('@homepage');
+		return $this->redirect($request->getParameter('fromUrl'));
 	}
 
 	public function executeInscription(sfWebRequest $request) {

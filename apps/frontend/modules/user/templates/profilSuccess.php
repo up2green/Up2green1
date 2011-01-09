@@ -20,7 +20,7 @@
 						</tr>
 						<tr>
 							<td class="label"><?php echo __('Crédits disponibles :'); ?></td>
-							<td class="field"><?php echo $sf_user->getGuardUser()->getProfile()->getCredit(); ?></td>
+							<td class="field"><?php echo number_format($sf_user->getGuardUser()->getProfile()->getCredit(), 3); ?></td>
 						</tr>
 						<tr>
 							<td class="label"><?php echo __('Arbres plantés :'); ?></td>

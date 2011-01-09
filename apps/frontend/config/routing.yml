@@ -26,6 +26,10 @@ ajax_more_results:
   url: /ajax/moreresults/*
   param: { module: ajax, action: moreresults, sf_format: xml }
 
+clic_pub:
+  url: /ajax/clicPub
+  param: { module: ajax, action: clicPub, sf_format: xml }
+
 
 couponsCSV:
   url:    /exportCoupons.csv

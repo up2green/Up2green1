@@ -14359,24 +14359,30 @@ sfGuardRememberKey:
     ip_address: 94.26.28.135
     created_at: '2010-12-27 08:39:40'
     updated_at: '2010-12-27 08:39:40'
-  sfGuardRememberKey_29:
-    User: sfGuardUser_23
-    remember_key: g8cjdf5fz9xm0oosg80kkks040o80kk
-    ip_address: 84.100.165.165
-    created_at: '2010-12-27 15:45:34'
-    updated_at: '2010-12-27 15:45:34'
-  sfGuardRememberKey_31:
+  sfGuardRememberKey_33:
+    User: sfGuardUser_43
+    remember_key: btpgyzi28gpw4cg8kcogks0ws8g8ww4
+    ip_address: 70.55.254.149
+    created_at: '2011-01-05 04:19:05'
+    updated_at: '2011-01-05 04:19:05'
+  sfGuardRememberKey_36:
     User: sfGuardUser_33
-    remember_key: mim2u5qjscyfk8gook8ogcs4k488g4c
+    remember_key: 2slq0dnxlugcqsc8wcwgowgcskock4w
     ip_address: 78.114.47.28
-    created_at: '2011-01-02 19:51:10'
-    updated_at: '2011-01-02 19:51:10'
-  sfGuardRememberKey_32:
+    created_at: '2011-01-07 11:51:33'
+    updated_at: '2011-01-07 11:51:33'
+  sfGuardRememberKey_38:
     User: sfGuardUser_11
-    remember_key: gx0o4adg24l40gook44okko0wgwgo0c
-    ip_address: 93.20.168.124
-    created_at: '2011-01-04 15:08:16'
-    updated_at: '2011-01-04 15:08:16'
+    remember_key: ci6zz5ywzw2hc80kos0kk80488kwwc8
+    ip_address: 82.241.89.76
+    created_at: '2011-01-08 09:38:47'
+    updated_at: '2011-01-08 09:38:47'
+  sfGuardRememberKey_40:
+    User: sfGuardUser_23
+    remember_key: 19h9vhmo27qbzkowgos48kw0wkcgg8k
+    ip_address: 84.100.165.165
+    created_at: '2011-01-08 17:01:23'
+    updated_at: '2011-01-08 17:01:23'
 sfGuardUserPermission:
   sfGuardUserPermission_42_1:
     User: sfGuardUser_42
@@ -14411,9 +14417,9 @@ sfGuardUser:
     password: 2eaf7910ad229e02e97aff2b51b47cd2da478796
     is_active: true
     is_super_admin: true
-    last_login: '2011-01-04 21:29:24'
+    last_login: '2011-01-08 09:35:07'
     created_at: '2010-08-28 12:40:14'
-    updated_at: '2011-01-04 21:29:24'
+    updated_at: '2011-01-08 09:35:07'
   sfGuardUser_2:
     first_name: DYRUP
     last_name: ''
@@ -14541,9 +14547,9 @@ sfGuardUser:
     password: dfc85855486bce3130538f84f36c26cfba0094e1
     is_active: true
     is_super_admin: false
-    last_login: '2011-01-04 15:08:16'
+    last_login: '2011-01-08 09:38:47'
     created_at: '2010-11-15 06:45:35'
-    updated_at: '2011-01-04 15:08:16'
+    updated_at: '2011-01-08 09:38:47'
   sfGuardUser_12:
     first_name: SEDIF
     last_name: ''
@@ -14697,9 +14703,9 @@ sfGuardUser:
     password: a9e6fe46e5ccc75b46a785091c8daccfad0f60ec
     is_active: true
     is_super_admin: false
-    last_login: '2010-12-27 15:45:34'
+    last_login: '2011-01-08 17:01:23'
     created_at: '2010-11-24 20:29:21'
-    updated_at: '2010-12-27 15:45:34'
+    updated_at: '2011-01-08 17:01:23'
   sfGuardUser_24:
     first_name: ''
     last_name: ''
@@ -14827,9 +14833,9 @@ sfGuardUser:
     password: f8430c6011a2dc65002ae4300adae5ef7ea328f8
     is_active: true
     is_super_admin: false
-    last_login: '2011-01-02 19:51:10'
+    last_login: '2011-01-07 11:51:33'
     created_at: '2010-12-13 16:01:16'
-    updated_at: '2011-01-02 19:51:10'
+    updated_at: '2011-01-07 11:51:33'
   sfGuardUser_34:
     first_name: ''
     last_name: ''
@@ -14947,6 +14953,58 @@ sfGuardUser:
     last_login: null
     created_at: '2011-01-04 20:55:02'
     updated_at: '2011-01-04 20:55:02'
+  sfGuardUser_43:
+    first_name: ''
+    last_name: ''
+    email_address: kristoflavoie@hotmail.com
+    username: kristof
+    algorithm: sha1
+    salt: 1bc484862eac85c446718a0c0e2c2dde
+    password: d23fb5c26f52b1ef5a6d284ad3c5b366ac796923
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-01-07 19:07:46'
+    created_at: '2011-01-05 04:01:27'
+    updated_at: '2011-01-07 19:07:46'
+  sfGuardUser_44:
+    first_name: ''
+    last_name: ''
+    email_address: titeiko@gmail.com
+    username: TiteiKo
+    algorithm: sha1
+    salt: 3e2ee0bbae05ec57fbe412ddb797381a
+    password: 3c561acc0b5a3b61c1c6900d97f4a84421ffbd2b
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-01-07 12:56:01'
+    created_at: '2011-01-07 12:56:01'
+    updated_at: '2011-01-07 12:56:01'
+  sfGuardUser_45:
+    first_name: ''
+    last_name: ''
+    email_address: benphilippon@free.fr
+    username: noppi
+    algorithm: sha1
+    salt: 9312b10c2c8e60d65fc28cf24c8a9354
+    password: a56b772b6fde8dbe25b42ddc10ee6b8f7d3fd729
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-01-07 16:17:46'
+    created_at: '2011-01-07 16:17:46'
+    updated_at: '2011-01-07 16:17:46'
+  sfGuardUser_46:
+    first_name: ''
+    last_name: ''
+    email_address: henri.rohard@veolia-transport.com
+    username: henri.rohard
+    algorithm: sha1
+    salt: 112ed43b82da24c5fb22653c38016d54
+    password: 69b290575d6e1a8b1d81274d67306a0bd227e112
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-01-08 09:34:20'
+    created_at: '2011-01-08 09:34:20'
+    updated_at: '2011-01-08 09:34:20'
 sfGuardGroupPermission:
   sfGuardGroupPermission_1_1:
     Group: sfGuardGroup_1
@@ -20174,6 +20232,34 @@ tree:
     Programme: programme_18
     created_at: '2011-01-04 13:16:01'
     updated_at: '2011-01-04 13:16:01'
+  tree_1306:
+    Programme: programme_17
+    created_at: '2011-01-05 11:27:52'
+    updated_at: '2011-01-05 11:27:52'
+  tree_1307:
+    Programme: programme_16
+    created_at: '2011-01-05 14:30:44'
+    updated_at: '2011-01-05 14:30:44'
+  tree_1308:
+    Programme: programme_1
+    created_at: '2011-01-07 12:01:49'
+    updated_at: '2011-01-07 12:01:49'
+  tree_1309:
+    Programme: programme_9
+    created_at: '2011-01-07 12:02:58'
+    updated_at: '2011-01-07 12:02:58'
+  tree_1311:
+    Programme: programme_10
+    created_at: '2011-01-07 23:16:36'
+    updated_at: '2011-01-07 23:16:36'
+  tree_1312:
+    Programme: programme_17
+    created_at: '2011-01-08 11:46:47'
+    updated_at: '2011-01-08 11:46:47'
+  tree_1313:
+    Programme: programme_14
+    created_at: '2011-01-08 19:35:25'
+    updated_at: '2011-01-08 19:35:25'
 treeUser:
   treeUser_18_2:
     tree: tree_18
@@ -24169,19 +24255,19 @@ coupon:
   coupon_190:
     couponGen: couponGen_3
     code: ETM01MTE0NWXYXY
-    is_active: true
-    used_at: '0000-00-00 00:00:00'
+    is_active: false
+    used_at: '2011-01-08 11:46:47'
     used_by: '0'
     created_at: '2010-12-09 22:27:00'
-    updated_at: '0000-00-00 00:00:00'
+    updated_at: '2011-01-08 11:46:47'
   coupon_191:
     couponGen: couponGen_3
     code: ETM01MTE0OAXYXY
-    is_active: true
-    used_at: '0000-00-00 00:00:00'
+    is_active: false
+    used_at: '2011-01-07 23:16:36'
     used_by: '0'
     created_at: '2010-12-09 22:27:00'
-    updated_at: '0000-00-00 00:00:00'
+    updated_at: '2011-01-07 23:16:36'
   coupon_192:
     couponGen: couponGen_3
     code: ETM01MTE0OQXYXY
@@ -31137,11 +31223,11 @@ coupon:
   coupon_1061:
     couponGen: couponGen_3
     code: ETM01MJAXOAXYXY
-    is_active: true
-    used_at: '0000-00-00 00:00:00'
+    is_active: false
+    used_at: '2011-01-07 12:01:49'
     used_by: '0'
     created_at: '2010-12-09 22:27:00'
-    updated_at: '0000-00-00 00:00:00'
+    updated_at: '2011-01-07 12:01:49'
   coupon_1062:
     couponGen: couponGen_3
     code: ETM01MJAXOQXYXY
@@ -31433,11 +31519,11 @@ coupon:
   coupon_1098:
     couponGen: couponGen_3
     code: ETM01MJA1NQXYXY
-    is_active: true
-    used_at: '0000-00-00 00:00:00'
+    is_active: false
+    used_at: '2011-01-07 12:02:58'
     used_by: '0'
     created_at: '2010-12-09 22:27:00'
-    updated_at: '0000-00-00 00:00:00'
+    updated_at: '2011-01-07 12:02:58'
   coupon_1099:
     couponGen: couponGen_3
     code: ETM01MJA1NGXYXY
@@ -40705,11 +40791,11 @@ coupon:
   coupon_2257:
     couponGen: couponGen_3
     code: DYVO4BA61
-    is_active: true
-    used_at: null
+    is_active: false
+    used_at: '2011-01-05 11:27:52'
     used_by: null
     created_at: '2010-12-08 22:18:46'
-    updated_at: '2010-12-08 22:18:46'
+    updated_at: '2011-01-05 11:27:52'
   coupon_2258:
     couponGen: couponGen_3
     code: DYVO906A9
@@ -40785,11 +40871,11 @@ coupon:
   coupon_2267:
     couponGen: couponGen_3
     code: DYVO6DFB2
-    is_active: true
-    used_at: null
+    is_active: false
+    used_at: '2011-01-05 14:30:44'
     used_by: null
     created_at: '2010-12-08 22:18:46'
-    updated_at: '2010-12-08 22:18:46'
+    updated_at: '2011-01-05 14:30:44'
   coupon_2268:
     couponGen: couponGen_3
     code: DYVOD69D7
@@ -45265,11 +45351,11 @@ coupon:
   coupon_2827:
     couponGen: couponGen_3
     code: FIMED1629
-    is_active: true
-    used_at: null
+    is_active: false
+    used_at: '2011-01-08 19:35:25'
     used_by: null
     created_at: '2011-01-03 10:05:05'
-    updated_at: '2011-01-03 10:05:05'
+    updated_at: '2011-01-08 19:35:25'
   coupon_2828:
     couponGen: couponGen_3
     code: FIME53332
@@ -46312,7 +46398,7 @@ profil:
     User: sfGuardUser_11
     credit: '0.0000'
     is_newsletter: '1'
-    culture: fr_FR
+    culture: fr
   profil_3:
     User: sfGuardUser_13
     credit: '0.0000'
@@ -46420,6 +46506,26 @@ profil:
     culture: fr_FR
   profil_24:
     User: sfGuardUser_41
+    credit: '0.0000'
+    is_newsletter: '0'
+    culture: fr_FR
+  profil_25:
+    User: sfGuardUser_43
+    credit: '0.0000'
+    is_newsletter: '0'
+    culture: fr_FR
+  profil_26:
+    User: sfGuardUser_44
+    credit: '0.0000'
+    is_newsletter: '0'
+    culture: fr_FR
+  profil_27:
+    User: sfGuardUser_45
+    credit: '0.0000'
+    is_newsletter: '0'
+    culture: fr_FR
+  profil_28:
+    User: sfGuardUser_46
     credit: '0.0000'
     is_newsletter: '0'
     culture: fr_FR
@@ -47700,6 +47806,48 @@ logCoupon:
     coupon: coupon_2460
     created_at: '2011-01-04 13:16:01'
     updated_at: '2011-01-04 13:16:01'
+  logCoupon_190:
+    ip: 90.26.216.13
+    email: rochet-blanc.architecte@wanadoo.fr
+    coupon: coupon_2257
+    created_at: '2011-01-05 11:27:52'
+    updated_at: '2011-01-05 11:27:52'
+  logCoupon_191:
+    ip: 83.202.95.182
+    email: alainburel@orange.fr
+    coupon: coupon_2267
+    created_at: '2011-01-05 14:30:44'
+    updated_at: '2011-01-05 14:30:44'
+  logCoupon_192:
+    ip: 79.86.170.184
+    email: ''
+    coupon: coupon_1061
+    created_at: '2011-01-07 12:01:49'
+    updated_at: '2011-01-07 12:01:49'
+  logCoupon_193:
+    ip: 79.86.170.184
+    email: ''
+    coupon: coupon_1098
+    created_at: '2011-01-07 12:02:58'
+    updated_at: '2011-01-07 12:02:58'
+  logCoupon_195:
+    ip: 79.91.203.62
+    email: BELLEGARDE;ROLAND@YAHOO.FR
+    coupon: coupon_191
+    created_at: '2011-01-07 23:16:36'
+    updated_at: '2011-01-07 23:16:36'
+  logCoupon_196:
+    ip: 90.3.180.249
+    email: lolfred@wanadoo.fr
+    coupon: coupon_190
+    created_at: '2011-01-08 11:46:47'
+    updated_at: '2011-01-08 11:46:47'
+  logCoupon_197:
+    ip: 86.200.56.249
+    email: pascal.dujardin0379@orange.f
+    coupon: coupon_2827
+    created_at: '2011-01-08 19:35:25'
+    updated_at: '2011-01-08 19:35:25'
 couponPartenaire:
   couponPartenaire_1701_1:
     coupon: coupon_1701
@@ -56750,8 +56898,14 @@ programme:
     max_tree: '0'
     logo: 4f702eee5a23b8205a74733298a1c97eb8119ac3.jpg
     created_at: '2010-11-24 20:53:53'
-    updated_at: '2010-11-28 18:28:18'
+    updated_at: '2011-01-04 22:21:38'
 treeCoupon:
+  treeCoupon_1312_190:
+    tree: tree_1312
+    coupon: coupon_190
+  treeCoupon_1311_191:
+    tree: tree_1311
+    coupon: coupon_191
   treeCoupon_1274_311:
     tree: tree_1274
     coupon: coupon_311
@@ -56776,6 +56930,12 @@ treeCoupon:
   treeCoupon_1275_1049:
     tree: tree_1275
     coupon: coupon_1049
+  treeCoupon_1308_1061:
+    tree: tree_1308
+    coupon: coupon_1061
+  treeCoupon_1309_1098:
+    tree: tree_1309
+    coupon: coupon_1098
   treeCoupon_1277_1138:
     tree: tree_1277
     coupon: coupon_1138
@@ -58174,9 +58334,15 @@ treeCoupon:
   treeCoupon_1300_2253:
     tree: tree_1300
     coupon: coupon_2253
+  treeCoupon_1306_2257:
+    tree: tree_1306
+    coupon: coupon_2257
   treeCoupon_1291_2261:
     tree: tree_1291
     coupon: coupon_2261
+  treeCoupon_1307_2267:
+    tree: tree_1307
+    coupon: coupon_2267
   treeCoupon_1290_2276:
     tree: tree_1290
     coupon: coupon_2276
@@ -58195,6 +58361,9 @@ treeCoupon:
   treeCoupon_1305_2460:
     tree: tree_1305
     coupon: coupon_2460
+  treeCoupon_1313_2827:
+    tree: tree_1313
+    coupon: coupon_2827
 newsletterTranslation:
   newsletterTranslation_1_en:
     newsletter: newsletter_1
@@ -58535,8 +58704,8 @@ articleTranslation:
   articleTranslation_13_en:
     article: article_13
     title: Welcome
-    accroche: "<br />\r\n"
-    description: "<br />\r\n"
+    accroche: "<p>\r\n	<strong><span lang=\"en\"><span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">Become a part</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">of</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">community-based reforestation</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">with us</span><span title=\"Cliquer ici pour voir d'autres traductions\">!</span></span></strong></p>\r\n"
+    description: "<p>\r\n	<span id=\"result_box\" lang=\"en\"><span style=\"font-size: 14px;\"><strong><span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">UP2GREEN</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">REFORESTATION</span></strong></span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">is</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">an</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">association</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">law</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">1901</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">which</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">fight</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">against deforestation and</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">help</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">local people</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">develop</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">sustainable</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">through</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">agroforestry</span><span title=\"Cliquer ici pour voir d'autres traductions\">.</span><br />\r\n	<br />\r\n	<br />\r\n	<strong><span style=\"font-size: 16px;\"><span style=\"font-family: arial,helvetica,sans-serif;\"><span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">It is</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">also</span><span title=\"Cliquer ici pour voir d'autres traductions\">:</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">3</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">separate websites</span><span title=\"Cliquer ici pour voir d'autres traductions\">:</span></span></span></strong></span><br />\r\n	<br />\r\n	&nbsp;</p>\r\n<ul>\r\n	<li>\r\n		<span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">A</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">search engine</span> <span class=\"hps atn\" title=\"Cliquer ici pour voir d'autres traductions\">(</span><span title=\"Cliquer ici pour voir d'autres traductions\">www.up2green.com</span><span title=\"Cliquer ici pour voir d'autres traductions\">) that</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">allows you</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to collect</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">free</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">trees in</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">your</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">account</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">over</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">your research</span><span title=\"Cliquer ici pour voir d'autres traductions\">,</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">then</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">you</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">choose</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">where</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to plant</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">in the programs</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">supported</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">on</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">the</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">Planet.</span></li>\r\n</ul>\r\n<p>\r\n	&nbsp;</p>\r\n<ul>\r\n	<li>\r\n		<span lang=\"en\"><span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">A</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">platform</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">planting</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">line</span> <span class=\"hps atn\" title=\"Cliquer ici pour voir d'autres traductions\">(</span><span title=\"Cliquer ici pour voir d'autres traductions\">http://reforestation.up2green</span><span title=\"Cliquer ici pour voir d'autres traductions\">) for</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">our</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">partner</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">companies or</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">communities</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">that can provide</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">trees</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to plant</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">on</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">the</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">planet</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">their</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">customers, employees</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">or</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">constituents and</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">follow</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">their forests</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">grow</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">on</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">the</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">Planet</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">.</span></span></li>\r\n</ul>\r\n<p>\r\n	&nbsp;</p>\r\n<ul>\r\n	<li>\r\n		<span lang=\"en\"><span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">The</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">association site</span> <span class=\"hps atn\" title=\"Cliquer ici pour voir d'autres traductions\">(</span><span title=\"Cliquer ici pour voir d'autres traductions\">http://association.up2green.com</span><span title=\"Cliquer ici pour voir d'autres traductions\">)</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">to</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">provide maximum</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">information about:</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">our</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">work</span><span title=\"Cliquer ici pour voir d'autres traductions\">, our</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">partners,</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">some</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">news</span> <span class=\"hps\" title=\"Cliquer ici pour voir d'autres traductions\">...</span></span></li>\r\n</ul>\r\n"
     lang: en
     slug: welcome
   articleTranslation_13_fr:
@@ -58859,24 +59028,24 @@ programmeTranslation:
   programmeTranslation_12_en:
     programme: programme_12
     title: Benin
-    accroche: '<br />'
-    description: '<br />'
+    accroche: "<br />\r\n"
+    description: "<br />\r\n"
     lang: en
     slug: benin-en
   programmeTranslation_12_fr:
     programme: programme_12
     title: Bénin
-    accroche: "<p>\r\n	Projet de mise en oeuvre, dans le village de Firihoun, d'activités alternatives à l'exploitation abusive des ressources naturelles autour de la réserve de la Pendjari.</p>"
-    description: "<p>\r\n	 </p>\r\n<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/deforestation-Firihoun-benin.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/action-developpement-benin.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>: lutter contre l'exploitation abusive des ressources naturelles en périphérie de la réserve de la biosphère de la Pendjari en créant des activités alternatives</p>\r\n<p>\r\n	<strong>Localisation</strong> : Village de Firihoun, arrondissement de Tantéga, commune de Matéri, département de l'Atacora, Bénin.</p>\r\n<p>\r\n	<strong>Bénéficiaires</strong> : Village de Firihoun, 375 personnes, dont 120 femmes, 75 hommes et 160 jeunes.</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Actions et développement</p>\r\n<p>\r\n	<strong>Programme </strong>: Projet de mise en oeuvre, dans le village de Firihoun, d'activités alternatives à l'exploitation abusive des ressources naturelles en périphérie de la réserve de la biosphère de Pendjari</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Contribuer aux objectifs de l'association à mettre en terre 45 000 plants dans le cadre du programme. </p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Description plus détaillée :</strong></p>\r\n<p>\r\n	Firihoun est l'un des 23 villages riverains de la Réserve de Biosphère de la Pendjari au nord-ouest du Benin. En complément de l'agriculture, de la pêche et de la chasse, les populations de Firihoun se sont lancées ces dernières années dans la commercialisation du bois de chauffe et du charbon. Cette activité, bien que procurant des revenus complémentaires aux populations, est pratiquée anarchiquement et conduit les populations à couper les arbres et à braconner.</p>\r\n<p>\r\n	Projets Plus Actions soutient son partenaire local, Aides & Développement pour la création d'activités alternatives agricoles génératrices de revenus. Les habitants de Firihoun pourront rendre cultivable des terres en friche et ainsi ne plus détériorer la réserve de la Pendjari.</p>"
+    accroche: "<p>\r\n	Projet de mise en oeuvre, dans le village de Firihoun, d&#39;activit&eacute;s alternatives &agrave; l&#39;exploitation abusive des ressources naturelles autour de la r&eacute;serve de la Pendjari.</p>\r\n"
+    description: "<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/deforestation-Firihoun-benin.JPG\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/action-developpement-benin.jpg\" style=\"width: 200px; height: 150px;\" /></p>\r\n<p>\r\n	<strong>Enjeux</strong>: lutter contre l&#39;exploitation abusive des ressources naturelles en p&eacute;riph&eacute;rie de la r&eacute;serve de la biosph&egrave;re de la Pendjari en cr&eacute;ant des activit&eacute;s alternatives</p>\r\n<p>\r\n	<strong>Localisation</strong> : Village de Firihoun, arrondissement de Tant&eacute;ga, commune de Mat&eacute;ri, d&eacute;partement de l&#39;Atacora, B&eacute;nin.</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong> : Village de Firihoun, 375 personnes, dont 120 femmes, 75 hommes et 160 jeunes.</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Actions et d&eacute;veloppement</p>\r\n<p>\r\n	<strong>Programme </strong>: Projet de mise en oeuvre, dans le village de Firihoun, d&#39;activit&eacute;s alternatives &agrave; l&#39;exploitation abusive des ressources naturelles en p&eacute;riph&eacute;rie de la r&eacute;serve de la biosph&egrave;re de Pendjari</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Contribuer aux objectifs de l&#39;association &agrave; mettre en terre 45 000 plants dans le cadre du programme.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e :</strong></p>\r\n<p>\r\n	Firihoun est l&#39;un des 23 villages riverains de la R&eacute;serve de Biosph&egrave;re de la Pendjari au nord-ouest du Benin. En compl&eacute;ment de l&#39;agriculture, de la p&ecirc;che et de la chasse, les populations de Firihoun se sont lanc&eacute;es ces derni&egrave;res ann&eacute;es dans la commercialisation du bois de chauffe et du charbon. Cette activit&eacute;, bien que procurant des revenus compl&eacute;mentaires aux populations, est pratiqu&eacute;e anarchiquement et conduit les populations &agrave; couper les arbres et &agrave; braconner.</p>\r\n<p>\r\n	Projets Plus Actions soutient son partenaire local, Aides &amp; D&eacute;veloppement pour la cr&eacute;ation d&#39;activit&eacute;s alternatives agricoles g&eacute;n&eacute;ratrices de revenus. Les habitants de Firihoun pourront rendre cultivable des terres en friche et ainsi ne plus d&eacute;t&eacute;riorer la r&eacute;serve de la Pendjari.</p>\r\n"
     lang: fr
     slug: benin
   programmeTranslation_13_en:
     programme: programme_13
-    title: ''
+    title: Ecuador
     accroche: "<br />\r\n"
     description: "<br />\r\n"
     lang: en
-    slug: ''
+    slug: ecuador
   programmeTranslation_13_fr:
     programme: programme_13
     title: Equateur
@@ -58886,7 +59055,7 @@ programmeTranslation:
     slug: equateur
   programmeTranslation_14_en:
     programme: programme_14
-    title: ''
+    title: Peru
     accroche: "<br />\r\n"
     description: "<br />\r\n"
     lang: en
@@ -58900,7 +59069,7 @@ programmeTranslation:
     slug: perou
   programmeTranslation_15_en:
     programme: programme_15
-    title: ''
+    title: Colombia
     accroche: "<br />\r\n"
     description: "<br />\r\n"
     lang: en
@@ -58908,13 +59077,13 @@ programmeTranslation:
   programmeTranslation_15_fr:
     programme: programme_15
     title: Colombie
-    accroche: "<p>\r\n	Amazonie colombienne. Conservation des modes de vie indigènes, agroforesterie et de l'écotourisme, amélioration des conditions alimentaires. <span>Projet développé sur le terrain par Up2green.</span></p>\r\n"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	 </p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-développé sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Enjeux</strong> : conservation des modes de vie indigènes, développement de l'agroforesterie et de l'écotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong> : Département de l'Amazonas, Périphérie de Leticia, Communauté San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>Bénéficiaires</strong> : 30 familles au total , communauté de San Pedro de los Lagos, Communauté du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong> : Développement de pratiques agroforestières en Amazonie</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Responsable du projet. Sensibilisation et formation des habitants de communautés. Mise en place de pépinières familiales pour la plantation de 15 000 arbres en 2011.</p>\r\n<p>\r\n	 L'équipe d'Up2green Reforestation réalise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<strong>Description plus détaillée :</strong></p>\r\n<p>\r\n	 </p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Améliorer les conditions de vie des communautés</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations à des pratiques agricoles durables et à une gestion plus raisonnée des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communautés un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la déforestation (causée essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Préserver l'environnement et la biodiversité locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	 </p>\r\n<p>\r\n	<em>Les bénéficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communauté indigène Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l'agriculture mais son enclavement fait que les habitants ont du mal à developper des activités économiques génératrices de revenus. La bonne gestion de leur terre et le développement de plantations d'arbres à bois et d'arbres fruitiers permettra d'<strong>entretenir</strong><strong> et de sécuriser leur mode de vie très proche de la nature.</strong></p>\r\n"
+    accroche: "<p>\r\n	Amazonie colombienne. Conservation des modes de vie indig&egrave;nes, agroforesterie et de l&#39;&eacute;cotourisme, am&eacute;lioration des conditions alimentaires. <span>Projet d&eacute;velopp&eacute; sur le terrain par Up2green.</span></p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green.jpg\" style=\"width: 200px; height: 150px;\" /><img alt=\"\" src=\"/uploads/ck/images/reforestation-forestever-up2green4.jpg\" style=\"width: 267px; height: 150px;\" /></p>\r\n<p align=\"center\">\r\n	&nbsp;</p>\r\n<p align=\"center\">\r\n	<span style=\"color: rgb(0, 100, 0);\"><strong>Projet co-d&eacute;velopp&eacute; sur le terrain avec Up2green Reforestation</strong></span></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Enjeux</strong> : conservation des modes de vie indig&egrave;nes, d&eacute;veloppement de l&#39;agroforesterie et de l&#39;&eacute;cotourisme</p>\r\n<p>\r\n	<strong>Localisation</strong> : D&eacute;partement de l&#39;Amazonas, P&eacute;riph&eacute;rie de Leticia, Communaut&eacute; San Pedro de los Lagos</p>\r\n<p>\r\n	<strong>B&eacute;n&eacute;ficiaires</strong> : 30 familles au total , communaut&eacute; de San Pedro de los Lagos, Communaut&eacute; du Km 15,</p>\r\n<p>\r\n	<strong>Partenaires</strong> : Green Hope Colombia, Forestever</p>\r\n<p>\r\n	<strong>Programme</strong> : D&eacute;veloppement de pratiques agroforesti&egrave;res en Amazonie</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Implication Up2Green </strong>: Responsable du projet. Sensibilisation et formation des habitants de communaut&eacute;s. Mise en place de p&eacute;pini&egrave;res familiales pour la plantation de 15 000 arbres en 2011.</p>\r\n<p>\r\n	L&#39;&eacute;quipe d&#39;Up2green Reforestation r&eacute;alise les formations des populations locales et le support technique sur le terrain.</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>Description plus d&eacute;taill&eacute;e :</strong></p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les objectifs du projet :</em></p>\r\n<ul>\r\n	<li>\r\n		<span dir=\"ltr\">Am&eacute;liorer les conditions de vie des communaut&eacute;s</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Former les populations &agrave; des pratiques agricoles durables et &agrave; une gestion plus raisonn&eacute;e des ressources naturelles</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Apporter aux communaut&eacute;s un appui humain et technique</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Lutter contre la d&eacute;forestation (caus&eacute;e essentiellement par une production non durable de bois de chauffe, source de revenus pour les populations)</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Pr&eacute;server l&#39;environnement et la biodiversit&eacute; locale</span></li>\r\n	<li>\r\n		<span dir=\"ltr\">Planter au minimum 10 000 arbres en 2011</span></li>\r\n</ul>\r\n<p style=\"margin-left: 1cm;\">\r\n	&nbsp;</p>\r\n<p>\r\n	<em>Les b&eacute;n&eacute;ficiaires du projet :</em></p>\r\n<p>\r\n	La <strong>communaut&eacute; indig&egrave;ne Ticunas </strong>de San Pedro de los Lagos compte elle<strong> une quinzaine de famille</strong>. Elle vit essentiellement de l&#39;agriculture mais son enclavement fait que les habitants ont du mal &agrave; developper des activit&eacute;s &eacute;conomiques g&eacute;n&eacute;ratrices de revenus. La bonne gestion de leur terre et le d&eacute;veloppement de plantations d&#39;arbres &agrave; bois et d&#39;arbres fruitiers permettra d&#39;<strong>entretenir</strong><strong> et de s&eacute;curiser leur mode de vie tr&egrave;s proche de la nature.</strong></p>\r\n"
     lang: fr
     slug: colombie
   programmeTranslation_16_en:
     programme: programme_16
-    title: ''
+    title: France
     accroche: "<br />\r\n"
     description: "<br />\r\n"
     lang: en
@@ -58922,13 +59091,13 @@ programmeTranslation:
   programmeTranslation_16_fr:
     programme: programme_16
     title: France
-    accroche: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Enjeux : reboisement maîtrisé de chênes sessiles en raison de la disparition du hêtre </strong>à cause du réchauffement climatique.<br />\r\n	Forêt Domaniale de Lyons (Seine maritime – 76 / Eure – 27)</span></font></p>\r\n<p>\r\n	Objectif du projet : Reboisement de chêne sessile et divers feuillus sur 4,13 ha</p>\r\n"
-    description: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en forêt domaniale de Lyons</strong><br />\r\n	Forêt Domaniale de Lyons (Seine maritime – 76 / Eure – 27)</span></font></p>\r\n<p style=\"text-align: justify;\">\r\n	<span class=\"Style10\"><strong class=\"bold-orange\">Le contexte :</strong></span><br />\r\n	<br />\r\n	<span class=\"champs-texte\">La forêt domaniale de Lyons, d'une superficie de 10695,71 ha, est affectée principalement à la production de bois d'oeuvre feuillus, en particulier de hêtre. En effet, la sylviculture passée a fortement favorisé cette essence qui est aujourd'hui présente sur environ 60% de la surface du massif. Aujourd'hui, les perspectives de changements climatiques radicaux posent la question de la place du hêtre à grande échelle. De plus, plusieurs observations de dépérissements massifs dans les dernières décennies ont conduit les gestionnaires, lors du dernier aménagement (2004/2023), à favoriser le chêne sessile, notamment en le choisissant de façon privilégiée en régénération artificielle afin de diversifier les peuplements et d'augmenter la résilience de la forêt aujourd'hui menacée.</span></p>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Objectif du projet : Reboisement de chêne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n	<p style=\"text-align: center;\">\r\n		<br />\r\n		<img alt=\"\" src=\"/uploads/ck/images/ONF-Up2green-Lyonslaforet.jpg\" style=\"width: 450px; height: 356px;\" /></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Descriptif des travaux à réaliser pour l'opération :</strong></p>\r\n</center>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Travaux préparatoires à la plantation :</u></p>\r\n</center>\r\n<div style=\"text-align: justify;\">\r\n	Broyage des rémanents d'exploitation avant plantation Travail préparatoire du sol</div>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Programme de plantation d'environ 6600 plants :<br />\r\n		</u>Fourniture et mise en place de plants de chêne sessile (1500pl/ha)<br />\r\n		et de feuillus divers (100pl/ha).</p>\r\n	<p style=\"text-align: justify;\">\r\n		 </p>\r\n	<p style=\"text-align: justify;\">\r\n		<span style=\"font-size: 16px;\"><u><strong>La forêt de Lyons :</strong></u></span><br />\r\n		<br />\r\n		« Etendue sur plus de 10 700 hectares entre l'Eure et la Seine Maritime, <strong><em>la forêt domaniale de Lyons est très certainement la plus belle hêtraie d'Europe.</em></strong><br />\r\n		Réputée pour ses arbres à haut fût, lui donnant cet aspect ' cathédrale ', qui impressionne dès le premier regard, et pour ses sous-bois giboyeux, la forêt de Lyons n'en demeure pas moins un massif forestier aux dimensions humaines.<br />\r\n		<br />\r\n		Des clairières, percées dès le Moyen Age (avec la pratique de l'essartage), entrecoupent le massif forestier et accueillent villages et cultures dans les vallons abrités et au flanc des coteaux baignés de soleil.<br />\r\n		<br />\r\n		Avec plus de 300 kilomètres de routes forestières goudronnées ou empierrées, la forêt de Lyons permet toutes les pratiques sportives. La randonnée pédestre bénéficie d'un cadre d'exception avec une multitude de sentiers balisés et entretenus. La randonnée équestre s'y pratique tout aussi aisément et acquiert ses lettres de noblesse lors des journées de chasse à courre qui se déroulent tous les automnes dans le massif (les mardis et samedis d'octobre à mars).<br />\r\n		Le VTT est également une activité très pratiquée et les routes forestières peu empruntées par les automobilistes font le bonheur des cyclotouristes.<br />\r\n		<br />\r\n		Visites et <a href=\"http://www.lyons.tourisme.free.fr/randonnees.htm\" target=\"_blank\">randonnées</a> accompagnées en forêt au cours de l'année. »<br />\r\n		<br />\r\n		<strong>Source : <a href=\"http://www.lyons.tourisme.free.fr/\" target=\"_blank\">Office de Tourisme du Pays de Lyons</a></strong></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong><img alt=\"\" src=\"/uploads/ck/images/carte-reforestation.jpg\" style=\"width: 500px; height: 288px;\" /></strong></p>\r\n</center>\r\n"
+    accroche: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Enjeux : reboisement ma&icirc;tris&eacute; de ch&ecirc;nes sessiles en raison de la disparition du h&ecirc;tre </strong>&agrave; cause du r&eacute;chauffement climatique.<br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p>\r\n	Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</p>\r\n"
+    description: "<p>\r\n	<font face=\"Arial, Helvetica, sans-serif\"><span class=\"Style9\"><strong>Reboisement en for&ecirc;t domaniale de Lyons</strong><br />\r\n	For&ecirc;t Domaniale de Lyons (Seine maritime &ndash; 76 / Eure &ndash; 27)</span></font></p>\r\n<p style=\"text-align: justify;\">\r\n	<span class=\"Style10\"><strong class=\"bold-orange\">Le contexte :</strong></span><br />\r\n	<br />\r\n	<span class=\"champs-texte\">La for&ecirc;t domaniale de Lyons, d&#39;une superficie de 10695,71 ha, est affect&eacute;e principalement &agrave; la production de bois d&#39;oeuvre feuillus, en particulier de h&ecirc;tre. En effet, la sylviculture pass&eacute;e a fortement favoris&eacute; cette essence qui est aujourd&#39;hui pr&eacute;sente sur environ 60% de la surface du massif. Aujourd&#39;hui, les perspectives de changements climatiques radicaux posent la question de la place du h&ecirc;tre &agrave; grande &eacute;chelle. De plus, plusieurs observations de d&eacute;p&eacute;rissements massifs dans les derni&egrave;res d&eacute;cennies ont conduit les gestionnaires, lors du dernier am&eacute;nagement (2004/2023), &agrave; favoriser le ch&ecirc;ne sessile, notamment en le choisissant de fa&ccedil;on privil&eacute;gi&eacute;e en r&eacute;g&eacute;n&eacute;ration artificielle afin de diversifier les peuplements et d&#39;augmenter la r&eacute;silience de la for&ecirc;t aujourd&#39;hui menac&eacute;e.</span></p>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Objectif du projet : Reboisement de ch&ecirc;ne sessile et divers feuillus sur 4,13 ha</strong></p>\r\n	<p style=\"text-align: center;\">\r\n		<br />\r\n		<img alt=\"\" src=\"/uploads/ck/images/ONF-Up2green-Lyonslaforet.jpg\" style=\"width: 450px; height: 356px;\" /></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong>Descriptif des travaux &agrave; r&eacute;aliser pour l&#39;op&eacute;ration :</strong></p>\r\n</center>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Travaux pr&eacute;paratoires &agrave; la plantation :</u></p>\r\n</center>\r\n<div style=\"text-align: justify;\">\r\n	Broyage des r&eacute;manents d&#39;exploitation avant plantation Travail pr&eacute;paratoire du sol</div>\r\n<center>\r\n	<p style=\"text-align: justify;\">\r\n		<u>Programme de plantation d&#39;environ 6600 plants :<br />\r\n		</u>Fourniture et mise en place de plants de ch&ecirc;ne sessile (1500pl/ha)<br />\r\n		et de feuillus divers (100pl/ha).</p>\r\n	<p style=\"text-align: justify;\">\r\n		&nbsp;</p>\r\n	<p style=\"text-align: justify;\">\r\n		<span style=\"font-size: 16px;\"><u><strong>La for&ecirc;t de Lyons :</strong></u></span><br />\r\n		<br />\r\n		&laquo; Etendue sur plus de 10 700 hectares entre l&#39;Eure et la Seine Maritime, <strong><em>la for&ecirc;t domaniale de Lyons est tr&egrave;s certainement la plus belle h&ecirc;traie d&#39;Europe.</em></strong><br />\r\n		R&eacute;put&eacute;e pour ses arbres &agrave; haut f&ucirc;t, lui donnant cet aspect &#39; cath&eacute;drale &#39;, qui impressionne d&egrave;s le premier regard, et pour ses sous-bois giboyeux, la for&ecirc;t de Lyons n&#39;en demeure pas moins un massif forestier aux dimensions humaines.<br />\r\n		<br />\r\n		Des clairi&egrave;res, perc&eacute;es d&egrave;s le Moyen Age (avec la pratique de l&#39;essartage), entrecoupent le massif forestier et accueillent villages et cultures dans les vallons abrit&eacute;s et au flanc des coteaux baign&eacute;s de soleil.<br />\r\n		<br />\r\n		Avec plus de 300 kilom&egrave;tres de routes foresti&egrave;res goudronn&eacute;es ou empierr&eacute;es, la for&ecirc;t de Lyons permet toutes les pratiques sportives. La randonn&eacute;e p&eacute;destre b&eacute;n&eacute;ficie d&#39;un cadre d&#39;exception avec une multitude de sentiers balis&eacute;s et entretenus. La randonn&eacute;e &eacute;questre s&#39;y pratique tout aussi ais&eacute;ment et acquiert ses lettres de noblesse lors des journ&eacute;es de chasse &agrave; courre qui se d&eacute;roulent tous les automnes dans le massif (les mardis et samedis d&#39;octobre &agrave; mars).<br />\r\n		Le VTT est &eacute;galement une activit&eacute; tr&egrave;s pratiqu&eacute;e et les routes foresti&egrave;res peu emprunt&eacute;es par les automobilistes font le bonheur des cyclotouristes.<br />\r\n		<br />\r\n		Visites et <a href=\"http://www.lyons.tourisme.free.fr/randonnees.htm\" target=\"_blank\">randonn&eacute;es</a> accompagn&eacute;es en for&ecirc;t au cours de l&#39;ann&eacute;e. &raquo;<br />\r\n		<br />\r\n		<strong>Source : <a href=\"http://www.lyons.tourisme.free.fr/\" target=\"_blank\">Office de Tourisme du Pays de Lyons</a></strong></p>\r\n	<p style=\"text-align: justify;\">\r\n		<strong><img alt=\"\" src=\"/uploads/ck/images/carte-reforestation.jpg\" style=\"width: 500px; height: 288px;\" /></strong></p>\r\n</center>\r\n"
     lang: fr
     slug: france
   programmeTranslation_17_en:
     programme: programme_17
-    title: ''
+    title: Ethiopia
     accroche: "<br />\r\n"
     description: "<br />\r\n"
     lang: en
@@ -58936,8 +59105,8 @@ programmeTranslation:
   programmeTranslation_17_fr:
     programme: programme_17
     title: Ethiopie
-    accroche: "<p>\r\n	<strong>Enjeux : développement agro-sylvicole + désertification + activité économique</strong></p>\r\n<p>\r\n	Régions de Guraghe, Konso et lac Tana.</p>\r\n<p>\r\n	Développement agricole et lutte contre la déforestation. Plantation de multiples essences pour différents usages : production de fruits, de fourrage pour le bétail, de plantes médicinales et de bois de chauffage et de construction.</p>\r\n"
-    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/barrenland_198(3).jpg\" style=\"width: 198px; height: 143px;\" /><img alt=\"\" src=\"/uploads/ck/images/honey_198(3).jpg\" style=\"width: 214px; height: 143px;\" /></p>\r\n<p>\r\n	<strong>Environmental Issues </strong><br />\r\n	Ethiopia loses 2 billion tons of topsoil every year because widespread deforestation is leading to massive soil erosion. Land degradation is a serious problem throughout the Ethiopia, due to extensive population pressure, compounded by the large livestock population. The increased demand for cultivable land, deforestation, and tillage of steep slopes and mountains has enhanced soil erosion and decrease productivity. In addition, grazing land scarcity and scarcity of clean drinking water are problems that persist in Southern Regional states.</p>\r\n<p>\r\n	<strong>Social Issues </strong><br />\r\n	With more than 80% of the population dependent on wood for their basic energy needs, there is a real crisis in their fuel supply - women and children must walk miles every day to gather a few twigs to cook with, and fuelwood is very expensive!</p>\r\n<p>\r\n	The main underlying causes of land degradation are socio economic (e.g. population growth and associated activities including deforestation, overgrazing, agricultural expansion, fuel wood scavenging, etc.) natural (e.g. topography, soil type, drought/rainfall intensity, etc), institutional (e.g. coordination and capacity) and policy factors. These situations have a synergistic effect and highly enhance soil degradation which in turn greatly reduces agricultural and other forms of biological production, exacerbates poverty, and leads to the removal of biological resources beyond the replacement capacity of the natural resources. This keeps accelerating further the rate of land degradation, thus creating a vicious circle linking human and environmental degradation.</p>\r\n<p>\r\n	<strong>Trees For the Future response :</strong></p>\r\n<p>\r\n	Our goal is to rehabilitate and improve productive potential of degraded and marginal lands, thereby improving the socio economic conditions of the participating communities. Our philosophy is community driven, and the community participation and ownership of the projects is crucial to the sustainability and success of our approach.</p>\r\n<p>\r\n	Community members, mostly small and disadvantaged farmers, are considered to be at the forefront of project implementation. Their participation from the inception up to the termination of this project will highly be considered and maintained.</p>\r\n<p>\r\n	TREES' technicians have made several trips to Ethiopia over the past few years, combining to provide 160 days of on-site technical assistance. Everywhere we have gone, local groups are asking the same thing:“How fast can you get this program started?” People are very interested in sustainable harvesting of fuelwood, fuel-efficient stoves, and confinement rearing of animals – after having seen how livestock have stripped their terrain.</p>\r\n"
+    accroche: "<p>\r\n	<strong>Enjeux : d&eacute;veloppement agro-sylvicole + d&eacute;sertification + activit&eacute; &eacute;conomique</strong></p>\r\n<p>\r\n	R&eacute;gions de Guraghe, Konso et lac Tana.</p>\r\n<p>\r\n	D&eacute;veloppement agricole et lutte contre la d&eacute;forestation. Plantation de multiples essences pour diff&eacute;rents usages : production de fruits, de fourrage pour le b&eacute;tail, de plantes m&eacute;dicinales et de bois de chauffage et de construction.</p>\r\n"
+    description: "<p>\r\n	<img alt=\"\" src=\"/uploads/ck/images/barrenland_198(3).jpg\" style=\"width: 198px; height: 143px;\" /><img alt=\"\" src=\"/uploads/ck/images/honey_198(3).jpg\" style=\"width: 214px; height: 143px;\" /></p>\r\n<p>\r\n	<strong>Environmental Issues </strong><br />\r\n	Ethiopia loses 2 billion tons of topsoil every year because widespread deforestation is leading to massive soil erosion. Land degradation is a serious problem throughout the Ethiopia, due to extensive population pressure, compounded by the large livestock population. The increased demand for cultivable land, deforestation, and tillage of steep slopes and mountains has enhanced soil erosion and decrease productivity. In addition, grazing land scarcity and scarcity of clean drinking water are problems that persist in Southern Regional states.</p>\r\n<p>\r\n	<strong>Social Issues </strong><br />\r\n	With more than 80% of the population dependent on wood for their basic energy needs, there is a real crisis in their fuel supply - women and children must walk miles every day to gather a few twigs to cook with, and fuelwood is very expensive!</p>\r\n<p>\r\n	The main underlying causes of land degradation are socio economic (e.g. population growth and associated activities including deforestation, overgrazing, agricultural expansion, fuel wood scavenging, etc.) natural (e.g. topography, soil type, drought/rainfall intensity, etc), institutional (e.g. coordination and capacity) and policy factors. These situations have a synergistic effect and highly enhance soil degradation which in turn greatly reduces agricultural and other forms of biological production, exacerbates poverty, and leads to the removal of biological resources beyond the replacement capacity of the natural resources. This keeps accelerating further the rate of land degradation, thus creating a vicious circle linking human and environmental degradation.</p>\r\n<p>\r\n	<strong>Trees For the Future response :</strong></p>\r\n<p>\r\n	Our goal is to rehabilitate and improve productive potential of degraded and marginal lands, thereby improving the socio economic conditions of the participating communities. Our philosophy is community driven, and the community participation and ownership of the projects is crucial to the sustainability and success of our approach.</p>\r\n<p>\r\n	Community members, mostly small and disadvantaged farmers, are considered to be at the forefront of project implementation. Their participation from the inception up to the termination of this project will highly be considered and maintained.</p>\r\n<p>\r\n	TREES&#39; technicians have made several trips to Ethiopia over the past few years, combining to provide 160 days of on-site technical assistance. Everywhere we have gone, local groups are asking the same thing:&ldquo;How fast can you get this program started?&rdquo; People are very interested in sustainable harvesting of fuelwood, fuel-efficient stoves, and confinement rearing of animals &ndash; after having seen how livestock have stripped their terrain.</p>\r\n"
     lang: fr
     slug: ethiopie
   programmeTranslation_18_en:
@@ -58956,8 +59125,8 @@ programmeTranslation:
     slug: inde-1
   programmeTranslation_19_en:
     programme: programme_19
-    title: Setup
-    accroche: "<br />\r\n"
+    title: 'UP2GREEN REFORESTATION'
+    accroche: "<p>\r\n	Fight against deforestation and help local people through agroforestry, through creative solutions:</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>- <em>a search engine: </em>:</strong> to plant trees for free over your Internet searches (<a href=\"http://www.UP2GREEN.com\" target=\"_blank\"><span>www.up2green.com</span></a>)</p>\r\n<p>\r\n	&nbsp;</p>\r\n<p>\r\n	<strong>- partnerships with companies</strong>/ communities that fund programs offering vouchers to their employees, customers and constituents who then choose where to plant them on our platform planting online ...</p>\r\n"
     description: "<br />\r\n"
     lang: en
     slug: setup

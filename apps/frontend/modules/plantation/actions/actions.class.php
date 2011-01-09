@@ -72,22 +72,26 @@ class plantationActions extends sfActions {
 					}
 					else {
 						$this->coupon = null;
-						$this->errors[] = "Ce coupon a déjà été utilisé";
+						$this->errors[] = 'coupon-already-user';
 					}
 				}
 			}
 			
 			// submit pour planter les arbres
 			if ($request->getParameter('submitArbresProgramme')){
-				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('plantCouponCode'))) {
+				$email = "";
+				$sendMail = false;
+
+				if (($request->hasParameter('email_user_deco'))
+					&& ($request->getParameter('email_user_deco') != "")) {
+					$email = trim($request->getParameter('email_user_deco'));
+				}
+				
+				$codeCoupon = $request->getParameter('plantCouponCode');
+				if (!empty($codeCoupon) && $coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $codeCoupon)) {
 					if ($coupon->getIsActive()){
 						$this->coupon = $coupon;
 						$this->setProgrammesFromPartenaire($coupon->getPartenaire()->getPartenaire());
-						
-						$email = "";
-						if (($request->hasParameter('email_user_deco')) && ($request->getParameter('email_user_deco') != "")) {
-							$email = trim($request->getParameter('email_user_deco'));
-						}
 						
 						if ($request->getParameter('nbArbresToPlantLeft') == 0){
 							$trees = array();
@@ -106,46 +110,73 @@ class plantationActions extends sfActions {
 								$coupon->logUser($email);
 							}
 							
-							$this->errors[] = "Vos arbres ont bien été plantés !";
-							
-							if(!empty($email)) {
-								// on construit l'attestation :
-								$filename = $this->buildAttestation($email, $trees);
-
-								$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
-
-								$message = $this->getMailer()->compose(
-									array($newsletter->getEmailFrom() => 'Up2Green'),
-									$email,
-									$newsletter->getTitle()
-								);
-
-								$html = $newsletter->getContent();
-								$html = str_replace('%treeNumber%', $request->getParameter('nbTreeMax'), $html);
-
-								$message->setBody($html, 'text/html');
-								
-								if(file_exists($filename)) {
-									$message->attach(
-										Swift_Attachment::fromPath($filename)
-									);
-								}
-								
-                $this->getMailer()->send($message);
-                $this->errors[] = "Vous aller recevoir un email attestant de votre plantation.";
-							}
-							
+							$sendMail = true;
+							$this->errors[] = 'plant-succes';
 							$this->coupon = null;
 							
 						}
 						else {
-							$this->errors[] = "Veuillez planter tous vos arbres avant de valider !";
+							$this->errors[] = 'error-plant-all';
 						}
 					}
 					else {
-						$this->errors[] = "Ce coupon a déjà été utilisé";
+						$this->errors[] = 'coupon-already-user';
 						$this->coupon = null;
 					}
+				}
+				else {
+					if($this->getUser()->isAuthenticated()) {
+						$trees = array();
+						foreach ($this->programmes as $programme){
+							if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
+								$trees += array($programme->getTitle() => $request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()));
+								Doctrine_Core::getTable('treeUser')->plantArbre($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()), $programme, $this->getUser());
+							}
+						}
+
+						$profil = $this->getUser()->getGuardUser()->getProfile();
+						$profil->setCredit($profil->getCredit() - array_sum($trees));
+						$profil->save();
+						
+						$this->nbArbresToPlant -= array_sum($trees);
+
+						if($this->getUser()->getGuardUser()->getEmailAddress()){
+							$email = $this->getUser()->getGuardUser()->getEmailAddress();
+							$sendMail = true;
+						}
+
+						$this->errors[] = 'plant-succes';
+					}
+					else {
+						$this->errors[] = 'error-deco';
+					}
+				}
+
+				if($sendMail && !empty($email)) {
+					// on construit l'attestation :
+					$filename = $this->buildAttestation($email, $trees);
+
+					$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
+
+					$message = $this->getMailer()->compose(
+						array($newsletter->getEmailFrom() => 'Up2Green'),
+						$email,
+						$newsletter->getTitle()
+					);
+
+					$html = $newsletter->getContent();
+					$html = str_replace('%treeNumber%', $request->getParameter('nbTreeMax'), $html);
+
+					$message->setBody($html, 'text/html');
+
+					if(file_exists($filename)) {
+						$message->attach(
+							Swift_Attachment::fromPath($filename)
+						);
+					}
+
+					$this->getMailer()->send($message);
+					$this->errors[] = 'email-confirmation';
 				}
 			}
 		}
@@ -378,7 +409,8 @@ class plantationActions extends sfActions {
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'partenaire-'.$this->partenaire->getId(),
-				'label' => "Tous les arbes plantés par ".$this->partenaire->getTitle(),
+				'partenaireId' => $this->partenaire->getId(),
+				'partenaireTitle' => $this->partenaire->getTitle(),
 				'values' => $partenaireValues,
 				'checked' => $checked
 			);
@@ -395,7 +427,6 @@ class plantationActions extends sfActions {
 			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'user',
-				'label' => "Les arbres plantés avec mon compte",
 				'values' => $userValues,
 				'checked' => $checked
 			);
@@ -411,7 +442,6 @@ class plantationActions extends sfActions {
 				
 				$modes[] = array(
 					'name' => 'coupon',
-					'label' => "Les arbres plantés avec mes coupons",
 					'values' => $couponValues,
 					'checked' => $checked
 				);
@@ -422,7 +452,6 @@ class plantationActions extends sfActions {
 		
 		$modes[] = array(
 			'name' => 'all',
-			'label' => "Tous les arbres plantés",
 			'values' => $allValues,
 			'checked' => !$checked
 		);

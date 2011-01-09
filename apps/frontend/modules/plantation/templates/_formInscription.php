@@ -5,7 +5,7 @@
         <p><?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?></p>
         <p><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
         <p class="center">
-            <a href="<?php echo url_for("@sf_guard_register") ?>" class="button gray disabled"><?php echo __("Bientot disponible") ?></a>
+            <a href="<?php echo sfConfig::get("sf_app_url_moteur") ?>/register" class="button green"><?php echo __("Créer mon compte") ?></a>
         </p>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

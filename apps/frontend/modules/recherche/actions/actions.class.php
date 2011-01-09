@@ -27,6 +27,7 @@ class rechercheActions extends sfActions {
             $engine = new SearchEngine($this->textSearch, $this->moteur);
             $this->results = $engine->getResults();
 			$this->singleShopResult = $engine->getOneShopResult();
+			$this->pubResults = $engine->getPubResults(4);
         }
         else {
             $this->moteur = SearchEngine::WEB;

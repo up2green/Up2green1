@@ -14,6 +14,7 @@ class SearchEngine {
     const WEB = 2;
     const NEWS = 3;
     const SHOP = 4;
+    const PUB = 5;
 
     private $search_moteur ;
     private $search_text;
@@ -30,19 +31,18 @@ class SearchEngine {
         return sizeof($this->search_results);
     }
 
-    public function getOneShopResult() {
+    public function getOneShopResult($min = 0) {
 		$result = Doctrine::getTable('engine')
-			->getArraySearch(htmlspecialchars($this->search_text), 1, 0);
-
-		$result = $result[0];
+			->getArraySearch(htmlspecialchars($this->search_text), 1, $min);
 
 		if(!empty($result)) {
+			$result = $result[0];
 			$this->processShopResult($result);
 		}
 		
 		return $result;
 	}
-
+	
 	public function getResults($min = 0) {
         switch ($this->search_moteur) {
             case self::IMG:
@@ -56,6 +56,9 @@ class SearchEngine {
                 break;
 			case self::SHOP:
                 $this->executeShop($min);
+                break;
+			case self::PUB:
+                $this->executePub($min);
                 break;
         }
         
@@ -149,6 +152,51 @@ class SearchEngine {
 		}
 	}
 
+	public function getPubResults($nombre = 2, $min = 0) {
+
+		$nombre += $min;
+		
+		$url = sfConfig::get('app_ddc_hostname');
+		$url .= sfConfig::get('app_ddc_path');
+		$url .= "?n=".$nombre;
+		$url .= "&kw=".urlencode($this->search_text);
+		$url .= "&cb=".uniqid();
+		$url .= "&c=".sfConfig::get('app_ddc_id');
+		$url .= "&surl=http://up2green.com/";
+		$url .= "&ua=".$_SERVER['HTTP_USER_AGENT'];
+
+		if(sfContext::getInstance()->getConfiguration()->getEnvironment() !== 'dev') {
+			$url .= "&ip=".$_SERVER['REMOTE_ADDR'];
+		}
+		else {
+			$url .= "&ip=92.243.6.168";
+		}
+		
+		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$url .= "&xfip=".$_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		
+		$dom = new DomDocument();
+		$dom->load($url);
+		$results = array();
+
+		$i= 0;
+		foreach ($dom->getElementsByTagName("ad") as $result){
+			if($i < $min) {
+				$i++;
+				continue;
+			}
+			$results[] = array(
+				'title' => $result->getElementsByTagName('title')->item(0)->nodeValue,
+				'description' => $result->getElementsByTagName('description')->item(0)->nodeValue,
+				'url' => $result->getElementsByTagName('url')->item(0)->nodeValue,
+				'visibleurl' => $result->getElementsByTagName('url')->item(0)->getAttribute('visibleurl'),
+			);
+		}
+		
+		return $results;
+	}
+
 	private function executeShop($min = 0) {
 
 		$results = Doctrine::getTable('engine')->getArraySearch(
@@ -162,7 +210,7 @@ class SearchEngine {
 		}
 
 		$this->search_results = $results;
-		
+
 	}
 
 	private function processShopResult(&$result) {
@@ -184,24 +232,6 @@ class SearchEngine {
 				<p>'.$result['description'].'</p>
 			';
 		}
-
-		$gains = '<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />';
-
-		$from = $result['remun_min'];
-		$to = $result['remun_max'];
-
-		if($result['remun_type'] === 'pourcent') {
-			$from = $from * 30 / (sfConfig::get('app_prix_arbre') * 100);
-			$to = $to * 30 / (sfConfig::get('app_prix_arbre') * 100);
-			$gains .= " pour 30€ d'achat";
-		}
-
-		$from = (floor($from) == $from) ? (int)$from : number_format($from, 2, ',', ' ');
-		$to = (floor($to) == $to) ? (int)$to : number_format($to, 2, ',', ' ');
-
-		$result['gains'] = ($from !== $to) ?
-			"de <strong>".$from."</strong> à <strong>".$to.'</strong> '.$gains :
-			'<strong>'.$from.'</strong> '.$gains;
 
 		$result = array_map('htmlspecialchars', $result);
 		return $result;

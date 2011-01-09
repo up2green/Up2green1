@@ -652,3 +652,25 @@ logCoupon:
   relations:
     coupon:
       local: coupon_id
+
+logPub:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: bigint(20)
+    ip:
+      type: string(15)
+      notnull: true
+    url:
+      type: clob
+      notnull: true
+  relations:
+    user:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: pubClics

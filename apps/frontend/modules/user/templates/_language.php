@@ -1,5 +1,4 @@
 <?php
-
 echo '<form method="post" id="formLanguage" action="'.url_for('/change_language').'">';
 echo $form->renderHiddenFields(false);
 echo $form->renderGlobalErrors();
@@ -29,9 +28,11 @@ foreach($languages as $key => $value) {
 			</li>';
 	}
 }
+
 echo '
 		</ul>
 	</div>
 	<input type="hidden" name="language" value="'.$current.'" />
+	<input type="hidden" name="fromUrl" value="'.$_SERVER['HTTP_REFERER'].'" />
 	</form>
 ';

@@ -217,7 +217,33 @@ $(function() {
         
     });
 
-	$(".filtres > span[searchMode]", "#searchForm").each(function(){
+	$(".pub-result .result a").live('click', function() {
+		$.ajax({
+            url: 'ajax/clicPub',
+            type: 'post',
+            dataType: "xml",
+            data: {
+				url: $(this).attr('href')
+			},
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+            },
+            success: function(xml) {
+				if($(xml).find('result').length) {
+					var result = $(xml).find('result');
+					$.gritter.add({
+						title: result.find('messageTitle').text(),
+						class_name: result.find('messageType').text(),
+						image: result.find('messageImage').text(),
+						text: result.find('message').text()
+					});
+				}
+			}
+		});
+		
+		return true;
+	});
+    
+    $(".filtres > span[searchMode]", "#searchForm").each(function(){
 		$(this).bind('click', {mode: $(this).attr('searchMode')}, changeMoteur)
 	});
 

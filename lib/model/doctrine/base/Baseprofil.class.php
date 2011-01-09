@@ -7,14 +7,14 @@
  * 
  * @property integer $id
  * @property bigint $user_id
- * @property integer $credit
+ * @property float $credit
  * @property integer $is_newsletter
  * @property string $culture
  * @property sfGuardUser $User
  * 
  * @method integer     getId()            Returns the current record's "id" value
  * @method bigint      getUserId()        Returns the current record's "user_id" value
- * @method integer     getCredit()        Returns the current record's "credit" value
+ * @method float       getCredit()        Returns the current record's "credit" value
  * @method integer     getIsNewsletter()  Returns the current record's "is_newsletter" value
  * @method string      getCulture()       Returns the current record's "culture" value
  * @method sfGuardUser getUser()          Returns the current record's "User" value
@@ -47,11 +47,12 @@ abstract class Baseprofil extends sfDoctrineRecord
              'unique' => true,
              'length' => 20,
              ));
-        $this->hasColumn('credit', 'integer', 4, array(
-             'type' => 'integer',
+        $this->hasColumn('credit', 'float', 18, array(
+             'type' => 'float',
              'notnull' => true,
              'default' => 0,
-             'length' => 4,
+             'length' => 18,
+             'scale' => '4',
              ));
         $this->hasColumn('is_newsletter', 'integer', 1, array(
              'type' => 'integer',

@@ -25,6 +25,7 @@
  * @property profil $Profile
  * @property Doctrine_Collection $Coupons
  * @property Doctrine_Collection $Trees
+ * @property Doctrine_Collection $pubClics
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
  * @method string                getLastName()              Returns the current record's "last_name" value
@@ -46,6 +47,7 @@
  * @method profil                getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getCoupons()               Returns the current record's "Coupons" collection
  * @method Doctrine_Collection   getTrees()                 Returns the current record's "Trees" collection
+ * @method Doctrine_Collection   getPubClics()              Returns the current record's "pubClics" collection
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
@@ -66,6 +68,7 @@
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
  * @method sfGuardUser           setCoupons()               Sets the current record's "Coupons" collection
  * @method sfGuardUser           setTrees()                 Sets the current record's "Trees" collection
+ * @method sfGuardUser           setPubClics()              Sets the current record's "pubClics" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -174,6 +177,10 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'user_id'));
 
         $this->hasMany('treeUser as Trees', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('logPub as pubClics', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

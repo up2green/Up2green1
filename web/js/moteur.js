@@ -217,7 +217,11 @@ $(function() {
         
     });
 
-	$(".pub-result .result a").live('click', function() {
+	$(".pub-result .result a").live('mousedown', function(e) {
+		if(e.button > 1){
+			return false;
+		}
+		
 		$.ajax({
             url: 'ajax/clicPub',
             type: 'post',

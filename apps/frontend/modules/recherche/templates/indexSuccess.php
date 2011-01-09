@@ -31,7 +31,7 @@
 		echo '<div id="searchResults"';
 		
 		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
-			if(!empty($singleShopResult)) {
+			if(false && !empty($singleShopResult)) {
 				echo '<div class="shop-result">';
 				include_partial('shop', array('result' => $singleShopResult));
 				echo '</div>';

@@ -161,6 +161,7 @@ div.more-result {
 
 div.shop-result div.result {
     border: 1px solid #DA7C0C;
+	background-color: #FFF5D7;
     margin: 5px;
 }
 
@@ -239,14 +240,12 @@ div.web-result div.result h3 a {
 }
 
 /* recherche Pub */
-
 div.pub-result div.result {
-    border: 1px solid #538312;
     float: left;
     height: 50px;
-    margin: 5px;
     padding: 10px;
     width: 480px;
+	background-color: #ECFFD7;
 }
 
 div.pub-result p.content {

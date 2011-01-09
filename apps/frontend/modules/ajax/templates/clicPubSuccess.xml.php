@@ -1,8 +1,6 @@
 <?php
 $messages = array(
-	'success' => __("Vous avez été crédité de {number} crédits arbres sur votre compte !", array(
-		'{number}' => sfConfig::get('app_gain_cpc').' <img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />'
-	)),
+	'success' => __("Vous avez été gagné des crédits arbres sur votre compte !"),
 	'error-log' => __("Vous avez déjà cliquez sur ce lien récemment."),
 	'not-connected' => __("Connectez-vous pour créditer votre compte en crédit arbres.")
 );

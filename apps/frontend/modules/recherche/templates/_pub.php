@@ -5,9 +5,7 @@
 		</a>
 		<span class="tooltip-content classic">
 		<?php
-		echo __("Grâce à ce lien sponsorisé gagnez {gain}.", array(
-			'{gain}' => sfConfig::get('app_gain_cpc').'<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />')
-		);
+		echo __("Grâce à ce lien sponsorisé gagnez des crédits arbres.");
 		?>
 		</span>
 	</h3>
@@ -22,9 +20,7 @@
 		)); ?>
 		<span class="tooltip-content classic">
 		<?php 
-		echo __("Grâce à ce lien sponsorisé gagnez {gain}.", array(
-			'{gain}' => sfConfig::get('app_gain_cpc').'<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />')
-		);
+		echo __("Grâce à ce lien sponsorisé gagnez des crédits arbres.");
 		?>
 		</span>
 	</h4>

@@ -60,7 +60,8 @@ class ajaxActions extends sfActions
 
       $engine = new SearchEngine($text, $moteur);
 
-	  $affiliateResult = $engine->getOneShopResult($minAffiliate);
+//	  $affiliateResult = $engine->getOneShopResult($minAffiliate);
+	  $affiliateResult = array();
 
       $this->results = $engine->getResults($min);
       $this->affiliateResults = empty($affiliateResult) ? array() : array($affiliateResult);

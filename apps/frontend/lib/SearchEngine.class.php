@@ -164,11 +164,17 @@ class SearchEngine {
 		$url .= "&c=".sfConfig::get('app_ddc_id');
 		$url .= "&surl=http://up2green.com/";
 		$url .= "&ua=".$_SERVER['HTTP_USER_AGENT'];
-		$url .= "&ip=92.243.6.168";
+
+		if(sfContext::getInstance()->getConfiguration()->getEnvironment() !== 'dev') {
+			$url .= "&ip=".$_SERVER['REMOTE_ADDR'];
+		}
+		else {
+			$url .= "&ip=92.243.6.168";
+		}
 		
-//		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-//			$url .= "&xfip=".$_SERVER['HTTP_X_FORWARDED_FOR'];
-//		}
+		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$url .= "&xfip=".$_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
 		
 		$dom = new DomDocument();
 		$dom->load($url);

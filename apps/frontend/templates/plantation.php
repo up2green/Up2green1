@@ -5,7 +5,7 @@
         <?php include_metas() ?>
         <?php include_title() ?>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
-				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <?php include_stylesheets() ?>
         <?php include_javascripts() ?>
 
@@ -33,6 +33,7 @@
         </div>
 
 		<?php include_component('blog', 'footerLegal'); ?>
+		<?php include_partial('html/flash'); ?>
     </body>
 </html>
 

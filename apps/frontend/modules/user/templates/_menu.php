@@ -7,12 +7,10 @@
 				<?php echo include_component('user', 'language'); ?>
 			</div>
 			<ul class="menu">
+				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>"><?php echo __("Le moteur") ?></a></li>
+				<li><a class="button small green" href="/article/nos_objectifs"><?php echo __("L'association") ?></a></li>
 				<?php if(!$sf_user->isAuthenticated()):?>
-				<li><a class="button small green" href="/"><?php echo __("Accueil") ?></a></li>
 				<li><a class="button small green" href="<?php echo url_for("user/inscription"); ?>"><?php echo __("Créer mon compte") ?></a></li>
-				<?php else: ?>
-				<li><a class="button small green" href="/"><?php echo __("Accueil") ?></a></li>
-				<li><a class="button small gray disabled" href="#"><?php echo __("Définir comme page d'accueil") ?></a></li>
 				<?php endif; ?>
 			</ul>
 		</div>

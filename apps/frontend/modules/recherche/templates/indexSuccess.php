@@ -14,9 +14,12 @@
 			<span searchMode="<?php echo SearchEngine::WEB ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::WEB ? 'green active' : 'gray'); ?> medium first"><?php echo __("Web") ?></span>
 			<span searchMode="<?php echo SearchEngine::IMG ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::IMG ? 'green active' : 'gray'); ?> medium"><?php echo __("Images") ?></span>
 			<span searchMode="<?php echo SearchEngine::NEWS ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::NEWS ? 'green active' : 'gray'); ?> medium"><?php echo __("News") ?></span>
-			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium"><?php echo __("Achats") ?></span>
-
-			<a class="more-search" href="#"><?php echo __("Recherches Avancées") ?></a>
+			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="tooltip button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium">
+				<?php echo __("Achats") ?>
+				<span class="tooltip-content classic" style="width:250px">
+					<?php echo __("<strong>Le moteur « Achats » revient bientôt</strong>… pour gagner des arbres à chaque achat en ligne sur l'un des 750 sites marchands affiliés à l'association (quelques temps après votre achat sur l'un des sites en question vous recevrez dans votre compte Up2green le nombre de crédits arbres fonction du montant de votre achat).") ?>
+				</span>
+			</span>
 		</div>
 	</form>
 	
@@ -31,11 +34,11 @@
 		echo '<div id="searchResults"';
 		
 		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
-			if(false && !empty($singleShopResult)) {
-				echo '<div class="shop-result">';
-				include_partial('shop', array('result' => $singleShopResult));
-				echo '</div>';
-			}
+//			if(!empty($singleShopResult)) {
+//				echo '<div class="shop-result">';
+//				include_partial('shop', array('result' => $singleShopResult));
+//				echo '</div>';
+//			}
 
 			if(!empty($pubResults)) {
 				echo '<div class="pub-result">';

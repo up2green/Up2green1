@@ -61,18 +61,34 @@ class programmeTable extends Doctrine_Table
     return $this->getOne($q);
   }
   
-  public function countTrees($programmes = array()) {
-  	$q = $this->createQuery('p')
-		->select('p.id, COUNT(t.id) AS nbTree')
-		->innerJoin('p.Trees t');
-		
+	public function countTrees($programmes = array()) {
+
+		$hardcode = array(
+			10 => 188, //Madagascar
+			8 => 162, //Burkina Faso
+			14 => 1620, //Perou
+			18 => 189, //Inde
+			17 => 155 //Ethiopie
+		);
+
+		$q = $this->createQuery('p')
+			->select('p.id, COUNT(t.id) AS nbTree')
+			->innerJoin('p.Trees t');
+
 		if(!empty($programmes)) {
 			$q = $q->whereIn('p.id', $programmes);
 		}
-		
+
 		$q = $q->groupBy('p.id');
-		
-		return $this->getArray($q);
+		$ret = $this->getArray($q);
+
+		foreach($ret as &$programme) {
+			if(isset($hardcode[(int)$programme['id']])) {
+				$programme['nbTree'] += $hardcode[$programme['id']];
+			}
+		}
+
+		return $ret;
 	}
 
   public function getActiveByLang($lang, $limit = 10) {

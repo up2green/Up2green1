@@ -9,13 +9,25 @@
 		<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
 		<p class="title"><?php echo __("Devenez acteur de la reforestation") ?></p>
 		<div class="content">
-			<p><?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?></p>
-			<p><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
+			<p style="padding:5px;">
+				<?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
+				<span class="tooltip">
+					<img src="/images/icons/16x16/consulting.png" class="auto-tooltip-icon">
+					<span class="tooltip-content classic" style="padding:10px;">
+						<?php echo __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :") ?>
+						<ol style="margin: 5px 25px;text-align:left;list-style-type:decimal;">
+							<li><?php echo __("Vous effectuez une recherche avec le moteur Up2green.") ?></li>
+							<li><?php echo __("Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?") ?></li>
+							<li><?php echo __("Le sponsor rémunère Yahoo pour chaque clic.") ?></li>
+							<li><?php echo __("Yahoo reversent une grande partie de cette somme à l'association Up2green.") ?></li>
+							<li><?php echo __("Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).") ?></li>
+						</ol>
+					</span>
+				</span>
+			</p>
+			<p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
 			<p class="center">
 				<a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong><?php echo __("Créer un compte") ?></strong></a>
-			</p>
-			<p class="center">
-				<a href="#" class="button green"><?php echo __("Définir Up2green comme moteur de recherche par defaut") ?></a>
 			</p>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
@@ -27,7 +39,7 @@
 		<div class="content">
 			<p><?php echo __("Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement") ?></p>
 			<p class="center">
-				<a href="<?php echo url_for("plantation/index"); ?>" class="button green"><?php echo __("Accéder à la plateforme de reforestation") ?></a>
+				<a target="_blank" href="<?php echo url_for("plantation/index"); ?>" class="button green"><?php echo __("Accéder à la plateforme de reforestation") ?></a>
 			</p>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
@@ -57,7 +69,7 @@
 		<div class="content">
 			<p><?php echo __("Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...") ?></p>
 			<div class="lien_partenaires righter">
-				<a href="<?php echo sfConfig::get('app_url_blog'); ?>"><?php echo __("plus d'informations ici") ?></a>
+				<a target="_blank" href="<?php echo sfConfig::get('app_url_blog'); ?>"><?php echo __("plus d'informations ici") ?></a>
 			</div>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

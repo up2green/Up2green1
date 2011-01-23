@@ -136,6 +136,7 @@ color:#FFFFFF;
 .menu_connexion a{
 color:white;
 text-decoration: underline;
+font-size: 11px;
 }
 .mdp_perdu{
 background: url(/images/moteur/btn_pass_forgive_20x20.png);

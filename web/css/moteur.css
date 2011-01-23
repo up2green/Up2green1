@@ -81,6 +81,7 @@
 div.module.acteur{
 	width:400px;
 	float:left;
+	margin-bottom: 50px;
 }
 
 div.module.acteur p{left:70px;width:100%;}
@@ -244,6 +245,7 @@ div.pub-result div.result {
     float: left;
     height: 50px;
     padding: 10px;
+	position: relative;
     width: 480px;
 	background-color: #ECFFD7;
 }

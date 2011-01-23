@@ -1,526 +1,549 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-01-09T23:30:11Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-01-23T21:25:09Z" product-name="messages" xml:space="default">
     <header/>
     <body>
-      <trans-unit id="1" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Etre acteur de la reforestation au fil de ses recherches</source><target xml:lang="en" state="needs-translation">Plant trees on the Planet with your researches</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="2" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Déjà {number} arbres plantés avec {affiliate}</source><target xml:lang="en" state="needs-translation">{number} trees have been already planted with {affiliate}</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="3" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="1">
+        <source>Plantez des arbres sur la Planète au fil de vos recherches</source>
+        <target>Plant trees on the Planet while you search</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Déjà {number} arbres plantés avec {affiliate}</source>
+        <target>{number} trees have been already planted with {affiliate}</target>
+      </trans-unit>
+      <trans-unit id="3">
         <source>Faites grandir la forêt de {affiliate} sur la planète !</source>
-        <target xml:lang="en" state="needs-translation">Let&apos;s contibute to make {affiliate}&apos;s forest grow on the Planet !</target>
-        <?sid -462094004-0?>
+        <target>Let's contibute to make {affiliate}'s forest grow on the Planet !</target>
       </trans-unit>
-      <trans-unit id="4" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="4">
         <source>Devenez acteur de la reforestation en plantant vos arbres avec up2gren !</source>
-        <target xml:lang="en" state="needs-translation">Act for reforestation with up2green association !</target>
-        <?sid -462094004-0?>
+        <target>Act for reforestation with up2green association !</target>
       </trans-unit>
-      <trans-unit id="5" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="5">
         <source>Faites grandir les forêts des programmes que nous soutenons sur la planète en quelques clics.</source>
-        <target xml:lang="en" state="needs-translation">Make our communitary reforestation programs grow with a few clicks…</target>
-        <?sid -462094004-0?>
+        <target>Make our communitary reforestation programs grow with a few clicks…</target>
       </trans-unit>
-      <trans-unit id="6" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="6">
         <source>Choisissez où planter votre (vos) arbre(s) sur la Planète</source>
-        <target xml:lang="en" state="needs-translation">Choose where to plant your tree(s) on the Planet</target>
-        <?sid -462094004-0?>
+        <target>Choose where to plant your tree(s) on the Planet</target>
       </trans-unit>
-      <trans-unit id="7" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="7">
         <source>Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation</source>
-        <target xml:lang="en" state="needs-translation">Please enter your secured code number to access to the {lien}online plantation portal{:lien} and choose your reforestation programs</target>
-        <?sid -462094004-0?>
+        <target>Please enter your secured code number to access to the {lien}online plantation portal{:lien} and choose your reforestation programs</target>
       </trans-unit>
-      <trans-unit id="8" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="8">
         <source>Numéro de coupon</source>
-        <target xml:lang="en" state="needs-translation">Secured code number</target>
-        <?sid -462094004-0?>
+        <target>Secured code number</target>
       </trans-unit>
-      <trans-unit id="9" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="9">
         <source>Utiliser</source>
-        <target xml:lang="en" state="needs-translation">Use it</target>
-        <?sid -462094004-0?>
+        <target>Use it</target>
       </trans-unit>
-      <trans-unit id="10" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="10">
         <source>Devenez acteur de la reforestation</source>
-        <target xml:lang="en" state="needs-translation">Act for reforestation</target>
-        <?sid -462094004-0?>
+        <target>Act for reforestation</target>
       </trans-unit>
-      <trans-unit id="11" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="11">
         <source>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</source>
-        <target xml:lang="en" state="needs-translation">Create your account and collect FOR FREE trees during your web researches</target>
-        <?sid -462094004-0?>
+        <target>Create your account and collect FOR FREE trees during your web researches</target>
       </trans-unit>
-      <trans-unit id="12" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="12">
         <source>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</source>
-        <target xml:lang="en" state="needs-translation">Choose afterwards where you want to plant your trees on the Planet among the reforestation programs we support</target>
-        <?sid -462094004-0?>
+        <target>Choose afterwards where you want to plant your trees on the Planet among the reforestation programs we support</target>
       </trans-unit>
-      <trans-unit id="13" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="13">
         <source>Créer un compte</source>
-        <target xml:lang="en" state="needs-translation">Create an account</target>
-        <?sid -462094004-0?>
+        <target>Create an account</target>
       </trans-unit>
-      <trans-unit id="14" translate="yes" reformat="yes" xml:space="default">
-        <source>Définir Up2green comme moteur de recherche par defaut</source>
-        <target xml:lang="en" state="needs-translation">Set Up2green as your default search engine</target>
-        <?sid -462094004-0?>
-      </trans-unit>
-      <trans-unit id="15" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="15">
         <source>Plantez vos arbres</source>
-        <target xml:lang="en" state="needs-translation">Plant your trees</target>
-        <?sid -462094004-0?>
+        <target>Plant your trees</target>
       </trans-unit>
-      <trans-unit id="16" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="16">
         <source>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement</source>
-        <target xml:lang="en" state="needs-translation">You can now access to the reforestation portal to plant your trees if you have collected enough tree credits</target>
-        <?sid -462094004-0?>
+        <target>You can now access to the reforestation portal to plant your trees if you have collected enough tree credits</target>
       </trans-unit>
-      <trans-unit id="17" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="17">
         <source>Accéder à la plateforme de reforestation</source>
-        <target xml:lang="en" state="needs-translation">Go to the online reforestation platform</target>
-        <?sid -462094004-0?>
+        <target>Go to the online reforestation platform</target>
       </trans-unit>
-      <trans-unit id="18" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Statistiques</source><target xml:lang="en" state="needs-translation">Statistics</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="19" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="18">
+        <source>Statistiques</source>
+        <target>Statistics</target>
+      </trans-unit>
+      <trans-unit id="19">
         <source>Arbres plantés : {number}</source>
-        <target xml:lang="en" state="needs-translation">Planted trees : {number}</target>
-        <?sid -462094004-0?>
+        <target>Planted trees : {number}</target>
       </trans-unit>
-      <trans-unit id="20" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="20">
         <source>soit plus de {number} tonnes de CO&lt;sub&gt;2&lt;/sub&gt; qui seront stockées pendant leur croissance</source>
-        <target xml:lang="en" state="needs-translation">that is {number} tons of CO&lt;sub&gt;2&lt;/sub&gt; to be absorbed and stocked during their growth</target>
-        <?sid -462094004-0?>
+        <target>that is {number} tons of CO&lt;sub&gt;2&lt;/sub&gt; to be absorbed and stocked during their growth</target>
       </trans-unit>
-      <trans-unit id="21" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="21">
         <source>Les forêts sont reconnues pour être de véritables puits de carbone.&lt;br /&gt; A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes</source>
-        <target xml:lang="en" state="needs-translation">Forests are carbon stores and sinks when increasing in density or area.&lt;br /&gt; For example, according to the United Nations Organization (UN), during its growth, a simple tree can abosorb an average of 12 kgs of CO2 per year and produce oxygen needed by a family of 4 people to breath</target>
-        <?sid -462094004-0?>
+        <target>Forests are carbon stores and sinks when increasing in density or area.&lt;br /&gt; For example, according to the United Nations Organization (UN), during its growth, a simple tree can abosorb an average of 12 kgs of CO2 per year and produce oxygen needed by a family of 4 people to breath</target>
       </trans-unit>
-      <trans-unit id="22" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="22">
         <source>Partenaires</source>
-        <target xml:lang="en" state="needs-translation">Partners</target>
-        <?sid -462094004-0?>
+        <target>Partners</target>
       </trans-unit>
-      <trans-unit id="23" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="23">
         <source>Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</source>
-        <target xml:lang="en" state="needs-translation">Companies and Municipalities, you can act for reforestation involving your employees, customers and citizens...</target>
-        <?sid -462094004-0?>
+        <target>Companies and Municipalities, you can act for reforestation involving your employees, customers and citizens...</target>
       </trans-unit>
-      <trans-unit id="24" translate="yes" reformat="yes" xml:space="default">
-        <source>plus d&apos;informations ici</source>
-        <target xml:lang="en" state="needs-translation">More information here</target>
-        <?sid -462094004-0?>
+      <trans-unit id="24">
+        <source>plus d'informations ici</source>
+        <target>More information here</target>
       </trans-unit>
-      <trans-unit id="25" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="25">
         <source>Gains :</source>
-        <target xml:lang="en" state="needs-translation">Tree credits :</target>
-        <?sid -462094004-0?>
+        <target>Tree credits :</target>
       </trans-unit>
-      <trans-unit id="26" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="26">
         <source>Web</source>
-        <target xml:lang="en" state="needs-translation">Web</target>
-        <?sid -462094004-0?>
+        <target>Web</target>
       </trans-unit>
-      <trans-unit id="27" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="27">
         <source>Images</source>
-        <target xml:lang="en" state="needs-translation">Images</target>
-        <?sid -462094004-0?>
+        <target>Images</target>
       </trans-unit>
-      <trans-unit id="28" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="28">
         <source>News</source>
-        <target xml:lang="en" state="needs-translation">News</target>
-        <?sid -462094004-0?>
+        <target>News</target>
       </trans-unit>
-      <trans-unit id="29" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="29">
         <source>Achats</source>
-        <target xml:lang="en" state="needs-translation">Shopping</target>
-        <?sid -462094004-0?>
+        <target>Shopping</target>
       </trans-unit>
-      <trans-unit id="30" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>Recherches Avancées</source>
-        <target xml:lang="en" state="needs-translation">More</target>
-        <?sid -462094004-0?>
+      <trans-unit id="32">
+        <source>L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.</source>
+        <target>Tree credits collection thanks to the shoping engine is effective after 1 week in average</target>
       </trans-unit>
-      <trans-unit id="32" translate="yes" reformat="yes" xml:space="default">
-        <source>L&apos;obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d&apos;environ une semaine.</source>
-        <target xml:lang="en" state="needs-translation">Tree credits collection thanks to the shoping engine is effective after 1 week in average</target>
-        <?sid -462094004-0?>
-      </trans-unit>
-      <trans-unit id="33" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="33">
         <source>Aucun résultat ne correspond à votre recherche.</source>
-        <target xml:lang="en" state="needs-translation">No results for your research</target>
-        <?sid -462094004-0?>
+        <target>No results for your research</target>
       </trans-unit>
-      <trans-unit id="34" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="34">
         <source>Plus de Résultats</source>
-        <target xml:lang="en" state="needs-translation">More results</target>
-        <?sid -462094004-0?>
+        <target>More results</target>
       </trans-unit>
-      <trans-unit id="35" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="35">
         <source>Source : {link}</source>
-        <target xml:lang="en" state="needs-translation">Source : {link}</target>
-        <?sid -462094004-0?>
+        <target>Source : {link}</target>
       </trans-unit>
-      <trans-unit id="36" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="36">
         <source>le {date} à {time}</source>
-        <target xml:lang="en" state="needs-translation">The {date} at {time}</target>
-        <?sid -462094004-0?>
+        <target>The {date} at {time}</target>
       </trans-unit>
-      <trans-unit id="37" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="37">
         <source>Nouveau mot de passe</source>
-        <target xml:lang="en" state="needs-translation">New password</target>
-        <?sid -462094004-0?>
+        <target>New password</target>
       </trans-unit>
-      <trans-unit id="38" translate="yes" reformat="yes" xml:space="default">
-        <source>Le nouveau mot de passe a été envoyé par mail à l&apos;adresse renseignée sur le profil.&lt;br /&gt; Regardez dans votre boite à SPAM si vous ne voyez pas l&apos;e-mail dans votre boite de réception, il est possible que votre logiciel de messagerie bloque ce message.</source>
-        <target xml:lang="en" state="needs-translation">The new password has been sent to the email address filled in your profile account.&lt;br /&gt; Please have a look in your SPAM mailbox, your email box software might jam the message.</target>
-        <?sid -462094004-0?>
+      <trans-unit id="38">
+        <source>Le nouveau mot de passe a été envoyé par mail à l'adresse renseignée sur le profil.&lt;br /&gt; Regardez dans votre boite à SPAM si vous ne voyez pas l'e-mail dans votre boite de réception, il est possible que votre logiciel de messagerie bloque ce message.</source>
+        <target>The new password has been sent to the email address filled in your profile account.&lt;br /&gt; Please have a look in your SPAM mailbox, your email box software might jam the message.</target>
       </trans-unit>
-      <trans-unit id="39" translate="yes" reformat="yes" xml:space="default">
-        <source>Nom d&apos;utilisateur</source>
-        <target xml:lang="en" state="needs-translation">User  Name</target>
-        <?sid -462094004-0?>
+      <trans-unit id="39">
+        <source>Nom d'utilisateur</source>
+        <target>User  Name</target>
       </trans-unit>
-      <trans-unit id="40" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="40">
         <source>Envoyer</source>
-        <target xml:lang="en" state="needs-translation">Send</target>
-        <?sid -462094004-0?>
+        <target>Send</target>
       </trans-unit>
-      <trans-unit id="41" translate="yes" reformat="yes" xml:space="default">
-        <source>En cliquant sur "Envoyer", un nouveau mot de passe sera généré et envoyé à l&apos;adresse mail renseignée sur le profil.</source>
-        <target xml:lang="en" state="needs-translation">By clicking on ""Send"", a new passward will be generated and sent to the email address filled in your profile account</target>
-        <?sid -462094004-0?>
+      <trans-unit id="41">
+        <source>En cliquant sur "Envoyer", un nouveau mot de passe sera généré et envoyé à l'adresse mail renseignée sur le profil.</source>
+        <target>By clicking on ""Send"", a new passward will be generated and sent to the email address filled in your profile account</target>
       </trans-unit>
-      <trans-unit id="42" translate="yes" reformat="yes" xml:space="default">
-        <source>Une fois ce mot de passe changé, l&apos;ancien ne sera plus valable.</source>
-        <target xml:lang="en" state="needs-translation">Once your password changed, the last one will not be valid anymore.</target>
-        <?sid -462094004-0?>
+      <trans-unit id="42">
+        <source>Une fois ce mot de passe changé, l'ancien ne sera plus valable.</source>
+        <target>Once your password changed, the last one will not be valid anymore.</target>
       </trans-unit>
-      <trans-unit id="43" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="43">
         <source>Mon profil</source>
-        <target xml:lang="en" state="needs-translation">My profile</target>
-        <?sid -462094004-0?>
+        <target>My profile</target>
       </trans-unit>
-      <trans-unit id="44" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="44">
         <source>Parrainer des amis</source>
-        <target xml:lang="en" state="needs-translation">Invite your friends</target>
-        <?sid -462094004-0?>
+        <target>Invite your friends</target>
       </trans-unit>
-      <trans-unit id="45" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Mes coupons</source><target xml:lang="en" state="needs-translation">My tree voucher</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="46" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="45">
+        <source>Mes coupons</source>
+        <target>My tree voucher</target>
+      </trans-unit>
+      <trans-unit id="46">
         <source>Récapitulatif</source>
-        <target xml:lang="en" state="needs-translation">Summary</target>
-        <?sid -462094004-0?>
+        <target>Summary</target>
       </trans-unit>
-      <trans-unit id="47" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="47">
         <source>Acheter des coupons</source>
-        <target xml:lang="en" state="needs-translation">Buy tree vouchers</target>
-        <?sid -462094004-0?>
+        <target>Buy tree vouchers</target>
       </trans-unit>
-      <trans-unit id="48" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="48">
         <source>Acheter des crédits</source>
-        <target xml:lang="en" state="needs-translation">Buy tree credits</target>
-        <?sid -462094004-0?>
+        <target>Buy tree credits</target>
       </trans-unit>
-      <trans-unit id="49" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="49">
         <source>Général</source>
-        <target xml:lang="en" state="needs-translation">General</target>
-        <?sid -462094004-0?>
+        <target>General</target>
       </trans-unit>
-      <trans-unit id="50" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="50">
         <source>Identifiant :</source>
-        <target xml:lang="en" state="needs-translation">Login :</target>
-        <?sid -462094004-0?>
+        <target>Login :</target>
       </trans-unit>
-      <trans-unit id="51" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="51">
         <source>E-Mail :</source>
-        <target xml:lang="en" state="needs-translation">E-Mail :</target>
-        <?sid -462094004-0?>
+        <target>E-Mail :</target>
       </trans-unit>
-      <trans-unit id="52" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="52">
         <source>Crédits disponibles :</source>
-        <target xml:lang="en" state="needs-translation">Available tree credits :</target>
-        <?sid -462094004-0?>
+        <target>Available tree credits :</target>
       </trans-unit>
-      <trans-unit id="53" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="53">
         <source>Arbres plantés :</source>
-        <target xml:lang="en" state="needs-translation">Planted trees :</target>
-        <?sid -462094004-0?>
+        <target>Planted trees :</target>
       </trans-unit>
-      <trans-unit id="54" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="54">
         <source>Profil</source>
-        <target xml:lang="en" state="needs-translation">Profile</target>
-        <?sid -462094004-0?>
+        <target>Profile</target>
       </trans-unit>
-      <trans-unit id="55" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="55">
         <source>Enregistrer</source>
-        <target xml:lang="en" state="needs-translation">Save</target>
-        <?sid -462094004-0?>
+        <target>Save</target>
       </trans-unit>
-      <trans-unit id="56" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>Accueil</source>
-        <target xml:lang="en" state="needs-translation">Home</target>
-        <?sid -462094004-0?>
-      </trans-unit>
-      <trans-unit id="57" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="57">
         <source>Créer mon compte</source>
-        <target xml:lang="en" state="needs-translation">Create an account</target>
-        <?sid -462094004-0?>
+        <target>Create an account</target>
       </trans-unit>
-      <trans-unit id="58" translate="yes" reformat="yes" xml:space="default">
-        <source>Définir comme page d&apos;accueil</source>
-        <target xml:lang="en" state="needs-translation">Set as Home page</target>
-        <?sid -462094004-0?>
-      </trans-unit>
-      <trans-unit id="59" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="59">
         <source>Déconnexion</source>
-        <target xml:lang="en" state="needs-translation">Exit</target>
-        <?sid -462094004-0?>
+        <target>Exit</target>
       </trans-unit>
-      <trans-unit id="60" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="60">
         <source>Planter mes arbres ({number})</source>
-        <target xml:lang="en" state="needs-translation">Plant my trees ({number})</target>
-        <?sid -462094004-0?>
+        <target>Plant my trees ({number})</target>
       </trans-unit>
-      <trans-unit id="61" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="61">
         <source>Mon profil ({username})</source>
-        <target xml:lang="en" state="needs-translation">My Profile ({username})</target>
-        <?sid -462094004-0?>
+        <target>My Profile ({username})</target>
       </trans-unit>
-      <trans-unit id="62" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="62">
         <source>Inscription</source>
-        <target xml:lang="en" state="needs-translation">Registration</target>
-        <?sid -462094004-0?>
+        <target>Registration</target>
       </trans-unit>
-      <trans-unit id="63" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="63">
         <source>Mot de passe</source>
-        <target xml:lang="en" state="needs-translation">Password</target>
-        <?sid -462094004-0?>
+        <target>Password</target>
       </trans-unit>
-      <trans-unit id="64" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="64">
         <source>Déjà {number} arbres plantés ensemble</source>
-        <target xml:lang="en" state="needs-translation">{number} trees have already been planted together</target>
-        <?sid -462094004-0?>
+        <target>{number} trees have already been planted together</target>
       </trans-unit>
-      <trans-unit id="65" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>L&apos;Actualité web</source>
-        <target xml:lang="en" state="needs-translation">Web News</target>
-        <?sid -462094004-0?>
+      <trans-unit id="65">
+        <source>L'Actualité web</source>
+        <target>Web News</target>
       </trans-unit>
-      <trans-unit id="66" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Lire la suite</source><target xml:lang="en" state="needs-translation">Read more...</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="67" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="66">
+        <source>Lire la suite</source>
+        <target>Read more...</target>
+      </trans-unit>
+      <trans-unit id="67">
         <source>Nos programmes</source>
-        <target xml:lang="en" state="needs-translation">Our programs</target>
-        <?sid -462094004-0?>
+        <target>Our programs</target>
       </trans-unit>
-      <trans-unit id="68" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="68">
         <source>Offrir des arbres à planter sur la Planète par email ou avec une carte cadeau reforestation</source>
-        <target xml:lang="en" state="needs-translation">Offer trees to be planted on the Planet by email or thnaks to a reforestation gift card</target>
-        <?sid -462094004-0?>
+        <target>Offer trees to be planted on the Planet by email or thnaks to a reforestation gift card</target>
       </trans-unit>
-      <trans-unit id="69" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="69">
         <source>Cartes cadeaux Reforestation</source>
-        <target xml:lang="en" state="needs-translation">Reforestation gift card</target>
-        <?sid -462094004-0?>
+        <target>Reforestation gift card</target>
       </trans-unit>
-      <trans-unit id="70" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="70">
         <source>Planter des arbres GRATUITEMENT au fil de mes recherches sur Internet…</source>
-        <target xml:lang="en" state="needs-translation">My web searches plant trees on the Planet for free…</target>
-        <?sid -462094004-0?>
+        <target>My web searches plant trees on the Planet for free…</target>
       </trans-unit>
-      <trans-unit id="71" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="71">
         <source>Moteur recherche Up2Green</source>
-        <target xml:lang="en" state="needs-translation">Up2green websearch engine</target>
-        <?sid -462094004-0?>
+        <target>Up2green websearch engine</target>
       </trans-unit>
-      <trans-unit id="72" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="72">
         <source>Devenir acteur de la reforestation en impliquant mes clients et collaborateurs…</source>
-        <target xml:lang="en" state="needs-translation">Act for reforestation involving my customers and employees…</target>
-        <?sid -462094004-0?>
+        <target>Act for reforestation involving my customers and employees…</target>
       </trans-unit>
-      <trans-unit id="73" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="73">
         <source>Partenariat Entreprise</source>
-        <target xml:lang="en" state="needs-translation">Private Patnership</target>
-        <?sid -462094004-0?>
+        <target>Private Patnership</target>
       </trans-unit>
-      <trans-unit id="74" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="74">
         <source>Je dispose d’un coupon Up2green pour planter mes arbres sur la Planète</source>
-        <target xml:lang="en" state="needs-translation">I have a code number to plant trees with Up2green Reforestation</target>
-        <?sid -462094004-0?>
+        <target>I have a code number to plant trees with Up2green Reforestation</target>
       </trans-unit>
-      <trans-unit id="75" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="75">
         <source>Utiliser mon coupon Up2Green</source>
-        <target xml:lang="en" state="needs-translation">Use my code nuimber to plant trees with Up2Green Reforestation</target>
-        <?sid -462094004-0?>
+        <target>Use my code nuimber to plant trees with Up2Green Reforestation</target>
       </trans-unit>
-      <trans-unit id="76" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="76">
         <source>Développement : {society}</source>
-        <target xml:lang="en" state="needs-translation">Development : {society}</target>
-        <?sid -462094004-0?>
+        <target>Development : {society}</target>
       </trans-unit>
-      <trans-unit id="77" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="77">
         <source>Graphisme : {society}</source>
-        <target xml:lang="en" state="needs-translation">Graphism : {society}</target>
-        <?sid -462094004-0?>
+        <target>Graphism : {society}</target>
       </trans-unit>
-      <trans-unit id="78" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="78">
         <source>Intégration : {society}</source>
-        <target xml:lang="en" state="needs-translation">Integration : {society}</target>
-        <?sid -462094004-0?>
+        <target>Integration : {society}</target>
       </trans-unit>
-      <trans-unit id="79" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Blog Foret</source><target xml:lang="en" state="needs-translation">Forest Blog</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="80" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="79">
+        <source>Blog Foret</source>
+        <target>Forest Blog</target>
+      </trans-unit>
+      <trans-unit id="80">
         <source>Plantez vos arbres grâce à notre plateforme de reforestion !</source>
-        <target xml:lang="en" state="needs-translation">Plant your trees thanks to our reforestation platform online !</target>
-        <?sid -462094004-0?>
+        <target>Plant your trees thanks to our reforestation platform online !</target>
       </trans-unit>
-      <trans-unit id="81" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="81">
         <source>Les programmes de reforestation que nous soutenons</source>
-        <target xml:lang="en" state="needs-translation">Reforestation programs we support</target>
-        <?sid -462094004-0?>
+        <target>Reforestation programs we support</target>
       </trans-unit>
-      <trans-unit id="82" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="82">
         <source>Retour à la Carte</source>
-        <target xml:lang="en" state="needs-translation">Back to the map</target>
-        <?sid -462094004-0?>
+        <target>Back to the map</target>
       </trans-unit>
-      <trans-unit id="83" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="83">
         <source>Voir mes coupons</source>
-        <target xml:lang="en" state="needs-translation">See my trees code number</target>
-        <?sid -462094004-0?>
+        <target>See my trees code number</target>
       </trans-unit>
-      <trans-unit id="84" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="84">
         <source>Planter vos arbres</source>
-        <target xml:lang="en" state="needs-translation">Plant your trees</target>
-        <?sid -462094004-0?>
+        <target>Plant your trees</target>
       </trans-unit>
-      <trans-unit id="85" translate="yes" reformat="yes" xml:space="default">
-        <source>Vous n&apos;avez pas assez de crédit pour planter un arbre !</source>
-        <target xml:lang="en" state="needs-translation">You still don&apos;t have enough tree credits to plant a tree !</target>
-        <?sid -462094004-0?>
+      <trans-unit id="85">
+        <source>Vous n'avez pas assez de crédit pour planter un arbre !</source>
+        <target>You still don't have enough tree credits to plant a tree !</target>
       </trans-unit>
-      <trans-unit id="86" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="86">
         <source>Collectez plus de crédits au fil de vos recherches grâce au moteur Up2green.</source>
-        <target xml:lang="en" state="needs-translation">Collect more tree credits using Up2green websearch engine</target>
-        <?sid -462094004-0?>
+        <target>Collect more tree credits using Up2green websearch engine</target>
       </trans-unit>
-      <trans-unit id="87" translate="yes" reformat="yes" xml:space="default" approved="no"><source>(-Inf,0]Vous n&apos;avez pas d&apos;arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter</source><target xml:lang="en" state="needs-translation">(-Inf,0]You don&apos;t have any tree to be planted|[1] You have 1 tree to be planted|(1,+Inf]You have {number} trees to be planted</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="88" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="87">
+        <source>(-Inf,0]Vous n'avez pas d'arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter</source>
+        <target>(-Inf,0]You don't have any tree to be planted|[1] You have 1 tree to be planted|(1,+Inf]You have {number} trees to be planted</target>
+      </trans-unit>
+      <trans-unit id="88">
         <source>Afin de recevoir une attestation, merci de remplir votre email ici :</source>
-        <target xml:lang="en" state="needs-translation">To get a free certificate, please fill in your email address here:</target>
-        <?sid -462094004-0?>
+        <target>To get a free certificate, please fill in your email address here:</target>
       </trans-unit>
-      <trans-unit id="89" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="89">
         <source>E-mail : {input}</source>
-        <target xml:lang="en" state="needs-translation">E-mail : {input}</target>
-        <?sid -462094004-0?>
+        <target>E-mail : {input}</target>
       </trans-unit>
-      <trans-unit id="90" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="90">
         <source>Planter</source>
-        <target xml:lang="en" state="needs-translation">Plant</target>
-        <?sid -462094004-0?>
+        <target>Plant</target>
       </trans-unit>
-      <trans-unit id="91" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Annuler</source><target xml:lang="en" state="needs-translation">Cancel</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="93" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="91">
+        <source>Annuler</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="93">
         <source>Code coupon</source>
-        <target xml:lang="en" state="needs-translation">Code number</target>
-        <?sid -462094004-0?>
+        <target>Code number</target>
       </trans-unit>
-      <trans-unit id="94" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Crédit</source><target xml:lang="en" state="needs-translation">Tree credit</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="95" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>Date d&apos;utilisation</source>
-        <target xml:lang="en" state="needs-translation">Use date</target>
-        <?sid -462094004-0?>
+      <trans-unit id="94">
+        <source>Crédit</source>
+        <target>Tree credit</target>
       </trans-unit>
-      <trans-unit id="96" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="95">
+        <source>Date d'utilisation</source>
+        <target>Use date</target>
+      </trans-unit>
+      <trans-unit id="96">
         <source>Programmes</source>
-        <target xml:lang="en" state="needs-translation">Programs</target>
-        <?sid -462094004-0?>
+        <target>Programs</target>
       </trans-unit>
-      <trans-unit id="97" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Date de création</source><target xml:lang="en" state="needs-translation">Date of creation</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="98" translate="yes" reformat="yes" xml:space="default">
+      <trans-unit id="97">
+        <source>Date de création</source>
+        <target>Date of creation</target>
+      </trans-unit>
+      <trans-unit id="98">
         <source>Coupons utilisés ({number})</source>
-        <target xml:lang="en" state="needs-translation">Number of used codes ({number})</target>
-        <?sid -462094004-0?>
+        <target>Number of used codes ({number})</target>
       </trans-unit>
-      <trans-unit id="99" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="99">
         <source>{code} [{number} arbres] Utilisé le {date} sur les programmes : {programs}</source>
-        <target xml:lang="en" state="needs-translation">{code} [{number} trees] Used the {date} in the following programs : {programs}</target>
-        <?sid -462094004-0?>
+        <target>{code} [{number} trees] Used the {date} in the following programs : {programs}</target>
       </trans-unit>
-      <trans-unit id="100" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="100">
         <source>Exporter : </source>
-        <target xml:lang="en" state="needs-translation">Export : </target>
-        <?sid -462094004-0?>
+        <target>Export : </target>
       </trans-unit>
-      <trans-unit id="101" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Utiliser un coupon</source><target xml:lang="en" state="needs-translation">Use a code number</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="102" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="101">
+        <source>Utiliser un coupon</source>
+        <target>Use a code number</target>
+      </trans-unit>
+      <trans-unit id="102">
         <source>Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !</source>
-        <target xml:lang="en" state="needs-translation">Choose where to plant your trees on the Planet entering your tree code number now !</target>
-        <?sid -462094004-0?>
+        <target>Choose where to plant your trees on the Planet entering your tree code number now !</target>
       </trans-unit>
-      <trans-unit id="103" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="103">
         <source>Coupons non utilisés ({number})</source>
-        <target xml:lang="en" state="needs-translation">Codes not used ({number})</target>
-        <?sid -462094004-0?>
+        <target>Codes not used ({number})</target>
       </trans-unit>
-      <trans-unit id="104" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="104">
         <source>{code} [{number} arbres] Généré le {date}</source>
-        <target xml:lang="en" state="needs-translation">{code} [{number} trees] Created on the {date}</target>
-        <?sid -462094004-0?>
+        <target>{code} [{number} trees] Created on the {date}</target>
       </trans-unit>
-      <trans-unit id="105" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Nom d&apos;utilisateur :</source><target xml:lang="en" state="needs-translation">Username :</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="106" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="105">
+        <source>Nom d'utilisateur :</source>
+        <target>Username :</target>
+      </trans-unit>
+      <trans-unit id="106">
         <source>Mot de passe :</source>
-        <target xml:lang="en" state="needs-translation">Password</target>
-        <?sid -462094004-0?>
+        <target>Password</target>
       </trans-unit>
-      <trans-unit id="107" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="107">
         <source>Confirmation du mot de passe :</source>
-        <target xml:lang="en" state="needs-translation">Password confirmation</target>
-        <?sid -462094004-0?>
+        <target>Password confirmation</target>
       </trans-unit>
-      <trans-unit id="108" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Adresse e-mail :</source><target xml:lang="en" state="needs-translation">Email adress</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="109" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="108">
+        <source>Adresse e-mail :</source>
+        <target>Email adress</target>
+      </trans-unit>
+      <trans-unit id="109">
         <source>Rechercher</source>
-        <target xml:lang="en" state="needs-translation">Search</target>
-        <?sid -462094004-0?>
+        <target>Search</target>
       </trans-unit>
-      <trans-unit id="110" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>{gain} pour 30€ d&apos;achat</source>
-        <target xml:lang="en" state="needs-translation">{gain} by purchase for 30 €</target>
-        <?sid -462094004-0?>
+      <trans-unit id="110">
+        <source>{gain} pour 30€ d'achat</source>
+        <target>{gain} by purchase for 30 €</target>
       </trans-unit>
-      <trans-unit id="111" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="111">
         <source>de {from} à {to}</source>
-        <target xml:lang="en" state="needs-translation">from {from} to {to}</target>
-        <?sid -462094004-0?>
+        <target>from {from} to {to}</target>
       </trans-unit>
-      <trans-unit id="115" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Connectez-vous pour créditer votre compte en crédit arbres.</source><target xml:lang="en" state="needs-translation">Login to credit your account in credit trees.</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="116" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Notice</source><target xml:lang="en" state="needs-translation">Notice</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="117" translate="yes" reformat="yes" xml:space="default" approved="no">
+      <trans-unit id="115">
+        <source>Connectez-vous pour créditer votre compte en crédit arbres.</source>
+        <target>Login to credit your account in credit trees.</target>
+      </trans-unit>
+      <trans-unit id="116">
+        <source>Notice</source>
+        <target>Notice</target>
+      </trans-unit>
+      <trans-unit id="117">
         <source>Erreur</source>
-        <target xml:lang="en" state="needs-translation">Error</target>
-        <?sid -462094004-0?>
+        <target>Error</target>
       </trans-unit>
-      <trans-unit id="118" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Info</source><target xml:lang="en" state="needs-translation">Info</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="119" translate="yes" reformat="yes" xml:space="default" approved="no">
-        <source>Les arbres plantés avec mon compte</source>
-        <target xml:lang="en" state="needs-translation">Trees planted with my account</target>
-        <?sid -462094004-0?>
+      <trans-unit id="118">
+        <source>Info</source>
+        <target>Info</target>
       </trans-unit>
-      <trans-unit id="120" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Les arbres plantés avec mes coupons</source><target xml:lang="en" state="needs-translation">Trees planted with my coupons</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="121" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Tous les arbres plantés</source><target xml:lang="en" state="needs-translation">All trees planted</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="122" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Tous les arbes plantés par {partenaire}</source><target xml:lang="en" state="needs-translation">All trees planted by {partenaire}</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="123" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Vous avez déjà cliquez sur ce lien récemment.</source><target xml:lang="en" state="needs-translation">You already click this link recently.</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="124" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Ce coupon a déjà été utilisé</source><target xml:lang="en" state="needs-translation">This coupon has already been used</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="125" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Vos arbres ont bien été plantés !</source><target xml:lang="en" state="needs-translation">Your trees have been planted!</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="126" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Vous aller recevoir un email attestant de votre plantation.</source><target xml:lang="en" state="needs-translation">You will receive an email confirming your planting.</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="127" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Veuillez planter tous vos arbres avant de valider !</source><target xml:lang="en" state="needs-translation">Please plant all your trees before committing!</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="129" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Grâce à ce lien sponsorisé gagnez des crédits arbres.</source><target xml:lang="en" state="needs-translation">You may earn credits trees clicking this sponsored link.</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="130" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Vous avez été gagné des crédits arbres sur votre compte !</source><target xml:lang="en" state="needs-translation">You&apos;ve earned credits trees on your account!</target><?sid -462094004-0?></trans-unit>
-      <trans-unit id="131" translate="yes" reformat="yes" xml:space="default" approved="no"><source>Vous avez été déconnecté</source><target xml:lang="en" state="needs-translation">You have been disconnected</target><?sid -462094004-0?></trans-unit>
+      <trans-unit id="123">
+        <source>Vous avez déjà cliquez sur ce lien récemment.</source>
+        <target>You already click this link recently.</target>
+      </trans-unit>
+      <trans-unit id="124">
+        <source>Ce coupon a déjà été utilisé</source>
+        <target>This coupon has already been used</target>
+      </trans-unit>
+      <trans-unit id="125">
+        <source>Vos arbres ont bien été plantés !</source>
+        <target>Your trees have been planted!</target>
+      </trans-unit>
+      <trans-unit id="126">
+        <source>Vous aller recevoir un email attestant de votre plantation.</source>
+        <target>You will receive an email confirming your planting.</target>
+      </trans-unit>
+      <trans-unit id="127">
+        <source>Veuillez planter tous vos arbres avant de valider !</source>
+        <target>Please plant all your trees before committing!</target>
+      </trans-unit>
+      <trans-unit id="129">
+        <source>Grâce à ce lien sponsorisé gagnez des crédits arbres.</source>
+        <target>You may earn credits trees clicking this sponsored link.</target>
+      </trans-unit>
+      <trans-unit id="130">
+        <source>Vous avez été gagné des crédits arbres sur votre compte !</source>
+        <target>You've earned credits trees on your account!</target>
+      </trans-unit>
+      <trans-unit id="131">
+        <source>Vous avez été déconnecté</source>
+        <target>You have been disconnected</target>
+      </trans-unit>
+      <trans-unit id="132">
+        <source>Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :</source>
+        <target>Trees financing comes from ad revenues transferred by Yahoo to Up2green Reforestation association (or by merchant websites affiliated to Up2green for the Shopping engine) :</target>
+      </trans-unit>
+      <trans-unit id="138">
+        <source>Le moteur</source>
+        <target>The search engine</target>
+      </trans-unit>
+      <trans-unit id="139">
+        <source>L'association</source>
+        <target>The association</target>
+      </trans-unit>
+      <trans-unit id="140">
+        <source>Vous effectuez une recherche avec le moteur Up2green.</source>
+        <target>You search with Up2green.</target>
+      </trans-unit>
+      <trans-unit id="141">
+        <source>Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?</source>
+        <target>Maybe you click on an interesting sponsored link.</target>
+      </trans-unit>
+      <trans-unit id="142">
+        <source>Le sponsor rémunère Yahoo pour chaque clic.</source>
+        <target>The sponsoring company pays Yahoo for the click.</target>
+      </trans-unit>
+      <trans-unit id="143">
+        <source>Yahoo reversent une grande partie de cette somme à l'association Up2green.</source>
+        <target>Yahoo gives the bigger part of that money to Up2green association.</target>
+      </trans-unit>
+      <trans-unit id="144">
+        <source>Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).</source>
+        <target>Up2green donates half of this revenue in your account as tree credits (the other part is used to pay development and operating costs of the Association and its own agroforestry programs)</target>
+      </trans-unit>
+      <trans-unit id="146">
+        <source>Vous êtes maintenant inscrit et connecté à up2green.</source>
+        <target>You successfuly joined and logged in up2green.</target>
+      </trans-unit>
+      <trans-unit id="147">
+        <source>Vos modifications ont bien été prises en compte.</source>
+        <target>Your changes have been taken into account.</target>
+      </trans-unit>
+      <trans-unit id="148">
+        <source>&lt;strong&gt;Le moteur « Achats » revient bientôt&lt;/strong&gt;… pour gagner des arbres à chaque achat en ligne sur l'un des 750 sites marchands affiliés à l'association (quelques temps après votre achat sur l'un des sites en question vous recevrez dans votre compte Up2green le nombre de crédits arbres fonction du montant de votre achat).</source>
+        <target>&lt;strong&gt;The « Shopping » search engine is coming back soon&lt;/strong&gt;… to collect trees for each purchase online on one of the 750 merchant sites affiliated to the association.</target>
+      </trans-unit>
+      <trans-unit id="149">
+        <source>Ma forêt – mes arbres : {nbArbres}</source>
+        <target>My forest – my trees : {nbArbres}</target>
+      </trans-unit>
+      <trans-unit id="150">
+        <source>Les arbres plantés avec mes coupons : {nbArbres}</source>
+        <target>Trees planted with my coupons : {nbArbres}</target>
+      </trans-unit>
+      <trans-unit id="151">
+        <source>Tous les arbres plantés : {nbArbres}</source>
+        <target>All trees planted : {nbArbres}</target>
+      </trans-unit>
+      <trans-unit id="152">
+        <source>Tous les arbes plantés par {partenaire} : {nbArbres}</source>
+        <target>All trees planted by {partenaire} : {nbArbres}</target>
+      </trans-unit>
+      <trans-unit id="153">
+        <source>Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.</source>
+        <target>Already 6749 trees planted in 2009/2010 with Trees for the Future, Planète Urgence and the French ONF in France, Ethiopia, India, Burundi, Haïti, Brazil, Honduras, Mali and Indonesia.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>En 2010/2011</source>
+        <target>In 2010/2011</target>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Si l'un de nos partenaires entreprises ou collectivités vous a offert un coupon reforestation saisissez le code ici. Les arbres correspondant s'incrémenteront automatiquement dans votre compte Up2green.</source>
+        <target>If one of our partners offered to you trees with a reforestation code, use it here. The corresponding trees will be credited on your Up2green account automatically</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

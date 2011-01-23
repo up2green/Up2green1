@@ -70,10 +70,7 @@ class userActions extends sfActions {
 				$message->setBody($html, 'text/html');
 
 				$this->getMailer()->send($message);
-
-				$flash = "Vous êtes maintenant inscris et connecté à up2green.";
-				$this->getUser()->setFlash('notice', $flash);
-
+				$this->getUser()->setFlash('notice', 'creation-compte');
 				$this->redirect('@homepage');
 			}
 		}
@@ -114,10 +111,8 @@ class userActions extends sfActions {
 
 				$profil->save();
 				$user->save();
-
-
-				$flash = "Vos modifications ont bien été prises en compte.";
-				$this->getUser()->setFlash('notice', $flash);
+				
+				$this->getUser()->setFlash('notice', 'modif-ok');
 
 				// @TODO: retirer cette redirection ?
 				$this->redirect('user/profil');

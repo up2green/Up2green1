@@ -1,6 +1,6 @@
 .tooltip {
-	cursor: help; text-decoration: none;
-	position: relative;
+	cursor: help;
+	text-decoration: none;
 }
 .tooltip span {
 	margin-left: -999em;

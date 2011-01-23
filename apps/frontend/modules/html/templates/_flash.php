@@ -33,7 +33,7 @@ if ($sf_user->hasFlash('notice') || $sf_user->hasFlash('error')) {
 		';
 	}
 
-	if ($sf_user->hasFlash('notice')) {
+	if ($sf_user->hasFlash('error')) {
 		echo '
 			$.gritter.add({
 				title: "'.__("Erreur").'",

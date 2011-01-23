@@ -394,16 +394,19 @@ class plantationActions extends sfActions {
 		if(!$this->getUser()->isAuthenticated() && !is_null($this->partenaire)) {
 			
 			$partenaireValues = $allValuesEmpty;
+			$sum = 0;
 			
 			$resultsFromUser = Doctrine_Core::getTable('tree')->countFromUserByProgramme($this->partenaire->getUser()->getId(), array_keys($allValuesEmpty));
 			$resultsFromCoupon = Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), array_keys($allValuesEmpty));
 			
 			foreach($resultsFromUser as $result) {
 				$partenaireValues[$result['programme_id']]['number'] += $result['nbTree'];
+				$sum += $result['nbTree'];
 			}
 			
 			foreach($resultsFromCoupon as $result) {
 				$partenaireValues[$result['programme_id']]['number'] += $result['nbTree'];
+				$sum += $result['nbTree'];
 			}
 			
 			$checked = !$checked;
@@ -412,37 +415,43 @@ class plantationActions extends sfActions {
 				'partenaireId' => $this->partenaire->getId(),
 				'partenaireTitle' => $this->partenaire->getTitle(),
 				'values' => $partenaireValues,
+				'displayValue' => $sum,
 				'checked' => $checked
 			);
 		}
 		
 		if ($this->getUser()->isAuthenticated()) {
 			$userValues = $allValuesEmpty;
-			
+			$sum = 0;
+
 			$resultsFromUser = Doctrine_Core::getTable('tree')->countFromUserByProgramme($this->getUser()->getGuardUser()->getId(), array_keys($allValuesEmpty));
 			foreach($resultsFromUser as $result) {
 				$userValues[$result['programme_id']]['number'] += $result['nbTree'];
+				$sum += $result['nbTree'];
 			}
 			
-			$checked = !$checked;
 			$modes[] = array(
 				'name' => 'user',
 				'values' => $userValues,
-				'checked' => $checked
+				'displayValue' => $sum,
+				'checked' => false
 			);
 			
 			if(!is_null($this->partenaire)) {
-				
 				$couponValues = $allValuesEmpty;
-				//Les arbres plantés par ses coupons
+				$sum = 0;
+
 				$resultsFromCoupon = Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), array_keys($allValuesEmpty));
 				foreach($resultsFromCoupon as $result) {
 					$couponValues[$result['programme_id']]['number'] += $result['nbTree'];
+					$sum += $result['nbTree'];
 				}
-				
+
+				$checked = !$checked;
 				$modes[] = array(
 					'name' => 'coupon',
 					'values' => $couponValues,
+					'displayValue' => $sum,
 					'checked' => $checked
 				);
 				
@@ -453,6 +462,7 @@ class plantationActions extends sfActions {
 		$modes[] = array(
 			'name' => 'all',
 			'values' => $allValues,
+			'displayValue' => Doctrine_Core::getTable('tree')->count() + sfConfig::get('app_hardcode_tree_number'),
 			'checked' => !$checked
 		);
 		

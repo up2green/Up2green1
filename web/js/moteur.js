@@ -260,6 +260,10 @@ function changeMoteur(event){
 	var ongletActif = $(".filtres > span[searchMode].active", "#searchForm");
 	var ongletCible = $(".filtres > span[searchMode="+valeur+"]", "#searchForm");
 
+	if(ongletCible.attr("searchMode") == '4') {
+		return;
+	}
+
 	// désactivation de l'ancien onglet
 	if(ongletActif.is('.green')) {
 		ongletActif.removeClass('green').addClass('gray');

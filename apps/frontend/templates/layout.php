@@ -19,29 +19,7 @@
 			
         </div>
 
-		<?php if ($sf_user->hasFlash('notice') || $sf_user->hasFlash('error')): ?>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				<?php if ($sf_user->hasFlash('notice')): ?>
-				$.gritter.add({
-					title: 'Notice',
-					class_name: 'flash_notice',
-					image: '/images/icons/48x48/tick.png',
-					text: "<?php echo $sf_user->getFlash('notice') ?>"
-				});
-				<?php endif ?>
-
-				<?php if ($sf_user->hasFlash('error')): ?>
-				$.gritter.add({
-					title: 'Notice',
-					class_name: 'flash_error',
-					image: '/images/icons/48x48/error.png',
-					text: "<?php echo $sf_user->getFlash('error') ?>"
-				});
-				<?php endif ?>
-			});
-		</script>
-		<?php endif ?>
+		<?php include_partial('html/flash'); ?>
 		
     </body>
 </html>

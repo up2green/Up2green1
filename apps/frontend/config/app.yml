@@ -13,7 +13,7 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
-  media_version: 2
+  media_version: 3
   cultures:
     enabled:
       fr: Français

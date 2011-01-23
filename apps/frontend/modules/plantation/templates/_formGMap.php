@@ -22,24 +22,33 @@
 				foreach($gMapModes as $gMapMode) :
 
 					$gMapModesLabels = array(
-						'user' => __("Les arbres plantés avec mon compte"),
-						'coupon' => __("Les arbres plantés avec mes coupons"),
-						'all' => __("Tous les arbres plantés"),
+						'user' => __("Ma forêt – mes arbres : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
+						'coupon' => __("Les arbres plantés avec mes coupons : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
+						'all' => __("Tous les arbres plantés : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
 						
 					);
 
-				if(isset($gMapMode['partenaireTitle']) && isset($gMapMode['partenaireId'])) {
-					$gMapModesLabels += array(
-						'partenaire-'.$gMapMode['partenaireId'] => __("Tous les arbes plantés par {partenaire}", array(
-							'partenaire' => $gMapMode['partenaireTitle']
-						))
-					);
-				}
+					if(isset($gMapMode['partenaireTitle']) && isset($gMapMode['partenaireId'])) {
+						$gMapModesLabels += array(
+							'partenaire-'.$gMapMode['partenaireId'] => __("Tous les arbes plantés par {partenaire} : {nbArbres}", array(
+								'{partenaire}' => $gMapMode['partenaireTitle'],
+								'{nbArbres}' => $gMapMode['displayValue']
+							))
+						);
+					}
 				
 				?>
 				<li>
 					<input type='radio' class="gMapMode" name="gMapMode" value="<?php echo $gMapMode['name'] ?>" id="gMapMode_<?php echo $gMapMode['name'] ?>"<?php echo ($gMapMode['checked']) ? ' checked="checked"' : '' ?>>
-					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" ><?php echo $gMapModesLabels[$gMapMode['name']] ?></label>
+					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" <?php echo $gMapMode['name'] === 'all' ? 'class="tooltip"' : '' ?> style="position:relative;">
+						<?php echo $gMapModesLabels[$gMapMode['name']] ?>
+						<?php if($gMapMode['name'] === 'all') : ?>
+						<img src="/images/icons/16x16/consulting.png" class="auto-tooltip-icon" style="top: 0;">
+						<span class="tooltip-content classic" style="padding:10px;width:250px;">
+							<?php echo __("Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.") ?>
+						</span>
+						<?php endif; ?>
+					</label>
 				</li>
 				<?php endforeach; ?>
 			</ul>

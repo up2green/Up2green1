@@ -9,6 +9,8 @@
 			var gMapModes = <?php echo json_encode($gMapModes); ?>;
 		</script>
 		<?php endif; ?>
+
+		<h3 style="padding: 5px; text-align: center;"><?php echo __("En 2010/2011") ?></h3>
 		
 		<?php use_helper('Javascript','GMap') ?>
 		<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>

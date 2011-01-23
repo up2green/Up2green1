@@ -8,7 +8,7 @@
 			</div>
 			<ul class="menu">
 				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>"><?php echo __("Le moteur") ?></a></li>
-				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_blog') ?>article/nos_objectifs"><?php echo __("L'association") ?></a></li>
+				<li><a class="button small green" href="/article/nos_objectifs"><?php echo __("L'association") ?></a></li>
 				<?php if(!$sf_user->isAuthenticated()):?>
 				<li><a class="button small green" href="<?php echo url_for("user/inscription"); ?>"><?php echo __("Créer mon compte") ?></a></li>
 				<?php endif; ?>

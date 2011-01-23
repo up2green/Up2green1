@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-01-23T20:35:02Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-01-23T21:25:09Z" product-name="messages" xml:space="default">
     <header/>
     <body>
       <trans-unit id="1">
-        <source>Etre acteur de la reforestation au fil de ses recherches</source>
-        <target>Plant trees on the Planet with your researches</target>
+        <source>Plantez des arbres sur la Planète au fil de vos recherches</source>
+        <target>Plant trees on the Planet while you search</target>
       </trans-unit>
       <trans-unit id="2">
         <source>Déjà {number} arbres plantés avec {affiliate}</source>
@@ -535,6 +535,14 @@
       <trans-unit id="153">
         <source>Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.</source>
         <target>Already 6749 trees planted in 2009/2010 with Trees for the Future, Planète Urgence and the French ONF in France, Ethiopia, India, Burundi, Haïti, Brazil, Honduras, Mali and Indonesia.</target>
+      </trans-unit>
+      <trans-unit id="154">
+        <source>En 2010/2011</source>
+        <target>In 2010/2011</target>
+      </trans-unit>
+      <trans-unit id="155">
+        <source>Si l'un de nos partenaires entreprises ou collectivités vous a offert un coupon reforestation saisissez le code ici. Les arbres correspondant s'incrémenteront automatiquement dans votre compte Up2green.</source>
+        <target>If one of our partners offered to you trees with a reforestation code, use it here. The corresponding trees will be credited on your Up2green account automatically</target>
       </trans-unit>
     </body>
   </file>

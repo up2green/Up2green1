@@ -32,7 +32,7 @@
             <div class="header">
 				<a href="/">
 					<div class="logo"></div>
-					<div class="slogan"><?php echo __("Etre acteur de la reforestation au fil de ses recherches") ?></div>
+					<div class="slogan"><?php echo __("Plantez des arbres sur la Planète au fil de vos recherches") ?></div>
 				</a>
             </div>
             

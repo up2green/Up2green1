@@ -13,7 +13,7 @@
 				<?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
 				<span class="tooltip">
 					<img src="/images/icons/16x16/consulting.png" class="auto-tooltip-icon">
-					<span class="tooltip-content classic" style="padding:10px;">
+					<span class="tooltip-content classic" style="padding:10px;width:400px;">
 						<?php echo __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :") ?>
 						<ol style="margin: 5px 25px;text-align:left;list-style-type:decimal;">
 							<li><?php echo __("Vous effectuez une recherche avec le moteur Up2green.") ?></li>

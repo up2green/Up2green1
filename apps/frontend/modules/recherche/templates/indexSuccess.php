@@ -31,7 +31,7 @@
 	}
 	elseif (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS, SearchEngine::SHOP))) {
 
-		echo '<div id="searchResults"';
+		echo '<div id="searchResults">';
 		
 		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
 //			if(!empty($singleShopResult)) {

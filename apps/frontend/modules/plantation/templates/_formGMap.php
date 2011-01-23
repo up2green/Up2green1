@@ -1,5 +1,5 @@
 <!-- module -->
-<div id="gmapWrapper" class="module">
+<div id="gmapWrapper" class="module" style="position:relative;" >
 	<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
 	<p class="title"><?php echo __("Les programmes de reforestation que nous soutenons") ?></p>
 	<div class="content">
@@ -45,7 +45,7 @@
 					<label for="gMapMode_<?php echo $gMapMode['name'] ?>" <?php echo $gMapMode['name'] === 'all' ? 'class="tooltip"' : '' ?> style="position:relative;">
 						<?php echo $gMapModesLabels[$gMapMode['name']] ?>
 						<?php if($gMapMode['name'] === 'all') : ?>
-						<img src="/images/icons/16x16/consulting.png" class="auto-tooltip-icon" style="top: 0;">
+						<img src="/images/icons/16x16/consulting.png">
 						<span class="tooltip-content classic" style="padding:10px;width:250px;">
 							<?php echo __("Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.") ?>
 						</span>

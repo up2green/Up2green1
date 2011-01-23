@@ -44,6 +44,24 @@ $(document).ready(function(){
 	var tooltipImg = '<img class="auto-tooltip-icon" src="/images/icons/16x16/consulting.png" />';
 	$('p.tooltip').append(tooltipImg);
 
+	if($.browser.msie && $.browser.version == '7.0') {
+		$('.tooltip').hover(function(e) {
+			$('.tooltip-content', this)
+				.hide()
+				.clone()
+				.addClass('clonedTooltip')
+				.appendTo('body').css({
+					position: 'absolute',
+					display:'block',
+					'z-index': '666', //browser of hell
+					left:e.pageX,
+					top:e.pageY
+				});
+		}, function() {
+			$('body > .tooltip-content.clonedTooltip').remove();
+		});
+	}
+
 	/* Language */
 
 	var langForm = $("form#formLanguage");

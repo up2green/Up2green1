@@ -1,4 +1,6 @@
-<?php include_partial('menuProfil'); ?>
+<?php include_partial('menuProfil');
+//var_dump($form['user']['last_name']);
+?>
 
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">
@@ -59,7 +61,43 @@
 					<tfoot>
 						<tr>
 							<td colspan="2">
-								<input class="button green small" type="submit" value="<?php echo __('Enregistrer'); ?>" />
+								<input class="button green small" type="submit" name="submit_profil" value="<?php echo __('Enregistrer'); ?>" />
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</fieldset>
+			<!-- Changer de mot de passe -->
+			<fieldset>
+				<legend><?php echo __('Mot de passe'); ?></legend>
+				<table class="form">
+					<tbody>
+						<tr>
+							<td class="label"><?php echo __("Ancien mot de passe :") ?></td>
+							<td class="field">
+								<?php echo $form['pass']['password_old']->renderError() ?>
+								<?php echo $form['pass']['password_old'] ?>
+							</td>
+						</tr>
+							<tr>
+							<td class="label"><?php echo __("Mot de passe :") ?></td>
+							<td class="field">
+								<?php echo $form['pass']['password']->renderError() ?>
+								<?php echo $form['pass']['password'] ?>
+							</td>
+							<tr>
+
+							<td class="label"><?php echo __("Confirmation du mot de passe :") ?></td>
+							<td class="field">
+								<?php echo $form['pass']['password_again']->renderError() ?>
+								<?php echo $form['pass']['password_again'] ?>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="2">
+								<input class="button green small" type="submit" name="submit_password" value="<?php echo __('Changer mon mot de passe'); ?>" />
 							</td>
 						</tr>
 					</tfoot>

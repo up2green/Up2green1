@@ -1,23 +1,9 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/13-View
-
-default:
-  metas:
-    title: "Up2green : Le Moteur de recherche"
+all:
   layout: moteur
   stylesheets:
-    - "reset.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "button.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "module.css?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "moteur.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "tooltip.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "jquery.gritter.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
-    - "min/jquery-1.4.4.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "min/jquery-ui-1.8.2.custom.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "min/jquery.gritter.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "jquery.scrollTo.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "moteur.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "min/jquery.text-overflow.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "moteur.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+  metas:
+    title: "Up2green : Le Moteur de recherche"

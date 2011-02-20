@@ -17,46 +17,49 @@
  * @property enum $remun_type
  * @property float $remun_min
  * @property float $remun_max
+ * @property boolean $safe_search_only
  * @property boolean $is_active
  * @property devise $devise
  * @property affiliatePlateforme $plateforme
  * @property category $category
  * @property Doctrine_Collection $engineTag
  * 
- * @method integer             getId()            Returns the current record's "id" value
- * @method integer             getIdCategory()    Returns the current record's "id_category" value
- * @method integer             getIdPlateforme()  Returns the current record's "id_plateforme" value
- * @method integer             getIdDevise()      Returns the current record's "id_devise" value
- * @method string              getSiteDisplay()   Returns the current record's "site_display" value
- * @method string              getSiteUrl()       Returns the current record's "site_url" value
- * @method clob                getHtml()          Returns the current record's "html" value
- * @method clob                getLogo()          Returns the current record's "logo" value
- * @method clob                getDescription()   Returns the current record's "description" value
- * @method enum                getRemunType()     Returns the current record's "remun_type" value
- * @method float               getRemunMin()      Returns the current record's "remun_min" value
- * @method float               getRemunMax()      Returns the current record's "remun_max" value
- * @method boolean             getIsActive()      Returns the current record's "is_active" value
- * @method devise              getDevise()        Returns the current record's "devise" value
- * @method affiliatePlateforme getPlateforme()    Returns the current record's "plateforme" value
- * @method category            getCategory()      Returns the current record's "category" value
- * @method Doctrine_Collection getEngineTag()     Returns the current record's "engineTag" collection
- * @method engine              setId()            Sets the current record's "id" value
- * @method engine              setIdCategory()    Sets the current record's "id_category" value
- * @method engine              setIdPlateforme()  Sets the current record's "id_plateforme" value
- * @method engine              setIdDevise()      Sets the current record's "id_devise" value
- * @method engine              setSiteDisplay()   Sets the current record's "site_display" value
- * @method engine              setSiteUrl()       Sets the current record's "site_url" value
- * @method engine              setHtml()          Sets the current record's "html" value
- * @method engine              setLogo()          Sets the current record's "logo" value
- * @method engine              setDescription()   Sets the current record's "description" value
- * @method engine              setRemunType()     Sets the current record's "remun_type" value
- * @method engine              setRemunMin()      Sets the current record's "remun_min" value
- * @method engine              setRemunMax()      Sets the current record's "remun_max" value
- * @method engine              setIsActive()      Sets the current record's "is_active" value
- * @method engine              setDevise()        Sets the current record's "devise" value
- * @method engine              setPlateforme()    Sets the current record's "plateforme" value
- * @method engine              setCategory()      Sets the current record's "category" value
- * @method engine              setEngineTag()     Sets the current record's "engineTag" collection
+ * @method integer             getId()               Returns the current record's "id" value
+ * @method integer             getIdCategory()       Returns the current record's "id_category" value
+ * @method integer             getIdPlateforme()     Returns the current record's "id_plateforme" value
+ * @method integer             getIdDevise()         Returns the current record's "id_devise" value
+ * @method string              getSiteDisplay()      Returns the current record's "site_display" value
+ * @method string              getSiteUrl()          Returns the current record's "site_url" value
+ * @method clob                getHtml()             Returns the current record's "html" value
+ * @method clob                getLogo()             Returns the current record's "logo" value
+ * @method clob                getDescription()      Returns the current record's "description" value
+ * @method enum                getRemunType()        Returns the current record's "remun_type" value
+ * @method float               getRemunMin()         Returns the current record's "remun_min" value
+ * @method float               getRemunMax()         Returns the current record's "remun_max" value
+ * @method boolean             getSafeSearchOnly()   Returns the current record's "safe_search_only" value
+ * @method boolean             getIsActive()         Returns the current record's "is_active" value
+ * @method devise              getDevise()           Returns the current record's "devise" value
+ * @method affiliatePlateforme getPlateforme()       Returns the current record's "plateforme" value
+ * @method category            getCategory()         Returns the current record's "category" value
+ * @method Doctrine_Collection getEngineTag()        Returns the current record's "engineTag" collection
+ * @method engine              setId()               Sets the current record's "id" value
+ * @method engine              setIdCategory()       Sets the current record's "id_category" value
+ * @method engine              setIdPlateforme()     Sets the current record's "id_plateforme" value
+ * @method engine              setIdDevise()         Sets the current record's "id_devise" value
+ * @method engine              setSiteDisplay()      Sets the current record's "site_display" value
+ * @method engine              setSiteUrl()          Sets the current record's "site_url" value
+ * @method engine              setHtml()             Sets the current record's "html" value
+ * @method engine              setLogo()             Sets the current record's "logo" value
+ * @method engine              setDescription()      Sets the current record's "description" value
+ * @method engine              setRemunType()        Sets the current record's "remun_type" value
+ * @method engine              setRemunMin()         Sets the current record's "remun_min" value
+ * @method engine              setRemunMax()         Sets the current record's "remun_max" value
+ * @method engine              setSafeSearchOnly()   Sets the current record's "safe_search_only" value
+ * @method engine              setIsActive()         Sets the current record's "is_active" value
+ * @method engine              setDevise()           Sets the current record's "devise" value
+ * @method engine              setPlateforme()       Sets the current record's "plateforme" value
+ * @method engine              setCategory()         Sets the current record's "category" value
+ * @method engine              setEngineTag()        Sets the current record's "engineTag" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -126,6 +129,10 @@ abstract class Baseengine extends sfDoctrineRecord
         $this->hasColumn('remun_max', 'float', null, array(
              'type' => 'float',
              'notnull' => true,
+             ));
+        $this->hasColumn('safe_search_only', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',

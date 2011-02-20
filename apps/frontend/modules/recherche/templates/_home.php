@@ -1,5 +1,14 @@
 <?php
 	$totalTrees = (int)$totalTrees + sfConfig::get('app_hardcode_tree_number');
+
+	$tooltip = __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :").
+		'<ol style=\'margin: 5px 25px;text-align:left;list-style-type:decimal;\'>
+			<li>'.__("Vous effectuez une recherche avec le moteur Up2green.").'</li>
+			<li>'.__("Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?").'</li>
+			<li>'.__("Le sponsor rémunère Yahoo pour chaque clic.").'</li>
+			<li>'.__("Yahoo reversent une grande partie de cette somme à l'association Up2green.").'</li>
+			<li>'.__("Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).").'</li>
+		</ol>';
 ?>
 
 <div id="home">
@@ -11,19 +20,7 @@
 		<div class="content">
 			<p style="padding:5px;">
 				<?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
-				<span class="tooltip">
-					<img src="/images/icons/16x16/consulting.png" class="auto-tooltip-icon">
-					<span class="tooltip-content classic" style="padding:10px;width:400px;">
-						<?php echo __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :") ?>
-						<ol style="margin: 5px 25px;text-align:left;list-style-type:decimal;">
-							<li><?php echo __("Vous effectuez une recherche avec le moteur Up2green.") ?></li>
-							<li><?php echo __("Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?") ?></li>
-							<li><?php echo __("Le sponsor rémunère Yahoo pour chaque clic.") ?></li>
-							<li><?php echo __("Yahoo reversent une grande partie de cette somme à l'association Up2green.") ?></li>
-							<li><?php echo __("Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).") ?></li>
-						</ol>
-					</span>
-				</span>
+				<img title="<?php echo $tooltip ?>" src="/images/icons/16x16/consulting.png" />
 			</p>
 			<p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
 			<p class="center">
@@ -51,12 +48,10 @@
 		<p class="title"><?php echo __("Statistiques") ?></p>
 		<div class="content">
 			<p><img class="img_map" src="/images/moteur/stats_maps_200x70.png" /></p>
-			<p class="center tooltip info" style="padding:10px 0;">
+			<p title="<?php echo __("Les forêts sont reconnues pour être de véritables puits de carbone.<br /> A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes") ?>" class="center" style="padding:10px 0;">
 				<?php echo __("Arbres plantés : {number}", array('{number}' => '<strong style="color:#015F00;">'.$totalTrees.'</strong>')) ?> <br/>
 				<?php echo __("soit plus de {number} tonnes de CO<sub>2</sub> qui seront stockées pendant leur croissance", array('{number}' => '<strong style="color:#015F00;">'.number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' ').'</strong>')) ?>
-				<span class="tooltip-content classic">
-					<?php echo __("Les forêts sont reconnues pour être de véritables puits de carbone.<br /> A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes") ?>
-				</span>
+				<img src="/images/icons/16x16/consulting.png" />
 			</p>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

@@ -8,7 +8,7 @@
 		else: ?>
 		<?php if (isset($error)) echo $error ?>
 		<form method="post" action="" name="pwd">
-				<input type="text" name="username" value="<?php echo __("Nom d'utilisateur") ?>" title="<?php echo __("Nom d'utilisateur") ?>" />
+				<input type="text" name="username" value="<?php echo __("Nom d'utilisateur") ?>" placeholder="<?php echo __("Nom d'utilisateur") ?>" />
 				<input class="button small white" type="submit" name="forgotPassword" value="<?php echo __('Envoyer') ?>" />
 		</form>
 		<p style="margin:25px;"><i>

@@ -1,0 +1,66 @@
+<?php
+use_stylesheet('marketing/sdf.css?v='.sfConfig::get('app_media_version'));
+
+$arrayNombre = array(
+	substr($nbArbres, -5, 1),
+	substr($nbArbres, -4, 1),
+	substr($nbArbres, -3, 1),
+	substr($nbArbres, -2, 1),
+	substr($nbArbres, -1, 1),
+);
+
+$exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
+?>
+
+<div id="content">
+
+<h1 id="header"><img src="/images/marketing/SdF/accroche.png" alt="Offrez 1 arbre à la terre" /></h1>
+<table id="content-inner">
+	<tr>
+		<td id="content-inner-left">
+			<img src="/images/marketing/SdF/logo-sdf.png" alt="Logo Storistes de France"/>
+			<p style="text-align: center; font-size: 18px; margin-top: 20px; padding: 10px;">
+				Déjà
+			</p>
+			<div id="compteur">
+				<div class="chiffre"><?php echo $arrayNombre[0] ?></div>
+				<div class="chiffre"><?php echo $arrayNombre[1] ?></div>
+				<div class="chiffre"><?php echo $arrayNombre[2] ?></div>
+				<div class="chiffre"><?php echo $arrayNombre[3] ?></div>
+				<div class="chiffre"><?php echo $arrayNombre[4] ?></div>
+			</div>
+			<p style="padding: 5px; text-align: center; font-size: 18px; line-height: 21px;">
+				arbres plantés avec Storistes de France
+			</p>
+		</td>
+		<td id="content-inner-center">
+			<h2 class="accroche">Faites grandir la fôret avec Storistes de France !</h2>
+			<h3 class="accroche">Devenons ensemble acteurs de la reforestation et choisissez où planter votre arbre sur la Planète.</h3>
+			<!-- module content -->
+			<div class="module">
+				<div class="content">
+					<h3>Entrez votre code sécurisé pour accéder à la plate forme de plantation et choisir votre programme de reforestation.</h3>
+
+					<form action="<?php echo sfConfig::get('app_url_plantation'); ?>" method="post">
+						<p>
+							<input type="text" name="code" value="Numéro de coupon" placeholder="Numéro de coupon" />
+							<input type="submit" class="button green medium" name="numCouponToUse" value="Plantez" />
+							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
+						</p>
+					</form>
+
+				</div>
+				<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
+			</div>
+		</td>
+		<td id="content-inner-right">
+			<a target="_blank" href="<?php echo sfConfig::get('app_url_moteur') ?>">
+				<img src="/images/logo/200x200/earth-hand.png" alt="Logo Up2green"/>
+			</a>
+		</td>
+	</tr>
+</table>
+<div class="clear"></div>
+	
+
+</div>

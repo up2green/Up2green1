@@ -168,38 +168,6 @@ $(function() {
 							});
 							break;
 
-						case SHOP :
-							if($(this).find('result').length) {
-								$('#searchResults > .more-result').before('<div class="shop-result"></div>');
-							}
-							$(this).find('result').each(function(){
-								var html = '<div class="result hidden">';
-
-								html += '<table>';
-								html += '<tr>';
-
-								if($(this).find('logo').text() != '') {
-									html += '<td class="affiliate-logo">';
-									html += $(this).find('logo').text();
-									html += '</td>';
-								}
-
-								html += '<td class="affiliate-content">';
-								html += $(this).find('html').text();
-								html += '</td>';
-
-								html += '<td class="affiliate-gains">';
-								html += '<h3>Gains :</h3>';
-								html += '<p>'+$(this).find('gains').text()+'</p>';
-								html += '</td>';
-
-								html += '</tr>';
-								html += '</table>';
-								html += '</div>';
-
-								$('#searchResults .shop-result:last').append(html);
-							});
-							break;
 					}
 
 					if($(this).find('result').length || $(this).find('affiliateResult').length || $(this).find('pubResult').length) {
@@ -259,10 +227,6 @@ function changeMoteur(event){
 	var valeur = event.data.mode;
 	var ongletActif = $(".filtres > span[searchMode].active", "#searchForm");
 	var ongletCible = $(".filtres > span[searchMode="+valeur+"]", "#searchForm");
-
-	if(ongletCible.attr("searchMode") == '4') {
-		return;
-	}
 
 	// désactivation de l'ancien onglet
 	if(ongletActif.is('.green')) {

@@ -12,7 +12,7 @@
 
 <?php else : ?>
 
-<form name="plant" action="" method="post">
+<form name="plant" action="<?php echo url_for("plantation/confirm"); ?>" method="post">
 	<div class="module scrollableWrapper">
 		
 		<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
@@ -52,13 +52,6 @@
 			</span>
 			<?php endif; ?>
 
-			<?php if(!$sf_user->isAuthenticated()) : ?>
-			<hr />
-			<p style="text-align: center; color: rgb(63, 111, 0); font-size: 1.1em; font-weight: bold;">
-				<?php echo __("Afin de recevoir une attestation, merci de remplir votre email ici :") ?>
-			</p>
-			<p><?php echo __("E-mail : {input}", array('{input}' => '<input type="text" name="email_user_deco" />')) ?></p>
-			<?php endif; ?>
 			<br />
 		
 			<p class="center">

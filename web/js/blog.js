@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   // On masque les programmes du header
   $('div.diapo').not(':first').hide();
   $('div.diapo:first').addClass('selected');
@@ -58,8 +59,9 @@ $(document).ready(function(){
   
   	// Gestion du menu principal
  	$('li', '#main-menu').hover(function(){
-  		$(this).find('.module').stop(false, true).fadeIn(500);
+  		$(this).find('.module').stop(false, true).show();
 	}, function(){
-  		$(this).find('.module').stop(false, true).fadeOut(500);
+  		$(this).find('.module').stop(false, true).hide();
 	});
+
 });

@@ -39,13 +39,11 @@ a
 }
 
 #menu {
-	list-style: none;
-	padding: 0 20px;
-	margin: 0;
-	float: left;
-	width: 100%;
-	background: #222;
-	background: url(/images/backend/topnav_bg.gif) repeat-x;
+    background: url("/images/backend/topnav_bg.gif") repeat-x scroll 0 0 transparent;
+    height: 40px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0 20px;
 }
 
 	#menu li {

@@ -87,24 +87,36 @@ class userActions extends sfActions {
 		
 		$userForm = new sfGuardUserForm($this->getUser()->getGuardUser());
 		$profilForm = new profilForm($this->getUser()->getGuardUser()->getProfile());
+		$passwordForm = new changeUserPasswordForm($this->getUser()->getGuardUser());
 
-		$userForm->useFields(array('first_name', 'last_name'));
+		$userForm->useFields(array('first_name', 'last_name', 'password'));
 		$profilForm->useFields(array('is_newsletter'));
 
 		$this->form = new sfForm();
 		$this->form->embedForm('profil', $profilForm);
 		$this->form->embedForm('user', $userForm);
+		$this->form->embedForm('pass', $passwordForm);
 
 		$this->nbTrees = Doctrine_Core::getTable('tree')->countFromUser($this->getUser()->getGuardUser()->getId());
 		
 		if($request->isMethod('post')) {
 		 
 			$userForm->bind($request->getPostParameter('user'));
+			$profilForm->bind($request->getPostParameter('user'));
 
-			$profilPostData = $request->getPostParameter('profil');
-			$profilForm->bind($profilPostData);
-
-			if($userForm->isValid() && $profilForm->isValid()) {
+			$passwordData = $request->getPostParameter('pass');
+			$passwordForm->bind($request->getPostParameter('pass'));
+			
+			if($request->getPostParameter('submit_password')){
+				if($passwordForm->isValid()){
+					$passwordForm->save();
+					$this->getUser()->setFlash('notice', 'modif-ok');
+				}
+				else {
+					$this->getUser()->setFlash('error', 'form-error');
+				}
+			}
+			else if($userForm->isValid() && $profilForm->isValid()) {
 
 				$profil = $profilForm->save();
 				$user = $userForm->save();

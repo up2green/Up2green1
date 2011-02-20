@@ -22,8 +22,11 @@ default:
   javascripts:
     - "min/jquery-1.4.4.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "min/jquery.gritter.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.timers.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.dropshadow.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "mbTooltip.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "jquery.scrollTo.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "main.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "moteur.js?v=<?php echo sfConfig::get('app_media_version') ?>"
   has_layout: true
   title: Up2green
   layout: layout

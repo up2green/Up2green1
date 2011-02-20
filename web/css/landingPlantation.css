@@ -50,3 +50,7 @@ h2 {
 h3 {
 	font-size: 1.2em;
 }
+
+#map {
+	border:5px solid #FFFFFF;
+}

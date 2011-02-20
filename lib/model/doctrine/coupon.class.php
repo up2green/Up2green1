@@ -11,10 +11,15 @@
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class coupon extends Basecoupon {
-    public function plantArbre($nb, programme $programme, $user) {
+    public function plantArbre($nb, $programme, $user) {
 	for ($i = 0; $i < $nb; $i ++) {
 	    $tree = new tree();
-	    $tree->setProgramme($programme);
+		if(is_integer($programme)) {
+			$tree->setProgrammeId($programme);
+		}
+		else {
+			$tree->setProgramme($programme);
+		}
 	    $tree->save();
 
 	    $treeCoupon = new treeCoupon();
@@ -23,10 +28,10 @@ class coupon extends Basecoupon {
 	    $treeCoupon->save();
 
 	    if ($user->getGuardUser()) {
-		$treeUser = new treeUser();
-		$treeUser->setTree($tree);
-		$treeUser->setUser($user->getGuardUser());
-		$treeUser->save();
+			$treeUser = new treeUser();
+			$treeUser->setTree($tree);
+			$treeUser->setUser($user->getGuardUser());
+			$treeUser->save();
 	    }
 	}
     }

@@ -1,0 +1,76 @@
+body {
+    background: url("/images/marketing/SdF/background.jpg") no-repeat scroll center top transparent;
+	color: #FFFFFF;
+}
+
+#content {
+	margin-top: 100px;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2.accroche {
+	font-size: 26px;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+h3.accroche {
+	font-size: 18px;
+    padding: 10px 60px;
+    text-align: center;
+}
+
+#content-inner td{
+	vertical-align: top;
+}
+
+#content-inner {
+    margin: 50px 50px 80px;
+    width: 90%;
+}
+
+#content-inner-left {
+	width:20%;
+}
+
+#content-inner-center div.module {
+	margin: 20px auto;
+    width: 325px;
+	float: none;
+	position: relative;
+	z-index: 10;
+}
+
+content-inner-middle {
+	text-align: center;
+}
+#content-inner-right {}
+
+#compteur {
+    display: block;
+    height: 40px;
+    padding-left: 50px;
+}
+
+#compteur .chiffre {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    color: #41A62A;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    height: 25px;
+    padding: 4px 3px;
+    text-align: center;
+    width: 15px;
+}
+
+#compteur .exposant {
+	float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 5px;
+}

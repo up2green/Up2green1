@@ -12,7 +12,7 @@
 	</div>
 	<div class="tool_box">
 		<div id="language-wrapper">
-			<?php echo include_component('user', 'language', array('tooltipRight' => true)); ?>
+			<?php echo include_component('user', 'language'); ?>
 		</div>
 	</div>
 </div>

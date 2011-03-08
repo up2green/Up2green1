@@ -28,6 +28,10 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 
 ?>
 
+<?php if (isset($partenaire) && $partenaire->getTitle() === 'STORISTES DE FRANCE') : ?>
+<style>body{background: url("/images/marketing/SdF/backgroundSite.jpg") no-repeat fixed center center transparent;}</style>
+<?php endif; ?>
+
 <div id="content" style="width:1050px;">
 
 <div id="title" class="module" style="width:94%">

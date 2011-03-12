@@ -10,7 +10,8 @@ class generationCouponPartenaireForm extends BaseForm {
                 'type_coupon'    => new sfValidatorChoice(array('choices' => array_keys(couponGenTable::getTabChoices()), 'required'=>'true')),
                 'nombre'   => new sfValidatorInteger(array('required'=>'true')),
                 'prefix'   => new sfValidatorString(array(
-					'max_length' => '5'
+					'max_length' => '5',
+					'required'=>false
 				)),
         ));
 

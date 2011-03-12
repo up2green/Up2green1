@@ -171,16 +171,17 @@ class SearchEngine {
 		else {
 			$url .= "&ip=92.243.6.168";
 		}
-		
+
 		if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 			$url .= "&xfip=".$_SERVER['HTTP_X_FORWARDED_FOR'];
 		}
-		
+
 		$dom = new DomDocument();
 		$dom->load($url);
+		
 		$results = array();
-
 		$i= 0;
+		
 		foreach ($dom->getElementsByTagName("ad") as $result){
 			if($i < $min) {
 				$i++;
@@ -242,7 +243,13 @@ class SearchEngine {
 				? sfContext::getInstance()->getUser()->getGuardUser()->getId()
 				: Doctrine::getTable('sfGuardUser')->getUp2greenId();
 
-		return str_replace('{up2greenId}', $idUser, $value);
+		if(preg_match('/{up2greenID}/', $value)) {
+			return str_replace('{up2greenID}', $idUser, $value);
+		}
+		else {
+			$pattern = '/(http:\/\/[^\'"]*)/';
+			return preg_replace($pattern, '$1'.'&up2greenID='.$idUser, $value);
+		}
 	}
 
 }

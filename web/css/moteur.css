@@ -190,6 +190,7 @@ div.shop-result div.result td.affiliate-logo {
 
 div.shop-result div.result td.affiliate-content {
 	max-width:400px;
+	text-align: center;
 }
 
 div.shop-result div.result td.affiliate-gains {

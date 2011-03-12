@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-01-23T21:25:09Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-02-20T20:49:57Z" product-name="messages" xml:space="default">
     <header/>
     <body>
       <trans-unit id="1">
@@ -304,10 +304,6 @@
         <source>Plantez vos arbres grâce à notre plateforme de reforestion !</source>
         <target>Plant your trees thanks to our reforestation platform online !</target>
       </trans-unit>
-      <trans-unit id="81">
-        <source>Les programmes de reforestation que nous soutenons</source>
-        <target>Reforestation programs we support</target>
-      </trans-unit>
       <trans-unit id="82">
         <source>Retour à la Carte</source>
         <target>Back to the map</target>
@@ -331,14 +327,6 @@
       <trans-unit id="87">
         <source>(-Inf,0]Vous n'avez pas d'arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter</source>
         <target>(-Inf,0]You don't have any tree to be planted|[1] You have 1 tree to be planted|(1,+Inf]You have {number} trees to be planted</target>
-      </trans-unit>
-      <trans-unit id="88">
-        <source>Afin de recevoir une attestation, merci de remplir votre email ici :</source>
-        <target>To get a free certificate, please fill in your email address here:</target>
-      </trans-unit>
-      <trans-unit id="89">
-        <source>E-mail : {input}</source>
-        <target>E-mail : {input}</target>
       </trans-unit>
       <trans-unit id="90">
         <source>Planter</source>
@@ -460,10 +448,6 @@
         <source>Veuillez planter tous vos arbres avant de valider !</source>
         <target>Please plant all your trees before committing!</target>
       </trans-unit>
-      <trans-unit id="129">
-        <source>Grâce à ce lien sponsorisé gagnez des crédits arbres.</source>
-        <target>You may earn credits trees clicking this sponsored link.</target>
-      </trans-unit>
       <trans-unit id="130">
         <source>Vous avez été gagné des crédits arbres sur votre compte !</source>
         <target>You've earned credits trees on your account!</target>
@@ -512,10 +496,6 @@
         <source>Vos modifications ont bien été prises en compte.</source>
         <target>Your changes have been taken into account.</target>
       </trans-unit>
-      <trans-unit id="148">
-        <source>&lt;strong&gt;Le moteur « Achats » revient bientôt&lt;/strong&gt;… pour gagner des arbres à chaque achat en ligne sur l'un des 750 sites marchands affiliés à l'association (quelques temps après votre achat sur l'un des sites en question vous recevrez dans votre compte Up2green le nombre de crédits arbres fonction du montant de votre achat).</source>
-        <target>&lt;strong&gt;The « Shopping » search engine is coming back soon&lt;/strong&gt;… to collect trees for each purchase online on one of the 750 merchant sites affiliated to the association.</target>
-      </trans-unit>
       <trans-unit id="149">
         <source>Ma forêt – mes arbres : {nbArbres}</source>
         <target>My forest – my trees : {nbArbres}</target>
@@ -543,6 +523,62 @@
       <trans-unit id="155">
         <source>Si l'un de nos partenaires entreprises ou collectivités vous a offert un coupon reforestation saisissez le code ici. Les arbres correspondant s'incrémenteront automatiquement dans votre compte Up2green.</source>
         <target>If one of our partners offered to you trees with a reforestation code, use it here. The corresponding trees will be credited on your Up2green account automatically</target>
+      </trans-unit>
+      <trans-unit id="156">
+        <source>Ancien mot de passe :</source>
+        <target>Old password :</target>
+      </trans-unit>
+      <trans-unit id="157">
+        <source>Changer mon mot de passe</source>
+        <target>Change my password</target>
+      </trans-unit>
+      <trans-unit id="158">
+        <source>Résumé : </source>
+        <target>Summary</target>
+      </trans-unit>
+      <trans-unit id="159">
+        <source>(-Inf,1]un arbre dans le programme {program}|(1,+Inf]{number} arbres dans le programme {program}</source>
+        <target>(-Inf,1]a tree in the program {program}|(1,+Inf]{number} trees in the program {program}</target>
+      </trans-unit>
+      <trans-unit id="160">
+        <source>Recevoir une attestation ?</source>
+        <target>Receive a certificate?</target>
+      </trans-unit>
+      <trans-unit id="161">
+        <source>Si vous désirez recevoir une attestation, merci de remplir le formulaire ci-dessous :</source>
+        <target>If you wish to receive a certificate, thank you for filling out the form below:</target>
+      </trans-unit>
+      <trans-unit id="162">
+        <source>Prénom</source>
+        <target>First name</target>
+      </trans-unit>
+      <trans-unit id="163">
+        <source>Nom</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="164">
+        <source>E-mail</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="165">
+        <source>Confirmer et planter</source>
+        <target>Confirm and plant</target>
+      </trans-unit>
+      <trans-unit id="166">
+        <source>Revenir à la plantation</source>
+        <target>Back to the plantation</target>
+      </trans-unit>
+      <trans-unit id="167">
+        <source>Numéro de coupon invalide</source>
+        <target>Coupon number invalid</target>
+      </trans-unit>
+      <trans-unit id="168">
+        <source>Vous n'avez pas assez de crédits arbres.</source>
+        <target>You do not have enough credits.</target>
+      </trans-unit>
+      <trans-unit id="169">
+        <source>Formulaire invalide.</source>
+        <target>Invalid form.</target>
       </trans-unit>
     </body>
   </file>

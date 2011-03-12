@@ -1,8 +1,8 @@
 <?php
 $treeImg = '<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />';
 
-$from = $result['remun_min'];
-$to = $result['remun_max'];
+$from = $result['remun_min']/2;
+$to = $result['remun_max']/2;
 
 if($result['remun_type'] === 'pourcent') {
 	$from = $from * 30 / (sfConfig::get('app_prix_arbre') * 100);
@@ -37,11 +37,8 @@ if($result['remun_type'] === 'pourcent') {
 			<td class="affiliate-content"><?php echo html_entity_decode($result['html']); ?></td>
 			<td class="affiliate-gains">
 				<h3><?php echo __("Gains :"); ?></h3>
-				<p class="tooltip">
+				<p title="<?php echo __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.") ?>">
 					<?php echo $gain; ?>
-					<span class="tooltip-content classic">
-						<?php echo __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.") ?>
-					</span>
 				</p>
 			</td>
 		</tr>

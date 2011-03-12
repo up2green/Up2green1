@@ -2,30 +2,6 @@
     <div id="center">
 	<?php
 
-	$errorLabels = array(
-		'coupon-already-user' => __("Ce coupon a déjà été utilisé"),
-		'plant-succes' => __("Vos arbres ont bien été plantés !"),
-		'email-confirmation' => __("Vous aller recevoir un email attestant de votre plantation."),
-		'error-plant-all' => __("Veuillez planter tous vos arbres avant de valider !"),
-		'error-deco' => __("Vous avez été déconnecté"),
-	);
-
-	$errorImages = array(
-		'coupon-already-user' => '/images/icons/48x48/error.png',
-		'plant-succes' => '/images/icons/48x48/tick.png',
-		'email-confirmation' => '/images/icons/48x48/tick.png',
-		'error-plant-all' => '/images/icons/48x48/warning.png',
-		'error-deco' => '/images/icons/48x48/error.png',
-	);
-
-	$errorTitres = array(
-		'coupon-already-user' => __("Erreur"),
-		'plant-succes' => __("Info"),
-		'email-confirmation' => __("Info"),
-		'error-plant-all' => __("Erreur"),
-		'error-deco' => __("Erreur"),
-	);
-
 	if(
 		$sf_user->isAuthenticated() &&
 		$view === 'listeCouponsPartenaires' &&
@@ -39,7 +15,19 @@
 		}
 	}
 	else {
-	    include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
+		echo '
+			<!-- module -->
+			<div id="gmapWrapper" class="module" style="position:relative;" >
+				<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
+				<p class="title"><?php echo __("Les programmes de reforestation que nous soutenons") ?></p>
+				<div class="content">';
+		include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes));
+
+		echo '<div class="clear"></div>
+			</div>
+				'.file_get_contents(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php').'
+			</div>
+		';
 	}
 
 	echo '</div>';
@@ -76,20 +64,5 @@
 	}
 	
 	?>
-	<?php if (sizeof($errors)): ?>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			<?php foreach($errors as $error) : ?>
-			$.gritter.add({
-				title: "<?php echo $errorTitres[$error] ?>",
-				class_name: 'flash_notice',
-				image: "<?php echo $errorImages[$error] ?>",
-				text: "<?php echo $errorLabels[$error] ?>"
-			});
-			<?php endforeach; ?>
-		});
-	</script>
-	<?php endif ?>
-
     </div>
 </div>

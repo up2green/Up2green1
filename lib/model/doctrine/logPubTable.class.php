@@ -22,8 +22,8 @@ class logPubTable extends Doctrine_Table
         return $this->createQuery('l')
 			->select('l.id')
 			->where('l.user_id = ?', $idUser)
-			->where('l.url = ?', $url)
-			->where('l.created_at > (NOW() - INTERVAL 1 MINUTE)')
+			->andWhere('l.url = ?', $url)
+			->andWhere('l.created_at > (NOW() - INTERVAL 1 MINUTE)')
 			->fetchArray();
     }
 }

@@ -1,10 +1,8 @@
-default:
-  metas:
-    title: "Up2green : Le site Associatif"
-
 all:
   stylesheets:
     - "blog.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
     - "blog.js?v=<?php echo sfConfig::get('app_media_version') ?>"
   layout: blog
+  metas:
+    title: "Up2green : Le site Associatif"

@@ -1,8 +1,8 @@
 <?php
 $treeImg = htmlentities(htmlentities('<img src="/images/icons/16x16/arbre.png" alt="Arbre(s)" />'));
 
-$from = $result['remun_min'];
-$to = $result['remun_max'];
+$from = $result['remun_min']/2;
+$to = $result['remun_max']/2;
 
 if($result['remun_type'] === 'pourcent') {
 	$from = $from * 30 / (sfConfig::get('app_prix_arbre') * 100);
@@ -25,7 +25,7 @@ else {
 if($result['remun_type'] === 'pourcent') {
 	$gain = addslashes(__("{gain} pour 30€ d'achat", array('{gain}' => $gain)));
 }
-
+$tooltip = __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.");
 ?>
 
 <affiliateResult>
@@ -35,11 +35,8 @@ if($result['remun_type'] === 'pourcent') {
 		<?php echo htmlentities('<h3>');?>
 		<?php echo __('Gains :'); ?>
 		<?php echo htmlentities('</h3>');?>
-		<?php echo htmlentities('<p class="tooltip">');?>
+		<?php echo '&lt;p title="'.$tooltip.'"&gt;';?>
 			<?php echo html_entity_decode($gain) ?>
-			<?php echo htmlentities('<span class="tooltip-content classic">');?>
-				<?php echo __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.") ?>
-			<?php echo htmlentities('</span>');?>
 		<?php echo htmlentities('</p>');?>
 	</tooltip>
 </affiliateResult>

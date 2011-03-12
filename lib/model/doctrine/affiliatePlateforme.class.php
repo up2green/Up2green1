@@ -12,4 +12,7 @@
  */
 class affiliatePlateforme extends BaseaffiliatePlateforme
 {
+	public function __toString(){
+        return "[" . $this->id . "] " . $this->unique_name;
+    }
 }

@@ -1,17 +1,14 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/fr/13-View
+mapSuccess:
+  stylesheets:
+    - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+  javascripts:
+    - "plantation.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "plantation_planter.js?v=<?php echo sfConfig::get('app_media_version') ?>"
 
+all:
+  stylesheets:
+    - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
 default:
   metas:
     title: Up2green Reforestation
   layout: landing
-  stylesheets:
-    - "reset.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "button.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "module.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-  javascripts:
-    - "min/jquery-1.4.2.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "min/jquery-ui-1.8.2.custom.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
-    - "main.js?v=<?php echo sfConfig::get('app_media_version') ?>"

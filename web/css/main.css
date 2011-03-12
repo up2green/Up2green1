@@ -23,6 +23,16 @@ small {
 .clear{clear:both;}
 .hidden{display:none;}
 
+a.backlink {
+	color: #0F3F00;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a.backlink:hover {
+	text-decoration: none;
+}
+
 p.warning {
 	border:1px solid #FF5A00;
 	color:#FF7124;
@@ -335,9 +345,3 @@ ul.list  {
 			position:absolute;
 			right:0;
 		}
-
-.auto-tooltip-icon {
-	margin-left:2px;
-	margin-top:-2px;
-	position:absolute;
-}

@@ -16,5 +16,23 @@ class engineForm extends BaseengineForm
 		$this['created_at'],
 		$this['updated_at']
 	);
+
+	$this->widgetSchema['id_plateforme'] = new sfWidgetFormDoctrineChoice(array(
+		'model' => 'affiliatePlateforme',
+	));
+
+	$this->validatorSchema['id_plateforme'] = new sfValidatorDoctrineChoice(array(
+		'required' => true,
+		'model' => 'affiliatePlateforme'
+	));
+
+	$this->widgetSchema['id_devise'] = new sfWidgetFormDoctrineChoice(array(
+		'model' => 'devise',
+	));
+
+	$this->validatorSchema['id_devise'] = new sfValidatorDoctrineChoice(array(
+		'required' => true,
+		'model' => 'devise'
+	));
   }
 }

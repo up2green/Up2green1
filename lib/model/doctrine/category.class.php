@@ -28,13 +28,20 @@ class category extends Basecategory
   	$output = array($this['level'] => $this['unique_name']);
 
 	$parent = $this;
+	$startLevel = $parent['level'];
+
 	while(
 		$parent->getNode()->isValidNode() &&
 		!$parent->getNode()->isRoot() &&
-		$parent['level'] > 0){
+		$parent['level'] > 0 &&
+		$parent['level'] > $startLevel - 2 ){
 
 		$parent = $parent->getNode()->getParent();
 		$output += array($parent['level'] => $parent['unique_name']);
+	}
+
+	if($parent['level'] > 0) {
+		$output += array(($parent['level']-1) => '...');
 	}
 		
 		ksort($output);  	

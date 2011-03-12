@@ -12,4 +12,7 @@
  */
 class devise extends Basedevise
 {
+	public function __toString(){
+        return "[" . $this->id . "] " . $this->unique_name;
+    }
 }

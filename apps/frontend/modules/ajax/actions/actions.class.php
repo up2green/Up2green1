@@ -57,14 +57,27 @@ class ajaxActions extends sfActions
       $minAffiliate = $params->get('nb_affiliate');
       $text = $params->get('text_search');
       $moteur = $params->get('moteur_search');
-
       $engine = new SearchEngine($text, $moteur);
 
-//	  $affiliateResult = $engine->getOneShopResult($minAffiliate);
-	  $affiliateResult = array();
+	  $this->pubResults = array();
+	  $this->results = array();
 
-      $this->results = $engine->getResults($min);
-      $this->affiliateResults = empty($affiliateResult) ? array() : array($affiliateResult);
-      $this->pubResults = $engine->getPubResults(2, $minPub);
+	  switch($moteur) {
+		  case SearchEngine::SHOP :
+			  $this->affiliateResults = $engine->getResults($min);
+			  break;
+		  case SearchEngine::WEB :
+		  case SearchEngine::NEWS :
+			  $this->pubResults = $engine->getPubResults(2, $minPub);
+		  default :
+			  $this->affiliateResults = $engine->getOneShopResult($minAffiliate);
+			  $this->results = $engine->getResults($min);
+			  break;
+	  }
+
+      if(empty($this->affiliateResults)) {
+		  $this->affiliateResults = array();
+	  }
+      
   }
 }

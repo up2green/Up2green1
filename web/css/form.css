@@ -33,6 +33,7 @@ width: 100%;
 table.form td.label {
 	color:#909090;
 	text-align:right;
+	padding-right: 10px;
 }
 
 table.form td.field {

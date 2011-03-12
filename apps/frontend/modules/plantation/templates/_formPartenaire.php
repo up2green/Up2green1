@@ -20,7 +20,7 @@
 	<p class="center">
 		<?php
 		if($sf_user->isAuthenticated() && !is_null($partenaire)) {
-			if($view === 'listeCouponsPartenaires') {
+			if(isset($view) && $view === 'listeCouponsPartenaires') {
 				echo '<a href="/" class="button green">'.__("Retour à la Carte").'</a>';
 			}
 			else {

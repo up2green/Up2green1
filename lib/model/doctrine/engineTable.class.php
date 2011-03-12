@@ -16,6 +16,7 @@ class engineTable extends Doctrine_Table
 		return $this->addActiveQuery()
 			->where('site_display LIKE ?', '%'.$search.'%')
 			->orWhere('description LIKE ?', '%'.$search.'%')
+			->orWhere('html LIKE ?', '%'.$search.'%')
 			->limit($number)
 			->offset($offset);
 	}
@@ -68,7 +69,7 @@ class engineTable extends Doctrine_Table
 
 	public function addActiveQuery(Doctrine_Query $q = null)
 	{
-		return $this->addQuery($q)->andwhere('e.is_active = ?', 1);
+		return $this->addQuery($q)->andwhere('e.is_active = ?', '1');
 	}
 
 	public function addQuery(Doctrine_Query $q = null)

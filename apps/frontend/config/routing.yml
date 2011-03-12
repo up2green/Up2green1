@@ -44,8 +44,12 @@ couponsUsedCSV:
 ####################
 
 landing_plantation:
-  url: /landing/plantation/:partenaireOffset
-  param: {module: landing, action: plantation, partenaireOffset: 0}
+  url: /landing/plantation/:partenaireOffset/:operation
+  param: {module: landing, action: plantation, partenaireOffset: 0, operation: 0}
+
+landing_map:
+  url: /landing/map/:partenaireOffset/:operation
+  param: {module: landing, action: map, partenaireOffset: 0, operation: 0}
 
 ####################
 ##### BLOG
@@ -95,6 +99,10 @@ plantation:
   url: /plantation
   param: { module: plantation, action: index}
 
+plantation_user_profil:
+  url: /plantation/user/profil
+  param: { module: user, action: profil}
+
 plantation_liste_coupon_partenaire:
   url: /plantation/listeCouponsPartenaires
   param: { module: plantation, action: index, view: listeCouponsPartenaires }
@@ -107,17 +115,25 @@ plantation_logout:
   url:   /plantation/logout
   param: { module: sfGuardAuth, action: signout }
   
+plantation_confirmation:
+  url: /plantation/confirm
+  param: {module: plantation, action: confirm}
+
+plantation_plant:
+  url: /plantation/plant
+  param: {module: plantation, action: plant}
+
 plantation_landing_homepage:
   url: /plantation/landing
   param: {module: landing, action: index}
-  
-plantation_landing_plantation_homepage:
-  url: /plantation/landing/plantation
-  param: {module: landing, action: plantation}
 
 plantation_landing_plantation:
-  url: /plantation/landing/plantation/:partenaireOffset
-  param: {module: landing, action: plantation, partenaireOffset: 0}
+  url: /plantation/landing/plantation/:partenaireOffset/:operation
+  param: {module: landing, action: plantation, partenaireOffset: 0, operation: 0}
+
+plantation_landing_map:
+  url: /plantation/landing/map/:partenaireOffset/:operation
+  param: {module: landing, action: map, partenaireOffset: 0, operation: 0}
 
 plantation_change_language:
   url:   /plantation/change_language

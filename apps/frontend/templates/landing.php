@@ -27,6 +27,7 @@
 	</head>
 	<body>
 		<?php echo $sf_content ?>
+		<?php include_partial('html/flash'); ?>
 	</body>
 </html>
 

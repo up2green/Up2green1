@@ -174,9 +174,15 @@ class plantationActions extends sfActions {
 
 		if($sendMail && !empty($email)) {
 			// on construit l'attestation :
-			$filename = $sdf ? $this->buildAttestationSdF($email, $trees, $prenom, $nom) : $this->buildAttestation($email, $trees, $prenom, $nom);
-			$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
-
+			if($sdf) {
+				$filename = $this->buildAttestationSdF($email, $trees, $prenom, $nom);
+				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation-sdf');
+			}
+			else {
+				$filename = $this->buildAttestation($email, $trees, $prenom, $nom);
+				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
+			}
+			
 			$message = $this->getMailer()->compose(
 				array($newsletter->getEmailFrom() => 'Up2Green'),
 				$email,

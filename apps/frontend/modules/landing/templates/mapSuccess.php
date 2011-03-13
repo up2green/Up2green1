@@ -72,28 +72,6 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 	<?php endif; ?>
 </div>
 <div id="content-inner" style="float: left; width: 73%;">
-	<!-- module content -->
-	<div class="module">
-		<div class="content">
-			<h2><?php echo $contentTitle; ?></h2>
-			<h3><?php echo __("Choisissez où planter votre (vos) arbre(s) sur la Planète") ?></h3>
-			<p>
-			<?php echo __("Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation", array(
-				'{lien}' => '<a href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',
-				'{:lien}' => '</a>'
-			)) ?>
-			</p>
-			<p>
-			<form action="<?php echo sfConfig::get('app_url_plantation'); ?>" method="post">
-				<input type="text" name="code" value="<?php echo __("Numéro de coupon") ?>" placeholder="<?php echo __("Numéro de coupon") ?>" />
-				<input type="submit" class="button green small" name="numCouponToUse" value="<?php echo __("Utiliser") ?>" />
-				<input type="hidden" name="fromUrl" value="http://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" />
-			</form>
-			</p>
-		</div>
-		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-	</div>
-
 	<!-- module GMap-->
 	<div id="gmapWrapper" class="module" style="position:relative;" >
 		<div class="content">

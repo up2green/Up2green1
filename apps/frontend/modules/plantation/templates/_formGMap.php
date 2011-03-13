@@ -5,7 +5,7 @@
 <?php endif; ?>
 
 <h3 style="padding: 5px; text-align: center;"><?php echo __("En 2010/2011") ?></h3>
-
+<p style="text-align:center;"><?php echo __("Visualisez les enjeux de chaque programme de reforestation en cliquant sur les info-bulles."); ?></p>
 <?php use_helper('Javascript','GMap') ?>
 <?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>
 <?php include_map_javascript($gMap); ?>

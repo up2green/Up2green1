@@ -57,7 +57,7 @@ class myGMap extends GMap {
 					$geocoded_addr->getLat(),
 					$geocoded_addr->getLng(),
 					array(
-						'title ' => "'".$programme->getId()."'",
+//						'title ' => "'".$programme->getId()."'",
 						'zIndex ' => (100 + floor($programme->getMaxTree()/1000)),
 						'icon'	=> $this->getProgrammeIcon($programme),
 					)
@@ -110,6 +110,8 @@ class myGMap extends GMap {
 	}
 
 	public function getGmapModeSelector($options = array()) {
+
+		return array();
 
 		$options = array_merge(array(
 			'displayAll' => true
@@ -221,7 +223,7 @@ class myGMap extends GMap {
 
 	private function getProgrammeIcon(programme $programme) {
 		return new GMapMarkerImage(
-			'/images/gmap/pointeur/60x60/empty/vert.png',
+			'/images/gmap/pointeur/60x60/arbre/vert.png',
 			array(
 				'width' => 60,
 				'height' => 60,

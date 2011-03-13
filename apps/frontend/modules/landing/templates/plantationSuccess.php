@@ -75,7 +75,7 @@ else {
 		</p>
 		<p>
 		<form action="<?php echo sfConfig::get('app_url_plantation'); ?>" method="post">
-			<input type="text" name="code" value="<?php echo __("Numéro de coupon") ?>" placeholder="<?php echo __("Numéro de coupon") ?>" /><br />
+			<input type="text" name="code" placeholder="<?php echo __("Numéro de coupon") ?>" /><br />
 			<input type="submit" class="button green" name="numCouponToUse" value="<?php echo __("Utiliser") ?>" />
 			<input type="hidden" name="fromUrl" value="http://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" />
 		</form>

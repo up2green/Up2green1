@@ -46,6 +46,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<p style="text-align:center;"><?php echo __("Sinon, validez simplement votre plantation") ?></p>
 					<input type="hidden" name="coupon" value="<?php echo $coupon->getCode() ?>" />
 					<input type="hidden" name="fromUrl" value="<?php echo $fromUrl ?>" />
 					<?php endif; ?>

@@ -18,7 +18,7 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 <table id="content-inner">
 	<tr>
 		<td id="content-inner-left">
-			<img src="/images/marketing/SdF/logo-sdf.png" alt="Logo Storistes de France"/>
+			<img style="height: 250px;" src="/images/marketing/SdF/logo-sdf.png" alt="Logo Storistes de France"/>
 			<p style="text-align: center; font-size: 18px; margin-top: 20px; padding: 10px;">
 				Déjà
 			</p>
@@ -43,7 +43,7 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 
 					<form action="<?php echo sfConfig::get('app_url_plantation'); ?>" method="post">
 						<p>
-							<input type="text" name="code" value="Numéro de coupon" placeholder="Numéro de coupon" />
+							<input type="text" name="code" placeholder="Numéro de coupon" />
 							<input type="submit" class="button green medium" name="numCouponToUse" value="Plantez" />
 							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
 						</p>

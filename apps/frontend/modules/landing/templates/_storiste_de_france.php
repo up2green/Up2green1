@@ -9,6 +9,9 @@ $arrayNombre = array(
 	substr($nbArbres, -1, 1),
 );
 
+var_dump($nbArbres);
+var_dump($arrayNombre);
+
 $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>
 
@@ -45,7 +48,8 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 						<p>
 							<input type="text" name="code" placeholder="Numéro de coupon" />
 							<input type="submit" class="button green medium" name="numCouponToUse" value="Plantez" />
-							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
+							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/plantation/sdf/1arbre" />
+							<input type="hidden" name="redirectUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
 						</p>
 					</form>
 

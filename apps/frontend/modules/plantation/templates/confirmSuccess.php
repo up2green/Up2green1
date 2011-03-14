@@ -49,10 +49,11 @@
 					<p style="text-align:center;"><?php echo __("Sinon, validez simplement votre plantation") ?></p>
 					<input type="hidden" name="coupon" value="<?php echo $coupon->getCode() ?>" />
 					<input type="hidden" name="fromUrl" value="<?php echo $fromUrl ?>" />
+					<input type="hidden" name="redirectUrl" value="<?php echo $redirectUrl ?>" />
 					<?php endif; ?>
 					<p class="center">
 						<input type="submit" name="confirmPlant" class="button green big" value="<?php echo __("Confirmer et planter") ?>" />
-						<a href="<?php echo url_for('plantation/index') ?>" class="backlink"><?php echo __("Revenir à la plantation") ?></a>
+						<a href="<?php echo $backUrl ?>" class="backlink"><?php echo __("Revenir à la plantation") ?></a>
 					</p>
 				</form>
 			</div>

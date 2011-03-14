@@ -19,6 +19,7 @@ class plantationActions extends sfActions {
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		$this->view = $request->getParameter('view');
 		$this->fromUrl = '';
+		$this->redirectUrl = '';
 		
 		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
 		$this->partenaire = null;
@@ -82,7 +83,7 @@ class plantationActions extends sfActions {
 		}
 		
 		if(is_null($this->coupon) && !empty($this->fromUrl)) {
-			return $this->forward($this->fromUrl);
+			return $this->redirect($this->fromUrl);
 		}
 
 		$this->gMap = new myGMap(
@@ -105,14 +106,14 @@ class plantationActions extends sfActions {
 
 		$email = "";
 		$sendMail = true;
-		$redirect = 'plantation/index';
 		$code = $request->getParameter('coupon');
 		$trees = $request->getParameter('trees');
 		$fromUrl = $request->getParameter('fromUrl');
+		$redirectUrl = $request->getParameter('redirectUrl');
 		$sdf = false;
 
 		if(!empty($fromUrl)) {
-			$redirect = $fromUrl;
+			$fromUrl = 'plantation/index';
 		}
 
 		if (!empty($code)) {
@@ -204,8 +205,7 @@ class plantationActions extends sfActions {
 			$this->getUser()->setFlash('notice', 'email-confirmation');
 		}
 		
-		
-		return $this->redirect($redirect);
+		return $this->redirect($this->getUser()->hasFlash('error') ? $fromUrl : $redirectUrl);
 	}
 	
 	/**
@@ -223,6 +223,7 @@ class plantationActions extends sfActions {
 		$this->partenaire = null;
 		$this->trees = array();
 		$this->fromUrl = $request->getParameter('fromUrl');
+		$this->redirectUrl = $request->getParameter('redirectUrl');
 
 		if (!empty($code)) {
 			// plantation à partir d'un code coupon

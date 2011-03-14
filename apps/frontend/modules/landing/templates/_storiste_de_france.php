@@ -1,6 +1,8 @@
 <?php
 use_stylesheet('marketing/sdf.css?v='.sfConfig::get('app_media_version'));
 
+$nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
+
 $arrayNombre = array(
 	substr($nbArbres, -5, 1),
 	substr($nbArbres, -4, 1),
@@ -45,7 +47,8 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 						<p>
 							<input type="text" name="code" placeholder="Numéro de coupon" />
 							<input type="submit" class="button green medium" name="numCouponToUse" value="Plantez" />
-							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
+							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/plantation/sdf/1arbre" />
+							<input type="hidden" name="redirectUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
 						</p>
 					</form>
 

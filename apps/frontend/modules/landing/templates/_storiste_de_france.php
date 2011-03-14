@@ -1,6 +1,8 @@
 <?php
 use_stylesheet('marketing/sdf.css?v='.sfConfig::get('app_media_version'));
 
+$nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
+
 $arrayNombre = array(
 	substr($nbArbres, -5, 1),
 	substr($nbArbres, -4, 1),
@@ -8,9 +10,6 @@ $arrayNombre = array(
 	substr($nbArbres, -2, 1),
 	substr($nbArbres, -1, 1),
 );
-
-//var_dump($nbArbres);
-//var_dump($arrayNombre);
 
 $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>

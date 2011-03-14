@@ -57,7 +57,7 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 	<div class="module">
 		<div class="content">
 			<?php if(!empty($url)) : ?>
-			<a target="_blank" href="<?php echo $url; ?>">
+			<a class="light" target="_blank" href="<?php echo $url; ?>">
 			<?php endif; ?>
 
 			<?php if($partenaireHasImage) : ?>

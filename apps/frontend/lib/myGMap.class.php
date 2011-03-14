@@ -73,7 +73,7 @@ class myGMap extends GMap {
 					$html .= '<img class="gmap-programme" src="/uploads/programme/'.$programme->getLogo().'" alt="Diapo Image" />';
 				}
 
-				$html .= $programme->getAccroche();
+				$html .= '<div class="accroche-programme">'.$programme->getAccroche().'</div>';
 				$html .= '<a href="'.sfConfig::get('app_url_blog').'/programme/'.$programme->getSlug().'" class="read_more" target="_blank">Lire la suite</a>';
 				$html .= '<br /></span>';
 

@@ -78,6 +78,7 @@ else {
 			<input type="text" name="code" placeholder="<?php echo __("Numéro de coupon") ?>" /><br />
 			<input type="submit" class="button green" name="numCouponToUse" value="<?php echo __("Utiliser") ?>" />
 			<input type="hidden" name="fromUrl" value="http://<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" />
+			<input type="hidden" name="redirectUrl" value="<?php echo sfConfig::get('app_url_moteur'); ?>" />
 		</form>
 		</p>
 	</div>

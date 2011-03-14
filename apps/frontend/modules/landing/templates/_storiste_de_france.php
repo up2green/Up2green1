@@ -9,8 +9,8 @@ $arrayNombre = array(
 	substr($nbArbres, -1, 1),
 );
 
-var_dump($nbArbres);
-var_dump($arrayNombre);
+//var_dump($nbArbres);
+//var_dump($arrayNombre);
 
 $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>

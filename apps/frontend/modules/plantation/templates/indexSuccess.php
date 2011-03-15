@@ -46,6 +46,7 @@
 	) {
 		include_partial('formPlant', array(
 			'fromUrl' => $fromUrl, 
+			'redirectUrl' => $redirectUrl,
 			'coupon' => isset($coupon) ? $coupon : NULL, 
 			'nbArbresToPlant' => $nbArbresToPlant, 
 			'programmes' => $programmes

@@ -59,9 +59,12 @@ class plantationActions extends sfActions {
 		if ($request->isMethod('post')) {
 
 			$this->fromUrl = $request->getParameter('fromUrl');
+			$this->redirectUrl = $request->getParameter('redirectUrl');
+			
 			if(empty($this->fromUrl)) {
 				$this->fromUrl = sfConfig::get('app_url_moteur');
 			}
+			
 			// l'utilisateur a entré son numéro de coupon
 			if ($request->getParameter('numCouponToUse')) {
 				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
@@ -111,6 +114,10 @@ class plantationActions extends sfActions {
 		$fromUrl = $request->getParameter('fromUrl');
 		$redirectUrl = $request->getParameter('redirectUrl');
 		$sdf = false;
+
+		if(!empty($redirectUrl)) {
+			$redirectUrl = 'plantation/index';
+		}
 
 		if(!empty($fromUrl)) {
 			$fromUrl = 'plantation/index';

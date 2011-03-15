@@ -13,8 +13,8 @@ $(document).ready(function(){
 			});
 			
 			// on centre la map
-			var marker = new google.maps.LatLng(lat, lng);
-			map.setCenter(marker);
+			var marker = new google.maps.LatLng(lat, lng - 50);
+			map.panTo(marker);
 			
 			// on attend que la pop in s'ouvre et on applique la fonction
 			setTimeout('$.fn.refreshInfoBulles()',600);

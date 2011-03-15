@@ -69,7 +69,7 @@ else {
 		<h3><?php echo __("Choisissez où planter votre (vos) arbre(s) sur la Planète") ?></h3>
 		<p>
 		<?php echo __("Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation", array(
-			'{lien}' => '<a href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',
+			'{lien}' => '<a class="light" href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',
 			'{:lien}' => '</a>'
 		)) ?>
 		</p>
@@ -90,7 +90,7 @@ else {
 <div class="module" style="width:<?php echo $blocWidth; ?>">
 	<div class="content">
 		<?php if(!empty($url)) : ?>
-		<a target="_blank" href="<?php echo $url; ?>">
+		<a class="light" target="_blank" href="<?php echo $url; ?>">
 		<?php endif; ?>
 		
 		<?php if($partenaireHasImage) : ?>

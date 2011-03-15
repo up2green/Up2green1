@@ -2,8 +2,18 @@
 	<!-- Column center -->
     <div id="center">
 		<div class="module">
-			<div class="content">
+			<div class="content" style="width: 70%;margin: 0 auto;">
 				<?php echo form_tag('plantation/plant') ?>
+					
+					<?php foreach($trees as $tree) : ?>
+						<input type="hidden" name="trees[<?php echo $tree['programmeId'] ?>]" value="<?php echo $tree['nombre'] ?>" />
+					<?php endforeach; ?>
+
+					<?php if(sizeof($trees) == 1) : ?>
+						<?php echo __("Félicitations ! Vous venez de valider la plantation d’un arbre au {program}. Votre arbre sera planté d’ici la fin de l’année.", array(
+							'{program}' => $tree['programmeTitle'],
+						)); ?>
+					<?php else : ?>
 					<h3><?php echo __("Résumé : ") ?></h3>
 					<ul class="list">
 						<?php foreach($trees as $tree) : ?>
@@ -16,12 +26,18 @@
 									),
 									$tree['nombre']
 								); ?>
-								<input type="hidden" name="trees[<?php echo $tree['programmeId'] ?>]" value="<?php echo $tree['nombre'] ?>" />
+								
 							</li>
 						<?php endforeach; ?>
 					</ul>
+					<?php endif; ?>
+
 					<?php if(isset($partenaire) && !empty($partenaire)) : ?>
-					<?php echo __("Grace à {:partenaire}", array(':partenaire' => $partenaire->getName()));	?>
+					<?php echo __("{:partenaire} vous remercie de votre implication dans son opération.", array(
+						'{:partenaire}' => $partenaire->getTitle()
+					));	?>
+					<?php endif; ?>
+
 					<?php if($sf_user->isAuthenticated()) : ?>
 					<p>
 						<label for="send_email"><?php echo __("Recevoir une attestation ?") ?></label>
@@ -30,7 +46,7 @@
 					<?php else : ?>
 					<table class="form" style="margin: 20px 0;">
 						<thead>
-							<tr><td colspan="2" style="text-align: center;"><?php echo __("Si vous désirez recevoir une attestation, merci de remplir le formulaire ci-dessous :") ?></td></tr>
+							<tr><td colspan="2"><?php echo __("Si vous désirez recevoir une attestation, merci de remplir le formulaire ci-dessous :") ?></td></tr>
 						</thead>
 						<tbody>
 							<tr>
@@ -47,7 +63,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<p style="text-align:center;"><?php echo __("Sinon, validez simplement votre plantation") ?></p>
+					<p><?php echo __("Sinon, validez simplement votre plantation") ?></p>
 					<input type="hidden" name="coupon" value="<?php echo $coupon->getCode() ?>" />
 					<input type="hidden" name="fromUrl" value="<?php echo $fromUrl ?>" />
 					<input type="hidden" name="redirectUrl" value="<?php echo $redirectUrl ?>" />

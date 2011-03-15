@@ -20,7 +20,8 @@
 							</li>
 						<?php endforeach; ?>
 					</ul>
-				
+					<?php if(isset($partenaire) && !empty($partenaire)) : ?>
+					<?php echo __("Grace à {:partenaire}", array(':partenaire' => $partenaire->getName()));	?>
 					<?php if($sf_user->isAuthenticated()) : ?>
 					<p>
 						<label for="send_email"><?php echo __("Recevoir une attestation ?") ?></label>

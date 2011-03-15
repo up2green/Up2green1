@@ -18,6 +18,7 @@ class myGMap extends GMap {
 	) {
 
 		$options = array_merge(array(
+			'disableDefaultUI' => true,
 			'scrollwheel' => 'false',
 			'mapTypeId' => 'google.maps.MapTypeId.SATELLITE',
 			'mapTypeControl' => 'false',

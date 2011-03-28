@@ -102,11 +102,11 @@ class userActions extends sfActions {
 		if($request->isMethod('post')) {
 		 
 			$userForm->bind($request->getPostParameter('user'));
-			$profilForm->bind($request->getPostParameter('user'));
+			$profilForm->bind($request->getPostParameter('profil'));
 
 			$passwordData = $request->getPostParameter('pass');
 			$passwordForm->bind($request->getPostParameter('pass'));
-			
+
 			if($request->getPostParameter('submit_password')){
 				if($passwordForm->isValid()){
 					$passwordForm->save();

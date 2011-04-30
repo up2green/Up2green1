@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-04-30T19:13:09Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-04-30T19:50:31Z" product-name="messages" xml:space="default">
     <header/>
     <body>
       <trans-unit id="1">
@@ -615,6 +615,18 @@
       <trans-unit id="188">
         <source>Sinon, validez simplement votre plantation</source>
         <target>Otherwise, simply confirm</target>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Se connecter</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>Mot de passe oublié ?</source>
+        <target>Forgot your password ?</target>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>S'inscrire</source>
+        <target>Register</target>
       </trans-unit>
     </body>
   </file>

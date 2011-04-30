@@ -1,0 +1,23 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           session
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          session
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:   Gestion des sessions d'utilisateurs
+        display: [sess_id, is_authenticated, user_id, ip, culture]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

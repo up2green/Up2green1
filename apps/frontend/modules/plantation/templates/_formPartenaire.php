@@ -10,26 +10,12 @@
     	<?php if(!empty($url)) : ?></a><?php endif; ?>
     </p>
     <div class="content">
-    	<?php if(!empty($url)) : ?>
-    	<a target="_blank" href="<?php echo $url; ?>">
-    	<?php endif; ?>
-	<?php if($partenaire->getLogo() != '') : ?>
-	<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
-	<?php endif; ?>
-	<p><?php echo $partenaire->getAccroche(); ?></p>
-	<p class="center">
-		<?php
-		if($sf_user->isAuthenticated() && !is_null($partenaire)) {
-			if(isset($view) && $view === 'listeCouponsPartenaires') {
-				echo '<a href="/" class="button green">'.__("Retour à la Carte").'</a>';
-			}
-			else {
-				echo '<a href="' . url_for('@plantation_liste_coupon_partenaire') . '" class="button purple">'.__("Voir mes coupons").'</a>';
-			}
-		}
-		?>
-	</p>
-		</a>
+			<?php if(!empty($url)) : ?><a target="_blank" href="<?php echo $url; ?>"><?php endif; ?>
+			<?php if($partenaire->getLogo() != '') : ?>
+			<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
+			<?php endif; ?>
+			<p><?php echo $partenaire->getAccroche(); ?></p>
+			<?php if(!empty($url)) : ?></a><?php endif; ?>
     </div>
     <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

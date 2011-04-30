@@ -20,7 +20,6 @@
 				'user' => __("Ma forêt – mes arbres : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
 				'coupon' => __("Les arbres plantés avec mes coupons : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
 				'all' => __("Tous les arbres plantés : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
-
 			);
 
 			if(isset($gMapMode['partenaireTitle']) && isset($gMapMode['partenaireId'])) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-02-20T20:49:57Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-04-30T19:50:31Z" product-name="messages" xml:space="default">
     <header/>
     <body>
       <trans-unit id="1">
@@ -172,10 +172,6 @@
         <source>Mes coupons</source>
         <target>My tree voucher</target>
       </trans-unit>
-      <trans-unit id="46">
-        <source>Récapitulatif</source>
-        <target>Summary</target>
-      </trans-unit>
       <trans-unit id="47">
         <source>Acheter des coupons</source>
         <target>Buy tree vouchers</target>
@@ -304,14 +300,6 @@
         <source>Plantez vos arbres grâce à notre plateforme de reforestion !</source>
         <target>Plant your trees thanks to our reforestation platform online !</target>
       </trans-unit>
-      <trans-unit id="82">
-        <source>Retour à la Carte</source>
-        <target>Back to the map</target>
-      </trans-unit>
-      <trans-unit id="83">
-        <source>Voir mes coupons</source>
-        <target>See my trees code number</target>
-      </trans-unit>
       <trans-unit id="84">
         <source>Planter vos arbres</source>
         <target>Plant your trees</target>
@@ -348,22 +336,6 @@
         <source>Date d'utilisation</source>
         <target>Use date</target>
       </trans-unit>
-      <trans-unit id="96">
-        <source>Programmes</source>
-        <target>Programs</target>
-      </trans-unit>
-      <trans-unit id="97">
-        <source>Date de création</source>
-        <target>Date of creation</target>
-      </trans-unit>
-      <trans-unit id="98">
-        <source>Coupons utilisés ({number})</source>
-        <target>Number of used codes ({number})</target>
-      </trans-unit>
-      <trans-unit id="99">
-        <source>{code} [{number} arbres] Utilisé le {date} sur les programmes : {programs}</source>
-        <target>{code} [{number} trees] Used the {date} in the following programs : {programs}</target>
-      </trans-unit>
       <trans-unit id="100">
         <source>Exporter : </source>
         <target>Export : </target>
@@ -375,14 +347,6 @@
       <trans-unit id="102">
         <source>Choisissez où planter vos arbres sur la planète en saisissant votre code dès maintenant !</source>
         <target>Choose where to plant your trees on the Planet entering your tree code number now !</target>
-      </trans-unit>
-      <trans-unit id="103">
-        <source>Coupons non utilisés ({number})</source>
-        <target>Codes not used ({number})</target>
-      </trans-unit>
-      <trans-unit id="104">
-        <source>{code} [{number} arbres] Généré le {date}</source>
-        <target>{code} [{number} trees] Created on the {date}</target>
       </trans-unit>
       <trans-unit id="105">
         <source>Nom d'utilisateur :</source>
@@ -516,10 +480,6 @@
         <source>Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.</source>
         <target>Already 6749 trees planted in 2009/2010 with Trees for the Future, Planète Urgence and the French ONF in France, Ethiopia, India, Burundi, Haïti, Brazil, Honduras, Mali and Indonesia.</target>
       </trans-unit>
-      <trans-unit id="154">
-        <source>En 2010/2011</source>
-        <target>In 2010/2011</target>
-      </trans-unit>
       <trans-unit id="155">
         <source>Si l'un de nos partenaires entreprises ou collectivités vous a offert un coupon reforestation saisissez le code ici. Les arbres correspondant s'incrémenteront automatiquement dans votre compte Up2green.</source>
         <target>If one of our partners offered to you trees with a reforestation code, use it here. The corresponding trees will be credited on your Up2green account automatically</target>
@@ -579,6 +539,94 @@
       <trans-unit id="169">
         <source>Formulaire invalide.</source>
         <target>Invalid form.</target>
+      </trans-unit>
+      <trans-unit id="170">
+        <source>Vous n'avez pas encore acheté de coupon.</source>
+        <target>You have not yet bought a coupon.</target>
+      </trans-unit>
+      <trans-unit id="171">
+        <source>Numéro</source>
+        <target>Number</target>
+      </trans-unit>
+      <trans-unit id="172">
+        <source>Nombre d'arbres</source>
+        <target>Number of trees</target>
+      </trans-unit>
+      <trans-unit id="173">
+        <source>Utilisé ?</source>
+        <target>Used ?</target>
+      </trans-unit>
+      <trans-unit id="174">
+        <source>Non</source>
+        <target>No</target>
+      </trans-unit>
+      <trans-unit id="175">
+        <source>Oui</source>
+        <target>Yes</target>
+      </trans-unit>
+      <trans-unit id="176">
+        <source>Utilisé le {date} sur les programmes : {programs}</source>
+        <target>Used the {date} programs {programs}</target>
+      </trans-unit>
+      <trans-unit id="177">
+        <source>Première page</source>
+        <target>First page</target>
+      </trans-unit>
+      <trans-unit id="178">
+        <source>Page précédente</source>
+        <target>Previous page</target>
+      </trans-unit>
+      <trans-unit id="179">
+        <source>Page suivante</source>
+        <target>Next page</target>
+      </trans-unit>
+      <trans-unit id="180">
+        <source>Dernière page</source>
+        <target>Last page</target>
+      </trans-unit>
+      <trans-unit id="181">
+        <source>(-Inf,1]coupon|(1,+Inf]coupons</source>
+        <target>(-Inf,1]coupon|(1,+Inf]coupons</target>
+      </trans-unit>
+      <trans-unit id="182">
+        <source>page {current}/{total}</source>
+        <target>page {current}/{total}</target>
+      </trans-unit>
+      <trans-unit id="183">
+        <source>Visualisez les enjeux de chaque programme de reforestation en cliquant sur les info-bulles.</source>
+        <target>Watch the stakes for each reforestation program by clicking on the tooltips.</target>
+      </trans-unit>
+      <trans-unit id="184">
+        <source>(-Inf,1]Planter votre arbre|(1,+Inf]Planter vos arbres</source>
+        <target>(-Inf, 1]Plant your tree |(1, + Inf]Plant your trees</target>
+      </trans-unit>
+      <trans-unit id="185">
+        <source>Les programmes de reforestation que nous soutenons</source>
+        <target>Reforestation programs we support</target>
+      </trans-unit>
+      <trans-unit id="186">
+        <source>Félicitations ! Vous venez de valider la plantation d’un arbre au {program}. Votre arbre sera planté d’ici la fin de l’année.</source>
+        <target>Congratulations! You just validate the tree planting program in {program}. Your tree will be planted by the end of the year.</target>
+      </trans-unit>
+      <trans-unit id="187">
+        <source>{:partenaire} vous remercie de votre implication dans son opération.</source>
+        <target>{:partenaire} partner thank you for your involvement in its operation.</target>
+      </trans-unit>
+      <trans-unit id="188">
+        <source>Sinon, validez simplement votre plantation</source>
+        <target>Otherwise, simply confirm</target>
+      </trans-unit>
+      <trans-unit id="189">
+        <source>Se connecter</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="190">
+        <source>Mot de passe oublié ?</source>
+        <target>Forgot your password ?</target>
+      </trans-unit>
+      <trans-unit id="191">
+        <source>S'inscrire</source>
+        <target>Register</target>
       </trans-unit>
     </body>
   </file>

@@ -14,7 +14,7 @@ dev:
 
 all:
   max_default_list_item: 10
-  media_version: 10
+  media_version: 11
   cultures:
     enabled:
       fr: Français

@@ -2,10 +2,6 @@ couponsCSVSuccess:
   has_layout: off
   http_metas:
     content-type: application/msexcel
-couponsUsedCSVSuccess:
-  has_layout: off
-  http_metas:
-    content-type: application/msexcel
 
 all:
   layout: plantation

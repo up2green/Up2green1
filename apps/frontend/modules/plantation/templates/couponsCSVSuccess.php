@@ -1,16 +1,16 @@
 <?php 
-header('Content-Type: application/csv;charset=utf-8;name=up2green-coupons-non-utilises-'.date('d-m-Y').'.csv');
-header('Content-Disposition: attachment;filename=up2green-coupons-non-utilises-'.date('d-m-Y').'.csv');
+header('Content-Type: application/csv;charset=utf-8;name=up2green-coupons-'.date('d-m-Y').'.csv');
+header('Content-Disposition: attachment;filename=up2green-coupons-'.date('d-m-Y').'.csv');
 
 $columns = array(
 	__("Code coupon"),
 	__("Crédit"),
-	__("Date de création"),
+	__("Date d'utilisation"),
 );
 
 echo '"'.implode('","', $columns).'"';
 ?>
 
 <?php foreach ($coupons as $coupon): ?>
-"<?php echo $coupon->getCode() ?>","<?php echo $coupon->getCouponGen()->getCredit() ?>","<?php echo $coupon->getCreatedAt() ?>"
+"<?php echo $coupons['code'] ?>","<?php echo $couponGens[$coupons['gen_id']] ?>","<?php echo $coupons['is_active'] ? '-' : $coupons['used_at'] ?>"
 <?php endforeach; ?>

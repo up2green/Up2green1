@@ -17,7 +17,7 @@ class plantationActions extends sfActions {
 	public function executeIndex(sfWebRequest $request) {
 		// chargement des variables pour le form programmes
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
-		$this->view = $request->getParameter('view');
+		
 		$this->fromUrl = '';
 		$this->redirectUrl = '';
 		
@@ -25,36 +25,6 @@ class plantationActions extends sfActions {
 		$this->partenaire = null;
 		$this->nbArbresToPlant = 0;
 		$this->spendAll = false;
-		
-		if ($this->getUser()->isAuthenticated()) {
-			$user = $this->getUser()->getGuardUser();
-			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
-			$this->setProgrammesFromPartenaire($this->partenaire);
-			$this->nbArbresToPlant = $user->getProfile()->getCredit();
-			$this->spendAll = false;
-			
-			if($this->view === 'listeCouponsPartenaires' &&
-				!is_null($this->partenaire)
-			) {
-				$arrCoupons = array();
-				$arrCouponsUsed = array();
-
-				$totalCoupons = Doctrine_Query::create()
-					->select('*')
-					->from("coupon c")
-					->leftJoin('c.Partenaire cp')
-					->where('cp.partenaire_id = ?', $this->partenaire->getId())
-					->leftJoin('c.couponGen cg')
-					->orderBy('cg.credit')->execute();
-					
-				foreach ($totalCoupons as $coupon) {
-					if ($coupon->getIsActive()) $arrCoupons[] = $coupon;
-					else $arrCouponsUsed[] = $coupon;
-				}
-			 $this->couponsUsed = $arrCouponsUsed;
-			 $this->coupons = $arrCoupons;
-			}
-		}
 		
 		if ($request->isMethod('post')) {
 
@@ -85,6 +55,11 @@ class plantationActions extends sfActions {
 			}
 		}
 		
+		if($this->getUser()->isAuthenticated() && is_null($this->partenaire)) {
+			$user = $this->getUser()->getGuardUser();
+			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+		}
+
 		if(is_null($this->coupon) && !empty($this->fromUrl)) {
 			return $this->redirect($this->fromUrl);
 		}
@@ -115,14 +90,14 @@ class plantationActions extends sfActions {
 		$redirectUrl = $request->getParameter('redirectUrl');
 		$sdf = false;
 
-		if(!empty($redirectUrl)) {
+		if(empty($redirectUrl)) {
 			$redirectUrl = 'plantation/index';
 		}
 
-		if(!empty($fromUrl)) {
+		if(empty($fromUrl)) {
 			$fromUrl = 'plantation/index';
 		}
-
+		
 		if (!empty($code)) {
 			// plantation à partir d'un code coupon
 			$coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $code);
@@ -416,34 +391,22 @@ class plantationActions extends sfActions {
 	}
 	
 	public function executeCouponsCSV(sfWebRequest $request){
-		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
-			$this->coupons = Doctrine_Query::create()
-				->from('coupon c')
-				->leftJoin('c.Partenaire cp')
-				->where('cp.partenaire_id = ?', $partenaire->getId())
-				->andWhere('c.is_active = ?', true)->execute();
-		}
-		else {
+		if (!$this->getUser()->isAuthenticated()) {
 			$this->forward404();
+			return;
 		}
 		
+		$user = $this->getUser()->getGuardUser();
+		$partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 		
-
-		$this->setLayout(false);
-	}
-
-	public function executeCouponsUsedCSV(sfWebRequest $request){
-		if (($user = $this->getUser()->getGuardUser()) && ($partenaire = $user->getPartenaire())) {
-			$this->coupons = Doctrine_Query::create()
-				->from('coupon c')
-				->leftJoin('c.Partenaire cp')
-				->where('cp.partenaire_id = ?', $partenaire->getId())
-				->andWhere('c.is_active = ?', false)->execute();
-		}
-		else {
-			$this->forward404();
+		if(!is_null($partenaire)) {
+			$query = Doctrine::getTable('coupon')->getByPartenaireQuery($partenaire->getId());
+		} else {
+			$query = Doctrine::getTable('coupon')->getByUserQuery($user->getId());
 		}
 		
+		$this->couponGens = Doctrine::getTable('couponGen')->getArrayById();
+		$this->coupons = $query->select('c.gen_id, c.code, c.is_active, c.used_at')->fetchArray();
 		$this->setLayout(false);
 	}
 

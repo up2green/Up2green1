@@ -27,10 +27,23 @@ dev:
   mailer:
     param:
       delivery_strategy: none
-  
-
 
 all:
+  storage:
+    class: plSessionStorage
+    param:
+      session_name: up2greenSession
+      session_cookie_lifetime: 31536000
+      db_table:     session
+      database:     doctrine
+      db_id_col:    sess_id
+      db_data_col:  sess_data
+      db_time_col:  sess_time
+  
+  user:
+    param:
+      timeout: 1800
+  
   routing:
     class: sfPatternRouting
     param:

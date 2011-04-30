@@ -12,7 +12,7 @@
  * @property timestamp $used_at
  * @property integer $used_by
  * @property couponGen $couponGen
- * @property Doctrine_Collection $couponUser
+ * @property couponUser $User
  * @property couponPartenaire $Partenaire
  * @property Doctrine_Collection $Trees
  * @property Doctrine_Collection $logCoupon
@@ -24,7 +24,7 @@
  * @method timestamp           getUsedAt()     Returns the current record's "used_at" value
  * @method integer             getUsedBy()     Returns the current record's "used_by" value
  * @method couponGen           getCouponGen()  Returns the current record's "couponGen" value
- * @method Doctrine_Collection getCouponUser() Returns the current record's "couponUser" collection
+ * @method couponUser          getUser()       Returns the current record's "User" value
  * @method couponPartenaire    getPartenaire() Returns the current record's "Partenaire" value
  * @method Doctrine_Collection getTrees()      Returns the current record's "Trees" collection
  * @method Doctrine_Collection getLogCoupon()  Returns the current record's "logCoupon" collection
@@ -35,7 +35,7 @@
  * @method coupon              setUsedAt()     Sets the current record's "used_at" value
  * @method coupon              setUsedBy()     Sets the current record's "used_by" value
  * @method coupon              setCouponGen()  Sets the current record's "couponGen" value
- * @method coupon              setCouponUser() Sets the current record's "couponUser" collection
+ * @method coupon              setUser()       Sets the current record's "User" value
  * @method coupon              setPartenaire() Sets the current record's "Partenaire" value
  * @method coupon              setTrees()      Sets the current record's "Trees" collection
  * @method coupon              setLogCoupon()  Sets the current record's "logCoupon" collection
@@ -87,7 +87,7 @@ abstract class Basecoupon extends sfDoctrineRecord
              'local' => 'gen_id',
              'foreign' => 'id'));
 
-        $this->hasMany('couponUser', array(
+        $this->hasOne('couponUser as User', array(
              'local' => 'id',
              'foreign' => 'coupon_id'));
 

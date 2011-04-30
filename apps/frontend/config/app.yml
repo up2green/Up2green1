@@ -13,7 +13,8 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
-  media_version: 11
+  max_default_list_item: 10
+  media_version: 10
   cultures:
     enabled:
       fr: Français

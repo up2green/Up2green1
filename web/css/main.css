@@ -345,3 +345,71 @@ ul.list  {
 			position:absolute;
 			right:0;
 		}
+		
+table.table {
+	width: 100%;
+}
+
+table.table td, 
+table.table th {
+    border-color: #DDDDDD -moz-use-text-color;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    text-align: left;
+    vertical-align: top;	
+}
+
+table.table th {
+    background-color: #E7EEF6;
+    white-space: nowrap;
+}
+
+table.table tr {
+    background-color: #FFFFFF;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+
+table.table td {
+    border-color: #DDDDDD -moz-use-text-color;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-style: solid none;
+    border-width: 1px 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.table td, table.table th {
+    padding: 7px;
+}
+
+table.table a {
+    color: #464646;
+}
+
+table.table a:hover {
+	text-decoration: underline;
+}
+
+table.table tfoot.pagination td {
+	text-align: center;
+}
+
+.pagination_desc {
+	font-style: italic;
+	text-align:right;
+	padding:5px;
+	color:#666;
+	font-size:.9em;
+}
+
+.export_wrapper {
+	font-style: italic;
+	text-align:right;
+	padding:5px;
+	color:#666;
+	font-size:.9em;
+}

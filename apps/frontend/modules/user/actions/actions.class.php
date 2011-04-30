@@ -17,6 +17,30 @@ class userActions extends sfActions {
 	public function executeIndex(sfWebRequest $request) {
 			$this->forward404();
 	}
+	
+	public function executeListCoupon(sfWebRequest $request) {
+		if (!$this->getUser()->isAuthenticated()) {
+			$this->redirect('@sf_guard_signin');
+			return;
+		}
+
+		$user = $this->getUser()->getGuardUser();
+		$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+		
+		if(!is_null($this->partenaire)) {
+			$query = Doctrine::getTable('coupon')->getByPartenaireQuery($this->partenaire->getId());
+		} else {
+			$query = Doctrine::getTable('coupon')->getByUserQuery($user->getId());
+		}
+		
+		$this->pager = new sfDoctrinePager('coupon', sfConfig::get('app_max_default_list_item'));
+		$this->pager->setQuery($query);
+		$this->pager->setPage($request->getParameter('page', 1));
+		$this->pager->init();
+		
+		$this->coupons = $this->pager->getResults();
+		
+	}
 
 	public function executeChangeLanguage(sfWebRequest $request) {
 		$langs = sfConfig::get('app_cultures_enabled');
@@ -102,7 +126,7 @@ class userActions extends sfActions {
 		if($request->isMethod('post')) {
 		 
 			$userForm->bind($request->getPostParameter('user'));
-			$profilForm->bind($request->getPostParameter('user'));
+			$profilForm->bind($request->getPostParameter('profil'));
 
 			$passwordData = $request->getPostParameter('pass');
 			$passwordForm->bind($request->getPostParameter('pass'));

@@ -32,12 +32,8 @@ clic_pub:
 
 
 couponsCSV:
-  url:    /exportCoupons.csv
+  url:    /exportCoupons
   param:  {module: plantation, action: couponsCSV}
-
-couponsUsedCSV:
-  url:    /exportCouponsUsed.csv
-  param:  {module: plantation, action: couponsUsedCSV}
 
 ####################
 ##### LANDING
@@ -99,14 +95,6 @@ plantation:
   url: /plantation
   param: { module: plantation, action: index}
 
-plantation_user_profil:
-  url: /plantation/user/profil
-  param: { module: user, action: profil}
-
-plantation_liste_coupon_partenaire:
-  url: /plantation/listeCouponsPartenaires
-  param: { module: plantation, action: index, view: listeCouponsPartenaires }
-
 plantation_login:
   url:   /plantation/login
   param: { module: sfGuardAuth, action: signin }
@@ -146,6 +134,17 @@ plantation_change_language:
 general_article:
   url:   /article/:slug
   param: { module: recherche, action: viewElement, type: article }
+
+####################
+##### PROFIL
+####################
+user_profil:
+  url:   /user/profil/
+  param: { module: user, action: profil }
+  
+user_coupon:
+  url:   /user/coupon/
+  param: { module: user, action: listCoupon }
 
 homepage:
   url: /

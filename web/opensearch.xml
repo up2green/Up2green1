@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>Up2green</ShortName>
+	<Description>Use Up2green to search and plant trees.</Description>
+	<Tags>up2green Search</Tags>
+	<Contact>webmaster@up2green.com</Contact>
+	<Url type="text/html" method="post" template="http://www.up2green.com/?q={searchTerms}"/>
+	<LongName>Example.com Web Search</LongName>
+	<Image height="64" width="64" type="image/png">http://www.up2green.com/favicon.png</Image>
+	<Image height="16" width="16" type="image/vnd.microsoft.icon">http://www.up2green.com/favicon.ico</Image>
+	<Query role="example" searchTerms="cat" />
+	<Developer>up2green.com Development Team</Developer>
+	<Attribution>
+		© 2011 Up2green reforestation. All Rights Reserved
+	</Attribution>
+	<SyndicationRight>open</SyndicationRight>
+	<AdultContent>false</AdultContent>
+	<Language>en-us</Language>
+	<OutputEncoding>UTF-8</OutputEncoding>
+	<InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

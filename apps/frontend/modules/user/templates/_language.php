@@ -15,7 +15,7 @@ function curPageURL() {
 echo '<form method="post" id="formLanguage" action="'.url_for('/change_language').'">';
 
 echo '
-	<a title="'.$languages[$current].'" class="flag" href="#">
+	<a class="flag" href="#">
 		<img src="/images/icons/32x32/lang/'.$current.'.png" />
 	</a>
 	<div class="flags-hidden">
@@ -26,7 +26,7 @@ foreach($languages as $key => $value) {
 	if($key != $current) {
 		echo '
 			<li >
-				<a title="'.$value.'" class="flag" href="#">
+				<a class="flag" href="#">
 					<img lang="'.$key.'" src="/images/icons/32x32/lang/'.$key.'.png" alt="'.$value.'" />
 				</a>
 			</li>

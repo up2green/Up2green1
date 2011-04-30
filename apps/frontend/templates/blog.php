@@ -6,6 +6,7 @@
     <?php include_title() ?>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link title="up2green Search" type="application/opensearchdescription+xml" rel="Search" href="opensearch.xml" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
 

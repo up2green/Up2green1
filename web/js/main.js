@@ -5,7 +5,7 @@ $(document).ready(function(){
 	
 	/* valeur par défaut dans les input type texte */
 	if(!$.support.placeholder) {
-		$("input[placeholder], textarea[placeholder]", closure).live("focus.html5", function(){
+		$("input[placeholder], textarea[placeholder]").live("focus.html5", function(){
 			var $this = $(this);
 			if($this.val() == $this.attr('placeholder') && !$this.data('filled')){
 				$this.val("").data('filled', true);
@@ -17,7 +17,7 @@ $(document).ready(function(){
 			}
 		}).trigger("blur.html5").closest("form").bind("submit.html5", function(e) {
 			if(!e.isDefaultPrevented()) {
-				$("input[placeholder], textarea[placeholder]",closure).die('blur.html5');
+				$("input[placeholder], textarea[placeholder]").die('blur.html5');
 				$("input[placeholder], textarea[placeholder]",this).trigger('focus.html5');
 			}
 		});

@@ -250,10 +250,6 @@ body {
 	padding-right:5px;
 }
 
-.dpm_image {
-	width:590px;
-}
-
 .cartouche_titre {
 	margin-left:0;
 	margin-top:20px;
@@ -321,54 +317,43 @@ body {
 
 div.module span.corner {
 	background-color:transparent;
-}
-
-
-div.module span.corner {
 	background-image: url("../images/blog/bg_corps/corner_bg_corps.png");
 	width:15px;
 	height:15px;
 }
 
 div.module span.ctl {
-	background-position: left top ;
 	left:-15px;
 	top:-15px;
 }
 
 div.module span.ctr {
-	background-position:right top;
 	right:-15px;
 	top:-15px;
 }
 
 div.module span.cbl {
-	background-position:left bottom;
 	bottom:-15px;
 	left:-15px;
 }
 
 div.module span.cbr {
-	background-position:right bottom;
 	bottom:-15px;
 	right:-15px;
 }
 
 div.module span.border {
-	background-color: transparent;
 	position:absolute;
 }
 
 div.module span.border.bb,
 div.module span.border.bt {
-	background-repeat: repeat-x;
 	height:15px;
 	left:0;
 }
 
 div.module span.border.bl,
 div.module span.border.br {
-	background-repeat: repeat-y;
 	width:15px;
 }
 
@@ -435,10 +420,13 @@ div.module.social div.content {
 	width:320px;
 }
 
+.principale .module span.corner,
+.blog_footer .module span.corner {
+	background-image:url("../images/blog/bg_module/corner_bg_module.png");
+}
 
 .principale .module span.ctl,
 .blog_footer .module span.ctl {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left top transparent;
 	height:62px;
 	left:-5px;
 	top:-15px;
@@ -447,7 +435,6 @@ div.module.social div.content {
 
 .principale .module span.ctr,
 .blog_footer .module span.ctr {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right top transparent;
 	height:62px;
 	right:-5px;
 	top:-15px;
@@ -456,7 +443,6 @@ div.module.social div.content {
 
 .principale .module span.cbl,
 .blog_footer .module span.cbl {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll left bottom transparent;
 	bottom:-32px;
 	height:32px;
 	left:-5px;
@@ -465,7 +451,6 @@ div.module.social div.content {
 
 .principale .module span.cbr,
 .blog_footer .module span.cbr {
-	background:url("../images/blog/bg_module/corner_bg_module.png") no-repeat scroll right bottom transparent;
 	bottom:-32px;
 	height:32px;
 	right:-5px;
@@ -540,37 +525,47 @@ div.module.social div.content {
 	width:13px;
 }
 
+#bg_corps .module .content .module .cartouche span.corner {
+	background-image:url("../images/blog/cartouche_titre/corner_cartouche_titre.png");
+}
+
+#bg_corps .module .content .module .cartouche span.cbl,
 #bg_corps .module .content .module .cartouche span.ctl {
-	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll left top transparent;
+	width:80px;
+}
+
+#bg_corps .module .content .module .cartouche span.cbr,
+#bg_corps .module .content .module .cartouche span.ctr {
+	width:125px;
+}
+
+#bg_corps .module .content .module .cartouche span.ctl,
+#bg_corps .module .content .module .cartouche span.ctr {
+	top:-18px;
 	height:18px;
+}
+
+#bg_corps .module .content .module .cartouche span.cbl,
+#bg_corps .module .content .module .cartouche span.cbr {
+	bottom:-24px;
+	height:24px;
+}
+
+#bg_corps .module .content .module .cartouche span.ctl {
 	left:-2px;
 	margin-top:0;
-	top:-18px;
-	width:80px;
 }
 
 #bg_corps .module .content .module .cartouche span.ctr {
-	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll right top transparent;
-	height:18px;
 	right:-4px;
-	top:-18px;
-	width:125px;
 }
 
 #bg_corps .module .content .module .cartouche span.cbl {
-	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll left bottom transparent;
-	bottom:-24px;
-	height:24px;
 	left:-2px;
-	width:80px;
 }
 
 #bg_corps .module .content .module .cartouche span.cbr {
-	background:url("../images/blog/cartouche_titre/corner_cartouche_titre.png") no-repeat scroll right bottom transparent;
-	bottom:-24px;
-	height:24px;
 	right:-4px;
-	width:125px;
 }
 
 #bg_corps .module .content .module .cartouche span.border.bb {

@@ -26,6 +26,10 @@ class plantationActions extends sfActions {
 		$this->nbArbresToPlant = 0;
 		$this->spendAll = false;
 		
+		if($this->getUser()->isAuthenticated()) {
+			$this->nbArbresToPlant += $this->getUser()->getGuardUser()->getProfile()->getCredit();
+		}
+		
 		if ($request->isMethod('post')) {
 
 			$this->fromUrl = $request->getParameter('fromUrl');
@@ -148,21 +152,22 @@ class plantationActions extends sfActions {
 			$profil->save();
 
 			$email = $this->getUser()->getGuardUser()->getEmailAddress();
-			$prenom = $this->getUser()->getGuardUser()->getFirstName();
-			$nom = $this->getUser()->getGuardUser()->getLastName();
 			$sendMail = (bool)$request->getParameter('send_email');
 		}
 
 		$this->getUser()->setFlash('notice', 'plant-succes');
+		$username = $this->getUser()->getGuardUser() ? $this->getUser()->getGuardUser()->getDisplayName() : $email;
 
 		if($sendMail && !empty($email)) {
 			// on construit l'attestation :
+			sfProjectConfiguration::getActive()->loadHelpers(array('I18N', 'Date'));
+			sfTCPDFPluginConfigHandler::loadConfig('my_config');
 			if($sdf) {
-				$filename = $this->buildAttestationSdF($email, $trees, $prenom, $nom);
+				$filename = $this->buildAttestationSdF($username, $trees);
 				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation-sdf');
 			}
 			else {
-				$filename = $this->buildAttestation($email, $trees, $prenom, $nom);
+				$filename = $this->buildAttestation($username, $trees);
 				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
 			}
 			
@@ -202,7 +207,9 @@ class plantationActions extends sfActions {
 
 		$code = $request->getParameter('plantCouponCode');
 		$this->programmes = array();
+		$this->coupon = null;
 		$this->partenaire = null;
+		$this->isThePartenaire = null;
 		$this->trees = array();
 		$this->fromUrl = $request->getParameter('fromUrl');
 		$this->redirectUrl = $request->getParameter('redirectUrl');
@@ -220,6 +227,9 @@ class plantationActions extends sfActions {
 			}
 
 			$this->partenaire = $this->coupon->getPartenaire()->getPartenaire();
+			if($this->getUser()->isAuthenticated() && $this->getUser()->getGuardUser()->getPartenaire()->getId() === $this->partenaire->getId()) {
+				$this->isThePartenaire = true;
+			}
 			$this->setProgrammesFromPartenaire($this->partenaire);
 			$total = 0;
 			
@@ -248,6 +258,7 @@ class plantationActions extends sfActions {
 
 			if($this->getUser()->getGuardUser()->getPartenaire()->getId()) {
 				$this->partenaire = $this->getUser()->getGuardUser()->getPartenaire();
+				$this->isThePartenaire = true;
 			}
 			
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();
@@ -279,26 +290,14 @@ class plantationActions extends sfActions {
 	 * Construit l'attestation pdf dans le dossier temporaire
 	 * @return: (string) nom du fichier physique
 	 */
-	public function buildAttestation($email, $trees, $prenom = '', $nom = '') {
-		$config = sfTCPDFPluginConfigHandler::loadConfig('my_config');
-		$username = (empty($prenom) && empty($nom)) ? $email : $prenom.' '.$nom;
-
-		// pdf object
+	public function buildAttestation($username, $trees) {
 		$pdf = new attestationPDF();
-
-		// settings
-		$pdf->SetMargins(10, 20);
-		$pdf->SetHeaderMargin(0);
-		$pdf->setPrintFooter(false);
-
-		// init pdf doc
-		$pdf->AliasNbPages();
-		$pdf->AddPage();
+		$pdf->init();
 		
 		$nbTotal = array_sum($trees);
 		
 		//body
-		$pdf->Cell(0,10,'certifie que',0,1,'C');
+		$pdf->Cell(0,10,__('certifie que'),0,1,'C');
 		
 		$pdf->SetTextColor(73,115,16);
 		$pdf->SetFontSize(16);
@@ -306,19 +305,24 @@ class plantationActions extends sfActions {
 		$pdf->SetFontSize(12);
 		$pdf->SetTextColor(0);
 		$pdf->Cell(0, 5, '', 0, 1); // saut de ligne
-		$pdf->Cell(0,5,'a financé la plantation '.($nbTotal > 1 ? 'de '.$nbTotal.' arbres' : 'd\'un arbre'),0,1,'C');
 		
-		if(sizeof($trees) > 1) {
-			$pdf->Cell(0,5,'dans les programmes de reforestation suivants :',0,1,'C');
-		}
-		else {
-			$pdf->Cell(0,5,'dans le programme de reforestation suivant :',0,1,'C');
-		}
-
+		$pdf->Cell(0,5,format_number_choice(
+			"(-Inf,1]a financé la plantation d'un arbre|(1,+Inf]a financé la plantation de {number} arbres",
+			array('{number}' => $nbTotal),
+			$nbTotal
+		),0,1,'C');
+		
 		foreach($trees as $key => $value) {
 			$programme = Doctrine_Core::getTable('programme')->findOneBy('id', $key);
 			$programmes[] = $programme->getTitle();
 		}
+		
+		$pdf->Cell(0,5,format_number_choice(
+			"(-Inf,1]dans le programme de reforestation suivant :|(1,+Inf]dans les programmes de reforestation suivants :",
+			array(),
+			sizeof($programmes)
+		),0,1,'C');
+		
 		
 		$current_y_position = $pdf->getY();
 		$pdf->SetTextColor(73,115,16);
@@ -326,12 +330,18 @@ class plantationActions extends sfActions {
 		$pdf->writeHTMLCell(130, 0, 15, $current_y_position, join(', ', $programmes),0,1,false, true, 'C');
 		$pdf->SetFontSize(12);
 		$pdf->SetTextColor(0);
-			
-		$pdf->writeHTMLCell(0, 0, 15, 85, '<b><font size="-4">A Paris, le '.date('d/m/Y').'</font></b>', 0, 1, false, true, 'L');
+		
+		$str = __("À {city}, le {date}", array(
+				"{city}" => "Paris",
+				"{date}" => format_date(time()),
+		));
+		
+		$pdf->writeHTMLCell(0, 0, 15, 85, '<b><font size="-4">'.$str.'</font></b>', 0, 1, false, true, 'L');
 		
 		// output
 		$filename = '/tmp/attestation-'.uniqid().'.pdf';
 		$pdf->Output($filename , 'F');
+		
 		return $filename;
 	}
 	
@@ -339,23 +349,9 @@ class plantationActions extends sfActions {
 	 * Construit l'attestation pdf dans le dossier temporaire pour le partenaire SdF
 	 * @return: (string) nom du fichier physique
 	 */
-	public function buildAttestationSdF($email, $trees, $prenom = '', $nom = '') {
-		$config = sfTCPDFPluginConfigHandler::loadConfig('my_config');
-
-		$username = (empty($prenom) && empty($nom)) ? $email : $prenom.' '.$nom;
-		$programme = Doctrine_Core::getTable('programme')->findOneBy('id', key($trees));
-		
-		// pdf object
-		$pdf = new attestationPDFSdF();
-
-		// settings
-		$pdf->SetMargins(10, 20);
-		$pdf->SetHeaderMargin(0);
-		$pdf->setPrintFooter(false);
-
-		// init pdf doc
-		$pdf->AliasNbPages();
-		$pdf->AddPage();
+	public function buildAttestationSdF($username, $trees) {
+		$pdf = new attestationPDF('attestation_empty_sdf');
+		$pdf->init();
 
 		//body
 		$police = strlen($username) > 30 ? 12 : 14;
@@ -363,13 +359,21 @@ class plantationActions extends sfActions {
 		$pdf->SetFont('Times','BI', $police);
 		$pdf->writeHTMLCell(0, 0, 20, 66, $username,0,0,false, true, 'L');
 		
+		$programme = Doctrine_Core::getTable('programme')->findOneBy('id', key($trees));
+		
 		$pdf->SetTextColor(255,255,255);
 		$pdf->SetFont('Times','B', 9);
 		$pdf->writeHTMLCell(0, 0, 53, 77, $programme->getTitle(),0,0,false, true, 'L');
 
 		$pdf->SetFont('Times','B', 9);
 		$pdf->SetTextColor(255,255,255);
-		$pdf->writeHTMLCell(0, 0, 95, 89, '<b><font size="-4">A Paris, le '.date('d/m/Y').'</font></b>', 0, 0, false, true, 'L');
+		
+		$str = __("À {city}, le {date}", array(
+				"{city}" => "Paris",
+				"{date}" => format_date(time()),
+		));
+		
+		$pdf->writeHTMLCell(0, 0, 95, 89, '<b><font size="-4">'.$str.'</font></b>', 0, 0, false, true, 'L');
 		$pdf->SetTextColor(0);
 
 		// output

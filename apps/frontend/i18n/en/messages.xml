@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-04-30T19:50:31Z" product-name="messages" xml:space="default">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-05-03T13:38:51Z" product-name="messages" xml:space="default">
     <header/>
     <body>
       <trans-unit id="1">
@@ -146,7 +146,7 @@
       </trans-unit>
       <trans-unit id="39">
         <source>Nom d'utilisateur</source>
-        <target>User  Name</target>
+        <target>Username</target>
       </trans-unit>
       <trans-unit id="40">
         <source>Envoyer</source>
@@ -598,7 +598,7 @@
       </trans-unit>
       <trans-unit id="184">
         <source>(-Inf,1]Planter votre arbre|(1,+Inf]Planter vos arbres</source>
-        <target>(-Inf, 1]Plant your tree |(1, + Inf]Plant your trees</target>
+        <target>(-Inf, 1]Plant your tree|(1, +Inf]Plant your trees</target>
       </trans-unit>
       <trans-unit id="185">
         <source>Les programmes de reforestation que nous soutenons</source>
@@ -627,6 +627,22 @@
       <trans-unit id="191">
         <source>S'inscrire</source>
         <target>Register</target>
+      </trans-unit>
+      <trans-unit id="192">
+        <source>certifie que</source>
+        <target>certify that</target>
+      </trans-unit>
+      <trans-unit id="193">
+        <source>(-Inf,1]a financé la plantation d'un arbre|(1,+Inf]a financé la plantation de {number} arbres</source>
+        <target>(-Inf,1]has financed the planting of a tree|(1,+Inf]has financed the planting of {number} trees</target>
+      </trans-unit>
+      <trans-unit id="194">
+        <source>(-Inf,1]dans le programme de reforestation suivant :|(1,+Inf]dans les programmes de reforestation suivants :</source>
+        <target>(-Inf,1]in the following reforestation program:|(1,+Inf]in the following reforestation programs:</target>
+      </trans-unit>
+      <trans-unit id="195">
+        <source>À {city}, le {date}</source>
+        <target>{city}, {date}</target>
       </trans-unit>
     </body>
   </file>

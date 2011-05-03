@@ -53,5 +53,11 @@ class sfGuardUser extends PluginsfGuardUser
   public function countTrees() {
   	return sizeof($this->getTrees());
 	}
+  
+  public function getDisplayName() {
+		$prenom = $this->getFirstName();
+		$nom = $this->getLastName();
+  	return (empty($prenom) && empty($nom)) ? $this->getEmailAddress() : $prenom.' '.$nom;
+	}
 	
 }

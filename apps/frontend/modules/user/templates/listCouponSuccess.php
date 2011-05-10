@@ -1,7 +1,6 @@
 <?php 
 	use_helper('Date');
 	include_partial('menuProfil');
-//var_dump($form['user']['last_name']);
 ?>
 
 <div class="module grey" style="width:700px;float:right;">
@@ -79,8 +78,11 @@
 		<?php if(!empty($partenaire)) :?>
 		<div class="export_wrapper">
 			<span style="line-height:16px;vertical-align:middle;padding-right:5px;"><?php echo __("Exporter : ") ?></span>
-			<a href="<?php echo url_for('couponsCSV') ?>" style="float:right;margin:0;" >
-				<img src="/images/icons/16x16/csv.png" alt="CSV" />
+			<a href="<?php echo url_for('@couponsCSV?format=csv') ?>" >
+				<img src="/images/icons/16x16/csv.png" alt="CSV" title="<?php echo __("CSV pour OpenOffice"); ?>" />
+			</a>
+			<a href="<?php echo url_for('@couponsCSV?format=xls') ?>" style="float:right;margin:0;" >
+				<img src="/images/icons/16x16/xls.png" alt="XLS" title="<?php echo __("CSV pour Microsoft Excel"); ?>" />
 			</a>
 		</div>
 		<?php endif; ?>

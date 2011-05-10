@@ -434,7 +434,7 @@ class plantationActions extends sfActions {
 		
 		$this->couponProgrammes = array();
 		foreach($trees as $tree) {
-			if(isset($this->couponProgrammes[$tree['Coupon']['coupon_id']]['programme_id'])) {
+			if(isset($this->couponProgrammes[$tree['Coupon']['coupon_id']][$tree['programme_id']])) {
 				$this->couponProgrammes[$tree['Coupon']['coupon_id']][$tree['programme_id']]++;
 			}
 			else {

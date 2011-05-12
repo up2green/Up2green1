@@ -7,7 +7,7 @@
  * 
  * @package    up2green
  * @subpackage model
- * @author     Your name here
+ * @author     Clément Gautier
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class programme extends Baseprogramme
@@ -18,6 +18,13 @@ class programme extends Baseprogramme
 			->createQuery('t')
 			->where('t.programme_id = ?', $this->getId())
 			->count();
+	}
+	
+	public function getCoordinate() {
+		if($this->getLatitude() != null && $this->getLongitude() != null && $this->getAltitude() != null ) {
+			return $this->getLatitude().','.$this->getLongitude().','.$this->getAltitude();
+		}
+		return null;
 	}
 	
 }

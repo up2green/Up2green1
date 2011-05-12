@@ -30,6 +30,9 @@ clic_pub:
   url: /ajax/clicPub
   param: { module: ajax, action: clicPub, sf_format: xml }
 
+get_kml:
+  url: /ajax/getKML
+  param: { module: ajax, action: getKML, sf_format: xml }
 
 couponsCSV:
   url:    /exportCoupons

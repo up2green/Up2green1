@@ -10,6 +10,11 @@
  */
 class ajaxActions extends sfActions
 {
+	public function executeGetKML(sfWebRequest $request) {
+		$this->organismes = Doctrine_Core::getTable('organisme')->getActive();
+		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
+	}
+		
 	public function executeClicPub(sfWebRequest $request) {
 		$params = $request->getParameterHolder();
 		$url = $params->get('url');

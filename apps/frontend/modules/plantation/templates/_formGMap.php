@@ -5,9 +5,34 @@
 <?php endif; ?>
 
 <p style="text-align:center;padding: 15px 5px; "><?php echo __("Visualisez les enjeux de chaque programme de reforestation en cliquant sur les info-bulles."); ?></p>
-<?php use_helper('Javascript','GMap') ?>
-<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>
-<?php include_map_javascript($gMap); ?>
+
+<?php 
+
+$url = "&up_kml_url=".sfConfig::get('app_url_moteur').substr(url_for("@get_kml"), 1);
+$url .= "&up_view_mode=earth";
+$url .= "&up_earth_2d_fallback=1";
+$url .= "&up_earth_fly_from_space=1";
+$url .= "&up_earth_show_nav_controls=1";
+$url .= "&up_earth_show_buildings=1";
+$url .= "&up_earth_show_terrain=1";
+$url .= "&up_earth_show_roads=1";
+$url .= "&up_earth_show_borders=1";
+$url .= "&up_earth_sphere=earth";
+$url .= "&up_maps_zoom_out=1";
+$url .= "&up_maps_default_type=terrain";
+$url .= "&synd=open";
+$url .= "&w=700";
+$url .= "&h=450";
+$url .= "&border=none";
+$url .= "&output=js";
+
+$url = htmlentities($url);
+$url = str_replace("/", "%2F", $url);
+$url = str_replace(":", "%3A", $url);
+
+?>
+
+<script src="http://www.gmodules.com/ig/ifr?url=http://code.google.com/apis/kml/embed/embedkmlgadget.xml<?php echo $url; ?>"></script>
 
 <?php if(!empty($gMapModes)) : ?>
 <div class="modeSelector">

@@ -10,7 +10,7 @@
 class blogComponents extends sfComponents {
   
 	public function executeTopbar(sfWebRequest $request) {
-		$this->totalTrees = Doctrine_Core::getTable('tree')->count() + sfConfig::get('app_hardcode_tree_number');
+		$this->totalTrees = Doctrine_Core::getTable('Tree')->count() + sfConfig::get('app_hardcode_tree_number');
 	}
 
   public function executeArticlesBloc(sfWebRequest $request) {
@@ -22,7 +22,7 @@ class blogComponents extends sfComponents {
     if($request->isXmlHttpRequest())
       $this->noBloc = true;
 
-    $this->articles = Doctrine::getTable('Article')->retrieveLastArticles($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_articles_max'), $currentOffset);
+    $this->articles = Doctrine::getTable('Article')->getActiveByLang($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_articles_max'), $currentOffset);
   }
 
   public function executeProgrammesBloc(sfWebRequest $request) {
@@ -42,7 +42,7 @@ class blogComponents extends sfComponents {
 			if($request->isXmlHttpRequest())
 				$this->noBloc = true;
 			
-			$this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
+			$this->programmes = Doctrine::getTable('Programme')->getActiveByLang($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
 		}
 		elseif($request->isXmlHttpRequest())
 			die();
@@ -73,9 +73,7 @@ class blogComponents extends sfComponents {
   }
 
   public function executeDiaporama(sfWebRequest $request) {
-    // HOT-FIX incompréhenssible :
-    $this->programmes = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')
-    	->retrieveLastProgrammes($this->getUser()->getCulture(), 5, 0);
+    $this->programmes = Doctrine::getTable('Programme')->getActiveByLang($this->getUser()->getCulture(), 5);
   }
 
   public function executeMenu(sfWebRequest $request) {
@@ -95,7 +93,7 @@ class blogComponents extends sfComponents {
     		'object'		=> $category
     	);
     
-    $this->programms = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')->getActiveByLang($this->getUser()->getCulture());
+    $this->programms = Doctrine::getTable('Programme')->getActiveByLang($this->getUser()->getCulture());
   }
 
   public function executeFooter(sfWebRequest $request) {
@@ -121,12 +119,10 @@ class blogComponents extends sfComponents {
   }
 
   protected function retrieveOffsets($offset, $nbElements, $maxOffset) {
-    // Calcul de l'offset à utiliser lors du clic sur le bouton précédent
-    $return['prev'] = ($offset - $nbElements <= 0)? 0: $offset - $nbElements;
-    // Calcul de l'offset à utiliser lors du clic sur le bouton suivant
-//    $return['next'] = ($offset + $nbElements >= $maxOffset)? ($offset - $nbElements <= 0)? 0: $offset - $nbElements: $offset + $nbElements;
-    $return['next'] = ($offset + $nbElements >= $maxOffset)? $offset: $offset + $nbElements;
-
-    return $return;
+    // Calcul de l'offset à utiliser lors du clic sur le bouton précédent / suivant
+    return array(
+				'prev' => ($offset - $nbElements <= 0)? 0: $offset - $nbElements,
+				'next' => ($offset + $nbElements >= $maxOffset)? $offset: $offset + $nbElements
+		);
   }
 }

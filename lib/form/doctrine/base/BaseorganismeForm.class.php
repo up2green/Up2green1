@@ -18,6 +18,8 @@ abstract class BaseorganismeForm extends BaseFormDoctrine
       'id'         => new sfWidgetFormInputHidden(),
       'url'        => new sfWidgetFormInputText(),
       'logo'       => new sfWidgetFormInputText(),
+      'point_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Coordonnee'), 'add_empty' => true)),
+      'is_active'  => new sfWidgetFormInputCheckbox(),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
     ));
@@ -26,6 +28,8 @@ abstract class BaseorganismeForm extends BaseFormDoctrine
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'url'        => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'logo'       => new sfValidatorString(array('max_length' => 128, 'required' => false)),
+      'point_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Coordonnee'), 'required' => false)),
+      'is_active'  => new sfValidatorBoolean(array('required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

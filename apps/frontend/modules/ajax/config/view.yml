@@ -1,3 +1,7 @@
+getKML:
+  http_metas:
+    content-type: application/kml
+
 default:
   stylesheets:    []
   javascripts:    []

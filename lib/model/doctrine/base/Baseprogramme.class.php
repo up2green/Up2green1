@@ -11,14 +11,15 @@
  * @property string $accroche
  * @property clob $description
  * @property string $geoadress
- * @property decimal $latitude
- * @property decimal $longitude
+ * @property integer $point_id
  * @property boolean $is_active
  * @property integer $max_tree
  * @property string $logo
  * @property organisme $Organisme
- * @property Doctrine_Collection $Partenaires
+ * @property point $Coordonnee
+ * @property Doctrine_Collection $Polygonnes
  * @property Doctrine_Collection $Trees
+ * @property Doctrine_Collection $Partenaires
  * 
  * @method integer             getId()           Returns the current record's "id" value
  * @method integer             getOrganismeId()  Returns the current record's "organisme_id" value
@@ -26,28 +27,30 @@
  * @method string              getAccroche()     Returns the current record's "accroche" value
  * @method clob                getDescription()  Returns the current record's "description" value
  * @method string              getGeoadress()    Returns the current record's "geoadress" value
- * @method decimal             getLatitude()     Returns the current record's "latitude" value
- * @method decimal             getLongitude()    Returns the current record's "longitude" value
+ * @method integer             getPointId()      Returns the current record's "point_id" value
  * @method boolean             getIsActive()     Returns the current record's "is_active" value
  * @method integer             getMaxTree()      Returns the current record's "max_tree" value
  * @method string              getLogo()         Returns the current record's "logo" value
  * @method organisme           getOrganisme()    Returns the current record's "Organisme" value
- * @method Doctrine_Collection getPartenaires()  Returns the current record's "Partenaires" collection
+ * @method point               getCoordonnee()   Returns the current record's "Coordonnee" value
+ * @method Doctrine_Collection getPolygonnes()   Returns the current record's "Polygonnes" collection
  * @method Doctrine_Collection getTrees()        Returns the current record's "Trees" collection
+ * @method Doctrine_Collection getPartenaires()  Returns the current record's "Partenaires" collection
  * @method programme           setId()           Sets the current record's "id" value
  * @method programme           setOrganismeId()  Sets the current record's "organisme_id" value
  * @method programme           setTitle()        Sets the current record's "title" value
  * @method programme           setAccroche()     Sets the current record's "accroche" value
  * @method programme           setDescription()  Sets the current record's "description" value
  * @method programme           setGeoadress()    Sets the current record's "geoadress" value
- * @method programme           setLatitude()     Sets the current record's "latitude" value
- * @method programme           setLongitude()    Sets the current record's "longitude" value
+ * @method programme           setPointId()      Sets the current record's "point_id" value
  * @method programme           setIsActive()     Sets the current record's "is_active" value
  * @method programme           setMaxTree()      Sets the current record's "max_tree" value
  * @method programme           setLogo()         Sets the current record's "logo" value
  * @method programme           setOrganisme()    Sets the current record's "Organisme" value
- * @method programme           setPartenaires()  Sets the current record's "Partenaires" collection
+ * @method programme           setCoordonnee()   Sets the current record's "Coordonnee" value
+ * @method programme           setPolygonnes()   Sets the current record's "Polygonnes" collection
  * @method programme           setTrees()        Sets the current record's "Trees" collection
+ * @method programme           setPartenaires()  Sets the current record's "Partenaires" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -85,13 +88,9 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('latitude', 'decimal', null, array(
-             'type' => 'decimal',
-             'scale' => 6,
-             ));
-        $this->hasColumn('longitude', 'decimal', null, array(
-             'type' => 'decimal',
-             'scale' => 6,
+        $this->hasColumn('point_id', 'integer', 4, array(
+             'type' => 'integer',
+             'length' => 4,
              ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
@@ -115,11 +114,19 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'local' => 'organisme_id',
              'foreign' => 'id'));
 
-        $this->hasMany('partenaireProgramme as Partenaires', array(
+        $this->hasOne('point as Coordonnee', array(
+             'local' => 'point_id',
+             'foreign' => 'id'));
+
+        $this->hasMany('programmePolygonne as Polygonnes', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 
         $this->hasMany('tree as Trees', array(
+             'local' => 'id',
+             'foreign' => 'programme_id'));
+
+        $this->hasMany('partenaireProgramme as Partenaires', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 

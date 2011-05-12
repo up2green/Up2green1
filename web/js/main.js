@@ -72,8 +72,8 @@ $(document).ready(function(){
 		imgPath:"/images/jquery.mb.tooltip/",
 		ancor:"mouse",
 		shadowColor:"black",
-		mb_fade:100
-    }).css('cursor', 'help');
+		mb_fade:0
+    });
 
 	$(document).enableTooltip();
 	

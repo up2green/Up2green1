@@ -400,6 +400,8 @@ class plantationActions extends sfActions {
 			return;
 		}
 		
+		$this->format = $request->getParameter('format', 'csv');
+		
 		$user = $this->getUser()->getGuardUser();
 		$partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 		
@@ -410,7 +412,36 @@ class plantationActions extends sfActions {
 		}
 		
 		$this->couponGens = Doctrine::getTable('couponGen')->getArrayById();
+		
+		$queryProgrammes = Doctrine::getTable('programme')
+						->addLangQuery($this->getUser()->getCulture())
+						->select('p.id, t.title');
+		
+		$this->programmes = Doctrine::getTable('programme')->getArrayById($queryProgrammes);
+		
 		$this->coupons = $query->select('c.gen_id, c.code, c.is_active, c.used_at')->fetchArray();
+		
+		$couponIds = array();
+		foreach($this->coupons as $coupon) {
+			$couponIds[] = $coupon['id'];
+		}
+		
+		$trees = Doctrine::getTable('tree')->addQuery()
+						->select('id, programme_id, tc.coupon_id')
+						->innerJoin('t.Coupon tc')
+						->whereIn('tc.coupon_id', $couponIds)
+						->fetchArray();
+		
+		$this->couponProgrammes = array();
+		foreach($trees as $tree) {
+			if(isset($this->couponProgrammes[$tree['Coupon']['coupon_id']][$tree['programme_id']])) {
+				$this->couponProgrammes[$tree['Coupon']['coupon_id']][$tree['programme_id']]++;
+			}
+			else {
+				$this->couponProgrammes[$tree['Coupon']['coupon_id']][$tree['programme_id']] = 1;
+			}
+		}
+		
 		$this->setLayout(false);
 	}
 

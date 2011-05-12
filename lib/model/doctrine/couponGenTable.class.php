@@ -14,7 +14,7 @@ class couponGenTable extends Doctrine_Table
 	}
 	
 	public function getArrayById(Doctrine_Query $q = null) {
-		$results = $this->addQuery($q)->fetchArray();
+		$results = $this->getArray($q);
 		$ret = array();
 		foreach($results as $result) {
 			$ret[$result['id']] = $result;

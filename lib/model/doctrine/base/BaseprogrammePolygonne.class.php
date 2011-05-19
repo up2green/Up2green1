@@ -8,13 +8,16 @@
  * @property integer $polygonne_id
  * @property integer $programme_id
  * @property programme $programme
+ * @property polygonne $polygonne
  * 
  * @method integer            getPolygonneId()  Returns the current record's "polygonne_id" value
  * @method integer            getProgrammeId()  Returns the current record's "programme_id" value
  * @method programme          getProgramme()    Returns the current record's "programme" value
+ * @method polygonne          getPolygonne()    Returns the current record's "polygonne" value
  * @method programmePolygonne setPolygonneId()  Sets the current record's "polygonne_id" value
  * @method programmePolygonne setProgrammeId()  Sets the current record's "programme_id" value
  * @method programmePolygonne setProgramme()    Sets the current record's "programme" value
+ * @method programmePolygonne setPolygonne()    Sets the current record's "polygonne" value
  * 
  * @package    up2green
  * @subpackage model
@@ -36,11 +39,6 @@ abstract class BaseprogrammePolygonne extends sfDoctrineRecord
              'primary' => true,
              'length' => 4,
              ));
-
-        $this->option('symfony', array(
-             'form' => false,
-             'filter' => false,
-             ));
     }
 
     public function setUp()
@@ -48,6 +46,11 @@ abstract class BaseprogrammePolygonne extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('programme', array(
              'local' => 'programme_id',
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
+
+        $this->hasOne('polygonne', array(
+             'local' => 'polygonne_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
     }

@@ -13,23 +13,25 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Organisme'), 'add_empty' => true)),
-      'geoadress'    => new sfWidgetFormFilterInput(),
-      'is_active'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
-      'max_tree'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'logo'         => new sfWidgetFormFilterInput(),
-      'created_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'organisme_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Organisme'), 'add_empty' => true)),
+      'geoadress'       => new sfWidgetFormFilterInput(),
+      'is_active'       => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'max_tree'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'logo'            => new sfWidgetFormFilterInput(),
+      'created_at'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'polygonnes_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'polygonne')),
     ));
 
     $this->setValidators(array(
-      'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Organisme'), 'column' => 'id')),
-      'geoadress'    => new sfValidatorPass(array('required' => false)),
-      'is_active'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
-      'max_tree'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'logo'         => new sfValidatorPass(array('required' => false)),
-      'created_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'updated_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'organisme_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Organisme'), 'column' => 'id')),
+      'geoadress'       => new sfValidatorPass(array('required' => false)),
+      'is_active'       => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'max_tree'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'logo'            => new sfValidatorPass(array('required' => false)),
+      'created_at'      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'      => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'polygonnes_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'polygonne', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('programme_filters[%s]');
@@ -41,6 +43,24 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     parent::setup();
   }
 
+  public function addPolygonnesListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.programmePolygonne programmePolygonne')
+      ->andWhereIn('programmePolygonne.polygonne_id', $values)
+    ;
+  }
+
   public function getModelName()
   {
     return 'programme';
@@ -49,14 +69,15 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'           => 'Number',
-      'organisme_id' => 'ForeignKey',
-      'geoadress'    => 'Text',
-      'is_active'    => 'Boolean',
-      'max_tree'     => 'Number',
-      'logo'         => 'Text',
-      'created_at'   => 'Date',
-      'updated_at'   => 'Date',
+      'id'              => 'Number',
+      'organisme_id'    => 'ForeignKey',
+      'geoadress'       => 'Text',
+      'is_active'       => 'Boolean',
+      'max_tree'        => 'Number',
+      'logo'            => 'Text',
+      'created_at'      => 'Date',
+      'updated_at'      => 'Date',
+      'polygonnes_list' => 'ManyKey',
     );
   }
 }

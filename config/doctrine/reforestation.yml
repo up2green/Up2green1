@@ -63,6 +63,10 @@ programme:
       class: organisme
       local: organisme_id
       foreignAlias: Programmes
+    Polygonnes:
+      class: polygonne
+      refClass: programmePolygonne
+      foreignAlias: Programmes
 
 tree:
   actAs: [Timestampable]

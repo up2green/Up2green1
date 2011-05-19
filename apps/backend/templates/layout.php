@@ -43,6 +43,7 @@
 						<a href="#">Plantation</a>
 						<ul class="subnav">
 							<li><a href="<?php echo url_for('@programme') ?>">Programmes</a></li>
+							<li><a href="<?php echo url_for('@polygonne') ?>">Parcelles</a></li>
 							<li><a href="<?php echo url_for('@organisme') ?>">Organismes</a></li>
 							<li><a href="<?php echo url_for('@couponGen') ?>">Type de coupons</a></li>
 							<li><a href="<?php echo url_for('@coupon') ?>">Coupons</a></li>

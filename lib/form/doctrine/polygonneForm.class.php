@@ -12,5 +12,14 @@ class polygonneForm extends BasepolygonneForm
 {
   public function configure()
   {
+		$this->embedRelations(array(
+			'Points' => array(
+				'considerNewFormEmptyFields'		=> array('longitude', 'latitude', 'altitude'),
+				'newFormLabel'                  => 'Nouveau points',
+				'multipleNewForms'              => true,
+				'newFormsInitialCount'          => 1,
+			)
+		));
+		
   }
 }

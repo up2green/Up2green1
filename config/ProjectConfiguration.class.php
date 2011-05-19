@@ -16,6 +16,7 @@ class ProjectConfiguration extends sfProjectConfiguration
 			'sfCKEditorPlugin',
 			'sfDoctrineNestedSetPlugin',
 			'sfJqueryTreeDoctrineManagerPlugin',
+			'ahDoctrineEasyEmbeddedRelationsPlugin',
 			'sfTCPDFPlugin'
 		));
   }

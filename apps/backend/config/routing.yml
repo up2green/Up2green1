@@ -1,3 +1,12 @@
+polygonne:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                polygonne
+    module:               polygonne
+    prefix_path:          /polygonne
+    column:               id
+    with_wildcard_routes: true
+
 session:
   class: sfDoctrineRouteCollection
   options:

@@ -51,11 +51,24 @@ programmePoint:
       onDelete: CASCADE
       foreignType: one
       foreignAlias: Point
-      
+
+polygonnePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    polygonne_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Polygonne:
+      class: polygonne
+      local: polygonne_id
+      type: one
+      onDelete: CASCADE
+      foreignAlias: Points
+
 polygonne:
-  options:
-    symfony:
-      filter: false
   columns:
     id:
       type: integer(4)
@@ -66,29 +79,7 @@ polygonne:
       unique: true
       notnull: true
 
-polygonnePoint:
-  options:
-    symfony:
-      form:   false
-      filter: false
-  columns:
-    polygonne_id:
-      type: integer(4)
-      primary: true
-    point_id:
-      type: integer(4)
-      primary: true
-  relations:
-    polygonne:
-      local: polygonne_id
-      foreignAlias: Points
-      onDelete: CASCADE
-      
 programmePolygonne:
-  options:
-    symfony:
-      form:   false
-      filter: false
   columns:
     polygonne_id:
       type: integer(4)
@@ -99,9 +90,11 @@ programmePolygonne:
   relations:
     programme:
       local: programme_id
-      foreignAlias: Polygonnes
+      type: one
+      foreignType: many
       onDelete: CASCADE
-    polygon:
+    polygonne:
       local: polygonne_id
-      foreignAlias: Programmes
+      type: one
+      foreignType: many
       onDelete: CASCADE

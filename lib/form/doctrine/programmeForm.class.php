@@ -10,8 +10,13 @@
  */
 class programmeForm extends BaseprogrammeForm 
 {
-	public function configure() 
-	{
+	public function configure() {
+		
+		parent::configure();
+		$pointForm = new programmePointForm($this->object->Point);
+		unset($pointForm['id'], $pointForm['type']);
+		$this->embedForm('Point', $pointForm);
+		
 		unset(
 			$this['created_at'],
 			$this['updated_at']

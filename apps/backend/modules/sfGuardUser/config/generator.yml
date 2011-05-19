@@ -1,0 +1,16 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    config:
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          "User":                   [first_name, last_name, email_address, username, password, password_again]
+          "Profil":                 [Profile]
+          "Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]
+
+      edit:
+        title: Modification de l'utilisateur "%%username%%"
+
+      new:
+        title: Nouvel utilisateur

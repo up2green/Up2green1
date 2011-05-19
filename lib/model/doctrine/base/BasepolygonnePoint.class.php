@@ -8,16 +8,13 @@
  * @property integer $polygonne_id
  * @property integer $point_id
  * @property polygonne $polygonne
- * @property point $point
  * 
  * @method integer        getPolygonneId()  Returns the current record's "polygonne_id" value
  * @method integer        getPointId()      Returns the current record's "point_id" value
  * @method polygonne      getPolygonne()    Returns the current record's "polygonne" value
- * @method point          getPoint()        Returns the current record's "point" value
  * @method polygonnePoint setPolygonneId()  Sets the current record's "polygonne_id" value
  * @method polygonnePoint setPointId()      Sets the current record's "point_id" value
  * @method polygonnePoint setPolygonne()    Sets the current record's "polygonne" value
- * @method polygonnePoint setPoint()        Sets the current record's "point" value
  * 
  * @package    up2green
  * @subpackage model
@@ -51,11 +48,6 @@ abstract class BasepolygonnePoint extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('polygonne', array(
              'local' => 'polygonne_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
-
-        $this->hasOne('point', array(
-             'local' => 'point_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
     }

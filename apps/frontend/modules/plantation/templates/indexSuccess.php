@@ -5,7 +5,7 @@
 			<img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
 			<p class="title"><?php echo __("Les programmes de reforestation que nous soutenons") ?></p>
 			<div class="content">
-				<?php include_partial('formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes)); ?>
+				<?php include_partial('formGMap'); ?>
 				<div class="clear"></div>
 			</div>
 			<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

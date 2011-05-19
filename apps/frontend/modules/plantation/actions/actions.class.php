@@ -69,17 +69,6 @@ class plantationActions extends sfActions {
 			return $this->redirect($this->fromUrl);
 		}
 
-		$this->gMap = new myGMap(
-			$this->programmes,
-			$this->partenaire,
-			$this->getUser(),
-			array(
-				'canPlant' => isset($this->nbArbresToPlant) && !empty($this->nbArbresToPlant)
-			)
-		);
-		
-		$this->gMapModes = $this->gMap->getGmapModeSelector();
-
 	}
 
 	public function executePlant(sfWebRequest $request) {

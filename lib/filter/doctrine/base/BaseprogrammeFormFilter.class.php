@@ -15,7 +15,6 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'organisme_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Organisme'), 'add_empty' => true)),
       'geoadress'    => new sfWidgetFormFilterInput(),
-      'point_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Coordonnee'), 'add_empty' => true)),
       'is_active'    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'max_tree'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'logo'         => new sfWidgetFormFilterInput(),
@@ -26,7 +25,6 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'organisme_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Organisme'), 'column' => 'id')),
       'geoadress'    => new sfValidatorPass(array('required' => false)),
-      'point_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Coordonnee'), 'column' => 'id')),
       'is_active'    => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'max_tree'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'logo'         => new sfValidatorPass(array('required' => false)),
@@ -54,7 +52,6 @@ abstract class BaseprogrammeFormFilter extends BaseFormFilterDoctrine
       'id'           => 'Number',
       'organisme_id' => 'ForeignKey',
       'geoadress'    => 'Text',
-      'point_id'     => 'ForeignKey',
       'is_active'    => 'Boolean',
       'max_tree'     => 'Number',
       'logo'         => 'Text',

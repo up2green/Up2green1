@@ -10,6 +10,24 @@
  * @author     Clément Gautier
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class point extends Basepoint
-{
+class point extends Basepoint {
+	
+	public static $outputSeparator = ',';
+	
+	public function getOutput() {
+		if($this->isNew()) {
+			return null;
+		}
+		
+		$coord = $this->getLongitude()
+			.self::$outputSeparator
+			.$this->getLatitude();
+
+		$altitude = (float)$this->getAltitude();
+		if(!empty($altitude)) {
+			$coord .= self::$outputSeparator.$altitude;
+		}
+
+		return $coord;
+	}
 }

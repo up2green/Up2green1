@@ -1,4 +1,5 @@
 getKML:
+  has_layout: off
   http_metas:
     content-type: application/kml
 

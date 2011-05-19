@@ -40,7 +40,6 @@ abstract class Basepolygonne extends sfDoctrineRecord
              ));
 
         $this->option('symfony', array(
-             'form' => false,
              'filter' => false,
              ));
     }

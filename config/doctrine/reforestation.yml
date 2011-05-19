@@ -21,17 +21,9 @@ organisme:
     logo:
       type: string(128)
       default: null
-    point_id:
-      type: integer(4)
-      default: null
     is_active:
       type: boolean
       default: 1
-  relations:
-    Coordonnee:
-      class: point
-      local: point_id
-      foreignAlias: Organismes
 
 programme:
   actAs: 
@@ -57,9 +49,6 @@ programme:
     geoadress:
       type: string(255)
       default: null
-    point_id:
-      type: integer(4)
-      default: null
     is_active:
       type: boolean
       default: 1
@@ -73,10 +62,6 @@ programme:
     Organisme:
       class: organisme
       local: organisme_id
-      foreignAlias: Programmes
-    Coordonnee:
-      class: point
-      local: point_id
       foreignAlias: Programmes
 
 tree:

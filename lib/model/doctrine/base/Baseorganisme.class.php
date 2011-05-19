@@ -11,9 +11,8 @@
  * @property string $accroche
  * @property clob $description
  * @property string $logo
- * @property integer $point_id
  * @property boolean $is_active
- * @property point $Coordonnee
+ * @property organismePoint $Point
  * @property Doctrine_Collection $Programmes
  * 
  * @method integer             getId()          Returns the current record's "id" value
@@ -22,9 +21,8 @@
  * @method string              getAccroche()    Returns the current record's "accroche" value
  * @method clob                getDescription() Returns the current record's "description" value
  * @method string              getLogo()        Returns the current record's "logo" value
- * @method integer             getPointId()     Returns the current record's "point_id" value
  * @method boolean             getIsActive()    Returns the current record's "is_active" value
- * @method point               getCoordonnee()  Returns the current record's "Coordonnee" value
+ * @method organismePoint      getPoint()       Returns the current record's "Point" value
  * @method Doctrine_Collection getProgrammes()  Returns the current record's "Programmes" collection
  * @method organisme           setId()          Sets the current record's "id" value
  * @method organisme           setUrl()         Sets the current record's "url" value
@@ -32,9 +30,8 @@
  * @method organisme           setAccroche()    Sets the current record's "accroche" value
  * @method organisme           setDescription() Sets the current record's "description" value
  * @method organisme           setLogo()        Sets the current record's "logo" value
- * @method organisme           setPointId()     Sets the current record's "point_id" value
  * @method organisme           setIsActive()    Sets the current record's "is_active" value
- * @method organisme           setCoordonnee()  Sets the current record's "Coordonnee" value
+ * @method organisme           setPoint()       Sets the current record's "Point" value
  * @method organisme           setProgrammes()  Sets the current record's "Programmes" collection
  * 
  * @package    up2green
@@ -73,10 +70,6 @@ abstract class Baseorganisme extends sfDoctrineRecord
              'type' => 'string',
              'length' => 128,
              ));
-        $this->hasColumn('point_id', 'integer', 4, array(
-             'type' => 'integer',
-             'length' => 4,
-             ));
         $this->hasColumn('is_active', 'boolean', null, array(
              'type' => 'boolean',
              'default' => 1,
@@ -86,9 +79,9 @@ abstract class Baseorganisme extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('point as Coordonnee', array(
-             'local' => 'point_id',
-             'foreign' => 'id'));
+        $this->hasOne('organismePoint as Point', array(
+             'local' => 'id',
+             'foreign' => 'organisme_id'));
 
         $this->hasMany('programme as Programmes', array(
              'local' => 'id',

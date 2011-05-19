@@ -9,24 +9,15 @@
  * @property decimal $latitude
  * @property decimal $longitude
  * @property decimal $altitude
- * @property Doctrine_Collection $Polygonnes
- * @property Doctrine_Collection $Organismes
- * @property Doctrine_Collection $Programmes
  * 
- * @method integer             getId()         Returns the current record's "id" value
- * @method decimal             getLatitude()   Returns the current record's "latitude" value
- * @method decimal             getLongitude()  Returns the current record's "longitude" value
- * @method decimal             getAltitude()   Returns the current record's "altitude" value
- * @method Doctrine_Collection getPolygonnes() Returns the current record's "Polygonnes" collection
- * @method Doctrine_Collection getOrganismes() Returns the current record's "Organismes" collection
- * @method Doctrine_Collection getProgrammes() Returns the current record's "Programmes" collection
- * @method point               setId()         Sets the current record's "id" value
- * @method point               setLatitude()   Sets the current record's "latitude" value
- * @method point               setLongitude()  Sets the current record's "longitude" value
- * @method point               setAltitude()   Sets the current record's "altitude" value
- * @method point               setPolygonnes() Sets the current record's "Polygonnes" collection
- * @method point               setOrganismes() Sets the current record's "Organismes" collection
- * @method point               setProgrammes() Sets the current record's "Programmes" collection
+ * @method integer getId()        Returns the current record's "id" value
+ * @method decimal getLatitude()  Returns the current record's "latitude" value
+ * @method decimal getLongitude() Returns the current record's "longitude" value
+ * @method decimal getAltitude()  Returns the current record's "altitude" value
+ * @method point   setId()        Sets the current record's "id" value
+ * @method point   setLatitude()  Sets the current record's "latitude" value
+ * @method point   setLongitude() Sets the current record's "longitude" value
+ * @method point   setAltitude()  Sets the current record's "altitude" value
  * 
  * @package    up2green
  * @subpackage model
@@ -61,7 +52,6 @@ abstract class Basepoint extends sfDoctrineRecord
              ));
 
         $this->option('symfony', array(
-             'form' => false,
              'filter' => false,
              ));
     }
@@ -69,16 +59,6 @@ abstract class Basepoint extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('polygonnePoint as Polygonnes', array(
-             'local' => 'id',
-             'foreign' => 'point_id'));
-
-        $this->hasMany('organisme as Organismes', array(
-             'local' => 'id',
-             'foreign' => 'point_id'));
-
-        $this->hasMany('programme as Programmes', array(
-             'local' => 'id',
-             'foreign' => 'point_id'));
+        
     }
 }

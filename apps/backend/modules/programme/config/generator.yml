@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [id, =organisme, geoadress, latitude, longitude, is_active, max_tree]
+        display: [=id, organisme, geoadress, is_active, max_tree]
       filter:  ~
       form:    ~
       edit:    ~

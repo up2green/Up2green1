@@ -1,7 +1,6 @@
 point:
   options:
     symfony:
-      form:   false
       filter: false
   columns:
     id:
@@ -20,11 +19,42 @@ point:
       type: decimal
       scale: 6
       notnull: true
+
+organismePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    organisme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Organisme:
+      class: organisme
+      local: organisme_id
+      onDelete: CASCADE
+      foreignType: one
+      foreignAlias: Point
+
+programmePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Programme:
+      class: programme
+      local: programme_id
+      onDelete: CASCADE
+      foreignType: one
+      foreignAlias: Point
       
 polygonne:
   options:
     symfony:
-      form:   false
       filter: false
   columns:
     id:
@@ -52,10 +82,6 @@ polygonnePoint:
     polygonne:
       local: polygonne_id
       foreignAlias: Points
-      onDelete: CASCADE
-    point:
-      local: point_id
-      foreignAlias: Polygonnes
       onDelete: CASCADE
       
 programmePolygonne:

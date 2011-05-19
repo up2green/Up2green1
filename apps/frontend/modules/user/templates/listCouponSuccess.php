@@ -79,10 +79,10 @@
 		<div class="export_wrapper">
 			<span style="line-height:16px;vertical-align:middle;padding-right:5px;"><?php echo __("Exporter : ") ?></span>
 			<a href="<?php echo url_for('@couponsCSV?format=csv') ?>" >
-				<img src="/images/icons/16x16/csv.png" alt="CSV" title="<?php echo __("CSV pour OpenOffice"); ?>" />
+				<img src="/images/icons/16x16/csv.png" alt="CSV" tooltiped="true" title="<?php echo __("CSV pour OpenOffice"); ?>" />
 			</a>
 			<a href="<?php echo url_for('@couponsCSV?format=xls') ?>" style="float:right;margin:0;" >
-				<img src="/images/icons/16x16/xls.png" alt="XLS" title="<?php echo __("CSV pour Microsoft Excel"); ?>" />
+				<img src="/images/icons/16x16/xls.png" alt="XLS" tooltiped="true" title="<?php echo __("CSV pour Microsoft Excel"); ?>" />
 			</a>
 		</div>
 		<?php endif; ?>

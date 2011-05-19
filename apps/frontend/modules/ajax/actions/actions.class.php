@@ -11,8 +11,23 @@
 class ajaxActions extends sfActions
 {
 	public function executeGetKML(sfWebRequest $request) {
+		$partenaireId = $request->getParameter('partenaire', 0);
+		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
+						
 		$this->organismes = Doctrine_Core::getTable('organisme')->get();
 		$this->programmes = Doctrine_Core::getTable('programme')->get();
+		
+		if($this->partenaire) {
+			// on inactives les programmes non-soutenus
+			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
+			foreach($this->programmes as $programme) {
+				if(!in_array($programme->getId(), $partenaireProgrammes)) {
+					$programme->setIsActive(false);
+				}
+			}
+		}
+		
+		
 	}
 		
 	public function executeClicPub(sfWebRequest $request) {

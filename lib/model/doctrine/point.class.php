@@ -14,17 +14,24 @@ class point extends Basepoint {
 	
 	public static $outputSeparator = ',';
 	
-	public function getOutput() {
+	public function getOutput($forceAltitude = false, $inverse = false) {
 		if($this->isNew()) {
 			return null;
 		}
 		
-		$coord = $this->getLongitude()
-			.self::$outputSeparator
-			.$this->getLatitude();
-
+		if(!$inverse) {
+			$coord = $this->getLongitude()
+				.self::$outputSeparator
+				.$this->getLatitude();
+		}
+		else {
+			$coord = $this->getLatitude()
+				.self::$outputSeparator
+				.$this->getLongitude();
+		}
+		
 		$altitude = (float)$this->getAltitude();
-		if(!empty($altitude)) {
+		if($forceAltitude || !empty($altitude)) {
 			$coord .= self::$outputSeparator.$altitude;
 		}
 

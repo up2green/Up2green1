@@ -97,15 +97,6 @@ class landingActions extends sfActions
 		else {
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		}
-
-		$this->gMap = new myGMap(
-			$this->programmes,
-			$this->partenaire
-		);
-
-		$this->gMapModes = $this->gMap->getGmapModeSelector(array(
-			'displayAll' => is_null($this->partenaire)
-		));
 	}
 	
 }

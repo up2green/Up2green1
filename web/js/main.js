@@ -62,7 +62,7 @@ $(document).ready(function(){
 	});
 
 	/* tooltip */
-	$("[title]").mbTooltip({
+	$("[title][tooltiped=true]").mbTooltip({
 		opacity : .97,
 		wait:50,
 		cssClass:"corporate",

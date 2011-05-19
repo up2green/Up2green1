@@ -5,7 +5,7 @@
 	<description>Les différents sites de reforestations sur lesquels nous agissons</description>
 	<Style id="organisme_actif">
 		<IconStyle>
-			<scale>0.5</scale>
+			<scale>1</scale>
 			<Icon>
 				<href><?php echo image_path('gmap/pointeur/organisme-actif.png', 'absolute=true'); ?></href>
 			</Icon>
@@ -13,7 +13,7 @@
 	</Style>
 	<Style id="organisme_inactif">
 		<IconStyle>
-			<scale>0.4</scale>
+			<scale>0.8</scale>
 			<Icon>
 				<href><?php echo image_path('gmap/pointeur/organisme-inactif.png', 'absolute=true'); ?></href>
 			</Icon>
@@ -21,7 +21,7 @@
 	</Style>
 	<Style id="programme_actif">
 		<IconStyle>
-			<scale>0.5</scale>
+			<scale>1</scale>
 			<Icon>
 				<href><?php echo image_path('gmap/pointeur/programme-actif.png', 'absolute=true'); ?></href>
 			</Icon>
@@ -29,7 +29,7 @@
 	</Style>
 	<Style id="programme_inactif">
 		<IconStyle>
-			<scale>0.4</scale>
+			<scale>0.8</scale>
 			<Icon>
 				<href><?php echo image_path('gmap/pointeur/programme-inactif.png', 'absolute=true'); ?></href>
 			</Icon>
@@ -73,6 +73,20 @@
 			<Point>
 				<coordinates><?php echo $programme->getPoint()->getOutput(); ?></coordinates>
 			</Point>
+			<?php foreach($programme->getPolygonnes() as $polygonne) : ?>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>
+						<?php foreach($polygonne->getPoints() as $point) : ?>
+						<?php echo $point->getOutput(true, true) ?>
+						<?php endforeach; ?>
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+			<?php endforeach; ?>
 		</Placemark>
 		<?php endif; ?>
 		<?php endforeach; ?>

@@ -22,7 +22,7 @@ all:
   conversion_tree_co2: 0.1
   prix_arbre: 1
   hardcode_tree_number: 8847
-  gain_cpc: 0.01
+  gain_cpc: 0.04
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10

@@ -1,4 +1,9 @@
 prod:
+  jmsPaymentPlugin:
+    paypal:
+      username: 'antoine.gerigne@up2green.com'
+      signature: 'my signature'
+      password: 'Cacou007'
   yahoo_id: qCd9GP_V34GziYYOdugq_jWiY102W85s.9Hu9pjAkOTa8w1Q7XvgPa2i2jxPl689t9egrleLb1g-
   url_blog: http://association.up2green.com/
   url_moteur: http://www.up2green.com/
@@ -6,6 +11,11 @@ prod:
   url_admin: http://admin.up2green.com/
 
 dev:
+  jmsPaymentPlugin:
+    paypal:
+      username: 'clement.gautier@up2green.com'
+      signature: 'my signature'
+      password: 'fragattest'
   yahoo_id: .Zxf34nV34EVzJToKAQqU49YyS3jqm7E3po9WOgtA0tiFvw6tsZ1l_Wb.EK4U9YhhVlVyf30cWI-
   url_blog: http://association-up2green.smartit.fr/
   url_moteur: http://up2green.smartit.fr/
@@ -13,6 +23,10 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
+  test_paypal_credit_cards:
+    american_express: 378282246310005
+    mastercard: 5555555555554444
+    visa: 4111111111111111
   max_default_list_item: 10
   media_version: 13
   cultures:

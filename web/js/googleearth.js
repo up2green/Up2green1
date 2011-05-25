@@ -753,7 +753,7 @@ GoogleEarth.prototype.removeShim_ = function() {
  * @return {Node} the map type control div.
  */
 GoogleEarth.prototype.findMapTypeControlDiv_ = function() {
-  var title = 'title=[\'\"]?' + this.earthTitle_ + '[\"\']?';
+  var title = '=[\'\"]?' + this.earthTitle_ + '[\"\']?';
 	var regex = new RegExp(title);
   var siblings = this.controlDiv_.parentNode.childNodes;
 	for (var i = 0, sibling; sibling = siblings[i]; i++) {

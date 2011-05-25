@@ -34,6 +34,14 @@ get_kml:
   url: /ajax/getKML
   param: { module: ajax, action: getKML, sf_format: xml }
 
+get_info_programme:
+  url: /ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
+  
+plantation_get_info_programme:
+  url: /plantation/ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
+
 couponsCSV:
   url:    /exportCoupons
   param:  {module: plantation, action: couponsCSV}

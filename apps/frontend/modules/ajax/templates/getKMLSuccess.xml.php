@@ -26,6 +26,13 @@
 				<href><?php echo image_path('gmap/pointeur/programme-actif.png', 'absolute=true'); ?></href>
 			</Icon>
 		</IconStyle>
+		<LineStyle>
+			<color>40000000</color>
+			<width>3</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>73ff0000</color>
+		</PolyStyle>
 	</Style>
 	<Style id="programme_inactif">
 		<IconStyle>
@@ -34,6 +41,13 @@
 				<href><?php echo image_path('gmap/pointeur/programme-inactif.png', 'absolute=true'); ?></href>
 			</Icon>
 		</IconStyle>
+		<LineStyle>
+			<color>40000000</color>
+			<width>3</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>73ff0000</color>
+		</PolyStyle>
 	</Style>
 	<Folder>
 		<name><?php echo __("ONG et Organismes planteurs"); ?></name>
@@ -55,29 +69,22 @@
 		<name><?php echo __("Programmes de reforestation"); ?></name>
 		<description>Les sites de reforestation.</description>
 		<?php foreach($programmes as $programme) : ?>
-		<?php if($programme->getPoint()->getOutput() != null) : ?>
 		<Placemark id="gmap-programme-<?php echo $programme->getId(); ?>">
 			<name><?php echo $programme->getTitle(); ?></name>
-			<description><![CDATA[
-				<span class="title"><?php echo $programme->getTitle() ?></span>
-				<span style="display:block;padding-top:10px;" class="content">
-					<?php if($programme->getLogo()) : ?>
-					<img class="gmap-programme" src="/uploads/programme/<?php echo $programme->getLogo() ?>" alt="Diapo Image" />
-					<?php endif; ?>
-					<div class="accroche-programme"><?php echo $programme->getAccroche(); ?></div>
-					<a href="<?php echo sfConfig::get('app_url_blog') ?>/programme/<?php echo $programme->getSlug() ?>" class="read_more" target="_blank">Lire la suite</a>
-					<br />
-				</span>
-			]]></description>
+			<description></description>
 			<styleUrl><?php echo $programme->getIsActive() ? '#programme_actif' : '#programme_inactif' ?></styleUrl>
+			<MultiGeometry>			
+			<?php if($programme->getPoint()->getOutput() != null) : ?>
 			<Point>
 				<coordinates><?php echo $programme->getPoint()->getOutput(); ?></coordinates>
 			</Point>
+			<?php endif; ?>				
 			<?php foreach($programme->getPolygonnes() as $polygonne) : ?>
 			<Polygon>
+				<tessellate>1</tessellate>
+				<altitudeMode>relativeToGround</altitudeMode>
 				<outerBoundaryIs>
 					<LinearRing>
-						<tessellate>1</tessellate>
 						<coordinates>
 						<?php foreach($polygonne->getPoints() as $point) : ?>
 						<?php echo $point->getOutput(true, true) ?>
@@ -87,8 +94,8 @@
 				</outerBoundaryIs>
 			</Polygon>
 			<?php endforeach; ?>
+			</MultiGeometry>			
 		</Placemark>
-		<?php endif; ?>
 		<?php endforeach; ?>
 	</Folder>
 </Document>

@@ -14,4 +14,29 @@ class polygonne extends Basepolygonne {
 	public function __toString() {
 		return $this->getUniqueName();
 	}
+	
+	/*
+	 * @return Point le point au centre de la zone
+	 */
+	public function getCenter() {
+		if($this->isNew()) {
+			return false;
+		}
+		
+		$lat = $size = $long = $alt = 0;
+		foreach($this->getPoints() as $point) {
+			$lat += $point->getLatitude();
+			$long += $point->getLongitude();
+			$alt += $point->getAltitude();
+			$size ++;
+		}
+		
+		
+		$ret = new point();
+		$ret->setLatitude((float)$lat/$size);
+		$ret->setLongitude((float)$long/$size);
+		$ret->setAltitude((float)$alt/$size);
+		
+		return $ret;
+	}
 }

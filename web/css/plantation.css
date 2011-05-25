@@ -104,39 +104,10 @@ span.button.maxWidth {
 	width:90%;
 }
 
-div.gmap-info-bulle {
-	overflow:hidden;
-}
-
-.gmap-info-bulle span.title {
-	font-weight:bold;
-	color:#213F17;
-}
-
-div.gmap-info-bulle a {
-	margin:0;
-}
-
-.gmap-info-bulle img.gmap-programme {
-	float:left;
-	max-height:80px;
-	max-width:145px;
-	padding-right:5px;
-}
-
 .modeSelector li {
 	width:350px;
 	float:left;
 	display:block;
-}
-
-#map span.nbTreeMap {
-	color:#000000;
-	font-size:11px;
-	font-weight:bold;
-	position:absolute;
-	text-align:center;
-	width:30px;
 }
 
 span.nbArbresToPlantLeft,
@@ -177,4 +148,31 @@ span.nbTree {
 
 #footer_page a:hover {
 	color: #184F11;
+}
+
+.gmap-info-programme-tabs-wrapper.ui-tabs.ui-widget-content {
+	border: none;
+	height:250px;
+}
+
+.gmap-info-programme-tabs-wrapper.ui-tabs .ui-widget-header {
+	border: none;
+	border-bottom: 1px solid #AAAAAA;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	background: none;
+}
+
+.gmap-info-programme-tabs-wrapper.ui-tabs .ui-tabs-nav li a {
+	padding: 0 0.5em;
+	position: relative;
+	top: -5px;
+}
+
+.gmap-info-programme-tabs-wrapper.ui-tabs img.gmap-programme {
+	float:left;
+	max-height:80px;
+	max-width:145px;
+	padding-right:5px;
 }

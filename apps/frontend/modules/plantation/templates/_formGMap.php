@@ -17,12 +17,19 @@ if(isset($partenaire)) {
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false&language=<?php echo $sf_user->getCulture(); ?>"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi?key=<?php echo $gmapID; ?>"></script>
 <script type="text/javascript" src="/js/googleearth.js"></script>
+<script type="text/javascript" src="/js/google.maps.extras.js"></script>
 
 <script type="text/javascript">
 	
 	google.load("earth", "1");
 	
-	function initialize() {
+	$(document).ready(function(){
+		
+		google.maps.Map.prototype.applyTabs = function() {
+			for(var i=0; i < this.markers.length; i++){
+					console.log(this.markers[i]);
+			}
+		};
 		
 		var myOptions = {
 			zoom: 1,
@@ -30,15 +37,36 @@ if(isset($partenaire)) {
 			mapTypeId: google.maps.MapTypeId.HYBRID
 		}
 
-		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		var googleEarth = new GoogleEarth(map);
-
-		var ctaLayer = new google.maps.KmlLayer("<?php echo $kmlURL; ?>", {preserveViewport:true});
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		ctaLayer = new google.maps.KmlLayer("<?php echo $kmlURL; ?>", {preserveViewport:true});
 		ctaLayer.setMap(map);
 		
-	}
-	
-	google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addListener(ctaLayer, 'click', function(kmlEvent) {
+			var programmeRegexp = new RegExp(/gmap-programme-/);
+			if(programmeRegexp.test(kmlEvent.featureData.id)) {
+				$.ajax({
+					url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+					context: kmlEvent,
+					async: false,
+					data: {
+						programme: kmlEvent.featureData.id.substring(15)
+					},
+					success: function(xml){
+						this.featureData.description = $(xml).find('text').text();
+						setTimeout(function(){
+						 $('.gmap-info-programme-tabs-wrapper', "#map_canvas").tabs();
+						},400);
+					},
+					error: function(jqXHR, textStatus, errorThrown){},
+					dataType: "xml"
+				});
+			}
+		});
+		
+		googleEarth = new GoogleEarth(map);
+
+	});
 	
 </script>
 

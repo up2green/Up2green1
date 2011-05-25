@@ -27,6 +27,27 @@ class ajaxActions extends sfActions
 			}
 		}
 		
+	}
+	
+	public function executeGetInfoProgramme(sfWebRequest $request) {
+		$programmeId = $request->getParameter('programme', 0);
+		$partenaireId = $request->getParameter('partenaire', 0);
+		
+		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
+		$this->programme = Doctrine_Core::getTable('programme')->findOneById($programmeId);
+		$this->canPlant = $request->getParameter('canPlant', 0);
+		
+		if(!$this->programme) {
+			return $this->forward404();
+		}
+		
+		// on inactives les programmes non-soutenus
+		if($this->partenaire) {
+			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
+			if(!in_array($this->programme->getId(), $partenaireProgrammes)) {
+				$this->programme->setIsActive(false);
+			}
+		}
 		
 	}
 		
@@ -90,14 +111,14 @@ class ajaxActions extends sfActions
 		  case SearchEngine::NEWS :
 			  $this->pubResults = $engine->getPubResults(2, $minPub);
 		  default :
-			  $this->affiliateResults = $engine->getOneShopResult($minAffiliate);
+			  $this->affiliateResults = array();
 			  $this->results = $engine->getResults($min);
 			  break;
 	  }
 
-      if(empty($this->affiliateResults)) {
-		  $this->affiliateResults = array();
-	  }
+		if(empty($this->affiliateResults)) {
+			$this->affiliateResults = array();
+		}
       
   }
 }

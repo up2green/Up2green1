@@ -146,9 +146,6 @@ general_article:
   url:   /article/:slug
   param: { module: recherche, action: viewElement, type: article }
 
-####################
-##### PROFIL
-####################
 user_profil:
   url:   /user/profil/
   param: { module: user, action: profil }
@@ -156,6 +153,14 @@ user_profil:
 user_coupon:
   url:   /user/coupon/
   param: { module: user, action: listCoupon }
+  
+checkout_coupon:
+  url:   /checkout/coupon
+  param: { module: checkout, action: coupon}
+  
+checkout_credit:
+  url:   /checkout/credit/:step
+  param: { module: checkout, action: credit, step: choice }
 
 homepage:
   url: /

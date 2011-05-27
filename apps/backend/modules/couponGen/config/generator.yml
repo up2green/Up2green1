@@ -16,6 +16,8 @@ generator:
       fields:  ~
       list:
         title: Liste des coupons
+        display: [credit, prix, is_purchasable, is_partenaire_only]
+        sort: [credit, asc]
       filter:  ~
       form:    ~
       edit:

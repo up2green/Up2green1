@@ -332,3 +332,30 @@ span.btn_down a.button {
 	-moz-border-radius: 0 0 .5em 0;
 	border-radius: 0 0 .5em 0;
 }
+
+/* ----------------------- step by step --------------------- */
+
+.button.step {
+	padding-left: 1em;
+}
+
+.button.step.small {
+	-webkit-border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em; 
+	-moz-border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em;
+	border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em;
+	padding-right: 2em;
+}
+
+.button.step.medium {
+	-webkit-border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em; 
+	-moz-border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em;
+	border-radius: 0.5em 3em 3em 0.5em / 0.5em 1em 1em 0.5em;
+	padding-right: 3em;
+}
+
+.button.step.big {
+	-webkit-border-radius: 0.5em 5em 5em 0.5em / 0.5em 2em 2em 0.5em; 
+	-moz-border-radius: 0.5em 5em 5em 0.5em / 0.5em 2em 2em 0.5em;
+	border-radius: 0.5em 5em 5em 0.5em / 0.5em 2em 2em 0.5em;
+	padding-right: 4em;
+}

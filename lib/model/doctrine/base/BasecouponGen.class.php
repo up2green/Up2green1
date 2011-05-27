@@ -8,16 +8,22 @@
  * @property integer $id
  * @property float $prix
  * @property integer $credit
+ * @property boolean $is_purchasable
+ * @property boolean $is_partenaire_only
  * @property Doctrine_Collection $Coupons
  * 
- * @method integer             getId()      Returns the current record's "id" value
- * @method float               getPrix()    Returns the current record's "prix" value
- * @method integer             getCredit()  Returns the current record's "credit" value
- * @method Doctrine_Collection getCoupons() Returns the current record's "Coupons" collection
- * @method couponGen           setId()      Sets the current record's "id" value
- * @method couponGen           setPrix()    Sets the current record's "prix" value
- * @method couponGen           setCredit()  Sets the current record's "credit" value
- * @method couponGen           setCoupons() Sets the current record's "Coupons" collection
+ * @method integer             getId()                 Returns the current record's "id" value
+ * @method float               getPrix()               Returns the current record's "prix" value
+ * @method integer             getCredit()             Returns the current record's "credit" value
+ * @method boolean             getIsPurchasable()      Returns the current record's "is_purchasable" value
+ * @method boolean             getIsPartenaireOnly()   Returns the current record's "is_partenaire_only" value
+ * @method Doctrine_Collection getCoupons()            Returns the current record's "Coupons" collection
+ * @method couponGen           setId()                 Sets the current record's "id" value
+ * @method couponGen           setPrix()               Sets the current record's "prix" value
+ * @method couponGen           setCredit()             Sets the current record's "credit" value
+ * @method couponGen           setIsPurchasable()      Sets the current record's "is_purchasable" value
+ * @method couponGen           setIsPartenaireOnly()   Sets the current record's "is_partenaire_only" value
+ * @method couponGen           setCoupons()            Sets the current record's "Coupons" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -43,6 +49,14 @@ abstract class BasecouponGen extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              'length' => 4,
+             ));
+        $this->hasColumn('is_purchasable', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 1,
+             ));
+        $this->hasColumn('is_partenaire_only', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 0,
              ));
     }
 

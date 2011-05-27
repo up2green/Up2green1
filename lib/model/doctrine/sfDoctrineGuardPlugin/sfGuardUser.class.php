@@ -60,4 +60,10 @@ class sfGuardUser extends PluginsfGuardUser
   	return (empty($prenom) && empty($nom)) ? $this->getEmailAddress() : $prenom.' '.$nom;
 	}
 	
+  public function getFullName() {
+		$prenom = $this->getFirstName();
+		$nom = $this->getLastName();
+  	return $prenom.(empty($nom) ? '' : $nom);
+	}
+	
 }

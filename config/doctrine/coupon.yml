@@ -11,6 +11,12 @@ couponGen:
     credit:
       type: integer(4)
       notnull: true
+    is_purchasable:
+      type: boolean
+      default: 1
+    is_partenaire_only:
+      type: boolean
+      default: 0
       
 coupon:
   actAs: [Timestampable]

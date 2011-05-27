@@ -8,7 +8,7 @@
  * @property integer $id
  * @property integer $id_category
  * @property integer $id_plateforme
- * @property integer $id_devise
+ * @property integer $currency_id
  * @property string $site_display
  * @property string $site_url
  * @property clob $html
@@ -19,7 +19,7 @@
  * @property float $remun_max
  * @property boolean $safe_search_only
  * @property boolean $is_active
- * @property devise $devise
+ * @property Currency $Currency
  * @property affiliatePlateforme $plateforme
  * @property category $category
  * @property Doctrine_Collection $engineTag
@@ -27,7 +27,7 @@
  * @method integer             getId()               Returns the current record's "id" value
  * @method integer             getIdCategory()       Returns the current record's "id_category" value
  * @method integer             getIdPlateforme()     Returns the current record's "id_plateforme" value
- * @method integer             getIdDevise()         Returns the current record's "id_devise" value
+ * @method integer             getCurrencyId()       Returns the current record's "currency_id" value
  * @method string              getSiteDisplay()      Returns the current record's "site_display" value
  * @method string              getSiteUrl()          Returns the current record's "site_url" value
  * @method clob                getHtml()             Returns the current record's "html" value
@@ -38,14 +38,14 @@
  * @method float               getRemunMax()         Returns the current record's "remun_max" value
  * @method boolean             getSafeSearchOnly()   Returns the current record's "safe_search_only" value
  * @method boolean             getIsActive()         Returns the current record's "is_active" value
- * @method devise              getDevise()           Returns the current record's "devise" value
+ * @method Currency            getCurrency()         Returns the current record's "Currency" value
  * @method affiliatePlateforme getPlateforme()       Returns the current record's "plateforme" value
  * @method category            getCategory()         Returns the current record's "category" value
  * @method Doctrine_Collection getEngineTag()        Returns the current record's "engineTag" collection
  * @method engine              setId()               Sets the current record's "id" value
  * @method engine              setIdCategory()       Sets the current record's "id_category" value
  * @method engine              setIdPlateforme()     Sets the current record's "id_plateforme" value
- * @method engine              setIdDevise()         Sets the current record's "id_devise" value
+ * @method engine              setCurrencyId()       Sets the current record's "currency_id" value
  * @method engine              setSiteDisplay()      Sets the current record's "site_display" value
  * @method engine              setSiteUrl()          Sets the current record's "site_url" value
  * @method engine              setHtml()             Sets the current record's "html" value
@@ -56,7 +56,7 @@
  * @method engine              setRemunMax()         Sets the current record's "remun_max" value
  * @method engine              setSafeSearchOnly()   Sets the current record's "safe_search_only" value
  * @method engine              setIsActive()         Sets the current record's "is_active" value
- * @method engine              setDevise()           Sets the current record's "devise" value
+ * @method engine              setCurrency()         Sets the current record's "Currency" value
  * @method engine              setPlateforme()       Sets the current record's "plateforme" value
  * @method engine              setCategory()         Sets the current record's "category" value
  * @method engine              setEngineTag()        Sets the current record's "engineTag" collection
@@ -87,10 +87,11 @@ abstract class Baseengine extends sfDoctrineRecord
              'notnull' => true,
              'length' => 4,
              ));
-        $this->hasColumn('id_devise', 'integer', 4, array(
+        $this->hasColumn('currency_id', 'integer', 11, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
+             'default' => 34,
+             'length' => 11,
              ));
         $this->hasColumn('site_display', 'string', 128, array(
              'type' => 'string',
@@ -143,8 +144,8 @@ abstract class Baseengine extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('devise', array(
-             'local' => 'id_devise',
+        $this->hasOne('Currency', array(
+             'local' => 'currency_id',
              'foreign' => 'id'));
 
         $this->hasOne('affiliatePlateforme as plateforme', array(

@@ -1,9 +1,9 @@
 prod:
   jmsPaymentPlugin:
     paypal:
-      username: 'antoine.gerigne@up2green.com'
-      signature: 'my signature'
-      password: 'Cacou007'
+      username: 'antoine.gerigne_api1.up2green.com'
+      signature: 'AFbF3MLf8s8cAfgEC3-ZHq3jtLkAAg5billJSDcrHR0jhWshMoGmx3bP'
+      password: 'EH6S97W3Q2W7HTWR'
   yahoo_id: qCd9GP_V34GziYYOdugq_jWiY102W85s.9Hu9pjAkOTa8w1Q7XvgPa2i2jxPl689t9egrleLb1g-
   url_blog: http://association.up2green.com/
   url_moteur: http://www.up2green.com/
@@ -23,10 +23,6 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
-  test_paypal_credit_cards:
-    american_express: 378282246310005
-    mastercard: 5555555555554444
-    visa: 4111111111111111
   payements:
     enabled:
       - paypal

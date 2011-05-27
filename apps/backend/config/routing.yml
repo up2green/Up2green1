@@ -1,3 +1,21 @@
+currency:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                currency
+    module:               currency
+    prefix_path:          /currency
+    column:               id
+    with_wildcard_routes: true
+
+payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Payment
+    module:               payment
+    prefix_path:          /payment
+    column:               id
+    with_wildcard_routes: true
+
 polygonne:
   class: sfDoctrineRouteCollection
   options:

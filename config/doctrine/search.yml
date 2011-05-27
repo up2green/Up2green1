@@ -33,9 +33,10 @@ engine:
     id_plateforme:
       type: integer(4)
       notnull: true
-    id_devise:
-      type: integer(4)
+    currency_id:
+      type: integer(11)
       notnull: true
+      default: 34
     site_display:
       type: string(128)
       notnull: true      
@@ -69,8 +70,8 @@ engine:
       type: boolean
       default: 1
   relations:
-    devise:
-      local: id_devise
+    Currency:
+      local: currency_id
     plateforme:
       class: affiliatePlateforme
       local: id_plateforme

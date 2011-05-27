@@ -8,13 +8,16 @@
  * @property integer $id
  * @property string $code
  * @property decimal $rate
+ * @property Doctrine_Collection $engine
  * 
- * @method integer  getId()   Returns the current record's "id" value
- * @method string   getCode() Returns the current record's "code" value
- * @method decimal  getRate() Returns the current record's "rate" value
- * @method Currency setId()   Sets the current record's "id" value
- * @method Currency setCode() Sets the current record's "code" value
- * @method Currency setRate() Sets the current record's "rate" value
+ * @method integer             getId()     Returns the current record's "id" value
+ * @method string              getCode()   Returns the current record's "code" value
+ * @method decimal             getRate()   Returns the current record's "rate" value
+ * @method Doctrine_Collection getEngine() Returns the current record's "engine" collection
+ * @method Currency            setId()     Sets the current record's "id" value
+ * @method Currency            setCode()   Sets the current record's "code" value
+ * @method Currency            setRate()   Sets the current record's "rate" value
+ * @method Currency            setEngine() Sets the current record's "engine" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -53,6 +56,10 @@ abstract class BaseCurrency extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('engine', array(
+             'local' => 'id',
+             'foreign' => 'currency_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              'created' => 
              array(

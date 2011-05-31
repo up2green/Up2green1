@@ -27,6 +27,33 @@ profil:
       foreignType:  one
       foreignAlias: Profile
 
+filleul:
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id:
+      type: bigint(20)
+      notnull: true
+    filleul_id:
+      type: bigint(20) 
+      unique: true
+    email_address:
+      type: string(255)
+      notnull: true
+      unique: true
+  relations:
+    Parrain:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+      foreignAlias: Filleuls
+    Filleul:
+      class: sfGuardUser
+      local: filleul_id
+      foreignType:  one
+      foreignAlias: Parrain
+    
+
 session:
   columns:
     sess_id:

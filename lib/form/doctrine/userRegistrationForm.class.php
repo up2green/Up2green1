@@ -12,7 +12,7 @@
 
 class userRegistrationForm extends PluginsfGuardUserForm {
 
-    public function setup() {
+	public function setup() {
 		parent::setup();
 	}
 
@@ -31,17 +31,17 @@ class userRegistrationForm extends PluginsfGuardUserForm {
 		
         $this->widgetSchema['password']     = new sfWidgetFormInputPassword();
         $this->widgetSchema['password_bis'] = new sfWidgetFormInputPassword();
-        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true));
+        $this->validatorSchema['username']     = new sfValidatorString(array('required' => true), array(
+						'invalid'=> 'test'
+				));
         $this->validatorSchema['password']     = new sfValidatorString(array('required' => true, 'min_length' => 6));
         $this->validatorSchema['password_bis'] = new sfValidatorString(array('required' => true, 'min_length' => 6));
-        $this->validatorSchema['email_address']= new sfValidatorEmail(array('required'  => true), array('required'=>'Champ obligatoire.', "invalid" => '"%value%" n\'est pas une adresse e-mail.'));
+        $this->validatorSchema['email_address']= new sfValidatorEmail(array('required'  => true));
 
-        $this->mergePostValidator(new sfValidatorSchemaCompare(
+				$this->mergePostValidator(new sfValidatorSchemaCompare(
                 'password',
                 sfValidatorSchemaCompare::EQUAL,
-                'password_bis',
-                array(),
-                array('invalid' => 'Les champs doivent être identiques.')
+                'password_bis'
         ));
 
         $profileForm = new profilForm($this->object->getProfile());
@@ -49,10 +49,8 @@ class userRegistrationForm extends PluginsfGuardUserForm {
                 $profileForm['user_id'],
                 $profileForm['id'],
                 $profileForm['credit'],
-                $profileForm['is_newsletter'],
                 $profileForm['culture']
         );
-        $profileForm->widgetSchema->setLabels(array('email_address' => 'Adresse e-mail* :'));
 
         $this->embedForm('UserProfile', $profileForm);
     }

@@ -24,6 +24,7 @@
         		<a href="<?php echo url_for('@sf_guard_user') ?>">Utilisateurs</a>
         		<ul class="subnav">
         			<li><a href="<?php echo url_for('@sf_guard_user') ?>">Utilisateurs</a></li>
+        			<li><a href="<?php echo url_for('@filleul') ?>">Parainage</a></li>
         			<li><a href="<?php echo url_for('@session') ?>">Sessions</a></li>
 							<li><a href="<?php echo url_for('@partenaire') ?>">Partenaires</a></li>
 							<li><a href="<?php echo url_for('@sf_guard_group') ?>">Groupes</a></li>

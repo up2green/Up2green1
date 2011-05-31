@@ -6,6 +6,8 @@ function getFlashNotice($qName) {
 		case 'modif-ok': return __("Vos modifications ont bien été prises en compte.");
 		case 'email-confirmation': return __("Vous aller recevoir un email attestant de votre plantation.");
 		case 'plant-succes': return __("Vos arbres ont bien été plantés !");
+		case 'invitation-success': return __("Vos invitations ont bien été envoyées.");
+		case 'cadeau-arbre-new': return __("Vous avez gagné un arbre grâce à l'ouverture de votre compte !");
 		default: return $qName;
 	}
 }
@@ -18,6 +20,7 @@ function getFlashError($qName) {
 		case 'invalid-coupon': return __("Numéro de coupon invalide");
 		case 'not-enough-credit': return __("Vous n'avez pas assez de crédits arbres.");
 		case 'form-error': return __("Formulaire invalide.");
+		case 'invitation-empty': return __("Veuillez remplir au moins une addresse mail.");
 		default: return $qName;
 	}
 }

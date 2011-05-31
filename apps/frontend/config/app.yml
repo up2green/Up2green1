@@ -28,12 +28,13 @@ all:
       - paypal
       - paybox
   max_default_list_item: 10
-  media_version: 14
+  media_version: 15
   cultures:
     enabled:
       fr: Français
       en: English
   conversion_tree_co2: 0.1
+  gain_parrain: 0.1
   prix_arbre: 1
   hardcode_tree_number: 8847
   gain_cpc: 0.04

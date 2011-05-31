@@ -53,6 +53,13 @@ class sfGuardUser extends PluginsfGuardUser
   public function countTrees() {
   	return sizeof($this->getTrees());
 	}
+	
+  public function countFilleul() {
+  	return Doctrine_Core::getTable('filleul')
+						->addQuery()
+						->where("user_id = ?", $this->getId())
+						->count();
+	}
   
   public function getDisplayName() {
 		$prenom = $this->getFirstName();
@@ -64,6 +71,11 @@ class sfGuardUser extends PluginsfGuardUser
 		$prenom = $this->getFirstName();
 		$nom = $this->getLastName();
   	return $prenom.(empty($nom) ? '' : $nom);
+	}
+	
+  public function getTotalGain() {
+		$usedCredit = Doctrine_Core::getTable('treeUser')->countByUser($this->getId()) * sfConfig::get('app_prix_arbre');						
+		return $this->getProfile()->getCredit() + $usedCredit;
 	}
 	
 }

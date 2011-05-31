@@ -91,7 +91,7 @@ class ajaxActions extends sfActions
 				$log->save();
 				
 				$profil = $this->getUser()->getGuardUser()->getProfile();
-				$profil->setCredit($profil->getCredit() + sfConfig::get('app_gain_cpc'));
+				$profil->addCredit(sfConfig::get('app_gain_cpc'));
 				$profil->save();
 				
 				$this->message = 'success';

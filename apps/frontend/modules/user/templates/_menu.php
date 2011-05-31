@@ -25,9 +25,13 @@
 					"Planter mes arbres ({number})",
 					array('{number}' => number_format($sf_user->getProfile()->getCredit(), 3))
 				) ?></a></li>
-				<li><a href="<?php echo url_for("user/profil"); ?>"><?php echo __(
+				<li><a href="<?php echo url_for("@user_profil"); ?>"><?php echo __(
 					"Mon profil ({username})",
 					array('{username}' => $sf_user->getUsername())
+				) ?></a></li>
+				<li><a href="<?php echo url_for("@user_filleul"); ?>"><?php echo __(
+					"Mes filleuls ({number})",
+					array('{number}' => $sf_user->getGuardUser()->countFilleul())
 				) ?></a></li>
 			</ul>
 			<?php endif; ?>

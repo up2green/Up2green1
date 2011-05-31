@@ -72,7 +72,7 @@ class userActions extends sfActions {
 		if($request->isMethod('post')) {
 			$formPost = $request->getParameter($this->form->getName());
 			$this->form->bind($formPost);
-
+			
 			if($this->form->isValid()) {
 
 				$utilisateur = $this->form->save();
@@ -95,6 +95,33 @@ class userActions extends sfActions {
 
 				$this->getMailer()->send($message);
 				$this->getUser()->setFlash('notice', 'creation-compte');
+				
+				// check if his email is requested for friend
+				$filleul = Doctrine_Core::getTable('filleul')->findOneByEmailAddress($utilisateur->getEmailAddress());
+				if($filleul) {
+					$filleul->setFilleulId($utilisateur->getId());
+					$filleul->save();
+				}
+				
+				// the profile
+				$profil = $this->getUser()->getGuardUser()->getProfile();
+				$profil->setIsNewsletter($request->getParameter("is_newsletter") ? true : false);
+				$profil->addCredit(1);
+				$profil->save();
+				$this->getUser()->setFlash('notice', 'cadeau-arbre-new');
+				
+				// friends
+				$filleuls = $request->getParameter('filleul', array());
+				$filleuls = array_unique(array_filter($filleuls));
+				$this->alreadyUserOrFilleul = array();
+				$this->almostOneMailSent = false;
+				
+				$this->inviteFriend($filleuls);
+				
+				if($this->almostOneMailSent) {
+					$this->getUser()->setFlash('notice', 'invitation-success');
+				}
+				
 				$this->redirect('@homepage');
 			}
 		}
@@ -102,7 +129,7 @@ class userActions extends sfActions {
 
 	public function executeProfil(sfWebRequest $request){
 		if (!$this->getUser()->isAuthenticated()){
-			$this->redirect('@homepage');
+			$this->redirect('@sf_guard_signin');
 			return;
 		}
 
@@ -157,6 +184,82 @@ class userActions extends sfActions {
 		}
 
 		
+	}
+	
+	public function executeListFilleul(sfWebRequest $request){
+		if (!$this->getUser()->isAuthenticated()) {
+			$this->redirect('@sf_guard_signin');
+			return;
+		}
+		
+		$user = $this->getUser()->getGuardUser();
+		$query = Doctrine_Core::getTable('filleul')->addQuery()->where('user_id = ?', $user->getId());
+		
+		$this->pager = new sfDoctrinePager('filleul', sfConfig::get('app_max_default_list_item'));
+		$this->pager->setQuery($query);
+		$this->pager->setPage($request->getParameter('page', 1));
+		$this->pager->init();
+		
+		$this->filleuls = $this->pager->getResults();
+	}
+	
+	public function executeInviteFilleul(sfWebRequest $request){
+		if (!$this->getUser()->isAuthenticated()) {
+			$this->redirect('@sf_guard_signin');
+			return;
+		}
+		
+		if($request->isMethod('post')) {
+			$filleuls = $request->getParameter('filleul', array());
+			$filleuls = array_unique(array_filter($filleuls));
+			$this->alreadyUserOrFilleul = array();
+			$this->almostOneMailSent = false;
+			
+			$this->inviteFriend($filleuls);
+			
+			if($this->almostOneMailSent) {
+				$this->getUser()->setFlash('notice', 'invitation-success');
+				if(empty($this->alreadyUserOrFilleul)) {
+					$this->redirect('@user_filleul');
+				}
+			}
+		}
+		
+	}
+	
+	private function inviteFriend($emails) {
+		foreach($emails as $email) {
+			// check if the email is already in user or filleul
+			$alreadyFilleul = Doctrine_Core::getTable('filleul')->findOneByEmailAddress($email);
+			$alreadyUser = Doctrine_Core::getTable('sfGuardUser')->findOneByEmailAddress($email);
+
+			if(!$alreadyFilleul && !$alreadyUser) {
+				// create the database object
+				$tmp = new filleul();
+				$tmp->setEmailAddress($email);
+				$tmp->setUserId($this->getUser()->getGuardUser()->getId());
+				$tmp->save();
+				// send the email
+				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('invitation');
+
+				$message = $this->getMailer()->compose(
+					array($newsletter->getEmailFrom() => 'Up2Green'),
+					$email,
+					$newsletter->getTitle()
+				);
+
+				$html = $newsletter->getContent();
+				$html = str_replace('{username}', $this->getUser()->getGuardUser()->getDisplayName(), $html);
+
+				$message->setBody($html, 'text/html');
+
+				$this->getMailer()->send($message);
+				$this->almostOneMailSent = true;
+			}
+			else {
+				$this->alreadyUserOrFilleul[] = $email;
+			}
+		}
 	}
 
 	public function executeForgotPassword(sfWebRequest $request) {

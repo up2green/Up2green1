@@ -153,6 +153,14 @@ general_article:
 user_profil:
   url:   /user/profil/
   param: { module: user, action: profil }
+
+user_filleul:
+  url:   /user/filleul/
+  param: { module: user, action: listFilleul }
+
+user_invite_filleul:
+  url:   /user/invitation/
+  param: { module: user, action: inviteFilleul }
   
 user_coupon:
   url:   /user/coupon/

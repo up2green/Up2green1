@@ -26,6 +26,8 @@
  * @property partenaire $Partenaire
  * @property Doctrine_Collection $pubClics
  * @property profil $Profile
+ * @property Doctrine_Collection $Filleuls
+ * @property filleul $Parrain
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
  * @method string                getLastName()              Returns the current record's "last_name" value
@@ -48,6 +50,8 @@
  * @method partenaire            getPartenaire()            Returns the current record's "Partenaire" value
  * @method Doctrine_Collection   getPubClics()              Returns the current record's "pubClics" collection
  * @method profil                getProfile()               Returns the current record's "Profile" value
+ * @method Doctrine_Collection   getFilleuls()              Returns the current record's "Filleuls" collection
+ * @method filleul               getParrain()               Returns the current record's "Parrain" value
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
@@ -69,6 +73,8 @@
  * @method sfGuardUser           setPartenaire()            Sets the current record's "Partenaire" value
  * @method sfGuardUser           setPubClics()              Sets the current record's "pubClics" collection
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
+ * @method sfGuardUser           setFilleuls()              Sets the current record's "Filleuls" collection
+ * @method sfGuardUser           setParrain()               Sets the current record's "Parrain" value
  * 
  * @package    up2green
  * @subpackage model
@@ -183,6 +189,14 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
         $this->hasOne('profil as Profile', array(
              'local' => 'id',
              'foreign' => 'user_id'));
+
+        $this->hasMany('filleul as Filleuls', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasOne('filleul as Parrain', array(
+             'local' => 'id',
+             'foreign' => 'filleul_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

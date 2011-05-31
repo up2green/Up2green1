@@ -1,3 +1,12 @@
+filleul:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                filleul
+    module:               filleul
+    prefix_path:          /filleul
+    column:               id
+    with_wildcard_routes: true
+
 currency:
   class: sfDoctrineRouteCollection
   options:

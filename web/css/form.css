@@ -1,3 +1,7 @@
+form ul.error_list {
+	float: right;
+}
+
 form ul.error_list li {
 	color: red;
 	font-style:italic;
@@ -14,20 +18,31 @@ form tbody th, form tbody td {
 }
 
 fieldset { 
-	border:1px solid green;
+	border:1px solid #7AA520;
 	padding:10px;
 	margin: 10px 0;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px; 
+	-moz-border-radius: 5px 5px 5px 5px;
 }
 
 legend {
-  padding: 0.2em 0.5em;
-  border:1px solid green;
-  color:green;
-  font-size:90%;
+  border: 1px solid #7AA520;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px; 
+	-moz-border-radius: 5px 5px 5px 5px;
+	color: #7AA520;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 8px;
 }
 
 table.form {
-width: 100%;
+	width: 100%;
+}
+
+table.form td{
+	vertical-align: middle;
 }
 
 table.form td.label {
@@ -39,6 +54,14 @@ table.form td.label {
 table.form td.field {
 	text-align:left;
 	min-width:70%;
+}
+
+table.form td.info {
+	text-align:left;
+}
+
+table.form img.add-line {
+	cursor:pointer;
 }
 
 table.form tfoot td{

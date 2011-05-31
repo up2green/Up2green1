@@ -37,6 +37,7 @@ engine:
       type: integer(11)
       notnull: true
       default: 34
+      unsigned: true
     site_display:
       type: string(128)
       notnull: true      

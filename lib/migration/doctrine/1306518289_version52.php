@@ -6,11 +6,13 @@ class Version52 extends Doctrine_Migration_Base
 {
     public function up()
     {
+				$this->dropForeignKey('engine', 'engine_id_devise_devise_id');
         $this->dropTable('devise');
         $this->removeColumn('engine', 'id_devise');
         $this->addColumn('engine', 'currency_id', 'integer', '11', array(
              'notnull' => '1',
              'default' => '34',
+             'unsigned' => '1',
              ));
     }
 
@@ -61,9 +63,15 @@ class Version52 extends Doctrine_Migration_Base
              'collate' => '',
              'charset' => '',
              ));
-        $this->addColumn('engine', 'id_devise', 'integer', '4', array(
+        $this->addColumn('engine', 'id_devise', 'integer', '11', array(
              'notnull' => '1',
              ));
         $this->removeColumn('engine', 'currency_id');
+				$this->createForeignKey('engine', 'engine_id_devise_devise_id', array(
+             'name' => 'engine_id_devise_devise_id',
+             'local' => 'id_devise',
+             'foreign' => 'id',
+             'foreignTable' => 'devise',
+             ));
     }
 }

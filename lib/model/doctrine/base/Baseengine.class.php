@@ -91,6 +91,7 @@ abstract class Baseengine extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              'default' => 34,
+             'unsigned' => true,
              'length' => 11,
              ));
         $this->hasColumn('site_display', 'string', 128, array(

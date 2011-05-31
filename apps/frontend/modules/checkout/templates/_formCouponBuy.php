@@ -4,8 +4,8 @@
 	<div class="payement-type">
 		<table style="width:100%">
 			<tr>
-				<td><img src="/images/payment/<?php echo $payment["name"] ?>.png" alt="<?php echo $payment["name"] ?>" /></td>
-				<td style="vertical-align: middle;"><input type="submit" class="button orange medium" name="payment[<?php echo $payment["name"] ?>]" value="<?php echo __("Acheter") ?>" /></td>
+				<td><img src="/images/payment/<?php echo $payment ?>.png" alt="<?php echo $payment ?>" /></td>
+				<td style="vertical-align: middle;"><input type="submit" class="button orange medium" name="payment[<?php echo $payment ?>]" value="<?php echo __("Acheter") ?>" /></td>
 			</tr>
 		</table>
 	</div>

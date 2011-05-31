@@ -1,8 +1,13 @@
 <?php
-
-
-class treeTable extends Doctrine_Table
-{
+class treeTable extends Doctrine_Table {
+	
+	public static $hardcode = array(
+		10 => 188, //Madagascar
+		8 => 162, //Burkina Faso
+		14 => 1620, //Perou
+		18 => 189, //Inde
+		17 => 155 //Ethiopie
+	);
     
     public function countFromUser($idUser) {
     	return $this->createQuery('t')
@@ -34,6 +39,20 @@ class treeTable extends Doctrine_Table
 				->groupBy('t.programme_id')
 				->fetchArray();
 				
+		}
+		
+		public function countByUserAndProgramme($idUser, $idProgramme) {
+			return $this->createQuery('t')
+				->innerJoin('t.User tu')
+				->where('tu.user_id = ?', $idUser)
+				->where('t.programme_id', $idProgramme)
+				->count();
+		}
+		
+		public function countByProgramme($id) {
+			return $this->createQuery('t')
+				->where('t.programme_id', $id)
+				->count() + (isset(self::$hardcode[(int)$id]) ? self::$hardcode[(int)$id] : 0);
 		}
 		
 	// -----------------------------------------

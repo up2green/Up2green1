@@ -56,7 +56,7 @@
 		<?php if($organisme->getPoint()->getOutput() != null) : ?>
 		<Placemark id="gmap-organisme-<?php echo $organisme->getId(); ?>">
 			<name><?php echo $organisme->getTitle(); ?></name>
-			<description><![CDATA[<?php echo $organisme->getAccroche(); ?>]]></description>
+			<description></description>
 			<styleUrl><?php echo $organisme->getIsActive() ? '#organisme_actif' : '#organisme_inactif' ?></styleUrl>
 			<Point>
 				<coordinates><?php echo $organisme->getPoint()->getOutput(); ?></coordinates>
@@ -67,12 +67,14 @@
 	</Folder>
 	<Folder>
 		<name><?php echo __("Programmes de reforestation"); ?></name>
-		<description>Les sites de reforestation.</description>
+		<description><?php echo __("Les sites de reforestation."); ?></description>
 		<?php foreach($programmes as $programme) : ?>
 		<Placemark id="gmap-programme-<?php echo $programme->getId(); ?>">
 			<name><?php echo $programme->getTitle(); ?></name>
+			<address><?php echo $programme->getGeoadress(); ?></address>
 			<description></description>
 			<styleUrl><?php echo $programme->getIsActive() ? '#programme_actif' : '#programme_inactif' ?></styleUrl>
+			<?php if($programme->getPoint()->getOutput() != null || $programme->getPolygonnes()->count() > 0) : ?>
 			<MultiGeometry>			
 			<?php if($programme->getPoint()->getOutput() != null) : ?>
 			<Point>
@@ -94,7 +96,8 @@
 				</outerBoundaryIs>
 			</Polygon>
 			<?php endforeach; ?>
-			</MultiGeometry>			
+			</MultiGeometry>		
+			<?php endif; ?>
 		</Placemark>
 		<?php endforeach; ?>
 	</Folder>

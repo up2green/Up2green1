@@ -13,9 +13,9 @@ prod:
 dev:
   jmsPaymentPlugin:
     paypal:
-      username: 'test_1306513525_biz_api1.up2green.com'
-      signature: 'AhnEuC0rESGPjidXZhz4uED-l3fNAE2u-f8LJKxi5c2J8nzXl-qJZxFS'
-      password: '1306513537'
+      username: 'test_1306521590_biz_api1.up2green.com'
+      signature: 'A.ZQCpvrRWwBbYXb9.MR7.zhHtKSA3R02020efHBK07kz.F.4nRihphP'
+      password: '1306521599'
   yahoo_id: .Zxf34nV34EVzJToKAQqU49YyS3jqm7E3po9WOgtA0tiFvw6tsZ1l_Wb.EK4U9YhhVlVyf30cWI-
   url_blog: http://association-up2green.smartit.fr/
   url_moteur: http://up2green.smartit.fr/
@@ -28,7 +28,7 @@ all:
       - paypal
       - paybox
   max_default_list_item: 10
-  media_version: 13
+  media_version: 14
   cultures:
     enabled:
       fr: Français

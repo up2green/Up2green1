@@ -121,8 +121,7 @@ class organismeTable extends Doctrine_Table {
 	
 	public function addLangQuery($lang, Doctrine_Query $q = null) {
 		return $this->addQuery($q)
-			->innerJoin('o.Translation t')
-			->where('t.lang = ?', $lang);
+			->innerJoin('o.Translation t WITH t.lang = ?', $lang);
 	}
   
 	public function addActiveQuery(Doctrine_Query $q = null) {

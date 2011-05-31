@@ -50,24 +50,64 @@ class checkoutActions extends sfActions
 				$this->vars['product'] = Doctrine_Core::getTable('couponGen')->findOneById($productId);
 				$this->forward404If(empty ($this->vars['product']));
 				
-				$payments = sfConfig::get('app_payements_enabled');
-				$this->vars['payments'] = array();
-				foreach ($payments as $payment) {
-					$this->vars['payments'][] = array(
-							'name' => $payment
-					);
-				}
-				
+				$this->vars['payments'] = sfConfig::get('app_payements_enabled');
 				break;
 				
 			case 'final' :
 				$productId = $request->getParameter('product_id', 0);
 				$toMail = $request->getParameter('to_mail', '');
+				$payment = $request->getParameter('payment', 0);
+				$this->forward404Unless($payment);
+				$payment = key($payment);
+				$this->forward404Unless(in_array($payment, sfConfig::get('app_payements_enabled')));
+				$this->forward404If(empty ($productId) || empty ($toMail));
+				$this->product = Doctrine_Core::getTable('couponGen')->findOneById($productId);
+				$this->forward404Unless($this->product);
 				
-				$this->forward404If(empty ($productId) || empty ($this->vars['toMail']));
-				$this->vars['product'] = Doctrine_Core::getTable('couponGen')->findOneById($productId);
-				$this->forward404If(empty ($this->vars['product']));
-				
+				switch ($payment) {
+					case 'paypal':
+						$data = new PaypalPaymentData();
+						$data->subject = 'Up2green reforestation';
+						$this->payment = Payment::create(
+							(float)$this->product->getPrix(), 
+							'EUR',
+							$data
+						);
+
+						$data->cancel_url = $this->context->getController()->genUrl(array(
+							'module' => 'user',
+							'action' => 'profil',
+							'reference' => $this->payment->id,
+						), true);
+						$data->return_url = $this->context->getController()->genUrl(array(
+							'module' => 'user',
+							'action' => 'listCoupon',
+							'reference' => $this->payment->id,
+						), true);
+						$data->save();
+						
+						try {
+							if ($this->payment->hasOpenTransaction()) {
+								$this->payment->getOpenTransaction()->execute();
+							}
+							else {
+								$this->payment->approve();
+							}
+						}
+						catch (jmsPaymentException $e) {
+							// for now there is only one action, so we do not need additional
+							// processing here
+							if ($e instanceof jmsPaymentUserActionRequiredException
+									&& $e->getAction() instanceof jmsPaymentUserActionVisitURL) {
+								$this->redirect($e->getAction()->getUrl());
+							}
+
+							$this->error = $e->getMessage();
+
+							return 'Error';
+						}
+						break;
+				}
 				
 				break;
 		}		

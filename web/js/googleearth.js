@@ -564,6 +564,9 @@ GoogleEarth.prototype.initializeEarth_ = function() {
   google.earth.createInstance(this.earthDiv_, function(instance) {
     that.instance_ = /** @type {google.earth.GEPlugin} */(instance);
     that.addEarthEvents_();
+		if(typeof googleEarthCBInit == 'function') {
+			googleEarthCBInit();
+		}
     that.refresh_();
   }, function(e) {
     that.hideEarth_();

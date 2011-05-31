@@ -150,12 +150,25 @@ span.nbTree {
 	color: #184F11;
 }
 
-.gmap-info-programme-tabs-wrapper.ui-tabs.ui-widget-content {
-	border: none;
-	height:250px;
+.gmap-info {
+	width: 400px;
 }
 
-.gmap-info-programme-tabs-wrapper.ui-tabs .ui-widget-header {
+.gmap-info.programme {
+	height: 200px;
+	overflow: auto;
+}
+
+.gmap-info.organisme {
+	height: 100px;
+	overflow: auto;
+}
+
+.gmap-tabs-wrapper.ui-tabs {
+	border: none;
+}
+
+.gmap-tabs-wrapper.ui-tabs .ui-widget-header {
 	border: none;
 	border-bottom: 1px solid #AAAAAA;
 	-webkit-border-radius: 0;
@@ -164,15 +177,55 @@ span.nbTree {
 	background: none;
 }
 
-.gmap-info-programme-tabs-wrapper.ui-tabs .ui-tabs-nav li a {
-	padding: 0 0.5em;
-	position: relative;
-	top: -5px;
+.gmap-tabs-wrapper.ui-tabs .ui-tabs-nav li a {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 5px;
+    position: relative;
+    top: -5px;
 }
 
-.gmap-info-programme-tabs-wrapper.ui-tabs img.gmap-programme {
+.gmap-tabs-wrapper.ui-tabs .ui-tabs-panel {
+	padding: 5px 0 0;
+}
+
+.gmap-info.programme img.gmap-programme {
 	float:left;
 	max-height:80px;
 	max-width:145px;
 	padding-right:5px;
+}
+
+div.programme-graph-wrapper {
+	border: 1px solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	height: 10px;
+	margin: 5px;
+}
+
+div.programme-graph-wrapper div {
+	height: 100%;
+}
+
+div.programme-graph-wrapper div.green {
+	background-color: #297F21;
+	border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+}
+
+.accroche-programme {
+	padding:5px;
+}
+
+.gmap-tab-programme-organisme h3 {
+	font-weight: bold;
+	font-size: 14px;
+	padding:5px;
+}
+
+.gmap-tab-programme-organisme {
+	font-size: 12px;
 }

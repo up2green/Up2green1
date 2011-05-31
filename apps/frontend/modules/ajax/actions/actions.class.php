@@ -36,6 +36,7 @@ class ajaxActions extends sfActions
 		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
 		$this->programme = Doctrine_Core::getTable('programme')->findOneById($programmeId);
 		$this->canPlant = $request->getParameter('canPlant', 0);
+		$this->userProgrammeTrees = 0;
 		
 		if(!$this->programme) {
 			return $this->forward404();
@@ -49,6 +50,27 @@ class ajaxActions extends sfActions
 			}
 		}
 		
+		if($this->getUser()->isAuthenticated()) {
+			$this->userProgrammeTrees = Doctrine_Core::getTable('tree')->countByUserAndProgramme($this->getUser()->getGuardUser()->getId(), array($programmeId));
+		}
+		
+		// comptage des arbres planté sur le programme :
+		$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
+		$this->displayPourcent = floor($this->programmeTrees * 100 / $this->programme->getMaxTree()) == 0 ? 1 : floor($this->programmeTrees * 100 / $this->programme->getMaxTree());
+		
+		
+	}
+	
+	public function executeGetInfoOrganisme(sfWebRequest $request) {
+		$organismeId = $request->getParameter('organisme', 0);
+		$this->organisme = Doctrine_Core::getTable('organisme')
+						->addLangQuery($this->getUser()->getCulture())
+						->addWhere('id = ?', $organismeId)
+						->fetchOne();
+		
+		if(!$this->organisme) {
+			return $this->forward404();
+		}
 	}
 		
 	public function executeClicPub(sfWebRequest $request) {

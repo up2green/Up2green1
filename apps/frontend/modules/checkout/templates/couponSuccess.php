@@ -13,6 +13,10 @@
 			'buy' => array(
 					'title' => __("Paiement"),
 					'subtitle' => __("Choix du mode de paiement"),
+			),
+			'complete' => array(
+					'title' => __("Finalisation"),
+					'subtitle' => __("Nous envoyons votre coupon"),
 			)
 		)
 	)

@@ -8,21 +8,20 @@
 		<tbody>
 			<tr>
 				<td class="label"><label for="to_mail"><?php echo __("E-mail du destinataire (*) : ") ?></label></td>
-				<td class="field"><input type="text" id="to_mail" name="to_mail" /></td>
+				<td class="field"><input style="width:70%;" type="text" id="to_mail" name="to_mail" /></td>
 			</tr>
 			<tr>
 				<td class="label"><label for="from_name"><?php echo __("Votre nom : ") ?></label></td>
-				<td class="field"><input type="text" id="from_name" name="from_name" value="<?php echo $sf_user->getGuardUser()->getFullName() ?>" /></td>
+				<td class="field"><input style="width:70%;" type="text" id="from_name" name="from_name" value="<?php echo $sf_user->getGuardUser()->getFullName() ?>" /></td>
 			</tr>
 			<tr>
 				<td class="label"><label for="to_name"><?php echo __("Nom du destinataire : ") ?></label></td>
-				<td class="field"><input type="text" id="to_name" name="to_name" /></td>
+				<td class="field"><input style="width:70%;" type="text" id="to_name" name="to_name" /></td>
 			</tr>
 			</tr>
 			<tr>
 				<td class="label"><label for="message"><?php echo __("Votre message : ") ?></label></td>
 				<td class="field"><textarea name="message" id="message" style="width:90%; height:150px;"></textarea></td>
-			</tr>
 			</tr>
 		</tbody>
 		<tfoot>

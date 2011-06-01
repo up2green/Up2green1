@@ -23,6 +23,14 @@ small {
 .clear{clear:both;}
 .hidden{display:none;}
 
+.quote {
+	border: 1px solid #CCCCCC;
+	color: #AAAAAA;
+	margin: 10px auto;
+	padding: 10px;
+	width: 400px;
+}
+
 a.backlink {
 	color: #0F3F00;
 	font-weight: normal;

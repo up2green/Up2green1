@@ -1,5 +1,5 @@
 <div style=" float: right;width: 700px;margin-bottom: 20px;">
-	<ol id="progress" style="width:<?php echo count($availableSteps) * 190 ?>px">
+	<ol id="progress" style="width:<?php echo count($availableSteps) * 170 ?>px">
 		<?php $i = 0; foreach ($availableSteps as $step => $infos) : $i++;?>
 		<li class="step <?php echo ($i === 1) ? 'first ' : '' ?><?php echo ($i === count($availableSteps)) ? 'last ' : '' ?><?php echo ($step === $currentStep) ? 'current ' : '' ?><?php echo $step ?>">
 			<a href="#">

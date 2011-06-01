@@ -90,7 +90,7 @@
     <tr>
       <td><?php echo $payment->id ?></td>
       <td><?php echo format_currency($payment->target_amount, $payment->currency) ?></td>
-      <td><?php echo substr(get_class($payment->DataContainer->getRawValue()), 0, -11) ?></td>
+      <td>-<?php /*echo substr(get_class($payment->DataContainer->getRawValue()), 0, -11)*/ ?></td>
       <td><?php 
         switch ($payment->state)
         {
@@ -174,7 +174,7 @@
             <?php foreach ($payment->Transactions as $transaction): ?>
             <tr>
               <td><?php echo $transaction->id ?></td>
-              <td><?php echo lcfirst(substr(get_class($transaction->getRawValue()), 9, -11))?>
+              <td>-<?php /*echo lcfirst(substr(get_class($transaction->getRawValue()), 9, -11))*/?>
               <td><?php echo format_currency($transaction->requested_amount, $transaction->currency)?></td>
               <td><?php echo format_currency($transaction->processed_amount, $transaction->currency)?></td>
               <td><?php 

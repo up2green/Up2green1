@@ -1,20 +1,33 @@
 <?php echo form_tag('checkout/coupon') ?>
-	<?php $first = true; foreach($payments as $payment) : ?>
-	<?php if(!$first) {echo '<hr />';} else {$first = false;} ?>
-	<div class="payement-type">
-		<table style="width:100%">
-			<tr>
-				<td><img src="/images/payment/<?php echo $payment ?>.png" alt="<?php echo $payment ?>" /></td>
-				<td style="vertical-align: middle;"><input type="submit" class="button orange medium" name="payment[<?php echo $payment ?>]" value="<?php echo __("Acheter") ?>" /></td>
-			</tr>
-		</table>
-	</div>
-	<?php endforeach; ?>
+	<fieldset>
+		<legend><?php echo __("Récapitualitf"); ?></legend>
+		<p class="important"><?php echo __("Vous êtes sur le point d'offrir un coupon de {number} arbres à {username}.", array(
+			'{number}' => $product->getCredit(),
+			'{username}' => empty ($toName) ? $toMail : $toName.' ('.$toMail.')',
+		)); ?></p>
+		<p><?php echo __("Ce coupon vous sera facturé {price}{currency} + la commission du prestataire de paiement ci-dessous.", array(
+			'{price}' => $product->getPrix(),
+			'{currency}' => '€',
+		)); ?></p>
+		<?php if (!empty ($message)) : ?>
+		<p><?php echo __("Le message suivant sera ajouté au coupon :"); ?></p>
+		<blockquote class="quote">
+			<?php echo $message ?>
+		</blockquote>
+		<?php endif; ?>
+	</fieldset>
+	<fieldset>
+		<legend><?php echo __("Mode de paiement"); ?></legend>
+		<?php include_partial('checkout/formModePaiement', array(
+			'payments' => $payments,
+			'commissions' => $commissions
+		)); ?>
+	</fieldset>
+	<p class="right">
+		<?php echo link_to(__("Retour à l'étape précédente"), "checkout/coupon", array("class" => "backlink")) ; ?>
+		<input type="submit" class="button green medium" value="<?php echo __("Procéder au paiement") ?>" />
+	</p>
 
 	<input type="hidden" name="step" value="final" />
-	<input type="hidden" name="to_mail" value="<?php echo $toMail ?>" />
-	<input type="hidden" name="from_name" value="<?php echo $fromName ?>" />
-	<input type="hidden" name="to_name" value="<?php echo $toName ?>" />
-	<input type="hidden" name="message" value="<?php echo $message ?>" />
 	<input type="hidden" name="product_id" value="<?php echo $product->getId() ?>" />
 </form>

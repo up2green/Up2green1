@@ -78,4 +78,20 @@ class sfGuardUser extends PluginsfGuardUser
 		return $this->getProfile()->getCredit() + $usedCredit;
 	}
 	
+	public function generateCoupon(couponGen $couponGen) {
+		$num = couponTable::getNumUnused($prefix);
+		
+		$coupon = new coupon();
+		$coupon->setCouponGen($couponGen);
+		$coupon->setCode($num);
+		$coupon->save();
+
+		$jointure = new couponUser();
+		$jointure->setUser($this);
+		$jointure->setCoupon($coupon);
+		$jointure->save();
+
+		return $num;
+	}
+	
 }

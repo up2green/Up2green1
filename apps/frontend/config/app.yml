@@ -23,10 +23,9 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
-  payements:
+  payments:
     enabled:
       - paypal
-      - paybox
   max_default_list_item: 10
   media_version: 15
   cultures:

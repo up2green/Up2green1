@@ -117,6 +117,29 @@ class checkoutActions extends sfActions
   }
 	
   public function executeCredit(sfWebRequest $request) {
-    
+    $this->step = $request->getParameter("step", "choice");
+		$this->forward404Unless($this->getUser()->isAuthenticated());
+		$this->forward404Unless(in_array($this->step, array("choice", "buy",  "final")));
+		
+		$user = $this->getUser()->getGuardUser();
+		$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+		$this->vars = array(); // subtemplate vars
+		
+		switch($this->step) {
+			case 'choice' :
+				break;
+			
+			case 'buy' :
+				$credit = $request->getParameter('credit', 0);
+				if(empty ($credit)) {
+					$this->getUser()->setFlash('notice', 'empty-value');
+					$this->redirect('checkout/credit');
+				}
+				
+				$this->vars['credit'] = $credit;
+				$this->vars['payments'] = sfConfig::get('app_payements_enabled');
+				break;
+		}		
+		
   }
 }

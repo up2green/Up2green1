@@ -1,15 +1,22 @@
 <?php include_partial('user/menuProfil'); ?>
-
-<div class="module grey" style="width:700px;float:right;">
-	<div class="content center notitle">
-		<div class="step-wrapper">
-			<div class="button <?php echo ($step == "choice" ? "green" : "gray") ?> big step"><?php echo __("Votre choix"); ?></div>
-			<div class="button <?php echo ($step == "dest" ? "green" : "gray") ?> big step"><?php echo __("Destinataire"); ?></div>
-			<div class="button <?php echo ($step == "buy" ? "green" : "gray") ?> big step"><?php echo __("Mode de paiement"); ?></div>
-		</div>
-	</div>
-	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-</div>
+<?php include_partial('checkout/steps', array(
+	'currentStep' => $step,
+	'availableSteps' => array(
+			'choice' => array(
+					'title' => __("Votre choix"),
+					'subtitle' => __("Choisissez votre coupon"),
+			),
+			'dest' => array(
+					'title' => __("Destinataire"),
+					'subtitle' => __("Personalisez votre message"),
+			),
+			'buy' => array(
+					'title' => __("Paiement"),
+					'subtitle' => __("Choix du mode de paiement"),
+			)
+		)
+	)
+); ?>
 
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">

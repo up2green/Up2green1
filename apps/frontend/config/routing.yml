@@ -171,8 +171,8 @@ checkout_coupon:
   param: { module: checkout, action: coupon}
   
 checkout_credit:
-  url:   /checkout/credit/:step
-  param: { module: checkout, action: credit, step: choice }
+  url:   /checkout/credit
+  param: { module: checkout, action: credit }
 
 homepage:
   url: /

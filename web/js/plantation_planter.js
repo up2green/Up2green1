@@ -75,7 +75,7 @@ $(document).ready(function(){
 			.removeClass((newTotalLeft > 0) ? 'gray' : 'green')
 			.addClass((newTotalLeft > 0) ? 'green' : 'gray');
 
-		if($('input:hidden[name="plantCouponCode"]').length) {
+		if($('input:hidden[name="code"]').length) {
 			$('input:submit[name="submitArbresProgramme"]')
 				.removeClass((newTotalLeft > 0) ? 'green' : 'gray')
 				.addClass((newTotalLeft > 0) ? 'gray' : 'green');

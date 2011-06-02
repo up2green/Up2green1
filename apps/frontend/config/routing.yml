@@ -37,9 +37,15 @@ get_kml:
 get_info_programme:
   url: /ajax/getInfoProgramme
   param: { module: ajax, action: getInfoProgramme, sf_format: xml }
+get_info_programme:
+  url: /plantation/ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
 
 get_info_organisme:
   url: /ajax/getInfoOrganisme
+  param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
+get_info_organisme:
+  url: /plantation/ajax/getInfoOrganisme
   param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
   
 plantation_get_info_programme:
@@ -153,25 +159,43 @@ general_article:
 user_profil:
   url:   /user/profil/
   param: { module: user, action: profil }
+plantation_user_profil:
+  url:   /plantation/user/profil/
+  param: { module: user, action: profil }
 
 user_filleul:
   url:   /user/filleul/
+  param: { module: user, action: listFilleul }
+plantation_user_filleul:
+  url:   /plantation/user/filleul/
   param: { module: user, action: listFilleul }
 
 user_invite_filleul:
   url:   /user/invitation/
   param: { module: user, action: inviteFilleul }
+plantation_user_invite_filleul:
+  url:   /plantation/user/invitation/
+  param: { module: user, action: inviteFilleul }
   
 user_coupon:
   url:   /user/coupon/
+  param: { module: user, action: listCoupon }
+plantation_user_coupon:
+  url:   /plantation/user/coupon/
   param: { module: user, action: listCoupon }
   
 checkout_coupon:
   url:   /checkout/coupon
   param: { module: checkout, action: coupon}
+plantation_checkout_coupon:
+  url:   /plantation/checkout/coupon
+  param: { module: checkout, action: coupon}
   
 checkout_credit:
   url:   /checkout/credit
+  param: { module: checkout, action: credit }
+plantation_checkout_credit:
+  url:   /plantation/checkout/credit
   param: { module: checkout, action: credit }
 
 homepage:

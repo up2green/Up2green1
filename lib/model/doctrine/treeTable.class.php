@@ -50,9 +50,10 @@ class treeTable extends Doctrine_Table {
 		}
 		
 		public function countByProgramme($id) {
-			return $this->createQuery('t')
-				->where('t.programme_id', $id)
-				->count() + (isset(self::$hardcode[(int)$id]) ? self::$hardcode[(int)$id] : 0);
+			$query = $this->createQuery('t')
+				->addWhere('t.programme_id = ?', $id);
+			
+			return $query->count() + (isset(self::$hardcode[(int)$id]) ? self::$hardcode[(int)$id] : 0);
 		}
 		
 	// -----------------------------------------

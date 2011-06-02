@@ -70,7 +70,7 @@
 	</div>
 	
 	<?php if(!is_null($coupon)) : ?>
-	<input type="hidden" name="plantCouponCode" value="<?php echo $coupon->getCode() ?>" />
+	<input type="hidden" name="code" value="<?php echo $coupon->getCode() ?>" />
 	<?php endif; ?>
 	
 	<input type="hidden" name="nbTreeMax" value="<?php echo floor($nbArbresToPlant) ?>" />

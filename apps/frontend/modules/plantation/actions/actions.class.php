@@ -10,6 +10,9 @@
  */
 class plantationActions extends sfActions {
 	
+	private static $defaultFromUrl = 'plantation/index';
+	private static $defaultRedirectUrl = 'plantation/index';
+	
 	/**
 	 * Executes index action
 	 *
@@ -19,8 +22,8 @@ class plantationActions extends sfActions {
 		// chargement des variables pour le form programmes
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		
-		$this->fromUrl = '';
-		$this->redirectUrl = '';
+		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
+		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
 		
 		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
 		$this->partenaire = null;
@@ -28,34 +31,26 @@ class plantationActions extends sfActions {
 		$this->spendAll = false;
 		
 		if($this->getUser()->isAuthenticated()) {
-			$this->nbArbresToPlant += $this->getUser()->getGuardUser()->getProfile()->getCredit();
+			$this->nbArbresToPlant = $this->getUser()->getGuardUser()->getProfile()->getCredit();
 		}
-		
-		if ($request->isMethod('post')) {
-
-			$this->fromUrl = $request->getParameter('fromUrl');
-			$this->redirectUrl = $request->getParameter('redirectUrl');
-			
-			if(empty($this->fromUrl)) {
-				$this->fromUrl = sfConfig::get('app_url_moteur');
-			}
-			
-			// l'utilisateur a entré son numéro de coupon
-			if ($request->getParameter('numCouponToUse')) {
-				if ($coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $request->getParameter('code'))) {
-					if ($coupon->getIsActive()) {
-						$this->coupon = $coupon;
-						if(is_null($this->partenaire)) {
-							$this->partenaire = $coupon->getPartenaire()->getPartenaire();
-						}
+								
+		// l'utilisateur a entré son numéro de coupon
+		if ($request->hasParameter('code')) {
+			$code = $request->getParameter('code');
+			$coupon = Doctrine_Core::getTable('coupon')->findOneByCode($code);
+			if ($coupon) {
+				if ($coupon->getIsActive()) {
+					$this->coupon = $coupon;
+					if(!$coupon->getPartenaire()->isNew()) {
+						$this->partenaire = $coupon->getPartenaire()->getPartenaire();
 						$this->setProgrammesFromPartenaire($this->partenaire);
-						$this->spendAll = true;
-						$this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
 					}
-					else {
-						$this->coupon = null;
-						$this->getUser()->setFlash('error', 'coupon-already-user');
-					}
+					$this->spendAll = true;
+					$this->nbArbresToPlant = $coupon->getCouponGen()->getCredit();
+				}
+				else {
+					$this->getUser()->setFlash('error', 'coupon-already-user');
+					$this->redirect($this->fromUrl);
 				}
 			}
 		}
@@ -65,46 +60,36 @@ class plantationActions extends sfActions {
 			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 		}
 
-		if(is_null($this->coupon) && !empty($this->fromUrl)) {
-			return $this->redirect($this->fromUrl);
-		}
-
 	}
 
 	public function executePlant(sfWebRequest $request) {
-		if (!$request->isMethod('post') || !$request->getParameter('confirmPlant')) {
-			return $this->forward404();
-		}
-
+		
+		$this->forward404Unless($request->isMethod('post'));
+		$this->forward404Unless($request->hasParameter('confirmPlant'));
+		
+		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
+		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
+		
 		$email = "";
 		$sendMail = true;
-		$code = $request->getParameter('coupon');
+		$code = $request->getParameter('code');
 		$trees = $request->getParameter('trees');
-		$fromUrl = $request->getParameter('fromUrl');
-		$redirectUrl = $request->getParameter('redirectUrl');
 		$sdf = false;
 
-		if(empty($redirectUrl)) {
-			$redirectUrl = 'plantation/index';
-		}
-
-		if(empty($fromUrl)) {
-			$fromUrl = 'plantation/index';
-		}
-		
 		if (!empty($code)) {
 			// plantation à partir d'un code coupon
 			$coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $code);
 
-			if(empty($coupon)) {
+			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->redirectUrl);
 			}
 			elseif(!$coupon->getIsActive()) {
 				$this->getUser()->setFlash('error', 'coupon-already-user');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->redirectUrl);
 			}
-			elseif(array_sum($trees) !== ($credit = (int)$coupon->getCouponGen()->getCredit())){
+			elseif(array_sum($trees) !== (int)$coupon->getCouponGen()->getCredit()){
+				
 				$this->getUser()->setFlash('error', 'error-plant-all');
 				return $this->forward('plantation', 'index');
 			}
@@ -116,21 +101,26 @@ class plantationActions extends sfActions {
 			$email = $request->getParameter('email_user');
 			$prenom = $request->getParameter('prenom_user');
 			$nom = $request->getParameter('nom_user');
-			$sdf = ($coupon->getPartenaire()->getPartenaire()->getTitle() === 'STORISTES DE FRANCE');
+			
+			if(!$coupon->getPartenaire()->isNew()) {
+				$sdf = ($coupon->getPartenaire()->getPartenaire()->getTitle() === 'STORISTES DE FRANCE');
+			}
 
 			$coupon->setUsedAt(date('c'));
 			$coupon->setIsActive(false);
+			
+			$coupon->setPartenaire(null);
 			$coupon->save();
 			
 			$coupon->logUser($email);
 		}
 		else if(!$this->getUser()->isAuthenticated()) {
 			$this->getUser()->setFlash('error', 'error-deco');
-			return $this->redirect('plantation/index');
+			$this->redirect($this->fromUrl);
 		}
-		elseif(array_sum($trees) > $credit = floor((int)$this->getUser()->getGuardUser()->getProfile()->getCredit())){
+		elseif(array_sum($trees) > floor((int)$this->getUser()->getGuardUser()->getProfile()->getCredit())){
 			$this->getUser()->setFlash('error', 'not-enough-credit');
-			return $this->redirect('plantation', 'index');
+			$this->redirect($this->fromUrl);
 		}
 		else {
 			foreach ($trees as $programme => $nombre){
@@ -138,7 +128,7 @@ class plantationActions extends sfActions {
 			}
 
 			$profil = $this->getUser()->getGuardUser()->getProfile();
-			$profil->setCredit($credit - array_sum($trees));
+			$profil->setCredit($this->getUser()->getGuardUser()->getProfile()->getCredit() - array_sum($trees));
 			$profil->save();
 
 			$email = $this->getUser()->getGuardUser()->getEmailAddress();
@@ -168,21 +158,19 @@ class plantationActions extends sfActions {
 			);
 
 			$html = $newsletter->getContent();
-			$html = str_replace('%treeNumber%', $credit, $html);
+			$html = str_replace('%treeNumber%', array_sum($trees), $html);
 
 			$message->setBody($html, 'text/html');
 
 			if(file_exists($filename)) {
-				$message->attach(
-					Swift_Attachment::fromPath($filename)
-				);
+				$message->attach(Swift_Attachment::fromPath($filename));
 			}
 
 			$this->getMailer()->send($message);
 			$this->getUser()->setFlash('notice', 'email-confirmation');
 		}
 		
-		return $this->redirect($this->getUser()->hasFlash('error') ? $fromUrl : $redirectUrl);
+		$this->redirect($this->getUser()->hasFlash('error') ? $this->fromUrl : $this->redirectUrl);
 	}
 	
 	/**
@@ -191,38 +179,40 @@ class plantationActions extends sfActions {
 	 */
 	public function executeConfirm(sfWebRequest $request) {
 
-		if (!$request->isMethod('post') || !$request->getParameter('submitArbresProgramme')) {
-			return $this->forward404();
-		}
-
-		$code = $request->getParameter('plantCouponCode');
-		$this->programmes = array();
+		$this->forward404Unless($request->isMethod('post'));
+		$this->forward404Unless($request->hasParameter('submitArbresProgramme'));
+		
+		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
+		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
+		
+		$code = $request->getParameter('code');
+		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		$this->coupon = null;
 		$this->partenaire = null;
 		$this->isThePartenaire = null;
 		$this->trees = array();
-		$this->fromUrl = $request->getParameter('fromUrl');
-		$this->redirectUrl = $request->getParameter('redirectUrl');
 
 		if (!empty($code)) {
 			// plantation à partir d'un code coupon
-			$this->coupon = Doctrine_Core::getTable('coupon')->findOneBy('code', $code);
-			if(empty($this->coupon)) {
+			$this->coupon = Doctrine_Core::getTable('coupon')->findOneByCode($code);
+			if(!$this->coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->fromUrl);
 			}
 			elseif(!$this->coupon->getIsActive()) {
 				$this->getUser()->setFlash('error', 'coupon-already-user');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->fromUrl);
 			}
 
-			$this->partenaire = $this->coupon->getPartenaire()->getPartenaire();
-			if($this->getUser()->isAuthenticated() && $this->getUser()->getGuardUser()->getPartenaire()->getId() === $this->partenaire->getId()) {
-				$this->isThePartenaire = true;
+			if(!$this->coupon->getPartenaire()->getPartenaire()->isNew()){
+				$this->partenaire = $this->coupon->getPartenaire()->getPartenaire();
+				if($this->getUser()->isAuthenticated() && $this->getUser()->getGuardUser()->getPartenaire()->getId() === $this->partenaire->getId()) {
+					$this->isThePartenaire = true;
+				}
+				$this->setProgrammesFromPartenaire($this->partenaire);
 			}
-			$this->setProgrammesFromPartenaire($this->partenaire);
-			$total = 0;
 			
+			$total = 0;
 			foreach ($this->programmes as $programme){
 				if ($request->getParameter('nbArbresProgrammeHidden_'.$programme->getId()) > 0){
 					$nombre = $request->getParameter('nbArbresProgrammeHidden_'.$programme->getId());
@@ -237,13 +227,13 @@ class plantationActions extends sfActions {
 			
 			if((int)$total !== (int)$this->coupon->getCouponGen()->getCredit()) {
 				$this->getUser()->setFlash('error', 'error-plant-all');
-				return $this->forward('plantation', 'index');
+				$this->forward('plantation', 'index');
 			}
 		}
 		else {
 			if(!$this->getUser()->isAuthenticated()) {
 				$this->getUser()->setFlash('error', 'error-deco');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->fromUrl);
 			}
 
 			if($this->getUser()->getGuardUser()->getPartenaire()->getId()) {
@@ -271,7 +261,7 @@ class plantationActions extends sfActions {
 			
 			if($total > $credit) {
 				$this->getUser()->setFlash('error', 'not-enough-credit');
-				return $this->redirect('plantation/index');
+				$this->redirect($this->fromUrl);
 			}
 		}
 

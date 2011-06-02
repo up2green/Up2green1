@@ -8,7 +8,7 @@
 		</p>
 		<form action="" method="post">
 		<p class="center"><input type="text" name="code" placeholder="<?php echo __("Numéro de coupon") ?>" /></p>
-		<p class="center"><input type="submit" class="button white" name="numCouponToUse" value="<?php echo __("Utiliser") ?>" /></p>
+		<p class="center"><input type="submit" class="button white" value="<?php echo __("Utiliser") ?>" /></p>
 		</form>
 
 	</div>

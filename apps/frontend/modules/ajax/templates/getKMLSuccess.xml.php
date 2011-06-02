@@ -69,12 +69,11 @@
 		<name><?php echo __("Programmes de reforestation"); ?></name>
 		<description><?php echo __("Les sites de reforestation."); ?></description>
 		<?php foreach($programmes as $programme) : ?>
+		<?php if($programme->getPoint()->getOutput() != null || $programme->getPolygonnes()->count() > 0) : ?>
 		<Placemark id="gmap-programme-<?php echo $programme->getId(); ?>">
 			<name><?php echo $programme->getTitle(); ?></name>
-			<address><?php echo $programme->getGeoadress(); ?></address>
 			<description></description>
 			<styleUrl><?php echo $programme->getIsActive() ? '#programme_actif' : '#programme_inactif' ?></styleUrl>
-			<?php if($programme->getPoint()->getOutput() != null || $programme->getPolygonnes()->count() > 0) : ?>
 			<MultiGeometry>			
 			<?php if($programme->getPoint()->getOutput() != null) : ?>
 			<Point>
@@ -97,8 +96,8 @@
 			</Polygon>
 			<?php endforeach; ?>
 			</MultiGeometry>		
-			<?php endif; ?>
 		</Placemark>
+		<?php endif; ?>
 		<?php endforeach; ?>
 	</Folder>
 </Document>

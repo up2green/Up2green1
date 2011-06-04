@@ -1,4 +1,4 @@
-<p class="important"><?php echo __("Up2green vous offre la possibilité d'acheter un coupon contenant un code qu'un de vos ami pourra utiliser sur la plateforme de reforestation. Vous pourrez accompagner ce cadeau par un message personnel."); ?></p>
+<p class="important"><?php echo __("Up2green vous offre la possibilité d'acheter un coupon contenant un code sécurisé que l'un de vos proches ou amis pourra utiliser sur la plateforme de reforestation en ligne. Il choisira lui-même où les planter sur la Planète. Vous pourrez accompagner ce cadeau par un message personnel."); ?></p>
 <?php echo form_tag('checkout/coupon') ?>
 	<fieldset>
 		<legend><?php echo __('Choix du coupon'); ?></legend>
@@ -12,8 +12,12 @@
 				<td style="vertical-align: middle;">
 					<label style="cursor:pointer" for="product-<?php echo $product->getId() ?>">
 						<?php echo format_number_choice(
-							"(-Inf,1]Offrir un coupon d'un arbre à un ami|(1,+Inf]Offrir un coupon de {number} arbres à un ami",
-							array('{number}' => $product->getCredit()),
+							"(-Inf,1]Offrir un coupon d'un arbre à un proche ou un ami (Prix: {price}{currency})|(1,+Inf]Offrir un coupon de {number} arbres à un proche ou un ami (Prix: {price}{currency})",
+							array(
+								'{number}' => $product->getCredit(),
+								'{currency}' => '€',
+								'{price}' => $product->getPrix()
+							),
 							$product->getCredit()
 						); ?>
 					</label>

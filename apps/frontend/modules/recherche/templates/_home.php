@@ -23,7 +23,7 @@
 				<img tooltiped="true" title="<?php echo $tooltip ?>" src="/images/icons/16x16/consulting.png" />
 			</p>
 			<p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
-			<p class="important"><?php echo __("Faites dès à présent un geste pour la nature en créant votre compte, Up2green vous offre un arbre pour bien commencer votre plantation !") ?></p>
+			<p class="important"><?php echo __("Gagnez un arbre à l’ouverture de votre compte Up2green et plantez le dès à présent sur la Planète !") ?></p>
 			<p class="center">
 				<a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong><?php echo __("Créer un compte") ?></strong></a>
 			</p>

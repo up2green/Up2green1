@@ -5,6 +5,9 @@
 
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">
+		<h3 class="green" style="padding:10px"><?php echo __("En parrainant vos amis, vous aidez l’Association à être connue et vous collectez ensuite de façon systématique {number}% des arbres qu’ils gagnent au fil de leurs recherches !", array(
+			'{number}'=> sfConfig::get('app_gain_parrain') * 100
+		)); ?></h3>
 		
 		<?php if(!count($pager)) :?>
 		<p><?php echo __("Vous n'avez pas encore de filleul, {lien}parrainez vos amis dès maintenant{/lien} pour planter encore plus d'arbres !", array(

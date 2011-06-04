@@ -1,5 +1,5 @@
 <p>
-	<?php echo __('Taux de conversion : 1 crédit = {prix}{devise}', array(
+	<?php echo __('1 crédit = {prix}{devise}', array(
 		'{prix}' => sfConfig::get('app_prix_credit'),
 		'{devise}' => '€'
 	)); ?>

@@ -44,22 +44,22 @@ class coupon extends Basecoupon {
 	$logCoupon->save();
     }
 
-    public function getFormatedListProgrammes() {
-	$s = "";
-	$array = array();
-	foreach ($this->getTrees() as $treeCoupon) {
-	    $tree = $treeCoupon->getTree();
-	    $nameProg = $tree->getProgramme()->getTitle();
+	public function getFormatedListProgrammes() {
+		$s = "";
+		$array = array();
+		foreach ($this->getTrees() as $treeCoupon) {
+				$tree = $treeCoupon->getTree();
+				$nameProg = $tree->getProgramme()->getTitle();
 
-	    if (! isset($array[$nameProg])) {
-		$array[$nameProg] = 1;
-	    }
-	    else $array[$nameProg] = $array[$nameProg] + 1;
+				if (! isset($array[$nameProg])) {
+			$array[$nameProg] = 1;
+				}
+				else $array[$nameProg] = $array[$nameProg] + 1;
+		}
+		foreach ($array as $key => $value) {
+				if ($s != "") $s .= ", ";
+				$s .= $key . "(".$value.")";
+		}
+		return $s;
 	}
-	foreach ($array as $key => $value) {
-	    if ($s != "") $s .= ", ";
-	    $s .= $key . "(".$value.")";
-	}
-	return $s;
-    }
 }

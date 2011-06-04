@@ -13,6 +13,7 @@
  * @property string $geoadress
  * @property boolean $is_active
  * @property integer $max_tree
+ * @property integer $add_tree
  * @property string $logo
  * @property organisme $Organisme
  * @property Doctrine_Collection $Polygonnes
@@ -29,6 +30,7 @@
  * @method string              getGeoadress()          Returns the current record's "geoadress" value
  * @method boolean             getIsActive()           Returns the current record's "is_active" value
  * @method integer             getMaxTree()            Returns the current record's "max_tree" value
+ * @method integer             getAddTree()            Returns the current record's "add_tree" value
  * @method string              getLogo()               Returns the current record's "logo" value
  * @method organisme           getOrganisme()          Returns the current record's "Organisme" value
  * @method Doctrine_Collection getPolygonnes()         Returns the current record's "Polygonnes" collection
@@ -44,6 +46,7 @@
  * @method programme           setGeoadress()          Sets the current record's "geoadress" value
  * @method programme           setIsActive()           Sets the current record's "is_active" value
  * @method programme           setMaxTree()            Sets the current record's "max_tree" value
+ * @method programme           setAddTree()            Sets the current record's "add_tree" value
  * @method programme           setLogo()               Sets the current record's "logo" value
  * @method programme           setOrganisme()          Sets the current record's "Organisme" value
  * @method programme           setPolygonnes()         Sets the current record's "Polygonnes" collection
@@ -95,6 +98,12 @@ abstract class Baseprogramme extends sfDoctrineRecord
         $this->hasColumn('max_tree', 'integer', 4, array(
              'type' => 'integer',
              'notnull' => true,
+             'length' => 4,
+             ));
+        $this->hasColumn('add_tree', 'integer', 4, array(
+             'type' => 'integer',
+             'notnull' => true,
+             'default' => 0,
              'length' => 4,
              ));
         $this->hasColumn('logo', 'string', 128, array(

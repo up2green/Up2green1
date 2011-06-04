@@ -70,7 +70,7 @@ class sfGuardUser extends PluginsfGuardUser
   public function getFullName() {
 		$prenom = $this->getFirstName();
 		$nom = $this->getLastName();
-  	return $prenom.(empty($nom) ? '' : $nom);
+  	return $prenom.(empty($nom) ? '' : ' '.$nom);
 	}
 	
   public function getTotalGain() {

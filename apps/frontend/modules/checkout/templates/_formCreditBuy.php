@@ -1,6 +1,6 @@
 <?php echo form_tag('checkout/credit') ?>
 	<fieldset>
-		<legend><?php echo __("Récapitualitf"); ?></legend>
+		<legend><?php echo __("Récapitulatif"); ?></legend>
 		<p><?php echo __("Vous êtes sur le point de créditer votre compte de {number} crédits pour un prix de {price}{currency} (<em>+ le prix de la commission sur la transaction demandé par le service de facturation ci-dessous</em>).", array(
 				'{number}' =>$credit ,
 				'{price}' => $prix,

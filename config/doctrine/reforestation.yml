@@ -55,6 +55,10 @@ programme:
     max_tree:
       type: integer(4)
       notnull: true
+    add_tree:
+      type: integer(4)
+      notnull: true
+      default: 0
     logo:
       type: string(128)
       default: null

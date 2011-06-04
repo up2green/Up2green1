@@ -21,7 +21,7 @@
 						<div style="width: <?php echo $displayPourcent ?>%;" class="green" href="#"></div>
 					</div>
 					<?php if($sf_user->isAuthenticated()) : ?>
-					<p><?php echo format_number_choice(
+					<p style="color:#7AA520"><?php echo format_number_choice(
 						"(-Inf,0]Vous n'avez pas encore planté d'arbre dans ce programme|(1)Vous avez planté un arbre dans ce programme|[1,+Inf]Vous avez planté {number} arbres dans ce programme",
 						array('{number}' => $userProgrammeTrees),
 						$userProgrammeTrees

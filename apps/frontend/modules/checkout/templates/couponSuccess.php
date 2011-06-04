@@ -8,7 +8,7 @@
 			),
 			'dest' => array(
 					'title' => __("Destinataire"),
-					'subtitle' => __("Personalisez votre message"),
+					'subtitle' => __("Personnalisez votre message"),
 			),
 			'buy' => array(
 					'title' => __("Paiement"),

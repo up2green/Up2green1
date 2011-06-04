@@ -11,7 +11,7 @@
 			} ?>
 		</ul>
 		<?php endif; ?>
-		<h3 class="green"><?php echo __("Grâce au système de parainage d'up2green, consolider votre geste écologique en plantant encore plus d'arbres. Pour chacun de vos filleuls, vous gagnerez automatiquement {number}% de ses gains en crédits arbre!", array(
+		<h3 class="green"><?php echo __("En parrainant vos amis, vous aidez l’Association à être connue et vous collectez ensuite de façon systématique {number}% des arbres qu’ils gagnent au fil de leurs recherches !", array(
 				'{number}'=> sfConfig::get('app_gain_parrain') * 100
 		)); ?></h3>
 		<form name="invite" action="<?php echo url_for('user_invite_filleul'); ?>" method="post">

@@ -45,21 +45,6 @@ class programmeTable extends Doctrine_Table
   public function retrieveLastProgrammesInArray($culture, $number = 2, $offset = 0) {
     return $this->buildQueryForRetrieveLastProgrammes($culture, $number, $offset)->fetchArray();
   }
-
-  /**
-   * Retourne le programme correspondant au slug passé en paramètre
-   *
-   * @param <String> $slug Slug du programme
-   * @return <Programme> Programme correspondant
-   */
-  public function retrieveBySlug($slug) {
-    $q = $this->createQuery('p')
-    	->where('p.is_active = ?', 1)
-			->leftJoin('p.Translation t')
-			->andWhere('t.slug = ?', $slug);
-
-    return $this->getOne($q);
-  }
   
 	public function countTrees($programmes = array()) {
 
@@ -206,14 +191,14 @@ class programmeTable extends Doctrine_Table
     
 	public function addSlugQuery($slug, Doctrine_Query $q = null) {
 		return $this->addQuery($q)
-			->innerJoin('p.Translation t')
-			->where('t.slug = ?', $slug);
+			->innerJoin('p.Translation pt')
+			->where('pt.slug = ?', $slug);
 	}
 	
 	public function addLangQuery($lang, Doctrine_Query $q = null) {
 		return $this->addQuery($q)
-			->innerJoin('p.Translation t')
-			->where('t.lang = ?', $lang);
+			->innerJoin('p.Translation pt')
+			->where('pt.lang = ?', $lang);
 	}
   
 	public function addActiveQuery(Doctrine_Query $q = null) {

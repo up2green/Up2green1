@@ -1,10 +1,14 @@
 <?php echo form_tag('checkout/coupon') ?>
 	<fieldset>
-		<legend><?php echo __("Récapitualitf"); ?></legend>
-		<p class="important"><?php echo __("Vous êtes sur le point d'offrir un coupon de {number} arbres à {username}.", array(
-			'{number}' => $product->getCredit(),
-			'{username}' => empty ($toName) ? $toMail : $toName.' ('.$toMail.')',
-		)); ?></p>
+		<legend><?php echo __("Récapitulatif"); ?></legend>
+		<p class="important"><?php echo format_number_choice(
+			"(-Inf,1]Vous êtes sur le point d'offrir un coupon d'un arbre à {username}.|(1,+Inf]Vous êtes sur le point d'offrir un coupon de {number} arbres à {username}.",
+			array(
+				'{number}' => $product->getCredit(),
+				'{username}' => empty ($toName) ? $toMail : $toName.' ('.$toMail.')',
+			),
+			$product->getCredit()
+		);?></p>
 		<p><?php echo __("Ce coupon vous sera facturé {price}{currency} + la commission du prestataire de paiement ci-dessous.", array(
 			'{price}' => $product->getPrix(),
 			'{currency}' => '€',

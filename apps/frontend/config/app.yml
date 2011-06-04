@@ -1,4 +1,9 @@
 prod:
+  jmsPaymentPlugin:
+    paypal:
+      username: 'antoine.gerigne_api1.up2green.com'
+      signature: 'AFbF3MLf8s8cAfgEC3-ZHq3jtLkAAg5billJSDcrHR0jhWshMoGmx3bP'
+      password: 'EH6S97W3Q2W7HTWR'
   yahoo_id: qCd9GP_V34GziYYOdugq_jWiY102W85s.9Hu9pjAkOTa8w1Q7XvgPa2i2jxPl689t9egrleLb1g-
   url_blog: http://association.up2green.com/
   url_moteur: http://www.up2green.com/
@@ -6,6 +11,11 @@ prod:
   url_admin: http://admin.up2green.com/
 
 dev:
+  jmsPaymentPlugin:
+    paypal:
+      username: 'test_1306521590_biz_api1.up2green.com'
+      signature: 'A.ZQCpvrRWwBbYXb9.MR7.zhHtKSA3R02020efHBK07kz.F.4nRihphP'
+      password: '1306521599'
   yahoo_id: .Zxf34nV34EVzJToKAQqU49YyS3jqm7E3po9WOgtA0tiFvw6tsZ1l_Wb.EK4U9YhhVlVyf30cWI-
   url_blog: http://association-up2green.smartit.fr/
   url_moteur: http://up2green.smartit.fr/
@@ -13,15 +23,21 @@ dev:
   url_admin: http://admin-up2green.smartit.fr/
 
 all:
-  media_version: 11
+  payments:
+    enabled:
+      - paypal
+  max_default_list_item: 10
+  media_version: 15
   cultures:
     enabled:
       fr: Français
       en: English
   conversion_tree_co2: 0.1
+  prix_credit: 2
+  gain_parrain: 0.1
   prix_arbre: 1
   hardcode_tree_number: 8847
-  gain_cpc: 0.01
+  gain_cpc: 0.04
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10

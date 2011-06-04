@@ -37,7 +37,7 @@ if($result['remun_type'] === 'pourcent') {
 			<td class="affiliate-content"><?php echo html_entity_decode($result['html']); ?></td>
 			<td class="affiliate-gains">
 				<h3><?php echo __("Gains :"); ?></h3>
-				<p title="<?php echo __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.") ?>">
+				<p tooltiped="true" title="<?php echo __("L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.") ?>">
 					<?php echo $gain; ?>
 				</p>
 			</td>

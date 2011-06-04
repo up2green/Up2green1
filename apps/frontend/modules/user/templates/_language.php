@@ -37,6 +37,7 @@ foreach($languages as $key => $value) {
 echo '
 		</ul>
 	</div>
+	'.$form->renderHiddenFields(false).'
 	<input type="hidden" name="language" value="'.$current.'" />
 	<input type="hidden" name="fromUrl" value="'.curPageURL().'" />
 ';

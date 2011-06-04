@@ -54,4 +54,44 @@ class sfGuardUser extends PluginsfGuardUser
   	return sizeof($this->getTrees());
 	}
 	
+  public function countFilleul() {
+  	return Doctrine_Core::getTable('filleul')
+						->addQuery()
+						->where("user_id = ?", $this->getId())
+						->count();
+	}
+  
+  public function getDisplayName() {
+		$prenom = $this->getFirstName();
+		$nom = $this->getLastName();
+  	return (empty($prenom) && empty($nom)) ? $this->getEmailAddress() : $prenom.' '.$nom;
+	}
+	
+  public function getFullName() {
+		$prenom = $this->getFirstName();
+		$nom = $this->getLastName();
+  	return $prenom.(empty($nom) ? '' : ' '.$nom);
+	}
+	
+  public function getTotalGain() {
+		$usedCredit = Doctrine_Core::getTable('treeUser')->countByUser($this->getId()) * sfConfig::get('app_prix_arbre');						
+		return $this->getProfile()->getCredit() + $usedCredit;
+	}
+	
+	public function generateCoupon(couponGen $couponGen) {
+		$num = couponTable::getNumUnused($prefix);
+		
+		$coupon = new coupon();
+		$coupon->setCouponGen($couponGen);
+		$coupon->setCode($num);
+		$coupon->save();
+
+		$jointure = new couponUser();
+		$jointure->setUser($this);
+		$jointure->setCoupon($coupon);
+		$jointure->save();
+
+		return $num;
+	}
+	
 }

@@ -10,12 +10,19 @@
  */
 class organismeForm extends BaseorganismeForm 
 {
-	public function configure() 
-	{
+	public function configure() {
+		
+		parent::configure();
+		$pointForm = new organismePointForm($this->object->Point);
+		unset($pointForm['id'], $pointForm['type']);
+		$this->embedForm('Point', $pointForm);
+		
 		unset(
 			$this['created_at'],
-			$this['updated_at']
+			$this['updated_at'],
+			$this['point_id']
 		);
+		
 		$this->validatorSchema['url'] = new sfValidatorUrl();
 
 

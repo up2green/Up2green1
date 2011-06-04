@@ -13,4 +13,16 @@
 class profil extends Baseprofil
 {
 
+	public function addCredit($value) {
+		$this->setCredit($this->getCredit() + (float)$value);
+		$this->save();
+		
+		// test s'il a un parrain
+		$parrain = $this->getUser()->getParrain();
+		if(!$parrain->isNew()) {
+			$parrain->getParrain()->getProfile()->addCredit(((float)$value)*sfConfig::get('app_gain_parrain'));
+			$parrain->getParrain()->getProfile()->save();
+		}
+	}
+	
 }

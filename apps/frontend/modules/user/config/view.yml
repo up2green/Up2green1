@@ -1,0 +1,7 @@
+inviteFilleulSuccess:
+  javascripts:
+    - "form.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    
+inscriptionSuccess:
+  javascripts:
+    - "form.js?v=<?php echo sfConfig::get('app_media_version') ?>"

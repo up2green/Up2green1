@@ -10,19 +10,17 @@
 class blogComponents extends sfComponents {
   
 	public function executeTopbar(sfWebRequest $request) {
-		$this->totalTrees = Doctrine_Core::getTable('tree')->count() + sfConfig::get('app_hardcode_tree_number');
+		$this->totalTrees = Doctrine_Core::getTable('tree')->count();
+		$this->totalTrees += sfConfig::get('app_hardcode_tree_number');
 	}
 
   public function executeArticlesBloc(sfWebRequest $request) {
     // Récupération des articles
     $currentOffset = $request->getParameter('articlesOffset', 0);
     $this->offsets = $this->retrieveArticlesOffsets($currentOffset);
-
     // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
-    if($request->isXmlHttpRequest())
-      $this->noBloc = true;
-
-    $this->articles = Doctrine::getTable('Article')->retrieveLastArticles($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_articles_max'), $currentOffset);
+    $this->noBloc = $request->isXmlHttpRequest();
+    $this->articles = Doctrine::getTable('Article')->getActiveByLang($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_articles_max'), $currentOffset);
   }
 
   public function executeProgrammesBloc(sfWebRequest $request) {
@@ -35,16 +33,17 @@ class blogComponents extends sfComponents {
     
     if(!in_array($currentOffset, array('min', 'max')))
     {
-			$this->offsets = $this->retrieveProgrammesOffsets($currentOffset);
+			$this->offsets = $this->retrieveprogrammesOffsets($currentOffset);
 			$this->offsets['next'] = $currentOffset == $this->offsets['next'] ? 'max' : $this->offsets['next']; 
 			$this->offsets['prev'] = $currentOffset == $this->offsets['prev'] ? 'min' : $this->offsets['prev']; 
 			// On n'affiche pas le bloc s'il s'agit d'une requête AJAX
 			if($request->isXmlHttpRequest())
 				$this->noBloc = true;
 			
-			$this->programmes = Doctrine::getTable('Programme')->retrieveLastProgrammes($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
+			$this->programmes = Doctrine::getTable('programme')->getActiveByLang($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_programmes_max'), $currentOffset);
 		}
-		elseif($request->isXmlHttpRequest())
+		
+		if($request->isXmlHttpRequest())
 			die();
   }
 
@@ -73,9 +72,7 @@ class blogComponents extends sfComponents {
   }
 
   public function executeDiaporama(sfWebRequest $request) {
-    // HOT-FIX incompréhenssible :
-    $this->programmes = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')
-    	->retrieveLastProgrammes($this->getUser()->getCulture(), 5, 0);
+    $this->programmes = Doctrine::getTable('programme')->getActiveByLang($this->getUser()->getCulture(), 5);
   }
 
   public function executeMenu(sfWebRequest $request) {
@@ -95,7 +92,7 @@ class blogComponents extends sfComponents {
     		'object'		=> $category
     	);
     
-    $this->programms = Doctrine::getTable($request->getParameter('type') == 'organisme' ? 'programme' : 'Programme')->getActiveByLang($this->getUser()->getCulture());
+    $this->programms = Doctrine::getTable('programme')->getActiveByLang($this->getUser()->getCulture());
   }
 
   public function executeFooter(sfWebRequest $request) {
@@ -112,8 +109,8 @@ class blogComponents extends sfComponents {
     return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_articles_max'), Doctrine::getTable('Article')->countActive());
   }
 
-  protected function retrieveProgrammesOffsets($offset) {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_programmes_max'), Doctrine::getTable('Programme')->countActive());
+  protected function retrieveprogrammesOffsets($offset) {
+    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_programmes_max'), Doctrine::getTable('programme')->countActive());
   }
 
   protected function retrievePartenairesOffsets($offset, $max) {
@@ -121,12 +118,10 @@ class blogComponents extends sfComponents {
   }
 
   protected function retrieveOffsets($offset, $nbElements, $maxOffset) {
-    // Calcul de l'offset à utiliser lors du clic sur le bouton précédent
-    $return['prev'] = ($offset - $nbElements <= 0)? 0: $offset - $nbElements;
-    // Calcul de l'offset à utiliser lors du clic sur le bouton suivant
-//    $return['next'] = ($offset + $nbElements >= $maxOffset)? ($offset - $nbElements <= 0)? 0: $offset - $nbElements: $offset + $nbElements;
-    $return['next'] = ($offset + $nbElements >= $maxOffset)? $offset: $offset + $nbElements;
-
-    return $return;
+    // Calcul de l'offset à utiliser lors du clic sur le bouton précédent / suivant
+    return array(
+				'prev' => ($offset - $nbElements <= 0)? 0: $offset - $nbElements,
+				'next' => ($offset + $nbElements >= $maxOffset)? $offset: $offset + $nbElements
+		);
   }
 }

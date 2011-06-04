@@ -21,11 +21,13 @@
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
- * @property partenaire $Partenaire
- * @property profil $Profile
  * @property Doctrine_Collection $Coupons
  * @property Doctrine_Collection $Trees
+ * @property partenaire $Partenaire
  * @property Doctrine_Collection $pubClics
+ * @property profil $Profile
+ * @property Doctrine_Collection $Filleuls
+ * @property filleul $Parrain
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
  * @method string                getLastName()              Returns the current record's "last_name" value
@@ -43,11 +45,13 @@
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
- * @method partenaire            getPartenaire()            Returns the current record's "Partenaire" value
- * @method profil                getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getCoupons()               Returns the current record's "Coupons" collection
  * @method Doctrine_Collection   getTrees()                 Returns the current record's "Trees" collection
+ * @method partenaire            getPartenaire()            Returns the current record's "Partenaire" value
  * @method Doctrine_Collection   getPubClics()              Returns the current record's "pubClics" collection
+ * @method profil                getProfile()               Returns the current record's "Profile" value
+ * @method Doctrine_Collection   getFilleuls()              Returns the current record's "Filleuls" collection
+ * @method filleul               getParrain()               Returns the current record's "Parrain" value
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
@@ -64,11 +68,13 @@
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
- * @method sfGuardUser           setPartenaire()            Sets the current record's "Partenaire" value
- * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
  * @method sfGuardUser           setCoupons()               Sets the current record's "Coupons" collection
  * @method sfGuardUser           setTrees()                 Sets the current record's "Trees" collection
+ * @method sfGuardUser           setPartenaire()            Sets the current record's "Partenaire" value
  * @method sfGuardUser           setPubClics()              Sets the current record's "pubClics" collection
+ * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
+ * @method sfGuardUser           setFilleuls()              Sets the current record's "Filleuls" collection
+ * @method sfGuardUser           setParrain()               Sets the current record's "Parrain" value
  * 
  * @package    up2green
  * @subpackage model
@@ -164,14 +170,6 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasOne('partenaire as Partenaire', array(
-             'local' => 'id',
-             'foreign' => 'user_id'));
-
-        $this->hasOne('profil as Profile', array(
-             'local' => 'id',
-             'foreign' => 'user_id'));
-
         $this->hasMany('couponUser as Coupons', array(
              'local' => 'id',
              'foreign' => 'user_id'));
@@ -180,9 +178,25 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
+        $this->hasOne('partenaire as Partenaire', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
         $this->hasMany('logPub as pubClics', array(
              'local' => 'id',
              'foreign' => 'user_id'));
+
+        $this->hasOne('profil as Profile', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasMany('filleul as Filleuls', array(
+             'local' => 'id',
+             'foreign' => 'user_id'));
+
+        $this->hasOne('filleul as Parrain', array(
+             'local' => 'id',
+             'foreign' => 'filleul_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

@@ -1,0 +1,98 @@
+profil:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: bigint(20) 
+      notnull: true
+      unique: true
+    credit:
+      type: float(18,4)
+      notnull: true
+      default: 0
+    is_newsletter:
+      type: integer(1)
+      notnull: true
+      default: 0
+    culture:
+      type: string(7)
+      default: 'fr_FR'
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+      foreignType:  one
+      foreignAlias: Profile
+
+filleul:
+  actAs:
+    Timestampable: ~
+  columns:
+    user_id:
+      type: bigint(20)
+      notnull: true
+    filleul_id:
+      type: bigint(20) 
+      unique: true
+    email_address:
+      type: string(255)
+      notnull: true
+      unique: true
+  relations:
+    Parrain:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+      foreignAlias: Filleuls
+    Filleul:
+      class: sfGuardUser
+      local: filleul_id
+      foreignType:  one
+      foreignAlias: Parrain
+    
+
+session:
+  columns:
+    sess_id:
+      type: string
+      length: 64
+      primary: true
+      notnull: true
+    sess_data:
+      type: clob
+      length: 65532
+      notnull: true
+    sess_time:
+      type: integer(4)
+      notnull: true
+    is_authenticated:
+      type: boolean
+      default: false
+    last_request_time:
+      type: integer(4)
+    user_id:
+      type: integer(4)
+    app:
+      type: string
+      length: 255
+    module:
+      type: string
+      length: 255
+    action:
+      type: string
+      length: 255
+    is_ajax:
+      type: boolean
+      default: false
+    ip:
+      type: string
+      length: 255
+    culture:
+      type: string
+      length: 255
+    user_agent:
+      type: string
+      length: 255

@@ -10,6 +10,69 @@
  */
 class ajaxActions extends sfActions
 {
+	public function executeGetKML(sfWebRequest $request) {
+		$partenaireId = $request->getParameter('partenaire', 0);
+		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
+						
+		$this->organismes = Doctrine_Core::getTable('organisme')->get();
+		$this->programmes = Doctrine_Core::getTable('programme')->get();
+		
+		if($this->partenaire) {
+			// on inactives les programmes non-soutenus
+			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
+			foreach($this->programmes as $programme) {
+				if(!in_array($programme->getId(), $partenaireProgrammes)) {
+					$programme->setIsActive(false);
+				}
+			}
+		}
+		
+	}
+	
+	public function executeGetInfoProgramme(sfWebRequest $request) {
+		$programmeId = $request->getParameter('programme', 0);
+		$partenaireId = $request->getParameter('partenaire', 0);
+		
+		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
+		$this->programme = Doctrine_Core::getTable('programme')->findOneById($programmeId);
+		$this->canPlant = $request->getParameter('canPlant', 0);
+		$this->userProgrammeTrees = 0;
+		
+		if(!$this->programme) {
+			return $this->forward404();
+		}
+		
+		// on inactives les programmes non-soutenus
+		if($this->partenaire) {
+			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
+			if(!in_array($this->programme->getId(), $partenaireProgrammes)) {
+				$this->programme->setIsActive(false);
+			}
+		}
+		
+		if($this->getUser()->isAuthenticated()) {
+			$this->userProgrammeTrees = Doctrine_Core::getTable('tree')->countByUserAndProgramme($this->getUser()->getGuardUser()->getId(), array($programmeId));
+		}
+		
+		// comptage des arbres planté sur le programme :
+		$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
+		$this->displayPourcent = floor($this->programmeTrees * 100 / $this->programme->getMaxTree()) == 0 ? 1 : floor($this->programmeTrees * 100 / $this->programme->getMaxTree());
+		
+		
+	}
+	
+	public function executeGetInfoOrganisme(sfWebRequest $request) {
+		$organismeId = $request->getParameter('organisme', 0);
+		$this->organisme = Doctrine_Core::getTable('organisme')
+						->addLangQuery($this->getUser()->getCulture())
+						->addWhere('id = ?', $organismeId)
+						->fetchOne();
+		
+		if(!$this->organisme) {
+			return $this->forward404();
+		}
+	}
+		
 	public function executeClicPub(sfWebRequest $request) {
 		$params = $request->getParameterHolder();
 		$url = $params->get('url');
@@ -28,7 +91,7 @@ class ajaxActions extends sfActions
 				$log->save();
 				
 				$profil = $this->getUser()->getGuardUser()->getProfile();
-				$profil->setCredit($profil->getCredit() + sfConfig::get('app_gain_cpc'));
+				$profil->addCredit(sfConfig::get('app_gain_cpc'));
 				$profil->save();
 				
 				$this->message = 'success';
@@ -70,14 +133,14 @@ class ajaxActions extends sfActions
 		  case SearchEngine::NEWS :
 			  $this->pubResults = $engine->getPubResults(2, $minPub);
 		  default :
-			  $this->affiliateResults = $engine->getOneShopResult($minAffiliate);
+			  $this->affiliateResults = array();
 			  $this->results = $engine->getResults($min);
 			  break;
 	  }
 
-      if(empty($this->affiliateResults)) {
-		  $this->affiliateResults = array();
-	  }
+		if(empty($this->affiliateResults)) {
+			$this->affiliateResults = array();
+		}
       
   }
 }

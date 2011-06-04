@@ -13,8 +13,8 @@
  * @property clob $description
  * @property string $url
  * @property sfGuardUser $User
- * @property Doctrine_Collection $Programmes
  * @property Doctrine_Collection $Coupons
+ * @property Doctrine_Collection $Programmes
  * 
  * @method integer             getId()          Returns the current record's "id" value
  * @method bigint              getUserId()      Returns the current record's "user_id" value
@@ -24,8 +24,8 @@
  * @method clob                getDescription() Returns the current record's "description" value
  * @method string              getUrl()         Returns the current record's "url" value
  * @method sfGuardUser         getUser()        Returns the current record's "User" value
- * @method Doctrine_Collection getProgrammes()  Returns the current record's "Programmes" collection
  * @method Doctrine_Collection getCoupons()     Returns the current record's "Coupons" collection
+ * @method Doctrine_Collection getProgrammes()  Returns the current record's "Programmes" collection
  * @method partenaire          setId()          Sets the current record's "id" value
  * @method partenaire          setUserId()      Sets the current record's "user_id" value
  * @method partenaire          setLogo()        Sets the current record's "logo" value
@@ -34,8 +34,8 @@
  * @method partenaire          setDescription() Sets the current record's "description" value
  * @method partenaire          setUrl()         Sets the current record's "url" value
  * @method partenaire          setUser()        Sets the current record's "User" value
- * @method partenaire          setProgrammes()  Sets the current record's "Programmes" collection
  * @method partenaire          setCoupons()     Sets the current record's "Coupons" collection
+ * @method partenaire          setProgrammes()  Sets the current record's "Programmes" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -89,11 +89,11 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 
-        $this->hasMany('partenaireProgramme as Programmes', array(
+        $this->hasMany('couponPartenaire as Coupons', array(
              'local' => 'id',
              'foreign' => 'partenaire_id'));
 
-        $this->hasMany('couponPartenaire as Coupons', array(
+        $this->hasMany('partenaireProgramme as Programmes', array(
              'local' => 'id',
              'foreign' => 'partenaire_id'));
 

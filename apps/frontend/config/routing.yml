@@ -30,14 +30,31 @@ clic_pub:
   url: /ajax/clicPub
   param: { module: ajax, action: clicPub, sf_format: xml }
 
+get_kml:
+  url: /ajax/getKML
+  param: { module: ajax, action: getKML, sf_format: xml }
+
+get_info_programme:
+  url: /ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
+get_info_programme:
+  url: /plantation/ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
+
+get_info_organisme:
+  url: /ajax/getInfoOrganisme
+  param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
+get_info_organisme:
+  url: /plantation/ajax/getInfoOrganisme
+  param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
+  
+plantation_get_info_programme:
+  url: /plantation/ajax/getInfoProgramme
+  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
 
 couponsCSV:
-  url:    /exportCoupons.csv
+  url:    /exportCoupons
   param:  {module: plantation, action: couponsCSV}
-
-couponsUsedCSV:
-  url:    /exportCouponsUsed.csv
-  param:  {module: plantation, action: couponsUsedCSV}
 
 ####################
 ##### LANDING
@@ -99,14 +116,6 @@ plantation:
   url: /plantation
   param: { module: plantation, action: index}
 
-plantation_user_profil:
-  url: /plantation/user/profil
-  param: { module: user, action: profil}
-
-plantation_liste_coupon_partenaire:
-  url: /plantation/listeCouponsPartenaires
-  param: { module: plantation, action: index, view: listeCouponsPartenaires }
-
 plantation_login:
   url:   /plantation/login
   param: { module: sfGuardAuth, action: signin }
@@ -146,6 +155,48 @@ plantation_change_language:
 general_article:
   url:   /article/:slug
   param: { module: recherche, action: viewElement, type: article }
+
+user_profil:
+  url:   /user/profil/
+  param: { module: user, action: profil }
+plantation_user_profil:
+  url:   /plantation/user/profil/
+  param: { module: user, action: profil }
+
+user_filleul:
+  url:   /user/filleul/
+  param: { module: user, action: listFilleul }
+plantation_user_filleul:
+  url:   /plantation/user/filleul/
+  param: { module: user, action: listFilleul }
+
+user_invite_filleul:
+  url:   /user/invitation/
+  param: { module: user, action: inviteFilleul }
+plantation_user_invite_filleul:
+  url:   /plantation/user/invitation/
+  param: { module: user, action: inviteFilleul }
+  
+user_coupon:
+  url:   /user/coupon/
+  param: { module: user, action: listCoupon }
+plantation_user_coupon:
+  url:   /plantation/user/coupon/
+  param: { module: user, action: listCoupon }
+  
+checkout_coupon:
+  url:   /checkout/coupon
+  param: { module: checkout, action: coupon}
+plantation_checkout_coupon:
+  url:   /plantation/checkout/coupon
+  param: { module: checkout, action: coupon}
+  
+checkout_credit:
+  url:   /checkout/credit
+  param: { module: checkout, action: credit }
+plantation_checkout_credit:
+  url:   /plantation/checkout/credit
+  param: { module: checkout, action: credit }
 
 homepage:
   url: /

@@ -1,48 +1,147 @@
-<?php if(!empty($gMapModes)) : ?>
-<script type="text/javascript">
-	var gMapModes = <?php echo json_encode($gMapModes); ?>;
-</script>
-<?php endif; ?>
-
 <p style="text-align:center;padding: 15px 5px; "><?php echo __("Visualisez les enjeux de chaque programme de reforestation en cliquant sur les info-bulles."); ?></p>
-<?php use_helper('Javascript','GMap') ?>
-<?php include_map($gMap,array('width'=>'700px','height'=>'450px')); ?>
-<?php include_map_javascript($gMap); ?>
 
-<?php if(!empty($gMapModes)) : ?>
-<div class="modeSelector">
-	<ul>
-		<?php
+<?php 
 
-		foreach($gMapModes as $gMapMode) :
+$gmapID = sfConfig::get('app_google_maps_api_keys');
+$gmapID = $gmapID[$_SERVER['HTTP_HOST']];
 
-			$gMapModesLabels = array(
-				'user' => __("Ma forêt – mes arbres : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
-				'coupon' => __("Les arbres plantés avec mes coupons : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
-				'all' => __("Tous les arbres plantés : {nbArbres}", array('{nbArbres}' => $gMapMode['displayValue'])),
+$kmlURL = sfConfig::get('app_url_moteur');
+$kmlURL .= substr(url_for("@get_kml"), 1);
+$kmlURL .= '?key='.uniqid();
 
-			);
+if(isset($partenaire)) {
+	$kmlURL .= '&partenaire='.$partenaire->getId();
+}
 
-			if(isset($gMapMode['partenaireTitle']) && isset($gMapMode['partenaireId'])) {
-				$gMapModesLabels += array(
-					'partenaire-'.$gMapMode['partenaireId'] => __("Tous les arbes plantés par {partenaire} : {nbArbres}", array(
-						'{partenaire}' => $gMapMode['partenaireTitle'],
-						'{nbArbres}' => $gMapMode['displayValue']
-					))
-				);
+?>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false&language=<?php echo $sf_user->getCulture(); ?>"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?key=<?php echo $gmapID; ?>"></script>
+<script type="text/javascript" src="/js/googleearth.js"></script>
+<script type="text/javascript" src="/js/google.maps.extras.js"></script>
+
+<script type="text/javascript">
+	
+	google.load("earth", "1");
+	
+	$(document).ready(function(){
+		
+		google.maps.Map.prototype.applyTabs = function() {
+			for(var i=0; i < this.markers.length; i++){
+					console.log(this.markers[i]);
 			}
+		};
+		
+		var myOptions = {
+			zoom: 2,
+			center: new google.maps.LatLng(0,0),
+			mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+		
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		ctaLayer = new google.maps.KmlLayer("<?php echo $kmlURL; ?>", {preserveViewport:true});
+		ctaLayer.setMap(map);
+		
+		infowindow = new google.maps.InfoWindow();
+		infowindow.close();
+		infowindow.setOptions({maxWidth:400});
+		
+		
+		google.maps.event.addListener(ctaLayer, 'click', function(kmlEvent) {
+			var programmeRegexp = new RegExp(/gmap-programme-/);
+			var organismeRegexp = new RegExp(/gmap-organisme-/);
+			if(programmeRegexp.test(kmlEvent.featureData.id)) {
+				$.ajax({
+					url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+					context: kmlEvent,
+					async: false,
+					dataType: "xml",
+					data: {
+						programme: kmlEvent.featureData.id.substring(15),
+						canPlant: <?php echo $canPlant ? 1 : 0 ?>
+					},
+					success: function(xml){
+						currentKmlEvent = this;
+						this.featureData.description = $(xml).find('text').text();
+						applyTabsTimer = setInterval(applyTabs, 50);
+					}
+				});
+			}
+			else if(organismeRegexp.test(kmlEvent.featureData.id)) {
+				$.ajax({
+					url: "<?php echo substr(url_for("@get_info_organisme"), 1) ?>",
+					context: kmlEvent,
+					async: false,
+					dataType: "xml",
+					data: {
+						organisme: kmlEvent.featureData.id.substring(15)
+					},
+					success: function(xml){
+						this.featureData.description = $(xml).find('text').text();
+					}
+				});
+			}
+		});
+		
+		function applyTabs() {
+			if($(".gmap-tabs-wrapper", $("#map_canvas")).length) {
+				clearInterval(applyTabsTimer);
+				$(".gmap-tabs-wrapper", $("#map_canvas")).tabs();
+			}
+		}
+		
+		googleEarth = new GoogleEarth(map);
+		
+		googleEarthCBInit = function() {
+			var ge = googleEarth.getInstance();
+			
+			// disable some layers for faster load & run ... or not
+			var layerRoot = ge.getLayerRoot();
+	
+			layerRoot.enableLayerById(ge.LAYER_BORDERS, true); 
+			layerRoot.enableLayerById(ge.LAYER_BUILDINGS, true);
+			layerRoot.enableLayerById(ge.LAYER_BUILDINGS_LOW_RESOLUTION, true);
+			layerRoot.enableLayerById(ge.LAYER_ROADS, true);
+			layerRoot.enableLayerById(ge.LAYER_TERRAIN, true);
+			layerRoot.enableLayerById(ge.LAYER_TREES, true);
+			
+			ge.getSun().setVisibility(true);
+			ge.getOptions().setAtmosphereVisibility(true);
+			
+			var placemarks = ge.getElementsByType('KmlPlacemark');
+			for (var i = 0; i < placemarks.getLength(); ++i) {
+				var placemark = placemarks.item(i);
+				console.log(placemark.getId());
+			}
+			
+			google.earth.addEventListener(ge.getWindow(), 'mousedown', function(event){
+				var programmeRegexp = new RegExp(/gmap-programme-/);
+				currentPlacemark = event.getTarget();
+				
+				if (currentPlacemark.getType() == 'KmlPlacemark' && programmeRegexp.test(currentPlacemark.getId())) {
+					$.ajax({
+						url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+						async: false,
+						data: {
+							programme: currentPlacemark.getId().substring(15)
+						},
+						dataType: "xml",
+						success: function(xml){
+							var myText = $(xml).find('text').text();
+							// console.log(myText);
+							// @TODO : fix this bug.
+//							currentPlacemark.setDescription($(xml).find('text').text());
+							setTimeout(function(){
+							 $('.gmap-tabs-wrapper', "#map_canvas").tabs();
+							},400);
+						}
+					});
+				}
+			});
+		};
+		
+	});
+	
+</script>
 
-		?>
-		<li>
-			<input type='radio' class="gMapMode" name="gMapMode" value="<?php echo $gMapMode['name'] ?>" id="gMapMode_<?php echo $gMapMode['name'] ?>"<?php echo ($gMapMode['checked']) ? ' checked="checked"' : '' ?>>
-			<label for="gMapMode_<?php echo $gMapMode['name'] ?>" style="position:relative;">
-				<?php echo $gMapModesLabels[$gMapMode['name']] ?>
-				<?php if($gMapMode['name'] === 'all') : ?>
-				<img title="<?php echo __("Déjà 6749 arbres plantés en 2009/2010 avec Trees for the Future, Planète Urgence et l'ONF en France, Ethiopie, Inde, Haïti, Burundi, Brésil, Honduras, Mali et Indonésie.") ?>" src="/images/icons/16x16/consulting.png">
-				<?php endif; ?>
-			</label>
-		</li>
-		<?php endforeach; ?>
-	</ul>
-</div>
-<?php endif; ?>
+<div id="map_canvas" style="width: 700px; height: 450px;"></div>

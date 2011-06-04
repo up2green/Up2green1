@@ -1,3 +1,48 @@
+filleul:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                filleul
+    module:               filleul
+    prefix_path:          /filleul
+    column:               id
+    with_wildcard_routes: true
+
+currency:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                currency
+    module:               currency
+    prefix_path:          /currency
+    column:               id
+    with_wildcard_routes: true
+
+payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Payment
+    module:               payment
+    prefix_path:          /payment
+    column:               id
+    with_wildcard_routes: true
+
+polygonne:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                polygonne
+    module:               polygonne
+    prefix_path:          /polygonne
+    column:               id
+    with_wildcard_routes: true
+
+session:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                session
+    module:               session
+    prefix_path:          /session
+    column:               sess_id
+    with_wildcard_routes: true
+
 log_coupon:
   class: sfDoctrineRouteCollection
   options:
@@ -141,15 +186,6 @@ engine:
     model:                Engine
     module:               engine
     prefix_path:          /engine
-    column:               id
-    with_wildcard_routes: true
-
-profil:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                Profil
-    module:               profil
-    prefix_path:          /profil
     column:               id
     with_wildcard_routes: true
 

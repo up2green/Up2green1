@@ -5,13 +5,20 @@ $(document).ready(function(){
 	
 	/* valeur par défaut dans les input type texte */
 	if(!$.support.placeholder) {
-		$("input[type=text][placeholder]").focus(function(){
-			if($(this).val() == $(this).attr('placeholder')){
-				$(this).val("");
+		$("input[placeholder], textarea[placeholder]").live("focus.html5", function(){
+			var $this = $(this);
+			if($this.val() == $this.attr('placeholder') && !$this.data('filled')){
+				$this.val("").data('filled', true);
 			}
-		}).blur(function(){
-			if($(this).val() == ""){
-				$(this).val($(this).attr('placeholder'));
+		}).live("blur.html5", function(){
+			var $this = $(this);
+			if($this.val() == ""){
+				$this.val($this.attr('placeholder')).data('filled', false);
+			}
+		}).trigger("blur.html5").closest("form").bind("submit.html5", function(e) {
+			if(!e.isDefaultPrevented()) {
+				$("input[placeholder], textarea[placeholder]").die('blur.html5');
+				$("input[placeholder], textarea[placeholder]",this).trigger('focus.html5');
 			}
 		});
 	}
@@ -28,12 +35,6 @@ $(document).ready(function(){
 	
 	/* désactivation des lien mort */
 	$('a.disabled').click(function(e){e.preventDefault();});
-	
-	$('a[href="#"]').each(function(){
-		$(this).css({
-			color: "#ccc"
-		}).click(function(){return false;});
-	});
 		
 	if($.browser.msie && parseInt(jQuery.browser.version) <= 6)
 	{
@@ -55,7 +56,7 @@ $(document).ready(function(){
 	});
 
 	/* tooltip */
-	$("[title]").mbTooltip({
+	$("[title][tooltiped=true]").mbTooltip({
 		opacity : .97,
 		wait:50,
 		cssClass:"corporate",
@@ -65,8 +66,8 @@ $(document).ready(function(){
 		imgPath:"/images/jquery.mb.tooltip/",
 		ancor:"mouse",
 		shadowColor:"black",
-		mb_fade:100
-    }).css('cursor', 'help');
+		mb_fade:0
+    });
 
 	$(document).enableTooltip();
 	

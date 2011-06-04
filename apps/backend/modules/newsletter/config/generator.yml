@@ -15,8 +15,8 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [Category, =title, is_forced, sent_at]
-        sort: [category_id, asc]
+        display: [slug, =title, is_forced, sent_at]
+        sort: [slug, asc]
       filter:  ~
       form:    ~
       edit:    ~

@@ -1,0 +1,25 @@
+# You can overwrite these values in your global app.yml
+all:
+  jmsPaymentPlugin:
+    ###########################
+    # PayPal related settings #
+    ###########################
+    paypal:
+      # PayPal API credentials
+      username: ~
+      signature: ~
+      password: ~
+      
+      # Whether people need a verified PayPal account for payments
+      verified_account_required: false
+      
+    
+    #######################################################
+    # Micropayment related settings (www.micropayment.de) #
+    #######################################################
+    micropayment:
+      access_key: ~
+      
+      # You can overwrite these values for each payment
+      project: ~
+      project_campaign: ~

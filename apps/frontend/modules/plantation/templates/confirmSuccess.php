@@ -9,11 +9,15 @@
 						<input type="hidden" name="trees[<?php echo $tree['programmeId'] ?>]" value="<?php echo $tree['nombre'] ?>" />
 					<?php endforeach; ?>
 
-					<?php if(sizeof($trees) == 1) : ?>
-						<?php echo __("Félicitations ! Vous venez de valider la plantation d’un arbre au {program}. Votre arbre sera planté d’ici la fin de l’année.", array(
+					<?php if(sizeof($trees) === 1 && $trees[0]['nombre'] === 1) : 
+						
+						echo __("Félicitations ! Vous venez de valider la plantation d’un arbre au {program}. Votre arbre sera planté d’ici la fin de l’année.", array(
 							'{program}' => $tree['programmeTitle'],
-						)); ?>
-					<?php else : ?>
+						)); 
+					
+						else : 
+					?>
+						
 					<h3><?php echo __("Résumé : ") ?></h3>
 					<ul class="list">
 						<?php foreach($trees as $tree) : ?>
@@ -32,11 +36,15 @@
 					</ul>
 					<?php endif; ?>
 
-					<?php if(isset($partenaire) && !empty($partenaire)) : ?>
-					<?php echo __("{:partenaire} vous remercie de votre implication dans son opération.", array(
-						'{:partenaire}' => $partenaire->getTitle()
-					));	?>
-					<?php endif; ?>
+					<?php 
+					
+					if(!empty($partenaire) && !$isThePartenaire) {
+						echo __("{:partenaire} vous remercie de votre implication dans son opération.", array(
+							'{:partenaire}' => $partenaire->getTitle()
+						));
+					}
+					
+					?>
 
 					<?php if($sf_user->isAuthenticated()) : ?>
 					<p>
@@ -64,10 +72,14 @@
 						</tbody>
 					</table>
 					<p><?php echo __("Sinon, validez simplement votre plantation") ?></p>
-					<input type="hidden" name="coupon" value="<?php echo $coupon->getCode() ?>" />
+					<?php endif; ?>
+					
+					<?php if(!is_null($coupon)) : ?>
+					<input type="hidden" name="code" value="<?php echo $coupon->getCode() ?>" />
+					<?php endif; ?>
+					
 					<input type="hidden" name="fromUrl" value="<?php echo $fromUrl ?>" />
 					<input type="hidden" name="redirectUrl" value="<?php echo $redirectUrl ?>" />
-					<?php endif; ?>
 					<p class="center">
 						<input type="submit" name="confirmPlant" class="button green big" value="<?php echo __("Confirmer et planter") ?>" />
 						<a href="<?php echo $backUrl ?>" class="backlink"><?php echo __("Revenir à la plantation") ?></a>

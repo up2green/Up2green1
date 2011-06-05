@@ -79,7 +79,7 @@ class sfGuardUser extends PluginsfGuardUser
 	}
 	
 	public function generateCoupon(couponGen $couponGen) {
-		$num = couponTable::getNumUnused($prefix);
+		$num = libCoupon::getCodeUnused();
 		
 		$coupon = new coupon();
 		$coupon->setCouponGen($couponGen);

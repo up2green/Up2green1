@@ -21,6 +21,21 @@ $browser->
 
 	info('2 - Checkout credits')->
 	get('/checkout/credit')->
+	info('2.1 - Test login')->
+
+	isForwardedTo('sfGuardAuth', 'signin')->
+
+	// log in
+	with('form')->begin()->
+		click('Se connecter', array(
+			'signin' => array(
+				'username' => myTestFunctional::$user['username'],
+				'password' => myTestFunctional::$user['password']
+			)))->
+		end()->
+	followRedirect()->
+
+	info('2.2 - Test redirect & status')->
 
 	with('request')->begin()->
 		isParameter('module', 'checkout')->
@@ -32,8 +47,21 @@ $browser->
 	end()->
 	
 	info('3 - Checkout coupons')->
+	//clearCookies()->
 	get('/checkout/coupon')->
-		    
+
+	//isForwardedTo('sfGuardAuth', 'signin')->
+
+	// log in
+	/*with('form')->begin()->
+		click('Se connecter', array(
+			'signin' => array(
+				'username' => myTestFunctional::$user['username'],
+				'password' => myTestFunctional::$user['password']
+			)))->
+		end()->
+	followRedirect()->
+	 */
 	with('request')->begin()->
 		isParameter('module', 'checkout')->
 		isParameter('action', 'coupon')->

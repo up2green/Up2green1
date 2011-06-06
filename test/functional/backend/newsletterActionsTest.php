@@ -2,7 +2,7 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new myTestFunctional(new sfBrowser());
 
 $browser->
 	get('/newsletter/index')->
@@ -13,8 +13,9 @@ $browser->
 	with('form')->begin()->
 		click('Se connecter', array(
 			'signin' => array(
-				'username' => 'admin',
-				'password' => 'up2g@dm1n')))->
+				'username' => myTestFunctional::$admin['username'],
+				'password' => myTestFunctional::$admin['password']
+			)))->
 	end()->
 
 	followRedirect()->

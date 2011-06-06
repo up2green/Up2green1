@@ -1,17 +1,5 @@
 <?php
 
-function curPageURL() {
-	$pageURL = 'http';
-	if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	$pageURL .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	} else {
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-	}
-	return $pageURL;
-}
-
 echo '<form method="post" id="formLanguage" action="'.url_for('/change_language').'">';
 
 echo '
@@ -39,7 +27,7 @@ echo '
 	</div>
 	'.$form->renderHiddenFields(false).'
 	<input type="hidden" name="language" value="'.$current.'" />
-	<input type="hidden" name="fromUrl" value="'.curPageURL().'" />
+	<input type="hidden" name="fromUrl" value="'.libUrl::getCurentUrl().'" />
 ';
 
 echo '</form>';

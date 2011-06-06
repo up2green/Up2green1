@@ -22,7 +22,7 @@ class checkoutActions extends sfActions
 		$this->forward404Unless(in_array($this->step, array("choice", "dest", "buy",  "final", "complete")));
 		
 		$user = $this->getUser()->getGuardUser();
-		$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+		$this->partenaire = ($user->hasReference('Partenaire') ? $user->getPartenaire() : null);
 		$this->vars = array(); // subtemplate vars
 		
 		switch($this->step) {
@@ -224,7 +224,7 @@ class checkoutActions extends sfActions
 		$this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
 		
 		$user = $this->getUser()->getGuardUser();
-		$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
+		$this->partenaire = ($user->hasReference('Partenaire') ? $user->getPartenaire() : null);
 		$this->vars = array(); // subtemplate vars
 		switch($this->step) {
 			case 'choice' :

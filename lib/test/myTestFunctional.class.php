@@ -1,6 +1,16 @@
 <?php
 class myTestFunctional extends sfTestFunctional {
 
+	public static $admin = array(
+		'username' => 'admin',
+		'password' => 'up2g@dm1n',
+	);
+
+	public static $user = array(
+		'username' => 'admin',
+		'password' => 'up2g@dm1n',
+	);
+
 	public function getSimpleUser(){
 		return Doctrine_Core::getTable('sfGuardUser')
 			->createQuery('u')

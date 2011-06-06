@@ -18,7 +18,7 @@ class checkoutActions extends sfActions
 		sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
 		
 		$this->step = $request->getParameter("step", "choice");
-		$this->forward404Unless($this->getUser()->isAuthenticated());
+		$this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
 		$this->forward404Unless(in_array($this->step, array("choice", "dest", "buy",  "final", "complete")));
 		
 		$user = $this->getUser()->getGuardUser();

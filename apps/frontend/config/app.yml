@@ -27,6 +27,7 @@ all:
     enabled:
       - paypal
   max_default_list_item: 10
+  sdf_id: 11
   media_version: 15
   cultures:
     enabled:

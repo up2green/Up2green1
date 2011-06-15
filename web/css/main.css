@@ -465,3 +465,7 @@ div#sfWebDebugBar {
 	bottom: 0;
 	top: auto;
 }
+
+div.attestation-wrapper {
+	margin: 20px 0;
+}

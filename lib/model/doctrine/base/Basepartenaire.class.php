@@ -11,6 +11,8 @@
  * @property string $title
  * @property string $accroche
  * @property clob $description
+ * @property clob $page
+ * @property string $attestation
  * @property string $url
  * @property sfGuardUser $User
  * @property Doctrine_Collection $Coupons
@@ -22,6 +24,8 @@
  * @method string              getTitle()       Returns the current record's "title" value
  * @method string              getAccroche()    Returns the current record's "accroche" value
  * @method clob                getDescription() Returns the current record's "description" value
+ * @method clob                getPage()        Returns the current record's "page" value
+ * @method string              getAttestation() Returns the current record's "attestation" value
  * @method string              getUrl()         Returns the current record's "url" value
  * @method sfGuardUser         getUser()        Returns the current record's "User" value
  * @method Doctrine_Collection getCoupons()     Returns the current record's "Coupons" collection
@@ -32,6 +36,8 @@
  * @method partenaire          setTitle()       Sets the current record's "title" value
  * @method partenaire          setAccroche()    Sets the current record's "accroche" value
  * @method partenaire          setDescription() Sets the current record's "description" value
+ * @method partenaire          setPage()        Sets the current record's "page" value
+ * @method partenaire          setAttestation() Sets the current record's "attestation" value
  * @method partenaire          setUrl()         Sets the current record's "url" value
  * @method partenaire          setUser()        Sets the current record's "User" value
  * @method partenaire          setCoupons()     Sets the current record's "Coupons" collection
@@ -74,6 +80,14 @@ abstract class Basepartenaire extends sfDoctrineRecord
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',
              'length' => 65535,
+             ));
+        $this->hasColumn('page', 'clob', 65535, array(
+             'type' => 'clob',
+             'length' => 65535,
+             ));
+        $this->hasColumn('attestation', 'string', 128, array(
+             'type' => 'string',
+             'length' => 128,
              ));
         $this->hasColumn('url', 'string', 150, array(
              'type' => 'string',

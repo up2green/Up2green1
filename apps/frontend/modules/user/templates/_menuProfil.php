@@ -13,7 +13,9 @@
 		<?php if($partenaire) : ?>
 		<ul class="list partenaire">
 			<li><a href="<?php echo url_for('@partenaire_profil') ?>"><?php echo __('Mes infos partenaire'); ?></a></li>
+			<?php if($partenaire->getId() != sfConfig::get('app_sdf_id')) : ?>
 			<li><a href="<?php echo url_for('@partenaire_profil_attestation') ?>"><?php echo __('Mon attestation'); ?></a></li>
+			<?php endif; ?>
 			<li><a href="<?php echo url_for('@partenaire_profil_page') ?>"><?php echo __('Ma page'); ?></a></li>
 		</ul>
 		<?php endif; ?>

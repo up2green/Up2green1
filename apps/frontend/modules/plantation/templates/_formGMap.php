@@ -46,13 +46,13 @@ if(isset($partenaire)) {
 			var organismeRegexp = new RegExp(/gmap-organisme-/);
 			if(programmeRegexp.test(kmlEvent.featureData.id)) {
 				$.ajax({
-					url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+					url: "<?php echo url_for("ajax/getInfoProgramme", true) ?>",
 					context: kmlEvent,
 					async: false,
 					dataType: "xml",
 					data: {
 						programme: kmlEvent.featureData.id.substring(15),
-						canPlant: <?php echo $canPlant ? 1 : 0 ?>
+						canPlant: <?php echo (isset($canPlant) && $canPlant) ? 1 : 0 ?>
 					},
 					success: function(xml){
 						currentKmlEvent = this;

@@ -295,10 +295,10 @@ class userActions extends sfActions {
 	
 	public function executePartenaireProfil(sfWebRequest $request) {
 		$this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
-		$this->forward404Unless($this->getUser()->getGuardUser()->hasRelation('Partenaire'));
+		$this->forward404Unless($this->getUser()->getGuardUser()->isPartenaire());
 		
 		$this->partenaire = $this->getUser()->getGuardUser()->getPartenaire();
-		$this->form = new profilPartenaireForm($this->partenaire);
+		$this->form = new partenaireProfilForm($this->partenaire);
 
 		if($request->isMethod('post')) {
 			$files = $request->getFiles('partenaire');
@@ -322,15 +322,49 @@ class userActions extends sfActions {
 	
 	public function executePartenaireAttestation(sfWebRequest $request) {
 		$this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
-		$this->forward404Unless($this->getUser()->getGuardUser()->hasRelation('Partenaire'));
+		$this->forward404Unless($this->getUser()->getGuardUser()->isPartenaire());
 		
 		$this->partenaire = $this->getUser()->getGuardUser()->getPartenaire();
+		$this->form = new partenaireAttestationForm($this->partenaire);
+
+		if($request->isMethod('post')) {
+			$files = $request->getFiles('partenaire');
+			$this->form->bind($request->getParameter($this->form->getName()), $files);
+			if($this->form->isValid()) {
+				$this->partenaire = $this->form->save();
+				$this->partenaire->save();
+				
+				$this->getUser()->setFlash('notice', 'modif-ok');
+				if(!empty($files) && !empty($files['attestation']['name'])) {
+					$this->getUser()->setFlash('notice', 'update-file-ok');
+				}
+			}
+			else {
+				$this->getUser()->setFlash('error', 'bad-image');
+			}
+		}
 	}
 	
 	public function executePartenairePage(sfWebRequest $request) {
 		$this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
-		$this->forward404Unless($this->getUser()->getGuardUser()->hasRelation('Partenaire'));
+		$this->forward404Unless($this->getUser()->getGuardUser()->isPartenaire());
 		
 		$this->partenaire = $this->getUser()->getGuardUser()->getPartenaire();
+		$this->form = new partenairePageForm($this->partenaire);
+
+		if($request->isMethod('post')) {
+			$files = $request->getFiles('partenaire');
+			$this->form->bind($request->getParameter($this->form->getName()), $files);
+			if($this->form->isValid()) {
+				$this->partenaire = $this->form->save();
+				$this->partenaire->save();
+				
+				$this->getUser()->setFlash('notice', 'modif-ok');
+				
+				if(!empty($files)) {
+					$this->getUser()->setFlash('notice', 'update-file-ok');
+				}
+			}
+		}
 	}
 }

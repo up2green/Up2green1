@@ -28,21 +28,21 @@ class coupon extends Basecoupon {
 	    $treeCoupon->save();
 
 	    if ($user->getGuardUser()) {
-			$treeUser = new treeUser();
-			$treeUser->setTree($tree);
-			$treeUser->setUser($user->getGuardUser());
-			$treeUser->save();
+				$treeUser = new treeUser();
+				$treeUser->setTree($tree);
+				$treeUser->setUser($user->getGuardUser());
+				$treeUser->save();
 	    }
 	}
     }
 
-    public function logUser($email) {
-	$logCoupon = new logCoupon();
-	$logCoupon->setEmail($email);
-	$logCoupon->setIp($_SERVER['REMOTE_ADDR']);
-	$logCoupon->setCoupon($this);
-	$logCoupon->save();
-    }
+	public function logUser($email) {
+		$logCoupon = new logCoupon();
+		$logCoupon->setEmail($email);
+		$logCoupon->setIp($_SERVER['REMOTE_ADDR']);
+		$logCoupon->setCoupon($this);
+		$logCoupon->save();
+	}
 
 	public function getFormatedListProgrammes() {
 		$s = "";

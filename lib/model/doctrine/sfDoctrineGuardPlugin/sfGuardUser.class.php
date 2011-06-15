@@ -73,6 +73,10 @@ class sfGuardUser extends PluginsfGuardUser
   	return $prenom.(empty($nom) ? '' : ' '.$nom);
 	}
 	
+  public function isPartenaire() {
+		return $this->hasRelation('Partenaire') && !is_null($this->getPartenaire()->getId());
+	}
+	
   public function getTotalGain() {
 		$usedCredit = Doctrine_Core::getTable('treeUser')->countByUser($this->getId()) * sfConfig::get('app_prix_arbre');						
 		return $this->getProfile()->getCredit() + $usedCredit;

@@ -20,6 +20,18 @@ class landingActions extends sfActions
 		$this->forward404();
 	}
 	
+	public function executePagePartenaire(sfWebRequest $request)
+	{
+		$this->operation = $request->getParameter('operation');
+		$this->partenaire = null;
+		
+		$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $request->getParameter('partenaireOffset'));
+		$this->forward404Unless($user);
+		$this->partenaire = $user->getPartenaire();
+		$this->forward404If($this->partenaire->isNew());
+		
+	}
+	
 	public function executePlantation(sfWebRequest $request)
 	{		
 		$partenaireOffset = $request->getParameter('partenaireOffset');

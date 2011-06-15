@@ -19,8 +19,8 @@
  * @property Doctrine_Collection $Polygonnes
  * @property programmePoint $Point
  * @property Doctrine_Collection $programmePolygonne
- * @property Doctrine_Collection $Trees
  * @property Doctrine_Collection $Partenaires
+ * @property Doctrine_Collection $Trees
  * 
  * @method integer             getId()                 Returns the current record's "id" value
  * @method integer             getOrganismeId()        Returns the current record's "organisme_id" value
@@ -36,8 +36,8 @@
  * @method Doctrine_Collection getPolygonnes()         Returns the current record's "Polygonnes" collection
  * @method programmePoint      getPoint()              Returns the current record's "Point" value
  * @method Doctrine_Collection getProgrammePolygonne() Returns the current record's "programmePolygonne" collection
- * @method Doctrine_Collection getTrees()              Returns the current record's "Trees" collection
  * @method Doctrine_Collection getPartenaires()        Returns the current record's "Partenaires" collection
+ * @method Doctrine_Collection getTrees()              Returns the current record's "Trees" collection
  * @method programme           setId()                 Sets the current record's "id" value
  * @method programme           setOrganismeId()        Sets the current record's "organisme_id" value
  * @method programme           setTitle()              Sets the current record's "title" value
@@ -52,8 +52,8 @@
  * @method programme           setPolygonnes()         Sets the current record's "Polygonnes" collection
  * @method programme           setPoint()              Sets the current record's "Point" value
  * @method programme           setProgrammePolygonne() Sets the current record's "programmePolygonne" collection
- * @method programme           setTrees()              Sets the current record's "Trees" collection
  * @method programme           setPartenaires()        Sets the current record's "Partenaires" collection
+ * @method programme           setTrees()              Sets the current record's "Trees" collection
  * 
  * @package    up2green
  * @subpackage model
@@ -132,11 +132,11 @@ abstract class Baseprogramme extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'programme_id'));
 
-        $this->hasMany('tree as Trees', array(
+        $this->hasMany('partenaireProgramme as Partenaires', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 
-        $this->hasMany('partenaireProgramme as Partenaires', array(
+        $this->hasMany('tree as Trees', array(
              'local' => 'id',
              'foreign' => 'programme_id'));
 

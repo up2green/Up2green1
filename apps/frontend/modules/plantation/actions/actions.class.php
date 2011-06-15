@@ -73,6 +73,7 @@ class plantationActions extends sfActions {
 		
 		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
 		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
+		$this->partenaire = null;
 		
 		$email = "";
 		$sendMail = true;
@@ -93,7 +94,6 @@ class plantationActions extends sfActions {
 				$this->redirect($this->redirectUrl);
 			}
 			elseif(array_sum($trees) !== (int)$coupon->getCouponGen()->getCredit()){
-				
 				$this->getUser()->setFlash('error', 'error-plant-all');
 				return $this->forward('plantation', 'index');
 			}
@@ -101,22 +101,25 @@ class plantationActions extends sfActions {
 			foreach ($trees as $programme => $nombre){
 				$coupon->plantArbre((int)$nombre, $programme, $this->getUser());
 			}
-
-			$email = $request->getParameter('email_user');
-			$prenom = $request->getParameter('prenom_user');
-			$nom = $request->getParameter('nom_user');
+			
 			
 			if(!$coupon->getPartenaire()->isNew()) {
-				$sdf = ($coupon->getPartenaire()->getPartenaire()->getTitle() === 'STORISTES DE FRANCE');
+				$this->partenaire = $coupon->getPartenaire()->getPartenaire();
 			}
 
 			$coupon->setUsedAt(date('c'));
 			$coupon->setIsActive(false);
-			
 			$coupon->setPartenaire(null);
 			$coupon->save();
 			
-			$coupon->logUser($email);
+			if(!$this->getUser()->isAuthenticated()) {
+				$email = $request->getParameter('email_user');
+				$coupon->logUser($email);
+			}
+			else {
+				$email = $this->getUser()->getGuardUser()->getEmailAddress();
+			}
+			
 		}
 		else if(!$this->getUser()->isAuthenticated()) {
 			$this->getUser()->setFlash('error', 'error-deco');
@@ -146,12 +149,12 @@ class plantationActions extends sfActions {
 			// on construit l'attestation :
 			sfProjectConfiguration::getActive()->loadHelpers(array('I18N', 'Date'));
 			sfTCPDFPluginConfigHandler::loadConfig('my_config');
-			if($sdf) {
+			if(!is_null($this->partenaire) && $this->partenaire->getId() == sfConfig::get('app_sdf_id')) {
 				$filename = $this->buildAttestationSdF($username, $trees);
 				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation-sdf');
 			}
 			else {
-				$filename = $this->buildAttestation($username, $trees);
+				$filename = $this->buildAttestation($username, $trees, $this->partenaire);
 				$newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('attestation-de-plantation');
 			}
 			
@@ -183,8 +186,8 @@ class plantationActions extends sfActions {
 	 */
 	public function executeConfirm(sfWebRequest $request) {
 
-		$this->forward404Unless($request->isMethod('post'));
-		$this->forward404Unless($request->hasParameter('submitArbresProgramme'));
+		$this->forwardUnless($request->isMethod('post'), 'plantation', 'index');
+		$this->forwardUnless($request->hasParameter('submitArbresProgramme'), 'plantation', 'index');
 		
 		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
 		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
@@ -274,8 +277,15 @@ class plantationActions extends sfActions {
 	 * Construit l'attestation pdf dans le dossier temporaire
 	 * @return: (string) nom du fichier physique
 	 */
-	public function buildAttestation($username, $trees) {
-		$pdf = new attestationPDF();
+	public function buildAttestation($username, $trees, $partenaire = null) {
+		
+		if(!is_null($partenaire) && $partenaire->getAttestation()) {
+			$pdf = new attestationPDF(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getAttestation());
+		}
+		else {
+			$pdf = new attestationPDF();
+		}
+		
 		$pdf->init();
 		
 		$nbTotal = array_sum($trees);
@@ -334,7 +344,7 @@ class plantationActions extends sfActions {
 	 * @return: (string) nom du fichier physique
 	 */
 	public function buildAttestationSdF($username, $trees) {
-		$pdf = new attestationPDF('attestation_empty_sdf');
+		$pdf = new attestationPDF(sfConfig::get('sf_web_dir').'/images/pdf/attestation_empty_sdf.png');
 		$pdf->init();
 
 		//body

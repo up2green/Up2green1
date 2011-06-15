@@ -25,6 +25,7 @@ if (!function_exists('getFlashError')) {
 			case 'not-enough-credit': return __("Vous n'avez pas assez de crédits arbres.");
 			case 'form-error': return __("Formulaire invalide.");
 			case 'invitation-empty': return __("Veuillez remplir au moins une addresse mail.");
+			case 'bad-image': return __("L'image ne respecte pas les critères requis.");
 			default: return $qName;
 		}
 	}

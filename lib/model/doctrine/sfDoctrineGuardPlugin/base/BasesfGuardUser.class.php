@@ -22,8 +22,8 @@
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
  * @property Doctrine_Collection $Coupons
- * @property Doctrine_Collection $Trees
  * @property partenaire $Partenaire
+ * @property Doctrine_Collection $Trees
  * @property Doctrine_Collection $pubClics
  * @property profil $Profile
  * @property Doctrine_Collection $Filleuls
@@ -46,8 +46,8 @@
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
  * @method Doctrine_Collection   getCoupons()               Returns the current record's "Coupons" collection
- * @method Doctrine_Collection   getTrees()                 Returns the current record's "Trees" collection
  * @method partenaire            getPartenaire()            Returns the current record's "Partenaire" value
+ * @method Doctrine_Collection   getTrees()                 Returns the current record's "Trees" collection
  * @method Doctrine_Collection   getPubClics()              Returns the current record's "pubClics" collection
  * @method profil                getProfile()               Returns the current record's "Profile" value
  * @method Doctrine_Collection   getFilleuls()              Returns the current record's "Filleuls" collection
@@ -69,8 +69,8 @@
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
  * @method sfGuardUser           setCoupons()               Sets the current record's "Coupons" collection
- * @method sfGuardUser           setTrees()                 Sets the current record's "Trees" collection
  * @method sfGuardUser           setPartenaire()            Sets the current record's "Partenaire" value
+ * @method sfGuardUser           setTrees()                 Sets the current record's "Trees" collection
  * @method sfGuardUser           setPubClics()              Sets the current record's "pubClics" collection
  * @method sfGuardUser           setProfile()               Sets the current record's "Profile" value
  * @method sfGuardUser           setFilleuls()              Sets the current record's "Filleuls" collection
@@ -174,11 +174,11 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasMany('treeUser as Trees', array(
+        $this->hasOne('partenaire as Partenaire', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 
-        $this->hasOne('partenaire as Partenaire', array(
+        $this->hasMany('treeUser as Trees', array(
              'local' => 'id',
              'foreign' => 'user_id'));
 

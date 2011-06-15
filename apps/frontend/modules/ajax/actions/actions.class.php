@@ -60,8 +60,10 @@ class ajaxActions extends sfActions
 		// comptage des arbres planté sur le programme :
 		$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
 		$max = $this->programme->getMaxTree() == 0 ? 1 : $this->programme->getMaxTree();
-		$this->displayPourcent = floor($this->programmeTrees * 100 / ($this->programmeTrees * 100 / $max));
-		
+		$this->displayPourcent = floor($this->programmeTrees * 100 / $max);
+		if(empty ($this->displayPourcent)) {
+			$this->displayPourcent = 1;
+		}
 		
 	}
 	

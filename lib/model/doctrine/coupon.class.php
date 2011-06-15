@@ -11,31 +11,38 @@
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class coupon extends Basecoupon {
-    public function plantArbre($nb, $programme, $user) {
-	for ($i = 0; $i < $nb; $i ++) {
-	    $tree = new tree();
-		if(is_integer($programme)) {
-			$tree->setProgrammeId($programme);
-		}
-		else {
-			$tree->setProgramme($programme);
-		}
-	    $tree->save();
+	
+	public function plantArbre($nb, $programme, $user) {
+		for ($i = 0; $i < $nb; $i ++) {
+				$tree = new tree();
+			if(is_integer($programme)) {
+				$tree->setProgrammeId($programme);
+			}
+			else {
+				$tree->setProgramme($programme);
+			}
+				$tree->save();
 
-	    $treeCoupon = new treeCoupon();
-	    $treeCoupon->setCoupon($this);
-	    $treeCoupon->setTree($tree);
-	    $treeCoupon->save();
+				$treeCoupon = new treeCoupon();
+				$treeCoupon->setCoupon($this);
+				$treeCoupon->setTree($tree);
+				$treeCoupon->save();
 
-	    if ($user->getGuardUser()) {
-				$treeUser = new treeUser();
-				$treeUser->setTree($tree);
-				$treeUser->setUser($user->getGuardUser());
-				$treeUser->save();
-	    }
+				if ($user->getGuardUser()) {
+					$treeUser = new treeUser();
+					$treeUser->setTree($tree);
+					$treeUser->setUser($user->getGuardUser());
+					$treeUser->save();
+				}
+		}
 	}
-    }
 
+	public function isPerime() {
+		$date = strtotime($this->getCreatedAt());
+		$limit = time() - (sfConfig::get('app_validite_coupon') * 24 * 60 * 60);
+		return $limit > $date;
+	}
+	
 	public function logUser($email) {
 		$logCoupon = new logCoupon();
 		$logCoupon->setEmail($email);

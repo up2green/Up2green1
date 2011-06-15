@@ -26,6 +26,7 @@ if (!function_exists('getFlashError')) {
 			case 'form-error': return __("Formulaire invalide.");
 			case 'invitation-empty': return __("Veuillez remplir au moins une addresse mail.");
 			case 'bad-image': return __("L'image ne respecte pas les critères requis.");
+			case 'coupon-perime': return __("Votre coupon est périmé, il a atteint sa limite de validité.");
 			default: return $qName;
 		}
 	}

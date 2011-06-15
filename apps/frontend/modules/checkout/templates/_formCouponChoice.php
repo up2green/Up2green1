@@ -26,6 +26,10 @@
 		</table>
 		<?php endforeach; ?>
 	</fieldset>
+	<p style="color: #666666; font-size: 0.9em; font-style: italic; padding: 15px 0 0"><?php echo __("Les coupons de plantations sont valables {number} jours après leur création.", array(
+			'{number}' => sfConfig::get("app_validite_coupon")
+	)) ?></p>
+	<p style="color: #666666; font-size: 0.9em; font-style: italic; padding: 5px 5px 15px;"><?php echo __("Au delà de cette date de validité, l'Association Up2green Reforestation choisira le(s) programme(s) financé(s)") ?></p>
 	<input type="submit" class="button green medium" value="<?php echo __("Continuer"); ?>" />
 	<input type="hidden" name="step" value="dest" />
 </form>

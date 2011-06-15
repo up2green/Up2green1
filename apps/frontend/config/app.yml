@@ -28,6 +28,7 @@ all:
       - paypal
   max_default_list_item: 10
   sdf_id: 11
+  validite_coupon: 60
   media_version: 15
   cultures:
     enabled:

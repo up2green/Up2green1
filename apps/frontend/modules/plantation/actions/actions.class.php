@@ -42,6 +42,10 @@ class plantationActions extends sfActions {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
 				$this->redirect($this->redirectUrl);
 			}
+			else if($coupon->isPerime()) {
+				$this->getUser()->setFlash('error', 'coupon-perime');
+				$this->redirect($this->redirectUrl);
+			}
 			else {
 				if ($coupon->getIsActive()) {
 					$this->coupon = $coupon;
@@ -87,6 +91,10 @@ class plantationActions extends sfActions {
 
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
+				$this->redirect($this->redirectUrl);
+			}
+			else if($coupon->isPerime()) {
+				$this->getUser()->setFlash('error', 'coupon-perime');
 				$this->redirect($this->redirectUrl);
 			}
 			elseif(!$coupon->getIsActive()) {
@@ -205,6 +213,10 @@ class plantationActions extends sfActions {
 			if(!$this->coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
 				$this->redirect($this->fromUrl);
+			}
+			else if($this->coupon->isPerime()) {
+				$this->getUser()->setFlash('error', 'coupon-perime');
+				$this->redirect($this->redirectUrl);
 			}
 			elseif(!$this->coupon->getIsActive()) {
 				$this->getUser()->setFlash('error', 'coupon-already-user');

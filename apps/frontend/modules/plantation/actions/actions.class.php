@@ -38,7 +38,11 @@ class plantationActions extends sfActions {
 		if ($request->hasParameter('code')) {
 			$code = $request->getParameter('code');
 			$coupon = Doctrine_Core::getTable('coupon')->findOneByCode($code);
-			if ($coupon) {
+			if(!$coupon) {
+				$this->getUser()->setFlash('error', 'invalid-coupon');
+				$this->redirect($this->redirectUrl);
+			}
+			else {
 				if ($coupon->getIsActive()) {
 					$this->coupon = $coupon;
 					if(!$coupon->getPartenaire()->isNew()) {

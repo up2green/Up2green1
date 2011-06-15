@@ -13,7 +13,7 @@
 				<td><img class="gmap-programme" src="/uploads/programme/<?php echo $programme->getLogo() ?>" alt="Diapo Image" /></td>
 				<?php endif; ?>
 				<td style="vertical-align: middle;font-size:13px;">
-					<p><?php echo __("Remplissage : {number}/{max} arbres plantés", array(
+					<p><?php echo __("Capacité : {number}/{max} arbres plantés", array(
 						'{number}' => $programmeTrees,
 						'{max}' => $programme->getMaxTree()
 					)) ?></p>

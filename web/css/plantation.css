@@ -229,3 +229,21 @@ div.programme-graph-wrapper div.green {
 .gmap-tab-programme-organisme {
 	font-size: 12px;
 }
+
+#gmap-legend {
+	width:100%;
+	margin-top: 20px;
+}
+
+#gmap-legend td {
+	vertical-align: middle;
+}
+
+#gmap-legend td.icon ,
+#gmap-legend td.icon img {
+	width:32px;
+}
+
+#gmap-legend td.label {
+	padding-left:20px;
+}

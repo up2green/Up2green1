@@ -24,13 +24,7 @@ if(isset($partenaire)) {
 	google.load("earth", "1");
 	
 	$(document).ready(function(){
-		
-		google.maps.Map.prototype.applyTabs = function() {
-			for(var i=0; i < this.markers.length; i++){
-					console.log(this.markers[i]);
-			}
-		};
-		
+				
 		var myOptions = {
 			zoom: 2,
 			center: new google.maps.LatLng(0,0),
@@ -90,58 +84,81 @@ if(isset($partenaire)) {
 			}
 		}
 		
-		googleEarth = new GoogleEarth(map);
-		
-		googleEarthCBInit = function() {
-			var ge = googleEarth.getInstance();
-			
-			// disable some layers for faster load & run ... or not
-			var layerRoot = ge.getLayerRoot();
-	
-			layerRoot.enableLayerById(ge.LAYER_BORDERS, true); 
-			layerRoot.enableLayerById(ge.LAYER_BUILDINGS, true);
-			layerRoot.enableLayerById(ge.LAYER_BUILDINGS_LOW_RESOLUTION, true);
-			layerRoot.enableLayerById(ge.LAYER_ROADS, true);
-			layerRoot.enableLayerById(ge.LAYER_TERRAIN, true);
-			layerRoot.enableLayerById(ge.LAYER_TREES, true);
-			
-			ge.getSun().setVisibility(true);
-			ge.getOptions().setAtmosphereVisibility(true);
-			
-			var placemarks = ge.getElementsByType('KmlPlacemark');
-			for (var i = 0; i < placemarks.getLength(); ++i) {
-				var placemark = placemarks.item(i);
-				console.log(placemark.getId());
-			}
-			
-			google.earth.addEventListener(ge.getWindow(), 'mousedown', function(event){
-				var programmeRegexp = new RegExp(/gmap-programme-/);
-				currentPlacemark = event.getTarget();
-				
-				if (currentPlacemark.getType() == 'KmlPlacemark' && programmeRegexp.test(currentPlacemark.getId())) {
-					$.ajax({
-						url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
-						async: false,
-						data: {
-							programme: currentPlacemark.getId().substring(15)
-						},
-						dataType: "xml",
-						success: function(xml){
-							var myText = $(xml).find('text').text();
-							// console.log(myText);
-							// @TODO : fix this bug.
-//							currentPlacemark.setDescription($(xml).find('text').text());
-							setTimeout(function(){
-							 $('.gmap-tabs-wrapper', "#map_canvas").tabs();
-							},400);
-						}
-					});
-				}
-			});
-		};
+//		googleEarth = new GoogleEarth(map);
+//		
+//		googleEarthCBInit = function() {
+//			var ge = googleEarth.getInstance();
+//			
+//			// disable some layers for faster load & run ... or not
+//			var layerRoot = ge.getLayerRoot();
+//	
+//			layerRoot.enableLayerById(ge.LAYER_BORDERS, true); 
+//			layerRoot.enableLayerById(ge.LAYER_BUILDINGS, true);
+//			layerRoot.enableLayerById(ge.LAYER_BUILDINGS_LOW_RESOLUTION, true);
+//			layerRoot.enableLayerById(ge.LAYER_ROADS, true);
+//			layerRoot.enableLayerById(ge.LAYER_TERRAIN, true);
+//			layerRoot.enableLayerById(ge.LAYER_TREES, true);
+//			
+//			ge.getSun().setVisibility(true);
+//			ge.getOptions().setAtmosphereVisibility(true);
+//			
+//			var placemarks = ge.getElementsByType('KmlPlacemark');
+//			for (var i = 0; i < placemarks.getLength(); ++i) {
+//				var placemark = placemarks.item(i);
+//				console.log(placemark.getId());
+//			}
+//			
+//			google.earth.addEventListener(ge.getWindow(), 'mousedown', function(event){
+//				var programmeRegexp = new RegExp(/gmap-programme-/);
+//				currentPlacemark = event.getTarget();
+//				
+//				if (currentPlacemark.getType() == 'KmlPlacemark' && programmeRegexp.test(currentPlacemark.getId())) {
+//					$.ajax({
+//						url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+//						async: false,
+//						data: {
+//							programme: currentPlacemark.getId().substring(15)
+//						},
+//						dataType: "xml",
+//						success: function(xml){
+//							var myText = $(xml).find('text').text();
+//							// console.log(myText);
+//							// @TODO : fix this bug.
+////							currentPlacemark.setDescription($(xml).find('text').text());
+//								applyTabsTimer = setInterval(applyTabs, 50);
+//						}
+//					});
+//				}
+//			});
+//		};
 		
 	});
 	
 </script>
 
 <div id="map_canvas" style="width: 700px; height: 450px;"></div>
+
+<table id="gmap-legend">
+	<tr>
+		<td class="icon"><img src="/images/gmap/pointeur/icon-64x64-plantation-vert.gif" alt="<?php echo __("Programmes actifs") ?>"/></td>
+		<td class="label"><?php echo __("Programmes actifs") ?></td>
+		<td class="icon"><img src="/images/gmap/pointeur/icon-64x64-organisme-violet.gif" alt="<?php echo __("Siège des organismes actifs") ?>"/></td>
+		<td class="label"><?php echo __("Organismes actifs") ?></td>
+	</tr>
+	<tr>
+		<td class="icon"><img src="/images/gmap/pointeur/icon-64x64-plantation-gris.gif" alt="<?php echo __("Programmes inactifs") ?>"/></td>
+		<td class="label"><?php echo __("Programmes inactifs") ?></td>
+		<td class="icon"><img src="/images/gmap/pointeur/icon-64x64-organisme-gris.gif" alt="<?php echo __("Siège des organismes inactifs") ?>"/></td>
+		<td class="label"><?php echo __("Organismes inactifs") ?></td>
+	</tr>
+	<?php if(isset($partenaire)) : ?>
+	<tr>
+		<td class="icon"><img src="/images/gmap/pointeur/icon-64x64-plantation-violet.gif" alt="<?php echo __("Programmes soutenus par le partenaire {partner}", array(
+				'{partner}' => $partenaire->getTitle()
+		)) ?>"/></td>
+		<td class="label"><?php echo __("Programmes soutenus par le partenaire {partner}", array(
+				'{partner}' => $partenaire->getTitle()
+		)) ?></td>
+	</tr>
+	<?php endif; ?>
+</table>

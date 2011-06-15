@@ -13,18 +13,21 @@ class ajaxActions extends sfActions
 	public function executeGetKML(sfWebRequest $request) {
 		$partenaireId = $request->getParameter('partenaire', 0);
 		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
+		$this->partenaireProgrammes = array();
 						
 		$this->organismes = Doctrine_Core::getTable('organisme')->get();
 		$this->programmes = Doctrine_Core::getTable('programme')->get();
 		
 		if($this->partenaire) {
-			// on inactives les programmes non-soutenus
-			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
-			foreach($this->programmes as $programme) {
-				if(!in_array($programme->getId(), $partenaireProgrammes)) {
-					$programme->setIsActive(false);
-				}
+			foreach($this->partenaire->getProgrammes() as $partenaireProgramme) {
+				$this->partenaireProgrammes[] = $partenaireProgramme->getProgrammeId();
 			}
+			// on inactives les programmes non-soutenus par le partenaire
+//			foreach($this->programmes as $programme) {
+//				if(!in_array($programme->getId(), $partenaireProgrammes)) {
+//					$programme->setIsActive(false);
+//				}
+//			}
 		}
 		
 	}
@@ -56,7 +59,8 @@ class ajaxActions extends sfActions
 		
 		// comptage des arbres planté sur le programme :
 		$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
-		$this->displayPourcent = floor($this->programmeTrees * 100 / $this->programme->getMaxTree()) == 0 ? 1 : floor($this->programmeTrees * 100 / $this->programme->getMaxTree());
+		$max = $this->programme->getMaxTree() == 0 ? 1 : $this->programme->getMaxTree();
+		$this->displayPourcent = floor($this->programmeTrees * 100 / ($this->programmeTrees * 100 / $max));
 		
 		
 	}

@@ -11,7 +11,7 @@
 		</ol>';
 ?>
 
-<div id="home">
+<div id="home" class="hide-onload" style="opacity: 0;">
 
 	<?php if (!$sf_user->isAuthenticated()): ?>
 	<div class="module acteur">

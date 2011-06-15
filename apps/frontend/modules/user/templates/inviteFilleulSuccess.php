@@ -1,4 +1,4 @@
-<?php include_partial('menuProfil'); ?>
+<?php include_component('user', 'menuProfil'); ?>
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">
 		<?php if(!empty ($alreadyUserOrFilleul)) : ?>

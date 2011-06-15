@@ -56,6 +56,10 @@ table.form td.field {
 	min-width:70%;
 }
 
+table.form.no-field-width td.field {
+	min-width:inherit;
+}
+
 table.form td.info {
 	text-align:left;
 }

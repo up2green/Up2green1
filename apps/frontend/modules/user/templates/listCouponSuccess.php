@@ -1,6 +1,6 @@
 <?php 
 	use_helper('Date');
-	include_partial('menuProfil');
+	include_component('user', 'menuProfil');
 ?>
 
 <div class="module grey" style="width:700px;float:right;">

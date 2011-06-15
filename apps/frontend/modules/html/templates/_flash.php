@@ -9,6 +9,7 @@ if (!function_exists('getFlashNotice')) {
 			case 'plant-succes': return __("Vos arbres ont bien été plantés !");
 			case 'invitation-success': return __("Vos invitations ont bien été envoyées.");
 			case 'cadeau-arbre-new': return __("Vous avez gagné un arbre grâce à l'ouverture de votre compte !");
+			case 'update-file-ok': return __("Votre fichier à bien été mis à jour. Il est possible que votre fichier mette quelques minutes à s'enregistrer sur nos serveurs.");
 			default: return $qName;
 		}
 	}

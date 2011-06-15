@@ -162,6 +162,27 @@ user_profil:
 plantation_user_profil:
   url:   /plantation/user/profil/
   param: { module: user, action: profil }
+  
+partenaire_profil:
+  url:   /user/partenaireProfil/
+  param: { module: user, action: partenaireProfil }
+plantation_partenaire_profil:
+  url:   /plantation/user/partenaireProfil/
+  param: { module: user, action: partenaireProfil }
+  
+partenaire_profil_attestation:
+  url:   /user/partenaireAttestation/
+  param: { module: user, action: partenaireAttestation }
+plantation_partenaire_profil_attestation:
+  url:   /plantation/user/partenaireAttestation/
+  param: { module: user, action: partenaireAttestation }
+  
+partenaire_profil_page:
+  url:   /user/partenairePage/
+  param: { module: user, action: partenairePage }
+plantation_partenaire_profil_page:
+  url:   /plantation/user/partenairePage/
+  param: { module: user, action: partenairePage }
 
 user_filleul:
   url:   /user/filleul/

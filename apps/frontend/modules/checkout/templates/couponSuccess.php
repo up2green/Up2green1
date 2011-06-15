@@ -1,4 +1,4 @@
-<?php include_partial('user/menuProfil'); ?>
+<?php include_component('user', 'menuProfil'); ?>
 <?php include_partial('checkout/steps', array(
 	'currentStep' => $step,
 	'availableSteps' => array(

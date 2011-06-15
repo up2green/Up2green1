@@ -1,6 +1,4 @@
-<?php include_partial('menuProfil');
-//var_dump($form['user']['last_name']);
-?>
+<?php include_component('user', 'menuProfil'); ?>
 
 <div class="module grey" style="width:700px;float:right;">
 	<div class="content center notitle">

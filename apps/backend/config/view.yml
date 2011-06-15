@@ -4,14 +4,12 @@
 default:
   http_metas:
     content-type: text/html
-    
-  metas:
-    title:        up2green : Administration
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
-    #robots:       index, follow
 
+  metas:
+    title:        "up2green : Administration"
+    robots:       nofollow, noindex
+    language:     fr
+  
   stylesheets:
     - main.css
     - jquery-ui-1.8.1.custom.css

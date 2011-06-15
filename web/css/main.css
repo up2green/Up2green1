@@ -370,6 +370,24 @@ ul.list  {
 			right:0;
 		}
 		
+ul.list.partenaire,
+ul.list.partenaire li {
+	border-color: #A968CC;
+}
+
+	ul.list.partenaire li {
+		color:#F33;
+	}
+	
+	ul.list.partenaire li:hover {
+		color:#F33;
+		background-color:#eee;
+	}
+	
+		ul.list.partenaire li a{
+			color:#A968CC;
+		}
+		
 table.table {
 	width: 100%;
 }

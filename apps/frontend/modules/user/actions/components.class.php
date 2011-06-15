@@ -1,7 +1,12 @@
 <?php
 class userComponents extends sfComponents {
     public function executeMenu($request) {
+			
+    }
 		
+    public function executeMenuProfil($request) {
+			$user = $this->getUser()->getGuardUser();
+			$this->partenaire = ($user->hasRelation('Partenaire') ? $user->getPartenaire() : null);
     }
 	
     public function executeSideSignin($request) {

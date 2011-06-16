@@ -2,15 +2,23 @@
 	<div class="content center notitle">
 		<ul class="list">
 			<li><a href="<?php echo url_for('@user_profil') ?>"><?php echo __('Mon profil'); ?></a></li>
-			<li><a href="#"><?php echo __('Parrainer des amis'); ?></a></li>
+			<li><a href="<?php echo url_for('@user_invite_filleul') ?>"><?php echo __('Parrainer des amis'); ?></a></li>
+			<li><a href="<?php echo url_for('@user_filleul') ?>"><?php echo __('Mes filleuls'); ?></a></li>
 		</ul>
 		<ul class="list">
+			<li><a href="<?php echo url_for('@checkout_coupon') ?>"><?php echo __('Offrir des arbres (coupons)'); ?></a></li>
 			<li><a href="<?php echo url_for('@user_coupon') ?>"><?php echo __('Mes coupons'); ?></a></li>
+			<li><a href="<?php echo url_for('@checkout_credit') ?>"><?php echo __('Ajouter des crédits arbres à mon compte'); ?></a></li>
 		</ul>
-		<ul class="list">
-			<li><a href="#"><?php echo __('Acheter des coupons'); ?></a></li>
-			<li><a href="#"><?php echo __('Acheter des crédits'); ?></a></li>
+		<?php if($partenaire) : ?>
+		<ul class="list partenaire">
+			<li><a href="<?php echo url_for('@partenaire_profil') ?>"><?php echo __('Mes infos partenaire'); ?></a></li>
+			<?php if($partenaire->getId() != sfConfig::get('app_sdf_id')) : ?>
+			<li><a href="<?php echo url_for('@partenaire_profil_attestation') ?>"><?php echo __('Mon attestation'); ?></a></li>
+			<?php endif; ?>
+			<li><a href="<?php echo url_for('@partenaire_profil_page') ?>"><?php echo __('Ma page'); ?></a></li>
 		</ul>
+		<?php endif; ?>
 	</div>
 	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>

@@ -10,12 +10,36 @@
  */
 class programmeForm extends BaseprogrammeForm 
 {
-	public function configure() 
-	{
+	public function configure() {
+		
+		parent::configure();
+		
+		$this->embedRelations(array(
+			'Point' => array(
+				'considerNewFormEmptyFields'		=> array('longitude', 'latitude', 'altitude'),
+				'newFormLabel'                  => 'Point',
+				'newFormClass'                  => 'programmePointForm',
+				'multipleNewForms'              => false,
+				'newFormsInitialCount'          => 1,
+				'formClassArgs'                 => array(array('ah_add_delete_checkbox' => false))
+			)
+		));
+		
 		unset(
 			$this['created_at'],
 			$this['updated_at']
 		);
+		
+		$this->widgetSchema['polygonnes_list'] = new sfWidgetFormDoctrineChoice(array(
+			'model' => 'polygonne', 
+			'multiple' => true,
+			'order_by' => array('unique_name', 'asc')
+		));
+
+		$this->validatorSchema['polygonnes_list'] = new sfValidatorDoctrineChoice(array(
+			'model' => 'polygonne', 
+			'required'   => false,
+		));
 		
 		$this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(array(
 			'label' => 'Logo',

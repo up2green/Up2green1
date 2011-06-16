@@ -1,0 +1,113 @@
+organisme:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, accroche, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    url:
+      type: string(128)
+    title:
+      type: string(128)
+    accroche:
+      type: string(1000)
+    description:
+      type: clob(65535)
+    logo:
+      type: string(128)
+      default: null
+    is_active:
+      type: boolean
+      default: 1
+
+programme:
+  actAs: 
+    Timestampable: ~
+    I18n:
+      fields: [title, accroche, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    organisme_id:
+      type: integer(4)
+      default: null
+    title:
+      type: string(128)
+    accroche:
+      type: string(1000)
+    description:
+      type: clob(65535)
+    geoadress:
+      type: string(255)
+      default: null
+    is_active:
+      type: boolean
+      default: 1
+    max_tree:
+      type: integer(4)
+      notnull: true
+    add_tree:
+      type: integer(4)
+      notnull: true
+      default: 0
+    logo:
+      type: string(128)
+      default: null
+  relations:
+    Organisme:
+      class: organisme
+      local: organisme_id
+      foreignAlias: Programmes
+    Polygonnes:
+      class: polygonne
+      refClass: programmePolygonne
+      foreignAlias: Programmes
+
+tree:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    programme_id:
+      type: integer(4)
+      notnull: true
+  relations:
+    Programme:
+      class: programme
+      local: programme_id
+      foreignAlias: Trees
+
+treeUser:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    tree_id:
+      type: integer(4)
+      primary: true
+    user_id:
+      type: bigint(20)
+      primary: true
+  relations:
+    tree:
+      local: tree_id
+      foreignType:  one
+      foreignAlias: User
+      onDelete: CASCADE
+    user:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: Trees
+      

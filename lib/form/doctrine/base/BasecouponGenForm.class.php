@@ -15,19 +15,23 @@ abstract class BasecouponGenForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'prix'       => new sfWidgetFormInputText(),
-      'credit'     => new sfWidgetFormInputText(),
-      'created_at' => new sfWidgetFormDateTime(),
-      'updated_at' => new sfWidgetFormDateTime(),
+      'id'                 => new sfWidgetFormInputHidden(),
+      'prix'               => new sfWidgetFormInputText(),
+      'credit'             => new sfWidgetFormInputText(),
+      'is_purchasable'     => new sfWidgetFormInputCheckbox(),
+      'is_partenaire_only' => new sfWidgetFormInputCheckbox(),
+      'created_at'         => new sfWidgetFormDateTime(),
+      'updated_at'         => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'prix'       => new sfValidatorNumber(),
-      'credit'     => new sfValidatorInteger(),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'prix'               => new sfValidatorNumber(),
+      'credit'             => new sfValidatorInteger(),
+      'is_purchasable'     => new sfValidatorBoolean(array('required' => false)),
+      'is_partenaire_only' => new sfValidatorBoolean(array('required' => false)),
+      'created_at'         => new sfValidatorDateTime(),
+      'updated_at'         => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('coupon_gen[%s]');

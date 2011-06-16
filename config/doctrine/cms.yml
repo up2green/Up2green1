@@ -1,0 +1,84 @@
+layout:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    unique_name:
+      type: string(128)
+      notnull: true
+      unique: true
+
+zone:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(128)
+      notnull: true
+    unique_name:
+      type: string(128)
+      notnull: true
+      unique: true
+
+module:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    content_id:
+      type: string(128)
+      notnull: true
+    content_type:
+      type: enum
+      values: [category, lien, article, newsletter, programme, organisme, gmap, recherche, user, sfGuardAuth]
+    is_active:
+      type: boolean
+      default: 0
+    action:
+      type: string(128)
+    user_access:
+      type: string(128)
+      
+content: 
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true 
+    layout_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    zone_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    module_id:
+      type: integer(4)
+      primary: true
+      notnull: true      
+  relations:
+    layout:
+      class: layout
+      local: layout_id
+      foreign: id
+      foreignAlias: layoutContents
+    zone:
+      class: zone
+      local: zone_id
+      foreign: id
+      foreignAlias: zoneContents
+    module:
+      local: module_id
+      onDelete: CASCADE

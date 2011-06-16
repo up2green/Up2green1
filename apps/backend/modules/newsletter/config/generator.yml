@@ -1,10 +1,10 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Newsletter
+    model_class:           newsletter
     theme:                 admin
     non_verbose_templates: true
-    with_show:             false
+    with_show:             true
     singular:              ~
     plural:                ~
     route_prefix:          newsletter
@@ -15,8 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
-        display: [Category, =title, is_forced, sent_at]
-        sort: [category_id, asc]
+        display: [=title, is_forced, sent_at]
       filter:  ~
       form:    ~
       edit:    ~

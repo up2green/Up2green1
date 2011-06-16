@@ -2,18 +2,30 @@
 
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
 
-$browser = new sfTestFunctional(new sfBrowser());
+$browser = new myTestFunctional(new sfBrowser());
 
 $browser->
-  get('/newsletter/index')->
+	get('/newsletter/index')->
 
-  with('request')->begin()->
-    isParameter('module', 'newsletter')->
-    isParameter('action', 'index')->
-  end()->
+	isForwardedTo('sfGuardAuth', 'signin')->
 
-  with('response')->begin()->
-    isStatusCode(200)->
-    checkElement('body', '!/This is a temporary page/')->
-  end()
+	// log in
+	with('form')->begin()->
+		click('Se connecter', array(
+			'signin' => array(
+				'username' => myTestFunctional::$admin['username'],
+				'password' => myTestFunctional::$admin['password']
+			)))->
+	end()->
+
+	followRedirect()->
+
+	with('request')->begin()->
+		isParameter('module', 'newsletter')->
+		isParameter('action', 'index')->
+	end()->
+
+	with('response')->begin()->
+		isStatusCode(200)->
+	end()
 ;

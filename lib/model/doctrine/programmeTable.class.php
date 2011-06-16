@@ -45,31 +45,10 @@ class programmeTable extends Doctrine_Table
   public function retrieveLastProgrammesInArray($culture, $number = 2, $offset = 0) {
     return $this->buildQueryForRetrieveLastProgrammes($culture, $number, $offset)->fetchArray();
   }
-
-  /**
-   * Retourne le programme correspondant au slug passé en paramètre
-   *
-   * @param <String> $slug Slug du programme
-   * @return <Programme> Programme correspondant
-   */
-  public function retrieveBySlug($slug) {
-    $q = $this->createQuery('p')
-    	->where('p.is_active = ?', 1)
-			->leftJoin('p.Translation t')
-			->andWhere('t.slug = ?', $slug);
-
-    return $this->getOne($q);
-  }
   
 	public function countTrees($programmes = array()) {
 
-		$hardcode = array(
-			10 => 188, //Madagascar
-			8 => 162, //Burkina Faso
-			14 => 1620, //Perou
-			18 => 189, //Inde
-			17 => 155 //Ethiopie
-		);
+		$treeTable = Doctrine_Core::getTable('tree');
 
 		$q = $this->createQuery('p')
 			->select('p.id, COUNT(t.id) AS nbTree')
@@ -83,8 +62,8 @@ class programmeTable extends Doctrine_Table
 		$ret = $this->getArray($q);
 
 		foreach($ret as &$programme) {
-			if(isset($hardcode[(int)$programme['id']])) {
-				$programme['nbTree'] += $hardcode[$programme['id']];
+			if(isset($treeTable::$hardcode[(int)$programme['id']])) {
+				$programme['nbTree'] += $treeTable::$hardcode[$programme['id']];
 			}
 		}
 
@@ -212,14 +191,14 @@ class programmeTable extends Doctrine_Table
     
 	public function addSlugQuery($slug, Doctrine_Query $q = null) {
 		return $this->addQuery($q)
-			->innerJoin('p.Translation t')
-			->where('t.slug = ?', $slug);
+			->innerJoin('p.Translation pt')
+			->where('pt.slug = ?', $slug);
 	}
 	
 	public function addLangQuery($lang, Doctrine_Query $q = null) {
 		return $this->addQuery($q)
-			->innerJoin('p.Translation t')
-			->where('t.lang = ?', $lang);
+			->innerJoin('p.Translation pt')
+			->where('pt.lang = ?', $lang);
 	}
   
 	public function addActiveQuery(Doctrine_Query $q = null) {

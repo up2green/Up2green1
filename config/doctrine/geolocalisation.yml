@@ -1,0 +1,100 @@
+point:
+  options:
+    symfony:
+      filter: false
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    latitude:
+      type: decimal
+      scale: 6
+      notnull: true
+    longitude:
+      type: decimal
+      scale: 6
+      notnull: true
+    altitude:
+      type: decimal
+      scale: 6
+      notnull: true
+
+organismePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    organisme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Organisme:
+      class: organisme
+      local: organisme_id
+      onDelete: CASCADE
+      foreignType: one
+      foreignAlias: Point
+
+programmePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Programme:
+      class: programme
+      local: programme_id
+      onDelete: CASCADE
+      foreignType: one
+      foreignAlias: Point
+
+polygonnePoint:
+  inheritance:
+    extends: point
+    type: concrete
+  columns:
+    polygonne_id:
+      type: integer(4)
+      primary: true
+  relations:
+    Polygonne:
+      class: polygonne
+      local: polygonne_id
+      type: one
+      onDelete: CASCADE
+      foreignAlias: Points
+
+polygonne:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    unique_name:
+      type: string(30)
+      unique: true
+      notnull: true
+
+programmePolygonne:
+  columns:
+    polygonne_id:
+      type: integer(4)
+      primary: true
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    programme:
+      local: programme_id
+      type: one
+      foreignType: many
+      onDelete: CASCADE
+    polygonne:
+      local: polygonne_id
+      type: one
+      foreignType: many
+      onDelete: CASCADE

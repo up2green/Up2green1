@@ -45,7 +45,7 @@ class blogActions extends sfActions {
   */
   public function executeViewElement(sfWebRequest $request) {
     $this->type = $request->getParameter('type');
-    $this->element = Doctrine::getTable(ucfirst($this->type))->retrieveBySlug($request->getParameter("slug"));
+    $this->element = Doctrine::getTable($this->type)->getOneBySlug($request->getParameter("slug"));
   }
 
  /**
@@ -56,8 +56,8 @@ class blogActions extends sfActions {
   public function executeViewList(sfWebRequest $request) {
   	$this->type = $request->getParameter('type');
   	if($this->type == 'organisme')
-    	$this->elements = Doctrine::getTable(ucfirst($this->type))->getByLang($this->getUser()->getCulture());
+    	$this->elements = Doctrine::getTable($this->type)->getByLang($this->getUser()->getCulture());
     else
-    	$this->elements = Doctrine::getTable(ucfirst($this->type))->getActiveByLang($this->getUser()->getCulture());
+    	$this->elements = Doctrine::getTable($this->type)->getActiveByLang($this->getUser()->getCulture());
   }
 }

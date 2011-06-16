@@ -35,12 +35,6 @@ $(document).ready(function(){
 	
 	/* désactivation des lien mort */
 	$('a.disabled').click(function(e){e.preventDefault();});
-	
-	$('a[href="#"]').each(function(){
-		$(this).css({
-			color: "#ccc"
-		}).click(function(){return false;});
-	});
 		
 	if($.browser.msie && parseInt(jQuery.browser.version) <= 6)
 	{
@@ -62,7 +56,7 @@ $(document).ready(function(){
 	});
 
 	/* tooltip */
-	$("[title]").mbTooltip({
+	$("[title][tooltiped=true]").mbTooltip({
 		opacity : .97,
 		wait:50,
 		cssClass:"corporate",

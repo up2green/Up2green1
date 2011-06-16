@@ -75,8 +75,7 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 	<!-- module GMap-->
 	<div id="gmapWrapper" class="module" style="position:relative;" >
 		<div class="content">
-			<?php include_partial('plantation/formGMap', array('gMap' => $gMap, 'gMapModes' => $gMapModes)); ?>
-
+			<?php include_partial('plantation/formGMap', array('partenaire' => $partenaire)); ?>
 		<div class="clear"></div>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

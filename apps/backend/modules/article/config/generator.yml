@@ -1,10 +1,10 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           Article
+    model_class:           article
     theme:                 admin
     non_verbose_templates: true
-    with_show:             false
+    with_show:             true
     singular:              ~
     plural:                ~
     route_prefix:          article

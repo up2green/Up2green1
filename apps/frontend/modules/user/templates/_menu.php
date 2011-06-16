@@ -9,7 +9,7 @@
 			<ul class="menu">
 				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>"><?php echo __("Le moteur") ?></a></li>
 				<li><a class="button small green" href="/article/nos_objectifs"><?php echo __("L'association") ?></a></li>
-				<?php if(!$sf_user->isAuthenticated()):?>
+				<?php if(!$sf_user->isAuthenticated() && (!isset($hideCreateAccount) || !$hideCreateAccount )):?>
 				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>register"><?php echo __("Créer mon compte") ?></a></li>
 				<?php endif; ?>
 			</ul>
@@ -25,9 +25,13 @@
 					"Planter mes arbres ({number})",
 					array('{number}' => number_format($sf_user->getProfile()->getCredit(), 3))
 				) ?></a></li>
-				<li><a href="<?php echo url_for("user/profil"); ?>"><?php echo __(
+				<li><a href="<?php echo url_for("@user_profil"); ?>"><?php echo __(
 					"Mon profil ({username})",
 					array('{username}' => $sf_user->getUsername())
+				) ?></a></li>
+				<li><a href="<?php echo url_for("@user_filleul"); ?>"><?php echo __(
+					"Mes filleuls ({number})",
+					array('{number}' => $sf_user->getGuardUser()->countFilleul())
 				) ?></a></li>
 			</ul>
 			<?php endif; ?>

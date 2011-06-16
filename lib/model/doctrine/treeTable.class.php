@@ -1,9 +1,6 @@
 <?php
-
-
-class treeTable extends Doctrine_Table
-{
-    
+class treeTable extends Doctrine_Table {
+	  
     public function countFromUser($idUser) {
     	return $this->createQuery('t')
 				->select('COUNT(t.id) AS nbTree')
@@ -29,11 +26,35 @@ class treeTable extends Doctrine_Table
 				->innerJoin('t.Coupon tc')
 				->innerJoin('tc.coupon c')
 				->innerJoin('c.Partenaire cp')
-				->where('cp.partenaire_id = ?', $idPartenaire)
+				->addWhere('cp.partenaire_id = ?', $idPartenaire)
 				->whereIn('t.programme_id', $idProgrammes)
 				->groupBy('t.programme_id')
 				->fetchArray();
 				
+		}
+		
+		public function countByUserAndProgramme($idUser, $idProgramme) {
+			$result = $this->createQuery('t')
+				->select('COUNT(t.id) AS nbTree')
+				->innerJoin('t.User tu')
+				->addWhere('tu.user_id = ?', $idUser)
+				->addWhere('t.programme_id = ?', $idProgramme)
+				->fetchArray();
+			
+			return $result[0]["nbTree"];
+		}
+		
+		public function countByProgramme($id) {
+			$result = $this->createQuery('t')
+				->select('t.id, COUNT(t.id) AS nbTree, p.add_tree')
+				->leftJoin('t.Programme p')
+				->addWhere('t.programme_id = ?', $id)
+				->groupBy('t.programme_id')
+				->limit(1)
+				->fetchArray();
+			
+			return $result[0]['nbTree'] + $result[0]["Programme"]["add_tree"];
+
 		}
 		
 	// -----------------------------------------

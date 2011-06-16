@@ -15,7 +15,7 @@ abstract class BaseengineFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'id_category'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('category'), 'add_empty' => true)),
       'id_plateforme'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('plateforme'), 'add_empty' => true)),
-      'id_devise'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('devise'), 'add_empty' => true)),
+      'currency_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Currency'), 'add_empty' => true)),
       'site_display'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'site_url'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'html'             => new sfWidgetFormFilterInput(),
@@ -33,7 +33,7 @@ abstract class BaseengineFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'id_category'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('category'), 'column' => 'id')),
       'id_plateforme'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('plateforme'), 'column' => 'id')),
-      'id_devise'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('devise'), 'column' => 'id')),
+      'currency_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Currency'), 'column' => 'id')),
       'site_display'     => new sfValidatorPass(array('required' => false)),
       'site_url'         => new sfValidatorPass(array('required' => false)),
       'html'             => new sfValidatorPass(array('required' => false)),
@@ -68,7 +68,7 @@ abstract class BaseengineFormFilter extends BaseFormFilterDoctrine
       'id'               => 'Number',
       'id_category'      => 'ForeignKey',
       'id_plateforme'    => 'ForeignKey',
-      'id_devise'        => 'ForeignKey',
+      'currency_id'      => 'ForeignKey',
       'site_display'     => 'Text',
       'site_url'         => 'Text',
       'html'             => 'Text',

@@ -35,7 +35,7 @@ $tooltip = __("L'obtention des arbres grâce aux sites marchand (liens Achats) e
 		<?php echo htmlentities('<h3>');?>
 		<?php echo __('Gains :'); ?>
 		<?php echo htmlentities('</h3>');?>
-		<?php echo '&lt;p title="'.$tooltip.'"&gt;';?>
+		<?php echo '&lt;p tooltiped="true" title="'.$tooltip.'"&gt;';?>
 			<?php echo html_entity_decode($gain) ?>
 		<?php echo htmlentities('</p>');?>
 	</tooltip>

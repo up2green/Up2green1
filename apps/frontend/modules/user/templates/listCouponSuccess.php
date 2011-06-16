@@ -1,6 +1,6 @@
 <?php 
 	use_helper('Date');
-	include_partial('menuProfil');
+	include_component('user', 'menuProfil');
 ?>
 
 <div class="module grey" style="width:700px;float:right;">
@@ -9,7 +9,10 @@
 		<?php if(!count($pager)) :?>
 		<p><?php echo __("Vous n'avez pas encore acheté de coupon.") ?></p>
 		<?php else :?>
-		
+		<p style="color: #666666; font-size: 0.9em; font-style: italic;"><?php echo __("Les coupons de plantations sont valables {number} jours après leur création.", array(
+				'{number}' => sfConfig::get("app_validite_coupon")
+		)) ?></p>
+		<p style="color: #666666; font-size: 0.9em; font-style: italic; padding: 5px 5px 15px;"><?php echo __("Au delà de cette date de validité, l'Association Up2green Reforestation choisira le(s) programme(s) financé(s)") ?></p>
 		<table class="table">
 			<thead>
 				<tr>
@@ -34,35 +37,10 @@
 			</tbody>
 			
 			<?php if ($pager->haveToPaginate()): ?>
-			<tfoot class="pagination">
-				<tr>
-					<td colspan="4">
-						<a href="<?php echo url_for('user_coupon') ?>?page=1">
-							<img src="/sfDoctrinePlugin/images/first.png" alt="<?php echo __("Première page") ?>" />
-						</a>
-
-						<a href="<?php echo url_for('user_coupon') ?>?page=<?php echo $pager->getPreviousPage() ?>">
-							<img src="/sfDoctrinePlugin/images/previous.png" alt="<?php echo __("Page précédente") ?>" />
-						</a>
-
-						<?php foreach ($pager->getLinks() as $page): ?>
-							<?php if ($page == $pager->getPage()): ?>
-								<?php echo $page ?>
-							<?php else: ?>
-								<a href="<?php echo url_for('user_coupon') ?>?page=<?php echo $page ?>"><?php echo $page ?></a>
-							<?php endif; ?>
-						<?php endforeach; ?>
-
-						<a href="<?php echo url_for('user_coupon') ?>?page=<?php echo $pager->getNextPage() ?>">
-							<img src="/sfDoctrinePlugin/images/next.png" alt="<?php echo __("Page suivante") ?>" />
-						</a>
-
-						<a href="<?php echo url_for('user_coupon') ?>?page=<?php echo $pager->getLastPage() ?>">
-							<img src="/sfDoctrinePlugin/images/last.png" alt="<?php echo __("Dernière page") ?>" />
-						</a>
-					</td>
-				</tr>				
-			</tfoot>
+			<?php include_partial('html/pager', array(
+					'pager' => $pager,
+					'url_for' => 'user_coupon'
+			)); ?>
 			<?php endif; ?>
 		</table>
 		<div class="pagination_desc">
@@ -79,10 +57,10 @@
 		<div class="export_wrapper">
 			<span style="line-height:16px;vertical-align:middle;padding-right:5px;"><?php echo __("Exporter : ") ?></span>
 			<a href="<?php echo url_for('@couponsCSV?format=csv') ?>" >
-				<img src="/images/icons/16x16/csv.png" alt="CSV" title="<?php echo __("CSV pour OpenOffice"); ?>" />
+				<img src="/images/icons/16x16/csv.png" alt="CSV" tooltiped="true" title="<?php echo __("CSV pour OpenOffice"); ?>" />
 			</a>
 			<a href="<?php echo url_for('@couponsCSV?format=xls') ?>" style="float:right;margin:0;" >
-				<img src="/images/icons/16x16/xls.png" alt="XLS" title="<?php echo __("CSV pour Microsoft Excel"); ?>" />
+				<img src="/images/icons/16x16/xls.png" alt="XLS" tooltiped="true" title="<?php echo __("CSV pour Microsoft Excel"); ?>" />
 			</a>
 		</div>
 		<?php endif; ?>

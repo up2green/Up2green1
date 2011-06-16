@@ -37,6 +37,9 @@ class rechercheActions extends sfActions {
 
 	public function executeViewElement(sfWebRequest $request) {
 		$this->type = $request->getParameter('type');
-		$this->element = Doctrine::getTable(ucfirst($this->type))->retrieveBySlug($request->getParameter("slug"));
+		$this->element = Doctrine::getTable(strtolower($this->type))->getOneActiveBySlug($request->getParameter("slug"));
+		if(empty($this->element)) {
+			return $this->forward404();
+		}
 	}
 }

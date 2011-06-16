@@ -1,0 +1,136 @@
+couponGen:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    prix:
+      type: float
+      notnull: true
+    credit:
+      type: integer(4)
+      notnull: true
+    is_purchasable:
+      type: boolean
+      default: 1
+    is_partenaire_only:
+      type: boolean
+      default: 0
+      
+coupon:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    gen_id:
+      type: integer(4)
+      notnull: true
+    code:
+      type: string(128)
+      unique: true
+      notnull: true
+    is_active:
+      type: boolean
+      default: 1
+    used_at:
+      type: timestamp
+      default: null
+    used_by:
+      type: integer(4)
+      default: null
+  relations:
+    couponGen:
+      class: couponGen
+      local: gen_id
+      foreignAlias: Coupons
+
+couponUser:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    coupon_id:
+      type: integer(4)
+      primary: true
+    user_id:
+      type: bigint(20)
+      primary: true
+  relations:
+    user:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: Coupons
+    coupon:
+      local: coupon_id
+      foreignAlias: User
+      foreignType:  one
+      onDelete: CASCADE
+
+couponPartenaire:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    coupon_id:
+      type: integer(4)
+      primary: true
+    partenaire_id:
+      type: integer(4)
+      primary: true
+  relations:
+    partenaire:
+      local: partenaire_id
+      foreignAlias: Coupons
+    coupon:
+      local: coupon_id
+      foreignAlias: Partenaire
+      foreignType:  one
+      onDelete: CASCADE
+      
+logCoupon:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    ip:
+      type: string(15)
+      notnull: true
+    email:
+      type: string(50)
+    coupon_id:
+      type: integer(4)
+      notnull: true
+      unique: true
+  relations:
+    coupon:
+      local: coupon_id
+
+treeCoupon:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    tree_id:
+      type: integer(4)
+      primary: true
+    coupon_id:
+      type: integer(4)
+      primary: true
+  relations:
+    tree:
+      local: tree_id
+      foreignType:  one
+      foreignAlias: Coupon
+      onDelete: CASCADE
+    coupon:
+      local: coupon_id
+      foreignAlias: Trees

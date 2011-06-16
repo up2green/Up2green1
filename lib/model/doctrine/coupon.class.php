@@ -11,55 +11,62 @@
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class coupon extends Basecoupon {
-    public function plantArbre($nb, $programme, $user) {
-	for ($i = 0; $i < $nb; $i ++) {
-	    $tree = new tree();
-		if(is_integer($programme)) {
-			$tree->setProgrammeId($programme);
+	
+	public function plantArbre($nb, $programme, $user) {
+		for ($i = 0; $i < $nb; $i ++) {
+				$tree = new tree();
+			if(is_integer($programme)) {
+				$tree->setProgrammeId($programme);
+			}
+			else {
+				$tree->setProgramme($programme);
+			}
+				$tree->save();
+
+				$treeCoupon = new treeCoupon();
+				$treeCoupon->setCoupon($this);
+				$treeCoupon->setTree($tree);
+				$treeCoupon->save();
+
+				if ($user->getGuardUser()) {
+					$treeUser = new treeUser();
+					$treeUser->setTree($tree);
+					$treeUser->setUser($user->getGuardUser());
+					$treeUser->save();
+				}
 		}
-		else {
-			$tree->setProgramme($programme);
+	}
+
+	public function isPerime() {
+		$date = strtotime($this->getCreatedAt());
+		$limit = time() - (sfConfig::get('app_validite_coupon') * 24 * 60 * 60);
+		return $limit > $date;
+	}
+	
+	public function logUser($email) {
+		$logCoupon = new logCoupon();
+		$logCoupon->setEmail($email);
+		$logCoupon->setIp($_SERVER['REMOTE_ADDR']);
+		$logCoupon->setCoupon($this);
+		$logCoupon->save();
+	}
+
+	public function getFormatedListProgrammes() {
+		$s = "";
+		$array = array();
+		foreach ($this->getTrees() as $treeCoupon) {
+				$tree = $treeCoupon->getTree();
+				$nameProg = $tree->getProgramme()->getTitle();
+
+				if (! isset($array[$nameProg])) {
+			$array[$nameProg] = 1;
+				}
+				else $array[$nameProg] = $array[$nameProg] + 1;
 		}
-	    $tree->save();
-
-	    $treeCoupon = new treeCoupon();
-	    $treeCoupon->setCoupon($this);
-	    $treeCoupon->setTree($tree);
-	    $treeCoupon->save();
-
-	    if ($user->getGuardUser()) {
-			$treeUser = new treeUser();
-			$treeUser->setTree($tree);
-			$treeUser->setUser($user->getGuardUser());
-			$treeUser->save();
-	    }
+		foreach ($array as $key => $value) {
+				if ($s != "") $s .= ", ";
+				$s .= $key . "(".$value.")";
+		}
+		return $s;
 	}
-    }
-
-    public function logUser($email) {
-	$logCoupon = new logCoupon();
-	$logCoupon->setEmail($email);
-	$logCoupon->setIp($_SERVER['REMOTE_ADDR']);
-	$logCoupon->setCoupon($this);
-	$logCoupon->save();
-    }
-
-    public function getFormatedListProgrammes() {
-	$s = "";
-	$array = array();
-	foreach ($this->getTrees() as $treeCoupon) {
-	    $tree = $treeCoupon->getTree();
-	    $nameProg = $tree->getProgramme()->getTitle();
-
-	    if (! isset($array[$nameProg])) {
-		$array[$nameProg] = 1;
-	    }
-	    else $array[$nameProg] = $array[$nameProg] + 1;
-	}
-	foreach ($array as $key => $value) {
-	    if ($s != "") $s .= ", ";
-	    $s .= $key . "(".$value.")";
-	}
-	return $s;
-    }
 }

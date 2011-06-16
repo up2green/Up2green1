@@ -1,0 +1,132 @@
+logPub:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: bigint(20)
+    ip:
+      type: string(15)
+      notnull: true
+    url:
+      type: clob
+      notnull: true
+  relations:
+    user:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: pubClics
+      
+engine:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    id_category:
+      type: integer(4)
+      notnull: true
+    id_plateforme:
+      type: integer(4)
+      notnull: true
+    currency_id:
+      type: integer(11)
+      notnull: true
+      default: 34
+      unsigned: true
+    site_display:
+      type: string(128)
+      notnull: true      
+    site_url:
+      type: string(128)
+      notnull: true
+    html:
+      type: clob
+      default: null
+    logo:
+      type: clob
+      default: null
+    description:
+      type: clob
+      default: null
+    remun_type:
+      type: enum
+      values: [number, pourcent, price]
+      default: number
+    remun_min:
+      type: float
+      notnull: true
+      default: 0
+    remun_max:
+      type: float
+      notnull: true
+    safe_search_only:
+      type: boolean
+      default: 0
+    is_active:
+      type: boolean
+      default: 1
+  relations:
+    Currency:
+      local: currency_id
+    plateforme:
+      class: affiliatePlateforme
+      local: id_plateforme
+      foreignAlias: Affiliates
+    category:
+      local: id_category
+      foreignAlias: Affiliates
+
+affiliatePlateforme:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    unique_name:
+      type: string(30)
+      unique: true
+      
+tag:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    label:
+      type: string(255)
+      notnull: true
+      unique: true
+    rank:
+      type: integer(4)
+      notnull: true
+      default: 0
+    is_active:
+      type: boolean
+      default: 1 
+            
+engineTag:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    engine_id:
+      type: integer(4)
+      primary: true
+    tag_id:
+      type: integer(4)
+      primary: true
+  relations:
+    engine:
+      local: engine_id
+      onDelete: CASCADE
+    tag:
+      local: tag_id
+      onDelete: CASCADE

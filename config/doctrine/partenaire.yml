@@ -1,0 +1,61 @@
+partenaire:
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: bigint(20)
+      notnull: true
+      unique: true
+    logo:
+      type: string(128)
+      default: null
+    title:
+      type: string(45)
+      default: null
+    accroche:
+      type: string(1000)
+      default: null
+    description:
+      type: clob(65535)
+      default: null
+    page:
+      type: clob(65535)
+      default: null
+    attestation:
+      type: string(128)
+      default: null
+    url:
+      type: string(150)
+      default: null
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+      foreignType:  one
+      foreignAlias: Partenaire
+      
+partenaireProgramme:
+  options:
+    symfony:
+      form:   false
+      filter: false
+  columns:
+    partenaire_id:
+      type: integer(4)
+      primary: true
+    programme_id:
+      type: integer(4)
+      primary: true
+  relations:
+    partenaire:
+      local: partenaire_id
+      foreignAlias: Programmes
+      onDelete: CASCADE
+    programme:
+      local: programme_id
+      foreignAlias: Partenaires
+      onDelete: CASCADE

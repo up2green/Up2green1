@@ -10,10 +10,20 @@ if($isPartenaire = (isset($partenaire) && !empty($partenaire))) {
 		'{number}' => $nbArbres,
 		'{affiliate}' => $partenaire->getTitle()
 	));
-
-	$contentTitle = __("Faites grandir la forêt de {affiliate} sur la planète !", array(
-		'{affiliate}' => $partenaire->getTitle()
-	));
+	
+	if($partenaire->getId() == sfConfig::get('app_vedif_id')) {
+		$contentTitle = __("Bienvenue sur la plateforme de reforestation soutenue par le Service
+		de l’eau du SEDIF – 142 000 arbres à planter en 2011<br />
+		{link}Découvrez les programmes de plantation{endLink}", array(
+			'{link}' => '<a class="light" href="'.url_for('landing/map').'/vedif">',
+			'{endLink}' => '</a>',
+		));
+	}
+	else {
+		$contentTitle = __("Faites grandir la forêt de {affiliate} sur la planète !", array(
+			'{affiliate}' => $partenaire->getTitle()
+		));
+	}
 }
 else {
 	$title = __("Devenez acteur de la reforestation en plantant vos arbres avec up2gren !");
@@ -66,7 +76,9 @@ else {
 <div class="module" style="width:<?php echo $contentWidth; ?>">
 	<div class="content">
 		<h2><?php echo $contentTitle; ?></h2>
+		<?php if(!$isPartenaire || !$partenaire->getId() == sfConfig::get('app_vedif_id')) : ?>
 		<h3><?php echo __("Choisissez où planter votre (vos) arbre(s) sur la Planète") ?></h3>
+	<?php endif; ?>
 		<p>
 		<?php echo __("Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation", array(
 			'{lien}' => '<a class="light" href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',

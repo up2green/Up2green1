@@ -3,7 +3,7 @@ if (empty ($error)) {
 	echo format_number_choice(
 			"(-Inf,1]Féilicitation ! Votre compte a bien été crédité de {number} credit.|(1,+Inf]Féilicitation ! Votre compte a bien été crédité de {number} credits.",
 			array('{number}' => $credit),
-			$product->getCredit()
+			$credit
 		);
 }
 else if($error === 'expired'){

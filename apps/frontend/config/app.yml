@@ -30,7 +30,7 @@ all:
   sdf_id: 11
   vedif_id: 8
   validite_coupon: 60
-  media_version: 15
+  media_version: 17
   cultures:
     enabled:
       fr: Français

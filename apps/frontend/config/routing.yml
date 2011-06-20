@@ -33,6 +33,9 @@ clic_pub:
 get_kml:
   url: /ajax/getKML
   param: { module: ajax, action: getKML, sf_format: xml }
+plantation_get_kml:
+  url: /plantation/ajax/getKML
+  param: { module: ajax, action: getKML, sf_format: xml }
 
 get_info_programme:
   url: /ajax/getInfoProgramme

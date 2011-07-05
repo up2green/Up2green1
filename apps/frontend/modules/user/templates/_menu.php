@@ -9,6 +9,7 @@
 			<ul class="menu">
 				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>"><?php echo __("Le moteur") ?></a></li>
 				<li><a class="button small green" href="/article/nos_objectifs"><?php echo __("L'association") ?></a></li>
+				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_plantation') ?>"><?php echo __("Les programmes") ?></a></li>
 				<?php if(!$sf_user->isAuthenticated() && (!isset($hideCreateAccount) || !$hideCreateAccount )):?>
 				<li><a class="button small green" href="<?php echo sfConfig::get('app_url_moteur') ?>register"><?php echo __("Créer mon compte") ?></a></li>
 				<?php endif; ?>

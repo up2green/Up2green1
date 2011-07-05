@@ -2,9 +2,9 @@
 class userComponents extends sfComponents {
 	public function executeMenu($request) {
 		if($request->hasParameter('code')){
-			$coupon = Doctrine_Core::getTable('coupon')->findOneByCode($code);
+			$coupon = Doctrine_Core::getTable('coupon')->findOneByCode($request->getParameter('code'));
 			if($coupon && !$coupon->getPartenaire()->isNew()) {
-				$this->hideCreateAccount = $coupon->getPartenaire()->getId() != sfConfig::get("app_vedif_id");
+				$this->hideCreateAccount = $coupon->getPartenaire()->getPartenaire()->getId() == sfConfig::get("app_vedif_id");
 			}
 		}
 	}

@@ -11,7 +11,7 @@ class myTestFunctional extends sfTestFunctional {
 		'password' => 'up2g@dm1n',
 	);
 
-	public function getSimpleUser(){
+	public static function getSimpleUser(){
 		return Doctrine_Core::getTable('sfGuardUser')
 			->createQuery('u')
 			->leftJoin('u.Partenaire p')
@@ -20,5 +20,14 @@ class myTestFunctional extends sfTestFunctional {
 			->addWhere('up.id IS NULL')
 			->fetchOne();
 	}
+
+	public static function getVoucher() {
+		return Doctrine_Core::getTable('coupon')
+			->createQuery('c')
+			->where('c.created_at > (NOW() - INTERVAL 2 MONTH)')
+			->addWhere('c.is_active = ?', true)
+			->fetchOne();
+	}
+
 
 }

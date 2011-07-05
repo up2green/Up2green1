@@ -143,7 +143,7 @@ class plantationActions extends sfActions {
 			}
 
 			$profil = $this->getUser()->getGuardUser()->getProfile();
-			$profil->setCredit($this->getUser()->getGuardUser()->getProfile()->getCredit() - array_sum($trees));
+			$profil->setCredit($profil->getCredit() - array_sum($trees));
 			$profil->save();
 
 			$email = $this->getUser()->getGuardUser()->getEmailAddress();

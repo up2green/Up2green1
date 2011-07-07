@@ -25,7 +25,7 @@ class landingActions extends sfActions
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
 		
-		$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $request->getParameter('partenaireOffset'));
+		$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $request->getParameter('partenaire'));
 		$this->forward404Unless($user);
 		$this->partenaire = $user->getPartenaire();
 		$this->forward404If($this->partenaire->isNew());
@@ -34,12 +34,12 @@ class landingActions extends sfActions
 	
 	public function executePlantation(sfWebRequest $request)
 	{		
-		$partenaireOffset = $request->getParameter('partenaireOffset');
+		$partenaireSlug = $request->getParameter('partenaire');
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
 		
-		if(!empty($partenaireOffset)) {
-			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireOffset);
+		if(!empty($partenaireSlug)) {
+			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireSlug);
 			
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();
@@ -68,12 +68,12 @@ class landingActions extends sfActions
 
 	public function executeMap(sfWebRequest $request)
 	{
-		$partenaireOffset = $request->getParameter('partenaireOffset');
+		$partenaireSlug = $request->getParameter('partenaire');
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
 
-		if(!empty($partenaireOffset)) {
-			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireOffset);
+		if(!empty($partenaireSlug)) {
+			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireSlug);
 
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();

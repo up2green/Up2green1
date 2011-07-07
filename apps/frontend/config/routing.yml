@@ -60,16 +60,16 @@ couponsCSV:
 ####################
 
 landing_page_partenaire:
-  url: /landing/pagePartenaire/:partenaireOffset/:operation
-  param: {module: landing, action: pagePartenaire, partenaireOffset: 0, operation: 0}
+  url: /landing/pagePartenaire/:partenaire/:operation
+  param: {module: landing, action: pagePartenaire, partenaire: 0, operation: 0}
 
 landing_plantation:
-  url: /landing/plantation/:partenaireOffset/:operation
-  param: {module: landing, action: plantation, partenaireOffset: 0, operation: 0}
+  url: /landing/plantation/:partenaire/:operation
+  param: {module: landing, action: plantation, partenaire: 0, operation: 0}
 
 landing_map:
-  url: /landing/map/:partenaireOffset/:operation
-  param: {module: landing, action: map, partenaireOffset: 0, operation: 0}
+  url: /landing/map/:partenaire/:operation
+  param: {module: landing, action: map, partenaire: 0, operation: 0}
 
 ####################
 ##### BLOG

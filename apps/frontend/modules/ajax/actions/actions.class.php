@@ -11,25 +11,58 @@
 class ajaxActions extends sfActions
 {
 	public function executeGetKML(sfWebRequest $request) {
+		$this->displayOrganismeActif = $request->getParameter('displayOrganismeActif', false);
+		$this->displayOrganismeInactif = $request->getParameter('displayOrganismeInactif', false);
+		$this->displayProgrammeActif = $request->getParameter('displayProgrammeActif', true);
+		$this->displayProgrammeInactif = $request->getParameter('displayProgrammeInactif', true);
+
 		$partenaireId = $request->getParameter('partenaire', 0);
 		$this->partenaire = Doctrine_Core::getTable('partenaire')->findOneById($partenaireId);
-		$this->partenaireProgrammes = array();
-						
-		$this->organismes = Doctrine_Core::getTable('organisme')->get();
-		$this->programmes = Doctrine_Core::getTable('programme')->get();
 		
-		if($this->partenaire) {
-			foreach($this->partenaire->getProgrammes() as $partenaireProgramme) {
-				$this->partenaireProgrammes[] = $partenaireProgramme->getProgrammeId();
-			}
-			// on inactives les programmes non-soutenus par le partenaire
-//			foreach($this->programmes as $programme) {
-//				if(!in_array($programme->getId(), $partenaireProgrammes)) {
-//					$programme->setIsActive(false);
-//				}
-//			}
+		// Organismes
+		$this->organismes = null;
+		if($this->displayOrganismeActif && $this->displayOrganismeInactif) {
+			$this->organismes = Doctrine_Core::getTable('organisme')->get();
+		}
+		else if($this->displayOrganismeActif) {
+			$this->organismes = Doctrine_Core::getTable('organisme')->getActive();
+		}
+		else if($this->displayOrganismeInactif) {
+			$this->organismes = Doctrine_Core::getTable('organisme')->getInactive();
+		}
+
+		// Programmes
+		$this->programmes = null;
+		$query = null;
+		if($this->displayProgrammeActif && $this->displayProgrammeInactif) {
+			$query = Doctrine_Core::getTable('programme')->addQuery();
+		}
+		else if ($this->displayProgrammeActif) {
+			$query = Doctrine_Core::getTable('programme')->addActiveQuery();
+		}
+		else if ($this->displayProgrammeInactif) {
+			$query = Doctrine_Core::getTable('programme')->addInactiveQuery();
 		}
 		
+		// Programmes Partenaire
+		$this->displayProgrammePartenaire = $request->getParameter('displayProgrammePartenaire', ($this->partenaire ? true : false));
+		$this->programmePartenaireId = array();
+		if($this->partenaire && $this->displayProgrammePartenaire) {
+			foreach($this->partenaire->getProgrammes() as $partenaireProgramme) {
+				$this->programmePartenaireId[] = $partenaireProgramme->getProgrammeId();
+			}
+			if(null === $query) {
+				$query = Doctrine_Core::getTable('programme')->addQuery();
+				$query->where('p.id IN ('.implode($this->programmePartenaireId, ', ').')');
+			}
+			else {
+				$query->orWhereIn($this->programmePartenaireId);
+			}
+		}
+
+		if(null !== $query) {
+			$this->programmes = Doctrine_Core::getTable('programme')->get($query);
+		}
 	}
 	
 	public function executeGetInfoProgramme(sfWebRequest $request) {

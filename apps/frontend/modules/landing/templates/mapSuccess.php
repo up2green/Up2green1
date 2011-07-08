@@ -75,7 +75,14 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 	<!-- module GMap-->
 	<div id="gmapWrapper" class="module" style="position:relative;" >
 		<div class="content">
-			<?php include_partial('plantation/formGMap', array('partenaire' => $partenaire)); ?>
+			<?php include_partial('plantation/formGMap', array(
+				'partenaire' => $partenaire,
+				'displayProgrammeActif' => 0,
+				'displayProgrammeInactif' => 0,
+				'displayOrganismeActif' => 0,
+				'displayOrganismeInactif' => 0,
+				'displayProgrammePartenaire' => 1,
+			)); ?>
 		<div class="clear"></div>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

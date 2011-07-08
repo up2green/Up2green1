@@ -12,6 +12,21 @@ $kmlURL .= '?key='.uniqid();
 if(isset($partenaire)) {
 	$kmlURL .= '&partenaire='.$partenaire->getId();
 }
+if(isset($displayProgrammePartenaire)) {
+	$kmlURL .= '&displayProgrammePartenaire='.$displayProgrammePartenaire;
+}
+if(isset($displayOrganismeActif)) {
+	$kmlURL .= '&displayOrganismeActif='.$displayOrganismeActif;
+}
+if(isset($displayOrganismeInactif)) {
+	$kmlURL .= '&displayOrganismeInactif='.$displayOrganismeInactif;
+}
+if(isset($displayProgrammeActif)) {
+	$kmlURL .= '&displayProgrammeActif='.$displayProgrammeActif;
+}
+if(isset($displayProgrammePartenaire)) {
+	$kmlURL .= '&displayProgrammeInactif='.$displayProgrammeInactif;
+}
 
 ?>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false&language=<?php echo $sf_user->getCulture(); ?>"></script>

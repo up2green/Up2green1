@@ -39,10 +39,6 @@ partenaire:
       foreignAlias: Partenaire
       
 partenaireProgramme:
-  options:
-    symfony:
-      form:   false
-      filter: false
   columns:
     partenaire_id:
       type: integer(4)
@@ -50,12 +46,16 @@ partenaireProgramme:
     programme_id:
       type: integer(4)
       primary: true
+    number:
+      type: integer
+      default: 0
+      notnull: true
   relations:
     partenaire:
       local: partenaire_id
       foreignAlias: Programmes
-      onDelete: CASCADE
+	  onDelete: CASCADE
     programme:
       local: programme_id
       foreignAlias: Partenaires
-      onDelete: CASCADE
+	  onDelete: CASCADE

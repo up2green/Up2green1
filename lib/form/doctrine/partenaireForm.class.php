@@ -35,7 +35,6 @@ class partenaireForm extends BasepartenaireForm {
 		
 		$this->widgetSchema['description'] = new sfWidgetFormCKEditor();
 		$this->widgetSchema['page'] = new sfWidgetFormCKEditor();
-		$this->widgetSchema['programmes_list'] = new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'programme'));
 
 		$this->validatorSchema['logo'] = new sfValidatorFile(array(
 				'required'   => false,
@@ -66,73 +65,19 @@ class partenaireForm extends BasepartenaireForm {
 					'toolbar'	=> 'Basic'
 			)));
 
-		$this->validatorSchema['programmes_list'] = new sfValidatorDoctrineChoice(array(
-				'required' => false,
-				'model' => 'programme'
+		$this->embedRelations(array(
+			'Programmes' => array(
+				'considerNewFormEmptyFields'        => array('number'),
+				'newFormLabel'                  => 'Nouvelle participation à un programme',
+				'multipleNewForms'              => true,
+				'newFormsInitialCount'          => 1,
+			)
 		));
+
 		
 		$this->removeFields();
 	}
 
-	public function updateDefaultsFromObject() {
-		parent::updateDefaultsFromObject();
-		$arrayKeysProgrammes = array();
-		$collection = Doctrine_Core::getTable('partenaireProgramme')->findByDql('partenaire_id = ?', array($this->object->getId()));
-		foreach ($collection as $partenaireProgramme) {
-				$arrayKeysProgrammes[] = $partenaireProgramme->get('programme_id');
-		}
-		if (isset($this->widgetSchema['programmes_list'])) {
-				$this->setDefault('programmes_list', $arrayKeysProgrammes);
-		}
-	}
-
-	public function bind(array $taintedValues = null, array $taintedFiles = null) {
-		if(isset ($taintedValues['programmes_list'])) {
-			$this->programmes_list = $taintedValues['programmes_list'];
-			unset($taintedValues['programmes_list']);
-		}
-		
-		parent::bind($taintedValues, $taintedFiles);
-	}
-
-	protected function doSave($con = null) {
-		$this->saveProgrammesList($con);
-		parent::doSave($con);
-	}
-	protected function doClean($con = null) {
-		parent::doClean($con);
-	}
-
-	public function saveProgrammesList($con = null) {
-		if (!$this->isValid()) {
-				throw $this->getErrorSchema();
-		}
-
-		if (!isset($this->widgetSchema['programmes_list'])) {
-				// somebody has unset this widget
-				return;
-		}
-
-		if (null === $con) {
-				$con = $this->getConnection();
-		}
-
-		$existing = Doctrine_Core::getTable('programme')->findAll()->getKeys();
-		$values = $this->programmes_list;
-		if (!is_array($values)) {
-				$values = array();
-		}
-
-		Doctrine_Core::getTable('partenaireProgramme')->findByDql('partenaire_id = ?', array($this->object->getId()))->delete();
-		foreach ($values as $value) {
-				$partenaireProgramme = new partenaireProgramme();
-				$partenaireProgramme->setPartenaire($this->object);
-				$partenaireProgramme->setProgrammeId($value);
-				$partenaireProgramme->save();
-		}
-
-	}
-		
 	protected function removeFields() {
 		unset($this['created_at'], $this['updated_at']);
 	}

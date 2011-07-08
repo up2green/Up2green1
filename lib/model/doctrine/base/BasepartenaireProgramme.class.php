@@ -7,15 +7,18 @@
  * 
  * @property integer $partenaire_id
  * @property integer $programme_id
+ * @property integer $number
  * @property partenaire $partenaire
  * @property programme $programme
  * 
  * @method integer             getPartenaireId()  Returns the current record's "partenaire_id" value
  * @method integer             getProgrammeId()   Returns the current record's "programme_id" value
+ * @method integer             getNumber()        Returns the current record's "number" value
  * @method partenaire          getPartenaire()    Returns the current record's "partenaire" value
  * @method programme           getProgramme()     Returns the current record's "programme" value
  * @method partenaireProgramme setPartenaireId()  Sets the current record's "partenaire_id" value
  * @method partenaireProgramme setProgrammeId()   Sets the current record's "programme_id" value
+ * @method partenaireProgramme setNumber()        Sets the current record's "number" value
  * @method partenaireProgramme setPartenaire()    Sets the current record's "partenaire" value
  * @method partenaireProgramme setProgramme()     Sets the current record's "programme" value
  * 
@@ -39,10 +42,10 @@ abstract class BasepartenaireProgramme extends sfDoctrineRecord
              'primary' => true,
              'length' => 4,
              ));
-
-        $this->option('symfony', array(
-             'form' => false,
-             'filter' => false,
+        $this->hasColumn('number', 'integer', null, array(
+             'type' => 'integer',
+             'default' => 0,
+             'notnull' => true,
              ));
     }
 
@@ -51,12 +54,10 @@ abstract class BasepartenaireProgramme extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('partenaire', array(
              'local' => 'partenaire_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
+             'foreign' => 'id'));
 
         $this->hasOne('programme', array(
              'local' => 'programme_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
+             'foreign' => 'id'));
     }
 }

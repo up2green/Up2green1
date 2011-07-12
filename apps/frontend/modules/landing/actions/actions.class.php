@@ -109,6 +109,7 @@ class landingActions extends sfActions
 		else {
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		}
+    
 	}
 	
 }

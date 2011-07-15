@@ -40,13 +40,21 @@ partenaire:
       
 partenaireProgramme:
   columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
     partenaire_id:
       type: integer(4)
-      primary: true
+      notnull: true
     programme_id:
       type: integer(4)
-      primary: true
+      notnull: true
     number:
+      type: integer
+      default: 0
+      notnull: true
+    hardcode:
       type: integer
       default: 0
       notnull: true
@@ -54,8 +62,10 @@ partenaireProgramme:
     partenaire:
       local: partenaire_id
       foreignAlias: Programmes
-	  onDelete: CASCADE
+      type: one
+      onDelete: CASCADE
     programme:
       local: programme_id
       foreignAlias: Partenaires
-	  onDelete: CASCADE
+      onDelete: CASCADE
+      type: one

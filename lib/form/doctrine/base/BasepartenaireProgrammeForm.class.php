@@ -15,15 +15,19 @@ abstract class BasepartenaireProgrammeForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'partenaire_id' => new sfWidgetFormInputHidden(),
-      'programme_id'  => new sfWidgetFormInputHidden(),
+      'id'            => new sfWidgetFormInputHidden(),
+      'partenaire_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('partenaire'), 'add_empty' => false)),
+      'programme_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('programme'), 'add_empty' => false)),
       'number'        => new sfWidgetFormInputText(),
+      'hardcode'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'partenaire_id' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('partenaire_id')), 'empty_value' => $this->getObject()->get('partenaire_id'), 'required' => false)),
-      'programme_id'  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('programme_id')), 'empty_value' => $this->getObject()->get('programme_id'), 'required' => false)),
+      'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'partenaire_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('partenaire'))),
+      'programme_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('programme'))),
       'number'        => new sfValidatorInteger(array('required' => false)),
+      'hardcode'      => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('partenaire_programme[%s]');

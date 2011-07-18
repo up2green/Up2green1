@@ -67,7 +67,7 @@ class partenaireForm extends BasepartenaireForm {
 
 		$this->embedRelations(array(
 			'Programmes' => array(
-				'considerNewFormEmptyFields'        => array('number'),
+				'considerNewFormEmptyFields'    => array('programme_id'),
 				'newFormLabel'                  => 'Nouvelle participation à un programme',
 				'multipleNewForms'              => true,
 				'newFormsInitialCount'          => 1,

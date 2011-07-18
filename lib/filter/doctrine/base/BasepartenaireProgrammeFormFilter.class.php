@@ -13,11 +13,17 @@ abstract class BasepartenaireProgrammeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'partenaire_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('partenaire'), 'add_empty' => true)),
+      'programme_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('programme'), 'add_empty' => true)),
       'number'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'hardcode'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
+      'partenaire_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('partenaire'), 'column' => 'id')),
+      'programme_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('programme'), 'column' => 'id')),
       'number'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'hardcode'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('partenaire_programme_filters[%s]');
@@ -37,9 +43,11 @@ abstract class BasepartenaireProgrammeFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'partenaire_id' => 'Number',
-      'programme_id'  => 'Number',
+      'id'            => 'Number',
+      'partenaire_id' => 'ForeignKey',
+      'programme_id'  => 'ForeignKey',
       'number'        => 'Number',
+      'hardcode'      => 'Number',
     );
   }
 }

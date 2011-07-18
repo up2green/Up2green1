@@ -5,66 +5,10 @@
 class Version61 extends Doctrine_Migration_Base
 {
     public function up()
-    {
-        $this->dropForeignKey('partenaire_programme', 'partenaire_programme_partenaire_id_partenaire_id');
-        $this->dropForeignKey('partenaire_programme', 'partenaire_programme_programme_id_programme_id');
-        $this->createForeignKey('partenaire_programme', 'partenaire_programme_partenaire_id_partenaire_id_1', array(
-             'name' => 'partenaire_programme_partenaire_id_partenaire_id_1',
-             'local' => 'partenaire_id',
-             'foreign' => 'id',
-             'foreignTable' => 'partenaire',
-             ));
-        $this->createForeignKey('partenaire_programme', 'partenaire_programme_programme_id_programme_id_1', array(
-             'name' => 'partenaire_programme_programme_id_programme_id_1',
-             'local' => 'programme_id',
-             'foreign' => 'id',
-             'foreignTable' => 'programme',
-             ));
-        $this->addIndex('partenaire_programme', 'partenaire_programme_partenaire_id', array(
-             'fields' => 
-             array(
-              0 => 'partenaire_id',
-             ),
-             ));
-        $this->addIndex('partenaire_programme', 'partenaire_programme_programme_id', array(
-             'fields' => 
-             array(
-              0 => 'programme_id',
-             ),
-             ));
+	{
     }
 
     public function down()
-    {
-        $this->createForeignKey('partenaire_programme', 'partenaire_programme_partenaire_id_partenaire_id', array(
-             'name' => 'partenaire_programme_partenaire_id_partenaire_id',
-             'local' => 'partenaire_id',
-             'foreign' => 'id',
-             'foreignTable' => 'partenaire',
-             'onUpdate' => '',
-             'onDelete' => 'CASCADE',
-             ));
-        $this->createForeignKey('partenaire_programme', 'partenaire_programme_programme_id_programme_id', array(
-             'name' => 'partenaire_programme_programme_id_programme_id',
-             'local' => 'programme_id',
-             'foreign' => 'id',
-             'foreignTable' => 'programme',
-             'onUpdate' => '',
-             'onDelete' => 'CASCADE',
-             ));
-        $this->dropForeignKey('partenaire_programme', 'partenaire_programme_partenaire_id_partenaire_id_1');
-        $this->dropForeignKey('partenaire_programme', 'partenaire_programme_programme_id_programme_id_1');
-        $this->removeIndex('partenaire_programme', 'partenaire_programme_partenaire_id', array(
-             'fields' => 
-             array(
-              0 => 'partenaire_id',
-             ),
-             ));
-        $this->removeIndex('partenaire_programme', 'partenaire_programme_programme_id', array(
-             'fields' => 
-             array(
-              0 => 'programme_id',
-             ),
-             ));
+	{
     }
 }

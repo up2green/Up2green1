@@ -12,5 +12,14 @@ class partenaireProgrammeForm extends BasepartenaireProgrammeForm
 {
   public function configure()
   {
+    unset($this['partenaire_id']);
+    $this->widgetSchema['programme_id'] = new sfWidgetFormDoctrineChoice(array(
+		'model' => 'programme',
+		'add_empty' => true,
+	));
+    $this->validatorSchema['programme_id'] = new sfValidatorDoctrineChoice(array(
+		'required' => true,
+		'model' => 'programme'
+    ));
   }
 }

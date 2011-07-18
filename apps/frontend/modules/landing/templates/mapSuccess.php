@@ -73,9 +73,11 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 </div>
 <div id="content-inner" style="float: left; width: 73%;">
 	<!-- module GMap-->
-	<div id="gmapWrapper" class="module" style="position:relative;" >
+	<div id="gmapWrapper" class="module" style="position: relative; text-align: left; font-size: 13px; font-weight: bold; color: rgb(255, 255, 255);" >
 		<div class="content">
-			<?php include_partial('plantation/formGMap', array('partenaire' => $partenaire)); ?>
+			<?php include_partial('plantation/formGMap', array(
+				'partenaire' => $partenaire
+			)); ?>
 		<div class="clear"></div>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

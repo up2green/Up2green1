@@ -59,17 +59,35 @@ couponsCSV:
 ##### LANDING
 ####################
 
-landing_page_partenaire:
-  url: /landing/pagePartenaire/:partenaireOffset/:operation
-  param: {module: landing, action: pagePartenaire, partenaireOffset: 0, operation: 0}
+landing_homepage:
+  url: /landing
+  param: {module: landing, action: index}
+plantation_landing_homepage:
+  url: /plantation/landing
+  param: {module: landing, action: index}
 
-landing_plantation:
-  url: /landing/plantation/:partenaireOffset/:operation
-  param: {module: landing, action: plantation, partenaireOffset: 0, operation: 0}
+landing_page_partenaire:
+  url: /landing/pagePartenaire/:partenaire/:operation
+  param: {module: landing, action: pagePartenaire, partenaire: 0, operation: 0}
+plantation_landing_page_partenaire:
+  url: /plantation/landing/pagePartenaire/:partenaire/:operation
+  param: {module: landing, action: pagePartenaire, partenaire: 0, operation: 0}
 
 landing_map:
-  url: /landing/map/:partenaireOffset/:operation
-  param: {module: landing, action: map, partenaireOffset: 0, operation: 0}
+  url: /landing/map/:partenaire/:operation
+  param: {module: landing, action: map, partenaire: 0, operation: 0}
+plantation_landing_map:
+  url: /plantation/landing/map/:partenaire/:operation
+  param: {module: landing, action: map, partenaire: 0, operation: 0}
+  
+
+landing_plantation:
+  url: /landing/plantation/:partenaire/:operation
+  param: {module: landing, action: plantation, partenaire: 0, operation: 0}
+plantation_landing_plantation:
+  url: /plantation/landing/plantation/:partenaire/:operation
+  param: {module: landing, action: plantation, partenaire: 0, operation: 0}
+
 
 ####################
 ##### BLOG
@@ -134,18 +152,6 @@ plantation_confirmation:
 plantation_plant:
   url: /plantation/plant
   param: {module: plantation, action: plant}
-
-plantation_landing_homepage:
-  url: /plantation/landing
-  param: {module: landing, action: index}
-
-plantation_landing_plantation:
-  url: /plantation/landing/plantation/:partenaireOffset/:operation
-  param: {module: landing, action: plantation, partenaireOffset: 0, operation: 0}
-
-plantation_landing_map:
-  url: /plantation/landing/map/:partenaireOffset/:operation
-  param: {module: landing, action: map, partenaireOffset: 0, operation: 0}
 
 plantation_change_language:
   url:   /plantation/change_language

@@ -12,4 +12,8 @@
  */
 class partenaireProgramme extends BasepartenaireProgramme
 {
+	public function __toString() {
+		return $this->getProgramme()->getTitle();
+	}
 }
+

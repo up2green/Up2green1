@@ -47,7 +47,7 @@
 			}
 			else if(organismeRegexp.test(kmlEvent.featureData.id)) {
 				$.ajax({
-					url: "<?php echo substr(url_for("@get_info_organisme"), 1) ?>",
+					url: "<?php echo url_for("ajax/getInfoOrganisme", true) ?>",
 					context: kmlEvent,
 					async: false,
 					dataType: "xml",
@@ -120,4 +120,4 @@
 	
 </script>
 
-<div id="map_canvas" style="width: 700px; height: 450px;"></div>
+<div id="map_canvas" style="width: 700px; height: 450px; color: #000000;"></div>

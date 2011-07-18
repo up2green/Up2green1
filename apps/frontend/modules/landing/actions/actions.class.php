@@ -96,15 +96,14 @@ class landingActions extends sfActions
 						->andWhere('c.is_active = ?', 0)
 						->count();
 				}
-			}
-
-			$partenaireProgrammes = $this->partenaire->getProgrammes();
-			$programmes = array();
-			foreach($partenaireProgrammes as $partenaireProgramme) {
-				$programmes[] = $partenaireProgramme->getProgramme();
-			}
-			$this->programmes = $programmes;
-
+			
+        $partenaireProgrammes = $this->partenaire->getProgrammes();
+        $programmes = array();
+        foreach($partenaireProgrammes as $partenaireProgramme) {
+          $programmes[] = $partenaireProgramme->getProgramme();
+        }
+        $this->programmes = $programmes;
+      }
 		}
 		else {
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();

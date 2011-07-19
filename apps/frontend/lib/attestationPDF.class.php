@@ -10,9 +10,9 @@ class attestationPDF extends TCPDF {
 	
 	private $imgName;
 	
-	public function __construct($imgName = '', $orientation = 'L', $unit = 'mm', $format = 'C6', $unicode = true, $encoding = "UTF-8") {
+	public function __construct($imgName = '', $orientation = 'L', $unit = 'mm', $format = 'A4', $unicode = true, $encoding = "UTF-8") {
 		if(empty($imgName)) {
-			$imgName = sfConfig::get('sf_web_dir').'/images/pdf/attestation_empty.png';
+			$imgName = sfConfig::get('sf_web_dir').'/images/pdf/attestation-02.png';
 		}
 		$this->imgName = $imgName;
 		parent::__construct($orientation, $unit, $format, $unicode, $encoding);
@@ -33,7 +33,12 @@ class attestationPDF extends TCPDF {
 		$auto_page_break = $this->AutoPageBreak;
 		$this->SetAutoPageBreak(false, 0);
 		$img_file = $this->imgName;
-		$this->Image($img_file, 0, 0, 162.04, 113.95, '', '', '', false, 300, '', false, false, 0);
+		if(preg_match('\/images\/pdf\/attestation_empty_sdf\.png', $img_file)) {
+			$this->Image($img_file, 0, 0, 162.04, 113.95, '', '', '', false, 300, '', false, false, 0);
+		}
+		else {
+			$this->Image($img_file, 0, 0, 297, 210, '', '', '', false, 300, '', false, false, 0);	
+		}
 		// restore auto-page-break status
 		$this->SetAutoPageBreak($auto_page_break, $bMargin);
 	}	

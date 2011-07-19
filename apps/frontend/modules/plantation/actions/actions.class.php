@@ -68,6 +68,10 @@ class plantationActions extends sfActions {
 			$this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 		}
 
+		if ($this->partenaire) {
+			$request->setParameter('partenaire', $this->partenaire->getUser()->getUsername());
+		}
+
 	}
 
 	public function executePlant(sfWebRequest $request) {
@@ -303,46 +307,28 @@ class plantationActions extends sfActions {
 		$nbTotal = array_sum($trees);
 		
 		//body
-		$pdf->Cell(0,10,__('certifie que'),0,1,'C');
-		
 		$pdf->SetTextColor(73,115,16);
-		$pdf->SetFontSize(16);
-		$pdf->Cell(0,7,$username,0,1,'C');
-		$pdf->SetFontSize(12);
-		$pdf->SetTextColor(0);
-		$pdf->Cell(0, 5, '', 0, 1); // saut de ligne
+		$pdf->SetFontSize(21);
+		$pdf->writeHTMLCell(130,10, 15, 115, $username,0,1, false, true, 'C');
 		
-		$pdf->Cell(0,5,format_number_choice(
-			"(-Inf,1]a financé la plantation d'un arbre|(1,+Inf]a financé la plantation de {number} arbres",
-			array('{number}' => $nbTotal),
-			$nbTotal
-		),0,1,'C');
+		$pdf->SetFontSize(20);
+		$pdf->writeHTMLCell(40, 10, 105, 135, $nbTotal, 0, 1, false, true, 'C'); // saut de ligne
 		
 		foreach($trees as $key => $value) {
 			$programme = Doctrine_Core::getTable('programme')->findOneBy('id', $key);
 			$programmes[] = $programme->getTitle();
 		}
 		
-		$pdf->Cell(0,5,format_number_choice(
-			"(-Inf,1]dans le programme de reforestation suivant :|(1,+Inf]dans les programmes de reforestation suivants :",
-			array(),
-			sizeof($programmes)
-		),0,1,'C');
+		$pdf->SetFontSize(18);
+		$pdf->writeHTMLCell(130, 30, 15, 158, join(', ', $programmes),0,1,false, true, 'C');
 		
-		
-		$current_y_position = $pdf->getY();
-		$pdf->SetTextColor(73,115,16);
-		$pdf->SetFontSize(13);
-		$pdf->writeHTMLCell(130, 0, 15, $current_y_position, join(', ', $programmes),0,1,false, true, 'C');
-		$pdf->SetFontSize(12);
-		$pdf->SetTextColor(0);
-		
+		$pdf->SetFontSize(16);
+		$pdf->SetTextColor(255, 255, 255);
 		$str = __("À {city}, le {date}", array(
-				"{city}" => "Paris",
-				"{date}" => format_date(time()),
+			"{city}" => "Paris",
+			"{date}" => format_date(time()),
 		));
-		
-		$pdf->writeHTMLCell(0, 0, 15, 85, '<b><font size="-4">'.$str.'</font></b>', 0, 1, false, true, 'L');
+		$pdf->writeHTMLCell(60, 0, 165, 155, '<b><font size="-4">'.$str.'</font></b>', 0, 1, false, true, 'R');
 		
 		// output
 		$filename = '/tmp/attestation-'.uniqid().'.pdf';
@@ -356,7 +342,7 @@ class plantationActions extends sfActions {
 	 * @return: (string) nom du fichier physique
 	 */
 	public function buildAttestationSdF($username, $trees) {
-		$pdf = new attestationPDF(sfConfig::get('sf_web_dir').'/images/pdf/attestation_empty_sdf.png');
+		$pdf = new attestationPDF(sfConfig::get('sf_web_dir').'/images/pdf/attestation_empty_sdf.png', 'L', 'mm', 'C6');
 		$pdf->init();
 
 		//body

@@ -43,6 +43,14 @@ class plantationComponents extends sfComponents {
   
 	public function executeMapLegend(sfWebRequest $request) {	
 		$this->bindMapModeForm($request);
+		$this->partenaire = null;
+		$username =  $request->getParameter('partenaire');
+		if($username) {
+			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $username);
+			if($user) {
+				$this->partenaire = $user->getPartenaire();
+			}
+		}
 	}
 
 	private function bindMapModeForm(sfWebRequest $request) {

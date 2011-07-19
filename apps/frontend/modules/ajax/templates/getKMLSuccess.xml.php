@@ -18,9 +18,7 @@
 		<?php if($programme->getPoint()->getOutput() != null || $programme->getPolygonnes()->count() > 0) : ?>
 		<Placemark id="gmap-programme-<?php echo $programme->getId(); ?>">
 			<name><?php echo $programme->getTitle(); ?></name>
-			<description><![CDATA[
-			<div class="gmap-marker-placeholder" tooltipenable="true" tooltip="<?php echo $programme->getTitle();?>"></div>
-			]]></description>
+			<description></description>
 			<styleUrl><?php echo '#programme_' . (in_array($programme->getId(), $programmePartenaireId) ? 'partenaire' : ($programme->getIsActive() ? 'actif' : 'inactif')) ?></styleUrl>
 			<MultiGeometry>	
 			<?php if($programme->getPoint()->getOutput() != null) : ?>
@@ -57,9 +55,7 @@
 		<?php if($organisme->getPoint()->getOutput() != null) : ?>
 		<Placemark id="gmap-organisme-<?php echo $organisme->getId(); ?>">
 			<name><?php echo $organisme->getTitle(); ?></name>
-			<description><![CDATA[
-<div class="gmap-marker-placeholder" tooltipenable="true" tooltip="<?php echo $organisme->getTitle();?>"></div>
-			]]></description>
+			<description></description>
 			<styleUrl><?php echo $organisme->getIsActive() ? '#organisme_actif' : '#organisme_inactif' ?></styleUrl>
 			<Point>
 				<coordinates><?php echo $organisme->getPoint()->getOutput(); ?></coordinates>

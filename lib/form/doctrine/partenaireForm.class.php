@@ -12,7 +12,7 @@ class partenaireForm extends BasepartenaireForm {
 	
 	private $programmes_list;
 	
-	public static $defaultAttestationPath = '/images/pdf/attestation_empty.png';
+	public static $defaultAttestationPath = '/images/pdf/attestation-02.png';
 
 	public function configure() {
 		

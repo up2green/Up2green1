@@ -27,14 +27,6 @@ class MapModeForm extends BaseForm
       'displayProgrammePartenaire'	=> new sfValidatorBoolean(),
     ));
     
-    $this->setDefaults(array(
-      'displayProgrammeActif'				=> true,
-      'displayProgrammeInactif'			=> true,
-      'displayOrganismeActif'				=> false,
-      'displayOrganismeInactif'			=> false,
-      'displayProgrammePartenaire'	=> false,
-    ));
-    
-    $this->widgetSchema->setNameFormat('mapMode[%s]');
+	$this->widgetSchema->setNameFormat('mapMode[%s]');
   }
 }

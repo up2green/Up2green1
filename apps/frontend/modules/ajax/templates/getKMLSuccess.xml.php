@@ -10,7 +10,7 @@
 		'displayProgrammeInactif'    => $displayProgrammeInactif,
 		'displayProgrammePartenaire' => $displayProgrammePartenaire,
 	)); ?>
-	<?php if ($displayProgrammeInactif || $displayProgrammeActif || $displayProgrammePartenaire) : ?>
+	<?php if (($displayProgrammeInactif || $displayProgrammeActif || $displayProgrammePartenaire) && $programmes) : ?>
 	<Folder>
 		<name><?php echo __("Programmes de reforestation"); ?></name>
 		<description><?php echo __("Les sites de reforestation."); ?></description>
@@ -47,7 +47,7 @@
 		<?php endforeach; ?>
 	</Folder>
 	<?php endif; ?>
-	<?php if($displayOrganismeActif || $displayOrganismeInactif) : ?>
+	<?php if(($displayOrganismeActif || $displayOrganismeInactif) && $organismes) : ?>
 	<Folder>
 		<name><?php echo __("ONG et Organismes planteurs"); ?></name>
 		<description>Les sièges sociaux des différents organismes planteurs qui soutiennent up2green reforestation.</description>

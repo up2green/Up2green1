@@ -8,7 +8,7 @@
  * @property integer $id
  * @property string $url
  * @property string $title
- * @property string $accroche
+ * @property clob $accroche
  * @property clob $description
  * @property string $logo
  * @property boolean $is_active
@@ -18,7 +18,7 @@
  * @method integer             getId()          Returns the current record's "id" value
  * @method string              getUrl()         Returns the current record's "url" value
  * @method string              getTitle()       Returns the current record's "title" value
- * @method string              getAccroche()    Returns the current record's "accroche" value
+ * @method clob                getAccroche()    Returns the current record's "accroche" value
  * @method clob                getDescription() Returns the current record's "description" value
  * @method string              getLogo()        Returns the current record's "logo" value
  * @method boolean             getIsActive()    Returns the current record's "is_active" value
@@ -58,9 +58,9 @@ abstract class Baseorganisme extends sfDoctrineRecord
              'type' => 'string',
              'length' => 128,
              ));
-        $this->hasColumn('accroche', 'string', 1000, array(
-             'type' => 'string',
-             'length' => 1000,
+        $this->hasColumn('accroche', 'clob', 65535, array(
+             'type' => 'clob',
+             'length' => 65535,
              ));
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',

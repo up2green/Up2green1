@@ -15,7 +15,7 @@ organisme:
     title:
       type: string(128)
     accroche:
-      type: string(1000)
+      type: clob(65535)
     description:
       type: clob(65535)
     logo:

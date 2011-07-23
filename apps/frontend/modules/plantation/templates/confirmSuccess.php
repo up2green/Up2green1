@@ -94,7 +94,12 @@
 		<?php 
 		include_partial('logo');
 		if(!is_null($partenaire)) {
-			include_partial('formPartenaire', array('partenaire' => $partenaire));
+			include_partial('partenaire/module', array(
+				'moduleClass'	=> 'purple',
+				'displayIcon'	=> true,
+				'displayTitle'	=> true,
+				'partenaire'	=> $partenaire
+			));
 		}
 		elseif(!$sf_user->isAuthenticated()) {
 			include_partial('formInscription', array());

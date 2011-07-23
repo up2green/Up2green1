@@ -10,18 +10,9 @@
  */
 class partenaireForm extends BasepartenaireForm {
 	
-	private $programmes_list;
-	
 	public static $defaultAttestationPath = '/images/pdf/attestation-02.png';
 
 	public function configure() {
-		
-		$this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(array(
-				'file_src'  => '/uploads/partenaire/'.$this->getObject()->getLogo(),
-				'is_image'  => true,
-				'edit_mode' => !$this->isNew(),
-				'template'  => '<div>%file%<br />%input%<br />%delete% %delete_label%</div>',
-		));
 		
 		$attestationPath = $this->getObject()->getAttestation();
 		
@@ -36,12 +27,6 @@ class partenaireForm extends BasepartenaireForm {
 		$this->widgetSchema['description'] = new sfWidgetFormCKEditor();
 		$this->widgetSchema['page'] = new sfWidgetFormCKEditor();
 
-		$this->validatorSchema['logo'] = new sfValidatorFile(array(
-				'required'   => false,
-				'path'       => sfConfig::get('sf_upload_dir').'/partenaire',
-				'mime_types' => 'web_images',
-		));
-
 		$this->validatorSchema['attestation'] = new myValidatorImage(array(
 				'max_size'   => 1048576,
 				'required'   => false,
@@ -53,9 +38,6 @@ class partenaireForm extends BasepartenaireForm {
 				'maxy' => 595,
 		));
 		
-		$this->validatorSchema['url'] = new sfValidatorUrl();
-		$this->validatorSchema['logo_delete'] = new sfValidatorPass();
-		
 		if(!empty ($attestationPath)) {
 			$this->validatorSchema['attestation_delete'] = new sfValidatorPass();
 		}
@@ -63,7 +45,7 @@ class partenaireForm extends BasepartenaireForm {
 		$this->widgetSchema['accroche'] = new sfWidgetFormCKEditor(array('jsoptions'=>array(
 					'height' 	=> '75px',
 					'toolbar'	=> 'Basic'
-			)));
+				)));
 
 		$this->embedRelations(array(
 			'Programmes' => array(
@@ -71,10 +53,15 @@ class partenaireForm extends BasepartenaireForm {
 				'newFormLabel'                  => 'Nouvelle participation à un programme',
 				'multipleNewForms'              => true,
 				'newFormsInitialCount'          => 1,
+			),
+			'Logos' => array(
+				'considerNewFormEmptyFields'	=> array('src', 'href'),
+				'newFormLabel'					=> 'Ajouter un logo',
+				'multipleNewForms'				=> true,
+				'newFormInitialCount'			=> 0
 			)
 		));
 
-		
 		$this->removeFields();
 	}
 

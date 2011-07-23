@@ -3,9 +3,6 @@ if($isPartenaire = (isset($partenaire) && !empty($partenaire))) {
 	$blocWidth = "20%";
 	$contentWidth = "45%";
 
-	$url = $partenaire->getUrl();
-	$partenaireHasImage = $partenaire->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getLogo());
-
 	$title = __("Déjà {number} arbres plantés avec {affiliate}", array(
 		'{number}' => $nbArbres,
 		'{affiliate}' => $partenaire->getTitle()
@@ -53,22 +50,9 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 	</div>
 
 	<?php if($isPartenaire) : ?>
-	<!-- module partenaire -->
-	<div class="module">
-		<div class="content">
-			<?php if(!empty($url)) : ?>
-			<a class="light" target="_blank" href="<?php echo $url; ?>">
-			<?php endif; ?>
-
-			<?php if($partenaireHasImage) : ?>
-			<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
-			<?php endif; ?>
-
-			<p><?php echo $partenaire->getAccroche(); ?></p>
-			</a>
-		</div>
-		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-	</div>
+	<?php include_partial('partenaire/module', array(
+		'partenaire' => $partenaire, 
+	)); ?>
 	<?php endif; ?>
 </div>
 <div id="content-inner" style="float: left; width: 73%;">

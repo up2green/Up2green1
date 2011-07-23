@@ -9,9 +9,6 @@ partenaire:
       type: bigint(20)
       notnull: true
       unique: true
-    logo:
-      type: string(128)
-      default: null
     title:
       type: string(45)
       default: null
@@ -37,7 +34,28 @@ partenaire:
       onDelete: CASCADE
       foreignType:  one
       foreignAlias: Partenaire
-      
+ 
+partenaireLogo:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    partenaire_id:
+      type: integer(4)
+      notnull: true
+    src:
+      type: string(128)
+      notnull: true
+    href:
+      type: string(128)
+  relations:
+    partenaire:
+      local: partenaire_id
+      foreignAlias: Logos
+      type: one
+      onDelete: CASCADE
+
 partenaireProgramme:
   columns:
     id:

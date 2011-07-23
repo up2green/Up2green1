@@ -17,7 +17,6 @@ class partenaireProfilForm extends partenaireForm
 		/* Some attributes */
 		$this->widgetSchema['title']->setAttribute('style', 'width:80%');
 		$this->widgetSchema['url']->setAttribute('style', 'width:80%');
-		$this->widgetSchema['logo']->setAttribute('style', 'max-width: 200px;max-height: 200px;');
 	}
 	
 	protected function removeFields() {

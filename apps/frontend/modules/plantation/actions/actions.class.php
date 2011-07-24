@@ -55,7 +55,7 @@ class plantationActions extends sfActions {
 		if($request->getParameter("cancelPlant"))
 		{
 			$this->getUser()->removePlantSession();
-			$this->redirect($session['fromUrl']);
+			$this->redirect($this->fromUrl);
 		}
 
 		// l'utilisateur a entré son numéro de coupon
@@ -64,12 +64,12 @@ class plantationActions extends sfActions {
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
 				$this->getUser()->removePlantSession();
-				$this->redirect($this->redirectUrl);
+				$this->redirect($this->fromUrl);
 			}
 			else if($coupon->isPerime()) {
 				$this->getUser()->setFlash('error', 'coupon-perime');
 				$this->getUser()->removePlantSession();
-				$this->redirect($this->redirectUrl);
+				$this->redirect($this->fromUrl);
 			}
 			else {
 				if ($coupon->getIsActive()) {
@@ -128,7 +128,6 @@ class plantationActions extends sfActions {
 		$this->fromUrl = $session['fromUrl'];
 		$this->redirectUrl = $session['redirectUrl'];
 		$this->partenaire = null;
-		
 		$email = "";
 		$sendMail = true;
 		$code = $session['code'];
@@ -141,15 +140,18 @@ class plantationActions extends sfActions {
 
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			else if($coupon->isPerime()) {
 				$this->getUser()->setFlash('error', 'coupon-perime');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			elseif(!$coupon->getIsActive()) {
 				$this->getUser()->setFlash('error', 'coupon-already-user');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			elseif(array_sum($trees) !== (int)$coupon->getCouponGen()->getCredit()){
 				$this->getUser()->setFlash('error', 'error-plant-all');
@@ -201,7 +203,15 @@ class plantationActions extends sfActions {
 		}
 
 		$this->getUser()->setFlash('notice', 'plant-succes');
-		$username = $this->getUser()->getGuardUser() ? $this->getUser()->getGuardUser()->getDisplayName() : $email;
+		
+		$username = $request->getParameter('prenom_user');
+		$name = $request->getParameter('nom_user');
+		$username .= empty ($name) ? '' : ' '.$name;
+
+		if (empty ($username))
+		{
+			$username = $this->getUser()->getGuardUser() ? $this->getUser()->getGuardUser()->getDisplayName() : $email;
+		}
 
 		if($sendMail && !empty($email)) {
 			// on construit l'attestation :
@@ -242,7 +252,7 @@ class plantationActions extends sfActions {
 			}
 		}
 		
-		$this->redirect($this->getUser()->hasFlash('error') ? $this->fromUrl : $this->redirectUrl);
+		$this->redirect($this->fromUrl);
 	}
 	
 	/**

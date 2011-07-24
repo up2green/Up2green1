@@ -23,7 +23,7 @@ class partenaireLogoForm extends BasepartenaireLogoForm
 	  $this->widgetSchema['src']->setAttribute('style', 'max-width: 200px;max-height: 200px;');
 		
 		$this->validatorSchema['src'] = new sfValidatorFile(array(
-				'required'   => true,
+				'required'   => false,
 				'path'       => sfConfig::get('sf_upload_dir').'/partenaire/'.$this->getObject()->getPartenaireId(),
 				'mime_types' => 'web_images',
 		));

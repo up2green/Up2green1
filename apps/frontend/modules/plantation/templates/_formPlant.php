@@ -62,7 +62,7 @@
 		
 			<p class="center">
 				<input type="submit" name="submitArbresProgramme" style="width:40%;margin:0 2px;" class="button gray" value="<?php echo __("Planter") ?>" />
-				<a href="<?php echo sfConfig::get('sf_app_url_plantation') ?>" style="padding:10px 20px;margin:0 2px;" class="button white" ><?php echo __("Annuler") ?></a>
+				<input type="submit" name="cancelPlant" style="padding:10px 20px;margin:0 2px;" class="button white" value="<?php echo __("Annuler") ?>" />
 			</p>
 
 		</div>

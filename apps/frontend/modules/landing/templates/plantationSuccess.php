@@ -3,9 +3,6 @@ if($isPartenaire = (isset($partenaire) && !empty($partenaire))) {
 	$blocWidth = "20%";
 	$contentWidth = "45%";
 
-	$url = $partenaire->getUrl();
-	$partenaireHasImage = $partenaire->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/partenaire/'.$partenaire->getLogo());
-
 	$title = __("Déjà {number} arbres plantés avec {affiliate}", array(
 		'{number}' => $nbArbres,
 		'{affiliate}' => $partenaire->getTitle()
@@ -38,7 +35,7 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 
 if(
 		$isPartenaire &&
-		$partenaire->getTitle() === 'STORISTES DE FRANCE' &&
+		$partenaire->getId() === sfConfig::get('app_sdf_id') &&
 		$operation === '1arbre'
 ) {
 	include_partial('landing/storiste_de_france', array(
@@ -49,7 +46,7 @@ if(
 else {
 ?>
 
-<?php if (isset($partenaire) && $partenaire->getTitle() === 'STORISTES DE FRANCE') : ?>
+<?php if (isset($partenaire) && $partenaire->getId() === sfConfig::get('app_sdf_id')) : ?>
 <style>body{background: url("/images/marketing/SdF/backgroundSite.jpg") no-repeat fixed center center transparent;}</style>
 <?php endif; ?>
 		
@@ -78,7 +75,7 @@ else {
 		<h2><?php echo $contentTitle; ?></h2>
 		<?php if(!$isPartenaire || !$partenaire->getId() == sfConfig::get('app_vedif_id')) : ?>
 		<h3><?php echo __("Choisissez où planter votre (vos) arbre(s) sur la Planète") ?></h3>
-	<?php endif; ?>
+		<?php endif; ?>
 		<p>
 		<?php echo __("Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation", array(
 			'{lien}' => '<a class="light" href="'.sfConfig::get('sf_app_url_plantation').'" target="_blank">',
@@ -98,22 +95,10 @@ else {
 </div>
 
 <?php if($isPartenaire) : ?>
-<!-- module partenaire -->
-<div class="module" style="width:<?php echo $blocWidth; ?>">
-	<div class="content">
-		<?php if(!empty($url)) : ?>
-		<a class="light" target="_blank" href="<?php echo $url; ?>">
-		<?php endif; ?>
-		
-		<?php if($partenaireHasImage) : ?>
-		<img class="organisme-image" src="/uploads/partenaire/<?php echo $partenaire->getLogo(); ?>" alt="Logo">
-		<?php endif; ?>
-		
-		<p><?php echo $partenaire->getAccroche(); ?></p>
-		</a>
-	</div>
-	<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
-</div>
+<?php include_partial('partenaire/module', array(
+	'partenaire' => $partenaire, 
+	'width' => $blocWidth
+)); ?>
 <?php endif; ?>
 
 </div>

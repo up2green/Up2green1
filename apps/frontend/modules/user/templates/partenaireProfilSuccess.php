@@ -25,15 +25,21 @@
 					</tbody>
 				</table>
 			</fieldset>
-			<!-- Logo -->
+			<!-- Logos -->
 			<fieldset>
-				<legend><?php echo __('Votre logo'); ?></legend>
+				<legend><?php echo __('Vos logos'); ?></legend>
 				<table class="form no-field-width">
 					<tbody>
 						<tr>
-							<td class="label"><?php echo __('Logo'); ?></td>
-							<td class="field"><?php echo $form['logo']; ?></td>
+							<td class="label"><?php echo __('Ajouter des logos'); ?></td>
+							<td class="field"><?php echo $form['new_Logos']; ?></td>
 						</tr>
+						<?php if (false && isset ($form['Logos'])) : ?>
+						<tr>
+							<td class="label"><?php echo __("Logos actuels"); ?></td>
+							<td class="field"><?php echo $form['Logos']; ?></td>
+						</tr>
+						<?php endif; ?>
 					</tbody>
 				</table>
 			</fieldset>

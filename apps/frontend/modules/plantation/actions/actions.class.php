@@ -22,8 +22,26 @@ class plantationActions extends sfActions {
 		// chargement des variables pour le form programmes
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		
-		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
-		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
+		$session = $this->getUser()->getPlantSession(array(
+				'fromUrl'	=> self::$defaultFromUrl,
+				'redirectUrl'	=> self::$defaultRedirectUrl,
+		));
+
+		if ($request->hasParameter('code'))
+		{
+			$session['code'] = $request->getParameter('code');
+		}
+		if ($request->hasParameter('fromUrl'))
+		{
+			$session['fromUrl'] = $request->getParameter('fromUrl');
+		}
+		if ($request->hasParameter('redirectUrl'))
+		{
+			$session['redirectUrl'] = $request->getParameter('redirectUrl');
+		}
+	
+		$this->fromUrl = $session['fromUrl'];
+		$this->redirectUrl = $session['redirectUrl'];
 		
 		// pour le form partenaire et pour savoir si on affiche la liste des programmes quand le user est connecté
 		$this->partenaire = null;
@@ -33,22 +51,30 @@ class plantationActions extends sfActions {
 		if($this->getUser()->isAuthenticated()) {
 			$this->nbArbresToPlant = $this->getUser()->getGuardUser()->getProfile()->getCredit();
 		}
-								
+	
+		if($request->getParameter("cancelPlant"))
+		{
+			$this->getUser()->removePlantSession();
+			$this->redirect($session['fromUrl']);
+		}
+
 		// l'utilisateur a entré son numéro de coupon
-		if ($request->hasParameter('code')) {
-			$code = $request->getParameter('code');
+		if ($code = (isset($session['code']) ? $session['code'] : null)) {
 			$coupon = Doctrine_Core::getTable('coupon')->findOneByCode($code);
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
+				$this->getUser()->removePlantSession();
 				$this->redirect($this->redirectUrl);
 			}
 			else if($coupon->isPerime()) {
 				$this->getUser()->setFlash('error', 'coupon-perime');
+				$this->getUser()->removePlantSession();
 				$this->redirect($this->redirectUrl);
 			}
 			else {
 				if ($coupon->getIsActive()) {
 					$this->coupon = $coupon;
+					$this->getUser()->setPlantSession($session);
 					if(!$coupon->getPartenaire()->isNew()) {
 						$this->partenaire = $coupon->getPartenaire()->getPartenaire();
 						$this->setProgrammesFromPartenaire($this->partenaire);
@@ -58,6 +84,7 @@ class plantationActions extends sfActions {
 				}
 				else {
 					$this->getUser()->setFlash('error', 'coupon-already-user');
+					$this->getUser()->removePlantSession();
 					$this->redirect($this->fromUrl);
 				}
 			}
@@ -78,15 +105,34 @@ class plantationActions extends sfActions {
 		
 		$this->forward404Unless($request->isMethod('post'));
 		$this->forward404Unless($request->hasParameter('confirmPlant'));
-		
-		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
-		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
+
+		sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
+	
+		$session = $this->getUser()->getPlantSession(array(
+			'fromUrl'	=> self::$defaultFromUrl,
+			'redirectUrl'	=> self::$defaultRedirectUrl,
+			'code'		=> $request->getParameter('code'),
+			'trees'		=> $request->getParameter('trees'),
+		));
+
+		if ($request->hasParameter('trees'))
+		{
+			$session['trees'] = $request['trees'];
+		}
+
+		if ($request->hasParameter('code'))
+		{
+			$session['code'] = $request['code'];
+		}
+	
+		$this->fromUrl = $session['fromUrl'];
+		$this->redirectUrl = $session['redirectUrl'];
 		$this->partenaire = null;
 		
 		$email = "";
 		$sendMail = true;
-		$code = $request->getParameter('code');
-		$trees = $request->getParameter('trees');
+		$code = $session['code'];
+		$trees = $session['trees'];
 		$sdf = false;
 
 		if (!empty($code)) {
@@ -114,7 +160,6 @@ class plantationActions extends sfActions {
 				$coupon->plantArbre((int)$nombre, $programme, $this->getUser());
 			}
 			
-			
 			if(!$coupon->getPartenaire()->isNew()) {
 				$this->partenaire = $coupon->getPartenaire()->getPartenaire();
 			}
@@ -123,6 +168,7 @@ class plantationActions extends sfActions {
 			$coupon->setIsActive(false);
 			$coupon->setPartenaire(null);
 			$coupon->save();
+			$this->getUser()->removePlantSession();
 			
 			if(!$this->getUser()->isAuthenticated()) {
 				$email = $request->getParameter('email_user');
@@ -149,7 +195,7 @@ class plantationActions extends sfActions {
 			$profil = $this->getUser()->getGuardUser()->getProfile();
 			$profil->setCredit($profil->getCredit() - array_sum($trees));
 			$profil->save();
-
+			$this->getUser()->removePlantSession();
 			$email = $this->getUser()->getGuardUser()->getEmailAddress();
 			$sendMail = (bool)$request->getParameter('send_email');
 		}
@@ -185,8 +231,15 @@ class plantationActions extends sfActions {
 				$message->attach(Swift_Attachment::fromPath($filename));
 			}
 
-			$this->getMailer()->send($message);
-			$this->getUser()->setFlash('notice', 'email-confirmation');
+			try
+			{
+				$this->getMailer()->send($message);
+				$this->getUser()->setFlash('notice', 'email-confirmation');
+			}
+			catch(Exception $e)
+			{
+				$this->getUser()->setFlash('error', __("Une erreur est survenue lors de l'envoi du mail d'attestation."));
+			}
 		}
 		
 		$this->redirect($this->getUser()->hasFlash('error') ? $this->fromUrl : $this->redirectUrl);
@@ -200,11 +253,16 @@ class plantationActions extends sfActions {
 
 		$this->forwardUnless($request->isMethod('post'), 'plantation', 'index');
 		$this->forwardUnless($request->hasParameter('submitArbresProgramme'), 'plantation', 'index');
-		
-		$this->fromUrl = $request->getParameter('fromUrl', self::$defaultFromUrl);
-		$this->redirectUrl = $request->getParameter('redirectUrl', self::$defaultRedirectUrl);
-		
-		$code = $request->getParameter('code');
+	
+		$session = $this->getUser()->getPlantSession(array(
+			'fromUrl'	=> self::$defaultFromUrl,
+			'redirectUrl'	=> self::$defaultRedirectUrl,
+		));
+
+		$this->fromUrl = $session['fromUrl'];
+		$this->redirectUrl = $session['redirectUrl'];
+		$code = $session['code'];
+	
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		$this->coupon = null;
 		$this->partenaire = null;

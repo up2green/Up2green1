@@ -82,7 +82,7 @@
 					<input type="hidden" name="redirectUrl" value="<?php echo $redirectUrl ?>" />
 					<p class="center">
 						<input type="submit" name="confirmPlant" class="button green big" value="<?php echo __("Confirmer et planter") ?>" />
-						<a href="<?php echo $backUrl ?>" class="backlink"><?php echo __("Revenir à la plantation") ?></a>
+						<a href="<?php echo url_for('plantation/index'); ?>" class="backlink"><?php echo __("Revenir à la plantation") ?></a>
 					</p>
 				</form>
 			</div>
@@ -94,7 +94,12 @@
 		<?php 
 		include_partial('logo');
 		if(!is_null($partenaire)) {
-			include_partial('formPartenaire', array('partenaire' => $partenaire));
+			include_partial('partenaire/module', array(
+				'moduleClass'	=> 'purple',
+				'displayIcon'	=> true,
+				'displayTitle'	=> true,
+				'partenaire'	=> $partenaire
+			));
 		}
 		elseif(!$sf_user->isAuthenticated()) {
 			include_partial('formInscription', array());

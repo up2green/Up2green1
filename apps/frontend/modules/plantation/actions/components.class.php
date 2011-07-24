@@ -31,7 +31,13 @@ class plantationComponents extends sfComponents {
 		if($this->partenaire) {
 			$this->kmlURL .= '&partenaire='.$this->partenaire->getId();
 		}
-    
+
+		$values = $this->getUser()->getMapMode($this->mapModeForm->getDefaults());
+		if ($this->mapModeForm->getValues())
+		{
+			$values = $this->mapModeForm->getValues();
+			$this->getUser()->setMapMode($values);
+		} 
 		$values = $this->mapModeForm->getValues() ? $this->mapModeForm->getValues() : $this->mapModeForm->getDefaults();
     
 		$this->kmlURL .= '&displayProgrammePartenaire='.(int)$values['displayProgrammePartenaire'];

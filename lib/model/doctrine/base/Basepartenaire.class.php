@@ -8,7 +8,7 @@
  * @property integer $id
  * @property bigint $user_id
  * @property string $title
- * @property string $accroche
+ * @property clob $accroche
  * @property clob $description
  * @property clob $page
  * @property string $attestation
@@ -21,7 +21,7 @@
  * @method integer             getId()          Returns the current record's "id" value
  * @method bigint              getUserId()      Returns the current record's "user_id" value
  * @method string              getTitle()       Returns the current record's "title" value
- * @method string              getAccroche()    Returns the current record's "accroche" value
+ * @method clob                getAccroche()    Returns the current record's "accroche" value
  * @method clob                getDescription() Returns the current record's "description" value
  * @method clob                getPage()        Returns the current record's "page" value
  * @method string              getAttestation() Returns the current record's "attestation" value
@@ -69,9 +69,9 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'type' => 'string',
              'length' => 45,
              ));
-        $this->hasColumn('accroche', 'string', 1000, array(
-             'type' => 'string',
-             'length' => 1000,
+        $this->hasColumn('accroche', 'clob', 65535, array(
+             'type' => 'clob',
+             'length' => 65535,
              ));
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',

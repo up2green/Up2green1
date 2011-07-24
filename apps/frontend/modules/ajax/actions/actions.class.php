@@ -94,8 +94,8 @@ class ajaxActions extends sfActions
 		$this->showPerPartenaire = false;
 		if ($this->partenaire)
 		{
-			$partenaireProgramme = Doctrine_Core::getTable('partenaireProgramme')->getByPartenaireAndProgramme($this->partenaire, $this->programme);
-			$this->max = $partenaireProgramme->getNumber();
+			$partenaireProgramme = Doctrine_Core::getTable('partenaireProgramme')->findOneByPartenaireIdAndProgrammeId($this->partenaire->getId(), $this->programme->getId());
+$this->max = (int)$partenaireProgramme->getNumber();
 			$this->programmeTrees = (int)$partenaireProgramme->getHardcode();
 			$this->programmeTrees += (int)Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), $this->programme->getId());
 			$this->showPerPartenaire = true;

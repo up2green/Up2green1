@@ -14,7 +14,7 @@
 				<?php endif; ?>
 				<td style="vertical-align: middle;font-size:13px;">
 					<?php if (isset ($partenaire) && $showPerPartenaire && $partenaire) : ?>
-					<p><?php echo __("Capacité soutenu par {partenaire} : {number}/{max} arbres plantés", array(
+					<p><?php echo __("Capacité de plantation, soutenue par {partenaire} : {number}/{max} arbres plantés", array(
 						'{number}' => $programmeTrees,
 						'{max}' => $max,
 						'{partenaire}' => '<strong style="color:#183F00">'.$partenaire->getTitle().'</strong>'

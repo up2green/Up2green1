@@ -37,6 +37,9 @@
 					data: {
 						programme: kmlEvent.featureData.id.substring(15),
 						canPlant: <?php echo (isset($canPlant) && $canPlant) ? 1 : 0 ?>
+						<?php if (isset ($partenaire) && $partenaire) : ?>
+						,partenaire: <?php echo $partenaire->getId() ?>
+						<?php endif; ?> 
 					},
 					success: function(xml){
 						currentKmlEvent = this;

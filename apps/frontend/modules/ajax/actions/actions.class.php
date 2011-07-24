@@ -89,15 +89,21 @@ class ajaxActions extends sfActions
 		}
 		
 		// comptage des arbres planté sur le programme :
+		$this->max = 0;
+		$this->programmeTrees = 0;
+		$this->showPerPartenaire = false;
 		if ($this->partenaire)
 		{
-			$partenaireProgramme = Doctrine_Code::getTable('partenaireProgramme')->getByPartenaireAndProgramme($this->partenaire, $this->programme);
+			$partenaireProgramme = Doctrine_Core::getTable('partenaireProgramme')->getByPartenaireAndProgramme($this->partenaire, $this->programme);
 			$this->max = $partenaireProgramme->getNumber();
-			$this->programmeTrees = $partenaireProgramme->getHardcode();
-			$this->programmeTrees += Doctrine_Core::getTable('tree')->countByProgrammeAndPartenaire($partenaire->getId(), $programme->getId());
+			$this->programmeTrees = (int)$partenaireProgramme->getHardcode();
+			$this->programmeTrees += (int)Doctrine_Core::getTable('tree')->countFromCouponPartenaireByProgramme($this->partenaire->getId(), $this->programme->getId());
+			$this->showPerPartenaire = true;
 		}
-		else
+
+		if ( empty ($this->max))
 		{
+			$this->showPerPartenaire = false;
 			$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
 			$this->max = $this->programme->getMaxTree();
 		}

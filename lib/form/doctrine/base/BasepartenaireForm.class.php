@@ -31,7 +31,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'user_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('User'))),
       'title'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'accroche'    => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
+      'accroche'    => new sfValidatorString(array('required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
       'page'        => new sfValidatorString(array('required' => false)),
       'attestation' => new sfValidatorString(array('max_length' => 128, 'required' => false)),

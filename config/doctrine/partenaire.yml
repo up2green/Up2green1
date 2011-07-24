@@ -13,7 +13,7 @@ partenaire:
       type: string(45)
       default: null
     accroche:
-      type: string(1000)
+      type: clob(65535)
       default: null
     description:
       type: clob(65535)

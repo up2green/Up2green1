@@ -39,9 +39,18 @@
 					<?php 
 					
 					if(!empty($partenaire) && !$isThePartenaire) {
-						echo __("{:partenaire} vous remercie de votre implication dans son opération.", array(
-							'{:partenaire}' => $partenaire->getTitle()
-						));
+						if ((int)$partenaire->getId() === (int)sfConfig::get('app_vedif_id'))
+						{
+							echo __("{:partenaire} vous remercient de votre implication dans son opération.", array(
+								'{:partenaire}' => $partenaire->getTitle()
+							));
+						}
+						else
+						{
+							echo __("{:partenaire} vous remercie de votre implication dans son opération.", array(
+								'{:partenaire}' => $partenaire->getTitle()
+							));
+						}
 					}
 					
 					?>

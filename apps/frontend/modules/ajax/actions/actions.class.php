@@ -74,11 +74,9 @@ class ajaxActions extends sfActions
 		$this->canPlant = $request->getParameter('canPlant', 0);
 		$this->userProgrammeTrees = 0;
 		
-		if(!$this->programme) {
-			return $this->forward404();
-		}
+		$this->forward404Unless($this->programme);
 		
-		// on inactives les programmes non-soutenus
+		// on inactives le programme s'il n'est pas soutenu par le partenaire
 		if($this->partenaire) {
 			$partenaireProgrammes = $this->partenaire->getProgrammes()->getPrimaryKeys();
 			if(!in_array($this->programme->getId(), $partenaireProgrammes)) {
@@ -91,12 +89,26 @@ class ajaxActions extends sfActions
 		}
 		
 		// comptage des arbres planté sur le programme :
-		$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
-		$max = $this->programme->getMaxTree() == 0 ? 1 : $this->programme->getMaxTree();
-		$this->displayPourcent = floor($this->programmeTrees * 100 / $max);
-		if(empty ($this->displayPourcent)) {
-			$this->displayPourcent = 1;
+		if ($this->partenaire)
+		{
+			$partenaireProgramme = Doctrine_Code::getTable('partenaireProgramme')->getByPartenaireAndProgramme($this->partenaire, $this->programme);
+			$this->max = $partenaireProgramme->getNumber();
+			$this->programmeTrees = $partenaireProgramme->getHardcode();
+			$this->programmeTrees += Doctrine_Core::getTable('tree')->countByProgrammeAndPartenaire($partenaire->getId(), $programme->getId());
 		}
+		else
+		{
+			$this->programmeTrees = Doctrine_Core::getTable('tree')->countByProgramme($programmeId);
+			$this->max = $this->programme->getMaxTree();
+		}
+
+		if (empty ($this->max))
+			$this->max = 1;
+
+		$this->displayPourcent = floor($this->programmeTrees * 100 / $this->max);
+
+		if(empty ($this->displayPourcent))
+			$this->displayPourcent = 1;
 		
 	}
 	

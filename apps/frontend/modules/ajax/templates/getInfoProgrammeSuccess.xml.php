@@ -15,7 +15,7 @@
 				<td style="vertical-align: middle;font-size:13px;">
 					<p><?php echo __("Capacité : {number}/{max} arbres plantés", array(
 						'{number}' => $programmeTrees,
-						'{max}' => $programme->getMaxTree()
+						'{max}' => $max
 					)) ?></p>
 					<div class="programme-graph-wrapper">
 						<div style="width: <?php echo $displayPourcent ?>%;" class="green" href="#"></div>

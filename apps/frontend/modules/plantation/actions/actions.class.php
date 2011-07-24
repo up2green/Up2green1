@@ -128,7 +128,6 @@ class plantationActions extends sfActions {
 		$this->fromUrl = $session['fromUrl'];
 		$this->redirectUrl = $session['redirectUrl'];
 		$this->partenaire = null;
-		
 		$email = "";
 		$sendMail = true;
 		$code = $session['code'];
@@ -204,7 +203,15 @@ class plantationActions extends sfActions {
 		}
 
 		$this->getUser()->setFlash('notice', 'plant-succes');
-		$username = $this->getUser()->getGuardUser() ? $this->getUser()->getGuardUser()->getDisplayName() : $email;
+		
+		$username = $request->getParameter('prenom_user');
+		$name = $request->getParameter('nom_user');
+		$username .= empty ($name) ? '' : ' '.$name;
+
+		if (empty ($username))
+		{
+			$username = $this->getUser()->getGuardUser() ? $this->getUser()->getGuardUser()->getDisplayName() : $email;
+		}
 
 		if($sendMail && !empty($email)) {
 			// on construit l'attestation :
@@ -245,7 +252,7 @@ class plantationActions extends sfActions {
 			}
 		}
 		
-		$this->redirect($this->getUser()->hasFlash('error') ? $this->fromUrl : $this->redirectUrl);
+		$this->redirect($this->fromUrl);
 	}
 	
 	/**

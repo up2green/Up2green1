@@ -55,7 +55,7 @@ class plantationActions extends sfActions {
 		if($request->getParameter("cancelPlant"))
 		{
 			$this->getUser()->removePlantSession();
-			$this->redirect($session['fromUrl']);
+			$this->redirect($this->fromUrl);
 		}
 
 		// l'utilisateur a entré son numéro de coupon
@@ -64,12 +64,12 @@ class plantationActions extends sfActions {
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
 				$this->getUser()->removePlantSession();
-				$this->redirect($this->redirectUrl);
+				$this->redirect($this->fromUrl);
 			}
 			else if($coupon->isPerime()) {
 				$this->getUser()->setFlash('error', 'coupon-perime');
 				$this->getUser()->removePlantSession();
-				$this->redirect($this->redirectUrl);
+				$this->redirect($this->fromUrl);
 			}
 			else {
 				if ($coupon->getIsActive()) {
@@ -141,15 +141,18 @@ class plantationActions extends sfActions {
 
 			if(!$coupon) {
 				$this->getUser()->setFlash('error', 'invalid-coupon');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			else if($coupon->isPerime()) {
 				$this->getUser()->setFlash('error', 'coupon-perime');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			elseif(!$coupon->getIsActive()) {
 				$this->getUser()->setFlash('error', 'coupon-already-user');
-				$this->redirect($this->redirectUrl);
+				$this->getUser()->removePlantSession();
+				$this->redirect($this->fromUrl);
 			}
 			elseif(array_sum($trees) !== (int)$coupon->getCouponGen()->getCredit()){
 				$this->getUser()->setFlash('error', 'error-plant-all');

@@ -338,6 +338,7 @@ class userActions extends sfActions {
 				if(!empty($files) && !empty($files['attestation']['name'])) {
 					$this->getUser()->setFlash('notice', 'update-file-ok');
 				}
+				$this->redirect('user/partenaireAttestation');
 			}
 			else {
 				$this->getUser()->setFlash('error', 'bad-image');

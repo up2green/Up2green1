@@ -10,6 +10,9 @@
  */
 class partenaireAttestationForm extends partenaireForm
 {
+	protected $canEmbedProgramme = false;
+	protected $canEmbedLogo = false;
+
 	public function configure()	{	
 		parent::configure();
 		

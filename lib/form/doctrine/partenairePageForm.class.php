@@ -9,8 +9,12 @@
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class partenairePageForm extends partenaireForm
-{	
+{
+	protected $canEmbedProgramme = false;
+	protected $canEmbedLogo = false;
+	
 	protected function removeFields() {
+
 		unset(
 			$this['created_at'], 
 			$this['updated_at'], 

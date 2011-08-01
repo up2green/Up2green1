@@ -9,7 +9,10 @@
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class partenaireForm extends BasepartenaireForm {
-	
+
+	protected $canEmbedProgramme = true;
+	protected $canEmbedLogo = true;
+
 	public static $defaultAttestationPath = '/images/pdf/attestation-02.png';
 
 	public function configure() {
@@ -47,20 +50,30 @@ class partenaireForm extends BasepartenaireForm {
 					'toolbar'	=> 'Basic'
 				)));
 
-		$this->embedRelations(array(
-			'Programmes' => array(
-				'considerNewFormEmptyFields'    => array('programme_id'),
-				'newFormLabel'                  => 'Nouvelle participation à un programme',
-				'multipleNewForms'              => true,
-				'newFormsInitialCount'          => 1,
-			),
-			'Logos' => array(
-				'considerNewFormEmptyFields'	=> array('src', 'href'),
-				'newFormLabel'					=> 'Ajouter un logo',
-				'multipleNewForms'				=> true,
-				'newFormInitialCount'			=> 0
-			)
-		));
+		if ($this->canEmbedProgramme || $this->canEmbedLogo)
+		{
+			$embed = array();
+			if($this->canEmbedProgramme)
+			{
+				$embed['Programmes'] = array(
+					'considerNewFormEmptyFields'    => array('programme_id'),
+					'newFormLabel'                  => 'Nouvelle participation à un programme',
+					'multipleNewForms'              => true,
+					'newFormsInitialCount'          => 1,
+				);
+			}
+
+			if($this->canEmbedLogo)
+			{
+				$embed['Logos'] = array(
+					'considerNewFormEmptyFields'	=> array('src', 'href'),
+					'newFormLabel'					=> 'Ajouter un logo',
+					'multipleNewForms'				=> true,
+					'newFormInitialCount'			=> 0
+				);
+			}
+			$this->embedRelations($embed);
+		}
 
 		$this->removeFields();
 	}

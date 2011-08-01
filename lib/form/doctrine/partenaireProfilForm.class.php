@@ -10,6 +10,8 @@
  */
 class partenaireProfilForm extends partenaireForm
 {
+	protected $canEmbedProgramme = false;
+
 	public function configure()	{	
 		
 		parent::configure();

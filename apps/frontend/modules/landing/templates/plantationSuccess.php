@@ -32,10 +32,9 @@ else {
 
 use_stylesheet('landingPlantation.css?v='.sfConfig::get('app_media_version'));
 use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
-
 if(
 		$isPartenaire &&
-		$partenaire->getId() === sfConfig::get('app_sdf_id') &&
+		(int)$partenaire->getId() === (int)sfConfig::get('app_sdf_id') &&
 		$operation === '1arbre'
 ) {
 	include_partial('landing/storiste_de_france', array(

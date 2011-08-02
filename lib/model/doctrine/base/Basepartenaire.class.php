@@ -11,6 +11,7 @@
  * @property clob $accroche
  * @property clob $description
  * @property clob $page
+ * @property string $page_title
  * @property string $attestation
  * @property string $url
  * @property sfGuardUser $User
@@ -24,6 +25,7 @@
  * @method clob                getAccroche()    Returns the current record's "accroche" value
  * @method clob                getDescription() Returns the current record's "description" value
  * @method clob                getPage()        Returns the current record's "page" value
+ * @method string              getPageTitle()   Returns the current record's "page_title" value
  * @method string              getAttestation() Returns the current record's "attestation" value
  * @method string              getUrl()         Returns the current record's "url" value
  * @method sfGuardUser         getUser()        Returns the current record's "User" value
@@ -36,6 +38,7 @@
  * @method partenaire          setAccroche()    Sets the current record's "accroche" value
  * @method partenaire          setDescription() Sets the current record's "description" value
  * @method partenaire          setPage()        Sets the current record's "page" value
+ * @method partenaire          setPageTitle()   Sets the current record's "page_title" value
  * @method partenaire          setAttestation() Sets the current record's "attestation" value
  * @method partenaire          setUrl()         Sets the current record's "url" value
  * @method partenaire          setUser()        Sets the current record's "User" value
@@ -80,6 +83,10 @@ abstract class Basepartenaire extends sfDoctrineRecord
         $this->hasColumn('page', 'clob', 65535, array(
              'type' => 'clob',
              'length' => 65535,
+             ));
+        $this->hasColumn('page_title', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
              ));
         $this->hasColumn('attestation', 'string', 128, array(
              'type' => 'string',

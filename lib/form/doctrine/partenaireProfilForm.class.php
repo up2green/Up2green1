@@ -29,7 +29,8 @@ class partenaireProfilForm extends partenaireForm
 			$this['programmes_list'], 
 			$this['page'], 
 			$this['attestation'], 
-			$this['user_id']
+			$this['user_id'],
+			$this['page_title']
 		);
 	}
 }

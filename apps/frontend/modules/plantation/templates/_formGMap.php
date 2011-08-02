@@ -6,6 +6,15 @@
     'partenaire' => isset($partenaire) ? $partenaire : null
 )); ?>
 
-<?php include_component("plantation", "mapLegend", array(
-    'partenaire' => isset($partenaire) ? $partenaire : null
-)); ?>
+<?php 
+
+if (isset ($partenaire) && !empty ($partenaire)) { 
+	if ($partenaire->getPageTitle() != '') {
+		echo link_to($partenaire->getPageTitle(), 'landing/pagePartenaire?partenaire='.$partenaire->getUser()->getUsername(), array('class' => 'partenaire-page-link'));
+	}
+}
+else {
+	include_component("plantation", "mapLegend");
+} 
+
+?>

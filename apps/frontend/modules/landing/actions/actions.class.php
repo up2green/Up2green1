@@ -29,7 +29,7 @@ class landingActions extends sfActions
 		$this->forward404Unless($user);
 		$this->partenaire = $user->getPartenaire();
 		$this->forward404If($this->partenaire->isNew());
-		
+		$this->forward404Unless($this->partenaire->getPage());
 	}
 	
 	public function executePlantation(sfWebRequest $request)

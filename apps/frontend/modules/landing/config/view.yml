@@ -1,16 +1,20 @@
 mapSuccess:
   stylesheets:
-    - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - default
     - "jquery-ui-1.8.1.custom.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
     - "min/jquery-ui-1.8.2.custom.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "plantation.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "plantation_planter.js?v=<?php echo sfConfig::get('app_media_version') ?>"
 
-all:
+pagePartenaireSuccess:
+  stylesheets: [-*]
+  javascripts: [-*]
+  layout: minimalist
+
+default:
   stylesheets:
     - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
-default:
   metas:
     title: Up2green Reforestation
   layout: landing

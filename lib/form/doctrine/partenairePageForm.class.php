@@ -12,7 +12,12 @@ class partenairePageForm extends partenaireForm
 {
 	protected $canEmbedProgramme = false;
 	protected $canEmbedLogo = false;
-	
+
+	public function configure() {
+		parent::configure();
+		$this->widgetSchema['page_title']->setAttribute('style', 'width:100%');
+	}
+
 	protected function removeFields() {
 
 		unset(

@@ -30,7 +30,8 @@ class partenaireAttestationForm extends partenaireForm
 			$this['title'], 
 			$this['url'], 
 			$this['logo'], 
-			$this['user_id']
+			$this['user_id'],
+			$this['page_title']
 		);
 	}
 	

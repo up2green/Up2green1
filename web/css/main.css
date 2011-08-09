@@ -469,3 +469,12 @@ div#sfWebDebugBar {
 div.attestation-wrapper {
 	margin: 20px 0;
 }
+
+a.partenaire-page-link {
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	font-size: 14px;
+	text-decoration:underline;
+	color:#0068DD;
+}

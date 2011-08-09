@@ -21,6 +21,8 @@ partenaire:
     page:
       type: clob(65535)
       default: null
+    page_title:
+      type: string(255)
     attestation:
       type: string(128)
       default: null

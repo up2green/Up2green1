@@ -1,6 +1,5 @@
 mapSuccess:
   stylesheets:
-    - default
     - "jquery-ui-1.8.1.custom.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
     - "min/jquery-ui-1.8.2.custom.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
@@ -12,7 +11,7 @@ pagePartenaireSuccess:
   javascripts: [-*]
   layout: minimalist
 
-default:
+all:
   stylesheets:
     - "plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   metas:

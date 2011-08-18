@@ -2,7 +2,7 @@
 
 // init
 include(dirname(__FILE__).'/../../bootstrap/functional.php');
-$voucher = myTestFunctional::getVoucher();
+//$voucher = myTestFunctional::getVoucher();
 
 // tests
 $browser = new myTestFunctional(new sfBrowser());
@@ -60,4 +60,14 @@ $browser
     ->info('3.3 - Expired voucher')
     ->info('3.4 - Already used voucher')
     ->info('3.5 - Valid voucher')
+	->info('4 - Landing Plantation - Sedif')
+	->get('/landing/plantation/vedif/special')
+	->with('request')->begin()
+		->isParameter('partenaire', 'vedif')
+		->isParameter('operation', 'special')
+	->end()
+	->with('response')->begin()
+		->isStatusCode(200)
+		->checkElement('#but:contains("500 000")', true)
+	->end()
 ;

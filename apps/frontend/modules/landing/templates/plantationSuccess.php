@@ -42,6 +42,17 @@ if(
 		'nbArbres' => $nbArbres
 	));
 }
+elseif(
+
+		$isPartenaire &&
+		(int)$partenaire->getId() === (int)sfConfig::get('app_vedif_id') &&
+		$operation === 'special'
+) {
+	include_partial('landing/vedif', array(
+		'partenaire' => $partenaire,
+		'nbArbres' => $nbArbres
+	));
+}
 else {
 ?>
 

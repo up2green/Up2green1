@@ -1,4 +1,13 @@
-<?php include_component('user', 'menuProfil'); ?>
+<?php 
+include_component('user', 'menuProfil'); 
+use_stylesheet('/sfDoctrinePlugin/css/default');
+use_javascript('/ahDoctrineEasyEmbeddedRelationsPlugin/js/ahDoctrineEasyEmbeddedRelationsPlugin.jQuery.js');
+?>
+
+<style>
+#sf_admin_container table th {display:none;}
+#sf_admin_container table table th {display:table-cell;}
+</style>
 
 <div class="module purple" style="width:700px;float:right;">
 	<div class="content center notitle">
@@ -29,17 +38,17 @@
 			<fieldset>
 				<legend><?php echo __('Vos logos'); ?></legend>
 				<table class="form no-field-width">
-					<tbody>
-						<tr>
-							<td class="label"><?php echo __('Ajouter des logos'); ?></td>
-							<td class="field"><?php echo $form['new_Logos']; ?></td>
-						</tr>
-						<?php if (false && isset ($form['Logos'])) : ?>
+					<tbody id="sf_admin_container">
+						<?php if (isset ($form['Logos'])) : ?>
 						<tr>
 							<td class="label"><?php echo __("Logos actuels"); ?></td>
 							<td class="field"><?php echo $form['Logos']; ?></td>
 						</tr>
 						<?php endif; ?>
+						<tr>
+							<td class="label"><?php echo __('Ajouter des logos'); ?></td>
+							<td class="field"><?php echo $form['new_Logos']; ?></td>
+						</tr>
 					</tbody>
 				</table>
 			</fieldset>

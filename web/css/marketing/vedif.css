@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "TheSansVeoliaW7Bld";
+  src: url("/fonts/marketing/vedif/TheSansVeolia-W7Bld.otf");
+}
+@font-face {
+  font-family: "TheSansVeoliaW3LigIT";
+  src: url("/fonts/marketing/vedif/TheSansVeolia-W3LigIT.otf");
+}
+@font-face {
+  font-family: "TheSansVeoliaW2ExLig";
+  src: url("/fonts/marketing/vedif/TheSansVeolia-W2ExLig.otf");
+}
+
+body {
+    color: #FFFFFF;
+    background: none;
+}
+
+#content {
+    margin-top: 0px;
+    width: 1300px;
+}
+
+h1 {
+    text-align: center;
+    color: #008A37;
+    font-family: "TheSansVeoliaW2ExLig";
+    font-size: 65px;
+	letter-spacing: 7px;
+	margin-top: 0px;
+}
+
+h2.accroche {
+    font-size: 18px;
+    padding: 20px 50px;
+    text-align: center;
+    color: #674c19;
+    font-family: "TheSansVeoliaW7Bld";
+}
+
+h3.accroche {
+    padding: 10px 60px;
+    text-align: center;
+}
+a {
+    font-size: 16px;
+    color: #0000fc;
+    font-family: "TheSansVeoliaW3LigIT";
+}
+p#linkToMoreInfo {
+	padding: 45px 0 0 100px;
+}
+
+#content-inner td{
+    vertical-align: top;
+    text-align: center;
+}
+
+#content-inner {
+    margin: 50px 50px 80px;
+    width: 90%;
+}
+
+#content-inner-left, #content-inner-right {
+    width:20%;
+}
+
+#content-inner-center div.module {
+    margin: 20px auto;
+    width: 340px;
+    float: none;
+    position: relative;
+    z-index: 10;
+}
+
+#content-inner-middle {
+    text-align: center;
+}
+#content-inner-right {}
+
+#compteur {
+    display: block;
+    height: 40px;
+    padding-left: 110px;
+}
+
+#compteur .chiffre {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    color: #41A62A;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    height: 25px;
+    padding: 4px 3px;
+    text-align: center;
+    width: 15px;
+}
+
+#compteur .exposant {
+    float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#but {
+margin: auto;
+    background-color: #008a37;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-family: "TheSansVeoliaW7Bld";
+	font-size: 16px;
+	padding: 5px;
+	width: 170px;
+	margin-top: 30px;
+	float: none;
+}
+
+.logo {
+    margin-bottom: 30px;
+	float: none;
+	width: 260px;
+
+}
+
+div.module {
+    background: none;
+}
+
+div.module .content {
+    color: #008a37;
+    font-size: 16px;
+    font-family: "TheSansVeoliaW7Bld";
+	width: 334px;
+}
+
+.black {
+	color: black;
+}

@@ -25,7 +25,7 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 
 ?>
 
-<?php if (isset($partenaire) && $partenaire->getTitle() === 'STORISTES DE FRANCE') : ?>
+<?php if ($isPartenaire && $partenaire->getId() == (int)sfConfig::get('app_sdf_id')) : ?>
 <style>body{background: url("/images/marketing/SdF/backgroundSite.jpg") no-repeat fixed center center transparent;}</style>
 <?php endif; ?>
 
@@ -62,6 +62,11 @@ use_stylesheet('blog.css?v='.sfConfig::get('app_media_version'));
 			<?php include_partial('plantation/formGMap', array(
 				'partenaire' => $partenaire
 			)); ?>
+		<p class="center">
+			<?php echo __("Vous avez un coupon de plantation ? {link}", array(
+				'{link}' => link_to(__("Cliquez ici"), '/landing/plantation/'.($isPartenaire ? $partenaire->getUser()->getUsername().($partenaire->getId() == sfConfig::get('app_vedif_id') ? '/special' : '') : ''), array('class'=> 'button green small'))
+			)); ?>
+		</p>
 		<div class="clear"></div>
 		</div>
 		<?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

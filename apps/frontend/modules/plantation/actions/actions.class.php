@@ -233,8 +233,8 @@ class plantationActions extends sfActions {
 			);
 
 			$html = $newsletter->getContent();
-			$html = str_replace('%treeNumber%', array_sum($trees), $html);
-
+			$html = str_replace('treeNumber', array_sum($trees), $html);
+			
 			$message->setBody($html, 'text/html');
 
 			if(file_exists($filename)) {

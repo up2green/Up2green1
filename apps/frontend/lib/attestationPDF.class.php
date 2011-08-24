@@ -33,7 +33,7 @@ class attestationPDF extends TCPDF {
 		$auto_page_break = $this->AutoPageBreak;
 		$this->SetAutoPageBreak(false, 0);
 		$img_file = $this->imgName;
-		if(preg_match('\/images\/pdf\/attestation_empty_sdf\.png', $img_file)) {
+		if(preg_match('#/images/pdf/attestation_empty_sdf\.png#', $img_file)) {
 			$this->Image($img_file, 0, 0, 162.04, 113.95, '', '', '', false, 300, '', false, false, 0);
 		}
 		else {

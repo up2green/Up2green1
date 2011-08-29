@@ -97,7 +97,15 @@ $(document).ready(function(){
 	});
 	
 	// désactivation du bouton submit si tree left > 0
-	$("input:submit[name='submitArbresProgramme'].gray").live('click', function(e) {e.preventDefault();});
+	$("input:submit[name='submitArbresProgramme'].gray").live('click', function(e) {
+		e.preventDefault();
+		$.gritter.add({
+			title: "'.__("Notice").'",
+			class_name: "flash_notice",
+			image: "/images/icons/48x48/tick.png",
+			text: "Merci de planter tous vos arbres avant de continuer"
+		});
+	});
 	
 	// mode de visualisation de la gMap
 	$("input[type=radio][name='gMapMode']", $("#gmapWrapper")).live("change", function(e){

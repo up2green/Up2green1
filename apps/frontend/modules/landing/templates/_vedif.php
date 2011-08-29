@@ -35,7 +35,7 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 		</td>
 		<td id="content-inner-center">
 			<h2 class="accroche">Bienvenue sur la plate-forme de reforestation<br /> du Service de l'eau<br /> du Syndicat des Eaux d'Ile-de-France<br /> et de son délégataire<br /> Veolia Eau d'Ile-de-France</h2>
-			<h3 class="accroche"><a href="#">Découvrez les programmes de plantation soutenus.</a></h3>
+			<h3 class="accroche"><a href="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/vedif">Découvrez les programmes de plantation soutenus.</a></h3>
 			<!-- module content -->
 			<div class="module">
 				<div class="content">
@@ -45,14 +45,14 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 						<p>
 							<input type="text" name="code" placeholder="Numéro de coupon" />
 							<input type="submit" class="button green medium" name="numCouponToUse" value="Plantez" />
-							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/plantation/sdf/1arbre" />
-							<input type="hidden" name="redirectUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/sdf" />
+							<input type="hidden" name="fromUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/plantation/vedif/special" />
+							<input type="hidden" name="redirectUrl" value="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/vedif" />
 						</p>
 					</form>
 
 				</div>
 			</div>
-			<p id="linkToMoreInfo"><a href="#">Vers un service de l'eau "neutre" en carbone : en savoir plus</a></p>
+			<p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau \"neutre\" en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
 		</td>
 		<td id="content-inner-right">
 			<img class="logo" src="/images/marketing/vedif/sedif.jpg" alt="Logo Sedif"/>
@@ -66,6 +66,4 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 	</tr>
 </table>
 <div class="clear"></div>
-
-
 </div>

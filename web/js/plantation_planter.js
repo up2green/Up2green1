@@ -100,7 +100,7 @@ $(document).ready(function(){
 	$("input:submit[name='submitArbresProgramme'].gray").live('click', function(e) {
 		e.preventDefault();
 		$.gritter.add({
-			title: "'.__("Notice").'",
+			title: "Notice",
 			class_name: "flash_notice",
 			image: "/images/icons/48x48/tick.png",
 			text: "Merci de planter tous vos arbres avant de continuer"

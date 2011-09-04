@@ -58,7 +58,7 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
       </td>
       <td id="content-inner-right">
         <?php echo link_to(image_tag('marketing/vedif/sedif.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'http://www.sedif.com/'); ?>
-        <?php echo link_to(image_tag('marketing/vedif/veolia.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'https://www.service-client.veoliaeau.fr/site/veolia/Accueil/votre-ville/VEDIF'); ?>
+        <?php echo image_tag('marketing/vedif/veolia.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")); ?>
         
         <div id="but">
           <p>142 000 arbres<br /> à planter en 2011,<br /> année internationale<br /> des forêts.</p>

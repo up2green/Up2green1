@@ -84,6 +84,10 @@ p#linkToMoreInfo {
     padding-left: 110px;
 }
 
+#compteur.small {
+    height: 35px;
+}
+
 #compteur .chiffre {
     background-color: #FFFFFF;
     border: 1px solid #000000;
@@ -95,6 +99,19 @@ p#linkToMoreInfo {
     padding: 4px 3px;
     text-align: center;
     width: 15px;
+}
+
+#compteur.small .chiffre {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    color: #41A62A;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    height: 17px;
+    padding: 3px 2px;
+    text-align: center;
+    width: 11px;
 }
 
 #compteur .exposant {

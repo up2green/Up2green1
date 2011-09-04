@@ -1,16 +1,6 @@
 <?php
 use_stylesheet('marketing/vedif.css?v='.sfConfig::get('app_media_version'));
-
 $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
-
-$arrayNombre = array(
-	substr($nbArbres, -5, 1),
-	substr($nbArbres, -4, 1),
-	substr($nbArbres, -3, 1),
-	substr($nbArbres, -2, 1),
-	substr($nbArbres, -1, 1),
-);
-
 $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>
 
@@ -27,17 +17,22 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
           <img src="/images/logo/200x200/earth-hand.png" alt="Logo Up2green"/>
         </a>
         <div id="compteur">
-          <div class="chiffre"><?php echo $arrayNombre[0] ?></div>
-          <div class="chiffre"><?php echo $arrayNombre[1] ?></div>
-          <div class="chiffre"><?php echo $arrayNombre[2] ?></div>
-          <div class="chiffre"><?php echo $arrayNombre[3] ?></div>
-          <div class="chiffre"><?php echo $arrayNombre[4] ?></div>
+          <div class="chiffre"><?php echo $nbArbres[0] ?></div>
+          <div class="chiffre"><?php echo $nbArbres[1] ?></div>
+          <div class="chiffre"><?php echo $nbArbres[2] ?></div>
+          <div class="chiffre"><?php echo $nbArbres[3] ?></div>
+          <div class="chiffre"><?php echo $nbArbres[4] ?></div>
         </div>
         <img src="/images/marketing/vedif/main.png" alt="Image main"/>
       </td>
       <td id="content-inner-center">
-        <h2 class="accroche">Bienvenue sur la plate-forme de reforestation<br /> du Service de l'eau<br /> du Syndicat des Eaux d'Ile-de-France<br /> et de son délégataire<br /> Veolia Eau d'Ile-de-France</h2>
-        <h3 class="accroche"><a href="<?php echo sfConfig::get('app_url_plantation'); ?>landing/map/vedif">Découvrez les programmes de plantation soutenus.</a></h3>
+        <h2 class="accroche">
+          Bienvenue sur la plate-forme de reforestation<br /> du Service de l'eau<br /> du Syndicat des Eaux d'Ile-de-France<br /> et de son délégataire<br /> Veolia Eau d'Ile-de-France
+        </h2>
+        
+        <h3 class="accroche">
+          <?php echo link_to("Découvrez les programmes de plantation soutenus.", '/landing/partenaire/vedif/decouverte'); ?>
+        </h3>
         <!-- module content -->
         <div class="module">
           <div class="content">
@@ -54,14 +49,15 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 
           </div>
         </div>
-        <p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau \"neutre\" en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
+        <p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau neutre en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
       </td>
       <td id="content-inner-right">
         <?php echo link_to(image_tag('marketing/vedif/sedif.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'http://www.sedif.com/'); ?>
-        <?php echo image_tag('marketing/vedif/veolia.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")); ?>
+        <?php echo image_tag('marketing/vedif/veolia.jpg', array('class' => 'logo', 'alt' => "Logo Veolia")); ?>
         
         <div id="but">
-          <p>142 000 arbres<br /> à planter en 2011,<br /> année internationale<br /> des forêts.</p>
+          <p>Plantation de<br />142 000 arbres en 2011,<br /> année internationale<br /> des forêts.</p>
+          <br />
           <p>Environ 500 000 arbres par an à partir de 2012.</p>
         </div>
       </td>

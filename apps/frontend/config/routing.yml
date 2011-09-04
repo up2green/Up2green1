@@ -88,6 +88,13 @@ plantation_landing_plantation:
   url: /plantation/landing/plantation/:partenaire/:operation
   param: {module: landing, action: plantation, partenaire: 0, operation: 0}
 
+landing_partenaire:
+  url: /landing/partenaire/:partenaire/:operation
+  param: {module: landing, action: partenaire, partenaire: 0, operation: 0}
+plantation_landing_partenaire:
+  url: /plantation/landing/partenaire/:partenaire/:operation
+  param: {module: landing, action: partenaire, partenaire: 0, operation: 0}
+
 
 ####################
 ##### BLOG

@@ -31,7 +31,7 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
         </h2>
         
         <h3 class="accroche">
-          <?php echo link_to("Découvrez les programmes de plantation soutenus.", '/landing/partenaire/vedif/decouverte'); ?>
+          <?php echo link_to("Découvrez les programmes de plantation soutenus.", '/landing/partenaire/vedif/decouvert', array('target' => '_blank')); ?>
         </h3>
         <!-- module content -->
         <div class="module">
@@ -49,10 +49,10 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 
           </div>
         </div>
-        <p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau neutre en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
+        <p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau neutre en carbone : en savoir plus", '/landing/pagePartenaire/vedif', array('target' => '_blank')); ?></p>
       </td>
       <td id="content-inner-right">
-        <?php echo link_to(image_tag('marketing/vedif/sedif.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'http://www.sedif.com/'); ?>
+        <?php echo link_to(image_tag('marketing/vedif/sedif.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'http://www.sedif.com/', array('target' => '_blank')); ?>
         <?php echo image_tag('marketing/vedif/veolia.jpg', array('class' => 'logo', 'alt' => "Logo Veolia")); ?>
         
         <div id="but">

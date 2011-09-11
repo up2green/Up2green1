@@ -10,7 +10,7 @@ partenaire:
       notnull: true
       unique: true
     title:
-      type: string(45)
+      type: string(4000)
       default: null
     accroche:
       type: clob(65535)

@@ -13,18 +13,10 @@
 				<td><img class="gmap-programme" src="/uploads/programme/<?php echo $programme->getLogo() ?>" alt="Diapo Image" /></td>
 				<?php endif; ?>
 				<td style="vertical-align: middle;font-size:13px;">
-					<?php if (isset ($partenaire) && $showPerPartenaire && $partenaire) : ?>
-					<p><?php echo __("Capacité de plantation, soutenue par {partenaire} : {number}/{max} arbres plantés", array(
-						'{number}' => number_format($programmeTrees, 0, ',', ' '),
-						'{max}' => number_format($max, 0, ',', ' '),
-						'{partenaire}' => '<strong style="color:#183F00">'.$partenaire->getTitle().'</strong>'
-					)) ?></p>
-					<?php else : ?>
-					<p><?php echo __("Capacité : {number}/{max} arbres plantés", array(
+					<p><?php echo __("Capacité de plantation : {number}/{max} arbres plantés", array(
 						'{number}' => number_format($programmeTrees, 0, ',', ' '),
 						'{max}' => number_format($max, 0, ',', ' ')
 					)) ?></p>
-					<?php endif; ?>
 					<div class="programme-graph-wrapper">
 						<div style="width: <?php echo $displayPourcent ?>%;" class="green" href="#"></div>
 					</div>

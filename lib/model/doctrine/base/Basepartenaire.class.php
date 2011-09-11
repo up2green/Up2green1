@@ -68,9 +68,9 @@ abstract class Basepartenaire extends sfDoctrineRecord
              'unique' => true,
              'length' => 20,
              ));
-        $this->hasColumn('title', 'string', 45, array(
+        $this->hasColumn('title', 'string', 4000, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 4000,
              ));
         $this->hasColumn('accroche', 'clob', 65535, array(
              'type' => 'clob',

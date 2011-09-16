@@ -50,7 +50,8 @@
 			'moduleClass'	=> 'purple',
 			'displayIcon'	=> true,
 			'displayTitle'	=> true,
-			'partenaire'	=> $partenaire
+			'partenaire'	=> $partenaire,
+      'withoutLink' => true
 		)); ?>
     
   </div>

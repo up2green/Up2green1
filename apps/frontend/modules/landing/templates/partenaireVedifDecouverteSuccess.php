@@ -1,6 +1,6 @@
 <?php
   $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
-  $partenaire->setTitle("Des programmes soutenus par le Service de l'eau du Sedif")
+  $partenaire->setTitle("Des programmes soutenus par le Service de l'eau du Sedif");
 ?>
 
 <style>
@@ -21,7 +21,7 @@
       <img class="title corner left" src="/images/module/green/icon/program.png" alt="" />
       <div class="content" style="text-align:center;">
         <a target="_blank" href="<?php echo sfConfig::get('app_url_moteur') ?>">
-          <img style="z-index: 300000; position: relative; width: 140px; margin-top: -25px;" src="/images/logo/200x200/earth-hand.png" alt="up2green" />
+          <img style="z-index: 300000; position: relative; width: 140px;" src="/images/logo/200x200/earth-hand.png" alt="up2green" />
         </a>
         <div id="compteur" class="small"style="padding-left:70px">
           <div class="chiffre"><?php echo $nbArbres[0] ?></div>

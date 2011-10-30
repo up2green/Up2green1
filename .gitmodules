@@ -1,0 +1,3 @@
+[submodule "plugins/sfOAuthPlugin"]
+	path = plugins/sfOAuthPlugin
+	url = git://github.com/chok/sfOAuthPlugin.git

@@ -56,3 +56,7 @@ all:
     id: 16945
     hostname: http://yssads.ddc.com/
     path: x1.php
+    
+  oauth:
+    key: dj0yJmk9b3RGeE84YjBrTldnJmQ9WVdrOVUxSjZXR1ZtTlRJbWNHbzlNVFF4TmpZeU5EVTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1iYQ--
+    secret: 71db0f552d398be0c9e60aab24da4f4bea4418cf

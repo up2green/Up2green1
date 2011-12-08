@@ -32,18 +32,24 @@ all:
   base_search: 10
   more_search: 10
   max_programme_plantation_list: 10
+  show_shop_results: false
+  
   ckeditor:
     basePath:         "/js/ckeditor/"
+  
   ckfinder:
     active:           true
     basePath:         '/js/ckfinder/'
+  
   google_maps_api:
     keys:
       localhost: ABQIAAAAOI4H-vEy3CLlbxYWTrlYpxT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQgsz41bwGYX_jBw9Zh-vi7zT4z-A
+  
   url:
-    engine_web: http://boss.yahooapis.com/ysearch/web/v1/
-    engine_image: http://boss.yahooapis.com/ysearch/images/v1/
-    engine_news: http://boss.yahooapis.com/ysearch/news/v1/
+    engine_web: http://yboss.yahooapis.com/ysearch/web
+    engine_limitedweb: http://yboss.yahooapis.com/ysearch/limitedweb
+    engine_image: http://yboss.yahooapis.com/ysearch/images
+    engine_news: http://yboss.yahooapis.com/ysearch/news
     
   blog:
     bloc_articles_max: 3
@@ -56,7 +62,7 @@ all:
     id: 16945
     hostname: http://yssads.ddc.com/
     path: x1.php
-    
+
   oauth:
     key: dj0yJmk9b3RGeE84YjBrTldnJmQ9WVdrOVUxSjZXR1ZtTlRJbWNHbzlNVFF4TmpZeU5EVTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD1iYQ--
     secret: 71db0f552d398be0c9e60aab24da4f4bea4418cf

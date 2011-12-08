@@ -1,17 +1,6 @@
 <?php
 use_stylesheet('marketing/sdf.css?v='.sfConfig::get('app_media_version'));
-
 $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
-
-$arrayNombre = array(
-	substr($nbArbres, -5, 1),
-	substr($nbArbres, -4, 1),
-	substr($nbArbres, -3, 1),
-	substr($nbArbres, -2, 1),
-	substr($nbArbres, -1, 1),
-);
-
-$exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>
 
 <div id="content">
@@ -25,11 +14,11 @@ $exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 				Déjà
 			</p>
 			<div id="compteur">
-				<div class="chiffre"><?php echo $arrayNombre[0] ?></div>
-				<div class="chiffre"><?php echo $arrayNombre[1] ?></div>
-				<div class="chiffre"><?php echo $arrayNombre[2] ?></div>
-				<div class="chiffre"><?php echo $arrayNombre[3] ?></div>
-				<div class="chiffre"><?php echo $arrayNombre[4] ?></div>
+				<div class="chiffre"><?php echo $nbArbres[0] ?></div>
+                <div class="chiffre"><?php echo $nbArbres[1] ?></div>
+                <div class="chiffre"><?php echo $nbArbres[2] ?></div>
+                <div class="chiffre"><?php echo $nbArbres[3] ?></div>
+                <div class="chiffre"><?php echo $nbArbres[4] ?></div>
 			</div>
 			<p style="padding: 5px; text-align: center; font-size: 18px; line-height: 21px;">
 				arbres plantés avec Storistes de France

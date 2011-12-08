@@ -33,7 +33,7 @@ class landingActions extends sfActions
     $this->forward404Unless($this->partenaire);
     
     $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
-    $this->nbArbres += Doctrine_Core::getTable('coupon')->countUsedByPartenaire($this->partenaire->getId());
+    $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
     
     return ucfirst($partenaireSlug).ucfirst($this->operation).'Success';
 	}
@@ -51,7 +51,7 @@ class landingActions extends sfActions
 	}
 	
 	public function executePlantation(sfWebRequest $request)
-	{		
+	{
 		$partenaireSlug = $request->getParameter('partenaire');
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
@@ -61,11 +61,10 @@ class landingActions extends sfActions
 			
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();
-				$this->nbArbres = 0;
+                $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
 				
 				if(!empty($this->partenaire)) {
-					$this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
-          $this->nbArbres += Doctrine_Core::getTable('coupon')->countUsedByPartenaire($this->partenaire->getId());
+                    $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
 				}
 			}
 		}
@@ -82,33 +81,20 @@ class landingActions extends sfActions
 
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();
-				$this->nbArbres = 0;
-
+                $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
+				
 				if(!empty($this->partenaire)) {
-					// comptage des arbres planté par l'utilisateur partenaire directement
-					$this->nbArbres = Doctrine_Core::getTable('tree')
-						->createQuery('t')
-						->select('COUNT(id)')
-						->innerJoin('t.User tu')
-						->where('tu.user_id = ?', $user->getId())
-						->count();
-					// comptage des arbres planté par les coupons du partenaire
-					$this->nbArbres += Doctrine_Core::getTable('coupon')
-						->createQuery('c')
-						->select('COUNT(id)')
-						->innerJoin('c.Partenaire cp')
-						->where('cp.partenaire_id = ?', $this->partenaire->getId())
-						->andWhere('c.is_active = ?', 0)
-						->count();
+                    $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
 				}
-			
-        $partenaireProgrammes = $this->partenaire->getProgrammes();
-        $programmes = array();
-        foreach($partenaireProgrammes as $partenaireProgramme) {
-          $programmes[] = $partenaireProgramme->getProgramme();
-        }
-        $this->programmes = $programmes;
-      }
+
+                $partenaireProgrammes = $this->partenaire->getProgrammes();
+                
+                $programmes = array();
+                foreach($partenaireProgrammes as $partenaireProgramme) {
+                    $programmes[] = $partenaireProgramme->getProgramme();
+                }
+                $this->programmes = $programmes;
+            }
 		}
 		else {
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();

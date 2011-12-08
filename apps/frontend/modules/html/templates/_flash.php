@@ -5,7 +5,7 @@ if (!function_exists('getFlashNotice')) {
 		switch($qName) {
 			case 'creation-compte': return __("Vous êtes maintenant inscrit et connecté à up2green.");
 			case 'modif-ok': return __("Vos modifications ont bien été prises en compte.");
-			case 'email-confirmation': return __("Vous aller recevoir un email attestant de votre plantation.");
+			case 'email-confirmation': return __("Vous allez recevoir un email attestant de votre plantation.");
 			case 'plant-succes': return __("Vos arbres ont bien été plantés !");
 			case 'invitation-success': return __("Vos invitations ont bien été envoyées.");
 			case 'cadeau-arbre-new': return __("Vous avez gagné un arbre grâce à l'ouverture de votre compte !");

@@ -1,7 +1,6 @@
 <?php
 use_stylesheet('marketing/vedif.css?v='.sfConfig::get('app_media_version'));
 $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
-$exposant = $nbArbres > 1 ? "ième" : ($nbArbres == 1 ? "er" : "");
 ?>
 
 <div id="content">

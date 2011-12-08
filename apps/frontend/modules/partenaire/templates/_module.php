@@ -6,13 +6,13 @@
 
 	<?php if (isset ($displayTitle) && $displayTitle) : ?>
 	<p class="title indent">
-		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) && !$withoutLink)) : ?>
+		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) || !$withoutLink)) : ?>
 		<a target="_blank" href="<?php echo $partenaire->getUrl(); ?>">
 		<?php endif; ?>
 		
 		<?php echo $partenaire->getTitle() ?>
 		
-		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) && !$withoutLink)) : ?>
+		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) || !$withoutLink)) : ?>
 		</a>
 		<?php endif; ?>
     </p>
@@ -25,7 +25,7 @@
       'withoutLink' => isset ($withoutLink) && $withoutLink === true
     )); ?>
 
-		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) && !$withoutLink)) : ?>
+		<?php if ($partenaire->getUrl() && (!isset ($withoutLink) || !$withoutLink)) : ?>
 		<a class="light" target="_blank" href="<?php echo $partenaire->getUrl(); ?>">
 		<?php endif; ?>
 

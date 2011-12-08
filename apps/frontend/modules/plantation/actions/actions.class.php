@@ -271,8 +271,9 @@ class plantationActions extends sfActions {
 
 		$this->fromUrl = $session['fromUrl'];
 		$this->redirectUrl = $session['redirectUrl'];
-		$code = $session['code'];
-	
+        
+		$code = isset($session['code']) ? $session['code'] : null;
+
 		$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		$this->coupon = null;
 		$this->partenaire = null;
@@ -475,7 +476,7 @@ class plantationActions extends sfActions {
 		
 		$queryProgrammes = Doctrine::getTable('programme')
 						->addLangQuery($this->getUser()->getCulture())
-						->select('p.id, t.title');
+						->select('p.id, pt.title');
 		
 		$this->programmes = Doctrine::getTable('programme')->getArrayById($queryProgrammes);
 		

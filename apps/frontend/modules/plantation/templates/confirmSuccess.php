@@ -41,9 +41,7 @@
 					if(!empty($partenaire) && !$isThePartenaire) {
 						if ((int)$partenaire->getId() === (int)sfConfig::get('app_vedif_id'))
 						{
-							echo __("{:partenaire} vous remercient de votre implication dans son opération.", array(
-								'{:partenaire}' => $partenaire->getTitle()
-							));
+							echo __("Les programmes soutenus par le Service de l'eau du SEDIF vous remercient de votre implication dans son opération.");
 						}
 						else
 						{

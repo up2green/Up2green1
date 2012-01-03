@@ -52,8 +52,5 @@ all:
       transport:
         class: Swift_SmtpTransport
         param:
-          host:       mail.gandi.net
+          host:       smtp.free.fr
           port:       25
-          encryption: 
-          username:   webmaster@up2green.com
-          password:   smartw3bm@il

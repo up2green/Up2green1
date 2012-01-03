@@ -1,5 +1,5 @@
 <?php
-  $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
+  $nbArbres = str_pad(($nbArbres - 180) , 5, "0", STR_PAD_LEFT);
   $partenaire->setTitle("Des programmes soutenus par le Service de l'eau du Sedif");
 ?>
 

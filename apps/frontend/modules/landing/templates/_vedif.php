@@ -1,6 +1,6 @@
 <?php
 use_stylesheet('marketing/vedif.css?v='.sfConfig::get('app_media_version'));
-$nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
+$nbArbres = str_pad(($nbArbres - 180), 5, "0", STR_PAD_LEFT);
 ?>
 
 <div id="content">
@@ -26,7 +26,7 @@ $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
       </td>
       <td id="content-inner-center">
         <h2 class="accroche">
-          Bienvenue sur la plate-forme de reforestation<br /> du Service de l'eau<br /> du Syndicat des Eaux d'Ile-de-France<br /> et de son délégataire<br /> Veolia Eau d'Ile-de-France
+          Bienvenue sur la plateforme de reforestation<br /> du Service public de l'eau<br /> du Syndicat des Eaux d'Ile-de-France<br /> et de son délégataire<br /> Veolia Eau d'Ile-de-France
         </h2>
         
         <h3 class="accroche">
@@ -48,7 +48,7 @@ $nbArbres = str_pad($nbArbres, 5, "0", STR_PAD_LEFT);
 
           </div>
         </div>
-        <p id="linkToMoreInfo"><?php echo link_to("Vers un service de l'eau neutre en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
+        <p id="linkToMoreInfo"><?php echo link_to("Vers un service public de l'eau neutre en carbone : en savoir plus", '/landing/pagePartenaire/vedif'); ?></p>
       </td>
       <td id="content-inner-right">
         <?php echo link_to(image_tag('marketing/vedif/sedif.jpg', array('class' => 'logo', 'alt' => "Logo Sedif")), 'http://www.sedif.com/'); ?>

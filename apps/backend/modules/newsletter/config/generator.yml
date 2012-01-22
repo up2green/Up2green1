@@ -16,6 +16,12 @@ generator:
       fields:  ~
       list:
         display: [=title, is_forced, sent_at]
+        object_actions:
+          _edit:        ~
+          _delete:      ~
+          sendToOne:        { label: Send to one, action: sendToOne }
+          sendToAll:        { label: Send to all, action: sendToAll }
+          sendToAllForced:  { label: Send to all (without check), action: sendToAllForced }
       filter:  ~
       form:    ~
       edit:    ~

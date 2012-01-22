@@ -9,18 +9,21 @@
  * @property string $ip
  * @property string $email
  * @property integer $coupon_id
+ * @property boolean $is_newsletter
  * @property coupon $coupon
  * 
- * @method integer   getId()        Returns the current record's "id" value
- * @method string    getIp()        Returns the current record's "ip" value
- * @method string    getEmail()     Returns the current record's "email" value
- * @method integer   getCouponId()  Returns the current record's "coupon_id" value
- * @method coupon    getCoupon()    Returns the current record's "coupon" value
- * @method logCoupon setId()        Sets the current record's "id" value
- * @method logCoupon setIp()        Sets the current record's "ip" value
- * @method logCoupon setEmail()     Sets the current record's "email" value
- * @method logCoupon setCouponId()  Sets the current record's "coupon_id" value
- * @method logCoupon setCoupon()    Sets the current record's "coupon" value
+ * @method integer   getId()            Returns the current record's "id" value
+ * @method string    getIp()            Returns the current record's "ip" value
+ * @method string    getEmail()         Returns the current record's "email" value
+ * @method integer   getCouponId()      Returns the current record's "coupon_id" value
+ * @method boolean   getIsNewsletter()  Returns the current record's "is_newsletter" value
+ * @method coupon    getCoupon()        Returns the current record's "coupon" value
+ * @method logCoupon setId()            Sets the current record's "id" value
+ * @method logCoupon setIp()            Sets the current record's "ip" value
+ * @method logCoupon setEmail()         Sets the current record's "email" value
+ * @method logCoupon setCouponId()      Sets the current record's "coupon_id" value
+ * @method logCoupon setIsNewsletter()  Sets the current record's "is_newsletter" value
+ * @method logCoupon setCoupon()        Sets the current record's "coupon" value
  * 
  * @package    up2green
  * @subpackage model
@@ -52,6 +55,11 @@ abstract class BaselogCoupon extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 4,
+             ));
+        $this->hasColumn('is_newsletter', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => 1,
              ));
     }
 

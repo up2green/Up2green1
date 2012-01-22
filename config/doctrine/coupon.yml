@@ -109,6 +109,10 @@ logCoupon:
       type: integer(4)
       notnull: true
       unique: true
+    is_newsletter:
+      type: boolean
+      notnull: true
+      default: 1
   relations:
     coupon:
       local: coupon_id

@@ -7,40 +7,74 @@
  */
 class filleulTable extends Doctrine_Table
 {
+
+  public function getDistinctEmails($forced = false, $excludes = array())
+  {
+    $excludes[] = '';
+
+    $q = $this->createQuery('f')
+      ->select('DISTINCT(f.email_address) as email')
+      ->orderBy('f.email_address')
+      ->whereNotIn('f.email_address', $excludes)
+      ->andWhere('f.email_address IS NOT NULL');
+
+    if (!$forced) {
+      $q->andWhere('f.is_newsletter = ?', 1);
+    }
+
+    $values = $q->fetchArray();
+    $return = array();
+
+    foreach ($values as $value) {
+      $return[] = $value['email'];
+    }
+
+    return $return;
+  }
+
   // -----------------------------------------
-	
-	public function getArray(Doctrine_Query $q = null) {
-		return $this->addQuery($q)->fetchArray();
-	}
-  
-	public function count(Doctrine_Query $q = null) {
-		return $this->addQuery($q)->count();
-	}
 
-	public function getOne(Doctrine_Query $q = null) {
-		return $this->addQuery($q)->fetchOne();
-	}
+  public function getArray(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->fetchArray();
+  }
 
-	public function get(Doctrine_Query $q = null) {
-		return $this->addQuery($q)->execute();
-	}
-	
-	// -----------------------------------------
-	/* Return Query */
-	// -----------------------------------------
-   
-	public function addQuery(Doctrine_Query $q = null) {
-		if (is_null($q)) {$q = $this->createQuery('f');}
-		$alias = $q->getRootAlias();
-		$q->addOrderBy($alias . '.created_at DESC');
-		return $q;
-	}
-	
-	// -----------------------------------------
-	/* default */
-	// -----------------------------------------
+  public function count(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->count();
+  }
 
-  public static function getInstance() {
+  public function getOne(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->fetchOne();
+  }
+
+  public function get(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->execute();
+  }
+
+  // -----------------------------------------
+  /* Return Query */
+  // -----------------------------------------
+
+  public function addQuery(Doctrine_Query $q = null)
+  {
+    if (is_null($q)) {
+      $q = $this->createQuery('f');
+    }
+    $alias = $q->getRootAlias();
+    $q->addOrderBy($alias . '.created_at DESC');
+    return $q;
+  }
+
+  // -----------------------------------------
+  /* default */
+  // -----------------------------------------
+
+  public static function getInstance()
+  {
     return Doctrine_Core::getTable('filleul');
   }
+
 }

@@ -15,7 +15,7 @@ profil:
     is_newsletter:
       type: integer(1)
       notnull: true
-      default: 0
+      default: 1
     culture:
       type: string(7)
       default: 'fr_FR'
@@ -39,6 +39,21 @@ preinscription:
       type: string(128)
       notnull: true
       unique: true
+    is_newsletter:
+      type: boolean
+      notnull: true
+      default: 1
+
+mailingList:
+  columns:
+    email_address:
+      type: string(255)
+      notnull: true
+      unique: true
+    is_newsletter:
+      type: boolean
+      notnull: true
+      default: 1
 
 filleul:
   actAs:
@@ -54,6 +69,10 @@ filleul:
       type: string(255)
       notnull: true
       unique: true
+    is_newsletter:
+      type: boolean
+      notnull: true
+      default: 0
   relations:
     Parrain:
       class: sfGuardUser
@@ -65,7 +84,6 @@ filleul:
       local: filleul_id
       foreignType:  one
       foreignAlias: Parrain
-    
 
 session:
   columns:
@@ -109,3 +127,4 @@ session:
     user_agent:
       type: string
       length: 255
+      

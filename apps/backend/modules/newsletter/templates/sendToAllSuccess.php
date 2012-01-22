@@ -10,7 +10,11 @@
 
   <div id="sf_admin_content">
     <div class="sf_admin_form">
-      <form action="<?php echo url_for('@newsletter_send_to_all?id='.$newsletter->getId().'&forced='.(int)$forced); ?>" method="POST">
+      <?php if ($forced) : ?>
+      <form action="<?php echo url_for('@newsletter_send_to_all_forced?id='.$newsletter->getId()); ?>" method="POST">
+      <?php else : ?>
+      <form action="<?php echo url_for('@newsletter_send_to_all?id='.$newsletter->getId()); ?>" method="POST">
+      <?php endif; ?>
           <table>
               <?php echo $form ?>
               <tr>

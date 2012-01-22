@@ -41,7 +41,7 @@ class newsletterActions extends autoNewsletterActions
   public function executeSendToAllForced(sfWebRequest $request)
   {
     $request->setParameter("forced", true);
-    $this->forward('sendToAll');
+    $this->forward('newsletter', 'sendToAll');
   }
 
   public function executeSendToAll(sfWebRequest $request)

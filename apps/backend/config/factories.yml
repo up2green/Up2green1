@@ -62,8 +62,8 @@ all:
       transport:
         class: Swift_SmtpTransport
         param:
-          host:             mail.gandi.net
-          port:             465
+          host:       smtp.gmail.com
+          port:       465
           encryption:       ssl
-          username:         webmaster@up2green.com
-          password:         smartw3bm@il
+          username:         clement.gautier.76@gmail.com
+          password:         fragilow94

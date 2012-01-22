@@ -48,7 +48,7 @@ all:
   
   user:
     param:
-      timeout: 1800
+      timeout: false
   
   routing:
     class: sfPatternRouting

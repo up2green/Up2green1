@@ -9,15 +9,18 @@
  * @property string $last_name
  * @property string $email_address
  * @property string $username
+ * @property boolean $is_newsletter
  * 
  * @method string         getFirstName()     Returns the current record's "first_name" value
  * @method string         getLastName()      Returns the current record's "last_name" value
  * @method string         getEmailAddress()  Returns the current record's "email_address" value
  * @method string         getUsername()      Returns the current record's "username" value
+ * @method boolean        getIsNewsletter()  Returns the current record's "is_newsletter" value
  * @method preinscription setFirstName()     Sets the current record's "first_name" value
  * @method preinscription setLastName()      Sets the current record's "last_name" value
  * @method preinscription setEmailAddress()  Sets the current record's "email_address" value
  * @method preinscription setUsername()      Sets the current record's "username" value
+ * @method preinscription setIsNewsletter()  Sets the current record's "is_newsletter" value
  * 
  * @package    up2green
  * @subpackage model
@@ -48,6 +51,11 @@ abstract class Basepreinscription extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 128,
+             ));
+        $this->hasColumn('is_newsletter', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => 1,
              ));
     }
 

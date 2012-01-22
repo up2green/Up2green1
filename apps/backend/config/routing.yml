@@ -73,7 +73,19 @@ partenaire:
 generate_coupons:
   url: /partenaire/generateCoupons/*
   param: { module: partenaire, action: generateCoupons }
-  
+
+newsletter_send_to_one:
+  url: /newsletter/:id/sendToOne
+  param: { module: newsletter, action: sendToOne }
+
+newsletter_send_to_all:
+  url: /newsletter/:id/sendToAll
+  param: { module: newsletter, action: sendToAll }
+
+newsletter_send_to_all_forced:
+  url: /newsletter/:id/sendToAllForced
+  param: { module: newsletter, action: sendToAllForced }
+
 user_forgot_password:
   url:   /forgotpwd
   param: { module: user, action: forgotPassword }

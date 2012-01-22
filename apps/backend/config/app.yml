@@ -1,8 +1,12 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
-# default values
-#all:
+dev:
+  link_to:
+    association:        http://association-up2green.smartit.fr/
+    search:             http://up2green.smartit.fr/
+    reforestation:      http://reforestation-up2green.smartit.fr/
+  
 all:
   sfJqueryTree:
     withContextMenu : false
@@ -15,4 +19,8 @@ all:
   ckfinder:
     active:           true
     basePath:         '/js/ckfinder/'
+  link_to:
+    association:      http://association.up2green.com/
+    search:           http://www.up2green.com/
+    reforestation:    http://reforestation.up2green.com/
 

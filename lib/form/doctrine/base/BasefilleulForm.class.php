@@ -19,6 +19,7 @@ abstract class BasefilleulForm extends BaseFormDoctrine
       'user_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Parrain'), 'add_empty' => false)),
       'filleul_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Filleul'), 'add_empty' => true)),
       'email_address' => new sfWidgetFormInputText(),
+      'is_newsletter' => new sfWidgetFormInputCheckbox(),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
     ));
@@ -28,6 +29,7 @@ abstract class BasefilleulForm extends BaseFormDoctrine
       'user_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Parrain'))),
       'filleul_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Filleul'), 'required' => false)),
       'email_address' => new sfValidatorString(array('max_length' => 255)),
+      'is_newsletter' => new sfValidatorBoolean(array('required' => false)),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),
     ));

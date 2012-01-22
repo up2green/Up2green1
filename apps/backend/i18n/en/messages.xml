@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff version="1.0">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="messages" date="2011-06-16T00:12:47Z" product-name="messages">
+    <header></header>
+    <body>
+      <trans-unit id="1">
+        <source>Si vous ne voulez plus recevoir de notifications de la part de Up2green, cliquez sur le lien ci-dessous.</source>
+        <target>If you do not wish to receive notifications from Up2green, click the URL below.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

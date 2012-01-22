@@ -57,7 +57,7 @@ abstract class Baseprofil extends sfDoctrineRecord
         $this->hasColumn('is_newsletter', 'integer', 1, array(
              'type' => 'integer',
              'notnull' => true,
-             'default' => 0,
+             'default' => 1,
              'length' => 1,
              ));
         $this->hasColumn('culture', 'string', 7, array(

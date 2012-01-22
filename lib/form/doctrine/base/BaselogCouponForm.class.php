@@ -15,21 +15,23 @@ abstract class BaselogCouponForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'ip'         => new sfWidgetFormInputText(),
-      'email'      => new sfWidgetFormInputText(),
-      'coupon_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('coupon'), 'add_empty' => false)),
-      'created_at' => new sfWidgetFormDateTime(),
-      'updated_at' => new sfWidgetFormDateTime(),
+      'id'            => new sfWidgetFormInputHidden(),
+      'ip'            => new sfWidgetFormInputText(),
+      'email'         => new sfWidgetFormInputText(),
+      'coupon_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('coupon'), 'add_empty' => false)),
+      'is_newsletter' => new sfWidgetFormInputCheckbox(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'ip'         => new sfValidatorString(array('max_length' => 15)),
-      'email'      => new sfValidatorString(array('max_length' => 50, 'required' => false)),
-      'coupon_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('coupon'))),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'ip'            => new sfValidatorString(array('max_length' => 15)),
+      'email'         => new sfValidatorString(array('max_length' => 50, 'required' => false)),
+      'coupon_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('coupon'))),
+      'is_newsletter' => new sfValidatorBoolean(array('required' => false)),
+      'created_at'    => new sfValidatorDateTime(),
+      'updated_at'    => new sfValidatorDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(

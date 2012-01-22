@@ -8,17 +8,20 @@
  * @property bigint $user_id
  * @property bigint $filleul_id
  * @property string $email_address
+ * @property boolean $is_newsletter
  * @property sfGuardUser $Parrain
  * @property sfGuardUser $Filleul
  * 
  * @method bigint      getUserId()        Returns the current record's "user_id" value
  * @method bigint      getFilleulId()     Returns the current record's "filleul_id" value
  * @method string      getEmailAddress()  Returns the current record's "email_address" value
+ * @method boolean     getIsNewsletter()  Returns the current record's "is_newsletter" value
  * @method sfGuardUser getParrain()       Returns the current record's "Parrain" value
  * @method sfGuardUser getFilleul()       Returns the current record's "Filleul" value
  * @method filleul     setUserId()        Sets the current record's "user_id" value
  * @method filleul     setFilleulId()     Sets the current record's "filleul_id" value
  * @method filleul     setEmailAddress()  Sets the current record's "email_address" value
+ * @method filleul     setIsNewsletter()  Sets the current record's "is_newsletter" value
  * @method filleul     setParrain()       Sets the current record's "Parrain" value
  * @method filleul     setFilleul()       Sets the current record's "Filleul" value
  * 
@@ -47,6 +50,11 @@ abstract class Basefilleul extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 255,
+             ));
+        $this->hasColumn('is_newsletter', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => 0,
              ));
     }
 

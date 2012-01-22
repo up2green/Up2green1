@@ -41,7 +41,6 @@ all:
     i18n:                   true
     default_culture:        fr
 
-    
   .actions:
     login_module:           sfGuardAuth
     login_action:           signin

@@ -27,8 +27,11 @@ dev:
       transport:
         class: Swift_SmtpTransport
         param:
-          host:       smtp.free.fr
-          port:       25
+          host:       smtp.gmail.com
+          port:       465
+          encryption:       ssl
+          username:         clement.gautier.76@gmail.com
+          password:         fragilow94
 
 all:
   storage:

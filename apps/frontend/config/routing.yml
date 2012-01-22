@@ -172,6 +172,10 @@ general_article:
   url:   /article/:slug
   param: { module: recherche, action: viewElement, type: article }
 
+unsuscribe:
+  url:    /newsletter/unsuscribe/:email
+  param:  { module: newsletter, action: unsuscribe }
+
 user_profil:
   url:   /user/profil/
   param: { module: user, action: profil }

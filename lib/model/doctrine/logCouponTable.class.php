@@ -27,6 +27,19 @@ class logCouponTable extends Doctrine_Table
     return $return;
   }
 
+  /**
+   * set the is_newsletter field to false for an email
+   * @param string $email 
+   */
+  public function unsuscribe($email)
+  {
+    Doctrine_Query::create()
+      ->update('logCoupon lc')
+      ->set('lc.is_newsletter', '?', 0)
+      ->where('lc.email = ?', $email)
+      ->execute();
+  }
+
   public static function getInstance()
   {
     return Doctrine_Core::getTable('logCoupon');

@@ -33,6 +33,19 @@ class mailingListTable extends Doctrine_Table
   }
 
   /**
+   * set the is_newsletter field to false for an email
+   * @param string $email 
+   */
+  public function unsuscribe($email)
+  {
+    Doctrine_Query::create()
+      ->update('mailingList ml')
+      ->set('ml.is_newsletter', '?', 0)
+      ->where('ml.email_address = ?', $email)
+      ->execute();
+  }
+
+  /**
    * Returns an instance of this class.
    *
    * @return object mailingListTable

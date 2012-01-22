@@ -32,6 +32,19 @@ class filleulTable extends Doctrine_Table
     return $return;
   }
 
+  /**
+   * set the is_newsletter field to false for an email
+   * @param string $email 
+   */
+  public function unsuscribe($email)
+  {
+    Doctrine_Query::create()
+      ->update('filleul f')
+      ->set('f.is_newsletter', '?', 0)
+      ->where('f.email_address = ?', $email)
+      ->execute();
+  }
+
   // -----------------------------------------
 
   public function getArray(Doctrine_Query $q = null)

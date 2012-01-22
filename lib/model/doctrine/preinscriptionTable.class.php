@@ -31,6 +31,19 @@ class preinscriptionTable extends Doctrine_Table
 
     return $return;
   }
+  
+  /**
+   * set the is_newsletter field to false for an email
+   * @param string $email 
+   */
+  public function unsuscribe($email)
+  {
+    Doctrine_Query::create()
+      ->update('preinscription p')
+      ->set('p.is_newsletter', '?', 0)
+      ->where('p.email_address = ?', $email)
+      ->execute();
+  }
 
   /**
    * Returns an instance of this class.

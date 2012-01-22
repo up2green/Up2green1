@@ -120,6 +120,17 @@ class newsletterActions extends autoNewsletterActions
       }
     }
 
+    sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
+
+    // unsuscribe part
+    $url = sfConfig::get('app_link_to_search').'newsletter/unsuscribe/'.base64_encode($email);
+
+    $html .= '<p>'
+      .__('Si vous ne voulez plus recevoir de notifications de la part de Up2green, cliquez sur le lien ci-dessous.')
+      .'<br />'
+      .'<a href="'.$url.'">'.$url.'</a>'
+      .'</p>';
+
     $message->setBody($html, 'text/html');
 
     return $message;

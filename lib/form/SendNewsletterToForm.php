@@ -13,8 +13,8 @@ class SendNewsletterToForm extends BaseForm
 
     // vars
     $this->embedForm('newsletterVars', new NewsletterVarCollectionForm(null, array(
-        'size' => 2,
-      )));
+      'size' => 5,
+    )));
     
     $this->widgetSchema->setNameFormat('sendNewsletterTo[%s]');
   }

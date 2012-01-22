@@ -28,6 +28,19 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     return $return;
   }
 
+  public function unsuscribe($email)
+  {
+    $user = $this->createQuery('u')
+      ->where('u.email_address = ?', $email)
+      ->fetchOne();
+
+    if ($user) {
+      $profile = $user->getProfile();
+      $profile->setIsNewsletter(false);
+      $profile->save();
+    }
+  }
+
   public function getUp2greenId()
   {
     $user = self::getInstance()

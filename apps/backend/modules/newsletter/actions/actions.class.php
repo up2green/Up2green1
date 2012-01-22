@@ -125,7 +125,7 @@ class newsletterActions extends autoNewsletterActions
     // unsuscribe part
     $url = sfConfig::get('app_link_to_search').'newsletter/unsuscribe/'.base64_encode($email);
 
-    $html .= '<p>'
+    $html .= '<p style="text-align:center;">'
       .__('Si vous ne voulez plus recevoir de notifications de la part de Up2green, cliquez sur le lien ci-dessous.')
       .'<br />'
       .'<a href="'.$url.'">'.$url.'</a>'

@@ -19,7 +19,10 @@ test:
       send_http_headers: false
 
 dev:
-   mailer:
+  storage:
+    param:
+      session_cookie_domain:   .smartit.fr
+  mailer:
     param:
       transport:
         class: Swift_SmtpTransport
@@ -33,6 +36,7 @@ all:
     param:
       session_name: up2greenSession
       session_cookie_lifetime: 31536000
+      session_cookie_domain:   .up2green.com
       db_table:     session
       database:     doctrine
       db_id_col:    sess_id

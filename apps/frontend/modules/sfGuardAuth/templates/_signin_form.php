@@ -1,7 +1,7 @@
 <?php use_helper('I18N') ?>
 <div class="module">
 	<img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-	<p class="title indent">Inscription</p>
+	<p class="title indent"><?php echo __('Se connecter') ?></p>
 	<div class="content" style="min-height:250px;">
 		<center>
 			<form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
@@ -19,6 +19,13 @@
 						<td class="field">
 							<?php echo $form['password']->renderError() ?>
 							<?php echo $form['password'] ?>
+						</td>
+					</tr>
+					<tr>
+						<td class="label"><?php echo $form['remember']->renderLabel() ?></th>
+						<td class="field">
+							<?php echo $form['remember']->renderError() ?>
+							<?php echo $form['remember'] ?>
 						</td>
 					</tr>
 				</tbody>

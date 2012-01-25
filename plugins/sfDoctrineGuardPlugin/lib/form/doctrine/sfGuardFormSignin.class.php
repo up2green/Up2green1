@@ -21,11 +21,5 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
 	public function configure()
 	{
 		parent::configure();
-		$this->widgetSchema['password']->setLabel('Mot de passe');
-
-		if (sfConfig::get('app_sf_guard_plugin_allow_login_with_email', true))
-		{
-		  $this->widgetSchema['username']->setLabel('Identifiant ou E-Mail');
-		}
 	}
 }

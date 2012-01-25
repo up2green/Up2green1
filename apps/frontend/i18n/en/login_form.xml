@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file original="login_form" source-language="fr" datatype="plaintext">
+    <body>
+      <trans-unit>
+        <source>Identifiant ou E-Mail</source>
+        <target>Email or Login</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Se souvenir de moi</source>
+        <target>Remember me</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

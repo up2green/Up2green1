@@ -14,7 +14,7 @@ class SearchEngine
 
   function __construct($text, $moteur)
   {
-    $this->search_text = $text;
+    $this->search_text = self::cleanText($text);
     $this->search_moteur = $moteur;
     $this->search_results = array();
   }
@@ -27,7 +27,7 @@ class SearchEngine
   public function getOneShopResult($min = 0)
   {
     $result = Doctrine::getTable('engine')
-      ->getArraySearch(htmlspecialchars($this->search_text), 1, $min);
+      ->getArraySearch($this->search_text, 1, $min);
 
     if (!empty($result))
     {
@@ -233,7 +233,7 @@ class SearchEngine
   {
 
     $results = Doctrine::getTable('engine')->getArraySearch(
-      htmlspecialchars($this->search_text), $min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'), $min
+      $this->search_text, $min == 0 ? sfConfig::get('app_base_search') : sfConfig::get('app_more_search'), $min
     );
 
     foreach ($results as $id => $result)
@@ -285,6 +285,13 @@ class SearchEngine
     }
   }
 
+  public static function cleanText($str, $charset='utf-8')
+  {
+    $str = str_replace("'", " ", $str);
+    $str = up2gTools::removeAccents($str);
+
+    return $str;
+  }
 }
 
 ?>

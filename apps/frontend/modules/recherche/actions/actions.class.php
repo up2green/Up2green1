@@ -11,41 +11,39 @@
 class rechercheActions extends sfActions
 {
 
-  /**
-   * Executes index action
-   *
-   * @param sfRequest $request A request object
-   */
   public function executeIndex(sfWebRequest $request)
   {
-    $params = $request->getParameterHolder();
+    $this->form = new SearchForm();
+    $this->totalTrees = Doctrine_Core::getTable('tree')->count();
+  }
+  
+  public function executeSearch(sfWebRequest $request)
+  {
+    $this->form = new SearchForm();
+    $this->form->bind(array(
+      'q' => $request->getParameter('q'),
+      'type' => $request->getParameter('type'),
+    ));
 
-    $this->results = array();
-    $this->textSearch = "";
-    $this->singleShopResult = array();
+    $this->forwardUnless($this->form->isValid(), 'recherche', 'index');
 
-    if (($strRecherche = $params->get('recherche_text')) || ($strRecherche = $params->get('q')))
-    {
-      $this->moteur = $params->get('hidden_moteur_search', SearchEngine::WEB);
-      $this->textSearch = $strRecherche;
-      $engine = new SearchEngine($this->textSearch, $this->moteur);
-      $this->results = $engine->getResults();
-      if (sfConfig::get('app_show_shop_results', true))
-      {
-        $this->singleShopResult = $engine->getOneShopResult();
-      }
-      $this->pubResults = $engine->getPubResults(4);
-    } else
-    {
-      $this->moteur = SearchEngine::WEB;
-      $this->totalTrees = Doctrine_Core::getTable('tree')->count();
-    }
+    $this->textSearch = $this->form->getValue('q');
+    $this->type = $this->form['type']->getValue();
+    $this->typeSlug = SearchEngine::getSlug($this->type);
+
+    $engine = new SearchEngine($this->textSearch, $this->type);
+    
+    $this->results = $engine->getResults();
+    $this->singleShopResult = sfConfig::get('app_show_shop_results', true) ? $engine->getOneShopResult() : array();
+    $this->pubResults = $engine->getPubResults();
   }
 
   public function executeViewElement(sfWebRequest $request)
   {
     $this->type = $request->getParameter('type');
-    $this->element = Doctrine::getTable(strtolower($this->type))->getOneActiveBySlug($request->getParameter("slug"));
+    $this->element = Doctrine::getTable(strtolower($this->type))
+      ->getOneActiveBySlug($request->getParameter("slug"));
+
     if (empty($this->element))
     {
       return $this->forward404();

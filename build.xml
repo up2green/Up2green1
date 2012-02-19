@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="${projectName}" default="main">
+  <!-- Properties -->
+  <property name="dir.reports" value="${project.basedir}/reports" />
+  <property name="dir.doc"     value="${project.basedir}/doc" />
+  <!-- Clean target -->
+  <target name="clean">
+    <delete dir="${dir.doc}" />
+    <delete dir="${dir.reports}" />
+    <mkdir dir="${dir.reports}" />
+    <mkdir dir="${dir.doc}" />
+  </target>
+  <!-- Default target -->
+  <target name="main" depends="clean,pdepend,phpmd,phpcpd,phpcs,phploc,phpdoc">
+    <echo msg="All analysis done." />
+  </target>
+  <!-- PHP API Documentation -->
+  <target name="phpdoc">
+    <echo msg="PHP Documentor..." />
+    <phpdoc title="Documentation of ${projectName}"
+      destdir="${dir.doc}"
+      sourcecode="yes"
+      defaultpackagename="${projectName}"
+      output="HTML:Smarty:default">
+      <fileset dir="${project.basedir}">
+        <!-- includes -->
+        <include name="**/config/*.class.php" />
+        <include name="**/actions/*.class.php" />
+        <include name="**/lib/*.class.php" />
+        <!-- excludes -->
+        <exclude name="**/templates/*" />
+        <exclude name="**/lib/vendor/*" />
+        <exclude name="**/base/*" />
+        <exclude name="**/lib/model/map/*" />
+        <exclude name="**/lib/model/om/*" />
+      </fileset>
+    </phpdoc>
+  </target>
+  <target name="docblox">
+      <echo msg="DocBlox..." />
+      <exec command="docblox run -d ./apps/,./lib/ -t ${dir.doc} -i */templates/*,*/lib/vendor/*,*/base/*,*/lib/model/map*,*/lib/model/om/*,*/skeleton/*" />
+  </target>
+  <!-- PHPLoc -->
+  <target name="phploc">
+    <taskdef name="phploc" classname="phing.tasks.my.PHPLocTask" />
+    <phploc reportType="csv" reportName="phploc" reportDirectory="${dir.reports}" countTests="true">
+      <fileset dir="${project.basedir}/apps">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+      </fileset>
+      <fileset dir="${project.basedir}/lib">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/migration/**" />
+        <exclude name="**/vendor/**" />
+      </fileset>
+    </phploc>
+  </target>
+  <!-- PHP Mess Detector -->
+  <target name="phpmd">
+    <echo msg="PHP Mess Detector..." />
+    <phpmd rulesets="codesize,unusedcode">
+      <fileset dir="${project.basedir}/apps">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+      </fileset>
+      <fileset dir="${project.basedir}/lib">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/migration/**" />
+        <exclude name="**/vendor/**" />
+      </fileset>
+      <formatter type="xml" outfile="${dir.reports}/pmd.xml" />
+    </phpmd>
+  </target>
+  <!-- PHP copy/paste analysis -->
+  <target name="phpcpd">
+    <echo msg="PHP Copy/Paste..." />
+    <phpcpd>
+      <fileset dir="${project.basedir}/apps">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+      </fileset>
+      <fileset dir="${project.basedir}/lib">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/migration/**" />
+        <exclude name="**/vendor/**" />
+      </fileset>
+      <formatter type="pmd" outfile="${dir.reports}/pmd-cpd.xml" />
+    </phpcpd>
+  </target>
+  <!-- PHP dependency checker -->
+  <target name="pdepend">
+    <echo msg="PHP Depend..." />
+    <phpdepend>
+      <fileset dir="${project.basedir}/apps">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+      </fileset>
+      <fileset dir="${project.basedir}/lib">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/migration/**" />
+        <exclude name="**/vendor/**" />
+      </fileset>
+      <logger type="jdepend-xml" outfile="${dir.reports}/jdepend.xml" />
+      <logger type="jdepend-chart" outfile="${dir.reports}/dependencies.svg" />
+      <logger type="overview-pyramid" outfile="${dir.reports}/overview-pyramid.svg" />
+    </phpdepend>
+  </target>
+  <!-- PHP CodeSniffer -->
+  <target name="phpcs">
+    <echo msg="PHP CodeSniffer..." />
+    <phpcodesniffer standard="Symfony" showSniffs="true" showWarnings="true">
+      <fileset dir="${project.basedir}/apps">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/*Success.php" />
+        <exclude name="**/*Error.php" />
+        <exclude name="**/layout.php" />
+        <exclude name="**/_*.php" />
+      </fileset>
+      <fileset dir="${project.basedir}/lib">
+        <include name="**/*.php" />
+        <exclude name="**/Base*" />
+        <exclude name="**/migration/**" />
+        <exclude name="**/vendor/**" />
+      </fileset>
+      <formatter type="checkstyle" outfile="${dir.reports}/checkstyle.xml" />
+    </phpcodesniffer>
+  </target>
+</project>

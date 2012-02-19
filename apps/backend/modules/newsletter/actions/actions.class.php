@@ -58,11 +58,17 @@ class newsletterActions extends autoNewsletterActions
         $oks = 0;
         $noks = 0;
 
+        ini_set('max_execution_time', 0);
+        ini_set('memory_limit',-1);
+
         foreach ($emails as $email) {
           try
           {
             $message = $this->getMessage($email, $this->form->getValues());
-            $this->getMailer()->send($message);
+            $this->getMailer()->getRealtimeTransport()->stop();
+            $this->getMailer()->getRealtimeTransport()->start();
+            $this->getMailer()->sendNextImmediately()->send($message); 
+            //$this->getMailer()->send($message);
             $oks++;
           }
           catch(Exception $e)
@@ -147,6 +153,9 @@ class newsletterActions extends autoNewsletterActions
     $emails = array_merge($emails, Doctrine_Core::getTable('logCoupon')->getDistinctEmails($forced, $emails));
     $emails = array_merge($emails, Doctrine_Core::getTable('preinscription')->getDistinctEmails($forced, $emails));
     $emails = array_merge($emails, Doctrine_Core::getTable('mailingList')->getDistinctEmails($forced, $emails));
+
+    // hotfix du 31/01/2012
+    // $emails = array_splice($emails, 77);
 
     return $emails;
   }

@@ -20,5 +20,6 @@ class ProjectConfiguration extends sfProjectConfiguration
 			'sfTCPDFPlugin',
 			'jmsPaymentPlugin'
 		));
+    $this->enablePlugins('agEmmaCoverageReportPlugin');
   }
 }

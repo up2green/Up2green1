@@ -1,0 +1,27 @@
+agEmmaCoverageReport plugin
+==============
+
+The `agEmmaCoverageReportPlugin` generate unit test coverage reports in emma xml format.
+
+
+Prerequisite
+------------
+  * xDebug module installed
+
+Installation
+------------
+
+ * Install the plugin
+
+         $ symfony plugin:install agEmmaCoverageReportPlugin
+
+How to use
+--------------
+         $  symfony ecr:report [--xml="..."] [--xdebug-extension-path[="..."]] [--exclusions[="..."]] 
+
+_Options:_
+
+ * __--xml__                    Path to save xml file of coverage report
+ * __--xdebug-extension-path__  Path to xdebug extension (not needed if xdebug always enabled)
+ * __--exclusions__             yml file of exlusions globs (optional)
+

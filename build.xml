@@ -130,7 +130,9 @@
       <formatter type="checkstyle" outfile="${dir.reports}/checkstyle-result.xml" />
     </phpcodesniffer>
   </target>
-  <target name="phpunit" description="Run unit tests with PHPUnit">
-    <exec executable="phpunit" failonerror="true"/>
+  <!-- PHPUnit -->
+  <target name="phpunit" description="">
+    <echo msg="Run tests with PHPUnit" />
+    <exec executable="phpunit" />
   </target>
 </project>

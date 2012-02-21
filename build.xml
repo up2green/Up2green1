@@ -11,7 +11,7 @@
     <mkdir dir="${dir.doc}" />
   </target>
   <!-- Default target -->
-  <target name="main" depends="clean,pdepend,phpmd,phpcpd,phpcs,phploc">
+  <target name="main" depends="clean,pdepend,phpmd,phpcpd,phpcs,phploc,phpunit">
     <echo msg="All analysis done." />
   </target>
   <!-- PHP API Documentation -->
@@ -127,7 +127,7 @@
         <exclude name="**/migration/**" />
         <exclude name="**/vendor/**" />
       </fileset>
-      <formatter type="checkstyle" outfile="${dir.reports}/checkstyle.xml" />
+      <formatter type="checkstyle" outfile="${dir.reports}/checkstyle-result.xml" />
     </phpcodesniffer>
   </target>
 </project>

@@ -3,12 +3,17 @@
   <!-- Properties -->
   <property name="dir.reports" value="${project.basedir}/reports" />
   <property name="dir.doc"     value="${project.basedir}/doc" />
+  <property name="dir.build"     value="${project.basedir}/build" />
   <!-- Clean target -->
   <target name="clean">
     <delete dir="${dir.doc}" />
     <delete dir="${dir.reports}" />
+    <delete dir="${dir.build}/logs" />
+    <delete dir="${dir.build}/coverage" />
     <mkdir dir="${dir.reports}" />
     <mkdir dir="${dir.doc}" />
+    <mkdir dir="${dir.build}/logs" />
+    <mkdir dir="${dir.build}/coverage" />
   </target>
   <!-- Default target -->
   <target name="main" depends="clean,pdepend,phpmd,phpcpd,phpcs,phploc,phpunit">

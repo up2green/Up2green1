@@ -14,20 +14,18 @@
   <target name="main" depends="clean,pdepend,phpmd,phpcpd,phpcs,phploc,phpdoc">
     <echo msg="All analysis done." />
   </target>
-  <!-- PHP API Documentation -->
+  <!-- PHP API Documentation 
   <target name="phpdoc">
     <echo msg="PHP Documentor..." />
     <phpdoc title="Documentation of ${projectName}"
       destdir="${dir.doc}"
       sourcecode="yes"
       defaultpackagename="${projectName}"
-      output="HTML:Smarty:default">
+      output="HTML:Smarty/JEvolve:default">
       <fileset dir="${project.basedir}">
-        <!-- includes -->
         <include name="**/config/*.class.php" />
         <include name="**/actions/*.class.php" />
         <include name="**/lib/*.class.php" />
-        <!-- excludes -->
         <exclude name="**/templates/*" />
         <exclude name="**/lib/vendor/*" />
         <exclude name="**/base/*" />
@@ -35,7 +33,7 @@
         <exclude name="**/lib/model/om/*" />
       </fileset>
     </phpdoc>
-  </target>
+  </target>-->
   <target name="docblox">
       <echo msg="DocBlox..." />
       <exec command="docblox run -d ./apps/,./lib/ -t ${dir.doc} -i */templates/*,*/lib/vendor/*,*/base/*,*/lib/model/map*,*/lib/model/om/*,*/skeleton/*" />

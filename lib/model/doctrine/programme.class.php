@@ -12,6 +12,33 @@
  */
 class programme extends Baseprogramme
 {
+  public function countTreesVoucherPartner()
+  {
+    return Doctrine_Core::getTable('treeCoupon')
+			->createQuery('tc')
+      ->innerJoin('tc.tree t')
+			->where('t.programme_id = ?', $this->getId())
+			->count();
+  }
+
+  public function countTreesVoucherUser()
+  {
+    return Doctrine_Core::getTable('treeCoupon')
+			->createQuery('tc')
+      ->innerJoin('tc.tree t')
+			->where('t.programme_id = ?', $this->getId())
+			->count();
+  }
+  
+  public function countTreesUser()
+  {
+    return Doctrine_Core::getTable('treeUser')
+			->createQuery('tu')
+			->innerJoin('tu.tree t')
+			->where('t.programme_id = ?', $this->getId())
+			->count();
+  }
+    
 	public function countTrees() {
 		return Doctrine_Core::getTable('tree')
 			->createQuery('t')

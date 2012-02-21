@@ -2,76 +2,80 @@
 
 class categoryTable extends Doctrine_Table
 {
-	public function getByName($name)
-	{
-		$q = Doctrine_Query::create()
-			->from('category c')
-			->where('c.unique_name = ?', $name);
-			
-		return $this->getOneActive($q);
-	}
-	
-	public function getArrayByName($name)
-	{
-		$q = Doctrine_Query::create()
-			->from('category c')
-			->where('c.unique_name = ?', $name);
-			
-		return $this->getArrayActive($q);
-	}
-	
-	public function countActive(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->count();
-	}
 
-	public function getOneActive(Doctrine_Query $q)
-	{
-		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchOne();
-	}
+  public function getByName($name)
+  {
+    $q = Doctrine_Query::create()
+      ->from('category c')
+      ->where('c.unique_name = ?', $name);
 
-	public function getArrayActive(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchArray();
-	}
+    return $this->getOneActive($q);
+  }
 
-	public function getActive(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->execute();
-	}
-	
-	public function count(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->count();
-	}
+  public function getArrayByName($name)
+  {
+    $q = Doctrine_Query::create()
+      ->from('category c')
+      ->where('c.unique_name = ?', $name);
 
-	public function getOne(Doctrine_Query $q)
-	{
-		return $this->addQuery($q)->fetchOne();
-	}
+    return $this->getArrayActive($q);
+  }
 
-	public function getArray(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->fetchArray();
-	}
+  public function countActive(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->count();
+  }
 
-	public function get(Doctrine_Query $q = null)
-	{
-		return $this->addQuery($q)->execute();
-	}
-	
-	public function addQuery(Doctrine_Query $q = null)
-	{
-		if (is_null($q)) {$q = Doctrine_Query::create()->from('category c');}
+  public function getOneActive(Doctrine_Query $q)
+  {
+    return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchOne();
+  }
 
-		$alias = $q->getRootAlias();
-		$q->addOrderBy($alias . '.level ASC');
+  public function getArrayActive(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->fetchArray();
+  }
 
-		return $q;
-	}
-	
-	public static function getInstance()
-	{
-		return Doctrine_Core::getTable('category');
-	}
+  public function getActive(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->andwhere('c.is_active = ?', 1)->execute();
+  }
+
+  public function count(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->count();
+  }
+
+  public function getOne(Doctrine_Query $q)
+  {
+    return $this->addQuery($q)->fetchOne();
+  }
+
+  public function getArray(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->fetchArray();
+  }
+
+  public function get(Doctrine_Query $q = null)
+  {
+    return $this->addQuery($q)->execute();
+  }
+
+  public function addQuery(Doctrine_Query $q = null)
+  {
+    if (is_null($q)) {
+      $q = Doctrine_Query::create()->from('category c');
+    }
+
+    $alias = $q->getRootAlias();
+    $q->addOrderBy($alias . '.level ASC');
+
+    return $q;
+  }
+
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('category');
+  }
+
 }

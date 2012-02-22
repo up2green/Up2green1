@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__).'/../lib/programmeGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/programmeGeneratorHelper.class.php';
+require_once dirname(__FILE__) . '/../lib/programmeGeneratorConfiguration.class.php';
+require_once dirname(__FILE__) . '/../lib/programmeGeneratorHelper.class.php';
 
 /**
  * programme actions.
@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/programmeGeneratorHelper.class.php';
  */
 class programmeActions extends autoProgrammeActions
 {
+
+  public function executeShow(sfWebRequest $request)
+  {
+    $this->programme = Doctrine_Core::getTable('programme')
+      ->findOneById($request->getParameter("id"));
+
+    if (!$this->programme) {
+      throw new Exception(sprintf('Programme %s not found in the database', $id));
+    }
+    
+    $this->months = array();
+    
+  }
+
 }

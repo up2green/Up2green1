@@ -16,6 +16,10 @@ generator:
       fields:  ~
       list:
         display: [=id, organisme, geoadress, is_active, max_tree]
+        object_actions:
+          _edit:        ~
+          _delete:      ~
+          show:        { label: Show, action: show }
       filter:  ~
       form:    ~
       edit:    ~

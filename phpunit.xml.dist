@@ -14,6 +14,16 @@
     </testsuite>
   </testsuites>
 
+  <filter>
+      <whitelist>
+          <directory>apps</directory>
+          <directory>lib</directory>
+          <exclude>
+              <directory>lib/vendor</directory>
+          </exclude>
+      </whitelist>
+  </filter>
+
   <logging>
    <log type="coverage-html" target="build/coverage" title="Up2green"
         charset="UTF-8" yui="true" highlight="true"

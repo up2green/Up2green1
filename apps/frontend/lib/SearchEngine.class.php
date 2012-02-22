@@ -90,12 +90,6 @@ class SearchEngine
     return $this->search_results;
   }
 
-  private function auth()
-  {
-    $auth = new sfOAuth1(sfConfig::get('app_oauth_key'), sfConfig::get('app_oauth_secret'));
-    $auth->get();
-  }
-
   private function executeImg($min = 0)
   {
     $auth = new up2gYahooOAuth(sfConfig::get('app_oauth_key'), sfConfig::get('app_oauth_secret'));
@@ -301,4 +295,5 @@ class SearchEngine
 
     return $str;
   }
+
 }

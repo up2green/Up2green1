@@ -16,7 +16,6 @@ class functional_frontend_defaultActionsTest extends FunctionalTestCase
 
     $browser
       ->getAndCheck('default', 'error404', '/default/error404', 404)
-
       ->get('/truc/Introuvable')
       ->with('response')
       ->begin()

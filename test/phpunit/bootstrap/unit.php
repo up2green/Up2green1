@@ -27,5 +27,4 @@ $autoload->loadConfiguration(sfFinder::type('file')->name('autoload.yml')->in(ar
 )));
 $autoload->register();
 
-
 require_once $_root_dir.'/lib/test/UnitTestCase.class.php';

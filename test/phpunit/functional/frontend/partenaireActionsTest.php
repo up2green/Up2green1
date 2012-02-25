@@ -2,32 +2,16 @@
 
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
 
-class functional_frontend_partenaireActionsTest extends FunctionalTestCase
+/**
+ * Test Frontend / Partenaire / Actions
+ */
+class functional_frontend_partenaireActionsTest extends FrontendFunctionalTestCase
 {
-
-  public function getApplication()
-  {
-    return 'frontend';
-  }
-
   public function testDefault()
   {
-    $this->markTestIncomplete('TODO');
-//    $browser = $this->getBrowser();
-//
-//    $browser->
-//      get('/partenaire/index')->
-//
-//      with('request')->begin()->
-//        isParameter('module', 'partenaire')->
-//        isParameter('action', 'index')->
-//      end()->
-//
-//      with('response')->begin()->
-//        isStatusCode(200)->
-//        checkElement('body', '!/This is a temporary page/')->
-//      end()
-//    ;
+    $this->getBrowser()->
+      getAndCheck('partenaire', 'index', '/partenaire/index', 404)
+    ;
   }
 
 }

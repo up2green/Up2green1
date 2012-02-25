@@ -2,19 +2,14 @@
 
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
 
-class functional_frontend_defaultActionsTest extends FunctionalTestCase
+/**
+ * Test Frontend / Default / Actions
+ */
+class functional_frontend_defaultActionsTest extends FrontendFunctionalTestCase
 {
-
-  public function getApplication()
-  {
-    return 'frontend';
-  }
-
   public function testDefault()
   {
-    $browser = $this->getBrowser();
-
-    $browser
+    $this->getBrowser()
       ->getAndCheck('default', 'error404', '/default/error404', 404)
       ->get('/truc/Introuvable')
       ->with('response')
@@ -23,5 +18,4 @@ class functional_frontend_defaultActionsTest extends FunctionalTestCase
       ->end()
     ;
   }
-
 }

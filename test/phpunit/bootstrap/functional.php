@@ -24,3 +24,4 @@ require_once $_phpunitPluginDir.'/lib/test/sfPHPUnitBaseFunctionalTestCase.class
 sfToolkit::clearDirectory(sfConfig::get('sf_app_cache_dir'));
 
 require_once $_root_dir.'/lib/test/FunctionalTestCase.class.php';
+require_once $_root_dir.'/lib/test/FrontendFunctionalTestCase.class.php';

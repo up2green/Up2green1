@@ -141,9 +141,9 @@
   <target name="phpunit" description="">
     <echo msg="Run tests with PHPUnit" />
     <exec executable="phpunit">
-      <arg line="--coverage-html    ${project.basedir}/build/coverage/
-                 --coverage-clover  ${project.basedir}/build/logs/clover.xml
-                 --log-junit        ${project.basedir}/build/logs/junit.xml" />
+      <arg line=" --coverage-html    ${project.basedir}/build/coverage/
+                  --coverage-clover  ${project.basedir}/build/logs/clover.xml
+                  --log-junit        ${project.basedir}/build/logs/junit.xml" />
     </exec>
   </target>
 </project>

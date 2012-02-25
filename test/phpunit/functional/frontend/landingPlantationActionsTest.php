@@ -1,11 +1,12 @@
 <?php
+
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
 
 /**
- * Test Frontend / Landing / Actions / plantationAction method
- * 
+ * Test Frontend / Landing / Actions / executePlantation method
+ *
  * @category Test
- * @package  Frontend
+ * @package  Functional
  * @author   Clément Gautier <clement.gautier@smartit.fr>
  * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
@@ -13,7 +14,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
 {
 
   /**
-   * Test the plantationAction return a 200 without parameter 
+   * Test that the executePlantation return a 200 without parameter
    */
   public function testPlantation()
   {
@@ -23,7 +24,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   * Test the plantationAction action with an empty voucher
+   * Test the executePlantation action with an empty voucher
    */
   public function testPlantationVoucherEmpty()
   {
@@ -35,7 +36,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an invalid voucher
+   *  Test the executePlantation action with an invalid voucher
    */
   public function testPlantationVoucherInvalid()
   {
@@ -43,7 +44,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an expired voucher
+   *  Test the executePlantation action with an expired voucher
    */
   public function testPlantationVoucherExpired()
   {
@@ -51,7 +52,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationVoucherAlreadyUsed()
   {
@@ -59,7 +60,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationVoucherValid()
   {
@@ -67,7 +68,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartner()
   {
@@ -80,7 +81,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an invalid voucher
+   *  Test the executePlantation action with an invalid voucher
    */
   public function testPlantationPartnerVoucherInvalid()
   {
@@ -88,7 +89,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an expired voucher
+   *  Test the executePlantation action with an expired voucher
    */
   public function testPlantationPartnerVoucherExpired()
   {
@@ -96,7 +97,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartnerVoucherAlreadyUsed()
   {
@@ -104,7 +105,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartnerVoucherValid()
   {
@@ -112,7 +113,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartnerCampaign()
   {
@@ -120,7 +121,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an invalid voucher
+   *  Test the executePlantation action with an invalid voucher
    */
   public function testPlantationPartnerCampaignVoucherInvalid()
   {
@@ -128,7 +129,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an expired voucher
+   *  Test the executePlantation action with an expired voucher
    */
   public function testPlantationPartnerCampaignVoucherExpired()
   {
@@ -136,7 +137,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartnerCampaignVoucherAlreadyUsed()
   {
@@ -144,7 +145,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationPartnerCampaignVoucherValid()
   {
@@ -152,7 +153,7 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   }
 
   /**
-   *  Test the plantationAction action with an already used voucher
+   *  Test the executePlantation action with an already used voucher
    */
   public function testPlantationVedifSpecial()
   {

@@ -144,6 +144,20 @@ th
   vertical-align: middle;
 }
 
+#sf_admin_container fieldset {
+  border: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+#sf_admin_container fieldset legend {
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+  color: #404040;
+  padding: 0 5px;
+}
+
 #sf_admin_container fieldset h2
 {
   font-size: 110%;
@@ -171,4 +185,8 @@ th
 
 #sf_admin_container label {
 	width:auto;
+}
+
+#sf_fieldset_translation table{
+  width: 100%;
 }

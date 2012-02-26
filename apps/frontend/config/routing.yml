@@ -165,6 +165,14 @@ plantation_change_language:
   param: { module: user, action: changeLanguage }
 
 ####################
+##### SEARCH
+####################
+
+plantation_change_language:
+  url:   /search
+  param: { module: recherche, action: search }
+
+####################
 ##### GENERAL
 ####################
 

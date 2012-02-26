@@ -8,7 +8,7 @@
  * @property integer $id
  * @property integer $category_id
  * @property string $title
- * @property string $accroche
+ * @property clob $accroche
  * @property clob $description
  * @property string $logo
  * @property boolean $is_active
@@ -18,7 +18,7 @@
  * @method integer  getId()          Returns the current record's "id" value
  * @method integer  getCategoryId()  Returns the current record's "category_id" value
  * @method string   getTitle()       Returns the current record's "title" value
- * @method string   getAccroche()    Returns the current record's "accroche" value
+ * @method clob     getAccroche()    Returns the current record's "accroche" value
  * @method clob     getDescription() Returns the current record's "description" value
  * @method string   getLogo()        Returns the current record's "logo" value
  * @method boolean  getIsActive()    Returns the current record's "is_active" value
@@ -59,9 +59,9 @@ abstract class Basearticle extends sfDoctrineRecord
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('accroche', 'string', 1000, array(
-             'type' => 'string',
-             'length' => 1000,
+        $this->hasColumn('accroche', 'clob', 65535, array(
+             'type' => 'clob',
+             'length' => 65535,
              ));
         $this->hasColumn('description', 'clob', 65535, array(
              'type' => 'clob',

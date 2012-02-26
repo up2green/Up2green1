@@ -1,85 +1,76 @@
-<?php $moteur = (int)$moteur; ?>
-
 <div id="body">
 
-	<form id="searchForm" name="recherche" action="" method="post">
-		<div class="search">
-			<input type="hidden" id="hidden_text_search" name="hidden_text_search" value="<?php echo $textSearch ?>" />
-			<input type="hidden" id="hidden_moteur_search" name="hidden_moteur_search" value="<?php echo $moteur ?>" />
-			<input type="text" id="recherche_text" name="recherche_text" value="<?php echo $textSearch ?>" />
-			<input type="submit" id="recherche_submit" name="recherche_submit" value="<?php echo __("Rechercher") ?>" class="button white small" />
-		</div>
+	<?php include_partial('searchForm', array('form' => $form)); ?>
+  
+	<?php
+    $totalTrees = (int)$totalTrees + sfConfig::get('app_hardcode_tree_number');
 
-		<div class="filtres">
-			<span searchMode="<?php echo SearchEngine::WEB ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::WEB ? 'green active' : 'gray'); ?> medium first"><?php echo __("Web") ?></span>
-			<span searchMode="<?php echo SearchEngine::IMG ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::IMG ? 'green active' : 'gray'); ?> medium"><?php echo __("Images") ?></span>
-			<span searchMode="<?php echo SearchEngine::NEWS ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::NEWS ? 'green active' : 'gray'); ?> medium"><?php echo __("News") ?></span>
-			<span searchMode="<?php echo SearchEngine::SHOP ?>" class="button top-not-rounded <?php echo ($moteur == SearchEngine::SHOP ? 'orange active' : 'orange-gray hover'); ?> medium">
-				<?php echo __("Achats") ?>
-			</span>
-		</div>
-	</form>
+    $tooltip = __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :").
+      '<ol style=\'margin: 5px 25px;text-align:left;list-style-type:decimal;\'>
+        <li>'.__("Vous effectuez une recherche avec le moteur Up2green.").'</li>
+        <li>'.__("Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?").'</li>
+        <li>'.__("Le sponsor rémunère Yahoo pour chaque clic.").'</li>
+        <li>'.__("Yahoo reversent une grande partie de cette somme à l'association Up2green.").'</li>
+        <li>'.__("Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).").'</li>
+      </ol>';
+  ?>
+
+  <div id="home" class="hide-onload" style="opacity: 0;">
+
+    <div class="module acteur">
+      <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
+      
+      <?php if (!$sf_user->isAuthenticated()): ?>
+      <p class="title"><?php echo __("Devenez acteur de la reforestation") ?></p>
+      <div class="content">
+        <p style="padding:5px;">
+          <?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
+          <img tooltiped="true" title="<?php echo $tooltip ?>" src="/images/icons/16x16/consulting.png" />
+        </p>
+        <p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
+        <p class="important"><?php echo __("Gagnez un arbre à l’ouverture de votre compte Up2green et plantez le dès à présent sur la Planète !") ?></p>
+        <p class="center">
+          <a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong><?php echo __("Créer un compte") ?></strong></a>
+      <?php else: ?>
+      <p class="title"><?php echo __("Plantez vos arbres") ?></p>
+      <div class="content">
+        <p><?php echo __("Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement") ?></p>
+        <p class="center">
+          <a target="_blank" href="<?php echo url_for("plantation/index"); ?>" class="button green"><?php echo __("Accéder à la plateforme de reforestation") ?></a>
+      <?php endif; ?>
+      
+      </div>
+      <?php include_partial('global/border_and_corner') ?>
+    </div>
+
+    <div class="module statistiques">
+      <img class="title middle right" src="/images/module/green/icon/stats.png" alt="" />
+      <p class="title"><?php echo __("Statistiques") ?></p>
+      <div class="content">
+        <p><img class="img_map" src="/images/moteur/stats_maps_200x70.png" /></p>
+        <p tooltiped="true" title="<?php echo __("Les forêts sont reconnues pour être de véritables puits de carbone.<br /> A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes") ?>" class="center" style="padding:10px 0;">
+          <?php echo __("Arbres plantés : {number}", array('{number}' => '<strong style="color:#015F00;">'.$totalTrees.'</strong>')) ?> <br/>
+          <?php echo __("soit plus de {number} tonnes de CO<sub>2</sub> qui seront stockées pendant leur croissance", array('{number}' => '<strong style="color:#015F00;">'.number_format($totalTrees*sfConfig::get('app_conversion_tree_co2'), 2, ',', ' ').'</strong>')) ?>
+          <img src="/images/icons/16x16/consulting.png" />
+        </p>
+      </div>
+      <?php include_partial('global/border_and_corner') ?>
+    </div>
+
+    <?php if (!$sf_user->isAuthenticated()): ?>
+    <div class="module purple partenaires">
+      <img class="title middle right" src="/images/module/purple/icon/icon-partenaires.png" alt="" />
+      <p class="title"><?php echo __("Partenaires") ?></p>
+      <div class="content">
+        <p><?php echo __("Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...") ?></p>
+        <div class="lien_partenaires righter">
+          <a target="_blank" href="<?php echo sfConfig::get('app_url_blog'); ?>"><?php echo __("plus d'informations ici") ?></a>
+        </div>
+      </div>
+      <?php include_partial('global/border_and_corner') ?>
+    </div>
+    <?php endif; ?>
+
+  </div>
 	
-	<?php 
-	if ($textSearch == "") {
-		include_partial('home', array(
-			'totalTrees' => $totalTrees
-		));
-	}
-	elseif (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS, SearchEngine::SHOP))) {
-
-		echo '<div id="searchResults">';
-		
-		if (in_array($moteur, array(SearchEngine::WEB, SearchEngine::IMG, SearchEngine::NEWS))) {
-			if(!empty($singleShopResult)) {
-				echo '<div class="shop-result">';
-				include_partial('shop', array('result' => $singleShopResult));
-				echo '</div>';
-			}
-
-			if(!empty($pubResults)) {
-				echo '<div class="pub-result">';
-				foreach ($pubResults as $result) {
-					echo include_partial('pub', array('result' => $result));
-				}
-				echo '</div>';
-			}
-		}
-
-		// results
-		$partial = ($moteur === SearchEngine::WEB) ? "web" :
-			(($moteur === SearchEngine::IMG) ? "img" :
-			(($moteur === SearchEngine::NEWS) ? "news" :
-			(($moteur === SearchEngine::SHOP) ? "shop" : "default")));
-
-		echo '<div class="'.$partial.'-result">';
-		
-		if(sizeof($results) === 0) {
-			echo '
-				<p style="text-align: center; font-style: italic; font-weight: bold;">
-					'.__("Aucun résultat ne correspond à votre recherche.").'
-				</p>
-			';
-		}
-
-		foreach ($results as $result) {
-			echo include_partial($partial, array('result' => $result));
-		}
-
-		echo '</div>';
-		echo '<div class="clear"></div>';
-
-		// more results
-		
-		if(sizeof($results) >= sfConfig::get('app_base_search')) {
-			echo '
-				<div class="more-result">
-					<span id="searchMore" class="button white big">'.__("Plus de Résultats").'</span>
-				</div>
-			';
-		}
-
-		echo '</div>';
-	}
-	?>
 </div>

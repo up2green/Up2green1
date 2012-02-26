@@ -17,7 +17,7 @@ all:
     remember_key_expiration_age:  31536000
     remember_cookie_name:         up2gRememberMe
     remember_cookie_domain:       .up2green.com
-    signin_form:                  sfGuardFormSigninCustom
+    signin_form:                  sfGuardSigninCustomForm
   payments:
     enabled:
       - paypal

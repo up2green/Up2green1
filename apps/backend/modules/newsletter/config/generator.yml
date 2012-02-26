@@ -23,6 +23,9 @@ generator:
           sendToAll:        { label: Send to all, action: sendToAll }
           sendToAllForced:  { label: Send to all (without check), action: sendToAllForced }
       filter:  ~
-      form:    ~
+      form:
+        display:
+          Default: [category_id, reply_to, email_from, is_forced, sent_at]
+          Translation: [fr, en]
       edit:    ~
       new:     ~

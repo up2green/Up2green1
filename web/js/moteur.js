@@ -16,7 +16,7 @@ $(function() {
 	
 	$("#searchMore").click(function(){
 
-	var mode = $('#hidden_moteur_search', '#searchForm').val();
+	var mode = $('#search_type', '#searchForm').val();
 	var nb_pub = $(".pub-result .result").length;
 	var nb_affiliate = $(".shop-result .result").length;
 
@@ -30,8 +30,8 @@ $(function() {
 							'nb_items_affiche': (mode == SHOP) ? $(".result").length : ($(".result").length - nb_pub - nb_affiliate),
 							'nb_pub': nb_pub,
 							'nb_affiliate': nb_affiliate,
-							'text_search': $('#hidden_text_search', '#searchForm').val(),
-							'moteur_search': $('#hidden_moteur_search', '#searchForm').val()
+							'text_search': $('#search_query', '#searchForm').data('previous-value'),
+							'moteur_search': $('#search_type', '#searchForm').val()
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) {
 			$("#searchMore").html(txtReadMore);
@@ -254,9 +254,9 @@ function changeMoteur(event){
 	}
 	ongletCible.addClass('active');
 
-    $("#hidden_moteur_search").val(valeur);
+    $("#search_type").val(valeur);
 	
-    if ($("#recherche_text").val() != "") {
+    if ($("#search_query").val() != "") {
 		$("#searchForm").submit();
 	}
 

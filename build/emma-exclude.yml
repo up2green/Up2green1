@@ -1,0 +1,6 @@
+- test/*
+- plugins/*
+- log/*
+- lib/vendor/*
+- lib/migration/*
+- web/js/ckfinder/*

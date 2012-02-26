@@ -2,13 +2,14 @@ test:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=up2green_test'
+      dsn:      mysql:host=localhost;dbname=up2green_test
+      username: username
+      password: sm@rTp0wereD!pwd
 
 all:
   doctrine:
     class: sfDoctrineDatabase
     param:
       dsn:      mysql:host=localhost;dbname=up2green
-      username: root
-      password: password
-
+      username: username
+      password: sm@rTp0wereD!pwd

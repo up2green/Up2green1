@@ -1,3 +1,4 @@
+.svn
 /cache/*
 /log/*
 .DS_Store
@@ -12,3 +13,5 @@ web/*_dev.php
 web/backend.php
 web/index.php
 apps/frontend/config/app.yml
+/plugins/.registry/
+/plugins/.filemap

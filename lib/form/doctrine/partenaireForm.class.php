@@ -30,7 +30,7 @@ class partenaireForm extends BasepartenaireForm {
 		$this->widgetSchema['description'] = new sfWidgetFormCKEditor();
 		$this->widgetSchema['page'] = new sfWidgetFormCKEditor();
 
-		$this->validatorSchema['attestation'] = new myValidatorImage(array(
+		$this->validatorSchema['attestation'] = new up2gValidatorImage(array(
 				'max_size'   => 1048576,
 				'required'   => false,
 				'path'       => sfConfig::get('sf_upload_dir').'/partenaire',

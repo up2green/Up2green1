@@ -4,9 +4,7 @@
 prod:
   .settings:
     enabled_modules:        [default, sfGuardAuth, sfTCPDF]
-    no_script_name:         true
     logging_enabled:        false
-    escaping_strategy:      false
 
 dev:
   .settings:
@@ -14,9 +12,7 @@ dev:
     enabled_modules:        [default, sfGuardAuth, sfTCPDF, paymentDemo, paypalDemo]
     web_debug:              true
     cache:                  false
-    no_script_name:         true
     etag:                   false
-    escaping_strategy:      false
 
 test:
   .settings:
@@ -24,7 +20,6 @@ test:
     enabled_modules:        [default, sfGuardAuth, sfTCPDF, paymentDemo, paypalDemo]
     cache:                  false
     web_debug:              false
-    no_script_name:         false
     etag:                   false
 
 all:
@@ -32,8 +27,10 @@ all:
     # Form security secret (CSRF protection)
     csrf_secret:            b56354c935ce4f3659670d3812b5ed76a290454f
 
+    no_script_name:         true
+
     # Output escaping settings
-    escaping_strategy:      true
+    escaping_strategy:      false
     escaping_method:        ESC_SPECIALCHARS
 
     # Helpers activés

@@ -1,0 +1,4 @@
+showTreesSuccess:
+  stylesheets:
+    - /sfDoctrinePlugin/css/global.css?v=<?php echo sfConfig::get('app_media_version') ?>: {position: first}
+    - /sfDoctrinePlugin/css/default.css?v=<?php echo sfConfig::get('app_media_version') ?>: {position: first}

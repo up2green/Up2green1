@@ -13,21 +13,21 @@ class rechercheActions extends sfActions
 
   public function executeIndex(sfWebRequest $request)
   {
-    if ($request->hasParameter('q')){
-      $this->forward('recherche', 'search');
-    }
-
     $this->form = new SearchForm();
+    $this->form->bind(array(
+      'q' => $request->getParameter('q'),
+      'type' => $request->getParameter('type', 2),
+    ));
+    $this->forwardIf($this->form->isValid(), 'recherche', 'search');
     $this->totalTrees = Doctrine_Core::getTable('tree')->count();
   }
 
   public function executeSearch(sfWebRequest $request)
   {
     $this->form = new SearchForm();
-
     $this->form->bind(array(
       'q' => $request->getParameter('q'),
-      'type' => $request->getParameter('type'),
+      'type' => $request->getParameter('type', 2),
     ));
 
     $this->forwardUnless($this->form->isValid(), 'recherche', 'index');

@@ -1,6 +1,7 @@
 <?php
 
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
+require_once 'SearchEngine.class.php';
 
 /**
  * Test Frontend / Recherche / actions.class.php file

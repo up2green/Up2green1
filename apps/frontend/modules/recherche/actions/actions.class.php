@@ -37,7 +37,7 @@ class rechercheActions extends sfActions
     $this->typeSlug = SearchEngine::getSlug($this->type);
 
     $engine = new SearchEngine($this->textSearch, $this->type);
-    
+
     $this->results = $engine->getResults();
     $this->singleShopResult = sfConfig::get('app_show_shop_results', true) ? $engine->getOneShopResult() : array();
     $this->pubResults = $engine->getPubResults();

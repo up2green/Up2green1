@@ -18,6 +18,9 @@ generator:
         display: [Category, =title, is_active]
         sort: [category_id, asc]
       filter:  ~
-      form:    ~
+      form:
+        display:
+          Default: [category_id, logo, is_active, rank]
+          Translation: [fr, en]
       edit:    ~
       new:     ~

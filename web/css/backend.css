@@ -186,3 +186,7 @@ th
 #sf_admin_container label {
 	width:auto;
 }
+
+#sf_fieldset_translation table{
+  width: 100%;
+}

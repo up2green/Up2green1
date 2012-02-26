@@ -21,6 +21,10 @@ generator:
           _delete:      ~
           show:        { label: Show Trees, action: showTrees }
       filter:  ~
-      form:    ~
+      form:
+        display:
+          Default: [organisme_id, is_active, max_tree, add_tree, logo]
+          GeoLocalization: [geoadress, Point, polygonnes_list]
+          Translation: [fr, en]
       edit:    ~
       new:     ~

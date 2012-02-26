@@ -17,6 +17,10 @@ generator:
       list:
         display: [id, =title, url]
       filter:  ~
-      form:    ~
+      form:
+        display:
+          Default: [url, logo, is_active]
+          GeoLocalization: [Point]
+          Translation: [fr, en]
       edit:    ~
       new:     ~

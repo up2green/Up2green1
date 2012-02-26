@@ -20,13 +20,13 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($months as $month) : ?>
+      <?php foreach ($months as $key => $values) : ?>
       <tr>
-        <td><?php echo $month['date'] ?></td>
-        <td><?php echo $month['byPartnerVoucher'] ?></td>
-        <td><?php echo $month['byUserVoucher'] ?></td>
-        <td><?php echo $month['byUserAccount'] ?></td>
-        <td><?php echo $month['total'] ?></td>
+        <td><?php echo $key ?></td>
+        <td><?php echo ($partnerVoucherCount = isset($values['partnerVoucherCount']) ? $values['partnerVoucherCount'] : 0) ?></td>
+        <td><?php echo ($userVoucherCount = isset($values['userVoucherCount']) ? $values['userVoucherCount'] : 0) ?></td>
+        <td><?php echo ($userAccountCount =  isset($values['userAccountCount']) ? $values['userAccountCount'] : 0) ?></td>
+        <td><?php echo $partnerVoucherCount + $userVoucherCount + $userAccountCount ?></td>
       </tr>
       <?php endforeach ?>
     </tbody>

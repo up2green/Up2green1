@@ -4,27 +4,53 @@ require_once dirname(__FILE__) . '/../lib/programmeGeneratorConfiguration.class.
 require_once dirname(__FILE__) . '/../lib/programmeGeneratorHelper.class.php';
 
 /**
- * programme actions.
+ * Programme actions
  *
- * @package    up2green
- * @subpackage programme
- * @author     Clément Gautier
- * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * @category Actions
+ * @package  Frontend
+ * @author   Clément Gautier <clement.gautier@smartit.fr>
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
 class programmeActions extends autoProgrammeActions
 {
 
-  public function executeShow(sfWebRequest $request)
+  /**
+   * ShowTrees Action : Show the history of trees planted in the program
+   * 
+   * @param sfWebRequest $request
+   * @throws Exception 
+   */
+  public function executeShowTrees(sfWebRequest $request)
   {
-    $this->programme = Doctrine_Core::getTable('programme')
+    $this->programme = $this->getRequestProgramme($request);
+
+    $this->months = array_merge_recursive(
+      $this->programme->getTreesVoucherPartnerGroupByMonth(), 
+      $this->programme->getTreesVoucherUserGroupByMonth(), 
+      $this->programme->getTreesUserGroupByMonth()
+    );
+
+    ksort($this->months);
+  }
+
+  /**
+   * Return the programme by the id in the request.
+   * 
+   * @param sfWebRequest $request
+   * @return programme
+   * @throws Exception 
+   */
+  protected function getRequestProgramme(sfWebRequest $request)
+  {
+    $program = Doctrine_Core::getTable('programme')
       ->findOneById($request->getParameter("id"));
 
-    if (!$this->programme) {
+    if (!$program)
+    {
       throw new Exception(sprintf('Programme %s not found in the database', $id));
     }
-    
-    $this->months = array();
-    
+
+    return $program;
   }
 
 }

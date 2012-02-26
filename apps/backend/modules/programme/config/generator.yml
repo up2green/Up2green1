@@ -19,7 +19,7 @@ generator:
         object_actions:
           _edit:        ~
           _delete:      ~
-          show:        { label: Show, action: show }
+          show:        { label: Show Trees, action: showTrees }
       filter:  ~
       form:    ~
       edit:    ~

@@ -1,20 +1,53 @@
 <?php
 
+/**
+ * treeUser table class
+ *
+ * @category Lib
+ * @package  ModelTable
+ * @author   Clément Gautier <clement.gautier@smartit.fr>
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
+ */
 class treeUserTable extends Doctrine_Table
 {
 
+  /**
+   * Create a query for trees planted by users 
+   * without using vouchers
+   *
+   * @return Doctrine_Query
+   */
+  public function createTreeWitoutVoucherQuery($indexBy = null)
+  {
+    $query = $this->createQuery('tu');
+
+    if (null !== $indexBy)
+    {
+      $query->from(sprintf('treeUser tu INDEXBY %s', $indexBy));
+    }
+
+    return $query->innerJoin('tu.tree t')
+      ->leftJoin('t.Coupon tc')
+      ->where('tc.coupon_id IS NULL');
+  }
+
   public function plantArbre($nb, $programme, $user)
   {
-    for ($i = 0; $i < $nb; $i++) {
+    for ($i = 0; $i < $nb; $i++)
+    {
       $tree = new tree();
-      if (is_integer($programme)) {
+      if (is_integer($programme))
+      {
         $tree->setProgrammeId($programme);
-      } else {
+      }
+      else
+      {
         $tree->setProgramme($programme);
       }
       $tree->save();
 
-      if ($user->getGuardUser()) {
+      if ($user->getGuardUser())
+      {
         $treeUser = new treeUser();
         $treeUser->setTree($tree);
         $treeUser->setUser($user->getGuardUser());
@@ -57,7 +90,8 @@ class treeUserTable extends Doctrine_Table
 
   public function addQuery(Doctrine_Query $q = null)
   {
-    if (is_null($q)) {
+    if (is_null($q))
+    {
       $q = $this->createQuery('t');
     }
     return $q;

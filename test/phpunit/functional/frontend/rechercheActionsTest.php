@@ -1,7 +1,9 @@
 <?php
 
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
-require_once 'SearchEngine.class.php';
+
+$autoload = sfAutoload::getInstance();
+$autoload->autoload('SearchEngine');
 
 /**
  * Test Frontend / Recherche / actions.class.php file

@@ -26,5 +26,3 @@ sfToolkit::clearDirectory(sfConfig::get('sf_app_cache_dir'));
 require_once $_root_dir.'/lib/test/FunctionalTestCase.class.php';
 require_once $_root_dir.'/lib/test/FrontendFunctionalTestCase.class.php';
 require_once $_root_dir.'/lib/test/BackendFunctionalTestCase.class.php';
-
-set_include_path(get_include_path().':'.$_root_dir.'/lib'.':'.$_root_dir.'/apps/frontend/lib'.':'.$_root_dir.'/apps/backend/lib');

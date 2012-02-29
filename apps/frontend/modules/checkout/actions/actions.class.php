@@ -11,11 +11,15 @@
 class checkoutActions extends sfActions
 {
 
-  public function executeIndex(sfWebRequest $request)
+  public function executeIndex()
   {
+    // TODO : use routing ?
     $this->forward404();
   }
 
+  /**
+   * @param sfWebRequest $request
+   */
   public function executeCoupon(sfWebRequest $request)
   {
     sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
@@ -213,6 +217,9 @@ class checkoutActions extends sfActions
     $this->vars['partenarie'] = $this->partenaire;
   }
 
+  /**
+   * @param sfWebRequest $request
+   */
   public function executeCredit(sfWebRequest $request)
   {
     sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));

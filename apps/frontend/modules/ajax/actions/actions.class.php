@@ -10,6 +10,10 @@
  */
 class ajaxActions extends sfActions
 {
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executeGetKML(sfWebRequest $request) {
 		$this->displayOrganismeActif = $request->getParameter('displayOrganismeActif', false);
 		$this->displayOrganismeInactif = $request->getParameter('displayOrganismeInactif', false);
@@ -64,7 +68,10 @@ class ajaxActions extends sfActions
 			$this->programmes = Doctrine_Core::getTable('programme')->get($query);
 		}
 	}
-	
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executeGetInfoProgramme(sfWebRequest $request) {
 		$programmeId = $request->getParameter('programme', 0);
 		$partenaireId = $request->getParameter('partenaire', 0);
@@ -117,7 +124,10 @@ $this->max = (int)$partenaireProgramme->getNumber();
 			$this->displayPourcent = 1;
 		
 	}
-	
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executeGetInfoOrganisme(sfWebRequest $request) {
 		$organismeId = $request->getParameter('organisme', 0);
 		$this->organisme = Doctrine_Core::getTable('organisme')
@@ -129,7 +139,10 @@ $this->max = (int)$partenaireProgramme->getNumber();
 			return $this->forward404();
 		}
 	}
-		
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executeClicPub(sfWebRequest $request) {
 		$params = $request->getParameterHolder();
 		$url = $params->get('url');
@@ -168,6 +181,9 @@ $this->max = (int)$partenaireProgramme->getNumber();
 		}
   }
 
+  /**
+   * @param sfWebRequest $request
+   */
   public function executeMoreresults(sfWebRequest $request)
   {
       $params = $request->getParameterHolder();

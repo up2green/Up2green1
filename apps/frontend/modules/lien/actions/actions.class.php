@@ -12,10 +12,9 @@ class lienActions extends sfActions
 {
  /**
   * Executes index action
-  *
-  * @param sfRequest $request A request object
+  * FIXME delete this ?
   */
-  public function executeIndex(sfWebRequest $request)
+  public function executeIndex()
   {
     $this->forward('default', 'module');
   }

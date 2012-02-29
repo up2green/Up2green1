@@ -3,7 +3,12 @@
 class userComponents extends sfComponents
 {
 
-  public function executeMenu($request)
+  /**
+   * Execute the main menu
+   *
+   * @param sfWebRequest $request 
+   */
+  public function executeMenu(sfWebRequest $request)
   {
     if ($request->hasParameter('code')) {
       $coupon = Doctrine_Core::getTable('coupon')->findOneByCode($request->getParameter('code'));
@@ -13,19 +18,19 @@ class userComponents extends sfComponents
     }
   }
 
-  public function executeMenuProfil($request)
+  public function executeMenuProfil()
   {
     $user = $this->getUser()->getGuardUser();
     $this->partenaire = ($user->isPartenaire() ? $user->getPartenaire() : null);
   }
 
-  public function executeSideSignin($request)
+  public function executeSideSignin()
   {
     $class = sfConfig::get('app_sf_guard_plugin_signin_form', 'sfGuardFormSignin');
     $this->signinForm = new $class();
   }
 
-  public function executeLanguage(sfWebRequest $request)
+  public function executeLanguage()
   {
     $this->languages = sfConfig::get('app_cultures_enabled');
     $this->current = $this->getUser()->getCulture();

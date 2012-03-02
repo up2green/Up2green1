@@ -20,6 +20,7 @@ class ProjectConfiguration extends sfProjectConfiguration
       'ahDoctrineEasyEmbeddedRelationsPlugin',
       'sfTCPDFPlugin',
       'jmsPaymentPlugin',
+      'up2gBlogPlugin',
     ));
 
     $env = sfConfig::get('sf_environment');

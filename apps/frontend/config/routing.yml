@@ -94,47 +94,6 @@ landing_partenaire:
 plantation_landing_partenaire:
   url: /plantation/landing/partenaire/:partenaire/:operation
   param: {module: landing, action: partenaire, partenaire: 0, operation: 0}
-
-
-####################
-##### BLOG
-####################
-
-blog_change_language:
-  url:   /blog/change_language
-  param: { module: user, action: changeLanguage }
-
-blog_organisme_list:
-  url:   /blog/organisme
-  param: { module: blog, action: viewList, type: organisme }
-
-blog_organisme:
-  url:   /blog/organisme/:slug
-  param: { module: blog, action: viewElement, type: organisme }
-
-blog_article_list:
-  url:   /blog/article
-  param: { module: blog, action: viewList, type: article }
-
-blog_article:
-  url:   /blog/article/:slug
-  param: { module: blog, action: viewElement, type: article }
-
-blog_programme_list:
-  url:   /blog/programme
-  param: { module: blog, action: viewList, type: programme }
-
-blog_programme:
-  url:   /blog/programme/:slug
-  param: { module: blog, action: viewElement, type: programme }
-
-blog:
-  url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
-  param: { module: blog, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
-
-blog:
-  url: /blog
-  param: { module: blog, action: index}
   
 ####################
 ##### PLANTATION

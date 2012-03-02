@@ -25,9 +25,9 @@
 <div class="colRight">
   <?php
     if($type == 'article')
-      include_component('blog', 'programmesBloc');
+      include_component('up2gBlogDefault', 'programmesBloc');
     elseif($type == 'programme')
-      include_component('blog', 'articlesBloc');
-    include_component('blog', 'partenairesBloc');
+      include_component('up2gBlogDefault', 'articlesBloc');
+    include_component('up2gBlogDefault', 'partenairesBloc');
   ?>
 </div>

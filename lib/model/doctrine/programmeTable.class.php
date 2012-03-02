@@ -243,6 +243,11 @@ class programmeTable extends Doctrine_Table
   /* Return Query */
   // -----------------------------------------
 
+  public function getActiveByLangQuery($lang)
+  {
+    return $this->addLangQuery($lang);
+  }
+
   public function addSlugQuery($slug, Doctrine_Query $q = null)
   {
     return $this->addQuery($q)

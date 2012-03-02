@@ -1,0 +1,38 @@
+change_language:
+  url:   /blog/change_language
+  param: { module: user, action: changeLanguage }
+
+blog_organisme_list:
+  url:   /blog/organisme
+  param: { module: up2gBlogDefault, action: list, type: organisme, method: getByLang }
+
+blog_organisme:
+  url:   /blog/organisme/:slug
+  param: { module: up2gBlogDefault, action: viewElement, type: organisme }
+
+blog_article_list:
+  url:   /blog/article
+  param: { module: up2gBlogDefault, action: list, type: article }
+
+blog_article:
+  url:   /blog/article/:slug
+  param: { module: up2gBlogDefault, action: viewElement, type: article }
+
+blog_programme_list:
+  url:   /blog/programme
+  param: { module: up2gBlogDefault, action: list, type: programme }
+
+blog_programme:
+  url:   /blog/programme/:slug
+  param: { module: up2gBlogDefault, action: viewElement, type: programme }
+
+blog:
+  url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
+  param: { module: up2gBlogDefault, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
+
+blog:
+  url: /blog
+  param: { module: up2gBlogDefault, action: index}
+
+default:
+  url: /blog/:module/:action

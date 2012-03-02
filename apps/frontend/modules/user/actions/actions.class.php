@@ -15,6 +15,7 @@ class userActions extends sfActions
    */
   public function executeListCoupon(sfWebRequest $request)
   {
+    // FIXME security here ?
     if (!$this->getUser()->isAuthenticated()) {
       $this->redirect('@sf_guard_signin');
       return;

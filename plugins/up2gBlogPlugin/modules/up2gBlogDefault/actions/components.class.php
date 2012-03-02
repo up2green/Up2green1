@@ -7,7 +7,7 @@
  * @subpackage blog
  * @author     Oliver Dolbeau
  */
-class blogComponents extends sfComponents
+class up2gBlogDefaultComponents extends sfComponents
 {
 
   public function executeTopbar()

@@ -28,14 +28,14 @@
   </head>
   <body>
 
-	<?php include_component('blog', 'topbar'); ?>
+	<?php include_component('up2gBlogDefault', 'topbar'); ?>
 
     <div class="fond_banner">
       <div class="banner">
         <a href="<?php echo sfConfig::get('app_url_blog'); ?>" class="logo">
 			<?php echo image_tag("blog/logo_03.png"); ?>
 		</a>
-        <?php include_component('blog', 'diaporama'); ?>
+        <?php include_component('up2gBlogDefault', 'diaporama'); ?>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         <div class="module">
           <div class="content">
 
-            <?php include_component('blog', 'menu'); ?>
+            <?php include_component('up2gBlogDefault', 'menu'); ?>
 
             <div class="principale">
               <?php echo $sf_content; ?>
@@ -60,7 +60,7 @@
       </div>
     </div>
     
-    <?php include_component('blog', 'footerLegal'); ?>
+    <?php include_component('up2gBlogDefault', 'footerLegal'); ?>
     
   </body>
 </html>

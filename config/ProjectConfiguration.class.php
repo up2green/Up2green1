@@ -20,6 +20,8 @@ class ProjectConfiguration extends sfProjectConfiguration
       'ahDoctrineEasyEmbeddedRelationsPlugin',
       'sfTCPDFPlugin',
       'jmsPaymentPlugin',
+
+      'up2gCommonPlugin',
       'up2gBlogPlugin',
     ));
 

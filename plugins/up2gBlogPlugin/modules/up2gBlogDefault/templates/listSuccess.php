@@ -33,23 +33,18 @@
   <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
 </div>
 <?php endforeach; ?>
-<div class="clear" ></div>
-<?php if ($pager->haveToPaginate()): ?>
-<?php include_partial('html/pager_content', array(
-    'pager' => $pager,
-    'url_for' => $route,
-)); ?>
-<?php endif; ?>
 
-<div class="pagination_desc">
-  <strong><?php echo count($pager) ?></strong> <?php echo format_number_choice("(-Inf,1]programme|(1,+Inf]programmes", array(), count($pager)) ?>
-  <?php if ($pager->haveToPaginate()): ?>
-    - <?php echo __("page {current}/{total}", array(
-        '{current}' => $pager->getPage(),
-        '{total}' => $pager->getLastPage()
-    )) ?>
-  <?php endif; ?>
+<div class="module2col">
+    <div style="text-align:center;">
+        <?php if ($pager->haveToPaginate()): ?>
+        <div class="pagination">
+            <?php include_partial('up2gCommonDefault/pager', array(
+                'pager' => $pager,
+                'url_for' => $route,
+            )); ?>
+        </div>
+        <?php endif; ?>
+    </div>
 </div>
-
 <?php endif; ?>
 

@@ -3,19 +3,17 @@
 
 prod:
   .settings:
-    enabled_modules:        [default, sfGuardAuth, sfTCPDF]
+    enabled_modules:
+      - default
+      - sfGuardAuth
+      - sfTCPDF
+      - up2gBlogDefault
+      - up2gCommonDefault
     logging_enabled:        false
 
 dev:
   .settings:
     error_reporting:        <?php echo (E_ALL | E_STRICT)."\n" ?>
-    enabled_modules:
-      - default
-      - sfGuardAuth
-      - sfTCPDF
-      - paymentDemo
-      - paypalDemo
-      - up2gBlogDefault
     web_debug:              true
     cache:                  false
     etag:                   false
@@ -23,13 +21,6 @@ dev:
 test:
   .settings:
     error_reporting:        <?php echo ((E_ALL | E_STRICT) ^ E_NOTICE)."\n" ?>
-    enabled_modules:
-      - default
-      - sfGuardAuth
-      - sfTCPDF
-      - paymentDemo
-      - paypalDemo
-      - up2gBlogDefault
     cache:                  false
     web_debug:              false
     etag:                   false
@@ -40,7 +31,10 @@ all:
       - default
       - sfGuardAuth
       - sfTCPDF
+      - paymentDemo
+      - paypalDemo
       - up2gBlogDefault
+      - up2gCommonDefault
 
     # Form security secret (CSRF protection)
     csrf_secret:            b56354c935ce4f3659670d3812b5ed76a290454f

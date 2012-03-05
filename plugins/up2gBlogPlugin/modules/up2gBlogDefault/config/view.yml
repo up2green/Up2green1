@@ -1,6 +1,7 @@
 all:
   stylesheets:
     - "blog.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "bootstrap/bootstrap.pagination.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
     - "blog.js?v=<?php echo sfConfig::get('app_media_version') ?>"
   layout: blog

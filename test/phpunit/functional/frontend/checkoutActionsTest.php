@@ -12,42 +12,12 @@ require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
  */
 class functional_frontend_checkoutActionsTest extends FrontendFunctionalTestCase
 {
-
-  /**
-   * Test the executeIndex method
-   */
-  public function testIndex()
-  {
-    $this->getBrowser()
-      ->getAndCheck('checkout', 'index', '/checkout/index', 404)
-    ;
-  }
-
   /**
    * Test the executeCredit method
    */
   public function testCredit()
   {
-    $this->getBrowser()
-      ->get('/checkout/credit')
-      ->isForwardedTo('sfGuardAuth', 'signin')
-      // log in
-      ->with('form')->begin()
-      ->click('Se connecter', array(
-        'signin' => array(
-          'username' => self::$user['username'],
-          'password' => self::$user['password']
-        )))
-      ->end()
-      ->followRedirect()
-      ->with('request')->begin()->
-      isParameter('module', 'checkout')->
-      isParameter('action', 'credit')->
-      end()->
-      with('response')->begin()->
-      isStatusCode('200')->
-      end()
-    ;
+    $this->getAndCheckWithLogin('checkout', 'credit', '/checkout/credit');
   }
 
   /**
@@ -55,26 +25,7 @@ class functional_frontend_checkoutActionsTest extends FrontendFunctionalTestCase
    */
   public function testCoupon()
   {
-    $this->getBrowser()
-      ->get('/checkout/coupon')
-      ->isForwardedTo('sfGuardAuth', 'signin')
-      // log in
-      ->with('form')->begin()
-      ->click('Se connecter', array(
-        'signin' => array(
-          'username' => self::$user['username'],
-          'password' => self::$user['password']
-        )))
-      ->end()
-      ->followRedirect()
-      ->with('request')->begin()->
-      isParameter('module', 'checkout')->
-      isParameter('action', 'coupon')->
-      end()->
-      with('response')->begin()->
-      isStatusCode('200')->
-      end()
-    ;
+    $this->getAndCheckWithLogin('checkout', 'coupon', '/checkout/coupon');
   }
 
 }

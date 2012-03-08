@@ -10,18 +10,6 @@
  */
 class landingActions extends sfActions
 {
-	public function executeIndex()
-	{
-    // TODO use routing ?
-		$this->forward404();
-	}
-
-	public function execute404()
-	{
-    // TODO use routing ?
-		$this->forward404();
-	}
-
   /**
    * @param sfWebRequest $request
    * @return string

@@ -13,14 +13,8 @@ class userActions extends sfActions
   /**
    * @param sfWebRequest $request 
    */
-  public function executeListCoupon(sfWebRequest $request)
+  public function executeCoupon(sfWebRequest $request)
   {
-    // FIXME security here ?
-    if (!$this->getUser()->isAuthenticated()) {
-      $this->redirect('@sf_guard_signin');
-      return;
-    }
-
     $user = $this->getUser()->getGuardUser();
     $this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 

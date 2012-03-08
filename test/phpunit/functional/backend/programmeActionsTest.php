@@ -24,6 +24,6 @@ class functional_backend_programmeActionsTest extends BackendFunctionalTestCase
    */
   public function testShowTrees()
   {
-    $this->getAndCheckWithLogin('programme', 'showTrees', '/programme/8/showTrees.html');
+    $this->getAndCheckWithLogin('programme', 'showTrees', '/programme/showTrees/id/2');
   }
 }

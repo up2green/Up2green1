@@ -58,7 +58,6 @@ couponsCSV:
 ####################
 ##### LANDING
 ####################
-
 landing_homepage:
   url: /landing
   param: {module: landing, action: index}
@@ -184,14 +183,14 @@ user_invite_filleul:
 plantation_user_invite_filleul:
   url:   /plantation/user/invitation/
   param: { module: user, action: inviteFilleul }
-  
+
 user_coupon:
   url:   /user/coupon/
-  param: { module: user, action: listCoupon }
+  param: { module: user, action: coupon }
 plantation_user_coupon:
   url:   /plantation/user/coupon/
-  param: { module: user, action: listCoupon }
-  
+  param: { module: user, action: coupon }
+
 checkout_coupon:
   url:   /checkout/coupon
   param: { module: checkout, action: coupon}
@@ -215,4 +214,4 @@ default_index:
   param: { action: index }
 
 default:
-  url:   /:module/:action/*
+  url:   /:module/:action

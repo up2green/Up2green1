@@ -48,6 +48,11 @@ class articleTable extends Doctrine_Table
     return $this->buildQueryForRetrieveLastArticles($culture, $number, $offset)->fetchArray();
   }
 
+  public function getActiveByLangQuery($lang)
+  {
+    return $this->addLangQuery($lang, $this->addActiveQuery());
+  }
+
   // -----------------------------------------
   // DRY
   // -----------------------------------------

@@ -3,6 +3,11 @@
 class organismeTable extends Doctrine_Table
 {
 
+  public function getActiveByLangQuery($lang)
+  {
+    return $this->addLangQuery($lang, $this->addActiveQuery());
+  }
+
   // -----------------------------------------
   // DRY
   // -----------------------------------------

@@ -28,34 +28,23 @@ class up2gBlogDefaultComponents extends sfComponents
 
   public function executeProgrammesBloc(sfWebRequest $request)
   {
-    $currentOffset = $request->getParameter('programmesOffset', 0);
+    // TODO rename programmesOffset to offset
+    $offset = $request->getParameter('programmesOffset', 0);
 
-    // FIXME : Fix temporaire et permet de pas avoir 2 foios le même programme en homepage
-    if (!$request->isXmlHttpRequest() && empty($currentOffset))
+    if (!is_numeric($offset))
     {
-      $currentOffset = 1;
+      throw new InvalidArgumentException("Offset parameter '%s' is invalid");
     }
 
-    if (!in_array($currentOffset, array('min', 'max')))
-    {
-      $this->offsets = $this->retrieveprogrammesOffsets($currentOffset);
-      $this->offsets['next'] = $currentOffset == $this->offsets['next'] ? 'max' : $this->offsets['next'];
-      $this->offsets['prev'] = $currentOffset == $this->offsets['prev'] ? 'min' : $this->offsets['prev'];
-      if ($request->isXmlHttpRequest())
-      {
-        // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
-        $this->noBloc = true;
-      }
+    $this->offsets = $this->retrieveprogrammesOffsets($offset);
+    // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
+    $this->noBloc = $request->isXmlHttpRequest();
 
-      $culture = $this->getUser()->getCulture();
-      $max     = sfConfig::get('app_blog_bloc_programmes_max');
+    $culture = $this->getUser()->getCulture();
+    $max     = sfConfig::get('app_blog_bloc_programmes_max');
 
-      $this->programmes = Doctrine::getTable('programme')
-        ->getActiveByLang($culture, $max, $currentOffset);
-    }
-
-    if ($request->isXmlHttpRequest())
-      die();
+    $this->programmes = Doctrine::getTable('programme')
+        ->getActiveByLang($culture, $max, $offset);
   }
 
   public function executePartenairesBloc(sfWebRequest $request)

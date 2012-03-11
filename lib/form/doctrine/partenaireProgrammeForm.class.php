@@ -3,23 +3,24 @@
 /**
  * partenaireProgramme form.
  *
- * @package    up2green
- * @subpackage form
- * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * @category Lib
+ * @package  Form
+ * @author   Clément Gautier <clement.gautier@smartit.fr>
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
 class partenaireProgrammeForm extends BasepartenaireProgrammeForm
 {
+
   public function configure()
   {
     unset($this['partenaire_id']);
     $this->widgetSchema['programme_id'] = new sfWidgetFormDoctrineChoice(array(
-		'model' => 'programme',
-		'add_empty' => true,
-	));
+        'model'     => 'programme',
+        'add_empty' => true,
+      ));
     $this->validatorSchema['programme_id'] = new sfValidatorDoctrineChoice(array(
-		'required' => true,
-		'model' => 'programme'
-    ));
+        'required' => true,
+        'model'    => 'programme'
+      ));
   }
 }

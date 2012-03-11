@@ -1,3 +1,5 @@
+## Default module
+
 change_language:
   url:   /blog/change_language
   param: { module: user, action: changeLanguage }
@@ -27,12 +29,22 @@ blog_programme:
   param: { module: up2gBlogDefault, action: show, type: programme }
 
 blog:
-  url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement
-  param: { module: up2gBlogDefault, action: index, articlesOffset: 0, programmesOffset: 0, partenairesOffset: 0, changement: 0 }
-
-blog:
   url: /blog
   param: { module: up2gBlogDefault, action: index}
 
-default:
+## Ajax module
+blog_ajax_articles:
+  url:   /blog/ajax/articles/:offset
+  param: { module: up2gBlogAjax, action: articles }
+
+blog_ajax_partenaires:
+  url:   /blog/ajax/partenaires/:offset
+  param: { module: up2gBlogAjax, action: partenaires }
+
+blog_ajax_programmes:
+  url:   /blog/ajax/programmes/:offset
+  param: { module: up2gBlogAjax, action: programmes }
+
+## Blog defaults
+blog_default:
   url: /blog/:module/:action

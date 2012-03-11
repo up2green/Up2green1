@@ -10,82 +10,127 @@
 class up2gBlogDefaultComponents extends sfComponents
 {
 
+  /**
+   * Render the topbar 
+   */
   public function executeTopbar()
   {
     $this->totalTrees = Doctrine_Core::getTable('tree')->count();
     $this->totalTrees += sfConfig::get('app_hardcode_tree_number');
   }
 
+  /**
+   * Render the articles blocs, w/o bloc if it is Ajax
+   *
+   * @param sfWebRequest $request 
+   */
   public function executeArticlesBloc(sfWebRequest $request)
   {
-    // Récupération des articles
-    $currentOffset = $request->getParameter('articlesOffset', 0);
-    $this->offsets = $this->retrieveArticlesOffsets($currentOffset);
-    // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
-    $this->noBloc = $request->isXmlHttpRequest();
-    $this->articles = Doctrine::getTable('Article')->getActiveByLang($this->getUser()->getCulture(), sfConfig::get('app_blog_bloc_articles_max'), $currentOffset);
-  }
-
-  public function executeProgrammesBloc(sfWebRequest $request)
-  {
-    // TODO rename programmesOffset to offset
-    $offset = $request->getParameter('programmesOffset', 0);
+    $offset = $request->getParameter('offset', 0);
 
     if (!is_numeric($offset))
     {
       throw new InvalidArgumentException("Offset parameter '%s' is invalid");
     }
 
-    $this->offsets = $this->retrieveprogrammesOffsets($offset);
-    // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
+    $this->offsets = $this->retrieveOffsets(
+      $offset,
+      sfConfig::get('app_blog_bloc_articles_max'), 
+      Doctrine::getTable('Article')->countActive()
+    );
+
     $this->noBloc = $request->isXmlHttpRequest();
-
-    $culture = $this->getUser()->getCulture();
-    $max     = sfConfig::get('app_blog_bloc_programmes_max');
-
-    $this->programmes = Doctrine::getTable('programme')
-        ->getActiveByLang($culture, $max, $offset);
+    $this->articles = Doctrine::getTable('Article')->getActiveByLang(
+      $this->getUser()->getCulture(), 
+      sfConfig::get('app_blog_bloc_articles_max'), 
+      $offset
+    );
   }
 
+  /**
+   * Render the programs blocs, w/o bloc if it is Ajax
+   *
+   * @param sfWebRequest $request 
+   */
+  public function executeProgrammesBloc(sfWebRequest $request)
+  {
+    $offset = $request->getParameter('offset', 0);
+
+    if (!is_numeric($offset))
+    {
+      throw new InvalidArgumentException("Offset parameter '%s' is invalid");
+    }
+
+    $this->offsets = $this->retrieveOffsets(
+      $offset,
+      sfConfig::get('app_blog_bloc_programmes_max'), 
+      Doctrine::getTable('programme')->countActive()
+    );
+
+    $this->noBloc = $request->isXmlHttpRequest();
+    $this->programmes = Doctrine::getTable('programme')->getActiveByLang(
+      $this->getUser()->getCulture(), 
+      sfConfig::get('app_blog_bloc_programmes_max'), 
+      $offset
+    );
+  }
+
+  /**
+   * Render the partners blocs, w/o bloc if it is Ajax
+   *
+   * @param sfWebRequest $request 
+   */
   public function executePartenairesBloc(sfWebRequest $request)
   {
+    $offset = $request->getParameter('offset', 0);
+
+    if (!is_numeric($offset))
+    {
+      throw new InvalidArgumentException("Offset parameter '%s' is invalid");
+    }
 
     // Chargement du flux RSS
     $dom = new DOMDocument();
     $dom->load(sfConfig::get('app_blog_partenaires_url'));
 
-    $items         = $dom->getElementsByTagName('item');
-    // Récupération des programmes
-    $currentOffset = $request->getParameter('partenairesOffset', 0);
-    $this->offsets = $this->retrievePartenairesOffsets($currentOffset, $items->length);
+    $items = $dom->getElementsByTagName('item');
 
-    // On n'affiche pas le bloc s'il s'agit d'une requête AJAX
-    if ($request->isXmlHttpRequest())
-    {
-      $this->noBloc = true;
-    }
+    $this->offsets = $this->retrieveOffsets(
+      $offset,
+      sfConfig::get('app_blog_bloc_partenaires_max'), 
+      $items->length
+    );
 
+    $this->noBloc = $request->isXmlHttpRequest();
     $this->partenaires = array();
 
-    $maxOffset = $currentOffset + sfConfig::get('app_blog_bloc_partenaires_max');
-    for ($i         = $currentOffset; $i < $maxOffset; $i++) {
+    // TODO : review this
+    $maxOffset = $offset + sfConfig::get('app_blog_bloc_partenaires_max');
+    for ($i         = $offset; $i < $maxOffset; $i++) {
       if ($i >= 0 && $i < $items->length) {
         $this->partenaires[] = $dom->getElementsByTagName('item')->item($i);
       }
     }
   }
 
+  /**
+   * Render the slideshow 
+   */
   public function executeDiaporama()
   {
     $this->programmes = Doctrine::getTable('programme')
       ->getActiveByLang($this->getUser()->getCulture(), 5);
   }
 
+  /**
+   * Render the menu 
+   */
   public function executeMenu()
   {
     // Récupération du menu-top dynamique
     $this->elements = array();
-    $main_category = Doctrine::getTable('Category')->getByName('main-menu');
+    $main_category = Doctrine::getTable('Category')
+      ->getByName('main-menu');
 
     foreach ($main_category->getActiveLinks() as $link)
       $this->elements[] = array(
@@ -119,21 +164,6 @@ class up2gBlogDefaultComponents extends sfComponents
   {
     $this->category = Doctrine::getTable('Category')
       ->getByName('footer-legal ');
-  }
-
-  protected function retrieveArticlesOffsets($offset)
-  {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_articles_max'), Doctrine::getTable('Article')->countActive());
-  }
-
-  protected function retrieveprogrammesOffsets($offset)
-  {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_programmes_max'), Doctrine::getTable('programme')->countActive());
-  }
-
-  protected function retrievePartenairesOffsets($offset, $max)
-  {
-    return $this->retrieveOffsets($offset, sfConfig::get('app_blog_bloc_partenaires_max'), $max);
   }
 
   /**

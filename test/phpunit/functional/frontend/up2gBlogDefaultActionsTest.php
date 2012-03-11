@@ -12,73 +12,12 @@ require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
  */
 class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
 {
-
   /**
    * Test the index action
    */
   public function testIndex()
   {
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/up2gBlogDefault/index');
-  }
-
-  /**
-   * Test the index action in ajax w/o parameter
-   */
-  public function testIndexAjaxWithoutParameter()
-  {
-    $this->getBrowser()->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/blog', 404);
-  }
-
-  /**
-   * Test the index action in ajax with an invalid parameter
-   */
-  public function testIndexAjaxInvalidParameter()
-  {
-    $this->getBrowser()->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/blog?changement=notFound', 404);
-  }
-
-  /**
-   * Test the index action in ajax for retrive articles
-   */
-  public function testIndexAjaxRetrieveArticles()
-  {
-    $this->getBrowser()->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-    $this->getBrowser()
-      ->getAndCheck('up2gBlogDefault', 'index', '/blog?changement=articles')
-      ->with('response')->begin()
-        ->checkElement('div.article', 3)
-      ->end()
-     ;
-  }
-
-  /**
-   * Test the index action in ajax for retrive programmes
-   */
-  public function testIndexAjaxRetrieveProgrammes()
-  {
-    $this->getBrowser()->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-    $this->getBrowser()
-      ->getAndCheck('up2gBlogDefault', 'index', '/blog?changement=programmes')
-      ->with('response')->begin()
-        ->checkElement('div.article', 1)
-      ->end()
-     ;
-  }
-
-  /**
-   * Test the index action in ajax for retrive partners
-   */
-  public function testIndexAjaxRetrievePartenaires()
-  {
-    $this->getBrowser()->setHttpHeader('X_REQUESTED_WITH', 'XMLHttpRequest');
-    $this->getBrowser()
-      ->getAndCheck('up2gBlogDefault', 'index', '/blog?changement=partenaires')
-      ->with('response')->begin()
-        ->checkElement('div.article', 3)
-      ->end()
-     ;
   }
 
   /**

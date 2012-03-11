@@ -3,7 +3,7 @@
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
 
 /**
- * Test Frontend / Blog / actions.class.php file
+ * Test Plugins / up2gBlogPlugin / Modules / Ajax / actions.class.php file
  *
  * @category Test
  * @package  Functional

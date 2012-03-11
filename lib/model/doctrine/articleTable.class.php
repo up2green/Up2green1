@@ -53,6 +53,18 @@ class articleTable extends Doctrine_Table
     return $this->addLangQuery($lang, $this->addActiveQuery());
   }
 
+  /**
+   * Return the name of the table for queries, its strange but if its not
+   * uppercased I have some trouble with Translations
+   *
+   * TODO : uppercase the table name in the schema
+   * @return string 
+   */
+  public function getComponentName()
+  {
+    return 'Article';
+  }
+
   // -----------------------------------------
   // DRY
   // -----------------------------------------

@@ -18,7 +18,7 @@ class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
    */
   public function testIndex()
   {
-    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/blog');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/up2gBlogDefault/index');
   }
 
   /**
@@ -103,6 +103,35 @@ class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
   public function testList()
   {
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=programme');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=organisme');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=article');
+  }
+
+  /**
+   * Test the show action without parameters
+   */
+  public function testShowWithoutParameter()
+  {
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show', 404);
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show?type=article', 404);
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show?slug=annee-internationale-de-la-foret', 404);
+  }
+
+  /**
+   * Test the show action with an invalid parameter
+   */
+  public function testShowInvalidParameter()
+  {
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show?type=article&slug=NotFound', 404);
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show?type=NotFound&slug=annee-internationale-de-la-foret', 404);
+  }
+
+  /**
+   * Test the show action
+   */
+  public function testShow()
+  {
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/up2gBlogDefault/show?type=article&slug=annee-internationale-de-la-foret');
   }
 
   /**
@@ -112,9 +141,23 @@ class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
   {
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/programme');
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/organisme');
-    // FIXME What the hell is the problem with Translation ? Capitalize the tablename ??!
-    //$this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/article');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/article');
   }
 
+  /**
+   * Test the show action special routing
+   */
+  public function tesShowRouting()
+  {
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'show', '/blog/article/annee-internationale-de-la-foret');
+  }
+
+  /**
+   * Test the index action special routing
+   */
+  public function testIndexRouting()
+  {
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'index', '/blog');
+  }
 
 }

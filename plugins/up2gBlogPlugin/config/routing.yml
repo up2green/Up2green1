@@ -8,7 +8,7 @@ blog_organisme_list:
 
 blog_organisme:
   url:   /blog/organisme/:slug
-  param: { module: up2gBlogDefault, action: viewElement, type: organisme }
+  param: { module: up2gBlogDefault, action: show, type: organisme }
 
 blog_article_list:
   url:   /blog/article
@@ -16,7 +16,7 @@ blog_article_list:
 
 blog_article:
   url:   /blog/article/:slug
-  param: { module: up2gBlogDefault, action: viewElement, type: article }
+  param: { module: up2gBlogDefault, action: show, type: article }
 
 blog_programme_list:
   url:   /blog/programme
@@ -24,7 +24,7 @@ blog_programme_list:
 
 blog_programme:
   url:   /blog/programme/:slug
-  param: { module: up2gBlogDefault, action: viewElement, type: programme }
+  param: { module: up2gBlogDefault, action: show, type: programme }
 
 blog:
   url:   /blog/:articlesOffset/:programmesOffset/:partenairesOffset/:changement

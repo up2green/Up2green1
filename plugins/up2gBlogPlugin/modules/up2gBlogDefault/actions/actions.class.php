@@ -62,10 +62,17 @@ class up2gBlogDefaultActions extends sfActions
    *
    * @param sfRequest $request A request object
    */
-  public function executeViewElement(sfWebRequest $request)
+  public function executeShow(sfWebRequest $request)
   {
+    $this->forward404Unless($request->hasParameter('type'));
+    $this->forward404Unless($request->hasParameter('slug'));
     $this->type = $request->getParameter('type');
-    $this->element = Doctrine::getTable($this->type)->getOneBySlug($request->getParameter("slug"));
+    $this->forward404Unless(class_exists($this->type.'Table'));
+
+    $this->element = Doctrine::getTable($this->type)
+      ->getOneBySlug($request->getParameter('slug'));
+
+    $this->forward404Unless($this->element);
   }
 
   /**

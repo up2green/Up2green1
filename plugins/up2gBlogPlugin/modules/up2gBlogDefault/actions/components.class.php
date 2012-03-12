@@ -151,15 +151,6 @@ class up2gBlogDefaultComponents extends sfComponents
   /**
    * Récupération du menu-top dynamique 
    */
-  public function executeFooter()
-  {
-    $this->category = Doctrine::getTable('Category')
-      ->getByName('footer');
-  }
-
-  /**
-   * Récupération du menu-top dynamique 
-   */
   public function executeFooterLegal()
   {
     $this->category = Doctrine::getTable('Category')

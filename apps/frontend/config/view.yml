@@ -23,6 +23,7 @@ default:
     - "form.css?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "tooltip.css?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "jquery.gritter.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "bootstrap/bootstrap.pagination.css?v=<?php echo sfConfig::get('app_media_version') ?>"
   javascripts:
     - "min/jquery-1.4.4.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "min/jquery.gritter.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"

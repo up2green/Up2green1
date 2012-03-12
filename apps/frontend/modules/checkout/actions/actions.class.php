@@ -93,7 +93,7 @@ class checkoutActions extends sfActions
 
             $data = new PaypalPaymentData();
             $data->subject = __('Up2green reforestation, achat de coupon');
-            $data->payment_text = __("Achat d'un cuopon de {number} abre(s) sur le site up2green. Prix total : {price}", array(
+            $data->payment_text = __("Achat d'un coupon de {number} arbre(s) sur le site up2green. Prix total : {price}", array(
               '{number}' => $this->product->getCredit(),
               '{price}'  => $this->product->getPrix() * $commission,
               ));

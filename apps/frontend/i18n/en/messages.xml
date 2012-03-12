@@ -9,19 +9,19 @@
       </trans-unit>
       <trans-unit id="2">
         <source>Déjà {number} arbres plantés avec {affiliate}</source>
-        <target>{number} trees have been already planted with {affiliate}</target>
+        <target>Already {number} trees planted with {affiliate}</target>
       </trans-unit>
       <trans-unit id="3">
         <source>Faites grandir la forêt de {affiliate} sur la planète !</source>
-        <target>Let's contibute to make {affiliate}'s forest grow on the Planet !</target>
+        <target>Contribute to make {affiliate}'s forest grow on the Planet!</target>
       </trans-unit>
       <trans-unit id="4">
         <source>Devenez acteur de la reforestation en plantant vos arbres avec up2gren !</source>
-        <target>Act for reforestation with up2green association !</target>
+        <target>Become an actor in global reforestation by planting trees with up2green!</target>
       </trans-unit>
       <trans-unit id="5">
         <source>Faites grandir les forêts des programmes que nous soutenons sur la planète en quelques clics.</source>
-        <target>Make our communitary reforestation programs grow with a few clicks…</target>
+        <target>Make our community reforestation programs grow with a few clicks…</target>
       </trans-unit>
       <trans-unit id="6">
         <source>Choisissez où planter votre (vos) arbre(s) sur la Planète</source>
@@ -29,11 +29,11 @@
       </trans-unit>
       <trans-unit id="7">
         <source>Entrez simplement votre code sécurisé pour accéder à la {lien}plate-forme de plantation{:lien} et choisir vos programmes de reforestation</source>
-        <target>Please enter your secured code number to access to the {lien}online plantation portal{:lien} and choose your reforestation programs</target>
+        <target>Please enter your secure code number to access to the {lien}online plantation portal{:lien} and choose your reforestation programs</target>
       </trans-unit>
       <trans-unit id="8">
         <source>Numéro de coupon</source>
-        <target>Secured code number</target>
+        <target>Secure code number</target>
       </trans-unit>
       <trans-unit id="9">
         <source>Utiliser</source>
@@ -41,11 +41,11 @@
       </trans-unit>
       <trans-unit id="10">
         <source>Devenez acteur de la reforestation</source>
-        <target>Act for reforestation</target>
+        <target>Become an actor in global reforestation</target>
       </trans-unit>
       <trans-unit id="11">
         <source>Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches</source>
-        <target>Create your account and collect FOR FREE trees during your web researches</target>
+        <target>Create your account and collect trees FOR FREE during your web researches</target>
       </trans-unit>
       <trans-unit id="12">
         <source>Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons</source>
@@ -61,7 +61,7 @@
       </trans-unit>
       <trans-unit id="16">
         <source>Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement</source>
-        <target>You can now access to the reforestation portal to plant your trees if you have collected enough tree credits</target>
+        <target>You can now access to the reforestation platform to plant your trees if you have collected enough tree credits</target>
       </trans-unit>
       <trans-unit id="17">
         <source>Accéder à la plateforme de reforestation</source>
@@ -77,11 +77,11 @@
       </trans-unit>
       <trans-unit id="20">
         <source>soit plus de {number} tonnes de CO&lt;sub&gt;2&lt;/sub&gt; qui seront stockées pendant leur croissance</source>
-        <target>that is {number} tons of CO&lt;sub&gt;2&lt;/sub&gt; to be absorbed and stocked during their growth</target>
+        <target>that is {number} tons of CO&lt;sub&gt;2&lt;/sub&gt; that will be absorbed and stocked during their growth</target>
       </trans-unit>
       <trans-unit id="21">
         <source>Les forêts sont reconnues pour être de véritables puits de carbone.&lt;br /&gt; A titre indicatif, d’après l’ONU, pendant sa croissance un arbre capte en moyenne 12 kgs de CO2 par an et rejette l’oxygène nécessaire à la respiration dune famille de 4 personnes</source>
-        <target>Forests are carbon stores and sinks when increasing in density or area.&lt;br /&gt; For example, according to the United Nations Organization (UN), during its growth, a simple tree can abosorb an average of 12 kgs of CO2 per year and produce oxygen needed by a family of 4 people to breath</target>
+        <target>Forests are know to be real carbon storages when they increase in density or area.&lt;br /&gt; For example, according to the United Nations Organization (UN), during its growth, a simple tree can absorb an average of 12 kgs of CO2 per year and can produce the required oxygen amount for breathing for a family of 4</target>
       </trans-unit>
       <trans-unit id="22">
         <source>Partenaires</source>
@@ -89,7 +89,7 @@
       </trans-unit>
       <trans-unit id="23">
         <source>Entreprises et collectivités, devenez acteur de la reforestation en impliquant vos administrés, client et colaborateur...</source>
-        <target>Companies and Municipalities, you can act for reforestation involving your employees, customers and citizens...</target>
+        <target>Companies and local authorities, you can act for reforestation involving your employees, customers and citizens...</target>
       </trans-unit>
       <trans-unit id="24">
         <source>plus d'informations ici</source>
@@ -117,7 +117,7 @@
       </trans-unit>
       <trans-unit id="32">
         <source>L'obtention des arbres grâce aux sites marchand (liens Achats) est soumis à un délai d'environ une semaine.</source>
-        <target>Tree credits collection thanks to the shoping engine is effective after 1 week in average</target>
+        <target>Earning tree credits thanks to the shopping engine is generally effective after roughly 1 week.</target>
       </trans-unit>
       <trans-unit id="33">
         <source>Aucun résultat ne correspond à votre recherche.</source>
@@ -141,7 +141,7 @@
       </trans-unit>
       <trans-unit id="38">
         <source>Le nouveau mot de passe a été envoyé par mail à l'adresse renseignée sur le profil.&lt;br /&gt; Regardez dans votre boite à SPAM si vous ne voyez pas l'e-mail dans votre boite de réception, il est possible que votre logiciel de messagerie bloque ce message.</source>
-        <target>The new password has been sent to the email address filled in your profile account.&lt;br /&gt; Please have a look in your SPAM mailbox, your email box software might jam the message.</target>
+        <target>The new password has been sent to the email address filled in your profile account.&lt;br /&gt; Please have a look in your SPAM folder, your email account software might have stored the message in your spam folder.</target>
       </trans-unit>
       <trans-unit id="39">
         <source>Nom d'utilisateur</source>
@@ -153,7 +153,7 @@
       </trans-unit>
       <trans-unit id="41">
         <source>En cliquant sur "Envoyer", un nouveau mot de passe sera généré et envoyé à l'adresse mail renseignée sur le profil.</source>
-        <target>By clicking on ""Send"", a new passward will be generated and sent to the email address filled in your profile account</target>
+        <target>By clicking on ""Send"", a new password will be created and sent to the email address provided in your account profile</target>
       </trans-unit>
       <trans-unit id="42">
         <source>Une fois ce mot de passe changé, l'ancien ne sera plus valable.</source>
@@ -169,7 +169,7 @@
       </trans-unit>
       <trans-unit id="45">
         <source>Mes coupons</source>
-        <target>My tree voucher</target>
+        <target>My tree vouchers</target>
       </trans-unit>
       <trans-unit id="49">
         <source>Général</source>
@@ -189,7 +189,7 @@
       </trans-unit>
       <trans-unit id="53">
         <source>Arbres plantés :</source>
-        <target>Planted trees :</target>
+        <target>Trees planted:</target>
       </trans-unit>
       <trans-unit id="54">
         <source>Profil</source>
@@ -241,7 +241,7 @@
       </trans-unit>
       <trans-unit id="68">
         <source>Offrir des arbres à planter sur la Planète par email ou avec une carte cadeau reforestation</source>
-        <target>Offer trees to be planted on the Planet by email or thnaks to a reforestation gift card</target>
+        <target>Offer trees to be planted on the Planet by email or thanks to a reforestation gift card</target>
       </trans-unit>
       <trans-unit id="69">
         <source>Cartes cadeaux Reforestation</source>
@@ -253,15 +253,15 @@
       </trans-unit>
       <trans-unit id="71">
         <source>Moteur recherche Up2Green</source>
-        <target>Up2green websearch engine</target>
+        <target>Up2green's search engine</target>
       </trans-unit>
       <trans-unit id="72">
         <source>Devenir acteur de la reforestation en impliquant mes clients et collaborateurs…</source>
-        <target>Act for reforestation involving my customers and employees…</target>
+        <target>Act for reforestation by involving my customers and employees…</target>
       </trans-unit>
       <trans-unit id="73">
         <source>Partenariat Entreprise</source>
-        <target>Private Patnership</target>
+        <target>Private Partnership</target>
       </trans-unit>
       <trans-unit id="74">
         <source>Je dispose d’un coupon Up2green pour planter mes arbres sur la Planète</source>
@@ -269,7 +269,7 @@
       </trans-unit>
       <trans-unit id="75">
         <source>Utiliser mon coupon Up2Green</source>
-        <target>Use my code nuimber to plant trees with Up2Green Reforestation</target>
+        <target>Use my code number to plant trees with Up2Green Reforestation</target>
       </trans-unit>
       <trans-unit id="76">
         <source>Développement : {society}</source>
@@ -277,7 +277,7 @@
       </trans-unit>
       <trans-unit id="77">
         <source>Graphisme : {society}</source>
-        <target>Graphism : {society}</target>
+        <target>Graphics : {society}</target>
       </trans-unit>
       <trans-unit id="78">
         <source>Intégration : {society}</source>
@@ -293,15 +293,15 @@
       </trans-unit>
       <trans-unit id="85">
         <source>Vous n'avez pas assez de crédit pour planter un arbre !</source>
-        <target>You still don't have enough tree credits to plant a tree !</target>
+        <target>You still don't have enough tree credits to plant a tree!</target>
       </trans-unit>
       <trans-unit id="86">
         <source>Collectez plus de crédits au fil de vos recherches grâce au moteur Up2green.</source>
-        <target>Collect more tree credits using Up2green websearch engine</target>
+        <target>Collect more tree credits using Up2green's search engine</target>
       </trans-unit>
       <trans-unit id="87">
         <source>(-Inf,0]Vous n'avez pas d'arbre à planter|[1] Vous avez un arbre à planter|(1,+Inf]Vous avez {number} arbres à planter</source>
-        <target>(-Inf,0]You don't have any tree to be planted|[1] You have 1 tree to be planted|(1,+Inf]You have {number} trees to be planted</target>
+        <target>(-Inf,0]You don't have any trees to plant|[1] You have 1 tree to plant|(1,+Inf]You have {number} trees to plant</target>
       </trans-unit>
       <trans-unit id="90">
         <source>Planter</source>
@@ -345,7 +345,7 @@
       </trans-unit>
       <trans-unit id="110">
         <source>{gain} pour 30€ d'achat</source>
-        <target>{gain} by purchase for 30 €</target>
+        <target>{gain} for 30 € worth of purchases</target>
       </trans-unit>
       <trans-unit id="111">
         <source>de {from} à {to}</source>
@@ -353,7 +353,7 @@
       </trans-unit>
       <trans-unit id="115">
         <source>Connectez-vous pour créditer votre compte en crédit arbres.</source>
-        <target>Login to credit your account in credit trees.</target>
+        <target>Login to credit your account with credit trees.</target>
       </trans-unit>
       <trans-unit id="116">
         <source>Notice</source>
@@ -381,11 +381,11 @@
       </trans-unit>
       <trans-unit id="127">
         <source>Veuillez planter tous vos arbres avant de valider !</source>
-        <target>Please plant all your trees before committing!</target>
+        <target>Please plant all your trees before validating!</target>
       </trans-unit>
       <trans-unit id="130">
         <source>Vous avez été gagné des crédits arbres sur votre compte !</source>
-        <target>You've earned credits trees on your account!</target>
+        <target>You have earned tree credits on your account!</target>
       </trans-unit>
       <trans-unit id="131">
         <source>Vous avez été déconnecté</source>
@@ -405,15 +405,15 @@
       </trans-unit>
       <trans-unit id="140">
         <source>Vous effectuez une recherche avec le moteur Up2green.</source>
-        <target>You search with Up2green.</target>
+        <target>You are search with Up2green's search engine.</target>
       </trans-unit>
       <trans-unit id="141">
         <source>Peut-être allez-vous cliquer sur un lien sponsorisé intéressant ?</source>
-        <target>Maybe you click on an interesting sponsored link.</target>
+        <target>Maybe you will click on an interesting sponsored link.</target>
       </trans-unit>
       <trans-unit id="142">
         <source>Le sponsor rémunère Yahoo pour chaque clic.</source>
-        <target>The sponsoring company pays Yahoo for the click.</target>
+        <target>The sponsoring company pays Yahoo for each click.</target>
       </trans-unit>
       <trans-unit id="143">
         <source>Yahoo reversent une grande partie de cette somme à l'association Up2green.</source>
@@ -421,11 +421,11 @@
       </trans-unit>
       <trans-unit id="144">
         <source>Up2green reverse sur votre compte la moitié de cette somme sous forme de crédits arbres (l'autre moitié sert à assurer les frais de structure et de développement de l'association ainsi que de nos propres projets d'agroforesterie).</source>
-        <target>Up2green donates half of this revenue in your account as tree credits (the other part is used to pay development and operating costs of the Association and its own agroforestry programs)</target>
+        <target>Up2green donates half of this revenue to your account as tree credits (the other part is used to pay development and operating costs of the Association and its own agroforestry programs)</target>
       </trans-unit>
       <trans-unit id="146">
         <source>Vous êtes maintenant inscrit et connecté à up2green.</source>
-        <target>You successfuly joined and logged in up2green.</target>
+        <target>You successfully joined and logged in to up2green.</target>
       </trans-unit>
       <trans-unit id="147">
         <source>Vos modifications ont bien été prises en compte.</source>
@@ -437,7 +437,7 @@
       </trans-unit>
       <trans-unit id="156">
         <source>Ancien mot de passe :</source>
-        <target>Old password :</target>
+        <target>Previous password :</target>
       </trans-unit>
       <trans-unit id="157">
         <source>Changer mon mot de passe</source>
@@ -453,7 +453,7 @@
       </trans-unit>
       <trans-unit id="161">
         <source>Si vous désirez recevoir une attestation, merci de remplir le formulaire ci-dessous :</source>
-        <target>If you wish to receive a certificate, thank you for filling out the form below:</target>
+        <target>If you wish to receive a certificate, please fill out the form below:</target>
       </trans-unit>
       <trans-unit id="162">
         <source>Prénom</source>
@@ -473,15 +473,15 @@
       </trans-unit>
       <trans-unit id="166">
         <source>Revenir à la plantation</source>
-        <target>Back to the planting</target>
+        <target>Back to planting</target>
       </trans-unit>
       <trans-unit id="167">
         <source>Numéro de coupon invalide</source>
-        <target>invalid code number </target>
+        <target>invalid voucher number </target>
       </trans-unit>
       <trans-unit id="168">
         <source>Vous n'avez pas assez de crédits arbres.</source>
-        <target>You do not have enough trees credits.</target>
+        <target>You do not have enough tree credits.</target>
       </trans-unit>
       <trans-unit id="169">
         <source>Formulaire invalide.</source>
@@ -489,7 +489,7 @@
       </trans-unit>
       <trans-unit id="170">
         <source>Vous n'avez pas encore acheté de coupon.</source>
-        <target>You have not bought any reforestation pass yet.</target>
+        <target>You have not bought any reforestation vouchers yet.</target>
       </trans-unit>
       <trans-unit id="171">
         <source>Numéro</source>
@@ -553,11 +553,11 @@
       </trans-unit>
       <trans-unit id="186">
         <source>Félicitations ! Vous venez de valider la plantation d’un arbre au {program}. Votre arbre sera planté d’ici la fin de l’année.</source>
-        <target>Congratulations! You just validate the tree planting program in {program}. Your tree will be planted by the end of the year.</target>
+        <target>Congratulations! You have just validated the plantation of a tree in the {program} program. Your tree will be planted by the end of the year.</target>
       </trans-unit>
       <trans-unit id="187">
         <source>{:partenaire} vous remercie de votre implication dans son opération.</source>
-        <target>{:partenaire} partner thank you for your involvement in its operation.</target>
+        <target>{:partenaire} partner thank you for your involvement in its operations.</target>
       </trans-unit>
       <trans-unit id="188">
         <source>Sinon, validez simplement votre plantation</source>
@@ -581,7 +581,7 @@
       </trans-unit>
       <trans-unit id="197">
         <source>Gagnez un arbre à l’ouverture de votre compte Up2green et plantez le dès à présent sur la Planète !</source>
-        <target>Win your 1st tree while creating your Up2green account and choose where to plant it on the Earth !</target>
+        <target>Win your 1st tree while creating your Up2green account and choose where to plant it on the planet !</target>
       </trans-unit>
       <trans-unit id="200">
         <source>{username} vous fait parvenir ce message :</source>
@@ -597,15 +597,15 @@
       </trans-unit>
       <trans-unit id="204">
         <source>(-Inf,1]Vous êtes sur le point d'offrir un coupon d'un arbre à {username}.|(1,+Inf]Vous êtes sur le point d'offrir un coupon de {number} arbres à {username}.</source>
-        <target>(-Inf,1]You are about to offer a reforestation pass of 1 tree to {username}.|(1,+Inf] You are about to offer a reforestation pass of {number} trees to{username}.</target>
+        <target>(-Inf,1]You are about to offer a reforestation voucher worth 1 tree to {username}.|(1,+Inf] You are about to offer a reforestation voucher worth {number} trees to{username}.</target>
       </trans-unit>
       <trans-unit id="205">
         <source>Ce coupon vous sera facturé {price}{currency} + la commission du prestataire de paiement ci-dessous.</source>
-        <target>This reforestation pass costs {price}{currency} + a commission fee corresponding to the payment provider below.</target>
+        <target>This reforestation voucher costs {price}{currency} + a commission fee corresponding to the payment provider below.</target>
       </trans-unit>
       <trans-unit id="206">
         <source>Les coupons de plantations sont valables {number} jours après leur création.</source>
-        <target>Reforestation pass are valid during {number} days after their creation.</target>
+        <target>Reforestation vouchers are valid during {number} days after their creation.</target>
       </trans-unit>
       <trans-unit id="207">
         <source>Au delà de cette date de validité, l'Association Up2green Reforestation choisira le(s) programme(s) financé(s)</source>
@@ -628,8 +628,8 @@
         <target>Pay</target>
       </trans-unit>
       <trans-unit id="212">
-        <source>(-Inf,1]Féilicitation ! Votre coupon d'un arbre à bien été envoyé à {mail}|(1,+Inf]Féilicitation ! Votre coupon de {number} arbres à bien été envoyé à {mail}</source>
-        <target>(-Inf,1]Congratulations ! Your reforestation pass has been sent to {mail}|(1,+Inf] Congratulations! Your reforestation pass of {number} trees has been sent to {mail}</target>
+        <source>(-Inf,1]Félicitations ! Votre coupon d'un arbre à bien été envoyé à {mail}|(1,+Inf]Félicitations ! Votre coupon de {number} arbres à bien été envoyé à {mail}</source>
+        <target>(-Inf,1]Congratulations ! Your reforestation voucher has been sent to {mail}|(1,+Inf] Congratulations! Your reforestation voucher of {number} trees has been sent to {mail}</target>
       </trans-unit>
       <trans-unit id="213">
         <source>La transaction a expiré, merci de recommencer.</source>
@@ -637,7 +637,7 @@
       </trans-unit>
       <trans-unit id="214">
         <source>Une erreur est survenue lors du paiement, merci de recommencer.</source>
-        <target>An error has occured, please try again.</target>
+        <target>An error has occurred, please try again.</target>
       </trans-unit>
       <trans-unit id="215">
         <source>1 crédit = {prix}{devise}</source>
@@ -653,7 +653,7 @@
       </trans-unit>
       <trans-unit id="218">
         <source>(-Inf,1]Vous avez choisi un coupon d'un arbre|(1,+Inf]Vous avez choisi un coupon de {number} arbres</source>
-        <target>(-Inf,1]You have selected one reforestation pass of 1 tree|(1,+Inf] You have selected one reforestation pass of {number} trees</target>
+        <target>(-Inf,1]You have selected one reforestation voucher worth 1 tree|(1,+Inf] You have selected one reforestation voucher worth {number} trees</target>
       </trans-unit>
       <trans-unit id="223">
         <source>Continuer</source>
@@ -677,15 +677,15 @@
       </trans-unit>
       <trans-unit id="228">
         <source>Finalisation</source>
-        <target>Finalization</target>
+        <target>Finalisation</target>
       </trans-unit>
       <trans-unit id="230">
-        <source>(-Inf,1]Féilicitation ! Votre compte a bien été crédité de {number} credit.|(1,+Inf]Féilicitation ! Votre compte a bien été crédité de {number} credits.</source>
+        <source>(-Inf,1]Félicitations ! Votre compte a bien été crédité de {number} credit.|(1,+Inf]Félicitations ! Votre compte a bien été crédité de {number} credits.</source>
         <target>(-Inf,1]Congratulation ! Your account has been credited with {number} credit.|(1,+Inf]Congratulation ! Your account has been credited with {number} credits.</target>
       </trans-unit>
       <trans-unit id="231">
         <source>Choisissez votre coupon</source>
-        <target>Choose your reforestation pass</target>
+        <target>Choose your reforestation voucher</target>
       </trans-unit>
       <trans-unit id="232">
         <source>Destinataire</source>
@@ -697,7 +697,7 @@
       </trans-unit>
       <trans-unit id="234">
         <source>Nous envoyons votre coupon</source>
-        <target>We send your reforestation pass</target>
+        <target>We send your reforestation voucher</target>
       </trans-unit>
       <trans-unit id="235">
         <source>Vous êtes sur le point de créditer votre compte de {number} crédits pour un prix de {price}{currency} (&lt;em&gt;+ le prix de la commission sur la transaction demandé par le service de facturation ci-dessous&lt;/em&gt;).</source>
@@ -705,353 +705,354 @@
       </trans-unit>
       <trans-unit id="236">
         <source>Up2green vous offre la possibilité d'acheter un coupon contenant un code sécurisé que l'un de vos proches ou amis pourra utiliser sur la plateforme de reforestation en ligne. Il choisira lui-même où les planter sur la Planète. Vous pourrez accompagner ce cadeau par un message personnel.</source>
-        <target>Up2green offers you the possibility to buy a reforestation pass including a secure code to be used directly by your relative or friend on the reforestation map online. He will personally choose the programs on the Earth he wants to plant his trees. You will be able to accompany your gift with a personal message. </target>
+        <target>Up2green offers you the possibility to buy a reforestation voucher including a secure code to be used directly by your relatives or friends on the reforestation platform online. He will personally choose the programs available all over the planet where he wants to plant his trees. You will be able to accompany your gift with a personal message. </target>
       </trans-unit>
       <trans-unit id="237">
         <source>Choix du coupon</source>
-        <target>Choose your reforestation pass</target>
+        <target>Choose your reforestation voucher</target>
       </trans-unit>
       <trans-unit id="238">
         <source>(-Inf,1]Offrir un coupon d'un arbre à un proche ou un ami (Prix: {price}{currency})|(1,+Inf]Offrir un coupon de {number} arbres à un proche ou un ami (Prix: {price}{currency})</source>
-        <target/>
+        <target>(-Inf,1]Offer a tree plantation voucher to family or friends (Prix: {price}{currency})|(1,+Inf]Offer a plantation voucher worth {number} trees to family or friends (Prix: {price}{currency}) </target>
       </trans-unit>
       <trans-unit id="239">
         <source>(commission de {price}{currency})</source>
-        <target/>
+        <target>(commission worth {price}{currency})</target>
       </trans-unit>
       <trans-unit id="240">
         <source>Programmes de reforestation</source>
-        <target/>
+        <target>Reforestation programs</target>
       </trans-unit>
       <trans-unit id="241">
         <source>Les sites de reforestation.</source>
-        <target/>
+        <target>The reforestation zones.</target>
       </trans-unit>
       <trans-unit id="242">
         <source>ONG et Organismes planteurs</source>
-        <target/>
+        <target>NGO and plantation organisms</target>
       </trans-unit>
       <trans-unit id="243">
         <source>Organisme</source>
-        <target/>
+        <target>Organisms</target>
       </trans-unit>
       <trans-unit id="245">
         <source>(-Inf,0]Vous n'avez pas encore planté d'arbre dans ce programme|(1)Vous avez planté un arbre dans ce programme|[1,+Inf]Vous avez planté {number} arbres dans ce programme</source>
-        <target/>
+        <target>(-Inf,0]You haven't planted any trees in this program yet|(1)You have planted one tree in this program|[1,+Inf]You have planted {number} trees in this program</target>
       </trans-unit>
       <trans-unit id="246">
         <source>Informations générales</source>
-        <target/>
+        <target>General informations</target>
       </trans-unit>
       <trans-unit id="247">
         <source>Site internet</source>
-        <target/>
+        <target>Web site</target>
       </trans-unit>
       <trans-unit id="248">
         <source>Accroche</source>
-        <target/>
+        <target>Catcher</target>
       </trans-unit>
       <trans-unit id="251">
         <source>Mes filleuls</source>
-        <target/>
+        <target>My friends</target>
       </trans-unit>
       <trans-unit id="252">
         <source>Offrir des arbres (coupons)</source>
-        <target/>
+        <target>Offer trees (vouchers)</target>
       </trans-unit>
       <trans-unit id="253">
         <source>Ajouter des crédits arbres à mon compte</source>
-        <target/>
+        <target>Add tree credits to my account</target>
       </trans-unit>
       <trans-unit id="254">
         <source>Mes infos partenaire</source>
-        <target/>
+        <target>My partner information</target>
       </trans-unit>
       <trans-unit id="255">
         <source>Mon attestation</source>
-        <target/>
+        <target>My certificate</target>
       </trans-unit>
       <trans-unit id="256">
         <source>Ma page</source>
-        <target/>
+        <target>My page</target>
       </trans-unit>
       <trans-unit id="257">
         <source>En parrainant vos amis, vous aidez l’Association à être connue et vous collectez ensuite de façon systématique {number}% des arbres qu’ils gagnent au fil de leurs recherches !</source>
-        <target/>
+        <target>By sponsoring your friends, you help our association increase its visibility and you systematically collect {number}% of the trees they earn when doing web searches!</target>
       </trans-unit>
       <trans-unit id="258">
         <source>Vous n'avez pas encore de filleul, {lien}parrainez vos amis dès maintenant{/lien} pour planter encore plus d'arbres !</source>
-        <target/>
+        <target>You haven't sponsored any of your friends yet, {lien}sponsor your friends starting now{/lien} to plant even more trees!</target>
       </trans-unit>
       <trans-unit id="259">
         <source>E-Mail</source>
-        <target/>
+        <target>E-mail</target>
       </trans-unit>
       <trans-unit id="260">
         <source>Enregistré ?</source>
-        <target/>
+        <target>Recorded?</target>
       </trans-unit>
       <trans-unit id="261">
         <source>Gains grâce au filleul</source>
-        <target/>
+        <target>Earned thanks to a friend</target>
       </trans-unit>
       <trans-unit id="262">
         <source>Date d'inscription</source>
-        <target/>
+        <target>Registration date</target>
       </trans-unit>
       <trans-unit id="263">
         <source>(-Inf,1]filleul|(1,+Inf]filleuls</source>
-        <target/>
+        <target>(-Inf,1]friend|(1,+Inf]friends</target>
       </trans-unit>
       <trans-unit id="264">
         <source>CSV pour OpenOffice</source>
-        <target/>
+        <target>CSV for Open Office</target>
       </trans-unit>
       <trans-unit id="265">
         <source>CSV pour Microsoft Excel</source>
-        <target/>
+        <target>CSV for Microsoft Excel</target>
       </trans-unit>
       <trans-unit id="266">
         <source>Mes filleuls ({number})</source>
-        <target/>
+        <target>My friends ({number})</target>
       </trans-unit>
       <trans-unit id="267">
         <source>Vous utilisez actuelement l'attestation par défaut. Vous pouvez la modifier ci-dessus.</source>
-        <target/>
+        <target>You are currently using the default certificate. You can edit it here.</target>
       </trans-unit>
       <trans-unit id="268">
         <source>Attention, cette image doit obligatoirement être au format A4 paysage (soit très exactement 842px de large et 595px de hauteur) et ne pas dépasser 1Mo. Ces contraintes sont très importantes pour gérer la  construction de l'attestation.</source>
-        <target/>
+        <target>Warning, this image must absolutely be in A4 landscape format (or more precisley 842px wide and 595px high) and mustn't weigh more than 1MO. These constraints are very important to manage the construction of the certificate.</target>
       </trans-unit>
       <trans-unit id="269">
         <source>Ce fond d'attestation est remplis par le nom de l'utilisateur, la localisation des arbres qu'il a plantés ainsi que la date de génération de l'attestation. Laissez donc de la place pour le texte. (Demandez nous des codes de tests si vous avez besoin de tester le rendu)</source>
-        <target/>
+        <target>The Certificate background is filled with the username, the place where the tree was planted, as well as the date the certificate was delivered. So please leave a bit of space for the text entry. (Ask us for test codes if you need to test and visualise the final appearance)</target>
       </trans-unit>
       <trans-unit id="270">
         <source>Vos informations</source>
-        <target/>
+        <target>Your informations</target>
       </trans-unit>
       <trans-unit id="271">
         <source>Nom d'utilisateur (*) :</source>
-        <target/>
+        <target>Username (*) :</target>
       </trans-unit>
       <trans-unit id="272">
         <source>Un utilisateur porte déjà ce nom</source>
-        <target/>
+        <target>Another user is already using this username</target>
       </trans-unit>
       <trans-unit id="273">
         <source>Mot de passe (*) :</source>
-        <target/>
+        <target>Password (*) :</target>
       </trans-unit>
       <trans-unit id="274">
         <source>Confirmation du mot de passe (*) :</source>
-        <target/>
+        <target>Password confirmation (*) :</target>
       </trans-unit>
       <trans-unit id="275">
         <source>Adresse e-mail (*) :</source>
-        <target/>
+        <target>E-mail address (*) :</target>
       </trans-unit>
       <trans-unit id="276">
         <source>Prénom :</source>
-        <target/>
+        <target>Forename :</target>
       </trans-unit>
       <trans-unit id="277">
         <source>Nom :</source>
-        <target/>
+        <target>Surname :</target>
       </trans-unit>
       <trans-unit id="278">
         <source>Recevoir les newsletter :</source>
-        <target/>
+        <target>Receive the newsletter :</target>
       </trans-unit>
       <trans-unit id="279">
         <source>(*) : Champs obligatoires</source>
-        <target/>
+        <target>(*) : Compulsory field</target>
       </trans-unit>
       <trans-unit id="280">
         <source>Mot de passe perdu</source>
-        <target/>
+        <target>Forgotten password</target>
       </trans-unit>
       <trans-unit id="281">
         <source>Entrez l'addresse email de votre contact ici</source>
-        <target/>
+        <target>Enter you contact's e-mail address here</target>
       </trans-unit>
       <trans-unit id="282">
         <source>Ajouter une adresse</source>
-        <target/>
+        <target>Add an address</target>
       </trans-unit>
       <trans-unit id="283">
         <source>Envoyer les invitations</source>
-        <target/>
+        <target>Send invitations</target>
       </trans-unit>
       <trans-unit id="285">
         <source>Plantez vos arbres grâce à notre plateforme de reforestation !</source>
-        <target/>
+        <target>Plant trees thanks to our reforestation platform!</target>
       </trans-unit>
       <trans-unit id="286">
         <source>Programmes actifs</source>
-        <target/>
+        <target>Active programs</target>
       </trans-unit>
       <trans-unit id="287">
         <source>Siège des organismes actifs</source>
-        <target/>
+        <target>Seat of the active organisms</target>
       </trans-unit>
       <trans-unit id="288">
         <source>Organismes actifs</source>
-        <target/>
+        <target>Active Organisms</target>
       </trans-unit>
       <trans-unit id="289">
         <source>Programmes inactifs</source>
-        <target/>
+        <target>Inactive programs</target>
       </trans-unit>
       <trans-unit id="290">
         <source>Siège des organismes inactifs</source>
-        <target/>
+        <target>Seat of the inactive organisms</target>
       </trans-unit>
       <trans-unit id="291">
         <source>Organismes inactifs</source>
-        <target/>
+        <target>Inactive organisms</target>
       </trans-unit>
       <trans-unit id="292">
         <source>Programmes soutenus par le partenaire {partner}</source>
-        <target/>
+        <target>Programs supported by our {partner} partner</target>
       </trans-unit>
       <trans-unit id="293">
         <source>Programmes</source>
-        <target/>
+        <target>Programs</target>
       </trans-unit>
       <trans-unit id="294">
         <source>Vos invitations ont bien été envoyées.</source>
-        <target/>
+        <target>Your invitations have been sent</target>
       </trans-unit>
       <trans-unit id="295">
         <source>Vous avez gagné un arbre grâce à l'ouverture de votre compte !</source>
-        <target/>
+        <target>You have earned a tree thanks to the registration of your account!</target>
       </trans-unit>
       <trans-unit id="296">
         <source>Votre fichier à bien été mis à jour. Il est possible que votre fichier mette quelques minutes à s'enregistrer sur nos serveurs.</source>
-        <target/>
+        <target>Your profile has been updated. It may take a few minutes to update on our servers</target>
       </trans-unit>
       <trans-unit id="297">
         <source>Veuillez remplir au moins une addresse mail.</source>
-        <target/>
+        <target>Please at least complete an e-mail address</target>
       </trans-unit>
       <trans-unit id="298">
         <source>L'image ne respecte pas les critères requis.</source>
-        <target/>
+        <target>The image doesn't respect the required parameters</target>
       </trans-unit>
       <trans-unit id="299">
         <source>Votre coupon est périmé, il a atteint sa limite de validité.</source>
-        <target/>
+        <target>You voucher is out of date, it has reached its validity limit.</target>
       </trans-unit>
       <trans-unit id="300">
         <source>Up2green reforestation, achat de coupon</source>
-        <target/>
+        <target>Up2green reforestation, voucher purchase</target>
       </trans-unit>
       <trans-unit id="301">
-        <source>Achat d'un cuopon de {number} abre(s) sur le site up2green. Prix total : {price}</source>
-        <target/>
+        <source>Achat d'un coupon de {number} arbre(s) sur le site up2green. Prix total : {price}</source>
+        <target>Purchase of a voucher of {number} tree(s) on the Up2green website. Total price : {price}</target>
       </trans-unit>
       <trans-unit id="302">
         <source>Up2green reforestation, achat de crédit</source>
-        <target/>
+        <target>Up2green reforestation, credit purchase</target>
       </trans-unit>
       <trans-unit id="303">
         <source>Nous ajoutons vos crédits à votre compte</source>
-        <target/>
+        <target>We are adding the credits to your account</target>
       </trans-unit>
       <trans-unit id="304">
         <source>E-mail du destinataire (*) : </source>
-        <target/>
+        <target>Recipient's e-mail (*) :</target>
       </trans-unit>
       <trans-unit id="305">
         <source>Votre nom : </source>
-        <target/>
+        <target>Your name :</target>
       </trans-unit>
       <trans-unit id="306">
         <source>Nom du destinataire : </source>
-        <target/>
+        <target>Recipient's name :</target>
       </trans-unit>
       <trans-unit id="307">
         <source>Votre message : </source>
-        <target/>
+        <target>Your message :</target>
       </trans-unit>
       <trans-unit id="308">
         <source>Capacité de plantation : {number}/{max} arbres plantés</source>
-        <target/>
+        <target>Plantation capacity : {number}/{max} trees planted</target>
       </trans-unit>
       <trans-unit id="309">
         <source>Vous avez un coupon de plantation ? {link}</source>
-        <target/>
+        <target>You have a plantation voucher? {link}</target>
       </trans-unit>
       <trans-unit id="310">
         <source>Cliquez ici</source>
-        <target/>
+        <target>Click here</target>
       </trans-unit>
       <trans-unit id="311">
         <source>Découvrez les programmes de reforestation</source>
-        <target/>
+        <target>Discover the reforestation programs</target>
       </trans-unit>
       <trans-unit id="312">
         <source>Bienvenue sur la plateforme de reforestation soutenue par le Service
 		de l’eau du SEDIF – 142 000 arbres à planter en 2011&lt;br /&gt;
 		{link}Découvrez les programmes de plantation{endLink}</source>
-        <target/>
+        <target>Welcome on the reforestation platform supported by the SEDIF water service – 142 000 trees to plant in 2011&lt;br /&gt;
+		{link}Discover the plantation programs{endLink}</target>
       </trans-unit>
       <trans-unit id="313">
         <source>Vous allez recevoir un email attestant de votre plantation.</source>
-        <target/>
+        <target>You will receive an e-mail attesting your plantation.</target>
       </trans-unit>
       <trans-unit id="314">
         <source>Erreur 404 : page introuvable !</source>
-        <target/>
+        <target>Error 404 : Page can't be found!</target>
       </trans-unit>
       <trans-unit id="315">
         <source>La page que vous demandez n'existe plus ou a changer d'addresse.</source>
-        <target/>
+        <target>The page you are searching for doesn't exist or has changed address.</target>
       </trans-unit>
       <trans-unit id="316">
         <source>Retour à l'accueil</source>
-        <target/>
+        <target>Return to homepage</target>
       </trans-unit>
       <trans-unit id="317">
         <source>Une erreur est survenue lors de l'envoi du mail d'attestation.</source>
-        <target/>
+        <target>An error occurred while sending the attestation e-mail.</target>
       </trans-unit>
       <trans-unit id="318">
         <source>Résumé : </source>
-        <target/>
+        <target>Summary :</target>
       </trans-unit>
       <trans-unit id="319">
         <source>Les programmes soutenus par le Service de l'eau du SEDIF vous remercient de votre implication dans son opération.</source>
-        <target/>
+        <target>The programs supported by the SEDIF water service, thank you for implication in their operation.</target>
       </trans-unit>
       <trans-unit id="320">
         <source>Exporter : </source>
-        <target/>
+        <target>Export :</target>
       </trans-unit>
       <trans-unit id="321">
         <source>(-Inf,1]Le contact suivant est déjà membres up2green ou a déjà reçu une invitation : |(1,+Inf]Les contacts suivant sont déjà membres up2green ou ont déjà reçu une invitation : </source>
-        <target/>
+        <target>(Inf,1]The following contact is already a member of Up2green or has already received an invitation : |(1,Inf] The following contacts are already members of Up2green or have already received an invitation :</target>
       </trans-unit>
       <trans-unit id="322">
         <source>Vos logos</source>
-        <target/>
+        <target>Your logos</target>
       </trans-unit>
       <trans-unit id="323">
         <source>Logos actuels</source>
-        <target/>
+        <target>Current logos</target>
       </trans-unit>
       <trans-unit id="324">
         <source>Ajouter des logos</source>
-        <target/>
+        <target>Add logos</target>
       </trans-unit>
       <trans-unit id="325">
         <source>Les programmes</source>
-        <target/>
+        <target>The programs</target>
       </trans-unit>
       <trans-unit id="326">
         <source>Vous avez été désinscrit avec succès</source>
-        <target/>
+        <target>You have been unregistered successfully</target>
       </trans-unit>
     </body>
   </file>

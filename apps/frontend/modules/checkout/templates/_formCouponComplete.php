@@ -1,7 +1,7 @@
 <p class="important"><?php
 if (empty ($error)) {
 	echo format_number_choice(
-		"(-Inf,1]Féilicitation ! Votre coupon d'un arbre à bien été envoyé à {mail}|(1,+Inf]Féilicitation ! Votre coupon de {number} arbres à bien été envoyé à {mail}",
+		"(-Inf,1]Félicitations ! Votre coupon d'un arbre à bien été envoyé à {mail}|(1,+Inf]Félicitations ! Votre coupon de {number} arbres à bien été envoyé à {mail}",
 		array(
 			'{number}' => $product->getCredit(),
 			'{mail}' => $mail,

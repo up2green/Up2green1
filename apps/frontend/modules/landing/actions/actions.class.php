@@ -10,16 +10,10 @@
  */
 class landingActions extends sfActions
 {
-	public function executeIndex(sfWebRequest $request)
-	{
-		$this->forward404();
-	}
-
-	public function execute404(sfWebRequest $request)
-	{
-		$this->forward404();
-	}
-
+  /**
+   * @param sfWebRequest $request
+   * @return string
+   */
 	public function executePartenaire(sfWebRequest $request)
 	{
 		$this->operation = $request->getParameter('operation');
@@ -37,7 +31,10 @@ class landingActions extends sfActions
     
     return ucfirst($partenaireSlug).ucfirst($this->operation).'Success';
 	}
-	
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executePagePartenaire(sfWebRequest $request)
 	{
 		$this->operation = $request->getParameter('operation');
@@ -49,7 +46,10 @@ class landingActions extends sfActions
 		$this->forward404If($this->partenaire->isNew());
 		$this->forward404Unless($this->partenaire->getPage());
 	}
-	
+
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executePlantation(sfWebRequest $request)
 	{
 		$partenaireSlug = $request->getParameter('partenaire');
@@ -70,6 +70,9 @@ class landingActions extends sfActions
 		}
 	}
 
+  /**
+   * @param sfWebRequest $request
+   */
 	public function executeMap(sfWebRequest $request)
 	{
 		$partenaireSlug = $request->getParameter('partenaire');

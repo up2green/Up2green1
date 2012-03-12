@@ -37,10 +37,16 @@
 			</tbody>
 			
 			<?php if ($pager->haveToPaginate()): ?>
-			<?php include_partial('html/pager', array(
-					'pager' => $pager,
-					'url_for' => 'user_coupon'
-			)); ?>
+                        <tfoot class="pagination">
+                            <tr>
+                                <td colspan="4">
+                                    <?php include_partial('up2gCommonDefault/pager', array(
+                                        'pager' => $pager,
+                                        'url_for' => 'user_coupon',
+                                    )); ?>
+                                </td>
+                            </tr>
+                        </tfoot>
 			<?php endif; ?>
 		</table>
 		<div class="pagination_desc">

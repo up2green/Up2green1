@@ -11,11 +11,15 @@
 class checkoutActions extends sfActions
 {
 
-  public function executeIndex(sfWebRequest $request)
+  public function executeIndex()
   {
+    // TODO : use routing ?
     $this->forward404();
   }
 
+  /**
+   * @param sfWebRequest $request
+   */
   public function executeCoupon(sfWebRequest $request)
   {
     sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
@@ -89,7 +93,7 @@ class checkoutActions extends sfActions
 
             $data = new PaypalPaymentData();
             $data->subject = __('Up2green reforestation, achat de coupon');
-            $data->payment_text = __("Achat d'un cuopon de {number} abre(s) sur le site up2green. Prix total : {price}", array(
+            $data->payment_text = __("Achat d'un coupon de {number} arbre(s) sur le site up2green. Prix total : {price}", array(
               '{number}' => $this->product->getCredit(),
               '{price}'  => $this->product->getPrix() * $commission,
               ));
@@ -213,6 +217,9 @@ class checkoutActions extends sfActions
     $this->vars['partenarie'] = $this->partenaire;
   }
 
+  /**
+   * @param sfWebRequest $request
+   */
   public function executeCredit(sfWebRequest $request)
   {
     sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));

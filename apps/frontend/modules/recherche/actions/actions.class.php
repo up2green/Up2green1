@@ -11,6 +11,9 @@
 class rechercheActions extends sfActions
 {
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeIndex(sfWebRequest $request)
   {
     $this->form = new SearchForm();
@@ -22,6 +25,9 @@ class rechercheActions extends sfActions
     $this->totalTrees = Doctrine_Core::getTable('tree')->count();
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeSearch(sfWebRequest $request)
   {
     $this->form = new SearchForm();
@@ -37,12 +43,15 @@ class rechercheActions extends sfActions
     $this->typeSlug = SearchEngine::getSlug($this->type);
 
     $engine = new SearchEngine($this->textSearch, $this->type);
-    
+
     $this->results = $engine->getResults();
     $this->singleShopResult = sfConfig::get('app_show_shop_results', true) ? $engine->getOneShopResult() : array();
     $this->pubResults = $engine->getPubResults();
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeViewElement(sfWebRequest $request)
   {
     $this->type = $request->getParameter('type');

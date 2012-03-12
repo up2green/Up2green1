@@ -3,13 +3,14 @@
 /**
  * polygonnePoint form.
  *
- * @package    up2green
- * @subpackage form
- * @author     Clément Gautier
- * @version    SVN: $Id: sfDoctrineFormTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * @category Lib
+ * @package  Form
+ * @author   Clément Gautier <clement.gautier@smartit.fr>
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
 class polygonnePointForm extends BasepolygonnePointForm
 {
+
   /**
    * @see pointForm
    */

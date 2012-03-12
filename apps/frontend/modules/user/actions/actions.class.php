@@ -10,24 +10,11 @@
  */
 class userActions extends sfActions
 {
-
   /**
-   * Executes index action
-   *
-   * @param sfRequest $request A request object
+   * @param sfWebRequest $request 
    */
-  public function executeIndex(sfWebRequest $request)
+  public function executeCoupon(sfWebRequest $request)
   {
-    $this->forward404();
-  }
-
-  public function executeListCoupon(sfWebRequest $request)
-  {
-    if (!$this->getUser()->isAuthenticated()) {
-      $this->redirect('@sf_guard_signin');
-      return;
-    }
-
     $user = $this->getUser()->getGuardUser();
     $this->partenaire = ($user->getPartenaire()->getId() != null ? $user->getPartenaire() : null);
 
@@ -45,6 +32,9 @@ class userActions extends sfActions
     $this->coupons = $this->pager->getResults();
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeChangeLanguage(sfWebRequest $request)
   {
     $langs = sfConfig::get('app_cultures_enabled');
@@ -65,6 +55,9 @@ class userActions extends sfActions
     return $this->redirect($request->getParameter('fromUrl'));
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeInscription(sfWebRequest $request)
   {
     if ($this->getUser()->isAuthenticated()) {
@@ -130,6 +123,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeProfil(sfWebRequest $request)
   {
     if (!$this->getUser()->isAuthenticated()) {
@@ -185,6 +181,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeListFilleul(sfWebRequest $request)
   {
     if (!$this->getUser()->isAuthenticated()) {
@@ -203,6 +202,9 @@ class userActions extends sfActions
     $this->filleuls = $this->pager->getResults();
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeInviteFilleul(sfWebRequest $request)
   {
     if (!$this->getUser()->isAuthenticated()) {
@@ -260,6 +262,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executeForgotPassword(sfWebRequest $request)
   {
     if ($request->isMethod('post')) {
@@ -289,6 +294,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executePartenaireProfil(sfWebRequest $request)
   {
     $this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
@@ -315,6 +323,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executePartenaireAttestation(sfWebRequest $request)
   {
     $this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');
@@ -341,6 +352,9 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param sfWebRequest $request 
+   */
   public function executePartenairePage(sfWebRequest $request)
   {
     $this->forwardUnless($this->getUser()->isAuthenticated(), 'sfGuardAuth', 'signin');

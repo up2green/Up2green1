@@ -43,7 +43,7 @@
 			
         </div>
 
-		<?php include_component('blog', 'footerLegal'); ?>
+		<?php include_component('up2gBlogDefault', 'footerLegal'); ?>
 		<?php include_partial('html/flash'); ?>
 
     </body>

@@ -3,9 +3,10 @@
 /**
  * category form.
  *
- * @package    form
- * @subpackage category
- * @version    SVN: $Id: sfDoctrineFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
+ * @category Lib
+ * @package  Form
+ * @author   Clément Gautier <clement.gautier@smartit.fr>
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
 class categoryForm extends BasecategoryForm
 {
@@ -13,20 +14,19 @@ class categoryForm extends BasecategoryForm
 
   public function configure()
   {
-   	unset($this['root_id'], $this['lft'], $this['rgt'], $this['level']);
+    unset($this['root_id'], $this['lft'], $this['rgt'], $this['level']);
     $this->widgetSchema['parent_id'] = new sfWidgetFormDoctrineChoice(array(
-      'model' => 'category',
-      'add_empty' => '~ (object is at root level)',
-      'order_by' => array('root_id, lft',''),
-      'method' => 'getIndentedName'
-		));
+        'model'     => 'category',
+        'add_empty' => '~ (object is at root level)',
+        'order_by'  => array('root_id, lft', ''),
+        'method' => 'getIndentedName'
+      ));
     $this->validatorSchema['parent_id'] = new sfValidatorDoctrineChoice(array(
-      'required' => false,
-      'model' => 'category'
-    ));
+        'required' => false,
+        'model'    => 'category'
+      ));
     $this->setDefault('parent_id', $this->object->getParentId());
     $this->widgetSchema->setLabel('parent_id', 'Dans la catégorie');
-
   }
 
   public function updateParentIdColumn($parentId)
@@ -50,13 +50,11 @@ class categoryForm extends BasecategoryForm
         {
           $node->makeRoot($this->object['id']);
           $this->object->save($con);
-        }
-        else
+        } else
         {
           $this->object->getTable()->getTree()->createRoot($this->object); //calls $this->object->save internally
         }
-      }
-      else
+      } else
       {
         //form validation ensures an existing ID for $this->parentId
         $parent = $this->object->getTable()->find($this->parentId);

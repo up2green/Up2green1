@@ -10,12 +10,7 @@
  */
 class lienComponents extends sfComponents
 {
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeFooterPanel(sfWebRequest $request)
+  public function executeFooterPanel()
   {
 /*
   	$this->footerCategories = Doctrine::getTable('categorie')

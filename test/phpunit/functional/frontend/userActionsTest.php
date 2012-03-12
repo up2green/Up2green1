@@ -3,24 +3,21 @@
 require_once dirname(__FILE__) . '/../../bootstrap/functional.php';
 
 /**
- * Test Frontend / Blog / actions.class.php file
+ * Test Frontend / User / actions.class.php file
  *
  * @category Test
  * @package  Functional
  * @author   Clément Gautier <clement.gautier@smartit.fr>
  * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
-class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
+class functional_frontend_userActionsTest extends FrontendFunctionalTestCase
 {
-
   /**
-   * Test the indexAction
+   * Test the executeIndex method
    */
-  public function testIndex()
+  public function testCoupon()
   {
-    $this->getBrowser()->
-      getAndCheck('blog', 'index', '/blog/index', 200)
-    ;
+    $this->getAndCheckWithLogin('user', 'coupon', '/user/coupon');
   }
 
 }

@@ -25,8 +25,8 @@
         }
 
         // Sauvegardes des URLs pour charger les articles suivants / précédents (utilisés pour modifier l'URL des boutons en AJAX)
-        echo '<span class="invisible prevResultsUrl">'.url_for('@blog?articlesOffset='.$offsets['prev'].'&changement=articles', true).'</span>';
-        echo '<span class="invisible nextResultsUrl">'.url_for('@blog?articlesOffset='.$offsets['next'].'&changement=articles', true).'</span>';
+        echo '<span class="invisible prevResultsUrl">'.url_for('@blog_ajax_articles?offset='.$offsets['prev'], true).'</span>';
+        echo '<span class="invisible nextResultsUrl">'.url_for('@blog_ajax_articles?offset='.$offsets['next'], true).'</span>';
 
         // Affichage ou non du bloc conteneur (n'est pas affiché en AJAX)
         if (!isset($noBloc) || !$noBloc):
@@ -34,12 +34,12 @@
     </div>
     <p class="up_n_down">
       <span class="btn_up">
-        <a href="<?php echo url_for('@blog?articlesOffset='.$offsets['prev'].'&changement=articles'); ?>" class="button white loadFromUri prevResults">
+        <a href="<?php echo url_for('@blog_ajax_articles?offset='.$offsets['prev']); ?>" class="button white loadFromUri prevResults">
           <?php echo image_tag("icons/top.png"); ?>
         </a>
       </span>
       <span class="btn_down">
-        <a href="<?php echo url_for('@blog?articlesOffset='.$offsets['next'].'&changement=articles'); ?>" class="button white loadFromUri nextResults">
+        <a href="<?php echo url_for('@blog_ajax_articles?offset='.$offsets['next']); ?>" class="button white loadFromUri nextResults">
           <?php echo image_tag("icons/bottom.png"); ?>
         </a>
       </span>

@@ -73,9 +73,9 @@ class functional_frontend_landingActionsTest extends FrontendFunctionalTestCase
   public function testPlantationPartner()
   {
     $this->getBrowser()
-      ->getAndCheck('landing', 'plantation', '/landing/plantation/up2test', 200)
+      ->getAndCheck('landing', 'plantation', '/landing/plantation/up2test')
       ->with('request')->begin()
-      ->isParameter('partenaire', 'up2test')
+         ->isParameter('partenaire', 'up2test')
       ->end()
     ;
   }

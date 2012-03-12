@@ -3,45 +3,32 @@
 /**
  * article filter form.
  *
- * @package    up2green
- * @subpackage filter
- * @author     Your name here
- * @version    SVN: $Id: sfDoctrineFormFilterTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
+ * @category Lib
+ * @package  Filter
+ * @author   Clément Gautier
+ * @license  http://creativecommons.org/licenses/by-nc-nd/3.0/ CC BY-NC-ND 3.0
  */
-class articleFormFilter extends BasearticleFormFilter 
+class articleFormFilter extends BasearticleFormFilter
 {
-	public function configure() 
-	{
-		$this->widgetSchema['created_at'] = new sfWidgetFormDateRange(array(
-			'from_date' =>  new sfWidgetFormJQueryDate(array(
-							'image'=>'/images/calendar.png',
-			)),
-			'to_date'   =>  new sfWidgetFormJQueryDate(array(
-							'image'=>'/images/calendar.png',
-			)),
-			'template'  => 'From %from_date%<br />To %to_date%',
-		));
+  /**
+   * @see parent 
+   */
+  public function configure()
+  {
+    $this->widgetSchema['created_at'] = new up2gWidgetFormInlineJQueryDateRange();
+    $this->widgetSchema['updated_at'] = new up2gWidgetFormInlineJQueryDateRange();
 
-		$this->widgetSchema['updated_at'] = new sfWidgetFormDateRange(array(
-			'from_date' =>  new sfWidgetFormJQueryDate(array(
-							'image'=>'/images/calendar.png',
-			)),
-			'to_date'   =>  new sfWidgetFormJQueryDate(array(
-							'image'=>'/images/calendar.png',
-			)),
-			'template'  => 'From %from_date%<br />To %to_date%',
-		));
+    $this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoice(array(
+        'model'     => 'category',
+        'add_empty' => '~ (object is at root level)',
+        'order_by'  => array('root_id, lft', ''),
+        'method' => 'getIndentedName'
+      ));
 
-		$this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoice(array(
-			'model' => 'category',
-			'add_empty' => '~ (object is at root level)',
-			'order_by' => array('root_id, lft',''),
-			'method' => 'getIndentedName'
-		));
-		
-		$this->validatorSchema['category_list'] = new sfValidatorDoctrineChoice(array(
-      'required' => false,
-      'model' => 'category'
-    ));
-	}
+    $this->validatorSchema['category_list'] = new sfValidatorDoctrineChoice(array(
+        'required' => false,
+        'model'    => 'category'
+      ));
+  }
+
 }

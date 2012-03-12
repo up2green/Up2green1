@@ -11,7 +11,7 @@
 
 
 $_test_dir = realpath(dirname(__FILE__).'/../..');
-$_root_dir = $_test_dir.'/..';
+$_root_dir = realpath(dirname(__FILE__).'/../../..');
 
 require_once $_root_dir.'/config/ProjectConfiguration.class.php';
 

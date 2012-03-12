@@ -12,11 +12,10 @@ class htmlActions extends sfActions
 {
  /**
   * Executes index action
-  *
-  * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
+  public function executeIndex()
   {
+    // TODO : delete this ?
     $this->forward('default', 'module');
   }
 }

@@ -12,10 +12,9 @@ class defaultActions extends sfActions
 {
  /**
   * Executes error404 action
-  *
-  * @param sfRequest $request A request object
+  * TODO delete the action ?
   */
-  public function executeError404(sfWebRequest $request)
+  public function executeError404()
   {
   }
 }

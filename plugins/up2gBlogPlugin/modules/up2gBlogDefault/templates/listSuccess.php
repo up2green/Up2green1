@@ -17,17 +17,14 @@
     <div class="cartouche">
       <div class="content">
         <p class="title_blog">
-        	<?php echo $element->getTitle(); ?>
+          <?php echo link_to($element->getTitle(), '@blog_'.$type.'?slug='.$element->getSlug()); ?>
         </p>
       </div>
       <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
     </div>
     <p class="first_article">
 			<div class="accroche"><?php echo $element->getAccroche() ?></div>
-			<div class="description"><?php echo $element->getDescription(); ?></div>
-			<?php if($type == 'article') : ?>
-			<img class="element_logo" alt="<?php echo $element->getTitle(); ?>" src="/uploads/article/<?php echo $element->getLogo(); ?>" />
-			<?php endif; ?>
+      <?php echo link_to(__("Lire la suite"), '@blog_'.$type.'?slug='.$element->getSlug(), array('class' => 'read_more')); ?>
 		</p>
   </div>
   <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>

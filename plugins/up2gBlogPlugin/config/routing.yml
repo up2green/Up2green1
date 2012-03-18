@@ -1,6 +1,6 @@
 ## Default module
 
-change_language:
+blog_change_language:
   url:   /blog/change_language
   param: { module: user, action: changeLanguage }
 

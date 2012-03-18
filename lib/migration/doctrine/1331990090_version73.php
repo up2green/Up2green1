@@ -24,7 +24,7 @@ class Version73 extends Doctrine_Migration_Base
     // Create the links
     $this->createLink('Accueil', 'Home', '/', 0, self::$mainMenuId);
     $this->createLink('Articles', 'Articles', '/blog/article', 1, self::$mainMenuId);
-    $this->createLink('Programmes', 'Programmes', '/blog/programme', 0, $programmeCategoryId);
+    $this->createLink('Programmes', 'Programs', '/blog/programme', 0, $programmeCategoryId);
 
     $this->createLink('Nos partenaires', 'Our partners', '#', 0, $partenaireCategoryId);
     $this->createLink('Les organismes planteurs', 'Agencies planters', '/blog/organisme', 1, $partenaireCategoryId);

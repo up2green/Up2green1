@@ -105,7 +105,7 @@ plantation_change_language:
 ##### SEARCH
 ####################
 
-plantation_change_language:
+search:
   url:   /search
   param: { module: recherche, action: search }
 

@@ -1,0 +1,18 @@
+## Ajax Module
+
+reforestation_ajax_kml:
+  url: /plantation/ajax/kml
+  param: { module: up2gReforestationAjax, action: kml, sf_format: xml }
+
+reforestation_ajax_programme:
+  url: /plantation/ajax/programme
+  param: { module: up2gReforestationAjax, action: programme, sf_format: xml }
+
+reforestation_ajax_organisme:
+  url: /plantation/ajax/organisme
+  param: { module: up2gReforestationAjax, action: organisme, sf_format: xml }
+
+## Reforestation defaults
+
+reforestation_default:
+  url: /plantation/:module/:action

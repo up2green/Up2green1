@@ -30,7 +30,7 @@
 			var organismeRegexp = new RegExp(/gmap-organisme-/);
 			if(programmeRegexp.test(kmlEvent.featureData.id)) {
 				$.ajax({
-					url: "<?php echo url_for("ajax/getInfoProgramme", true) ?>",
+					url: "<?php echo url_for("@reforestation_ajax_programme", true) ?>",
 					context: kmlEvent,
 					async: false,
 					dataType: "xml",
@@ -50,7 +50,7 @@
 			}
 			else if(organismeRegexp.test(kmlEvent.featureData.id)) {
 				$.ajax({
-					url: "<?php echo url_for("ajax/getInfoOrganisme", true) ?>",
+					url: "<?php echo url_for("@reforestation_ajax_organisme", true) ?>",
 					context: kmlEvent,
 					async: false,
 					dataType: "xml",
@@ -101,7 +101,7 @@
 //				
 //				if (currentPlacemark.getType() == 'KmlPlacemark' && programmeRegexp.test(currentPlacemark.getId())) {
 //					$.ajax({
-//						url: "<?php echo substr(url_for("@get_info_programme"), 1) ?>",
+//						url: "<?php echo substr(url_for("@reforestation_ajax_programme"), 1) ?>",
 //						async: false,
 //						data: {
 //							programme: currentPlacemark.getId().substring(15)

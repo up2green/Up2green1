@@ -18,7 +18,7 @@ class plantationComponents extends sfComponents
     $this->gmapID = $this->gmapID[$_SERVER['HTTP_HOST']];
 
     $this->kmlURL = sfConfig::get('app_url_moteur');
-    $this->kmlURL .= substr(url_for("@get_kml"), 1);
+    $this->kmlURL .= substr(url_for("@reforestation_ajax_kml"), 1);
     $this->kmlURL .= '?key=' . uniqid();
 
     $this->partenaire = null;

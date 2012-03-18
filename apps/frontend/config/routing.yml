@@ -30,27 +30,6 @@ clic_pub:
   url: /ajax/clicPub
   param: { module: ajax, action: clicPub, sf_format: xml }
 
-get_kml:
-  url: /ajax/getKML
-  param: { module: ajax, action: getKML, sf_format: xml }
-plantation_get_kml:
-  url: /plantation/ajax/getKML
-  param: { module: ajax, action: getKML, sf_format: xml }
-
-get_info_programme:
-  url: /ajax/getInfoProgramme
-  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
-plantation_get_info_programme:
-  url: /plantation/ajax/getInfoProgramme
-  param: { module: ajax, action: getInfoProgramme, sf_format: xml }
-
-get_info_organisme:
-  url: /ajax/getInfoOrganisme
-  param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
-plantation_get_info_organisme:
-  url: /plantation/ajax/getInfoOrganisme
-  param: { module: ajax, action: getInfoOrganisme, sf_format: xml }
-
 couponsCSV:
   url:    /exportCoupons
   param:  {module: plantation, action: couponsCSV}

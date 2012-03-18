@@ -23,6 +23,7 @@ class ProjectConfiguration extends sfProjectConfiguration
 
       'up2gCommonPlugin',
       'up2gBlogPlugin',
+      'up2gReforestationPlugin',
     ));
 
     $env = sfConfig::get('sf_environment');

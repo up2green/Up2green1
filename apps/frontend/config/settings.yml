@@ -10,6 +10,7 @@ prod:
       - up2gBlogDefault
       - up2gBlogAjax
       - up2gCommonDefault
+      - up2gReforestationAjax
     logging_enabled:        false
 
 dev:
@@ -37,6 +38,7 @@ all:
       - up2gBlogDefault
       - up2gBlogAjax
       - up2gCommonDefault
+      - up2gReforestationAjax
 
     # Form security secret (CSRF protection)
     csrf_secret:            b56354c935ce4f3659670d3812b5ed76a290454f

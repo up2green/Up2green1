@@ -11,8 +11,3 @@ reforestation_ajax_programme:
 reforestation_ajax_organisme:
   url: /plantation/ajax/organisme
   param: { module: up2gReforestationAjax, action: organisme, sf_format: xml }
-
-## Reforestation defaults
-
-reforestation_default:
-  url: /plantation/:module/:action

@@ -52,7 +52,3 @@ blog_ajax_partenaires:
 blog_ajax_programmes:
   url:   /blog/ajax/programmes/:offset
   param: { module: up2gBlogAjax, action: programmes }
-
-## Blog defaults
-blog_default:
-  url: /blog/:module/:action

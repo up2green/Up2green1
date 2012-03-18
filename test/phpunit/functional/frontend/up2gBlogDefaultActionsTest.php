@@ -44,6 +44,7 @@ class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=programme');
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=organisme');
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=article');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/up2gBlogDefault/list?type=partenaire&method=addQuery');
   }
 
   /**
@@ -81,6 +82,7 @@ class functional_frontend_blogActionsTest extends FrontendFunctionalTestCase
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/programme');
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/organisme');
     $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/article');
+    $this->getBrowser()->getAndCheck('up2gBlogDefault', 'list', '/blog/partenaire');
   }
 
   /**

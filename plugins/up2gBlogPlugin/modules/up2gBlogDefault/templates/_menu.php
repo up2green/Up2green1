@@ -1,39 +1,30 @@
 <div id="main-menu">
 	<ul>
-  	<?php
-  		$first = true; 
-  		foreach($elements as $element) :
-  			echo '<li' . ($first ? ' class="first" ' : '') . '>';
-  			if($element['classname'] == 'category') :
-  				$first_of_category = true;
-  				foreach($element['object']->getActiveLinks() as $link) :
-						if($first_of_category) :
-							echo '<a href="' . $link->getSrc() . '">' . $link->getTitle() . '</a>';
-							echo '<div class="module"><div class="content"><ul>';
-						else :
-							echo '<li><a href="' . $link->getSrc() . '">' . $link->getTitle() . '</a></li>';
-						endif;
-						$first_of_category = false;
-  				endforeach;
-  				echo '</ul></div>';
-					include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php');
-					echo '</div>';
-  			else :
-  				// bidouille temporaire pour les programmes
-  				echo '<a href="' . $element['object']->getSrc() . '">' . $element['object']->getTitle() . '</a>';
-					if($element['object']->getSrc() == '/programme') :
-						echo '<div class="module"><div class="content"><ul>';
-						foreach($programms as $programm) :
-							echo '<li><a href="/programme/' . $programm->getSlug() . '">' . $programm->getTitle() . '</a></li>';
-						endforeach;
-						echo '</ul></div>';
-						include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php');
-						echo '</div>';
-					endif;
-  			endif;
-  			echo '</li>';
-  			$first = false;
-  		endforeach;
-  	?>
+  	<?php $first = true; ?>
+    <?php	foreach($elements as $rank => $element) : ?>
+    <li<?php echo ($first ? ' class="first" ' : '')?>>
+      <?php if ($element instanceof lien) : ?>
+        <?php echo '<a href="' . $element->getSrc() . '">' . $element->getTitle() . '</a>' ?>
+      <?php elseif($element->getUniqueName() == 'programmes') : ?>
+        <?php $items = $element->getActiveLinks(); ?>
+        <?php echo '<a href="' . $items[0]->getSrc() . '">' . $items[0]->getTitle() . '</a>' ?>
+        <div class="module">
+          <div class="content">
+                <ul>
+                  <?php for($i=0; $i < sizeof($programmes); $i++) : ?>
+                  <li<?php echo ($i == 0) ? ' class="first"' : ''; ?>>
+                    <?php echo '<a href="/programme/' . $programmes[$i]->getSlug() . '">' . $programmes[$i]->getTitle() . '</a>' ?>
+                  </li>
+                  <?php endfor; ?>
+                </ul>
+          </div>
+          <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php'); ?>
+        </div>
+      <?php else : ?>
+        <?php include_partial('subMenu', array('category' => $element)); ?>
+      <?php endif ?>
+    </li>
+    <?php $first = false ?>
+    <?php endforeach; ?>
   </ul>
 </div>

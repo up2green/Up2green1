@@ -127,24 +127,23 @@ class up2gBlogDefaultComponents extends sfComponents
    */
   public function executeMenu()
   {
-    // Récupération du menu-top dynamique
     $this->elements = array();
     $main_category = Doctrine::getTable('Category')
       ->getByName('main-menu');
 
     foreach ($main_category->getActiveLinks() as $link)
-      $this->elements[] = array(
-        'classname' => 'link',
-        'object'    => $link
-      );
+    {
+      $this->elements[$link->getRank()] = $link;
+    }
 
     foreach ($main_category->getActiveSubs() as $category)
-      $this->elements[] = array(
-        'classname' => 'category',
-        'object'    => $category
-      );
+    {
+      $this->elements[$category->getRank()] = $category;
+    }
 
-    $this->programms = Doctrine::getTable('programme')
+    ksort($this->elements);
+
+    $this->programmes = Doctrine::getTable('programme')
       ->getActiveByLang($this->getUser()->getCulture());
   }
 

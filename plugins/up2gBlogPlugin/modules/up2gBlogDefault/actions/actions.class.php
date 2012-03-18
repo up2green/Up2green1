@@ -28,8 +28,11 @@ class up2gBlogDefaultActions extends sfActions
     $this->type = $request->getParameter('type');
     $this->forward404Unless(class_exists($this->type.'Table'));
 
-    $this->element = Doctrine::getTable($this->type)
-      ->getOneBySlug($request->getParameter('slug'));
+    $slug = $request->getParameter('slug');
+
+    $this->element = is_numeric($slug)
+      ? Doctrine::getTable($this->type)->find($slug)
+      : Doctrine::getTable($this->type)->getOneBySlug($slug);
 
     $this->forward404Unless($this->element);
   }
@@ -44,9 +47,18 @@ class up2gBlogDefaultActions extends sfActions
     $this->forward404Unless($request->hasParameter('type'));
     $this->type = $request->getParameter('type');
     $this->forward404Unless(class_exists($this->type.'Table'));
+    
+    $method = $request->getParameter('method', 'getActiveByLangQuery');
 
-    $query = Doctrine::getTable($this->type)
-      ->getActiveByLangQuery($this->getUser()->getCulture());
+    if (preg_match('/ByLang/', $method))
+    {
+      $query = Doctrine::getTable($this->type)
+        ->$method($this->getUser()->getCulture());
+    }
+    else
+    {
+      $query = Doctrine::getTable($this->type)->$method();
+    }
 
     $this->pager = new sfDoctrinePager($this->type, 5);
     $this->pager->setQuery($query);

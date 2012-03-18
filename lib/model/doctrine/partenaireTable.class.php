@@ -1,6 +1,6 @@
 <?php
 
-class partenaireTable extends Doctrine_Table
+class partenaireTable extends up2gTable
 {
 
   public static function getInstance()

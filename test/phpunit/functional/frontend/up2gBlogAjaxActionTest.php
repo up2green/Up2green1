@@ -17,9 +17,9 @@ class functional_frontend_up2gBlogAjaxActionsTest extends FrontendFunctionalTest
    */
   public function testNotAjax()
   {
-    $this->getBrowser()->getAndCheck('up2gAjaxDefault', 'articles', '/blog/up2gAjaxDefault/articles', 404);
-    $this->getBrowser()->getAndCheck('up2gAjaxDefault', 'programmes', '/blog/up2gAjaxDefault/programmes', 404);
-    $this->getBrowser()->getAndCheck('up2gAjaxDefault', 'partenaires', '/blog/up2gAjaxDefault/partenaires', 404);
+    $this->getBrowser()->getAndCheck(null, null, '/blog/up2gAjaxDefault/articles', 404);
+    $this->getBrowser()->getAndCheck(null, null, '/blog/up2gAjaxDefault/programmes', 404);
+    $this->getBrowser()->getAndCheck(null, null, '/blog/up2gAjaxDefault/partenaires', 404);
   }
 
   /**

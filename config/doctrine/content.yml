@@ -1,5 +1,5 @@
 article:
-  actAs: 
+  actAs:
     Timestampable: ~
     I18n:
       fields: [title, accroche, description]
@@ -35,7 +35,7 @@ article:
       foreignAlias: Articles
 
 newsletter:
-  actAs: 
+  actAs:
     Timestampable: ~
     I18n:
       fields: [title, content]
@@ -93,7 +93,7 @@ lien:
       type: string(255)
     is_active:
       type: boolean
-      default: 0 
+      default: 0
     rank:
       type: integer(4)
       notnull: true
@@ -103,9 +103,59 @@ lien:
       class: category
       local: category_id
       foreignAlias: Liens
-      
+
+picture:
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    gallery_id:
+      type: integer(4)
+    title:
+      type: string(255)
+      notnull: true
+    src:
+      type: string(255)
+  relations:
+    galery:
+      class: gallery
+      local: gallery_id
+      foreignAlias: Pictures
+
+gallery:
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title, description]
+      actAs:
+        Sluggable: { fields: [title], uniqueBy: [lang, title] }
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    category_id:
+      type: integer(4)
+    title:
+      type: string(255)
+      notnull: true
+    description:
+      type: clob(65535)
+  relations:
+    category:
+      class: category
+      local: category_id
+      foreignAlias: Galleries
+
 category:
-  actAs: 
+  actAs:
     NestedSet:
       hasManyRoots: true
       rootColumnName: root_id

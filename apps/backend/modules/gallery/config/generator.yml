@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           gallery
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             true
+    singular:              ~
+    plural:                ~
+    route_prefix:          gallery
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:
+        display:
+          Default: [category_id]
+          Pictures: [Pictures, new_Pictures]
+          Translation: [fr, en]
+      edit:    ~
+      new:     ~

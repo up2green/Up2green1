@@ -57,7 +57,7 @@ landing_map:
 plantation_landing_map:
   url: /plantation/landing/map/:partenaire/:operation
   param: {module: landing, action: map, partenaire: 0, operation: 0}
-  
+
 
 landing_plantation:
   url: /landing/plantation/:partenaire/:operation
@@ -72,7 +72,7 @@ landing_partenaire:
 plantation_landing_partenaire:
   url: /plantation/landing/partenaire/:partenaire/:operation
   param: {module: landing, action: partenaire, partenaire: 0, operation: 0}
-  
+
 ####################
 ##### PLANTATION
 ####################
@@ -88,7 +88,7 @@ plantation_login:
 plantation_logout:
   url:   /plantation/logout
   param: { module: sfGuardAuth, action: signout }
-  
+
 plantation_confirmation:
   url: /plantation/confirm
   param: {module: plantation, action: confirm}
@@ -110,6 +110,14 @@ search:
   param: { module: recherche, action: search }
 
 ####################
+##### GALLERY
+####################
+
+search:
+  url:   /gallery/:slug
+  param: { module: gallery, action: show }
+
+####################
 ##### GENERAL
 ####################
 
@@ -127,21 +135,21 @@ user_profil:
 plantation_user_profil:
   url:   /plantation/user/profil/
   param: { module: user, action: profil }
-  
+
 partenaire_profil:
   url:   /user/partenaireProfil/
   param: { module: user, action: partenaireProfil }
 plantation_partenaire_profil:
   url:   /plantation/user/partenaireProfil/
   param: { module: user, action: partenaireProfil }
-  
+
 partenaire_profil_attestation:
   url:   /user/partenaireAttestation/
   param: { module: user, action: partenaireAttestation }
 plantation_partenaire_profil_attestation:
   url:   /plantation/user/partenaireAttestation/
   param: { module: user, action: partenaireAttestation }
-  
+
 partenaire_profil_page:
   url:   /user/partenairePage/
   param: { module: user, action: partenairePage }
@@ -176,7 +184,7 @@ checkout_coupon:
 plantation_checkout_coupon:
   url:   /plantation/checkout/coupon
   param: { module: checkout, action: coupon}
-  
+
 checkout_credit:
   url:   /checkout/credit
   param: { module: checkout, action: credit }

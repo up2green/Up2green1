@@ -23,20 +23,18 @@ class newsletterForm extends BasenewsletterForm
       )));
 
     $this->widgetSchema['category_id'] = new sfWidgetFormDoctrineChoice(array(
-        'model'     => 'category',
-        'add_empty' => '~ (object is at root level)',
-        'order_by'  => array('root_id, lft', ''),
-        'method' => 'getIndentedName'
-      ));
+      'model'     => 'category',
+      'add_empty' => '~ (object is at root level)',
+      'order_by'  => array('root_id, lft', ''),
+      'method' => 'getIndentedName'
+    ));
 
     $this->validatorSchema['category_id'] = new sfValidatorDoctrineChoice(array(
-        'required' => false,
-        'model'    => 'category'
-      ));
-
+      'required' => false,
+      'model'    => 'category'
+    ));
 
     $this->languages = sfConfig::get('app_cultures_enabled');
-
 
     $langs = array_keys($this->languages);
 

@@ -17,6 +17,9 @@ abstract class BasearticleForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
+      'title'       => new sfWidgetFormInputText(),
+      'accroche'    => new sfWidgetFormTextarea(),
+      'description' => new sfWidgetFormTextarea(),
       'logo'        => new sfWidgetFormInputText(),
       'is_active'   => new sfWidgetFormInputCheckbox(),
       'rank'        => new sfWidgetFormInputText(),
@@ -27,6 +30,9 @@ abstract class BasearticleForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'required' => false)),
+      'title'       => new sfValidatorString(array('max_length' => 255)),
+      'accroche'    => new sfValidatorString(array('required' => false)),
+      'description' => new sfValidatorString(array('required' => false)),
       'logo'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'rank'        => new sfValidatorInteger(array('required' => false)),

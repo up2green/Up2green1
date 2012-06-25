@@ -26,34 +26,20 @@ class Version75 extends Doctrine_Migration_Base
              'onUpdate' => 'CASCADE',
              'onDelete' => 'CASCADE',
              ));
-        $this->createForeignKey('picture_translation', 'picture_translation_id_picture_id', array(
-             'name' => 'picture_translation_id_picture_id',
-             'local' => 'id',
-             'foreign' => 'id',
-             'foreignTable' => 'picture',
-             'onUpdate' => 'CASCADE',
-             'onDelete' => 'CASCADE',
-             ));
         $this->addIndex('gallery', 'gallery_category_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'category_id',
              ),
              ));
         $this->addIndex('picture', 'picture_gallery_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'gallery_id',
              ),
              ));
         $this->addIndex('gallery_translation', 'gallery_translation_id', array(
-             'fields' => 
-             array(
-              0 => 'id',
-             ),
-             ));
-        $this->addIndex('picture_translation', 'picture_translation_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'id',
              ),
@@ -65,27 +51,20 @@ class Version75 extends Doctrine_Migration_Base
         $this->dropForeignKey('gallery', 'gallery_category_id_category_id');
         $this->dropForeignKey('picture', 'picture_gallery_id_gallery_id');
         $this->dropForeignKey('gallery_translation', 'gallery_translation_id_gallery_id');
-        $this->dropForeignKey('picture_translation', 'picture_translation_id_picture_id');
         $this->removeIndex('gallery', 'gallery_category_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'category_id',
              ),
              ));
         $this->removeIndex('picture', 'picture_gallery_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'gallery_id',
              ),
              ));
         $this->removeIndex('gallery_translation', 'gallery_translation_id', array(
-             'fields' => 
-             array(
-              0 => 'id',
-             ),
-             ));
-        $this->removeIndex('picture_translation', 'picture_translation_id', array(
-             'fields' => 
+             'fields' =>
              array(
               0 => 'id',
              ),

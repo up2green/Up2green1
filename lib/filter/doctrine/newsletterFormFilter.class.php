@@ -17,10 +17,7 @@ class newsletterFormFilter extends BasenewsletterFormFilter
   {
     $this->widgetSchema['created_at'] = new up2gWidgetFormInlineJQueryDateRange();
     $this->widgetSchema['updated_at'] = new up2gWidgetFormInlineJQueryDateRange();
-    $this->widgetSchema['sent_at'] = new up2gWidgetFormInlineJQueryDateRange(array(
-        'with_empty'  => true,
-        'empty_label' => "Is Empty",
-      ));
+    $this->widgetSchema['sent_at'] = new up2gWidgetFormInlineJQueryDateRange();
 
     $this->widgetSchema['category_list'] = new sfWidgetFormDoctrineChoice(array(
         'model'     => 'category',

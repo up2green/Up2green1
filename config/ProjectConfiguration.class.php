@@ -32,6 +32,7 @@ class ProjectConfiguration extends sfProjectConfiguration
         'sfPHPUnit2Plugin',
       ));
     }
+    $this->enablePlugins('sfThumbnailPlugin');
   }
 
 }

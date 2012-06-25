@@ -55,18 +55,6 @@ class Version74 extends Doctrine_Migration_Base
               'type' => 'string',
               'length' => '255',
              ),
-             'created_at' =>
-             array(
-              'notnull' => '1',
-              'type' => 'timestamp',
-              'length' => '25',
-             ),
-             'updated_at' =>
-             array(
-              'notnull' => '1',
-              'type' => 'timestamp',
-              'length' => '25',
-             ),
              ), array(
              'primary' =>
              array(
@@ -123,51 +111,6 @@ class Version74 extends Doctrine_Migration_Base
               1 => 'lang',
              ),
              ));
-        $this->createTable('picture_translation', array(
-             'id' =>
-             array(
-              'type' => 'integer',
-              'length' => '4',
-              'primary' => '1',
-             ),
-             'title' =>
-             array(
-              'type' => 'string',
-              'notnull' => '1',
-              'length' => '255',
-             ),
-             'lang' =>
-             array(
-              'fixed' => '1',
-              'primary' => '1',
-              'type' => 'string',
-              'length' => '2',
-             ),
-             'slug' =>
-             array(
-              'type' => 'string',
-              'length' => '255',
-             ),
-             ), array(
-             'indexes' =>
-             array(
-              'picture_translation_sluggable' =>
-              array(
-              'fields' =>
-              array(
-               0 => 'slug',
-               1 => 'lang',
-               2 => 'title',
-              ),
-              'type' => 'unique',
-              ),
-             ),
-             'primary' =>
-             array(
-              0 => 'id',
-              1 => 'lang',
-             ),
-             ));
     }
 
     public function down()
@@ -175,6 +118,5 @@ class Version74 extends Doctrine_Migration_Base
         $this->dropTable('gallery');
         $this->dropTable('picture');
         $this->dropTable('gallery_translation');
-        $this->dropTable('picture_translation');
     }
 }

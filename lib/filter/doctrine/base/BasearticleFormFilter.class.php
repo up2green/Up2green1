@@ -14,6 +14,9 @@ abstract class BasearticleFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
+      'title'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'accroche'    => new sfWidgetFormFilterInput(),
+      'description' => new sfWidgetFormFilterInput(),
       'logo'        => new sfWidgetFormFilterInput(),
       'is_active'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'rank'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -23,6 +26,9 @@ abstract class BasearticleFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'category_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Category'), 'column' => 'id')),
+      'title'       => new sfValidatorPass(array('required' => false)),
+      'accroche'    => new sfValidatorPass(array('required' => false)),
+      'description' => new sfValidatorPass(array('required' => false)),
       'logo'        => new sfValidatorPass(array('required' => false)),
       'is_active'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'rank'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -49,6 +55,9 @@ abstract class BasearticleFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'          => 'Number',
       'category_id' => 'ForeignKey',
+      'title'       => 'Text',
+      'accroche'    => 'Text',
+      'description' => 'Text',
       'logo'        => 'Text',
       'is_active'   => 'Boolean',
       'rank'        => 'Number',

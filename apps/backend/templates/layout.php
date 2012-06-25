@@ -38,6 +38,7 @@
 							<li><a href="<?php echo url_for('@lien') ?>">Liens</a></li>
 							<li><a href="<?php echo url_for('@article') ?>">Articles</a></li>
 							<li><a href="<?php echo url_for('@newsletter') ?>">Newsletters</a></li>
+							<li><a href="<?php echo url_for('@gallery') ?>">Galeries</a></li>
 						</ul>
 					</li>
 					<li>

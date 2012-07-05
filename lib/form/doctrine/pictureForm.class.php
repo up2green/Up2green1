@@ -18,7 +18,7 @@ class pictureForm extends BasepictureForm
 
     $this->widgetSchema['src'] = new sfWidgetFormInputFileEditable(
       array(
-        'file_src'  => '/uploads/gallery/' . $this->getObject()->getSrc(),
+        'file_src'  => '/uploads/gallery/thumbnail/' . $this->getObject()->getSrc(),
         'is_image'  => true,
         'edit_mode' => !$this->isNew(),
         'template'  => '<div>%file%<br />%input%</div>',

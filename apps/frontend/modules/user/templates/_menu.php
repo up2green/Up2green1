@@ -30,6 +30,11 @@
 					"Mon profil ({username})",
 					array('{username}' => $sf_user->getUsername())
 				) ?></a></li>
+				<li>
+          <a href="<?php echo url_for("@checkout_coupon"); ?>">
+            <?php echo __("Offrir des arbres") ?>
+          </a>
+        </li>
 				<li><a href="<?php echo url_for("@user_filleul"); ?>"><?php echo __(
 					"Mes filleuls ({number})",
 					array('{number}' => $sf_user->getGuardUser()->countFilleul())

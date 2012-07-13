@@ -1054,6 +1054,18 @@
         <source>Vous avez été désinscrit avec succès</source>
         <target>You have been unregistered successfully</target>
       </trans-unit>
+      <trans-unit id="327">
+        <source>Offrir des arbres</source>
+        <target>Offer trees</target>
+      </trans-unit>
+      <trans-unit id="328">
+        <source>Renvoyer l'invitation</source>
+        <target>Resend the invitation</target>
+      </trans-unit>
+      <trans-unit id="329">
+        <source>Votre invitation a été ré-envoyée</source>
+        <target>Your request have been sent</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

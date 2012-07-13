@@ -11,7 +11,7 @@
 class userActions extends sfActions
 {
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeCoupon(sfWebRequest $request)
   {
@@ -33,7 +33,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeChangeLanguage(sfWebRequest $request)
   {
@@ -56,7 +56,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeInscription(sfWebRequest $request)
   {
@@ -124,7 +124,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeProfil(sfWebRequest $request)
   {
@@ -182,7 +182,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeListFilleul(sfWebRequest $request)
   {
@@ -203,7 +203,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeInviteFilleul(sfWebRequest $request)
   {
@@ -215,8 +215,6 @@ class userActions extends sfActions
     if ($request->isMethod('post')) {
       $filleuls = $request->getParameter('filleul', array());
       $filleuls = array_unique(array_filter($filleuls));
-      $this->alreadyUserOrFilleul = array();
-      $this->almostOneMailSent = false;
 
       $this->inviteFriend($filleuls);
 
@@ -229,8 +227,28 @@ class userActions extends sfActions
     }
   }
 
+  /**
+   * @param integer $id
+   */
+  public function executeResendInvitation(sfWebRequest $request)
+  {
+    sfProjectConfiguration::getActive()->loadHelpers(array('I18N'));
+    $filleul = Doctrine_Core::getTable('filleul')->find($request->getParameter('id'));
+
+    $this->forward404Unless($filleul);
+    $this->sendInvitationEmail($filleul->getEmailAddress());
+    $this->getUser()->setFlash('notice', __("Votre invitation a été ré-envoyée"));
+    $this->redirect('@user_filleul');
+  }
+
+  /**
+   * @param array $emails
+   */
   private function inviteFriend($emails)
   {
+    $this->alreadyUserOrFilleul = array();
+    $this->almostOneMailSent = false;
+
     foreach ($emails as $email) {
       // check if the email is already in user or filleul
       $alreadyFilleul = Doctrine_Core::getTable('filleul')->findOneByEmailAddress($email);
@@ -238,23 +256,12 @@ class userActions extends sfActions
 
       if (!$alreadyFilleul && !$alreadyUser) {
         // create the database object
-        $tmp        = new filleul();
+        $tmp = new filleul();
         $tmp->setEmailAddress($email);
         $tmp->setUserId($this->getUser()->getGuardUser()->getId());
         $tmp->save();
-        // send the email
-        $newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('invitation');
 
-        $message = $this->getMailer()->compose(
-          array($newsletter->getEmailFrom() => 'Up2Green'), $email, $newsletter->getTitle()
-        );
-
-        $html = $newsletter->getContent();
-        $html = str_replace('{username}', $this->getUser()->getGuardUser()->getDisplayName(), $html);
-
-        $message->setBody($html, 'text/html');
-
-        $this->getMailer()->send($message);
+        $this->sendInvitationEmail($email);
         $this->almostOneMailSent = true;
       } else {
         $this->alreadyUserOrFilleul[] = $email;
@@ -263,7 +270,27 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param string $email
+   */
+  private function sendInvitationEmail($email)
+  {
+    // send the email
+    $newsletter = Doctrine_Core::getTable('newsletter')->getBySlug('invitation');
+
+    $message = $this->getMailer()->compose(
+      array($newsletter->getEmailFrom() => 'Up2Green'), $email, $newsletter->getTitle()
+    );
+
+    $html = $newsletter->getContent();
+    $html = str_replace('{username}', $this->getUser()->getGuardUser()->getDisplayName(), $html);
+
+    $message->setBody($html, 'text/html');
+
+    $this->getMailer()->send($message);
+  }
+
+  /**
+   * @param sfWebRequest $request
    */
   public function executeForgotPassword(sfWebRequest $request)
   {
@@ -295,7 +322,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executePartenaireProfil(sfWebRequest $request)
   {
@@ -324,7 +351,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executePartenaireAttestation(sfWebRequest $request)
   {
@@ -353,7 +380,7 @@ class userActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executePartenairePage(sfWebRequest $request)
   {

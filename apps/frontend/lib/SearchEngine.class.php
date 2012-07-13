@@ -160,7 +160,7 @@ class SearchEngine
           : sfConfig::get('app_more_search')),
       'start'  => $min,
       'market' => $culture
-      ));
+    ));
 
     $response = json_decode($response);
 

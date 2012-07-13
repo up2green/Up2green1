@@ -171,6 +171,13 @@ plantation_user_invite_filleul:
   url:   /plantation/user/invitation/
   param: { module: user, action: inviteFilleul }
 
+user_resend_invitation:
+  url:   /user/resend-invitation/:id
+  param: { module: user, action: resendInvitation }
+plantation_user_resend_invitation:
+  url:   /user/resend-invitation/:id
+  param: { module: user, action: resendInvitation }
+
 user_coupon:
   url:   /user/coupon/
   param: { module: user, action: coupon }

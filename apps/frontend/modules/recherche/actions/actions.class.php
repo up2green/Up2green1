@@ -12,7 +12,7 @@ class rechercheActions extends sfActions
 {
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeIndex(sfWebRequest $request)
   {
@@ -22,11 +22,11 @@ class rechercheActions extends sfActions
       'type' => $request->getParameter('type', 2),
     ));
     $this->forwardIf($this->form->isValid(), 'recherche', 'search');
-    $this->totalTrees = Doctrine_Core::getTable('tree')->count();
+    $this->totalTrees = Doctrine_Core::getTable('tree')->countAll();
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeSearch(sfWebRequest $request)
   {
@@ -50,7 +50,7 @@ class rechercheActions extends sfActions
   }
 
   /**
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeViewElement(sfWebRequest $request)
   {

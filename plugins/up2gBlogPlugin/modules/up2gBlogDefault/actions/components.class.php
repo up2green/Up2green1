@@ -11,18 +11,17 @@ class up2gBlogDefaultComponents extends sfComponents
 {
 
   /**
-   * Render the topbar 
+   * Render the topbar
    */
   public function executeTopbar()
   {
-    $this->totalTrees = Doctrine_Core::getTable('tree')->count();
-    $this->totalTrees += sfConfig::get('app_hardcode_tree_number');
+    $this->totalTrees = Doctrine_Core::getTable('tree')->countAll();
   }
 
   /**
    * Render the articles blocs, w/o bloc if it is Ajax
    *
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeArticlesBloc(sfWebRequest $request)
   {
@@ -35,14 +34,14 @@ class up2gBlogDefaultComponents extends sfComponents
 
     $this->offsets = $this->retrieveOffsets(
       $offset,
-      sfConfig::get('app_blog_bloc_articles_max'), 
+      sfConfig::get('app_blog_bloc_articles_max'),
       Doctrine::getTable('Article')->countActive()
     );
 
     $this->noBloc = $request->isXmlHttpRequest();
     $this->articles = Doctrine::getTable('Article')->getActiveByLang(
-      $this->getUser()->getCulture(), 
-      sfConfig::get('app_blog_bloc_articles_max'), 
+      $this->getUser()->getCulture(),
+      sfConfig::get('app_blog_bloc_articles_max'),
       $offset
     );
   }
@@ -50,7 +49,7 @@ class up2gBlogDefaultComponents extends sfComponents
   /**
    * Render the programs blocs, w/o bloc if it is Ajax
    *
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executeProgrammesBloc(sfWebRequest $request)
   {
@@ -63,14 +62,14 @@ class up2gBlogDefaultComponents extends sfComponents
 
     $this->offsets = $this->retrieveOffsets(
       $offset,
-      sfConfig::get('app_blog_bloc_programmes_max'), 
+      sfConfig::get('app_blog_bloc_programmes_max'),
       Doctrine::getTable('programme')->countActive()
     );
 
     $this->noBloc = $request->isXmlHttpRequest();
     $this->programmes = Doctrine::getTable('programme')->getActiveByLang(
-      $this->getUser()->getCulture(), 
-      sfConfig::get('app_blog_bloc_programmes_max'), 
+      $this->getUser()->getCulture(),
+      sfConfig::get('app_blog_bloc_programmes_max'),
       $offset
     );
   }
@@ -78,7 +77,7 @@ class up2gBlogDefaultComponents extends sfComponents
   /**
    * Render the partners blocs, w/o bloc if it is Ajax
    *
-   * @param sfWebRequest $request 
+   * @param sfWebRequest $request
    */
   public function executePartenairesBloc(sfWebRequest $request)
   {
@@ -97,7 +96,7 @@ class up2gBlogDefaultComponents extends sfComponents
 
     $this->offsets = $this->retrieveOffsets(
       $offset,
-      sfConfig::get('app_blog_bloc_partenaires_max'), 
+      sfConfig::get('app_blog_bloc_partenaires_max'),
       $items->length
     );
 
@@ -114,7 +113,7 @@ class up2gBlogDefaultComponents extends sfComponents
   }
 
   /**
-   * Render the slideshow 
+   * Render the slideshow
    */
   public function executeDiaporama()
   {
@@ -123,7 +122,7 @@ class up2gBlogDefaultComponents extends sfComponents
   }
 
   /**
-   * Render the menu 
+   * Render the menu
    */
   public function executeMenu()
   {
@@ -148,7 +147,7 @@ class up2gBlogDefaultComponents extends sfComponents
   }
 
   /**
-   * Récupération du menu-top dynamique 
+   * Récupération du menu-top dynamique
    */
   public function executeFooterLegal()
   {
@@ -162,7 +161,7 @@ class up2gBlogDefaultComponents extends sfComponents
    * @param int $offset
    * @param int $nbElements
    * @param int $maxOffset
-   * @return array 
+   * @return array
    */
   protected function retrieveOffsets($offset, $nbElements, $maxOffset)
   {

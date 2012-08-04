@@ -3,8 +3,6 @@
 	<?php include_partial('searchForm', array('form' => $form)); ?>
 
 	<?php
-    $totalTrees = (int)$totalTrees + sfConfig::get('app_hardcode_tree_number');
-
     $tooltip = __("Le financement des arbres provient des revenus publicitaires reversés à l’association Up2green Reforestation par Yahoo (ou par les sites marchands affiliés pour le moteur Achats) :").
       '<ol style=\'margin: 5px 25px;text-align:left;list-style-type:decimal;\'>
         <li>'.__("Vous effectuez une recherche avec le moteur Up2green.").'</li>

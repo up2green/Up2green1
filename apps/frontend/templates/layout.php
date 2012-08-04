@@ -11,17 +11,14 @@
 			<?php include_javascripts() ?>
     </head>
     <body>
-        <div class="general">
-            <?php include_component('user', 'menu'); ?>
-            
-            <?php echo $sf_content ?>
-            
-            <div class="clear"></div>
-			
-        </div>
+      <div class="general">
+        <?php include_component('user', 'menu'); ?>
+        <?php echo $sf_content ?>
+        <div class="clear"></div>
+      </div>
 
-		<?php include_partial('html/flash'); ?>
-		
+      <?php include_partial('html/flash'); ?>
+
     </body>
 </html>
 

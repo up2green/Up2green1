@@ -2,6 +2,33 @@
 
 class treeTable extends Doctrine_Table
 {
+  /**
+   * @return integer
+   */
+  public function countAll()
+  {
+    // All trees from users
+    $count = (int) $this->count();
+
+    // All hardcoded trees per program
+    $hardcodedInProgramme = Doctrine_Core::getTable('programme')
+        ->createQuery('p')
+        ->select('SUM(p.add_tree) as total')
+        ->fetchArray();
+    $count += (int) $hardcodedInProgramme[0]['total'];
+
+    // All hardcoded trees per partner and program
+    $hardcodedInPartenaire = Doctrine_Core::getTable('partenaireProgramme')
+        ->createQuery('pp')
+        ->select('SUM(pp.hardcode) as total')
+        ->fetchArray();
+    $count += (int) $hardcodedInPartenaire[0]['total'];
+
+    // Old hardcoded trees planted before the current platform
+    $count += (int) sfConfig::get('app_hardcode_tree_number');
+
+    return $count;
+  }
 
   public function countFromUser($idUser)
   {
@@ -108,6 +135,7 @@ class treeTable extends Doctrine_Table
     }
     $alias = $q->getRootAlias();
     $q->addOrderBy($alias . '.created_at DESC');
+
     return $q;
   }
 

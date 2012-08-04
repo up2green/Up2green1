@@ -1,5 +1,6 @@
 <?php echo form_tag('/search', array('id' => 'searchForm', 'method' => 'get')) ?>
   <div class="search">
+    <?php $form['q']->getWidget()->setAttribute('data-previous-value', $form['q']->getValue()); ?>
     <?php echo $form['q'] ?>
     <input type="submit" value="<?php echo __("Rechercher") ?>" class="button white small" />
   </div>

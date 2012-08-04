@@ -5,7 +5,7 @@ $(function() {
 	var WEB = '2';
 	var NEWS = '3';
 	var SHOP = '4';
-	
+
 	setTimeout(function() {
 		$(document).mousemove(function(){
 			$(".hide-onload").animate({
@@ -13,10 +13,10 @@ $(function() {
 			}, 800);
 		});
 	}, 1000);
-	
+
 	$("#searchMore").click(function(){
 
-	var mode = $('#search_type', '#searchForm').val();
+	var mode = $('#type', '#searchForm').val();
 	var nb_pub = $(".pub-result .result").length;
 	var nb_affiliate = $(".shop-result .result").length;
 
@@ -30,8 +30,8 @@ $(function() {
 							'nb_items_affiche': (mode == SHOP) ? $(".result").length : ($(".result").length - nb_pub - nb_affiliate),
 							'nb_pub': nb_pub,
 							'nb_affiliate': nb_affiliate,
-							'text_search': $('#search_query', '#searchForm').data('previous-value'),
-							'moteur_search': $('#search_type', '#searchForm').val()
+							'text_search': $('#q', '#searchForm').data('previous-value'),
+							'moteur_search': $('#type', '#searchForm').val()
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) {
 			$("#searchMore").html(txtReadMore);
@@ -111,7 +111,7 @@ $(function() {
 							html += ' <span class="filename">';
 							html += '['+$(this).find('title').text()+']';
 							html += '</span>';
-							html += '</div>';	
+							html += '</div>';
 							$('#searchResults .img-result:last').append(html);
 						});
 						break;
@@ -138,7 +138,7 @@ $(function() {
 							html += $(this).find('displayUrl').text();
 							html += '</a>';
 
-							html += '</div>';	
+							html += '</div>';
 							$('#searchResults .web-result:last').append(html);
 						});
 						break;
@@ -197,7 +197,7 @@ $(function() {
 		if(e.button > 1){
 			return false;
 		}
-		
+
 		$.ajax({
             url: 'ajax/clicPub',
             type: 'post',
@@ -219,10 +219,10 @@ $(function() {
 				}
 			}
 		});
-		
+
 		return true;
 	});
-    
+
     $(".filtres > span[searchMode]", "#searchForm").each(function(){
 		$(this).bind('click', {mode: $(this).attr('searchMode')}, changeMoteur)
 	});
@@ -254,9 +254,9 @@ function changeMoteur(event){
 	}
 	ongletCible.addClass('active');
 
-    $("#search_type").val(valeur);
-	
-    if ($("#search_query").val() != "") {
+    $("#type", "#searchForm").val(valeur);
+
+    if ($("#q", "#searchForm").val() != "") {
 		$("#searchForm").submit();
 	}
 

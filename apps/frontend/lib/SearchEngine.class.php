@@ -164,7 +164,8 @@ class SearchEngine
 
     $response = json_decode($response);
 
-    if ($response && $response->bossresponse->responsecode == '200')
+    if ($response && $response->bossresponse->responsecode == '200'
+      && $response->bossresponse->web->totalresults > 0)
     {
       foreach ($response->bossresponse->web->results as $result)
       {

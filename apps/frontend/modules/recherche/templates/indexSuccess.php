@@ -1,7 +1,7 @@
 <div id="body">
 
 	<?php include_partial('searchForm', array('form' => $form)); ?>
-  
+
 	<?php
     $totalTrees = (int)$totalTrees + sfConfig::get('app_hardcode_tree_number');
 
@@ -19,7 +19,7 @@
 
     <div class="module acteur">
       <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
-      
+
       <?php if (!$sf_user->isAuthenticated()): ?>
       <p class="title"><?php echo __("Devenez acteur de la reforestation") ?></p>
       <div class="content">
@@ -38,7 +38,7 @@
         <p class="center">
           <a target="_blank" href="<?php echo url_for("plantation/index"); ?>" class="button green"><?php echo __("Accéder à la plateforme de reforestation") ?></a>
       <?php endif; ?>
-      
+
       </div>
       <?php include_partial('global/border_and_corner') ?>
     </div>
@@ -72,5 +72,5 @@
     <?php endif; ?>
 
   </div>
-	
+
 </div>

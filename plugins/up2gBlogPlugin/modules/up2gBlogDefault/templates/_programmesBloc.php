@@ -20,16 +20,16 @@
       ?>
         	<hr />
         	<?php endif; ?>
-        	
+
           <div class="article<?php echo ($i==0 ? ' first' : ''); ?>">
-          <?php if($p->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/programme/'.$p->getLogo())) : ?> 
-          <img src="/uploads/programme/<?php echo $p->getLogo(); ?>" alt="Diapo Image">
+          <?php if($p->getLogo() != '' && file_exists(sfConfig::get('sf_upload_dir').'/programme/'.$p->getLogo())) : ?>
+          <img class="article-miniature" src="/uploads/programme/<?php echo $p->getLogo(); ?>" alt="Diapo Image">
           <?php endif; ?>
           <?php	echo link_to($p->getTitle(), '@blog_programme?slug='.$p->getSlug(), array('class' => 'title')); ?>
           <div class="body"><?php echo $p->getAccroche(); ?></div>
          	<?php echo link_to(__("Lire la suite"), '@blog_programme?slug='.$p->getSlug(), array('class' => 'read_more')); ?>
           </div>
-          
+
         <?php endfor; ?>
 
         <?php

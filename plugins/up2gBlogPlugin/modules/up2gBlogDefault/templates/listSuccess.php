@@ -14,7 +14,7 @@
 <?php foreach($elements as $element) : ?>
 <?php $ref = (method_exists($element, 'getSlug') ? $element->getSlug() : $element->getId()); ?>
 <div class="module module2col">
-  <div class="content">
+  <div class="content" style="min-height: 130px;">
     <div class="cartouche">
       <div class="content">
         <p class="title_blog">
@@ -24,7 +24,16 @@
       <?php include(sfConfig::get('sf_app_template_dir').'/module/border_and_corner.php') ?>
     </div>
     <p class="first_article">
-			<div class="accroche"><?php echo $element->getAccroche() ?></div>
+			<div class="accroche">
+        <?php if (in_array($type, array('programme', 'organisme', 'article')) && $element->getLogo() != '') : ?>
+          <img class="article-miniature" src="/uploads/<?php echo $type ?>/<?php echo $element->getLogo(); ?>" alt="Image">
+        <?php elseif ($type === 'partenaire') : ?>
+          <?php foreach ($element->getLogos() as $logo) : ?>
+            <img class="article-miniature" src="/uploads/<?php echo $type ?>/<?php echo $element->getId(); ?>/<?php echo $logo->getSrc(); ?>" alt="Image">
+          <?php endforeach; ?>
+        <?php endif ?>
+        <?php echo $element->getAccroche() ?>
+      </div>
       <?php echo link_to(__("Lire la suite"), '@blog_'.$type.'?slug='.$ref, array('class' => 'read_more')); ?>
 		</p>
   </div>

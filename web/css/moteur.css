@@ -84,7 +84,7 @@ div.module.acteur{
 	margin-bottom: 50px;
 }
 
-div.module.acteur a{margin-top:20px;width:255px;}
+div.module.acteur a.button{margin-top:20px;width:255px;}
 div.module.acteur p.title{left:70px;width:100%;}
 
 /* encarts statistiques */
@@ -148,8 +148,8 @@ list-style-type:none;
 }
 
 div.more-result {
-	width: 100%; 
-	margin: 20px auto; 
+	width: 100%;
+	margin: 20px auto;
 	text-align: center;
 }
 

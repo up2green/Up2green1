@@ -34,7 +34,8 @@ body {
 	margin:auto;
 }
 
-#topbar a {
+#topbar a,
+#topbar {
 	color:#FFFFFF;
 	font-size: 12px;
 }

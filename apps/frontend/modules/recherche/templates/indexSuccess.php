@@ -18,26 +18,48 @@
     <div class="module acteur">
       <img class="title middle left" src="/images/module/green/icon/acteur.png" alt="" />
 
-      <?php if (!$sf_user->isAuthenticated()): ?>
-      <p class="title"><?php echo __("Devenez acteur de la reforestation") ?></p>
-      <div class="content">
-        <p style="padding:5px;">
-          <?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
-          <img tooltiped="true" title="<?php echo $tooltip ?>" src="/images/icons/16x16/consulting.png" />
-        </p>
-        <p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
-        <p class="important"><?php echo __("Gagnez un arbre à l’ouverture de votre compte Up2green et plantez le dès à présent sur la Planète !") ?></p>
-        <p class="center">
-          <a href="<?php echo url_for("user/inscription"); ?>" class="button green"><strong><?php echo __("Créer un compte") ?></strong></a>
-      <?php else: ?>
-      <p class="title"><?php echo __("Plantez vos arbres") ?></p>
-      <div class="content">
-        <p><?php echo __("Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement") ?></p>
-        <p class="center">
-          <a target="_blank" href="<?php echo url_for("plantation/index"); ?>" class="button green"><?php echo __("Accéder à la plateforme de reforestation") ?></a>
-      <?php endif; ?>
+      <p class="title">
+        <?php if (!$sf_user->isAuthenticated()): ?>
+          <?php echo __("Devenez acteur de la reforestation") ?>
+        <?php else: ?>
+          <?php echo __("Plantez vos arbres") ?>
+        <?php endif; ?>
+      </p>
 
+      <div class="content">
+
+        <!-- AddThis Follow BEGIN -->
+        <div class="addthis_toolbox addthis_32x32_style addthis_default_style" style="line-height:32px">
+          <strong><?php echo __("Suivez nous sur les réseaux sociaux !") ?></strong>
+          <a class="addthis_button_facebook_follow" addthis:userid="Up2green"></a>
+          <a class="addthis_button_twitter_follow" addthis:userid="up2green"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f5d372f3fb98941"></script>
+        <!-- AddThis Follow END -->
+        <hr />
+
+        <?php if (!$sf_user->isAuthenticated()): ?>
+          <p style="padding:5px;">
+            <?php echo __("Créez votre compte et collectez GRATUITEMENT des arbres au fur et à mesure de vos recherches") ?>
+            <img tooltiped="true" title="<?php echo $tooltip ?>" src="/images/icons/16x16/consulting.png" />
+          </p>
+          <p style="padding:5px;"><?php echo __("Vous choisissez ensuite vous même où les planter sur la Planète parmi les programmes de reforestation que nous soutenons") ?></p>
+          <p class="important"><?php echo __("Gagnez un arbre à l’ouverture de votre compte Up2green et plantez le dès à présent sur la Planète !") ?></p>
+          <p class="center">
+            <a href="<?php echo url_for("user/inscription"); ?>" class="button green">
+              <strong><?php echo __("Créer un compte") ?></strong>
+            </a>
+          </p>
+        <?php else: ?>
+          <p><?php echo __("Vous pouvez dès à présent accéder à la plateforme de reforestation et planter vos arbres si vous en avez collectés suffisement") ?></p>
+          <p class="center">
+            <a target="_blank" href="<?php echo url_for("plantation/index"); ?>" class="button green">
+              <?php echo __("Accéder à la plateforme de reforestation") ?>
+            </a>
+          </p>
+        <?php endif; ?>
       </div>
+
       <?php include_partial('global/border_and_corner') ?>
     </div>
 

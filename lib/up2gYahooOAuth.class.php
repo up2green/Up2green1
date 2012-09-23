@@ -10,7 +10,12 @@ class up2gYahooOAuth extends sfOAuth1
 
     // adjust timestamp ...
     $timestamp = $request->get_parameter('oauth_timestamp');
-//    $timestamp += 600;
+
+    $refDate = new DateTime();
+    if ($refDate->getTimezone()->getName() == 'Europe/Paris') {
+        $timestamp += 1500;
+    }
+
     $request->set_parameter('oauth_timestamp', $timestamp, false);
 
     $request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, NULL);

@@ -29,6 +29,9 @@ partenaire:
     url:
       type: string(150)
       default: null
+    is_active:
+      type: boolean
+      default: 1
   relations:
     User:
       class: sfGuardUser
@@ -36,7 +39,7 @@ partenaire:
       onDelete: CASCADE
       foreignType:  one
       foreignAlias: Partenaire
- 
+
 partenaireLogo:
   columns:
     id:

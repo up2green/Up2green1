@@ -24,6 +24,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
       'page_title'  => new sfWidgetFormInputText(),
       'attestation' => new sfWidgetFormInputText(),
       'url'         => new sfWidgetFormInputText(),
+      'is_active'   => new sfWidgetFormInputCheckbox(),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
     ));
@@ -38,6 +39,7 @@ abstract class BasepartenaireForm extends BaseFormDoctrine
       'page_title'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'attestation' => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'url'         => new sfValidatorString(array('max_length' => 150, 'required' => false)),
+      'is_active'   => new sfValidatorBoolean(array('required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));

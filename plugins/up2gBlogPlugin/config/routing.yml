@@ -30,7 +30,7 @@ blog_programme:
 
 blog_partenaire_list:
   url:   /blog/partenaire
-  param: { module: up2gBlogDefault, action: list, type: partenaire, method: addQuery }
+  param: { module: up2gBlogDefault, action: list, type: partenaire, method: addActiveQuery }
 
 blog_partenaire:
   url:   /blog/partenaire/:slug

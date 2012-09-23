@@ -14,6 +14,7 @@
  * @property string $page_title
  * @property string $attestation
  * @property string $url
+ * @property boolean $is_active
  * @property sfGuardUser $User
  * @property Doctrine_Collection $Coupons
  * @property Doctrine_Collection $Logos
@@ -28,6 +29,7 @@
  * @method string              getPageTitle()   Returns the current record's "page_title" value
  * @method string              getAttestation() Returns the current record's "attestation" value
  * @method string              getUrl()         Returns the current record's "url" value
+ * @method boolean             getIsActive()    Returns the current record's "is_active" value
  * @method sfGuardUser         getUser()        Returns the current record's "User" value
  * @method Doctrine_Collection getCoupons()     Returns the current record's "Coupons" collection
  * @method Doctrine_Collection getLogos()       Returns the current record's "Logos" collection
@@ -41,6 +43,7 @@
  * @method partenaire          setPageTitle()   Sets the current record's "page_title" value
  * @method partenaire          setAttestation() Sets the current record's "attestation" value
  * @method partenaire          setUrl()         Sets the current record's "url" value
+ * @method partenaire          setIsActive()    Sets the current record's "is_active" value
  * @method partenaire          setUser()        Sets the current record's "User" value
  * @method partenaire          setCoupons()     Sets the current record's "Coupons" collection
  * @method partenaire          setLogos()       Sets the current record's "Logos" collection
@@ -95,6 +98,10 @@ abstract class Basepartenaire extends sfDoctrineRecord
         $this->hasColumn('url', 'string', 150, array(
              'type' => 'string',
              'length' => 150,
+             ));
+        $this->hasColumn('is_active', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => 1,
              ));
     }
 

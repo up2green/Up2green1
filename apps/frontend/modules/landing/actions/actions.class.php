@@ -18,17 +18,17 @@ class landingActions extends sfActions
 	{
 		$this->operation = $request->getParameter('operation');
     $this->forward404Unless($this->operation);
-    
+
 		$partenaireSlug = $request->getParameter('partenaire');
     $this->forward404Unless($partenaireSlug);
     $user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireSlug);
 		$this->forward404Unless($user);
     $this->partenaire = $user->getPartenaire();
     $this->forward404Unless($this->partenaire);
-    
+
     $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
     $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
-    
+
     return ucfirst($partenaireSlug).ucfirst($this->operation).'Success';
 	}
 
@@ -39,7 +39,7 @@ class landingActions extends sfActions
 	{
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
-		
+
 		$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $request->getParameter('partenaire'));
 		$this->forward404Unless($user);
 		$this->partenaire = $user->getPartenaire();
@@ -55,14 +55,14 @@ class landingActions extends sfActions
 		$partenaireSlug = $request->getParameter('partenaire');
 		$this->operation = $request->getParameter('operation');
 		$this->partenaire = null;
-		
+
 		if(!empty($partenaireSlug)) {
 			$user = Doctrine_Core::getTable('sfGuardUser')->findOneBy('username', $partenaireSlug);
-			
+
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();
                 $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
-				
+
 				if(!empty($this->partenaire)) {
                     $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
 				}
@@ -85,13 +85,13 @@ class landingActions extends sfActions
 			if(!empty($user)) {
 				$this->partenaire = $user->getPartenaire();
                 $this->nbArbres = Doctrine_Core::getTable('treeUser')->countByUser($user->getId());
-				
+
 				if(!empty($this->partenaire)) {
                     $this->nbArbres += Doctrine_Core::getTable('tree')->countFromCouponPartenaire($this->partenaire->getId());
 				}
 
                 $partenaireProgrammes = $this->partenaire->getProgrammes();
-                
+
                 $programmes = array();
                 foreach($partenaireProgrammes as $partenaireProgramme) {
                     $programmes[] = $partenaireProgramme->getProgramme();
@@ -102,7 +102,7 @@ class landingActions extends sfActions
 		else {
 			$this->programmes = Doctrine_Core::getTable('programme')->getActive();
 		}
-    
+
 	}
-	
+
 }

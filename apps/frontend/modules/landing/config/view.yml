@@ -15,6 +15,13 @@ partenaireVedifDecouverteSuccess:
     - "plantation.js?v=<?php echo sfConfig::get('app_media_version') ?>"
     - "plantation_planter.js?v=<?php echo sfConfig::get('app_media_version') ?>"
 
+partenaireDyrupXylopheneSuccess:
+  stylesheets: [-*]
+  javascripts: [-*]
+  layout: minimalist
+  metas:
+    title: XYLOHENE et Up2green Reforestation
+
 pagePartenaireSuccess:
   stylesheets: [-*]
   javascripts: [-*]

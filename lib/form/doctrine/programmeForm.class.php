@@ -15,16 +15,9 @@ class programmeForm extends BaseprogrammeForm
   {
     parent::configure();
 
-    $this->embedRelations(array(
-      'Point' => array(
-        'considerNewFormEmptyFields' => array('longitude', 'latitude', 'altitude'),
-        'newFormLabel'         => 'Point',
-        'newFormClass'         => 'programmePointForm',
-        'multipleNewForms'     => false,
-        'newFormsInitialCount' => 1,
-        'formClassArgs'        => array(array('ah_add_delete_checkbox' => false))
-      )
-    ));
+    $pointForm = new programmePointForm($this->object->Point);
+    unset($pointForm['id']);
+    $this->embedForm('Point', $pointForm);
 
     unset(
       $this['created_at'], $this['updated_at']

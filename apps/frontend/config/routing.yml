@@ -73,6 +73,17 @@ plantation_landing_partenaire:
   url: /plantation/landing/partenaire/:partenaire/:operation
   param: {module: landing, action: partenaire, partenaire: 0, operation: 0}
 
+########################
+##### INSTANT PLANTATION
+########################
+
+instant_plantation:
+  url: /instant-plantation
+  param: {module: instantPlantation, action: index}
+plantation_landing_partenaire:
+  url: /plantation/instant-plantation
+  param: {module: instantPlantation, action: index}
+
 ####################
 ##### PLANTATION
 ####################

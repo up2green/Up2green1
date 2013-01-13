@@ -1,0 +1,187 @@
+/* Global */
+
+#content {
+    margin: 0 auto;
+    width: 1047px;
+}
+
+h1 {
+    color: #109090;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Map */
+
+#map {
+    background: url(/images/instant-plantation/map.jpg) no-repeat scroll center center transparent;
+    height: 521px;
+}
+
+#map span.program {
+    width: 136px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: block;
+    position: relative;
+    color: #FF9508;
+}
+
+#map span.count{
+    font-weight: bold;
+}
+
+#map span.program span{
+    position: relative;
+    top: 25px;
+}
+
+#map span.label-right {
+    background-image: url(/images/instant-plantation/label-right.png);
+}
+
+#map span.label-right span.title{
+    float: right;
+    right: 35px;
+}
+
+#map span.label-right span.count{
+    float: right;
+    right: 40px;
+}
+
+#map span.label-left span.title,
+#map span.label-left span.count{
+    left: 35px;
+}
+
+#map span.label-left {
+    background-image: url(/images/instant-plantation/label-left.png);
+}
+
+#program-benin {
+    left: 500px;
+    top: 225px;
+}
+
+#program-madagascar {
+    left: 615px;
+    top: 200px;
+}
+
+#program-senegal {
+    left: 380px;
+    top: 170px;
+}
+
+#program-equateur {
+    left: 220px;
+    top: 100px;
+}
+
+#program-inde {
+    left: 700px;
+    top: 0px;
+}
+
+/* Footer */
+
+#footer {
+    height: 140px;
+    background: url(/images/instant-plantation/footer.jpg) no-repeat scroll center bottom transparent;
+    position: relative;
+    color: #FF9508;
+    font-weight: bold;
+}
+
+#footer .logo{
+    position: absolute;
+}
+
+#footer img.logo.left,
+#footer img.logo.right{
+    width: 150px;
+    top: 50px;
+}
+
+#footer img.logo.middle{
+    left: 442px;
+    margin: 0 auto;
+    top: -68px;
+    width: 190px;
+}
+
+#footer img.logo.right{
+    right:-50px;
+}
+
+#footer img.logo.left{
+    left:-50px;
+}
+
+#footer p{
+    width: 41%;
+    color: #109010;
+}
+
+#footer p.right{
+    float: right;
+    text-align: right;
+}
+
+#footer p.left{
+    float: left;
+}
+
+/* Controls */
+
+#controls {
+    position: relative;
+    margin: 20px auto;
+    width: 500px;
+}
+
+#controls div.control{
+    float: left;
+    margin: 0 10px;
+    height: 56px;
+}
+
+#controls span.control {
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: absolute;
+    display: block;
+    cursor: pointer;
+}
+
+#controls span.add-10 {
+    background-image: url(/images/instant-plantation/add10.jpg);
+    top: 0px;
+}
+
+#controls span.add-1 {
+    background-image: url(/images/instant-plantation/add1.jpg);
+    top: 14px;
+}
+
+#controls span.sub-1 {
+    background-image: url(/images/instant-plantation/sub1.jpg);
+    top: 28px;
+}
+
+#controls span.sub-10 {
+    background-image: url(/images/instant-plantation/sub10.jpg);
+    top: 42px;
+}
+
+#controls span.label {
+    padding-left: 20px;
+    line-height: 56px;
+    color: #aaa;
+}

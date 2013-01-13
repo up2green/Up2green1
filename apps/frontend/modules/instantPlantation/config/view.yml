@@ -1,0 +1,12 @@
+indexSuccess:
+  stylesheets:
+    - -*
+    - "reset.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "instant-plantation.css?v=<?php echo sfConfig::get('app_media_version') ?>"
+  javascripts:
+    - -*
+    - "min/jquery-1.4.4.min.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+    - "instant-plantation.js?v=<?php echo sfConfig::get('app_media_version') ?>"
+  layout: minimalist
+  metas:
+    title: Plateforme de plantation instantanée

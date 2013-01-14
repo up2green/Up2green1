@@ -3,11 +3,11 @@
 #content {
     margin: 0 auto;
     width: 1047px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 h1 {
     color: #109090;
-    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 24px;
     text-align: center;
     padding: 20px 0;
@@ -28,6 +28,8 @@ h1 {
     display: block;
     position: relative;
     color: #FF9508;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #map span.count{
@@ -36,7 +38,7 @@ h1 {
 
 #map span.program span{
     position: relative;
-    top: 25px;
+    top: 24px;
 }
 
 #map span.label-right {
@@ -45,17 +47,17 @@ h1 {
 
 #map span.label-right span.title{
     float: right;
-    right: 35px;
+    right: 40px;
 }
 
 #map span.label-right span.count{
     float: right;
-    right: 40px;
+    right: 45px;
 }
 
 #map span.label-left span.title,
 #map span.label-left span.count{
-    left: 35px;
+    left: 40px;
 }
 
 #map span.label-left {
@@ -90,7 +92,7 @@ h1 {
 /* Footer */
 
 #footer {
-    height: 140px;
+    height: 150px;
     background: url(/images/instant-plantation/footer.jpg) no-repeat scroll center bottom transparent;
     position: relative;
     color: #FF9508;
@@ -104,7 +106,7 @@ h1 {
 #footer img.logo.left,
 #footer img.logo.right{
     width: 150px;
-    top: 50px;
+    top: 60px;
 }
 
 #footer img.logo.middle{
@@ -125,6 +127,7 @@ h1 {
 #footer p{
     width: 41%;
     color: #109010;
+    font-size: 16px;
 }
 
 #footer p.right{

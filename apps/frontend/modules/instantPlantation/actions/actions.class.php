@@ -16,10 +16,6 @@ class instantPlantationActions extends sfActions
     public function executeIndex(sfWebRequest $request)
     {
         $this->programs = array(
-            'benin' => array(
-                'title' => 'Bénin',
-                'label-position' => 'left',
-            ),
             'senegal' => array(
                 'title' => 'Sénégal',
                 'label-position' => 'right',
@@ -34,6 +30,14 @@ class instantPlantationActions extends sfActions
             ),
             'inde' => array(
                 'title' => 'Inde',
+                'label-position' => 'left',
+            ),
+            'perou' => array(
+                'title' => 'Pérou',
+                'label-position' => 'right',
+            ),
+            'colombie' => array(
+                'title' => 'Colombie',
                 'label-position' => 'left',
             ),
         );

@@ -66,27 +66,37 @@ h1 {
 
 #program-benin {
     left: 500px;
-    top: 225px;
+    top: 275px;
 }
 
 #program-madagascar {
     left: 615px;
-    top: 200px;
+    top: 250px;
 }
 
 #program-senegal {
     left: 380px;
-    top: 170px;
-}
-
-#program-equateur {
-    left: 220px;
-    top: 100px;
+    top: 220px;
 }
 
 #program-inde {
     left: 700px;
-    top: 0px;
+    top: 50px;
+}
+
+#program-equateur {
+    left: 220px;
+    top: 158px;
+}
+
+#program-perou {
+    left: 230px;
+    top: 87px;
+}
+
+#program-colombie {
+    left: 328px;
+    top: 10px;
 }
 
 /* Footer */
@@ -144,7 +154,7 @@ h1 {
 #controls {
     position: relative;
     margin: 20px auto;
-    width: 500px;
+    width: 600px;
 }
 
 #controls div.control{

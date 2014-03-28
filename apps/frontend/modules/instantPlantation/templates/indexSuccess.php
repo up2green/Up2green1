@@ -1,6 +1,6 @@
 <div id="content">
 
-    <h1><?php echo __("Ensemble, plantons 2 013 arbres sur la Planète !"); ?></h1>
+    <h1><?php echo __("Plus d'un milion d'arbres plantés depuis 2011 avec Up2Green Reforestation. Continuez à planter à nos côtés jusqu'en 2016!"); ?></h1>
 
     <div id="map">
         <?php foreach ($programs as $id => $program) : ?>
